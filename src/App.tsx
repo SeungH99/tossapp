@@ -628,9 +628,9 @@ export default function QuizApp({
           );
 
           if (isKnownTopic) {
-            const storedStart = Object.values(progress.bonusStartCommands).find(
-              (command) => command.sessionKey === bonusKey,
-            );
+            const storedStart = Object.values(progress.bonusStartCommands)
+              .reverse()
+              .find((command) => command.sessionKey === bonusKey);
             const restoredQuestions =
               storedStart == null
                 ? selectBonusQuestions(

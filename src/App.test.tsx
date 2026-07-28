@@ -757,6 +757,76 @@ describe("QuizApp", () => {
     expect(screen.getByText("1 / 3")).toBeInTheDocument();
   });
 
+  it("같은 날짜와 주제로 다시 시작한 보너스는 가장 최근 저장 명령의 문제 순서로 복원한다", async () => {
+    window.localStorage.clear();
+    const repository = new ProgressRepository(
+      new BrowserKeyValueStorage(window.localStorage),
+    );
+    const firstStart = await repository.startBonusSession(
+      "first-digital-start",
+      "2026-07-28",
+      "digital",
+      bundledBonusQuestions,
+    );
+    expect(firstStart.applied).toBe(true);
+    if (!firstStart.applied) {
+      return;
+    }
+
+    const afterFirstStart = await repository.load();
+    expect(afterFirstStart.kind).not.toBe("unrecoverable");
+    if (afterFirstStart.kind === "unrecoverable") {
+      return;
+    }
+    await repository.save({
+      ...afterFirstStart.state,
+      sessions: {
+        ...afterFirstStart.state.sessions,
+        [firstStart.session.dateKey]: {
+          ...firstStart.session,
+          currentIndex: 3,
+          phase: "completed",
+        },
+      },
+      bonus: {
+        ...afterFirstStart.state.bonus,
+        ticketCount: 1,
+      },
+      completedBonusIds: firstStart.questionIds,
+    });
+    const secondStart = await repository.startBonusSession(
+      "second-digital-start",
+      "2026-07-28",
+      "digital",
+      bundledBonusQuestions,
+    );
+    expect(secondStart.applied).toBe(true);
+    if (!secondStart.applied) {
+      return;
+    }
+    expect(secondStart.questionIds).toEqual([
+      "bonus-digital-4",
+      "bonus-digital-5",
+      "bonus-digital-6",
+    ]);
+
+    render(
+      <QuizApp
+        now={new Date("2026-07-28T03:00:00.000Z")}
+        coreQuestions={coreQuestions}
+        bonusQuestions={bundledBonusQuestions}
+        repository={repository}
+      />,
+    );
+
+    expect(
+      await screen.findByRole("heading", {
+        name: "블루투스는 가까운 기기끼리 무엇을 할 때 쓰일까요?",
+      }),
+    ).toBeInTheDocument();
+    expect(screen.getByText("1 / 3")).toBeInTheDocument();
+  });
+
   it("결과 점수와 같은 문제 링크를 친구에게 공유한다", async () => {
     window.localStorage.clear();
     const repository = new ProgressRepository(
