@@ -5,7 +5,7 @@ import { describe, expect, it } from "vitest";
 import QuizApp from "./App";
 import { bonusQuestions as bundledBonusQuestions } from "./data/questions";
 import { createBonusEntitlement } from "./domain/bonus-entitlement";
-import type { Question } from "./domain/question";
+import type { CoreQuestion } from "./domain/question";
 import {
   advanceQuiz,
   answerCurrentQuestion,
@@ -14,12 +14,15 @@ import {
 import {
   BrowserKeyValueStorage,
   ProgressRepository,
+  progressStorageKeys,
+  type KeyValueStorage,
 } from "./services/progress-repository";
 import type { QuizShareGateway } from "./services/quiz-share";
 import type { RewardAdGateway } from "./services/reward-ad";
 
-const coreQuestions: Question[] = [
+const coreQuestions: CoreQuestion[] = [
   {
+    kind: "core",
     id: "then-phone",
     dateKey: "2026-07-28",
     lens: "then",
@@ -34,6 +37,7 @@ const coreQuestions: Question[] = [
     },
   },
   {
+    kind: "core",
     id: "now-qr",
     dateKey: "2026-07-28",
     lens: "now",
@@ -48,6 +52,7 @@ const coreQuestions: Question[] = [
     },
   },
   {
+    kind: "core",
     id: "life-safety",
     dateKey: "2026-07-28",
     lens: "life",
@@ -76,7 +81,115 @@ function createCompletedSession(dateKey: string) {
   return session;
 }
 
+class ControlledStorage implements KeyValueStorage {
+  private readonly values = new Map<string, string>();
+  private writeGate: Promise<void> | null = null;
+  failWrites = false;
+
+  getItem(key: string): Promise<string | null> {
+    return Promise.resolve(this.values.get(key) ?? null);
+  }
+
+  async setItem(key: string, value: string): Promise<void> {
+    if (this.failWrites) {
+      throw new Error("simulated storage failure");
+    }
+    if (this.writeGate != null) {
+      await this.writeGate;
+    }
+    this.values.set(key, value);
+  }
+
+  holdWrites(): () => void {
+    let release = () => undefined;
+    this.writeGate = new Promise<void>((resolve) => {
+      release = () => {
+        this.writeGate = null;
+        resolve();
+      };
+    });
+    return release;
+  }
+}
+
 describe("QuizApp", () => {
+  it("답을 누르면 해설은 즉시 보이지만 저장 성공 전까지 다음 문제를 잠근다", async () => {
+    const storage = new ControlledStorage();
+    const releaseWrite = storage.holdWrites();
+    const repository = new ProgressRepository(storage);
+    const user = userEvent.setup();
+
+    render(
+      <QuizApp
+        now={new Date("2026-07-28T03:00:00.000Z")}
+        coreQuestions={coreQuestions}
+        bonusQuestions={[]}
+        repository={repository}
+      />,
+    );
+
+    await user.click(
+      await screen.findByRole("button", { name: "오늘의 3문제 시작" }),
+    );
+    await user.click(screen.getByRole("button", { name: "동전" }));
+
+    expect(screen.getByText("정답이에요")).toBeInTheDocument();
+    expect(screen.getByText("기록을 저장하고 있어요")).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: "다음 문제" }),
+    ).toBeDisabled();
+
+    releaseWrite();
+
+    expect(await screen.findByText("저장됐어요.")).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: "다음 문제" }),
+    ).toBeEnabled();
+  });
+
+  it("저장 실패 시 다음을 잠그고 같은 답변을 안전하게 다시 저장한다", async () => {
+    const storage = new ControlledStorage();
+    storage.failWrites = true;
+    const repository = new ProgressRepository(storage);
+    const user = userEvent.setup();
+
+    render(
+      <QuizApp
+        now={new Date("2026-07-28T03:00:00.000Z")}
+        coreQuestions={coreQuestions}
+        bonusQuestions={[]}
+        repository={repository}
+      />,
+    );
+
+    await user.click(
+      await screen.findByRole("button", { name: "오늘의 3문제 시작" }),
+    );
+    await user.click(screen.getByRole("button", { name: "동전" }));
+
+    expect(
+      await screen.findByText("기록을 남기지 못했어요"),
+    ).toHaveAttribute("role", "alert");
+    expect(
+      screen.getByRole("button", { name: "다음 문제" }),
+    ).toBeDisabled();
+
+    storage.failWrites = false;
+    await user.click(
+      screen.getByRole("button", { name: "다시 저장" }),
+    );
+
+    expect(await screen.findByText("저장됐어요.")).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: "다음 문제" }),
+    ).toBeEnabled();
+    const restored = await repository.load();
+    expect(restored.kind).not.toBe("unrecoverable");
+    if (restored.kind !== "unrecoverable") {
+      expect(restored.state.answerEvents).toHaveLength(1);
+    }
+  });
+
   it("홈에서 한 번 눌러 첫 문제를 시작하고 답안 뒤 해설을 보여 준다", async () => {
     const user = userEvent.setup();
     render(
@@ -194,6 +307,100 @@ describe("QuizApp", () => {
     expect(screen.getByText("2 / 3")).toBeInTheDocument();
   });
 
+  it("이전 유효 슬롯으로 복구하면 현재 화면 상단에 한 번 안내한다", async () => {
+    window.localStorage.clear();
+    const repository = new ProgressRepository(
+      new BrowserKeyValueStorage(window.localStorage),
+    );
+    await repository.save({
+      version: 1,
+      sessions: {
+        "2026-07-28": createQuizSession("2026-07-28"),
+      },
+      bonus: createBonusEntitlement(),
+      completedBonusIds: [],
+    });
+    await repository.save({
+      version: 1,
+      sessions: {
+        "2026-07-28": createQuizSession("2026-07-28"),
+      },
+      bonus: createBonusEntitlement(),
+      completedBonusIds: [],
+    });
+    window.localStorage.setItem(progressStorageKeys.slotA, "{broken");
+    const user = userEvent.setup();
+
+    render(
+      <QuizApp
+        now={new Date("2026-07-28T03:00:00.000Z")}
+        coreQuestions={coreQuestions}
+        bonusQuestions={[]}
+        repository={repository}
+      />,
+    );
+
+    expect(
+      await screen.findByText("기록을 확인해 불러왔어요."),
+    ).toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: "확인" }));
+    expect(
+      screen.queryByText("기록을 확인해 불러왔어요."),
+    ).not.toBeInTheDocument();
+  });
+
+  it("전체 복구가 불가능하면 원본을 보존한 채 저장 없는 퀴즈만 허용한다", async () => {
+    window.localStorage.clear();
+    window.localStorage.setItem(progressStorageKeys.slotA, "{slot-a");
+    window.localStorage.setItem(progressStorageKeys.slotB, "{slot-b");
+    window.localStorage.setItem(progressStorageKeys.legacy, "{legacy");
+    const preserved = {
+      slotA: window.localStorage.getItem(progressStorageKeys.slotA),
+      slotB: window.localStorage.getItem(progressStorageKeys.slotB),
+      legacy: window.localStorage.getItem(progressStorageKeys.legacy),
+    };
+    const repository = new ProgressRepository(
+      new BrowserKeyValueStorage(window.localStorage),
+    );
+    const user = userEvent.setup();
+
+    render(
+      <QuizApp
+        now={new Date("2026-07-28T03:00:00.000Z")}
+        coreQuestions={coreQuestions}
+        bonusQuestions={[]}
+        repository={repository}
+      />,
+    );
+
+    expect(
+      await screen.findByRole("heading", {
+        name: "기록을 안전하게 열지 못했어요",
+      }),
+    ).toBeInTheDocument();
+    await user.click(
+      screen.getByRole("button", {
+        name: "저장 없이 오늘 퀴즈 보기",
+      }),
+    );
+
+    expect(
+      screen.getByText("이번 기록은 저장되지 않아요"),
+    ).toBeInTheDocument();
+    await user.click(
+      screen.getByRole("button", { name: "오늘의 3문제 시작" }),
+    );
+    await user.click(screen.getByRole("button", { name: "동전" }));
+    expect(
+      screen.getByRole("button", { name: "다음 문제" }),
+    ).toBeEnabled();
+    expect({
+      slotA: window.localStorage.getItem(progressStorageKeys.slotA),
+      slotB: window.localStorage.getItem(progressStorageKeys.slotB),
+      legacy: window.localStorage.getItem(progressStorageKeys.legacy),
+    }).toEqual(preserved);
+  });
+
   it("선택한 주제의 첫 보너스 세 문제를 광고 없이 시작한다", async () => {
     const user = userEvent.setup();
     render(
@@ -289,7 +496,10 @@ describe("QuizApp", () => {
 
     await waitFor(async () => {
       const restored = await repository.load();
-      expect(restored.sessions["2026-07-27"]).toBeDefined();
+      expect(restored.kind).not.toBe("unrecoverable");
+      if (restored.kind !== "unrecoverable") {
+        expect(restored.state.sessions["2026-07-27"]).toBeDefined();
+      }
     });
   });
 
@@ -437,10 +647,13 @@ describe("QuizApp", () => {
     ).toBeInTheDocument();
     await waitFor(async () => {
       const progress = await repository.load();
-      expect(progress.bonus.ticketCount).toBe(1);
-      expect(progress.bonus.grantedMilestones).toEqual([
-        "2026-07-28:3",
-      ]);
+      expect(progress.kind).not.toBe("unrecoverable");
+      if (progress.kind !== "unrecoverable") {
+        expect(progress.state.bonus.ticketCount).toBe(1);
+        expect(progress.state.bonus.grantedMilestones).toEqual([
+          "2026-07-28:3",
+        ]);
+      }
     });
 
     firstRender.unmount();
@@ -458,7 +671,10 @@ describe("QuizApp", () => {
     ).toBeInTheDocument();
     await waitFor(async () => {
       const progress = await repository.load();
-      expect(progress.bonus.ticketCount).toBe(1);
+      expect(progress.kind).not.toBe("unrecoverable");
+      if (progress.kind !== "unrecoverable") {
+        expect(progress.state.bonus.ticketCount).toBe(1);
+      }
     });
   });
 
@@ -527,15 +743,22 @@ describe("QuizApp", () => {
         "share_complete",
       ]);
     });
-    expect(events[2].params).toMatchObject({
+    expect(events[2].params).toEqual({
       dateKey: "2026-07-28",
-      lens: "then",
-      questionId: "then-phone",
-      selectedIndex: 1,
-      isCorrect: true,
       mode: "current",
     });
-    expect(events.flatMap((event) => Object.keys(event.params ?? {}))).not
-      .toContain("userId");
+    const outboundFields = events.flatMap((event) =>
+      Object.keys(event.params ?? {}),
+    );
+    expect(outboundFields).not.toEqual(
+      expect.arrayContaining([
+        "userId",
+        "questionId",
+        "conceptId",
+        "selectedIndex",
+        "isCorrect",
+        "answeredAt",
+      ]),
+    );
   });
 });

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import type { Question } from "./question";
+import type { CoreQuestion } from "./question";
 import {
   advanceQuiz,
   answerCurrentQuestion,
@@ -9,8 +9,9 @@ import {
   selectDailyCoreSet,
 } from "./quiz-session";
 
-const questions: Question[] = [
+const questions: CoreQuestion[] = [
   {
+    kind: "core",
     id: "life-1",
     dateKey: "2026-07-28",
     lens: "life",
@@ -22,6 +23,7 @@ const questions: Question[] = [
     source: { name: "출처", url: "https://example.com/life" },
   },
   {
+    kind: "core",
     id: "then-1",
     dateKey: "2026-07-28",
     lens: "then",
@@ -33,6 +35,7 @@ const questions: Question[] = [
     source: { name: "출처", url: "https://example.com/then" },
   },
   {
+    kind: "core",
     id: "now-1",
     dateKey: "2026-07-28",
     lens: "now",
@@ -44,6 +47,7 @@ const questions: Question[] = [
     source: { name: "출처", url: "https://example.com/now" },
   },
   {
+    kind: "core",
     id: "other-day",
     dateKey: "2026-07-29",
     lens: "then",

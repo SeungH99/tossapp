@@ -1,4 +1,11 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type ReactNode,
+} from "react";
 
 import "./App.css";
 import {
@@ -8,10 +15,20 @@ import {
 } from "./domain/bonus-entitlement";
 import { selectBonusQuestions } from "./domain/bonus-selection";
 import { toKstDateKey } from "./domain/date-key";
-import type { BonusTopic, CoreLens, Question } from "./domain/question";
+import {
+  applyAnswerCommand,
+  type AnswerCommand,
+} from "./domain/progress-commands";
+import type { ProgressState } from "./domain/progress-state";
+import type {
+  BonusQuestion,
+  BonusTopic,
+  CoreLens,
+  CoreQuestion,
+  Question,
+} from "./domain/question";
 import {
   advanceQuiz,
-  answerCurrentQuestion,
   createQuizSession,
   scoreQuiz,
   selectDailyCoreSet,
@@ -41,8 +58,8 @@ type AppScreen =
 
 interface QuizAppProps {
   now: Date;
-  coreQuestions: Question[];
-  bonusQuestions: Question[];
+  coreQuestions: CoreQuestion[];
+  bonusQuestions: BonusQuestion[];
   repository?: ProgressRepository;
   rewardAd?: RewardAdGateway;
   shareGateway?: QuizShareGateway;
@@ -50,6 +67,7 @@ interface QuizAppProps {
 }
 
 type AdState = "loading" | "ready" | "unavailable";
+type AnswerSaveStatus = "idle" | "saving" | "saved" | "error";
 
 const lensLabels: Record<CoreLens, string> = {
   then: "그때",
@@ -75,17 +93,43 @@ function formatKoreanDate(date: Date): string {
   }).format(date);
 }
 
+function RecoveredNotice({ onDismiss }: { onDismiss: () => void }) {
+  return (
+    <section className="recovered-notice" role="status">
+      <div>
+        <strong>기록을 확인해 불러왔어요.</strong>
+        <p>마지막 답변이 보이지 않으면 다시 선택해주세요.</p>
+      </div>
+      <button type="button" onClick={onDismiss}>
+        확인
+      </button>
+    </section>
+  );
+}
+
+function NoSaveNotice() {
+  return (
+    <section className="no-save-notice" role="status">
+      <strong>이번 기록은 저장되지 않아요</strong>
+      <p>점수는 볼 수 있지만 연속 참여와 보너스권에는 반영되지 않아요.</p>
+    </section>
+  );
+}
+
 function HomeScreen({
   now,
   onStart,
+  persistenceNotice,
   streakDay,
 }: {
   now: Date;
   onStart: () => void;
+  persistenceNotice?: ReactNode;
   streakDay: number;
 }) {
   return (
     <main className="app-shell home-screen">
+      {persistenceNotice}
       <div className="date-label">
         <span>{formatKoreanDate(now)}</span>
         <span className="yellow-rule" aria-hidden="true" />
@@ -115,11 +159,17 @@ function QuizScreen({
   session,
   onAnswer,
   onNext,
+  onRetrySave,
+  persistenceNotice,
+  saveStatus,
 }: {
   questions: Question[];
   session: QuizSession;
   onAnswer: (selectedIndex: number) => void;
   onNext: () => void;
+  onRetrySave: () => void;
+  persistenceNotice?: ReactNode;
+  saveStatus: AnswerSaveStatus;
 }) {
   const question = questions[session.currentIndex];
   const answer = session.answers[session.currentIndex];
@@ -128,6 +178,7 @@ function QuizScreen({
 
   return (
     <main className="app-shell quiz-screen">
+      {persistenceNotice}
       <header className="quiz-header">
         <strong>{lensLabels[question.lens]}</strong>
         <span aria-label={`진행 ${session.currentIndex + 1} / ${questions.length}`}>
@@ -192,11 +243,35 @@ function QuizScreen({
           <a href={question.source.url} rel="noreferrer" target="_blank">
             {question.source.name}
           </a>
+          {saveStatus === "saving" ? (
+            <p className="answer-save-status" role="status">
+              기록을 저장하고 있어요
+            </p>
+          ) : null}
+          {saveStatus === "saved" ? (
+            <p className="answer-save-status saved" role="status">
+              저장됐어요.
+            </p>
+          ) : null}
+          {saveStatus === "error" ? (
+            <div className="answer-save-error">
+              <p role="alert">기록을 남기지 못했어요</p>
+              <p>연결을 확인한 뒤 다시 저장해주세요.</p>
+              <button type="button" onClick={onRetrySave}>
+                다시 저장
+              </button>
+            </div>
+          ) : null}
         </section>
       ) : null}
 
       {isExplanation ? (
-        <button className="primary-button" type="button" onClick={onNext}>
+        <button
+          className="primary-button"
+          disabled={saveStatus === "saving" || saveStatus === "error"}
+          type="button"
+          onClick={onNext}
+        >
           {isLastQuestion ? "결과 보기" : "다음 문제"}
         </button>
       ) : null}
@@ -209,16 +284,19 @@ function ResultScreen({
   score,
   onBonus,
   onShare,
+  persistenceNotice,
   shareStatus,
 }: {
   entitlement: ReturnType<typeof createBonusEntitlement>;
   score: number;
   onBonus: () => void;
   onShare: () => void;
+  persistenceNotice?: ReactNode;
   shareStatus: "idle" | "sharing" | "shared" | "error";
 }) {
   return (
     <main className="app-shell result-screen">
+      {persistenceNotice}
       <div className="result-heading">
         <h1>오늘 결과</h1>
         <span className="yellow-rule" aria-hidden="true" />
@@ -279,12 +357,14 @@ function BonusTopicScreen({
   selectedTopic,
   onSelectTopic,
   onStart,
+  persistenceNotice,
 }: {
   entitlement: ReturnType<typeof createBonusEntitlement>;
   adState: AdState;
   selectedTopic: BonusTopic | null;
   onSelectTopic: (topic: BonusTopic) => void;
   onStart: () => void;
+  persistenceNotice?: ReactNode;
 }) {
   const needsRewardAd =
     entitlement.firstFreeUsed && entitlement.ticketCount === 0;
@@ -309,6 +389,7 @@ function BonusTopicScreen({
 
   return (
     <main className="app-shell bonus-topic-screen">
+      {persistenceNotice}
       <header className="bonus-heading">
         <h1>보너스 주제 선택</h1>
         <span className="yellow-rule" aria-hidden="true" />
@@ -368,8 +449,14 @@ export default function QuizApp({
   const [entitlement, setEntitlement] = useState(createBonusEntitlement);
   const [completedBonusIds, setCompletedBonusIds] = useState<string[]>([]);
   const [hydrated, setHydrated] = useState(repository == null);
+  const [persistenceWritable, setPersistenceWritable] = useState(true);
+  const [storageRetry, setStorageRetry] = useState(0);
+  const [showRecoveredNotice, setShowRecoveredNotice] = useState(false);
+  const [noSaveMode, setNoSaveMode] = useState(false);
+  const [answerSaveStatus, setAnswerSaveStatus] =
+    useState<AnswerSaveStatus>("idle");
   const [selectedTopic, setSelectedTopic] = useState<BonusTopic | null>(null);
-  const [bonusSet, setBonusSet] = useState<Question[]>([]);
+  const [bonusSet, setBonusSet] = useState<BonusQuestion[]>([]);
   const [bonusSession, setBonusSession] = useState<QuizSession | null>(null);
   const [savedSessions, setSavedSessions] = useState<
     Record<string, QuizSession>
@@ -381,6 +468,11 @@ export default function QuizApp({
     "idle" | "sharing" | "shared" | "error"
   >("idle");
   const trackedAppOpen = useRef(false);
+  const progressRef = useRef<ProgressState>(createEmptyProgress());
+  const pendingAnswerRef = useRef<{
+    command: AnswerCommand;
+    target: "core" | "bonus";
+  } | null>(null);
 
   const track = useCallback(
     (name: string, params: AnalyticsParams = {}) => {
@@ -439,142 +531,212 @@ export default function QuizApp({
 
     let active = true;
 
-    void repository.load().then((progress) => {
-      if (!active) {
-        return;
-      }
+    void repository
+      .load()
+      .then((result) => {
+        if (!active) {
+          return;
+        }
 
-      setSavedSessions(progress.sessions);
-      const streak = calculateCompletionStreak(
-        dateKey,
-        progress.sessions,
-      );
-      setEntitlement(
-        grantStreakTicket(
+        if (result.kind === "unrecoverable") {
+          setPersistenceWritable(false);
+          setHydrated(true);
+          return;
+        }
+
+        const progress = result.state;
+        setShowRecoveredNotice(result.kind === "recovered-slot");
+        const streak = calculateCompletionStreak(
+          dateKey,
+          progress.sessions,
+        );
+        const grantedEntitlement = grantStreakTicket(
           progress.bonus,
           streak.startDate,
           streak.days,
-        ),
-      );
-      setCompletedBonusIds(progress.completedBonusIds);
-
-      const activeBonusEntry = Object.entries(progress.sessions).find(
-        ([key, storedSession]) =>
-          key.startsWith(`${dateKey}:bonus:`) &&
-          storedSession.phase !== "completed",
-      );
-      const restoredSession = progress.sessions[dateKey];
-
-      if (activeBonusEntry != null) {
-        const [bonusKey, restoredBonusSession] = activeBonusEntry;
-        const topic = bonusKey.slice(
-          `${dateKey}:bonus:`.length,
-        ) as BonusTopic;
-        const isKnownTopic = bonusTopics.some(
-          (candidate) => candidate.id === topic,
         );
+        const hydratedProgress = {
+          ...progress,
+          bonus: grantedEntitlement,
+        };
+        progressRef.current = hydratedProgress;
+        setSavedSessions(progress.sessions);
+        setEntitlement(grantedEntitlement);
+        setCompletedBonusIds(progress.completedBonusIds);
 
-        if (isKnownTopic) {
-          const selection = selectBonusQuestions(
-            topic,
-            bonusQuestions,
-            new Set(progress.completedBonusIds),
-          );
-          setSelectedTopic(topic);
-          setBonusSet(selection.questions);
-          setBonusSession(restoredBonusSession);
-          setScreen("bonus-quiz");
+        if (grantedEntitlement !== progress.bonus) {
+          void repository.save(hydratedProgress);
         }
-      } else if (restoredSession != null) {
-        setSession(restoredSession);
-        setScreen(
-          restoredSession.phase === "completed" ? "result" : "quiz",
+
+        const activeBonusEntry = Object.entries(progress.sessions).find(
+          ([key, storedSession]) =>
+            key.startsWith(`${dateKey}:bonus:`) &&
+            storedSession.phase !== "completed",
         );
-      }
-      setHydrated(true);
-    });
+        const restoredSession = progress.sessions[dateKey];
+
+        if (activeBonusEntry != null) {
+          const [bonusKey, restoredBonusSession] = activeBonusEntry;
+          const topic = bonusKey.slice(
+            `${dateKey}:bonus:`.length,
+          ) as BonusTopic;
+          const isKnownTopic = bonusTopics.some(
+            (candidate) => candidate.id === topic,
+          );
+
+          if (isKnownTopic) {
+            const selection = selectBonusQuestions(
+              topic,
+              bonusQuestions,
+              new Set(progress.completedBonusIds),
+            );
+            setSelectedTopic(topic);
+            setBonusSet(selection.questions);
+            setBonusSession(restoredBonusSession);
+            setScreen("bonus-quiz");
+          }
+        } else if (restoredSession != null) {
+          setSession(restoredSession);
+          setScreen(
+            restoredSession.phase === "completed"
+              ? "result"
+              : "quiz",
+          );
+        }
+        setHydrated(true);
+      })
+      .catch(() => {
+        if (active) {
+          setPersistenceWritable(false);
+          setHydrated(true);
+        }
+      });
 
     return () => {
       active = false;
     };
-  }, [bonusQuestions, dateKey, repository]);
+  }, [bonusQuestions, dateKey, repository, storageRetry]);
 
-  useEffect(() => {
-    if (!hydrated || repository == null) {
+  const persistSnapshot = (progress: ProgressState) => {
+    progressRef.current = progress;
+    setSavedSessions(progress.sessions);
+    if (repository != null && persistenceWritable) {
+      void repository.save(progress).catch(() => {
+        setPersistenceWritable(false);
+      });
+    }
+  };
+
+  const submitAnswer = (
+    command: AnswerCommand,
+    target: "core" | "bonus",
+  ) => {
+    const optimistic = applyAnswerCommand(progressRef.current, command);
+    progressRef.current = optimistic.state;
+    pendingAnswerRef.current = { command, target };
+
+    if (target === "core") {
+      setSession(optimistic.session);
+    } else {
+      setBonusSession(optimistic.session);
+    }
+
+    if (repository == null) {
+      setAnswerSaveStatus("saved");
+      return;
+    }
+    if (!persistenceWritable) {
+      setAnswerSaveStatus("idle");
       return;
     }
 
-    const progress = createEmptyProgress();
-    progress.sessions = {
-      ...savedSessions,
-      [dateKey]: session,
-    };
-    if (bonusSession != null) {
-      progress.sessions[bonusSession.dateKey] = bonusSession;
+    setAnswerSaveStatus("saving");
+    void repository
+      .commitAnswer(command)
+      .then((result) => {
+        progressRef.current = result.state;
+        setSavedSessions(result.state.sessions);
+        if (target === "core") {
+          setSession(result.session);
+        } else {
+          setBonusSession(result.session);
+        }
+        setAnswerSaveStatus("saved");
+      })
+      .catch(() => {
+        setAnswerSaveStatus("error");
+      });
+  };
+
+  const retryPendingAnswer = () => {
+    const pending = pendingAnswerRef.current;
+    if (pending == null || answerSaveStatus === "saving") {
+      return;
     }
-    progress.bonus = entitlement;
-    progress.completedBonusIds = completedBonusIds;
-    void repository.save(progress);
-  }, [
-    completedBonusIds,
-    dateKey,
-    entitlement,
-    hydrated,
-    repository,
-    savedSessions,
-    session,
-    bonusSession,
-  ]);
+    submitAnswer(pending.command, pending.target);
+  };
 
   const handleAnswer = (selectedIndex: number) => {
     if (session.phase !== "question") {
       return;
     }
     const question = questions[session.currentIndex];
-    track("core_answer", {
-      questionId: question.id,
-      lens: question.lens,
-      selectedIndex,
-      isCorrect: selectedIndex === question.answerIndex,
-    });
-    setSession((current) =>
-      answerCurrentQuestion(
-        current,
-        questions[current.currentIndex],
+    track("core_answer");
+    submitAnswer(
+      {
+        attemptId: `core:${dateKey}:${question.id}:${session.currentIndex}`,
+        sessionKey: dateKey,
+        session,
+        question,
         selectedIndex,
-      ),
+        answeredAt: now.toISOString(),
+      },
+      "core",
     );
   };
 
   const handleNext = () => {
+    if (
+      answerSaveStatus === "saving" ||
+      answerSaveStatus === "error"
+    ) {
+      return;
+    }
     const next = advanceQuiz(session, questions.length);
     if (next === session) {
       return;
     }
 
     setSession(next);
+    setAnswerSaveStatus("idle");
+    pendingAnswerRef.current = null;
+    let nextEntitlement = entitlement;
+    const nextSessions = {
+      ...progressRef.current.sessions,
+      [dateKey]: next,
+    };
     if (next.phase === "completed") {
-      const sessionsWithCompletion = {
-        ...savedSessions,
-        [dateKey]: next,
-      };
       const streak = calculateCompletionStreak(
         dateKey,
-        sessionsWithCompletion,
+        nextSessions,
       );
-      setEntitlement((currentEntitlement) =>
-        grantStreakTicket(
-          currentEntitlement,
-          streak.startDate,
-          streak.days,
-        ),
+      nextEntitlement = grantStreakTicket(
+        entitlement,
+        streak.startDate,
+        streak.days,
       );
+      setEntitlement(nextEntitlement);
       track("core_complete", {
         score: scoreQuiz(next),
         streakDays: streak.days,
       });
       setScreen("result");
     }
+    persistSnapshot({
+      ...progressRef.current,
+      sessions: nextSessions,
+      bonus: nextEntitlement,
+    });
   };
 
   const handleShare = () => {
@@ -607,11 +769,20 @@ export default function QuizApp({
       return;
     }
 
+    const nextBonusSession = createQuizSession(
+      `${dateKey}:bonus:${topic}`,
+    );
     setEntitlement(nextEntitlement);
     setBonusSet(selection.questions);
-    setBonusSession(
-      createQuizSession(`${dateKey}:bonus:${topic}`),
-    );
+    setBonusSession(nextBonusSession);
+    persistSnapshot({
+      ...progressRef.current,
+      sessions: {
+        ...progressRef.current.sessions,
+        [nextBonusSession.dateKey]: nextBonusSession,
+      },
+      bonus: nextEntitlement,
+    });
     track("bonus_start", { topic });
     setScreen("bonus-quiz");
   };
@@ -661,37 +832,63 @@ export default function QuizApp({
   };
 
   const handleBonusAnswer = (selectedIndex: number) => {
-    setBonusSession((current) => {
-      if (current == null) {
-        return current;
-      }
-
-      return answerCurrentQuestion(
-        current,
-        bonusSet[current.currentIndex],
+    if (bonusSession == null || bonusSession.phase !== "question") {
+      return;
+    }
+    const question = bonusSet[bonusSession.currentIndex];
+    submitAnswer(
+      {
+        attemptId: `bonus:${bonusSession.dateKey}:${question.id}:${bonusSession.currentIndex}`,
+        sessionKey: bonusSession.dateKey,
+        session: bonusSession,
+        question,
         selectedIndex,
-      );
-    });
+        answeredAt: now.toISOString(),
+      },
+      "bonus",
+    );
   };
 
   const handleBonusNext = () => {
-    setBonusSession((current) => {
-      if (current == null) {
-        return current;
-      }
+    if (
+      bonusSession == null ||
+      answerSaveStatus === "saving" ||
+      answerSaveStatus === "error"
+    ) {
+      return;
+    }
 
-      const next = advanceQuiz(current, bonusSet.length);
-      if (next.phase === "completed") {
-        setCompletedBonusIds((ids) => [
-          ...new Set([...ids, ...bonusSet.map((question) => question.id)]),
-        ]);
-        track("bonus_complete", {
-          topic: selectedTopic ?? "unknown",
-          score: scoreQuiz(next),
-        });
-        setScreen("result");
-      }
-      return next;
+    const next = advanceQuiz(bonusSession, bonusSet.length);
+    if (next === bonusSession) {
+      return;
+    }
+
+    setBonusSession(next);
+    setAnswerSaveStatus("idle");
+    pendingAnswerRef.current = null;
+    let nextCompletedBonusIds = completedBonusIds;
+    if (next.phase === "completed") {
+      nextCompletedBonusIds = [
+        ...new Set([
+          ...completedBonusIds,
+          ...bonusSet.map((question) => question.id),
+        ]),
+      ];
+      setCompletedBonusIds(nextCompletedBonusIds);
+      track("bonus_complete", {
+        topic: selectedTopic ?? "unknown",
+        score: scoreQuiz(next),
+      });
+      setScreen("result");
+    }
+
+    persistSnapshot({
+      ...progressRef.current,
+      sessions: {
+        ...progressRef.current.sessions,
+        [next.dateKey]: next,
+      },
+      completedBonusIds: nextCompletedBonusIds,
     });
   };
 
@@ -703,6 +900,46 @@ export default function QuizApp({
     );
   }
 
+  if (!persistenceWritable && !noSaveMode) {
+    return (
+      <main className="app-shell storage-error-screen">
+        <p className="storage-error-brand">그때요즘</p>
+        <h1>기록을 안전하게 열지 못했어요</h1>
+        <p>
+          기존 기록은 덮어쓰지 않고 그대로 보관하고 있어요.
+        </p>
+        <button
+          className="primary-button"
+          type="button"
+          onClick={() => {
+            setHydrated(false);
+            setPersistenceWritable(true);
+            setNoSaveMode(false);
+            setStorageRetry((value) => value + 1);
+          }}
+        >
+          다시 불러오기
+        </button>
+        <button
+          className="outline-button"
+          type="button"
+          onClick={() => {
+            setNoSaveMode(true);
+            setScreen("home");
+          }}
+        >
+          저장 없이 오늘 퀴즈 보기
+        </button>
+      </main>
+    );
+  }
+
+  const persistenceNotice = noSaveMode ? (
+    <NoSaveNotice />
+  ) : showRecoveredNotice ? (
+    <RecoveredNotice onDismiss={() => setShowRecoveredNotice(false)} />
+  ) : undefined;
+
   if (screen === "home") {
     return (
       <HomeScreen
@@ -711,6 +948,7 @@ export default function QuizApp({
           track("quiz_start");
           setScreen("quiz");
         }}
+        persistenceNotice={persistenceNotice}
         streakDay={calculateVisibleStreakDay(dateKey, {
           ...savedSessions,
           [dateKey]: session,
@@ -726,6 +964,9 @@ export default function QuizApp({
         session={session}
         onAnswer={handleAnswer}
         onNext={handleNext}
+        onRetrySave={retryPendingAnswer}
+        persistenceNotice={persistenceNotice}
+        saveStatus={answerSaveStatus}
       />
     );
   }
@@ -737,6 +978,7 @@ export default function QuizApp({
         score={scoreQuiz(session)}
         onBonus={() => setScreen("bonus-topic")}
         onShare={handleShare}
+        persistenceNotice={persistenceNotice}
         shareStatus={shareStatus}
       />
     );
@@ -749,6 +991,9 @@ export default function QuizApp({
         session={bonusSession}
         onAnswer={handleBonusAnswer}
         onNext={handleBonusNext}
+        onRetrySave={retryPendingAnswer}
+        persistenceNotice={persistenceNotice}
+        saveStatus={answerSaveStatus}
       />
     );
   }
@@ -763,6 +1008,7 @@ export default function QuizApp({
         track("bonus_topic_select", { topic });
       }}
       onStart={handleStartBonus}
+      persistenceNotice={persistenceNotice}
     />
   );
 }

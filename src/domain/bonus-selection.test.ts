@@ -1,10 +1,14 @@
 import { describe, expect, it } from "vitest";
 
-import type { Question } from "./question";
+import type { BonusQuestion } from "./question";
 import { selectBonusQuestions } from "./bonus-selection";
 
-const bonusQuestions: Question[] = [
+const bonusQuestions: BonusQuestion[] = [
   {
+    kind: "bonus",
+    conceptId: "digital-completed",
+    variant: "base",
+    internalDifficulty: "steady",
     id: "digital-completed",
     lens: "now",
     topic: "digital",
@@ -15,6 +19,10 @@ const bonusQuestions: Question[] = [
     source: { name: "출처", url: "https://example.com/1" },
   },
   {
+    kind: "bonus",
+    conceptId: "digital-1",
+    variant: "base",
+    internalDifficulty: "steady",
     id: "digital-1",
     lens: "now",
     topic: "digital",
@@ -25,6 +33,10 @@ const bonusQuestions: Question[] = [
     source: { name: "출처", url: "https://example.com/2" },
   },
   {
+    kind: "bonus",
+    conceptId: "digital-2",
+    variant: "base",
+    internalDifficulty: "steady",
     id: "digital-2",
     lens: "now",
     topic: "digital",
@@ -35,6 +47,10 @@ const bonusQuestions: Question[] = [
     source: { name: "출처", url: "https://example.com/3" },
   },
   {
+    kind: "bonus",
+    conceptId: "safety-1",
+    variant: "base",
+    internalDifficulty: "steady",
     id: "safety-1",
     lens: "life",
     topic: "safety",
