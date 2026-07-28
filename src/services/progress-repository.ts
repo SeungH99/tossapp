@@ -95,7 +95,9 @@ export function createEmptyProgress(): ProgressState {
       byQuestion: {},
     },
     rewardGrantIds: [],
+    rewardAdTicketCount: 0,
     bonusStartCommands: {},
+    latestBonusStartCommandIds: {},
   };
 }
 
@@ -171,7 +173,9 @@ function isBonusEntitlement(value: unknown): value is BonusEntitlement {
       (attempt) =>
         isRecord(attempt) &&
         typeof attempt.attemptId === "string" &&
-        ["first_free", "streak_ticket"].includes(String(attempt.source)),
+        ["first_free", "streak_ticket", "reward_ad"].includes(
+          String(attempt.source),
+        ),
     )
   );
 }
@@ -238,6 +242,23 @@ function isBonusStartCommands(
   );
 }
 
+function isStringRecord(value: unknown): value is Record<string, string> {
+  return (
+    isRecord(value) &&
+    Object.values(value).every((candidate) => typeof candidate === "string")
+  );
+}
+
+function inferLatestBonusStartCommandIds(
+  commands: Record<string, BonusStartCommandRecord>,
+): Record<string, string> {
+  const latestBySession: Record<string, string> = {};
+  for (const command of Object.values(commands)) {
+    latestBySession[command.sessionKey] = command.commandId;
+  }
+  return latestBySession;
+}
+
 function hasValidProgressFields(
   value: Record<string, unknown>,
 ): boolean {
@@ -284,6 +305,35 @@ function normalizeProgressState(value: unknown): ProgressState | null {
   if (rewardGrantIds == null || bonusStartCommands == null) {
     return null;
   }
+  const inferredRewardAdTicketCount = Math.min(
+    rewardGrantIds.length,
+    Math.max(
+      0,
+      Number((value.bonus as BonusEntitlement).ticketCount) -
+        (value.bonus as BonusEntitlement).grantedMilestones.length,
+    ),
+  );
+  const rewardAdTicketCount =
+    value.rewardAdTicketCount === undefined
+      ? inferredRewardAdTicketCount
+      : Number.isInteger(value.rewardAdTicketCount) &&
+          Number(value.rewardAdTicketCount) >= 0 &&
+          Number(value.rewardAdTicketCount) <=
+            Number((value.bonus as BonusEntitlement).ticketCount)
+        ? Number(value.rewardAdTicketCount)
+        : null;
+  const latestBonusStartCommandIds =
+    value.latestBonusStartCommandIds === undefined
+      ? inferLatestBonusStartCommandIds(bonusStartCommands)
+      : isStringRecord(value.latestBonusStartCommandIds)
+        ? value.latestBonusStartCommandIds
+        : null;
+  if (
+    rewardAdTicketCount == null ||
+    latestBonusStartCommandIds == null
+  ) {
+    return null;
+  }
 
   return {
     version: 2,
@@ -293,7 +343,9 @@ function normalizeProgressState(value: unknown): ProgressState | null {
     answerEvents: value.answerEvents as AnswerEvent[],
     answerCheckpoint: value.answerCheckpoint as AnswerCheckpoint,
     rewardGrantIds,
+    rewardAdTicketCount,
     bonusStartCommands,
+    latestBonusStartCommandIds,
   };
 }
 
@@ -310,7 +362,9 @@ function migrateV1ToV2(progress: ProgressStateV1): ProgressState {
       byQuestion: {},
     },
     rewardGrantIds: [],
+    rewardAdTicketCount: 0,
     bonusStartCommands: {},
+    latestBonusStartCommandIds: {},
   };
 }
 

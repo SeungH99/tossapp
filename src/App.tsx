@@ -628,9 +628,12 @@ export default function QuizApp({
           );
 
           if (isKnownTopic) {
-            const storedStart = Object.values(progress.bonusStartCommands)
-              .reverse()
-              .find((command) => command.sessionKey === bonusKey);
+            const storedStartId =
+              progress.latestBonusStartCommandIds[bonusKey];
+            const storedStart =
+              storedStartId == null
+                ? undefined
+                : progress.bonusStartCommands[storedStartId];
             const restoredQuestions =
               storedStart == null
                 ? selectBonusQuestions(
@@ -914,6 +917,7 @@ export default function QuizApp({
             ? await repository.grantBonusTicket(pending.rewardGrantId)
             : grantBonusTicketCommand(state, pending.rewardGrantId);
           state = grant.state;
+          progressRef.current = grant.state;
         }
 
         setBonusStartStatus("saving");

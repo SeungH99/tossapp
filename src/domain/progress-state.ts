@@ -60,5 +60,7 @@ export interface ProgressState {
   answerEvents: AnswerEvent[];
   answerCheckpoint: AnswerCheckpoint;
   rewardGrantIds: string[];
+  rewardAdTicketCount: number;
   bonusStartCommands: Record<string, BonusStartCommandRecord>;
+  latestBonusStartCommandIds: Record<string, string>;
 }

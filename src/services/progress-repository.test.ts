@@ -222,6 +222,10 @@ describe("ProgressRepository", () => {
     expect(expectState(restored).version).toBe(2);
     expect(expectState(restored).rewardGrantIds).toEqual([]);
     expect(expectState(restored).bonusStartCommands).toEqual({});
+    expect(expectState(restored)).toMatchObject({
+      rewardAdTicketCount: 0,
+      latestBonusStartCommandIds: {},
+    });
     expect(window.localStorage.getItem(progressStorageKeys.legacy)).toBe(
       legacyRaw,
     );
@@ -325,6 +329,47 @@ describe("ProgressRepository", () => {
     });
   });
 
+  it("광고 보상 이용권의 출처와 최신 세션 명령을 원자적으로 저장한다", async () => {
+    const repository = new ProgressRepository(
+      new BrowserKeyValueStorage(window.localStorage),
+    );
+    await repository.save({
+      ...createEmptyProgress(),
+      bonus: {
+        ...createEmptyProgress().bonus,
+        firstFreeUsed: true,
+      },
+    });
+    await repository.grantBonusTicket("private-reward-grant");
+
+    const result = await repository.startBonusSession(
+      "2",
+      "2026-07-28",
+      "digital",
+      bonusQuestions,
+    );
+    const restored = expectState(await repository.load());
+
+    expect(result).toMatchObject({ applied: true, source: "reward_ad" });
+    expect(restored.bonusStartCommands["2"]).toEqual({
+      commandId: "2",
+      dateKey: "2026-07-28",
+      topic: "digital",
+      sessionKey: "2026-07-28:bonus:digital",
+      questionIds: ["bonus-digital-1"],
+      source: "reward_ad",
+    });
+    expect(restored).toMatchObject({
+      rewardAdTicketCount: 0,
+      latestBonusStartCommandIds: {
+        "2026-07-28:bonus:digital": "2",
+      },
+    });
+    expect(JSON.stringify(restored.bonusStartCommands["2"])).not.toContain(
+      "private-reward-grant",
+    );
+  });
+
   it("같은 보너스 commandId 재시도는 revision과 세션을 늘리지 않는다", async () => {
     const repository = new ProgressRepository(
       new BrowserKeyValueStorage(window.localStorage),
@@ -405,6 +450,8 @@ describe("ProgressRepository", () => {
     const legacyPayload: Record<string, unknown> = { ...modern };
     delete legacyPayload.rewardGrantIds;
     delete legacyPayload.bonusStartCommands;
+    delete legacyPayload.rewardAdTicketCount;
+    delete legacyPayload.latestBonusStartCommandIds;
     const legacyEnvelope = legacyV2Envelope(legacyPayload);
     window.localStorage.setItem(progressStorageKeys.slotA, legacyEnvelope);
     window.localStorage.setItem(progressStorageKeys.slotB, legacyEnvelope);
@@ -417,5 +464,55 @@ describe("ProgressRepository", () => {
     expect(restored).toMatchObject({ kind: "loaded", revision: 1 });
     expect(expectState(restored).rewardGrantIds).toEqual([]);
     expect(expectState(restored).bonusStartCommands).toEqual({});
+    expect(expectState(restored)).toMatchObject({
+      rewardAdTicketCount: 0,
+      latestBonusStartCommandIds: {},
+    });
+  });
+
+  it("기존 v2의 광고 소비 기록과 이후 연속 보상권을 구분해 정규화한다", async () => {
+    const legacyPayload: Record<string, unknown> = {
+      ...createEmptyProgress(),
+      bonus: {
+        ...createBonusEntitlement(),
+        firstFreeUsed: true,
+        ticketCount: 1,
+        grantedMilestones: ["2026-07-29:3"],
+        unlockAttempts: [
+          {
+            attemptId: "old-ad-backed-start",
+            source: "streak_ticket",
+          },
+        ],
+      },
+      rewardGrantIds: ["old-private-reward-grant"],
+      bonusStartCommands: {
+        "old-ad-backed-start": {
+          commandId: "old-ad-backed-start",
+          dateKey: "2026-07-28",
+          topic: "digital",
+          sessionKey: "2026-07-28:bonus:digital",
+          questionIds: ["bonus-digital-1"],
+          source: "streak_ticket",
+        },
+      },
+    };
+    delete legacyPayload.rewardAdTicketCount;
+    delete legacyPayload.latestBonusStartCommandIds;
+    const legacyEnvelope = legacyV2Envelope(legacyPayload);
+    window.localStorage.setItem(progressStorageKeys.slotA, legacyEnvelope);
+    window.localStorage.setItem(progressStorageKeys.slotB, legacyEnvelope);
+    const repository = new ProgressRepository(
+      new BrowserKeyValueStorage(window.localStorage),
+    );
+
+    const restored = expectState(await repository.load());
+
+    expect(restored).toMatchObject({
+      rewardAdTicketCount: 0,
+      latestBonusStartCommandIds: {
+        "2026-07-28:bonus:digital": "old-ad-backed-start",
+      },
+    });
   });
 });

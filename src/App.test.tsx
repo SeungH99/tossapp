@@ -80,6 +80,7 @@ function createCompletedSession(dateKey: string) {
 class ControlledStorage implements KeyValueStorage {
   private readonly values = new Map<string, string>();
   private writeGate: Promise<void> | null = null;
+  private failAfterSuccessfulWrites: number | null = null;
   failWrites = false;
 
   getItem(key: string): Promise<string | null> {
@@ -89,6 +90,13 @@ class ControlledStorage implements KeyValueStorage {
   async setItem(key: string, value: string): Promise<void> {
     if (this.failWrites) {
       throw new Error("simulated storage failure");
+    }
+    if (this.failAfterSuccessfulWrites === 0) {
+      this.failAfterSuccessfulWrites = null;
+      throw new Error("simulated one-time storage failure");
+    }
+    if (this.failAfterSuccessfulWrites != null) {
+      this.failAfterSuccessfulWrites -= 1;
     }
     if (this.writeGate != null) {
       await this.writeGate;
@@ -105,6 +113,10 @@ class ControlledStorage implements KeyValueStorage {
       };
     });
     return release;
+  }
+
+  failOnceAfter(successfulWrites: number): void {
+    this.failAfterSuccessfulWrites = successfulWrites;
   }
 }
 
@@ -495,6 +507,10 @@ describe("QuizApp", () => {
       load: async () => true,
       show: async () => ({ rewardGrantId: "reward-ad-existing-test" }),
     };
+    const analyticsEvents: Array<{
+      name: string;
+      params?: Record<string, string | number | boolean>;
+    }> = [];
     const user = userEvent.setup();
 
     render(
@@ -504,6 +520,9 @@ describe("QuizApp", () => {
         bonusQuestions={bundledBonusQuestions}
         repository={repository}
         rewardAd={rewardAd}
+        analytics={{
+          track: (name, params) => analyticsEvents.push({ name, params }),
+        }}
       />,
     );
 
@@ -524,6 +543,28 @@ describe("QuizApp", () => {
         name: "와이파이 표시가 뜻하는 것은 무엇일까요?",
       }),
     ).toBeInTheDocument();
+    const restored = await repository.load();
+    expect(restored.kind).not.toBe("unrecoverable");
+    if (restored.kind !== "unrecoverable") {
+      const [storedStart] = Object.values(restored.state.bonusStartCommands);
+      expect(storedStart).toMatchObject({ source: "reward_ad" });
+      expect(JSON.stringify(storedStart)).not.toContain(
+        "reward-ad-existing-test",
+      );
+    }
+    expect(
+      analyticsEvents.filter((event) => event.name === "bonus_start"),
+    ).toEqual([
+      {
+        name: "bonus_start",
+        params: {
+          dateKey: "2026-07-28",
+          mode: "current",
+          topic: "digital",
+          unlockSource: "reward_ad",
+        },
+      },
+    ]);
   });
 
   it("보너스 시작 저장이 끝날 때까지 화면을 유지하고 빠른 중복 클릭으로는 한 세션만 만든다", async () => {
@@ -667,6 +708,67 @@ describe("QuizApp", () => {
     expect(showCount).toBe(1);
   });
 
+  it("광고 보상 저장 뒤 시작 저장만 실패하면 주제를 바꿔 광고 없이 다시 시작한다", async () => {
+    const storage = new ControlledStorage();
+    const repository = new ProgressRepository(storage);
+    await repository.save({
+      version: 1,
+      sessions: { "2026-07-28": createCompletedSession("2026-07-28") },
+      bonus: {
+        ...createBonusEntitlement(),
+        firstFreeUsed: true,
+      },
+      completedBonusIds: [],
+    });
+    let showCount = 0;
+    const rewardAd: RewardAdGateway = {
+      load: async () => true,
+      show: async () => {
+        showCount += 1;
+        storage.failOnceAfter(1);
+        return { rewardGrantId: "durable-reward-before-start-failure" };
+      },
+    };
+    const user = userEvent.setup();
+
+    render(
+      <QuizApp
+        now={new Date("2026-07-28T03:00:00.000Z")}
+        coreQuestions={coreQuestions}
+        bonusQuestions={bundledBonusQuestions}
+        repository={repository}
+        rewardAd={rewardAd}
+      />,
+    );
+
+    await user.click(
+      await screen.findByRole("button", {
+        name: "원하는 주제로 보너스 3문제",
+      }),
+    );
+    await user.click(screen.getByRole("button", { name: "디지털 생활" }));
+    await user.click(
+      await screen.findByRole("button", { name: "광고 보고 보너스 3문제" }),
+    );
+
+    expect(
+      await screen.findByText("보너스를 시작하지 못했어요"),
+    ).toHaveAttribute("role", "alert");
+    expect(screen.queryByText("보너스권 1장이 있어요")).not.toBeInTheDocument();
+
+    await user.click(screen.getByRole("button", { name: "생활안전" }));
+    await user.click(
+      screen.getByRole("button", { name: "광고 보고 보너스 3문제" }),
+    );
+
+    expect(
+      await screen.findByRole("heading", {
+        name: "화재나 구조가 필요할 때 신고하는 번호는 무엇일까요?",
+      }),
+    ).toBeInTheDocument();
+    expect(showCount).toBe(1);
+  });
+
   it("선택할 보너스 문제가 없으면 광고 보상이나 이용권을 만들지 않는다", async () => {
     const repository = new ProgressRepository(
       new BrowserKeyValueStorage(window.localStorage),
@@ -763,7 +865,7 @@ describe("QuizApp", () => {
       new BrowserKeyValueStorage(window.localStorage),
     );
     const firstStart = await repository.startBonusSession(
-      "first-digital-start",
+      "10",
       "2026-07-28",
       "digital",
       bundledBonusQuestions,
@@ -795,7 +897,7 @@ describe("QuizApp", () => {
       completedBonusIds: firstStart.questionIds,
     });
     const secondStart = await repository.startBonusSession(
-      "second-digital-start",
+      "2",
       "2026-07-28",
       "digital",
       bundledBonusQuestions,
@@ -809,6 +911,16 @@ describe("QuizApp", () => {
       "bonus-digital-5",
       "bonus-digital-6",
     ]);
+    const restoredQuestions = secondStart.questionIds.map((questionId) => {
+      const question = bundledBonusQuestions.find(
+        (candidate) => candidate.id === questionId,
+      );
+      if (question == null) {
+        throw new Error(`Missing fixture question ${questionId}`);
+      }
+      return question;
+    });
+    const user = userEvent.setup();
 
     render(
       <QuizApp
@@ -819,12 +931,23 @@ describe("QuizApp", () => {
       />,
     );
 
-    expect(
-      await screen.findByRole("heading", {
-        name: "블루투스는 가까운 기기끼리 무엇을 할 때 쓰일까요?",
-      }),
-    ).toBeInTheDocument();
-    expect(screen.getByText("1 / 3")).toBeInTheDocument();
+    for (const [index, question] of restoredQuestions.entries()) {
+      expect(
+        await screen.findByRole("heading", { name: question.prompt }),
+      ).toBeInTheDocument();
+      expect(screen.getByText(`${index + 1} / 3`)).toBeInTheDocument();
+      await user.click(
+        screen.getByRole("button", {
+          name: question.choices[question.answerIndex],
+        }),
+      );
+      await screen.findByText("저장됐어요.");
+      await user.click(
+        screen.getByRole("button", {
+          name: index === restoredQuestions.length - 1 ? "결과 보기" : "다음 문제",
+        }),
+      );
+    }
   });
 
   it("결과 점수와 같은 문제 링크를 친구에게 공유한다", async () => {

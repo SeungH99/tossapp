@@ -5,7 +5,7 @@ export type BonusUnlockSource =
 
 interface UnlockAttempt {
   attemptId: string;
-  source: Exclude<BonusUnlockSource, "reward_ad">;
+  source: BonusUnlockSource;
 }
 
 export interface BonusEntitlement {
@@ -53,6 +53,7 @@ export function grantStreakTicket(
 export function unlockBonus(
   state: BonusEntitlement,
   attemptId: string,
+  ticketSource: Exclude<BonusUnlockSource, "first_free"> = "streak_ticket",
 ): BonusUnlockResult {
   const existing = state.unlockAttempts.find(
     (attempt) => attempt.attemptId === attemptId,
@@ -78,13 +79,13 @@ export function unlockBonus(
 
   if (state.ticketCount > 0) {
     return {
-      source: "streak_ticket",
+      source: ticketSource,
       state: {
         ...state,
         ticketCount: state.ticketCount - 1,
         unlockAttempts: [
           ...state.unlockAttempts,
-          { attemptId, source: "streak_ticket" },
+          { attemptId, source: ticketSource },
         ],
       },
     };

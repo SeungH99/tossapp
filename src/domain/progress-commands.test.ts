@@ -150,11 +150,45 @@ describe("bonus progress commands", () => {
     expect(first.applied).toBe(true);
     expect(first.state.bonus.ticketCount).toBe(1);
     expect(first.state.rewardGrantIds).toEqual(["reward-1"]);
+    expect(first.state).toMatchObject({ rewardAdTicketCount: 1 });
     expect(duplicate.applied).toBe(false);
     expect(duplicate.state).toBe(first.state);
     expect(() => grantBonusTicketCommand(initial, "  ")).toThrow(
       "rewardGrantId must not be empty",
     );
+  });
+
+  it("광고 보상으로 지급한 이용권은 보너스 시작 출처를 reward_ad로 보존한다", () => {
+    const initial = {
+      ...createEmptyProgress(),
+      bonus: {
+        ...createEmptyProgress().bonus,
+        firstFreeUsed: true,
+      },
+    };
+    const granted = progressCommands.grantBonusTicketCommand(
+      initial,
+      "private-reward-grant",
+    );
+
+    const result = progressCommands.startBonusSessionCommand(
+      granted.state,
+      "bonus-command-from-ad",
+      "2026-07-28",
+      "digital",
+      bonusQuestions,
+    );
+
+    expect(result).toMatchObject({ applied: true, source: "reward_ad" });
+    expect(result.state).toMatchObject({ rewardAdTicketCount: 0 });
+    expect(
+      result.state.bonusStartCommands["bonus-command-from-ad"],
+    ).toMatchObject({
+      source: "reward_ad",
+    });
+    expect(
+      JSON.stringify(result.state.bonusStartCommands["bonus-command-from-ad"]),
+    ).not.toContain("private-reward-grant");
   });
 
   it("보너스 시작은 이용권 소비와 선택된 세션을 하나의 상태로 만든다", () => {
@@ -186,6 +220,11 @@ describe("bonus progress commands", () => {
       sessionKey: "2026-07-28:bonus:digital",
       questionIds: ["bonus-digital-1", "bonus-digital-2"],
       source: "streak_ticket",
+    });
+    expect(result.state).toMatchObject({
+      latestBonusStartCommandIds: {
+        "2026-07-28:bonus:digital": "bonus-command-1",
+      },
     });
     expect(result.session).toEqual({
       dateKey: "2026-07-28:bonus:digital",

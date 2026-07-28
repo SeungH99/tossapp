@@ -177,6 +177,7 @@ export function grantBonusTicketCommand(
         ticketCount: state.bonus.ticketCount + 1,
       },
       rewardGrantIds: [...state.rewardGrantIds, rewardGrantId],
+      rewardAdTicketCount: state.rewardAdTicketCount + 1,
     },
   };
 }
@@ -215,8 +216,13 @@ export function startBonusSessionCommand(
     return { applied: false, reason: "no-questions", state };
   }
 
-  const unlock = unlockBonus(state.bonus, commandId);
-  if (unlock.source === "reward_ad") {
+  const rewardAdTicketAvailable = state.rewardAdTicketCount > 0;
+  const unlock = unlockBonus(
+    state.bonus,
+    commandId,
+    rewardAdTicketAvailable ? "reward_ad" : "streak_ticket",
+  );
+  if (unlock.source === "reward_ad" && state.bonus.ticketCount === 0) {
     return {
       applied: false,
       reason: "reward-ad-required",
@@ -239,6 +245,10 @@ export function startBonusSessionCommand(
   const nextState: ProgressState = {
     ...state,
     bonus: unlock.state,
+    rewardAdTicketCount:
+      unlock.source === "reward_ad"
+        ? state.rewardAdTicketCount - 1
+        : state.rewardAdTicketCount,
     sessions: {
       ...state.sessions,
       [sessionKey]: session,
@@ -246,6 +256,10 @@ export function startBonusSessionCommand(
     bonusStartCommands: {
       ...state.bonusStartCommands,
       [commandId]: record,
+    },
+    latestBonusStartCommandIds: {
+      ...state.latestBonusStartCommandIds,
+      [sessionKey]: commandId,
     },
   };
 
