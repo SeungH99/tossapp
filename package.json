@@ -1,0 +1,48 @@
+{
+  "name": "geuttae-yojeum",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "granite dev",
+    "dev:web": "vite --configLoader runner --host 127.0.0.1",
+    "prebuild": "node scripts/clean-build.mjs",
+    "build": "ait build",
+    "prebuild:web": "node scripts/clean-build.mjs",
+    "build:web": "vite build --configLoader runner",
+    "typecheck": "tsc -b --pretty false",
+    "test": "vitest --configLoader runner",
+    "test:run": "vitest run --configLoader runner",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@apps-in-toss/web-framework": "^2.10.7",
+    "@emotion/react": "^11.14.0",
+    "@toss/tds-colors": "latest",
+    "@toss/tds-mobile": "latest",
+    "@toss/tds-mobile-ait": "latest",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^22.13.4",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.21.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^15.15.0",
+    "jsdom": "^26.0.0",
+    "prettier": "^3.4.2",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.24.1",
+    "vite": "^6.2.0",
+    "vitest": "^3.0.7"
+  }
+}

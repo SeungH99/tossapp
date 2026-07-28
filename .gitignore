@@ -1,0 +1,15 @@
+node_modules/
+dist/
+coverage/
+.vite/
+.granite/
+.playwright-cli/
+.worktrees/
+output/
+tmp/
+*.ait
+*.tsbuildinfo
+*.log
+.DS_Store
+# Added by code-review-graph
+.code-review-graph/
