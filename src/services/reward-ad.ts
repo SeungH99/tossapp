@@ -5,11 +5,27 @@ import {
 
 export interface RewardAdGateway {
   load(): Promise<boolean>;
-  show(): Promise<boolean>;
+  show(): Promise<RewardAdReward | null>;
+}
+
+export interface RewardAdReward {
+  rewardGrantId: string;
+}
+
+type RewardGrantIdFactory = () => string;
+
+function defaultRewardGrantId(): string {
+  return (
+    globalThis.crypto?.randomUUID?.() ??
+    `reward-${Date.now()}-${Math.random().toString(36).slice(2)}`
+  );
 }
 
 export class AppsInTossRewardAdGateway implements RewardAdGateway {
-  constructor(private readonly adGroupId: string) {}
+  constructor(
+    private readonly adGroupId: string,
+    private readonly createRewardGrantId: RewardGrantIdFactory = defaultRewardGrantId,
+  ) {}
 
   async load(): Promise<boolean> {
     if (!loadFullScreenAd.isSupported()) {
@@ -44,38 +60,41 @@ export class AppsInTossRewardAdGateway implements RewardAdGateway {
     });
   }
 
-  async show(): Promise<boolean> {
+  async show(): Promise<RewardAdReward | null> {
     if (!showFullScreenAd.isSupported()) {
-      return false;
+      return null;
     }
 
     return new Promise((resolve) => {
-      let rewarded = false;
+      let reward: RewardAdReward | null = null;
       let settled = false;
       const cleanupRef: { current?: () => void } = {};
-      const finish = (didEarnReward: boolean) => {
+      const finish = (result: RewardAdReward | null) => {
         if (settled) {
           return;
         }
         settled = true;
         cleanupRef.current?.();
-        resolve(didEarnReward);
+        resolve(result);
       };
 
       const cleanup = showFullScreenAd({
         options: { adGroupId: this.adGroupId },
         onEvent: (event) => {
+          if (settled) {
+            return;
+          }
           if (event.type === "userEarnedReward") {
-            rewarded = true;
+            reward ??= { rewardGrantId: this.createRewardGrantId() };
           }
           if (event.type === "dismissed") {
-            finish(rewarded);
+            finish(reward);
           }
           if (event.type === "failedToShow") {
-            finish(false);
+            finish(null);
           }
         },
-        onError: () => finish(false),
+        onError: () => finish(null),
       });
       cleanupRef.current = cleanup;
       if (settled) {

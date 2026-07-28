@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
 
@@ -71,11 +71,7 @@ const coreQuestions: CoreQuestion[] = [
 function createCompletedSession(dateKey: string) {
   let session = createQuizSession(dateKey);
   for (const question of coreQuestions) {
-    session = answerCurrentQuestion(
-      session,
-      question,
-      question.answerIndex,
-    );
+    session = answerCurrentQuestion(session, question, question.answerIndex);
     session = advanceQuiz(session, coreQuestions.length);
   }
   return session;
@@ -135,16 +131,12 @@ describe("QuizApp", () => {
 
     expect(screen.getByText("정답이에요")).toBeInTheDocument();
     expect(screen.getByText("기록을 저장하고 있어요")).toBeInTheDocument();
-    expect(
-      screen.getByRole("button", { name: "다음 문제" }),
-    ).toBeDisabled();
+    expect(screen.getByRole("button", { name: "다음 문제" })).toBeDisabled();
 
     releaseWrite();
 
     expect(await screen.findByText("저장됐어요.")).toBeInTheDocument();
-    expect(
-      screen.getByRole("button", { name: "다음 문제" }),
-    ).toBeEnabled();
+    expect(screen.getByRole("button", { name: "다음 문제" })).toBeEnabled();
   });
 
   it("저장 실패 시 다음을 잠그고 같은 답변을 안전하게 다시 저장한다", async () => {
@@ -167,22 +159,17 @@ describe("QuizApp", () => {
     );
     await user.click(screen.getByRole("button", { name: "동전" }));
 
-    expect(
-      await screen.findByText("기록을 남기지 못했어요"),
-    ).toHaveAttribute("role", "alert");
-    expect(
-      screen.getByRole("button", { name: "다음 문제" }),
-    ).toBeDisabled();
+    expect(await screen.findByText("기록을 남기지 못했어요")).toHaveAttribute(
+      "role",
+      "alert",
+    );
+    expect(screen.getByRole("button", { name: "다음 문제" })).toBeDisabled();
 
     storage.failWrites = false;
-    await user.click(
-      screen.getByRole("button", { name: "다시 저장" }),
-    );
+    await user.click(screen.getByRole("button", { name: "다시 저장" }));
 
     expect(await screen.findByText("저장됐어요.")).toBeInTheDocument();
-    expect(
-      screen.getByRole("button", { name: "다음 문제" }),
-    ).toBeEnabled();
+    expect(screen.getByRole("button", { name: "다음 문제" })).toBeEnabled();
     const restored = await repository.load();
     expect(restored.kind).not.toBe("unrecoverable");
     if (restored.kind !== "unrecoverable") {
@@ -200,9 +187,7 @@ describe("QuizApp", () => {
       />,
     );
 
-    await user.click(
-      screen.getByRole("button", { name: "오늘의 3문제 시작" }),
-    );
+    await user.click(screen.getByRole("button", { name: "오늘의 3문제 시작" }));
 
     expect(
       screen.getByRole("heading", {
@@ -215,9 +200,7 @@ describe("QuizApp", () => {
 
     expect(screen.getByText("정답이에요")).toBeInTheDocument();
     expect(
-      screen.getByText(
-        "안내음이 들리면 동전을 더 넣어 통화를 이어갔어요.",
-      ),
+      screen.getByText("안내음이 들리면 동전을 더 넣어 통화를 이어갔어요."),
     ).toBeInTheDocument();
   });
 
@@ -231,14 +214,10 @@ describe("QuizApp", () => {
       />,
     );
 
-    await user.click(
-      screen.getByRole("button", { name: "오늘의 3문제 시작" }),
-    );
+    await user.click(screen.getByRole("button", { name: "오늘의 3문제 시작" }));
     await user.click(screen.getByRole("button", { name: "동전" }));
     await user.click(screen.getByRole("button", { name: "다음 문제" }));
-    await user.click(
-      screen.getByRole("button", { name: "블루투스" }),
-    );
+    await user.click(screen.getByRole("button", { name: "블루투스" }));
     await user.click(screen.getByRole("button", { name: "다음 문제" }));
     await user.click(screen.getByRole("button", { name: "창문 열기" }));
     await user.click(screen.getByRole("button", { name: "결과 보기" }));
@@ -246,9 +225,7 @@ describe("QuizApp", () => {
     expect(
       screen.getByRole("heading", { name: "오늘 결과" }),
     ).toBeInTheDocument();
-    expect(
-      screen.getByLabelText("오늘 점수 2 / 3"),
-    ).toBeInTheDocument();
+    expect(screen.getByLabelText("오늘 점수 2 / 3")).toBeInTheDocument();
 
     await user.click(
       screen.getByRole("button", {
@@ -266,9 +243,7 @@ describe("QuizApp", () => {
       screen.getByRole("button", { name: "첫 보너스 무료로 시작" }),
     ).toBeDisabled();
 
-    await user.click(
-      screen.getByRole("button", { name: "디지털 생활" }),
-    );
+    await user.click(screen.getByRole("button", { name: "디지털 생활" }));
 
     expect(
       screen.getByRole("button", { name: "첫 보너스 무료로 시작" }),
@@ -384,16 +359,10 @@ describe("QuizApp", () => {
       }),
     );
 
-    expect(
-      screen.getByText("이번 기록은 저장되지 않아요"),
-    ).toBeInTheDocument();
-    await user.click(
-      screen.getByRole("button", { name: "오늘의 3문제 시작" }),
-    );
+    expect(screen.getByText("이번 기록은 저장되지 않아요")).toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: "오늘의 3문제 시작" }));
     await user.click(screen.getByRole("button", { name: "동전" }));
-    expect(
-      screen.getByRole("button", { name: "다음 문제" }),
-    ).toBeEnabled();
+    expect(screen.getByRole("button", { name: "다음 문제" })).toBeEnabled();
     expect({
       slotA: window.localStorage.getItem(progressStorageKeys.slotA),
       slotB: window.localStorage.getItem(progressStorageKeys.slotB),
@@ -411,9 +380,7 @@ describe("QuizApp", () => {
       />,
     );
 
-    await user.click(
-      screen.getByRole("button", { name: "오늘의 3문제 시작" }),
-    );
+    await user.click(screen.getByRole("button", { name: "오늘의 3문제 시작" }));
     await user.click(screen.getByRole("button", { name: "동전" }));
     await user.click(screen.getByRole("button", { name: "다음 문제" }));
     await user.click(screen.getByRole("button", { name: "QR 코드" }));
@@ -425,9 +392,7 @@ describe("QuizApp", () => {
         name: "원하는 주제로 보너스 3문제",
       }),
     );
-    await user.click(
-      screen.getByRole("button", { name: "디지털 생활" }),
-    );
+    await user.click(screen.getByRole("button", { name: "디지털 생활" }));
     await user.click(
       screen.getByRole("button", { name: "첫 보너스 무료로 시작" }),
     );
@@ -528,7 +493,7 @@ describe("QuizApp", () => {
     });
     const rewardAd: RewardAdGateway = {
       load: async () => true,
-      show: async () => true,
+      show: async () => ({ rewardGrantId: "reward-ad-existing-test" }),
     };
     const user = userEvent.setup();
 
@@ -547,9 +512,7 @@ describe("QuizApp", () => {
         name: "원하는 주제로 보너스 3문제",
       }),
     );
-    await user.click(
-      screen.getByRole("button", { name: "디지털 생활" }),
-    );
+    await user.click(screen.getByRole("button", { name: "디지털 생활" }));
     await user.click(
       await screen.findByRole("button", {
         name: "광고 보고 보너스 3문제",
@@ -561,6 +524,237 @@ describe("QuizApp", () => {
         name: "와이파이 표시가 뜻하는 것은 무엇일까요?",
       }),
     ).toBeInTheDocument();
+  });
+
+  it("보너스 시작 저장이 끝날 때까지 화면을 유지하고 빠른 중복 클릭으로는 한 세션만 만든다", async () => {
+    const storage = new ControlledStorage();
+    const repository = new ProgressRepository(storage);
+    const analyticsEvents: Array<{
+      name: string;
+      params?: Record<string, string | number | boolean>;
+    }> = [];
+    await repository.save({
+      version: 1,
+      sessions: { "2026-07-28": createCompletedSession("2026-07-28") },
+      bonus: createBonusEntitlement(),
+      completedBonusIds: [],
+    });
+    const releaseWrite = storage.holdWrites();
+
+    render(
+      <QuizApp
+        now={new Date("2026-07-28T03:00:00.000Z")}
+        coreQuestions={coreQuestions}
+        bonusQuestions={bundledBonusQuestions}
+        repository={repository}
+        analytics={{
+          track: (name, params) => analyticsEvents.push({ name, params }),
+        }}
+      />,
+    );
+
+    await userEvent.click(
+      await screen.findByRole("button", {
+        name: "원하는 주제로 보너스 3문제",
+      }),
+    );
+    await userEvent.click(screen.getByRole("button", { name: "디지털 생활" }));
+    const start = screen.getByRole("button", {
+      name: "첫 보너스 무료로 시작",
+    });
+
+    fireEvent.click(start);
+    fireEvent.click(start);
+
+    expect(screen.getByText("보너스를 시작하고 있어요")).toHaveAttribute(
+      "role",
+      "status",
+    );
+    expect(
+      screen.getByRole("heading", { name: "보너스 주제 선택" }),
+    ).toBeInTheDocument();
+
+    releaseWrite();
+
+    expect(
+      await screen.findByRole("heading", {
+        name: "와이파이 표시가 뜻하는 것은 무엇일까요?",
+      }),
+    ).toBeInTheDocument();
+    await waitFor(async () => {
+      const loaded = await repository.load();
+      expect(loaded.kind).not.toBe("unrecoverable");
+      if (loaded.kind !== "unrecoverable") {
+        expect(Object.keys(loaded.state.bonusStartCommands)).toHaveLength(1);
+      }
+    });
+    expect(
+      analyticsEvents.filter((event) => event.name === "bonus_start"),
+    ).toEqual([
+      {
+        name: "bonus_start",
+        params: {
+          dateKey: "2026-07-28",
+          mode: "current",
+          topic: "digital",
+          unlockSource: "first_free",
+        },
+      },
+    ]);
+  });
+
+  it("광고 보상 저장 실패 뒤 현재 권리를 유지하고 같은 보상 ID로 다시 시도한다", async () => {
+    const storage = new ControlledStorage();
+    const repository = new ProgressRepository(storage);
+    await repository.save({
+      version: 1,
+      sessions: { "2026-07-28": createCompletedSession("2026-07-28") },
+      bonus: {
+        ...createBonusEntitlement(),
+        firstFreeUsed: true,
+      },
+      completedBonusIds: [],
+    });
+    storage.failWrites = true;
+    let showCount = 0;
+    const rewardAd: RewardAdGateway = {
+      load: async () => true,
+      show: async () => {
+        showCount += 1;
+        return { rewardGrantId: "reward-ad-retry" };
+      },
+    };
+    const user = userEvent.setup();
+
+    render(
+      <QuizApp
+        now={new Date("2026-07-28T03:00:00.000Z")}
+        coreQuestions={coreQuestions}
+        bonusQuestions={bundledBonusQuestions}
+        repository={repository}
+        rewardAd={rewardAd}
+      />,
+    );
+
+    await user.click(
+      await screen.findByRole("button", {
+        name: "원하는 주제로 보너스 3문제",
+      }),
+    );
+    await user.click(screen.getByRole("button", { name: "디지털 생활" }));
+    await user.click(
+      await screen.findByRole("button", { name: "광고 보고 보너스 3문제" }),
+    );
+
+    expect(
+      await screen.findByText("보너스를 시작하지 못했어요"),
+    ).toHaveAttribute("role", "alert");
+    expect(
+      screen.getByRole("heading", { name: "보너스 주제 선택" }),
+    ).toBeInTheDocument();
+    expect(screen.queryByText("보너스권 1장이 있어요")).not.toBeInTheDocument();
+
+    storage.failWrites = false;
+    await user.click(
+      screen.getByRole("button", { name: "광고 보고 보너스 3문제" }),
+    );
+
+    expect(
+      await screen.findByRole("heading", {
+        name: "와이파이 표시가 뜻하는 것은 무엇일까요?",
+      }),
+    ).toBeInTheDocument();
+    expect(showCount).toBe(1);
+  });
+
+  it("선택할 보너스 문제가 없으면 광고 보상이나 이용권을 만들지 않는다", async () => {
+    const repository = new ProgressRepository(
+      new BrowserKeyValueStorage(window.localStorage),
+    );
+    window.localStorage.clear();
+    await repository.save({
+      version: 1,
+      sessions: { "2026-07-28": createCompletedSession("2026-07-28") },
+      bonus: {
+        ...createBonusEntitlement(),
+        firstFreeUsed: true,
+      },
+      completedBonusIds: [],
+    });
+    let showCount = 0;
+    const rewardAd: RewardAdGateway = {
+      load: async () => true,
+      show: async () => {
+        showCount += 1;
+        return { rewardGrantId: "unused-reward" };
+      },
+    };
+    const user = userEvent.setup();
+
+    render(
+      <QuizApp
+        now={new Date("2026-07-28T03:00:00.000Z")}
+        coreQuestions={coreQuestions}
+        bonusQuestions={[]}
+        repository={repository}
+        rewardAd={rewardAd}
+      />,
+    );
+
+    await user.click(
+      await screen.findByRole("button", {
+        name: "원하는 주제로 보너스 3문제",
+      }),
+    );
+    await user.click(screen.getByRole("button", { name: "디지털 생활" }));
+    await user.click(
+      await screen.findByRole("button", { name: "광고 보고 보너스 3문제" }),
+    );
+
+    expect(
+      await screen.findByText("준비된 보너스 문제가 없어요"),
+    ).toHaveAttribute("role", "alert");
+    expect(
+      screen.getByRole("heading", { name: "보너스 주제 선택" }),
+    ).toBeInTheDocument();
+    expect(showCount).toBe(0);
+    await waitFor(async () => {
+      const loaded = await repository.load();
+      expect(loaded.kind).not.toBe("unrecoverable");
+      if (loaded.kind !== "unrecoverable") {
+        expect(loaded.state.bonus.ticketCount).toBe(0);
+        expect(loaded.state.rewardGrantIds).toEqual([]);
+      }
+    });
+  });
+
+  it("저장된 보너스 명령의 문제 순서로 진행 중인 세션을 다시 불러온다", async () => {
+    const repository = new ProgressRepository(
+      new BrowserKeyValueStorage(window.localStorage),
+    );
+    window.localStorage.clear();
+    await repository.startBonusSession(
+      "bonus-start-for-reload",
+      "2026-07-28",
+      "digital",
+      bundledBonusQuestions,
+    );
+
+    render(
+      <QuizApp
+        now={new Date("2026-07-28T03:00:00.000Z")}
+        coreQuestions={coreQuestions}
+        bonusQuestions={[...bundledBonusQuestions].reverse()}
+        repository={repository}
+      />,
+    );
+
+    expect(
+      await screen.findByRole("heading", {
+        name: "와이파이 표시가 뜻하는 것은 무엇일까요?",
+      }),
+    ).toBeInTheDocument();
+    expect(screen.getByText("1 / 3")).toBeInTheDocument();
   });
 
   it("결과 점수와 같은 문제 링크를 친구에게 공유한다", async () => {
@@ -608,9 +802,10 @@ describe("QuizApp", () => {
       }),
     );
 
-    expect(
-      await screen.findByText("공유할 내용을 열었어요."),
-    ).toHaveAttribute("role", "status");
+    expect(await screen.findByText("공유할 내용을 열었어요.")).toHaveAttribute(
+      "role",
+      "status",
+    );
     expect(sharedScores).toEqual([3]);
   });
 
@@ -706,9 +901,7 @@ describe("QuizApp", () => {
       />,
     );
 
-    await user.click(
-      screen.getByRole("button", { name: "오늘의 3문제 시작" }),
-    );
+    await user.click(screen.getByRole("button", { name: "오늘의 3문제 시작" }));
     for (const [index, question] of coreQuestions.entries()) {
       await user.click(
         screen.getByRole("button", {
@@ -717,10 +910,7 @@ describe("QuizApp", () => {
       );
       await user.click(
         screen.getByRole("button", {
-          name:
-            index === coreQuestions.length - 1
-              ? "결과 보기"
-              : "다음 문제",
+          name: index === coreQuestions.length - 1 ? "결과 보기" : "다음 문제",
         }),
       );
     }

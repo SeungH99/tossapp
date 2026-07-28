@@ -11,13 +11,15 @@ import "./App.css";
 import {
   createBonusEntitlement,
   grantStreakTicket,
-  unlockBonus,
 } from "./domain/bonus-entitlement";
 import { selectBonusQuestions } from "./domain/bonus-selection";
 import { toKstDateKey } from "./domain/date-key";
 import {
   applyAnswerCommand,
+  grantBonusTicketCommand,
+  startBonusSessionCommand,
   type AnswerCommand,
+  type StartBonusSessionResult,
 } from "./domain/progress-commands";
 import type { ProgressState } from "./domain/progress-state";
 import type {
@@ -44,17 +46,9 @@ import {
 } from "./services/progress-repository";
 import type { QuizShareGateway } from "./services/quiz-share";
 import type { RewardAdGateway } from "./services/reward-ad";
-import type {
-  AnalyticsGateway,
-  AnalyticsParams,
-} from "./services/analytics";
+import type { AnalyticsGateway, AnalyticsParams } from "./services/analytics";
 
-type AppScreen =
-  | "home"
-  | "quiz"
-  | "result"
-  | "bonus-topic"
-  | "bonus-quiz";
+type AppScreen = "home" | "quiz" | "result" | "bonus-topic" | "bonus-quiz";
 
 interface QuizAppProps {
   now: Date;
@@ -68,6 +62,34 @@ interface QuizAppProps {
 
 type AdState = "loading" | "ready" | "unavailable";
 type AnswerSaveStatus = "idle" | "saving" | "saved" | "error";
+type BonusStartStatus = "idle" | "showing-ad" | "saving" | "error";
+
+interface PendingBonusStart {
+  commandId: string;
+  topic: BonusTopic;
+  rewardGrantId?: string;
+}
+
+function createBonusStartCommandId(dateKey: string, topic: BonusTopic): string {
+  const suffix =
+    globalThis.crypto?.randomUUID?.() ??
+    `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+  return `bonus:${dateKey}:${topic}:${suffix}`;
+}
+
+function findBonusQuestionsById(
+  questionIds: string[],
+  bonusQuestions: BonusQuestion[],
+): BonusQuestion[] | null {
+  const byId = new Map(
+    bonusQuestions.map((question) => [question.id, question]),
+  );
+  const selected = questionIds.map((questionId) => byId.get(questionId));
+
+  return selected.every((question) => question != null)
+    ? (selected as BonusQuestion[])
+    : null;
+}
 
 const lensLabels: Record<CoreLens, string> = {
   then: "그때",
@@ -181,7 +203,9 @@ function QuizScreen({
       {persistenceNotice}
       <header className="quiz-header">
         <strong>{lensLabels[question.lens]}</strong>
-        <span aria-label={`진행 ${session.currentIndex + 1} / ${questions.length}`}>
+        <span
+          aria-label={`진행 ${session.currentIndex + 1} / ${questions.length}`}
+        >
           {session.currentIndex + 1} / {questions.length}
         </span>
       </header>
@@ -354,6 +378,8 @@ function ResultScreen({
 function BonusTopicScreen({
   entitlement,
   adState,
+  startStatus,
+  startError,
   selectedTopic,
   onSelectTopic,
   onStart,
@@ -361,6 +387,8 @@ function BonusTopicScreen({
 }: {
   entitlement: ReturnType<typeof createBonusEntitlement>;
   adState: AdState;
+  startStatus: BonusStartStatus;
+  startError: string | null;
   selectedTopic: BonusTopic | null;
   onSelectTopic: (topic: BonusTopic) => void;
   onStart: () => void;
@@ -368,6 +396,7 @@ function BonusTopicScreen({
 }) {
   const needsRewardAd =
     entitlement.firstFreeUsed && entitlement.ticketCount === 0;
+  const isStarting = startStatus === "showing-ad" || startStatus === "saving";
   const startLabel = !entitlement.firstFreeUsed
     ? "첫 보너스 무료로 시작"
     : entitlement.ticketCount > 0
@@ -403,6 +432,7 @@ function BonusTopicScreen({
             <button
               aria-pressed={isSelected}
               className={isSelected ? "topic-button selected" : "topic-button"}
+              disabled={isStarting}
               key={topic.id}
               onClick={() => onSelectTopic(topic.id)}
               type="button"
@@ -418,6 +448,7 @@ function BonusTopicScreen({
         className="primary-button"
         disabled={
           selectedTopic == null ||
+          isStarting ||
           (needsRewardAd && adState !== "ready")
         }
         onClick={onStart}
@@ -426,6 +457,16 @@ function BonusTopicScreen({
         {startLabel}
       </button>
       <p className="support-copy">{supportCopy}</p>
+      {isStarting ? (
+        <p className="bonus-start-status" role="status">
+          보너스를 시작하고 있어요
+        </p>
+      ) : null}
+      {startStatus === "error" && startError != null ? (
+        <p className="bonus-start-error" role="alert">
+          {startError}
+        </p>
+      ) : null}
     </main>
   );
 }
@@ -456,6 +497,9 @@ export default function QuizApp({
   const [answerSaveStatus, setAnswerSaveStatus] =
     useState<AnswerSaveStatus>("idle");
   const [selectedTopic, setSelectedTopic] = useState<BonusTopic | null>(null);
+  const [bonusStartStatus, setBonusStartStatus] =
+    useState<BonusStartStatus>("idle");
+  const [bonusStartError, setBonusStartError] = useState<string | null>(null);
   const [bonusSet, setBonusSet] = useState<BonusQuestion[]>([]);
   const [bonusSession, setBonusSession] = useState<QuizSession | null>(null);
   const [savedSessions, setSavedSessions] = useState<
@@ -473,6 +517,8 @@ export default function QuizApp({
     command: AnswerCommand;
     target: "core" | "bonus";
   } | null>(null);
+  const bonusStartInFlightRef = useRef(false);
+  const pendingBonusStartRef = useRef<PendingBonusStart | null>(null);
 
   const track = useCallback(
     (name: string, params: AnalyticsParams = {}) => {
@@ -546,10 +592,7 @@ export default function QuizApp({
 
         const progress = result.state;
         setShowRecoveredNotice(result.kind === "recovered-slot");
-        const streak = calculateCompletionStreak(
-          dateKey,
-          progress.sessions,
-        );
+        const streak = calculateCompletionStreak(dateKey, progress.sessions);
         const grantedEntitlement = grantStreakTicket(
           progress.bonus,
           streak.startDate,
@@ -585,23 +628,36 @@ export default function QuizApp({
           );
 
           if (isKnownTopic) {
-            const selection = selectBonusQuestions(
-              topic,
-              bonusQuestions,
-              new Set(progress.completedBonusIds),
+            const storedStart = Object.values(progress.bonusStartCommands).find(
+              (command) => command.sessionKey === bonusKey,
             );
+            const restoredQuestions =
+              storedStart == null
+                ? selectBonusQuestions(
+                    topic,
+                    bonusQuestions,
+                    new Set(progress.completedBonusIds),
+                  ).questions
+                : findBonusQuestionsById(
+                    storedStart.questionIds,
+                    bonusQuestions,
+                  );
+
+            if (restoredQuestions == null || restoredQuestions.length === 0) {
+              setHydrated(true);
+              return;
+            }
+
+            setBonusStartStatus("idle");
+            setBonusStartError(null);
             setSelectedTopic(topic);
-            setBonusSet(selection.questions);
+            setBonusSet(restoredQuestions);
             setBonusSession(restoredBonusSession);
             setScreen("bonus-quiz");
           }
         } else if (restoredSession != null) {
           setSession(restoredSession);
-          setScreen(
-            restoredSession.phase === "completed"
-              ? "result"
-              : "quiz",
-          );
+          setScreen(restoredSession.phase === "completed" ? "result" : "quiz");
         }
         setHydrated(true);
       })
@@ -627,10 +683,7 @@ export default function QuizApp({
     }
   };
 
-  const submitAnswer = (
-    command: AnswerCommand,
-    target: "core" | "bonus",
-  ) => {
+  const submitAnswer = (command: AnswerCommand, target: "core" | "bonus") => {
     const optimistic = applyAnswerCommand(progressRef.current, command);
     progressRef.current = optimistic.state;
     pendingAnswerRef.current = { command, target };
@@ -696,10 +749,7 @@ export default function QuizApp({
   };
 
   const handleNext = () => {
-    if (
-      answerSaveStatus === "saving" ||
-      answerSaveStatus === "error"
-    ) {
+    if (answerSaveStatus === "saving" || answerSaveStatus === "error") {
       return;
     }
     const next = advanceQuiz(session, questions.length);
@@ -716,10 +766,7 @@ export default function QuizApp({
       [dateKey]: next,
     };
     if (next.phase === "completed") {
-      const streak = calculateCompletionStreak(
-        dateKey,
-        nextSessions,
-      );
+      const streak = calculateCompletionStreak(dateKey, nextSessions);
       nextEntitlement = grantStreakTicket(
         entitlement,
         streak.startDate,
@@ -755,80 +802,146 @@ export default function QuizApp({
     });
   };
 
-  const beginBonus = (
-    topic: BonusTopic,
-    nextEntitlement: ReturnType<typeof createBonusEntitlement>,
-  ) => {
-    const selection = selectBonusQuestions(
-      topic,
-      bonusQuestions,
-      new Set(completedBonusIds),
-    );
+  const failBonusStart = (message: string) => {
+    bonusStartInFlightRef.current = false;
+    setBonusStartStatus("error");
+    setBonusStartError(message);
+  };
 
-    if (selection.questions.length === 0) {
+  const applyStartedBonus = (
+    topic: BonusTopic,
+    result: StartBonusSessionResult,
+  ) => {
+    if (!result.applied && result.reason !== "duplicate") {
+      failBonusStart(
+        result.reason === "no-questions"
+          ? "준비된 보너스 문제가 없어요"
+          : "광고 보상을 확인하지 못했어요",
+      );
       return;
     }
 
-    const nextBonusSession = createQuizSession(
-      `${dateKey}:bonus:${topic}`,
+    if (result.session == null || result.questionIds == null) {
+      failBonusStart("보너스를 시작하지 못했어요");
+      return;
+    }
+
+    const selectedQuestions = findBonusQuestionsById(
+      result.questionIds,
+      bonusQuestions,
     );
-    setEntitlement(nextEntitlement);
-    setBonusSet(selection.questions);
-    setBonusSession(nextBonusSession);
-    persistSnapshot({
-      ...progressRef.current,
-      sessions: {
-        ...progressRef.current.sessions,
-        [nextBonusSession.dateKey]: nextBonusSession,
-      },
-      bonus: nextEntitlement,
-    });
-    track("bonus_start", { topic });
+    if (selectedQuestions == null || selectedQuestions.length === 0) {
+      failBonusStart("준비된 보너스 문제를 불러오지 못했어요");
+      return;
+    }
+
+    progressRef.current = result.state;
+    setSavedSessions(result.state.sessions);
+    setEntitlement(result.state.bonus);
+    setCompletedBonusIds(result.state.completedBonusIds);
+    setSelectedTopic(topic);
+    setBonusSet(selectedQuestions);
+    setBonusSession(result.session);
+    pendingBonusStartRef.current = null;
+    bonusStartInFlightRef.current = false;
+    setBonusStartStatus("idle");
+    setBonusStartError(null);
+    if (result.applied) {
+      track("bonus_start", { topic, unlockSource: result.source });
+    }
     setScreen("bonus-quiz");
   };
 
   const handleStartBonus = () => {
-    if (selectedTopic == null) {
+    if (selectedTopic == null || bonusStartInFlightRef.current) {
       return;
     }
 
     const topic = selectedTopic;
-    const unlock = unlockBonus(
-      entitlement,
-      `bonus:${dateKey}:${topic}:${completedBonusIds.length}`,
-    );
-
-    if (unlock.source !== "reward_ad") {
-      track("bonus_unlock", {
+    if (
+      selectBonusQuestions(
         topic,
-        unlockSource: unlock.source,
-      });
-      beginBonus(topic, unlock.state);
+        bonusQuestions,
+        new Set(progressRef.current.completedBonusIds),
+      ).questions.length === 0
+    ) {
+      failBonusStart("준비된 보너스 문제가 없어요");
       return;
     }
 
-    if (rewardAd == null || adState !== "ready") {
-      return;
-    }
+    const pending =
+      pendingBonusStartRef.current?.topic === topic
+        ? pendingBonusStartRef.current
+        : {
+            commandId: createBonusStartCommandId(dateKey, topic),
+            topic,
+          };
+    pendingBonusStartRef.current = pending;
+    bonusStartInFlightRef.current = true;
+    setBonusStartError(null);
 
-    setAdState("loading");
-    track("reward_ad_start", { topic });
-    void rewardAd.show().then((rewarded) => {
-      if (rewarded) {
-        track("reward_ad_complete", { topic });
-        track("bonus_unlock", {
-          topic,
-          unlockSource: "reward_ad",
-        });
-        beginBonus(topic, entitlement);
-      } else {
-        track("reward_ad_fail", { topic });
+    const requiresRewardAd =
+      progressRef.current.bonus.firstFreeUsed &&
+      progressRef.current.bonus.ticketCount === 0;
+    const useRepository =
+      repository != null && persistenceWritable && !noSaveMode;
+
+    void (async () => {
+      let shouldReloadRewardAd = false;
+
+      try {
+        let state = progressRef.current;
+        if (requiresRewardAd) {
+          if (pending.rewardGrantId == null) {
+            if (rewardAd == null || adState !== "ready") {
+              failBonusStart("광고를 준비하지 못했어요");
+              return;
+            }
+
+            shouldReloadRewardAd = true;
+            setBonusStartStatus("showing-ad");
+            setAdState("loading");
+            const reward = await rewardAd.show();
+            if (reward == null) {
+              failBonusStart("광고 보상을 확인하지 못했어요");
+              return;
+            }
+            pending.rewardGrantId = reward.rewardGrantId;
+          }
+
+          setBonusStartStatus("saving");
+          const grant = useRepository
+            ? await repository.grantBonusTicket(pending.rewardGrantId)
+            : grantBonusTicketCommand(state, pending.rewardGrantId);
+          state = grant.state;
+        }
+
+        setBonusStartStatus("saving");
+        const result = useRepository
+          ? await repository.startBonusSession(
+              pending.commandId,
+              dateKey,
+              topic,
+              bonusQuestions,
+            )
+          : startBonusSessionCommand(
+              state,
+              pending.commandId,
+              dateKey,
+              topic,
+              bonusQuestions,
+            );
+        applyStartedBonus(topic, result);
+      } catch {
+        failBonusStart("보너스를 시작하지 못했어요");
+      } finally {
+        if (shouldReloadRewardAd && rewardAd != null) {
+          void rewardAd.load().then((loaded) => {
+            setAdState(loaded ? "ready" : "unavailable");
+          });
+        }
       }
-
-      return rewardAd.load().then((loaded) => {
-        setAdState(loaded ? "ready" : "unavailable");
-      });
-    });
+    })();
   };
 
   const handleBonusAnswer = (selectedIndex: number) => {
@@ -905,9 +1018,7 @@ export default function QuizApp({
       <main className="app-shell storage-error-screen">
         <p className="storage-error-brand">그때요즘</p>
         <h1>기록을 안전하게 열지 못했어요</h1>
-        <p>
-          기존 기록은 덮어쓰지 않고 그대로 보관하고 있어요.
-        </p>
+        <p>기존 기록은 덮어쓰지 않고 그대로 보관하고 있어요.</p>
         <button
           className="primary-button"
           type="button"
@@ -976,7 +1087,11 @@ export default function QuizApp({
       <ResultScreen
         entitlement={entitlement}
         score={scoreQuiz(session)}
-        onBonus={() => setScreen("bonus-topic")}
+        onBonus={() => {
+          setBonusStartStatus("idle");
+          setBonusStartError(null);
+          setScreen("bonus-topic");
+        }}
         onShare={handleShare}
         persistenceNotice={persistenceNotice}
         shareStatus={shareStatus}
@@ -1002,8 +1117,18 @@ export default function QuizApp({
     <BonusTopicScreen
       adState={adState}
       entitlement={entitlement}
+      startError={bonusStartError}
+      startStatus={bonusStartStatus}
       selectedTopic={selectedTopic}
       onSelectTopic={(topic) => {
+        if (bonusStartInFlightRef.current) {
+          return;
+        }
+        if (topic !== selectedTopic) {
+          pendingBonusStartRef.current = null;
+          setBonusStartStatus("idle");
+          setBonusStartError(null);
+        }
         setSelectedTopic(topic);
         track("bonus_topic_select", { topic });
       }}
