@@ -16,6 +16,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  overflow-x: clip;
   background: #f2f4f6;
 }
 
@@ -35,7 +36,8 @@ a:focus-visible {
 }
 
 .app-shell {
-  width: min(100%, 480px);
+  width: 100%;
+  max-width: 480px;
   min-height: 100vh;
   margin: 0 auto;
   padding:
@@ -378,6 +380,127 @@ a:focus-visible {
   margin: 12px 0 0;
   color: #6b7684;
   text-align: center;
+}
+
+.answer-save-status {
+  margin: 16px 0 0;
+  color: #4e5968;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.recovered-notice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 16px;
+  border: 1px solid #f6cf6c;
+  border-radius: 14px;
+  color: #7a4b00;
+  background: #fff4d6;
+}
+
+.recovered-notice strong,
+.recovered-notice p {
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+.recovered-notice p {
+  margin: 4px 0 0;
+}
+
+.recovered-notice button {
+  min-width: 64px;
+  min-height: 52px;
+  border: 1px solid #a86700;
+  border-radius: 12px;
+  color: #7a4b00;
+  background: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.no-save-notice {
+  margin-bottom: 24px;
+  padding: 16px;
+  border: 1px solid #f6cf6c;
+  border-radius: 14px;
+  color: #7a4b00;
+  background: #fff4d6;
+}
+
+.no-save-notice strong,
+.no-save-notice p {
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+.no-save-notice p {
+  margin: 4px 0 0;
+}
+
+.answer-save-status.saved {
+  color: #166534;
+}
+
+.answer-save-error {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.answer-save-error p {
+  margin: 0;
+  color: #b42318;
+  font-weight: 700;
+}
+
+.answer-save-error p + p {
+  color: #4e5968;
+  font-weight: 500;
+}
+
+.answer-save-error button {
+  min-height: 52px;
+  border: 1px solid #b42318;
+  border-radius: 12px;
+  color: #9f1c13;
+  background: #fff;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.storage-error-screen {
+  display: flex;
+  min-height: 100dvh;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.storage-error-screen h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.storage-error-screen p {
+  margin: 18px 0 32px;
+  color: #4e5968;
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.storage-error-screen .storage-error-brand {
+  margin: 0 0 12px;
+  color: #10233f;
+  font-weight: 800;
+}
+
+.storage-error-screen .outline-button {
+  margin-top: 12px;
 }
 
 @media (max-width: 360px) {

@@ -1,6 +1,16 @@
-import type { BonusTopic, CoreLens, Question } from "../domain/question";
+import {
+  createBonusQuestion,
+  createCoreQuestion,
+  type BonusQuestion,
+  type BonusTopic,
+  type CoreLens,
+  type CoreQuestionInput,
+  type Question,
+} from "../domain/question";
+import { expandedBonusQuestions } from "./bonus-questions-expanded";
+import { augustCoreQuestions } from "./core-questions-august";
 
-export const coreQuestions: Question[] = [
+const coreQuestionSeed: CoreQuestionInput[] = [
   {
     id: "2026-07-28-then-public-phone",
     dateKey: "2026-07-28",
@@ -295,9 +305,35 @@ export const coreQuestions: Question[] = [
       url: "https://www.mfds.go.kr/",
     },
   },
+  ...augustCoreQuestions,
 ];
 
-interface BonusQuestionInput {
+function distributeAnswerPositions<TQuestion extends Question>(
+  questions: TQuestion[],
+): TQuestion[] {
+  return questions.map((question, index) => {
+    const targetAnswerIndex = (index % 3) as 0 | 1 | 2;
+    if (question.answerIndex === targetAnswerIndex) {
+      return question;
+    }
+
+    const choices = [...question.choices];
+    const [correctChoice] = choices.splice(question.answerIndex, 1);
+    choices.splice(targetAnswerIndex, 0, correctChoice);
+
+    return {
+      ...question,
+      choices: choices as [string, string, string],
+      answerIndex: targetAnswerIndex,
+    } as TQuestion;
+  });
+}
+
+export const coreQuestions = distributeAnswerPositions(
+  coreQuestionSeed.map(createCoreQuestion),
+);
+
+interface LegacyBonusQuestionInput {
   id: string;
   lens: CoreLens;
   topic: BonusTopic;
@@ -309,8 +345,8 @@ interface BonusQuestionInput {
   sourceUrl: string;
 }
 
-function bonus(input: BonusQuestionInput): Question {
-  return {
+function bonus(input: LegacyBonusQuestionInput): BonusQuestion {
+  return createBonusQuestion({
     id: input.id,
     lens: input.lens,
     topic: input.topic,
@@ -322,10 +358,10 @@ function bonus(input: BonusQuestionInput): Question {
       name: input.sourceName,
       url: input.sourceUrl,
     },
-  };
+  });
 }
 
-export const bonusQuestions: Question[] = [
+const bonusQuestionSeed: BonusQuestion[] = [
   bonus({
     id: "bonus-nostalgia-1",
     lens: "then",
@@ -722,4 +758,9 @@ export const bonusQuestions: Question[] = [
     sourceName: "한국천문연구원",
     sourceUrl: "https://www.kasi.re.kr/",
   }),
+  ...expandedBonusQuestions,
 ];
+
+export const bonusQuestions = distributeAnswerPositions(
+  bonusQuestionSeed,
+);

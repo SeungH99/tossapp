@@ -1,13 +1,13 @@
-import type { BonusTopic, Question } from "./question";
+import type { BonusQuestion, BonusTopic } from "./question";
 
 export interface BonusSelection {
-  questions: Question[];
+  questions: BonusQuestion[];
   includesOtherTopics: boolean;
 }
 
 export function selectBonusQuestions(
   topic: BonusTopic,
-  questions: Question[],
+  questions: BonusQuestion[],
   completedQuestionIds: ReadonlySet<string>,
 ): BonusSelection {
   const unseen = questions.filter(

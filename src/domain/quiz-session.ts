@@ -1,4 +1,4 @@
-import type { CoreLens, Question } from "./question";
+import type { CoreLens, CoreQuestion, Question } from "./question";
 
 const coreLensOrder: CoreLens[] = ["then", "now", "life"];
 
@@ -17,8 +17,8 @@ export interface QuizSession {
 
 export function selectDailyCoreSet(
   dateKey: string,
-  questions: Question[],
-): Question[] {
+  questions: CoreQuestion[],
+): CoreQuestion[] {
   return coreLensOrder.map((lens) => {
     const datedQuestion = questions.find(
       (candidate) =>
