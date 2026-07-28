@@ -192,7 +192,9 @@ export function startBonusSessionCommand(
     throw new TypeError("commandId must not be empty");
   }
 
-  const completed = state.bonusStartCommands[commandId];
+  const completed = Object.hasOwn(state.bonusStartCommands, commandId)
+    ? state.bonusStartCommands[commandId]
+    : undefined;
   if (completed != null) {
     return {
       applied: false,

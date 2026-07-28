@@ -52,3 +52,27 @@ These failures named missing behavior rather than test setup failures. They esta
 ## Concerns
 
 None for Task 1. Task 2 must consume `bonusStartCommands` for reload restoration and call `grantBonusTicket` after a rewarded-ad completion before calling `startBonusSession`.
+
+## Follow-up fix — prototype-key command IDs
+
+### Root cause and scope
+
+- Review identified that `state.bonusStartCommands[commandId]` reads inherited `Object.prototype` members. A valid ID such as `__proto__` was therefore incorrectly treated as an already completed command.
+- The fix limits duplicate detection to own records with `Object.hasOwn`; no entitlement, storage, or UI behavior was otherwise changed.
+
+### Regression TDD evidence
+
+- RED: `npm.cmd run test:run -- src/domain/progress-commands.test.ts` failed exactly once. The new `__proto__` test expected `{ applied: true, source: "first_free" }` but received `{ applied: false, source: undefined }`, proving that inherited lookup entered the duplicate branch.
+- GREEN: `npm.cmd run test:run -- src/domain/progress-commands.test.ts src/services/progress-repository.test.ts` passed 2 files and 21 tests after the own-property guard was added.
+
+### Follow-up verification
+
+- `npm.cmd run lint` — passed, no errors or warnings.
+- `npm.cmd run typecheck` — passed.
+- `git diff --check` — passed.
+- `npm.cmd run test:run` — passed, 10 files and 56 tests.
+
+### Follow-up self-review
+
+- The regression uses real command execution and proves both first-use behavior and retry idempotency for a prototype-key ID.
+- `Object.hasOwn` leaves normal persisted command record lookup unchanged while excluding inherited object members.

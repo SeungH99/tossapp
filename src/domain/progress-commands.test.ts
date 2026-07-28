@@ -208,4 +208,33 @@ describe("bonus progress commands", () => {
       questionIds: ["bonus-digital-1", "bonus-digital-2"],
     });
   });
+
+  it("프로토타입 키 commandId도 새 세션을 시작한 뒤에만 멱등 처리한다", () => {
+    const startBonusSessionCommand = progressCommands.startBonusSessionCommand;
+    const initial = createEmptyProgress();
+
+    const first = startBonusSessionCommand(
+      initial,
+      "__proto__",
+      "2026-07-28",
+      "digital",
+      bonusQuestions,
+    );
+
+    expect(first).toMatchObject({ applied: true, source: "first_free" });
+    expect(first.state.bonus.firstFreeUsed).toBe(true);
+    expect(Object.hasOwn(first.state.bonusStartCommands, "__proto__")).toBe(
+      true,
+    );
+
+    const duplicate = startBonusSessionCommand(
+      first.state,
+      "__proto__",
+      "2026-07-28",
+      "digital",
+      bonusQuestions,
+    );
+
+    expect(duplicate).toMatchObject({ applied: false, reason: "duplicate" });
+  });
 });
