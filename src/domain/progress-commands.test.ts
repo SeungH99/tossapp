@@ -1,7 +1,8 @@
 import { describe, expect, it } from "vitest";
 
 import { createEmptyProgress } from "../services/progress-repository";
-import type { CoreQuestion } from "./question";
+import * as progressCommands from "./progress-commands";
+import type { BonusQuestion, CoreQuestion } from "./question";
 import { createQuizSession } from "./quiz-session";
 import {
   ANSWER_EVENT_LIMIT,
@@ -20,6 +21,37 @@ const question: CoreQuestion = {
   explanation: "동전을 넣어 통화를 이어 갔어요.",
   source: { name: "국가기록원", url: "https://www.archives.go.kr/" },
 };
+
+const bonusQuestions: BonusQuestion[] = [
+  {
+    kind: "bonus",
+    id: "bonus-digital-1",
+    conceptId: "digital-1",
+    variant: "base",
+    internalDifficulty: "steady",
+    lens: "now",
+    topic: "digital",
+    prompt: "디지털 문제 1",
+    choices: ["하나", "둘", "셋"],
+    answerIndex: 0,
+    explanation: "설명 1",
+    source: { name: "출처", url: "https://example.com/1" },
+  },
+  {
+    kind: "bonus",
+    id: "bonus-digital-2",
+    conceptId: "digital-2",
+    variant: "base",
+    internalDifficulty: "steady",
+    lens: "now",
+    topic: "digital",
+    prompt: "디지털 문제 2",
+    choices: ["하나", "둘", "셋"],
+    answerIndex: 1,
+    explanation: "설명 2",
+    source: { name: "출처", url: "https://example.com/2" },
+  },
+];
 
 describe("applyAnswerCommand", () => {
   it("세션 답변과 AnswerEvent를 하나의 새 상태로 계산한다", () => {
@@ -102,6 +134,78 @@ describe("applyAnswerCommand", () => {
     expect(state.answerCheckpoint.byQuestion["then-phone"]).toEqual({
       totalAnswers: 1,
       correctAnswers: 1,
+    });
+  });
+});
+
+describe("bonus progress commands", () => {
+  it("같은 rewardGrantId를 다시 적용해도 보너스 이용권은 한 번만 지급한다", () => {
+    expect(progressCommands).toHaveProperty("grantBonusTicketCommand");
+    const grantBonusTicketCommand = progressCommands.grantBonusTicketCommand;
+    const initial = createEmptyProgress();
+
+    const first = grantBonusTicketCommand(initial, "reward-1");
+    const duplicate = grantBonusTicketCommand(first.state, "reward-1");
+
+    expect(first.applied).toBe(true);
+    expect(first.state.bonus.ticketCount).toBe(1);
+    expect(first.state.rewardGrantIds).toEqual(["reward-1"]);
+    expect(duplicate.applied).toBe(false);
+    expect(duplicate.state).toBe(first.state);
+    expect(() => grantBonusTicketCommand(initial, "  ")).toThrow(
+      "rewardGrantId must not be empty",
+    );
+  });
+
+  it("보너스 시작은 이용권 소비와 선택된 세션을 하나의 상태로 만든다", () => {
+    expect(progressCommands).toHaveProperty("startBonusSessionCommand");
+    const startBonusSessionCommand = progressCommands.startBonusSessionCommand;
+    const initial = {
+      ...createEmptyProgress(),
+      bonus: {
+        ...createEmptyProgress().bonus,
+        firstFreeUsed: true,
+        ticketCount: 1,
+      },
+    };
+
+    const result = startBonusSessionCommand(
+      initial,
+      "bonus-command-1",
+      "2026-07-28",
+      "digital",
+      bonusQuestions,
+    );
+
+    expect(result).toMatchObject({ applied: true, source: "streak_ticket" });
+    expect(result.state.bonus.ticketCount).toBe(0);
+    expect(result.state.bonusStartCommands["bonus-command-1"]).toEqual({
+      commandId: "bonus-command-1",
+      dateKey: "2026-07-28",
+      topic: "digital",
+      sessionKey: "2026-07-28:bonus:digital",
+      questionIds: ["bonus-digital-1", "bonus-digital-2"],
+      source: "streak_ticket",
+    });
+    expect(result.session).toEqual({
+      dateKey: "2026-07-28:bonus:digital",
+      currentIndex: 0,
+      phase: "question",
+      answers: [],
+    });
+
+    const duplicate = startBonusSessionCommand(
+      result.state,
+      "bonus-command-1",
+      "2026-07-28",
+      "digital",
+      [],
+    );
+
+    expect(duplicate).toMatchObject({
+      applied: false,
+      reason: "duplicate",
+      questionIds: ["bonus-digital-1", "bonus-digital-2"],
     });
   });
 });

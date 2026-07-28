@@ -1,4 +1,7 @@
-import type { BonusEntitlement } from "./bonus-entitlement";
+import type {
+  BonusEntitlement,
+  BonusUnlockSource,
+} from "./bonus-entitlement";
 import type {
   BonusTopic,
   CoreLens,
@@ -40,6 +43,15 @@ export interface ProgressStateV1 {
   completedBonusIds: string[];
 }
 
+export interface BonusStartCommandRecord {
+  commandId: string;
+  dateKey: string;
+  topic: BonusTopic;
+  sessionKey: string;
+  questionIds: string[];
+  source: BonusUnlockSource;
+}
+
 export interface ProgressState {
   version: 2;
   sessions: Record<string, QuizSession>;
@@ -47,4 +59,6 @@ export interface ProgressState {
   completedBonusIds: string[];
   answerEvents: AnswerEvent[];
   answerCheckpoint: AnswerCheckpoint;
+  rewardGrantIds: string[];
+  bonusStartCommands: Record<string, BonusStartCommandRecord>;
 }
