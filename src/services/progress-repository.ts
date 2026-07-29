@@ -20,6 +20,16 @@ import type {
 } from "../domain/progress-state";
 import type { BonusQuestion, BonusTopic } from "../domain/question";
 import type { QuizSession } from "../domain/quiz-session";
+import {
+  isShadowAudit,
+  SHADOW_AUDIT_LIMIT,
+  type ShadowAudit,
+} from "../domain/shadow-audit";
+import {
+  createTimeObservation,
+  observeTime as observeTimeState,
+  type TimeObservation,
+} from "../domain/time-confidence";
 
 export type {
   AnswerCheckpoint,
@@ -98,7 +108,36 @@ export function createEmptyProgress(): ProgressState {
     rewardAdTicketCount: 0,
     bonusStartCommands: {},
     latestBonusStartCommandIds: {},
+    timeObservation: createTimeObservation(),
+    shadowAudits: [],
   };
+}
+
+function observeProgressTime(
+  state: ProgressState,
+  observedAt: Date | undefined,
+): { changed: boolean; state: ProgressState } {
+  if (observedAt == null) {
+    return { changed: false, state };
+  }
+
+  const timeObservation = observeTimeState(state.timeObservation, observedAt);
+  const changed =
+    timeObservation.lastObservedKstDate !==
+      state.timeObservation.lastObservedKstDate ||
+    timeObservation.lastValidKstDate !==
+      state.timeObservation.lastValidKstDate ||
+    timeObservation.confidence !== state.timeObservation.confidence;
+
+  return changed
+    ? {
+        changed: true,
+        state: {
+          ...state,
+          timeObservation,
+        },
+      }
+    : { changed: false, state };
 }
 
 export class BrowserKeyValueStorage implements KeyValueStorage {
@@ -115,7 +154,9 @@ export class BrowserKeyValueStorage implements KeyValueStorage {
 
 export class ProgressWriteBlockedError extends Error {
   constructor() {
-    super("Progress slots are corrupt; preserved data must not be overwritten.");
+    super(
+      "Progress slots are corrupt; preserved data must not be overwritten.",
+    );
     this.name = "ProgressWriteBlockedError";
   }
 }
@@ -145,9 +186,7 @@ function isQuizSession(value: unknown): value is QuizSession {
     !isRecord(value) ||
     typeof value.dateKey !== "string" ||
     !Number.isInteger(value.currentIndex) ||
-    !["question", "explanation", "completed"].includes(
-      String(value.phase),
-    ) ||
+    !["question", "explanation", "completed"].includes(String(value.phase)) ||
     !Array.isArray(value.answers)
   ) {
     return false;
@@ -227,9 +266,7 @@ function isBonusStartCommandRecord(
     ].includes(String(value.topic)) &&
     typeof value.sessionKey === "string" &&
     isStringArray(value.questionIds) &&
-    ["first_free", "streak_ticket", "reward_ad"].includes(
-      String(value.source),
-    )
+    ["first_free", "streak_ticket", "reward_ad"].includes(String(value.source))
   );
 }
 
@@ -237,8 +274,7 @@ function isBonusStartCommands(
   value: unknown,
 ): value is Record<string, BonusStartCommandRecord> {
   return (
-    isRecord(value) &&
-    Object.values(value).every(isBonusStartCommandRecord)
+    isRecord(value) && Object.values(value).every(isBonusStartCommandRecord)
   );
 }
 
@@ -246,6 +282,25 @@ function isStringRecord(value: unknown): value is Record<string, string> {
   return (
     isRecord(value) &&
     Object.values(value).every((candidate) => typeof candidate === "string")
+  );
+}
+
+function isTimeObservation(value: unknown): value is TimeObservation {
+  return (
+    isRecord(value) &&
+    (value.lastObservedKstDate === null ||
+      typeof value.lastObservedKstDate === "string") &&
+    (value.lastValidKstDate === null ||
+      typeof value.lastValidKstDate === "string") &&
+    ["normal", "lowConfidence"].includes(String(value.confidence))
+  );
+}
+
+function isShadowAudits(value: unknown): value is ShadowAudit[] {
+  return (
+    Array.isArray(value) &&
+    value.length <= SHADOW_AUDIT_LIMIT &&
+    value.every(isShadowAudit)
   );
 }
 
@@ -259,9 +314,7 @@ function inferLatestBonusStartCommandIds(
   return latestBySession;
 }
 
-function hasValidProgressFields(
-  value: Record<string, unknown>,
-): boolean {
+function hasValidProgressFields(value: Record<string, unknown>): boolean {
   return (
     isRecord(value.sessions) &&
     Object.values(value.sessions).every(isQuizSession) &&
@@ -272,9 +325,7 @@ function hasValidProgressFields(
 
 function isProgressStateV1(value: unknown): value is ProgressStateV1 {
   return (
-    isRecord(value) &&
-    value.version === 1 &&
-    hasValidProgressFields(value)
+    isRecord(value) && value.version === 1 && hasValidProgressFields(value)
   );
 }
 
@@ -328,9 +379,23 @@ function normalizeProgressState(value: unknown): ProgressState | null {
       : isStringRecord(value.latestBonusStartCommandIds)
         ? value.latestBonusStartCommandIds
         : null;
+  const timeObservation =
+    value.timeObservation === undefined
+      ? createTimeObservation()
+      : isTimeObservation(value.timeObservation)
+        ? value.timeObservation
+        : null;
+  const shadowAudits =
+    value.shadowAudits === undefined
+      ? []
+      : isShadowAudits(value.shadowAudits)
+        ? value.shadowAudits
+        : null;
   if (
     rewardAdTicketCount == null ||
-    latestBonusStartCommandIds == null
+    latestBonusStartCommandIds == null ||
+    timeObservation == null ||
+    shadowAudits == null
   ) {
     return null;
   }
@@ -346,6 +411,8 @@ function normalizeProgressState(value: unknown): ProgressState | null {
     rewardAdTicketCount,
     bonusStartCommands,
     latestBonusStartCommandIds,
+    timeObservation,
+    shadowAudits,
   };
 }
 
@@ -365,17 +432,17 @@ function migrateV1ToV2(progress: ProgressStateV1): ProgressState {
     rewardAdTicketCount: 0,
     bonusStartCommands: {},
     latestBonusStartCommandIds: {},
+    timeObservation: createTimeObservation(),
+    shadowAudits: [],
   };
 }
 
-function checksumInput(
-  envelope: {
-    schemaVersion: 2;
-    revision: number;
-    writtenAt: string;
-    payload: unknown;
-  },
-): string {
+function checksumInput(envelope: {
+  schemaVersion: 2;
+  revision: number;
+  writtenAt: string;
+  payload: unknown;
+}): string {
   return JSON.stringify({
     schemaVersion: envelope.schemaVersion,
     revision: envelope.revision,
@@ -420,10 +487,7 @@ function serializeEnvelope(envelope: ProgressEnvelopeV2): string {
   return serialized;
 }
 
-function parseSlot(
-  name: SlotName,
-  raw: string | null,
-): SlotRead {
+function parseSlot(name: SlotName, raw: string | null): SlotRead {
   if (raw == null) {
     return { kind: "missing", name, raw };
   }
@@ -436,9 +500,20 @@ function parseSlot(
       !Number.isInteger(parsed.revision) ||
       Number(parsed.revision) < 1 ||
       typeof parsed.checksum !== "string" ||
-      typeof parsed.writtenAt !== "string" ||
-      normalizeProgressState(parsed.payload) == null
+      typeof parsed.writtenAt !== "string"
     ) {
+      return { kind: "invalid", name, raw };
+    }
+    const expected = checksum(
+      checksumInput({
+        schemaVersion: 2,
+        revision: Number(parsed.revision),
+        writtenAt: parsed.writtenAt,
+        payload: parsed.payload,
+      }),
+    );
+
+    if (parsed.checksum !== expected) {
       return { kind: "invalid", name, raw };
     }
 
@@ -453,18 +528,6 @@ function parseSlot(
       writtenAt: parsed.writtenAt,
       payload,
     };
-    const expected = checksum(
-      checksumInput({
-        schemaVersion: envelope.schemaVersion,
-        revision: envelope.revision,
-        writtenAt: envelope.writtenAt,
-        payload: parsed.payload,
-      }),
-    );
-
-    if (envelope.checksum !== expected) {
-      return { kind: "invalid", name, raw };
-    }
 
     return { kind: "valid", name, raw, envelope };
   } catch {
@@ -486,9 +549,7 @@ function decodeV1(raw: string | null): ProgressStateV1 | null {
 }
 
 function keyForSlot(name: SlotName): string {
-  return name === "A"
-    ? progressStorageKeys.slotA
-    : progressStorageKeys.slotB;
+  return name === "A" ? progressStorageKeys.slotA : progressStorageKeys.slotB;
 }
 
 export class ProgressRepository {
@@ -527,10 +588,7 @@ export class ProgressRepository {
         (slot): slot is Extract<SlotRead, { kind: "valid" }> =>
           slot.kind === "valid",
       )
-      .sort(
-        (left, right) =>
-          right.envelope.revision - left.envelope.revision,
-      );
+      .sort((left, right) => right.envelope.revision - left.envelope.revision);
 
     if (validSlots.length === 2) {
       const latest = validSlots[0];
@@ -621,8 +679,7 @@ export class ProgressRepository {
     } else if (slotB.kind !== "valid") {
       target = "B";
     } else {
-      target =
-        slotA.envelope.revision <= slotB.envelope.revision ? "A" : "B";
+      target = slotA.envelope.revision <= slotB.envelope.revision ? "A" : "B";
     }
 
     const envelope = createEnvelope(
@@ -630,40 +687,84 @@ export class ProgressRepository {
       revision,
       this.now().toISOString(),
     );
-    await this.storage.setItem(
-      keyForSlot(target),
-      serializeEnvelope(envelope),
-    );
+    await this.storage.setItem(keyForSlot(target), serializeEnvelope(envelope));
   }
 
-  save(progress: ProgressState | ProgressStateV1): Promise<void> {
-    return this.enqueue(() => this.saveImmediately(progress));
+  save(
+    progress: ProgressState | ProgressStateV1,
+    observedAt?: Date,
+  ): Promise<void> {
+    if (observedAt == null) {
+      return this.enqueue(() => this.saveImmediately(progress));
+    }
+
+    return this.enqueue(async () => {
+      const loaded = await this.load();
+      if (loaded.kind === "unrecoverable") {
+        throw new ProgressWriteBlockedError();
+      }
+      const normalized = normalizeProgressState(
+        progress.version === 1 ? migrateV1ToV2(progress) : progress,
+      );
+      if (normalized == null) {
+        throw new TypeError("Invalid progress state");
+      }
+
+      const observed = observeProgressTime(loaded.state, observedAt);
+      await this.saveImmediately({
+        ...normalized,
+        timeObservation: observed.state.timeObservation,
+      });
+    });
   }
 
-  commitAnswer(command: AnswerCommand): Promise<ApplyAnswerResult> {
+  observeTime(observedAt: Date): Promise<ProgressState> {
     return this.enqueue(async () => {
       const loaded = await this.load();
       if (loaded.kind === "unrecoverable") {
         throw new ProgressWriteBlockedError();
       }
 
-      const result = applyAnswerCommand(loaded.state, command);
-      if (result.applied) {
+      const observed = observeProgressTime(loaded.state, observedAt);
+      if (observed.changed) {
+        await this.saveImmediately(observed.state);
+      }
+      return observed.state;
+    });
+  }
+
+  commitAnswer(
+    command: AnswerCommand,
+    observedAt?: Date,
+  ): Promise<ApplyAnswerResult> {
+    return this.enqueue(async () => {
+      const loaded = await this.load();
+      if (loaded.kind === "unrecoverable") {
+        throw new ProgressWriteBlockedError();
+      }
+
+      const observed = observeProgressTime(loaded.state, observedAt);
+      const result = applyAnswerCommand(observed.state, command);
+      if (result.applied || observed.changed) {
         await this.saveImmediately(result.state);
       }
       return result;
     });
   }
 
-  grantBonusTicket(rewardGrantId: string): Promise<GrantBonusTicketResult> {
+  grantBonusTicket(
+    rewardGrantId: string,
+    observedAt?: Date,
+  ): Promise<GrantBonusTicketResult> {
     return this.enqueue(async () => {
       const loaded = await this.load();
       if (loaded.kind === "unrecoverable") {
         throw new ProgressWriteBlockedError();
       }
 
-      const result = grantBonusTicketCommand(loaded.state, rewardGrantId);
-      if (result.applied) {
+      const observed = observeProgressTime(loaded.state, observedAt);
+      const result = grantBonusTicketCommand(observed.state, rewardGrantId);
+      if (result.applied || observed.changed) {
         await this.saveImmediately(result.state);
       }
       return result;
@@ -675,6 +776,7 @@ export class ProgressRepository {
     dateKey: string,
     topic: BonusTopic,
     bonusQuestions: BonusQuestion[],
+    observedAt?: Date,
   ): Promise<StartBonusSessionResult> {
     return this.enqueue(async () => {
       const loaded = await this.load();
@@ -682,14 +784,15 @@ export class ProgressRepository {
         throw new ProgressWriteBlockedError();
       }
 
+      const observed = observeProgressTime(loaded.state, observedAt);
       const result = startBonusSessionCommand(
-        loaded.state,
+        observed.state,
         commandId,
         dateKey,
         topic,
         bonusQuestions,
       );
-      if (result.applied) {
+      if (result.applied || observed.changed) {
         await this.saveImmediately(result.state);
       }
       return result;

@@ -3,6 +3,7 @@ import { beforeEach, describe, expect, it } from "vitest";
 import { createBonusEntitlement } from "../domain/bonus-entitlement";
 import type { BonusQuestion, CoreQuestion } from "../domain/question";
 import { createQuizSession } from "../domain/quiz-session";
+import { createShadowAudit } from "../domain/shadow-audit";
 import {
   BrowserKeyValueStorage,
   createEmptyProgress,
@@ -94,8 +95,12 @@ describe("ProgressRepository", () => {
 
     expect(restored).toMatchObject({ kind: "loaded", revision: 1 });
     expect(expectState(restored)).toEqual(progress);
-    expect(window.localStorage.getItem(progressStorageKeys.slotA)).not.toBeNull();
-    expect(window.localStorage.getItem(progressStorageKeys.slotB)).not.toBeNull();
+    expect(
+      window.localStorage.getItem(progressStorageKeys.slotA),
+    ).not.toBeNull();
+    expect(
+      window.localStorage.getItem(progressStorageKeys.slotB),
+    ).not.toBeNull();
   });
 
   it("유효한 슬롯 중 revision이 가장 높은 진행을 선택한다", async () => {
@@ -147,9 +152,9 @@ describe("ProgressRepository", () => {
     const restored = await repository.load();
 
     expect(expectState(restored).answerEvents).toHaveLength(1);
-    expect(
-      expectState(restored).sessions["2026-07-28"].answers,
-    ).toHaveLength(1);
+    expect(expectState(restored).sessions["2026-07-28"].answers).toHaveLength(
+      1,
+    );
   });
 
   it("512KB envelope 예산을 넘는 저장을 거부하고 기존 슬롯을 보존한다", async () => {
@@ -225,12 +230,21 @@ describe("ProgressRepository", () => {
     expect(expectState(restored)).toMatchObject({
       rewardAdTicketCount: 0,
       latestBonusStartCommandIds: {},
+      timeObservation: {
+        lastObservedKstDate: null,
+        lastValidKstDate: null,
+        confidence: "normal",
+      },
     });
     expect(window.localStorage.getItem(progressStorageKeys.legacy)).toBe(
       legacyRaw,
     );
-    expect(window.localStorage.getItem(progressStorageKeys.slotA)).not.toBeNull();
-    expect(window.localStorage.getItem(progressStorageKeys.slotB)).not.toBeNull();
+    expect(
+      window.localStorage.getItem(progressStorageKeys.slotA),
+    ).not.toBeNull();
+    expect(
+      window.localStorage.getItem(progressStorageKeys.slotB),
+    ).not.toBeNull();
   });
 
   it("두 슬롯과 v1이 모두 손상되면 원문을 보존하고 쓰지 않는다", async () => {
@@ -272,6 +286,147 @@ describe("ProgressRepository", () => {
     });
   });
 
+  it("creates an empty time observation state", () => {
+    expect(createEmptyProgress()).toMatchObject({
+      timeObservation: {
+        lastObservedKstDate: null,
+        lastValidKstDate: null,
+        confidence: "normal",
+      },
+    });
+  });
+
+  it("persists valid bounded shadow audits across reload", async () => {
+    const repository = new ProgressRepository(
+      new BrowserKeyValueStorage(window.localStorage),
+    );
+    const shadowAudits = [
+      createShadowAudit({
+        legacyQuestionIds: ["legacy-1"],
+        shadowQuestionIds: ["shadow-1"],
+        policyVersion: "personalization-v1",
+        reasonCode: "high-accuracy",
+      }),
+    ];
+
+    await repository.save({ ...createProgress(), shadowAudits });
+    const restored = expectState(await repository.load());
+
+    expect(restored.shadowAudits).toEqual(shadowAudits);
+  });
+
+  it("rejects noncanonical and over-limit persisted shadow audits", async () => {
+    const noncanonicalReasonPayload: Record<string, unknown> = {
+      ...createEmptyProgress(),
+      shadowAudits: [
+        {
+          legacyQuestionIds: ["legacy-1"],
+          shadowQuestionIds: ["shadow-1"],
+          policyVersion: "personalization-v1",
+          reasonCode: "member@example.com",
+        },
+      ],
+    };
+    const overLimitPayload: Record<string, unknown> = {
+      ...createEmptyProgress(),
+      shadowAudits: Array.from({ length: 101 }, (_, index) => ({
+        legacyQuestionIds: [`legacy-${index}`],
+        shadowQuestionIds: [`shadow-${index}`],
+        policyVersion: "personalization-v1",
+        reasonCode: "high-accuracy",
+      })),
+    };
+    window.localStorage.setItem(
+      progressStorageKeys.slotA,
+      legacyV2Envelope(noncanonicalReasonPayload),
+    );
+    window.localStorage.setItem(
+      progressStorageKeys.slotB,
+      legacyV2Envelope(overLimitPayload),
+    );
+    const repository = new ProgressRepository(
+      new BrowserKeyValueStorage(window.localStorage),
+    );
+
+    await expect(repository.load()).resolves.toMatchObject({
+      kind: "unrecoverable",
+    });
+  });
+
+  it("rejects a persisted shadow audit with a prohibited extra key", async () => {
+    const payload: Record<string, unknown> = {
+      ...createEmptyProgress(),
+      shadowAudits: [
+        {
+          legacyQuestionIds: ["legacy-1"],
+          shadowQuestionIds: ["shadow-1"],
+          policyVersion: "personalization-v1",
+          reasonCode: "high-accuracy",
+          answeredAt: "2026-07-28T12:00:00.000Z",
+        },
+      ],
+    };
+    const envelope = legacyV2Envelope(payload);
+    window.localStorage.setItem(progressStorageKeys.slotA, envelope);
+    window.localStorage.setItem(progressStorageKeys.slotB, envelope);
+    const repository = new ProgressRepository(
+      new BrowserKeyValueStorage(window.localStorage),
+    );
+
+    await expect(repository.load()).resolves.toMatchObject({
+      kind: "unrecoverable",
+    });
+  });
+
+  it("persists a low-confidence time observation across reload", async () => {
+    const repository = new ProgressRepository(
+      new BrowserKeyValueStorage(window.localStorage),
+    );
+    const progress = {
+      ...createProgress(),
+      timeObservation: {
+        lastObservedKstDate: "2026-08-05",
+        lastValidKstDate: "2026-07-28",
+        confidence: "lowConfidence" as const,
+      },
+    };
+
+    await repository.save(progress);
+    const restored = await new ProgressRepository(
+      new BrowserKeyValueStorage(window.localStorage),
+    ).load();
+
+    expect(expectState(restored).timeObservation).toEqual(
+      progress.timeObservation,
+    );
+  });
+
+  it("does not write a new revision for a same-day observation", async () => {
+    const repository = new ProgressRepository(
+      new BrowserKeyValueStorage(window.localStorage),
+    );
+    await repository.save({
+      ...createProgress(),
+      timeObservation: {
+        lastObservedKstDate: "2026-07-28",
+        lastValidKstDate: "2026-07-28",
+        confidence: "normal",
+      },
+    });
+
+    const observed = await repository.observeTime(
+      new Date("2026-07-28T14:59:00.000Z"),
+    );
+    const restored = await repository.load();
+
+    expect(observed.timeObservation).toEqual({
+      lastObservedKstDate: "2026-07-28",
+      lastValidKstDate: "2026-07-28",
+      confidence: "normal",
+    });
+    expect(restored).toMatchObject({ kind: "loaded", revision: 1 });
+  });
+
   it("같은 rewardGrantId를 재시도하고 다시 불러와도 이용권을 한 번만 지급한다", async () => {
     const repository = new ProgressRepository(
       new BrowserKeyValueStorage(window.localStorage),
@@ -288,10 +443,12 @@ describe("ProgressRepository", () => {
     expect(first).toMatchObject({ applied: true });
     expect(duplicate).toMatchObject({ applied: false });
     expect(reloaded).toMatchObject({ applied: false });
-    expect(expectState(await reloadedRepository.load()).bonus.ticketCount).toBe(1);
-    expect(expectState(await reloadedRepository.load()).rewardGrantIds).toEqual([
-      "reward-1",
-    ]);
+    expect(expectState(await reloadedRepository.load()).bonus.ticketCount).toBe(
+      1,
+    );
+    expect(expectState(await reloadedRepository.load()).rewardGrantIds).toEqual(
+      ["reward-1"],
+    );
   });
 
   it("보너스 시작을 한 revision으로 이용권 소비와 세션 생성까지 저장한다", async () => {
@@ -319,9 +476,7 @@ describe("ProgressRepository", () => {
     expect(result).toMatchObject({ applied: true, source: "streak_ticket" });
     expect(restored).toMatchObject({ kind: "loaded", revision: 2 });
     expect(expectState(restored).bonus.ticketCount).toBe(0);
-    expect(
-      expectState(restored).sessions["2026-07-28:bonus:digital"],
-    ).toEqual({
+    expect(expectState(restored).sessions["2026-07-28:bonus:digital"]).toEqual({
       dateKey: "2026-07-28:bonus:digital",
       currentIndex: 0,
       phase: "question",
@@ -446,13 +601,31 @@ describe("ProgressRepository", () => {
   });
 
   it("새 필드가 없는 기존 v2 payload에 안전한 기본값을 채운다", async () => {
-    const modern = createEmptyProgress();
-    const legacyPayload: Record<string, unknown> = { ...modern };
-    delete legacyPayload.rewardGrantIds;
-    delete legacyPayload.bonusStartCommands;
-    delete legacyPayload.rewardAdTicketCount;
-    delete legacyPayload.latestBonusStartCommandIds;
-    const legacyEnvelope = legacyV2Envelope(legacyPayload);
+    const preE5Payload: Record<string, unknown> = {
+      version: 2,
+      sessions: {},
+      bonus: createBonusEntitlement(),
+      completedBonusIds: [],
+      answerEvents: [],
+      answerCheckpoint: {
+        totalAnswers: 0,
+        correctAnswers: 0,
+        byQuestion: {},
+      },
+      rewardGrantIds: [],
+      rewardAdTicketCount: 0,
+      bonusStartCommands: {},
+      latestBonusStartCommandIds: {},
+    };
+    const legacyEnvelope = legacyV2Envelope(preE5Payload);
+    const rawEnvelope = JSON.parse(legacyEnvelope) as {
+      checksum: string;
+      payload: Record<string, unknown>;
+    };
+    expect(rawEnvelope.payload).toEqual(preE5Payload);
+    expect(rawEnvelope.payload).not.toHaveProperty("timeObservation");
+    expect(rawEnvelope.payload).not.toHaveProperty("shadowAudits");
+    expect(rawEnvelope.checksum).toMatch(/^[0-9a-f]{8}$/);
     window.localStorage.setItem(progressStorageKeys.slotA, legacyEnvelope);
     window.localStorage.setItem(progressStorageKeys.slotB, legacyEnvelope);
     const repository = new ProgressRepository(
@@ -467,7 +640,13 @@ describe("ProgressRepository", () => {
     expect(expectState(restored)).toMatchObject({
       rewardAdTicketCount: 0,
       latestBonusStartCommandIds: {},
+      timeObservation: {
+        lastObservedKstDate: null,
+        lastValidKstDate: null,
+        confidence: "normal",
+      },
     });
+    expect(expectState(restored).shadowAudits).toEqual([]);
   });
 
   it("기존 v2의 광고 소비 기록과 이후 연속 보상권을 구분해 정규화한다", async () => {

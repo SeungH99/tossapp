@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
-import QuizApp from "./App";
+import QuizApp, { SystemTimeProvider } from "./App";
 import { bonusQuestions, coreQuestions } from "./data/questions";
 import { AppsInTossKeyValueStorage } from "./services/apps-in-toss-storage";
 import {
@@ -40,6 +40,7 @@ const rewardAd = import.meta.env.DEV
 const analytics = import.meta.env.DEV
   ? new BrowserAnalyticsGateway()
   : new AppsInTossAnalyticsGateway();
+const timeProvider = new SystemTimeProvider();
 
 createRoot(rootElement).render(
   <StrictMode>
@@ -47,7 +48,7 @@ createRoot(rootElement).render(
       bonusQuestions={bonusQuestions}
       coreQuestions={coreQuestions}
       analytics={analytics}
-      now={new Date()}
+      timeProvider={timeProvider}
       repository={repository}
       rewardAd={rewardAd}
       shareGateway={shareGateway}
