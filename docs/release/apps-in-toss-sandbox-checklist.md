@@ -3,7 +3,10 @@
 ## 실행 정보
 
 - 커밋 SHA:
-- `.ait` artifact 이름:
+- 승인된 운영 `.ait` artifact 이름:
+- 승인된 운영 `.ait` 파일 크기:
+- 승인된 운영 `.ait` SHA-256 checksum:
+- artifact owner:
 - 확인자:
 - 확인일:
 - iOS 기기·OS:
@@ -16,6 +19,7 @@
 - [ ] `e2e-webkit` 성공
 - [ ] `release-build` 성공
 - [ ] artifact의 `geuttae-yojeum.ait` 다운로드와 파일 열기 성공
+- [ ] CI artifact는 테스트 광고 ID 검증용이며 운영 업로드 artifact와 구분됨
 
 ## 콘솔·환경 설정
 
@@ -59,6 +63,44 @@ Require status checks to pass를 켠 뒤 아래 네 검사를 정확히 추가�
 - [ ] `e2e-chromium`
 - [ ] `e2e-webkit`
 - [ ] `release-build`
+
+## 운영 출시 순서
+
+- [ ] 운영 광고 그룹 ID를 주입한 clean build에서 승인 후보 `.ait` 생성
+- [ ] 승인된 운영 `.ait`의 커밋 SHA·파일 크기·SHA-256 checksum·artifact owner를 실행 정보에 기록
+- [ ] 승인자와 artifact owner가 기록값을 실제 운영 `.ait`와 대조
+- [ ] Apps in Toss 콘솔에 승인된 운영 `.ait` 업로드
+- [ ] 콘솔이 표시하는 앱 이름·버전·업로드 결과를 실행 정보와 대조
+- [ ] 업로드한 동일 artifact로 iOS와 Android QR·샌드박스 검증 완료
+- [ ] QR 검증 결과와 알려진 제한 사항을 출시 승인자에게 인계
+- [ ] 출시 요청을 제출하고 승인 완료
+- [ ] 승인된 출시 시각과 실제 노출 시각을 기록
+
+## 출시 후 확인
+
+- [ ] 운영 환경에서 앱 열기 → 핵심 3문제 → 결과 화면의 핵심 smoke 완료
+- [ ] 보너스 진입·보상형 광고·공유의 운영 smoke 완료
+- [ ] `app_open`, `quiz_start`, `answer_submitted`, `quiz_completed`, `bonus_start` 지표 유입 확인
+- [ ] 오류율·퀴즈 완료율·광고 성공/취소율이 롤백 판단 기준 안에 있음
+- [ ] 출시 직후와 24시간 후 smoke·지표 확인 시각, 결과, 확인자 기록
+
+## 롤백 준비와 실행
+
+- 마지막 정상 커밋 SHA:
+- 마지막 정상 `.ait` artifact 이름·파일 크기·SHA-256 checksum:
+- 마지막 정상 artifact owner:
+- 롤백 판단 기준:
+- 롤백 판단 담당자:
+- 롤백 실행 담당자:
+
+- [ ] 마지막 정상 커밋 SHA와 `.ait` artifact를 checksum으로 검증해 즉시 제출 가능하게 보관
+- [ ] 핵심 퀴즈 진입/완료 불가, 저장 손상, 중복 보상, 급격한 오류율 상승을 롤백 판단 기준에 포함
+- [ ] 기준 초과 시 롤백 판단 담당자가 중단·롤백 여부와 실행 담당자를 확정
+- [ ] 장애 원인이 광고·프로모션 등 외부 연동이면 해당 외부 기능 플래그 비활성화
+- [ ] Apps in Toss 콘솔에 직전 정상 `.ait` 재제출
+- [ ] 문제 콘텐츠가 원인이면 해당 콘텐츠 commit revert 후 검증 명령을 다시 실행하고 운영 `.ait` 재빌드
+- [ ] 재빌드 artifact의 SHA·크기·checksum·owner를 새로 기록한 뒤 콘솔에 제출
+- [ ] 롤백 또는 재출시 후 iOS·Android smoke와 핵심 지표를 다시 확인
 
 ## 최종 승인
 

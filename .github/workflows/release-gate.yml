@@ -25,7 +25,9 @@ jobs:
       - run: npm ci
       - name: Run quality contract
         shell: bash
-        run: npm run verify:quality 2>&1 | tee quality.log
+        run: |
+          set -o pipefail
+          npm run verify:quality 2>&1 | tee quality.log
       - name: Upload quality log
         if: always()
         uses: actions/upload-artifact@v7
@@ -61,7 +63,7 @@ jobs:
           name: playwright-chromium-failure-${{ github.sha }}
           path: test-results/
           retention-days: 7
-          if-no-files-found: warn
+          if-no-files-found: error
 
   e2e-webkit:
     runs-on: windows-latest
@@ -89,7 +91,7 @@ jobs:
           name: playwright-webkit-failure-${{ github.sha }}
           path: test-results/
           retention-days: 7
-          if-no-files-found: warn
+          if-no-files-found: error
 
   release-build:
     runs-on: ubuntu-latest
@@ -104,14 +106,24 @@ jobs:
       - run: npm ci
       - name: Build Apps in Toss artifact
         shell: bash
-        run: npm run build 2>&1 | tee build.log
+        run: |
+          set -o pipefail
+          npm run build 2>&1 | tee build.log
+      - name: Verify Apps in Toss artifact exists
+        shell: bash
+        run: test -f geuttae-yojeum.ait
       - name: Upload Apps in Toss build
-        if: always()
         uses: actions/upload-artifact@v7
         with:
           name: geuttae-yojeum-ait-${{ github.sha }}
-          path: |
-            geuttae-yojeum.ait
-            build.log
+          path: geuttae-yojeum.ait
+          retention-days: 7
+          if-no-files-found: error
+      - name: Upload Apps in Toss build log
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: geuttae-yojeum-build-log-${{ github.sha }}
+          path: build.log
           retention-days: 7
           if-no-files-found: error

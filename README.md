@@ -44,6 +44,8 @@ npm run verify:release
 [`docs/release/apps-in-toss-sandbox-checklist.md`](docs/release/apps-in-toss-sandbox-checklist.md)를
 iOS와 Android Apps in Toss 샌드박스 QR에서 완료해야 합니다. CI의 `.ait`는 테스트
 광고 ID를 사용하므로 콘솔 업로드 전에 운영 광고 그룹 ID로 다시 빌드합니다.
+체크리스트는 운영 artifact provenance부터 콘솔 업로드, QR 검증, 출시 승인,
+출시 후 확인과 롤백까지 실제 순서를 포함합니다.
 
 ## 출시 전 설정
 
