@@ -283,6 +283,7 @@ function QuizScreen({
             href={question.source.url}
             rel="noreferrer"
             style={{ color: "#4e5968" }}
+            tabIndex={0}
             target="_blank"
           >
             {question.source.name}
