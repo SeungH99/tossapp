@@ -21,6 +21,11 @@ import type {
 import type { BonusQuestion, BonusTopic } from "../domain/question";
 import type { QuizSession } from "../domain/quiz-session";
 import {
+  isShadowAudit,
+  SHADOW_AUDIT_LIMIT,
+  type ShadowAudit,
+} from "../domain/shadow-audit";
+import {
   createTimeObservation,
   type TimeObservation,
 } from "../domain/time-confidence";
@@ -103,6 +108,7 @@ export function createEmptyProgress(): ProgressState {
     bonusStartCommands: {},
     latestBonusStartCommandIds: {},
     timeObservation: createTimeObservation(),
+    shadowAudits: [],
   };
 }
 
@@ -265,6 +271,14 @@ function isTimeObservation(value: unknown): value is TimeObservation {
   );
 }
 
+function isShadowAudits(value: unknown): value is ShadowAudit[] {
+  return (
+    Array.isArray(value) &&
+    value.length <= SHADOW_AUDIT_LIMIT &&
+    value.every(isShadowAudit)
+  );
+}
+
 function inferLatestBonusStartCommandIds(
   commands: Record<string, BonusStartCommandRecord>,
 ): Record<string, string> {
@@ -350,10 +364,17 @@ function normalizeProgressState(value: unknown): ProgressState | null {
       : isTimeObservation(value.timeObservation)
         ? value.timeObservation
         : null;
+  const shadowAudits =
+    value.shadowAudits === undefined
+      ? []
+      : isShadowAudits(value.shadowAudits)
+        ? value.shadowAudits
+        : null;
   if (
     rewardAdTicketCount == null ||
     latestBonusStartCommandIds == null ||
-    timeObservation == null
+    timeObservation == null ||
+    shadowAudits == null
   ) {
     return null;
   }
@@ -370,6 +391,7 @@ function normalizeProgressState(value: unknown): ProgressState | null {
     bonusStartCommands,
     latestBonusStartCommandIds,
     timeObservation,
+    shadowAudits,
   };
 }
 
@@ -390,6 +412,7 @@ function migrateV1ToV2(progress: ProgressStateV1): ProgressState {
     bonusStartCommands: {},
     latestBonusStartCommandIds: {},
     timeObservation: createTimeObservation(),
+    shadowAudits: [],
   };
 }
 
@@ -461,9 +484,20 @@ function parseSlot(
       !Number.isInteger(parsed.revision) ||
       Number(parsed.revision) < 1 ||
       typeof parsed.checksum !== "string" ||
-      typeof parsed.writtenAt !== "string" ||
-      normalizeProgressState(parsed.payload) == null
+      typeof parsed.writtenAt !== "string"
     ) {
+      return { kind: "invalid", name, raw };
+    }
+    const expected = checksum(
+      checksumInput({
+        schemaVersion: 2,
+        revision: Number(parsed.revision),
+        writtenAt: parsed.writtenAt,
+        payload: parsed.payload,
+      }),
+    );
+
+    if (parsed.checksum !== expected) {
       return { kind: "invalid", name, raw };
     }
 
@@ -478,18 +512,6 @@ function parseSlot(
       writtenAt: parsed.writtenAt,
       payload,
     };
-    const expected = checksum(
-      checksumInput({
-        schemaVersion: envelope.schemaVersion,
-        revision: envelope.revision,
-        writtenAt: envelope.writtenAt,
-        payload: parsed.payload,
-      }),
-    );
-
-    if (envelope.checksum !== expected) {
-      return { kind: "invalid", name, raw };
-    }
 
     return { kind: "valid", name, raw, envelope };
   } catch {

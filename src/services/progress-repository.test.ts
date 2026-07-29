@@ -3,6 +3,7 @@ import { beforeEach, describe, expect, it } from "vitest";
 import { createBonusEntitlement } from "../domain/bonus-entitlement";
 import type { BonusQuestion, CoreQuestion } from "../domain/question";
 import { createQuizSession } from "../domain/quiz-session";
+import { createShadowAudit } from "../domain/shadow-audit";
 import {
   BrowserKeyValueStorage,
   createEmptyProgress,
@@ -287,6 +288,64 @@ describe("ProgressRepository", () => {
     });
   });
 
+  it("persists valid bounded shadow audits across reload", async () => {
+    const repository = new ProgressRepository(
+      new BrowserKeyValueStorage(window.localStorage),
+    );
+    const shadowAudits = [
+      createShadowAudit({
+        legacyQuestionIds: ["legacy-1"],
+        shadowQuestionIds: ["shadow-1"],
+        policyVersion: "personalization-v1",
+        reasonCode: "high-accuracy",
+      }),
+    ];
+
+    await repository.save({ ...createProgress(), shadowAudits });
+    const restored = expectState(await repository.load());
+
+    expect(restored.shadowAudits).toEqual(shadowAudits);
+  });
+
+  it("rejects malformed and over-limit persisted shadow audits", async () => {
+    const malformedPayload: Record<string, unknown> = {
+      ...createEmptyProgress(),
+      shadowAudits: [
+        {
+          legacyQuestionIds: ["legacy-1"],
+          shadowQuestionIds: ["shadow-1"],
+          policyVersion: "personalization-v1",
+          reasonCode: "high-accuracy",
+          attemptId: "must-not-persist",
+        },
+      ],
+    };
+    const overLimitPayload: Record<string, unknown> = {
+      ...createEmptyProgress(),
+      shadowAudits: Array.from({ length: 101 }, (_, index) => ({
+        legacyQuestionIds: [`legacy-${index}`],
+        shadowQuestionIds: [`shadow-${index}`],
+        policyVersion: "personalization-v1",
+        reasonCode: "high-accuracy",
+      })),
+    };
+    window.localStorage.setItem(
+      progressStorageKeys.slotA,
+      legacyV2Envelope(malformedPayload),
+    );
+    window.localStorage.setItem(
+      progressStorageKeys.slotB,
+      legacyV2Envelope(overLimitPayload),
+    );
+    const repository = new ProgressRepository(
+      new BrowserKeyValueStorage(window.localStorage),
+    );
+
+    await expect(repository.load()).resolves.toMatchObject({
+      kind: "unrecoverable",
+    });
+  });
+
   it("persists a low-confidence time observation across reload", async () => {
     const repository = new ProgressRepository(
       new BrowserKeyValueStorage(window.localStorage),
@@ -490,6 +549,7 @@ describe("ProgressRepository", () => {
     delete legacyPayload.bonusStartCommands;
     delete legacyPayload.rewardAdTicketCount;
     delete legacyPayload.latestBonusStartCommandIds;
+    delete legacyPayload.shadowAudits;
     const legacyEnvelope = legacyV2Envelope(legacyPayload);
     window.localStorage.setItem(progressStorageKeys.slotA, legacyEnvelope);
     window.localStorage.setItem(progressStorageKeys.slotB, legacyEnvelope);
@@ -511,6 +571,7 @@ describe("ProgressRepository", () => {
         confidence: "normal",
       },
     });
+    expect(expectState(restored).shadowAudits).toEqual([]);
   });
 
   it("기존 v2의 광고 소비 기록과 이후 연속 보상권을 구분해 정규화한다", async () => {
