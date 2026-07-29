@@ -1580,7 +1580,7 @@ jobs:
             geuttae-yojeum.ait
             build.log
           retention-days: 7
-          if-no-files-found: warn
+          if-no-files-found: error
 ```
 
 The two E2E jobs use `windows-latest` so committed Windows screenshot baselines and CI rendering use the same OS family. Quality and Apps in Toss build remain on Ubuntu.
