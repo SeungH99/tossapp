@@ -96,7 +96,8 @@ Require status checks to pass를 켠 뒤 아래 네 검사를 정확히 추가�
 - [ ] 마지막 정상 커밋 SHA와 `.ait` artifact를 checksum으로 검증해 즉시 제출 가능하게 보관
 - [ ] 핵심 퀴즈 진입/완료 불가, 저장 손상, 중복 보상, 급격한 오류율 상승을 롤백 판단 기준에 포함
 - [ ] 기준 초과 시 롤백 판단 담당자가 중단·롤백 여부와 실행 담당자를 확정
-- [ ] 장애 원인이 광고·프로모션 등 외부 연동이면 해당 외부 기능 플래그 비활성화
+- [ ] 현재 MVP에는 원격 feature flag 또는 kill switch가 없으므로 비활성화 단계는 건너뛰고 직전 정상 `.ait` 재제출로 즉시 진행
+- [ ] 향후 원격 플래그가 추가된 경우에만 exact key·owner·비활성화 확인 결과를 artifact provenance와 체크리스트에 기록
 - [ ] Apps in Toss 콘솔에 직전 정상 `.ait` 재제출
 - [ ] 문제 콘텐츠가 원인이면 해당 콘텐츠 commit revert 후 검증 명령을 다시 실행하고 운영 `.ait` 재빌드
 - [ ] 재빌드 artifact의 SHA·크기·checksum·owner를 새로 기록한 뒤 콘솔에 제출
