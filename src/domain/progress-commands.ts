@@ -1,5 +1,5 @@
 import { unlockBonus, type BonusUnlockSource } from "./bonus-entitlement";
-import { selectBonusQuestions } from "./bonus-selection";
+import { selectShadowBonusQuestions } from "./personalization-engine";
 import type { BonusQuestion, BonusTopic, Question } from "./question";
 import type {
   AnswerCheckpoint,
@@ -11,6 +11,7 @@ import {
   createQuizSession,
   type QuizSession,
 } from "./quiz-session";
+import { appendShadowAudit } from "./shadow-audit";
 
 export const ANSWER_EVENT_LIMIT = 512;
 
@@ -207,12 +208,14 @@ export function startBonusSessionCommand(
     };
   }
 
-  const selection = selectBonusQuestions(
+  const decision = selectShadowBonusQuestions({
     topic,
-    bonusQuestions,
-    new Set(state.completedBonusIds),
-  );
-  if (selection.questions.length === 0) {
+    questions: bonusQuestions,
+    completedBonusIds: state.completedBonusIds,
+    answerEvents: state.answerEvents,
+    timeConfidence: state.timeObservation.confidence,
+  });
+  if (decision.visibleSelection.questions.length === 0) {
     return { applied: false, reason: "no-questions", state };
   }
 
@@ -233,7 +236,9 @@ export function startBonusSessionCommand(
 
   const sessionKey = `${dateKey}:bonus:${topic}`;
   const session = createQuizSession(sessionKey);
-  const questionIds = selection.questions.map((question) => question.id);
+  const questionIds = decision.visibleSelection.questions.map(
+    (question) => question.id,
+  );
   const record = {
     commandId,
     dateKey,
@@ -261,6 +266,11 @@ export function startBonusSessionCommand(
       ...state.latestBonusStartCommandIds,
       [sessionKey]: commandId,
     },
+    shadowAudits: appendShadowAudit(
+      state.shadowAudits,
+      decision.audit,
+      state.timeObservation.confidence,
+    ),
   };
 
   return {

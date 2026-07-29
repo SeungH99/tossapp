@@ -482,6 +482,14 @@ describe("ProgressRepository", () => {
       phase: "question",
       answers: [],
     });
+    expect(expectState(restored).shadowAudits).toEqual([
+      {
+        legacyQuestionIds: ["bonus-digital-1"],
+        shadowQuestionIds: ["bonus-digital-1"],
+        policyVersion: "personalization-v1",
+        reasonCode: "insufficient-history",
+      },
+    ]);
   });
 
   it("광고 보상 이용권의 출처와 최신 세션 명령을 원자적으로 저장한다", async () => {
@@ -549,6 +557,34 @@ describe("ProgressRepository", () => {
     expect(Object.keys(expectState(restored).bonusStartCommands)).toEqual([
       "bonus-command-1",
     ]);
+    expect(expectState(restored).shadowAudits).toHaveLength(1);
+  });
+
+  it("excludes a rewind-triggered low-confidence start from the shadow audit ring", async () => {
+    const repository = new ProgressRepository(
+      new BrowserKeyValueStorage(window.localStorage),
+    );
+    await repository.save({
+      ...createEmptyProgress(),
+      timeObservation: {
+        lastObservedKstDate: "2026-07-28",
+        lastValidKstDate: "2026-07-28",
+        confidence: "normal",
+      },
+    });
+
+    const result = await repository.startBonusSession(
+      "low-confidence-start",
+      "2026-07-27",
+      "digital",
+      bonusQuestions,
+      new Date("2026-07-27T12:00:00.000Z"),
+    );
+    const restored = expectState(await repository.load());
+
+    expect(result).toMatchObject({ applied: true });
+    expect(restored.timeObservation.confidence).toBe("lowConfidence");
+    expect(restored.shadowAudits).toEqual([]);
   });
 
   it("선택할 문제가 없으면 보너스 권리와 revision을 그대로 유지한다", async () => {
@@ -569,6 +605,7 @@ describe("ProgressRepository", () => {
     expect(restored).toMatchObject({ kind: "loaded", revision: 1 });
     expect(expectState(restored).bonus.firstFreeUsed).toBe(false);
     expect(expectState(restored).sessions).toEqual({});
+    expect(expectState(restored).shadowAudits).toEqual([]);
   });
 
   it("보너스 시작 저장 실패 뒤 reload에는 권리 소비와 세션이 보이지 않는다", async () => {
@@ -598,6 +635,7 @@ describe("ProgressRepository", () => {
 
     expect(expectState(restored).bonus.firstFreeUsed).toBe(false);
     expect(expectState(restored).sessions).toEqual({});
+    expect(expectState(restored).shadowAudits).toEqual([]);
   });
 
   it("새 필드가 없는 기존 v2 payload에 안전한 기본값을 채운다", async () => {
