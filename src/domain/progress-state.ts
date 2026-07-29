@@ -9,6 +9,7 @@ import type {
   Question,
 } from "./question";
 import type { QuizSession } from "./quiz-session";
+import type { TimeObservation } from "./time-confidence";
 
 export interface AnswerEvent {
   attemptId: string;
@@ -63,4 +64,5 @@ export interface ProgressState {
   rewardAdTicketCount: number;
   bonusStartCommands: Record<string, BonusStartCommandRecord>;
   latestBonusStartCommandIds: Record<string, string>;
+  timeObservation: TimeObservation;
 }

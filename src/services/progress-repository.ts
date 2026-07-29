@@ -20,6 +20,10 @@ import type {
 } from "../domain/progress-state";
 import type { BonusQuestion, BonusTopic } from "../domain/question";
 import type { QuizSession } from "../domain/quiz-session";
+import {
+  createTimeObservation,
+  type TimeObservation,
+} from "../domain/time-confidence";
 
 export type {
   AnswerCheckpoint,
@@ -98,6 +102,7 @@ export function createEmptyProgress(): ProgressState {
     rewardAdTicketCount: 0,
     bonusStartCommands: {},
     latestBonusStartCommandIds: {},
+    timeObservation: createTimeObservation(),
   };
 }
 
@@ -249,6 +254,17 @@ function isStringRecord(value: unknown): value is Record<string, string> {
   );
 }
 
+function isTimeObservation(value: unknown): value is TimeObservation {
+  return (
+    isRecord(value) &&
+    (value.lastObservedKstDate === null ||
+      typeof value.lastObservedKstDate === "string") &&
+    (value.lastValidKstDate === null ||
+      typeof value.lastValidKstDate === "string") &&
+    ["normal", "lowConfidence"].includes(String(value.confidence))
+  );
+}
+
 function inferLatestBonusStartCommandIds(
   commands: Record<string, BonusStartCommandRecord>,
 ): Record<string, string> {
@@ -328,9 +344,16 @@ function normalizeProgressState(value: unknown): ProgressState | null {
       : isStringRecord(value.latestBonusStartCommandIds)
         ? value.latestBonusStartCommandIds
         : null;
+  const timeObservation =
+    value.timeObservation === undefined
+      ? createTimeObservation()
+      : isTimeObservation(value.timeObservation)
+        ? value.timeObservation
+        : null;
   if (
     rewardAdTicketCount == null ||
-    latestBonusStartCommandIds == null
+    latestBonusStartCommandIds == null ||
+    timeObservation == null
   ) {
     return null;
   }
@@ -346,6 +369,7 @@ function normalizeProgressState(value: unknown): ProgressState | null {
     rewardAdTicketCount,
     bonusStartCommands,
     latestBonusStartCommandIds,
+    timeObservation,
   };
 }
 
@@ -365,6 +389,7 @@ function migrateV1ToV2(progress: ProgressStateV1): ProgressState {
     rewardAdTicketCount: 0,
     bonusStartCommands: {},
     latestBonusStartCommandIds: {},
+    timeObservation: createTimeObservation(),
   };
 }
 

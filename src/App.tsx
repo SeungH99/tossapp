@@ -14,6 +14,7 @@ import {
 } from "./domain/bonus-entitlement";
 import { selectBonusQuestions } from "./domain/bonus-selection";
 import { toKstDateKey } from "./domain/date-key";
+import { observeTime } from "./domain/time-confidence";
 import {
   applyAnswerCommand,
   grantBonusTicketCommand,
@@ -50,8 +51,19 @@ import type { AnalyticsGateway, AnalyticsParams } from "./services/analytics";
 
 type AppScreen = "home" | "quiz" | "result" | "bonus-topic" | "bonus-quiz";
 
+export interface TimeProvider {
+  now(): Date;
+}
+
+export class SystemTimeProvider implements TimeProvider {
+  now(): Date {
+    return new Date();
+  }
+}
+
 interface QuizAppProps {
-  now: Date;
+  now?: Date;
+  timeProvider?: TimeProvider;
   coreQuestions: CoreQuestion[];
   bonusQuestions: BonusQuestion[];
   repository?: ProgressRepository;
@@ -66,6 +78,7 @@ type BonusStartStatus = "idle" | "showing-ad" | "saving" | "error";
 
 interface PendingBonusStart {
   commandId: string;
+  dateKey: string;
   topic: BonusTopic;
   rewardGrantId?: string;
 }
@@ -473,6 +486,7 @@ function BonusTopicScreen({
 
 export default function QuizApp({
   now,
+  timeProvider,
   coreQuestions,
   bonusQuestions,
   repository,
@@ -480,13 +494,22 @@ export default function QuizApp({
   shareGateway,
   analytics,
 }: QuizAppProps) {
-  const dateKey = toKstDateKey(now);
-  const questions = useMemo(
-    () => selectDailyCoreSet(dateKey, coreQuestions),
-    [coreQuestions, dateKey],
-  );
+  const initialNowRef = useRef<Date | null>(null);
+  if (initialNowRef.current == null) {
+    initialNowRef.current = timeProvider?.now() ?? now ?? new Date();
+  }
+  const initialNow = initialNowRef.current;
+  const [currentNow, setCurrentNow] = useState(initialNow);
+  const currentNowRef = useRef(initialNow);
+  const dateKey = toKstDateKey(currentNow);
+  const initialDateKeyRef = useRef(dateKey);
+  const initialDateKey = initialDateKeyRef.current;
   const [screen, setScreen] = useState<AppScreen>("home");
   const [session, setSession] = useState(() => createQuizSession(dateKey));
+  const questions = useMemo(
+    () => selectDailyCoreSet(session.dateKey, coreQuestions),
+    [coreQuestions, session.dateKey],
+  );
   const [entitlement, setEntitlement] = useState(createBonusEntitlement);
   const [completedBonusIds, setCompletedBonusIds] = useState<string[]>([]);
   const [hydrated, setHydrated] = useState(repository == null);
@@ -520,6 +543,53 @@ export default function QuizApp({
   const bonusStartInFlightRef = useRef(false);
   const pendingBonusStartRef = useRef<PendingBonusStart | null>(null);
 
+  const readCurrentTime = useCallback((): Date => {
+    const observedNow = timeProvider?.now() ?? now ?? currentNowRef.current;
+    currentNowRef.current = observedNow;
+    setCurrentNow((previous) =>
+      previous.getTime() === observedNow.getTime() ? previous : observedNow,
+    );
+    return observedNow;
+  }, [now, timeProvider]);
+
+  const observeCurrentTime = useCallback((): Date => {
+    const observedNow = readCurrentTime();
+    const timeObservation = observeTime(
+      progressRef.current.timeObservation,
+      observedNow,
+    );
+    if (
+      timeObservation.lastObservedKstDate ===
+        progressRef.current.timeObservation.lastObservedKstDate &&
+      timeObservation.lastValidKstDate ===
+        progressRef.current.timeObservation.lastValidKstDate &&
+      timeObservation.confidence === progressRef.current.timeObservation.confidence
+    ) {
+      return observedNow;
+    }
+    const progress = {
+      ...progressRef.current,
+      timeObservation,
+    };
+    progressRef.current = progress;
+
+    if (
+      repository != null &&
+      hydrated &&
+      persistenceWritable &&
+      !noSaveMode
+    ) {
+      void repository.save(progress).catch(() => undefined);
+    }
+    return observedNow;
+  }, [
+    hydrated,
+    noSaveMode,
+    persistenceWritable,
+    readCurrentTime,
+    repository,
+  ]);
+
   const track = useCallback(
     (name: string, params: AnalyticsParams = {}) => {
       analytics?.track(name, {
@@ -530,6 +600,28 @@ export default function QuizApp({
     },
     [analytics, dateKey],
   );
+
+  useEffect(() => {
+    if (!hydrated) {
+      return;
+    }
+
+    const observeWhenVisible = () => {
+      if (document.visibilityState === "visible") {
+        observeCurrentTime();
+      }
+    };
+    const observeOnPageShow = () => {
+      observeCurrentTime();
+    };
+
+    document.addEventListener("visibilitychange", observeWhenVisible);
+    window.addEventListener("pageshow", observeOnPageShow);
+    return () => {
+      document.removeEventListener("visibilitychange", observeWhenVisible);
+      window.removeEventListener("pageshow", observeOnPageShow);
+    };
+  }, [hydrated, observeCurrentTime]);
 
   useEffect(() => {
     if (trackedAppOpen.current) {
@@ -592,7 +684,10 @@ export default function QuizApp({
 
         const progress = result.state;
         setShowRecoveredNotice(result.kind === "recovered-slot");
-        const streak = calculateCompletionStreak(dateKey, progress.sessions);
+        const streak = calculateCompletionStreak(
+          initialDateKey,
+          progress.sessions,
+        );
         const grantedEntitlement = grantStreakTicket(
           progress.bonus,
           streak.startDate,
@@ -601,27 +696,31 @@ export default function QuizApp({
         const hydratedProgress = {
           ...progress,
           bonus: grantedEntitlement,
+          timeObservation: observeTime(progress.timeObservation, initialNow),
         };
         progressRef.current = hydratedProgress;
         setSavedSessions(progress.sessions);
         setEntitlement(grantedEntitlement);
         setCompletedBonusIds(progress.completedBonusIds);
 
-        if (grantedEntitlement !== progress.bonus) {
-          void repository.save(hydratedProgress);
+        if (
+          grantedEntitlement !== progress.bonus ||
+          hydratedProgress.timeObservation !== progress.timeObservation
+        ) {
+          void repository.save(hydratedProgress).catch(() => undefined);
         }
 
         const activeBonusEntry = Object.entries(progress.sessions).find(
           ([key, storedSession]) =>
-            key.startsWith(`${dateKey}:bonus:`) &&
+            key.startsWith(`${initialDateKey}:bonus:`) &&
             storedSession.phase !== "completed",
         );
-        const restoredSession = progress.sessions[dateKey];
+        const restoredSession = progress.sessions[initialDateKey];
 
         if (activeBonusEntry != null) {
           const [bonusKey, restoredBonusSession] = activeBonusEntry;
           const topic = bonusKey.slice(
-            `${dateKey}:bonus:`.length,
+            `${initialDateKey}:bonus:`.length,
           ) as BonusTopic;
           const isKnownTopic = bonusTopics.some(
             (candidate) => candidate.id === topic,
@@ -674,7 +773,7 @@ export default function QuizApp({
     return () => {
       active = false;
     };
-  }, [bonusQuestions, dateKey, repository, storageRetry]);
+  }, [bonusQuestions, initialDateKey, initialNow, repository, storageRetry]);
 
   const persistSnapshot = (progress: ProgressState) => {
     progressRef.current = progress;
@@ -729,23 +828,35 @@ export default function QuizApp({
     if (pending == null || answerSaveStatus === "saving") {
       return;
     }
+    observeCurrentTime();
     submitAnswer(pending.command, pending.target);
+  };
+
+  const handleStartCore = () => {
+    const startedAt = observeCurrentTime();
+    const startedDateKey = toKstDateKey(startedAt);
+    setSession(createQuizSession(startedDateKey));
+    setAnswerSaveStatus("idle");
+    pendingAnswerRef.current = null;
+    track("quiz_start");
+    setScreen("quiz");
   };
 
   const handleAnswer = (selectedIndex: number) => {
     if (session.phase !== "question") {
       return;
     }
+    const answeredAt = observeCurrentTime();
     const question = questions[session.currentIndex];
     track("core_answer");
     submitAnswer(
       {
-        attemptId: `core:${dateKey}:${question.id}:${session.currentIndex}`,
-        sessionKey: dateKey,
+        attemptId: `core:${session.dateKey}:${question.id}:${session.currentIndex}`,
+        sessionKey: session.dateKey,
         session,
         question,
         selectedIndex,
-        answeredAt: now.toISOString(),
+        answeredAt: answeredAt.toISOString(),
       },
       "core",
     );
@@ -766,10 +877,11 @@ export default function QuizApp({
     let nextEntitlement = entitlement;
     const nextSessions = {
       ...progressRef.current.sessions,
-      [dateKey]: next,
+      [session.dateKey]: next,
     };
     if (next.phase === "completed") {
-      const streak = calculateCompletionStreak(dateKey, nextSessions);
+      observeCurrentTime();
+      const streak = calculateCompletionStreak(session.dateKey, nextSessions);
       nextEntitlement = grantStreakTicket(
         entitlement,
         streak.startDate,
@@ -860,6 +972,8 @@ export default function QuizApp({
       return;
     }
 
+    const startedAt = observeCurrentTime();
+    const startedDateKey = toKstDateKey(startedAt);
     const topic = selectedTopic;
     if (
       selectBonusQuestions(
@@ -876,7 +990,8 @@ export default function QuizApp({
       pendingBonusStartRef.current?.topic === topic
         ? pendingBonusStartRef.current
         : {
-            commandId: createBonusStartCommandId(dateKey, topic),
+            commandId: createBonusStartCommandId(startedDateKey, topic),
+            dateKey: startedDateKey,
             topic,
           };
     pendingBonusStartRef.current = pending;
@@ -924,14 +1039,14 @@ export default function QuizApp({
         const result = useRepository
           ? await repository.startBonusSession(
               pending.commandId,
-              dateKey,
+              pending.dateKey,
               topic,
               bonusQuestions,
             )
           : startBonusSessionCommand(
               state,
               pending.commandId,
-              dateKey,
+              pending.dateKey,
               topic,
               bonusQuestions,
             );
@@ -952,6 +1067,7 @@ export default function QuizApp({
     if (bonusSession == null || bonusSession.phase !== "question") {
       return;
     }
+    const answeredAt = observeCurrentTime();
     const question = bonusSet[bonusSession.currentIndex];
     submitAnswer(
       {
@@ -960,7 +1076,7 @@ export default function QuizApp({
         session: bonusSession,
         question,
         selectedIndex,
-        answeredAt: now.toISOString(),
+        answeredAt: answeredAt.toISOString(),
       },
       "bonus",
     );
@@ -1058,11 +1174,8 @@ export default function QuizApp({
   if (screen === "home") {
     return (
       <HomeScreen
-        now={now}
-        onStart={() => {
-          track("quiz_start");
-          setScreen("quiz");
-        }}
+        now={currentNow}
+        onStart={handleStartCore}
         persistenceNotice={persistenceNotice}
         streakDay={calculateVisibleStreakDay(dateKey, {
           ...savedSessions,

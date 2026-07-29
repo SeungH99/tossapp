@@ -120,7 +120,100 @@ class ControlledStorage implements KeyValueStorage {
   }
 }
 
+class MutableTimeProvider {
+  constructor(private value: Date) {}
+
+  now(): Date {
+    return this.value;
+  }
+
+  set(value: Date): void {
+    this.value = value;
+  }
+}
+
 describe("QuizApp", () => {
+  it("observes the mutable time provider at initialization and a pageshow hint", async () => {
+    const storage = new ControlledStorage();
+    const repository = new ProgressRepository(storage);
+    const timeProvider = new MutableTimeProvider(
+      new Date("2026-07-28T03:00:00.000Z"),
+    );
+
+    render(
+      <QuizApp
+        timeProvider={timeProvider}
+        coreQuestions={coreQuestions}
+        bonusQuestions={[]}
+        repository={repository}
+      />,
+    );
+
+    await waitFor(async () => {
+      const loaded = await repository.load();
+      expect(loaded.kind).not.toBe("unrecoverable");
+      if (loaded.kind !== "unrecoverable") {
+        expect(loaded.state.timeObservation.lastObservedKstDate).toBe(
+          "2026-07-28",
+        );
+      }
+    });
+
+    timeProvider.set(new Date("2026-07-29T03:00:00.000Z"));
+    fireEvent(window, new Event("pageshow"));
+
+    await waitFor(async () => {
+      const loaded = await repository.load();
+      expect(loaded.kind).not.toBe("unrecoverable");
+      if (loaded.kind !== "unrecoverable") {
+        expect(loaded.state.timeObservation).toMatchObject({
+          lastObservedKstDate: "2026-07-29",
+          lastValidKstDate: "2026-07-29",
+          confidence: "normal",
+        });
+      }
+    });
+  });
+
+  it("uses a fresh date for a new core session without moving it after midnight", async () => {
+    const storage = new ControlledStorage();
+    const repository = new ProgressRepository(storage);
+    const timeProvider = new MutableTimeProvider(
+      new Date("2026-07-28T14:59:00.000Z"),
+    );
+    const user = userEvent.setup();
+
+    render(
+      <QuizApp
+        timeProvider={timeProvider}
+        coreQuestions={coreQuestions}
+        bonusQuestions={[]}
+        repository={repository}
+      />,
+    );
+
+    await screen.findByRole("button", { name: "오늘의 3문제 시작" });
+    timeProvider.set(new Date("2026-07-28T15:01:00.000Z"));
+    fireEvent(window, new Event("pageshow"));
+    await user.click(screen.getByRole("button", { name: "오늘의 3문제 시작" }));
+
+    timeProvider.set(new Date("2026-07-29T15:00:00.000Z"));
+    fireEvent(window, new Event("pageshow"));
+    await user.click(screen.getByRole("button", { name: "동전" }));
+
+    await waitFor(async () => {
+      const loaded = await repository.load();
+      expect(loaded.kind).not.toBe("unrecoverable");
+      if (loaded.kind !== "unrecoverable") {
+        expect(loaded.state.sessions).toHaveProperty("2026-07-29");
+        expect(loaded.state.sessions).not.toHaveProperty("2026-07-30");
+        expect(loaded.state.answerEvents[0].answeredAt).toBe(
+          "2026-07-29T15:00:00.000Z",
+        );
+      }
+    });
+  });
+
   it("답을 누르면 해설은 즉시 보이지만 저장 성공 전까지 다음 문제를 잠근다", async () => {
     const storage = new ControlledStorage();
     const releaseWrite = storage.holdWrites();

@@ -225,6 +225,11 @@ describe("ProgressRepository", () => {
     expect(expectState(restored)).toMatchObject({
       rewardAdTicketCount: 0,
       latestBonusStartCommandIds: {},
+      timeObservation: {
+        lastObservedKstDate: null,
+        lastValidKstDate: null,
+        confidence: "normal",
+      },
     });
     expect(window.localStorage.getItem(progressStorageKeys.legacy)).toBe(
       legacyRaw,
@@ -270,6 +275,39 @@ describe("ProgressRepository", () => {
       kind: "empty",
       state: createEmptyProgress(),
     });
+  });
+
+  it("creates an empty time observation state", () => {
+    expect(createEmptyProgress()).toMatchObject({
+      timeObservation: {
+        lastObservedKstDate: null,
+        lastValidKstDate: null,
+        confidence: "normal",
+      },
+    });
+  });
+
+  it("persists a low-confidence time observation across reload", async () => {
+    const repository = new ProgressRepository(
+      new BrowserKeyValueStorage(window.localStorage),
+    );
+    const progress = {
+      ...createProgress(),
+      timeObservation: {
+        lastObservedKstDate: "2026-08-05",
+        lastValidKstDate: "2026-07-28",
+        confidence: "lowConfidence" as const,
+      },
+    };
+
+    await repository.save(progress);
+    const restored = await new ProgressRepository(
+      new BrowserKeyValueStorage(window.localStorage),
+    ).load();
+
+    expect(expectState(restored).timeObservation).toEqual(
+      progress.timeObservation,
+    );
   });
 
   it("같은 rewardGrantId를 재시도하고 다시 불러와도 이용권을 한 번만 지급한다", async () => {
@@ -467,6 +505,11 @@ describe("ProgressRepository", () => {
     expect(expectState(restored)).toMatchObject({
       rewardAdTicketCount: 0,
       latestBonusStartCommandIds: {},
+      timeObservation: {
+        lastObservedKstDate: null,
+        lastValidKstDate: null,
+        confidence: "normal",
+      },
     });
   });
 
