@@ -87,21 +87,31 @@ Require status checks to pass를 켠 뒤 아래 네 검사를 정확히 추가�
 ## 롤백 준비와 실행
 
 - 마지막 정상 커밋 SHA:
+- last-known-good 콘솔 출시 버전·출시일:
 - 마지막 정상 `.ait` artifact 이름·파일 크기·SHA-256 checksum:
 - 마지막 정상 artifact owner:
 - 롤백 판단 기준:
 - 롤백 판단 담당자:
 - 롤백 실행 담당자:
 
-- [ ] 마지막 정상 커밋 SHA와 `.ait` artifact를 checksum으로 검증해 즉시 제출 가능하게 보관
+- [ ] 마지막 정상 커밋 SHA와 `.ait` artifact checksum을 콘솔의 last-known-good 출시 버전에 연결해 기록
 - [ ] 핵심 퀴즈 진입/완료 불가, 저장 손상, 중복 보상, 급격한 오류율 상승을 롤백 판단 기준에 포함
 - [ ] 기준 초과 시 롤백 판단 담당자가 중단·롤백 여부와 실행 담당자를 확정
-- [ ] 현재 MVP에는 원격 feature flag 또는 kill switch가 없으므로 비활성화 단계는 건너뛰고 직전 정상 `.ait` 재제출로 즉시 진행
+- [ ] 현재 MVP에는 원격 feature flag 또는 kill switch가 없으므로 비활성화 단계는 건너뛰고 기존 출시 버전 롤백으로 즉시 진행
 - [ ] 향후 원격 플래그가 추가된 경우에만 exact key·owner·비활성화 확인 결과를 artifact provenance와 체크리스트에 기록
-- [ ] Apps in Toss 콘솔에 직전 정상 `.ait` 재제출
+- [ ] [공식 Apps in Toss 출시 가이드 4-2](https://developers-apps-in-toss.toss.im/development/deploy.html#id-4-2) 확인
+- [ ] 콘솔의 `앱 출시` 메뉴에서 기존 출시 버전 목록 확인
+- [ ] provenance와 대조한 뒤 last-known-good 출시 버전 선택
+- [ ] `출시하기`를 눌러 즉시 롤백
+- [ ] 롤백 반영 직후 핵심 smoke와 지표 확인
+
+### 기존 정상 출시 버전이 없는 경우 fallback
+
+- [ ] 기존 정상 출시 버전이 전혀 없는 경우에만 fallback으로 새 번들 경로 진행
 - [ ] 문제 콘텐츠가 원인이면 해당 콘텐츠 commit revert 후 검증 명령을 다시 실행하고 운영 `.ait` 재빌드
-- [ ] 재빌드 artifact의 SHA·크기·checksum·owner를 새로 기록한 뒤 콘솔에 제출
-- [ ] 롤백 또는 재출시 후 iOS·Android smoke와 핵심 지표를 다시 확인
+- [ ] 새 artifact의 SHA·크기·checksum·owner를 기록하고 iOS·Android QR 검증
+- [ ] 새 운영 `.ait`를 rebuild/upload하고 검토 요청 → 승인 → 출시
+- [ ] fallback 출시 반영 직후 핵심 smoke와 지표 확인
 
 ## 최종 승인
 
