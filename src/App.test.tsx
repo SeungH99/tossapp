@@ -132,6 +132,14 @@ class MutableTimeProvider {
   }
 }
 
+function requiredButton(selector: string): HTMLButtonElement {
+  const element = document.querySelector(selector);
+  if (!(element instanceof HTMLButtonElement)) {
+    throw new Error(`Expected button for selector: ${selector}`);
+  }
+  return element;
+}
+
 describe("QuizApp", () => {
   it("observes the mutable time provider at initialization and a pageshow hint", async () => {
     const storage = new ControlledStorage();
@@ -210,6 +218,191 @@ describe("QuizApp", () => {
         expect(loaded.state.answerEvents[0].answeredAt).toBe(
           "2026-07-29T15:00:00.000Z",
         );
+      }
+    });
+  });
+
+  it("reads time at a visibility hint, answer retry, and core completion", async () => {
+    const storage = new ControlledStorage();
+    const repository = new ProgressRepository(storage);
+    const timeProvider = new MutableTimeProvider(
+      new Date("2026-07-28T03:00:00.000Z"),
+    );
+    const user = userEvent.setup();
+
+    render(
+      <QuizApp
+        timeProvider={timeProvider}
+        coreQuestions={coreQuestions}
+        bonusQuestions={[]}
+        repository={repository}
+      />,
+    );
+
+    await waitFor(() => {
+      expect(document.querySelector(".home-screen")).not.toBeNull();
+    });
+    timeProvider.set(new Date("2026-07-29T03:00:00.000Z"));
+    fireEvent(document, new Event("visibilitychange"));
+    await waitFor(async () => {
+      const loaded = await repository.load();
+      expect(loaded.kind).not.toBe("unrecoverable");
+      if (loaded.kind !== "unrecoverable") {
+        expect(loaded.state.timeObservation.lastObservedKstDate).toBe(
+          "2026-07-29",
+        );
+      }
+    });
+
+    storage.failWrites = true;
+    timeProvider.set(new Date("2026-07-30T03:00:00.000Z"));
+    await user.click(requiredButton(".home-screen .primary-button"));
+    timeProvider.set(new Date("2026-07-31T03:00:00.000Z"));
+    await user.click(
+      screen.getByRole("button", {
+        name: coreQuestions[0].choices[coreQuestions[0].answerIndex],
+      }),
+    );
+    await waitFor(() => {
+      expect(document.querySelector(".answer-save-error")).not.toBeNull();
+    });
+
+    storage.failWrites = false;
+    timeProvider.set(new Date("2026-08-01T03:00:00.000Z"));
+    await user.click(requiredButton(".answer-save-error button"));
+    await waitFor(() => {
+      expect(requiredButton(".quiz-screen .primary-button")).toBeEnabled();
+    });
+    await waitFor(async () => {
+      const loaded = await repository.load();
+      expect(loaded.kind).not.toBe("unrecoverable");
+      if (loaded.kind !== "unrecoverable") {
+        expect(loaded.state.timeObservation.lastObservedKstDate).toBe(
+          "2026-08-01",
+        );
+      }
+    });
+
+    await user.click(requiredButton(".quiz-screen .primary-button"));
+    await user.click(
+      screen.getByRole("button", {
+        name: coreQuestions[1].choices[coreQuestions[1].answerIndex],
+      }),
+    );
+    await waitFor(() => {
+      expect(requiredButton(".quiz-screen .primary-button")).toBeEnabled();
+    });
+    await user.click(requiredButton(".quiz-screen .primary-button"));
+    await user.click(
+      screen.getByRole("button", {
+        name: coreQuestions[2].choices[coreQuestions[2].answerIndex],
+      }),
+    );
+    await waitFor(() => {
+      expect(requiredButton(".quiz-screen .primary-button")).toBeEnabled();
+    });
+
+    timeProvider.set(new Date("2026-08-02T03:00:00.000Z"));
+    await user.click(requiredButton(".quiz-screen .primary-button"));
+
+    await waitFor(async () => {
+      const loaded = await repository.load();
+      expect(loaded.kind).not.toBe("unrecoverable");
+      if (loaded.kind !== "unrecoverable") {
+        expect(loaded.state.sessions).toHaveProperty("2026-07-30");
+        expect(loaded.state.timeObservation.lastObservedKstDate).toBe(
+          "2026-08-02",
+        );
+      }
+    });
+  });
+
+  it("reads time for bonus start retries and preserves an active bonus session across rollover", async () => {
+    const storage = new ControlledStorage();
+    const repository = new ProgressRepository(storage);
+    await repository.save({
+      version: 1,
+      sessions: { "2026-07-28": createCompletedSession("2026-07-28") },
+      bonus: createBonusEntitlement(),
+      completedBonusIds: [],
+    });
+    const timeProvider = new MutableTimeProvider(
+      new Date("2026-07-28T03:00:00.000Z"),
+    );
+    const user = userEvent.setup();
+    const firstDigitalQuestion = bundledBonusQuestions.find(
+      (question) => question.topic === "digital",
+    );
+    if (firstDigitalQuestion == null) {
+      throw new Error("Expected a bundled digital bonus question");
+    }
+
+    render(
+      <QuizApp
+        timeProvider={timeProvider}
+        coreQuestions={coreQuestions}
+        bonusQuestions={bundledBonusQuestions}
+        repository={repository}
+      />,
+    );
+
+    await waitFor(() => {
+      expect(document.querySelector(".result-screen")).not.toBeNull();
+    });
+    await user.click(requiredButton(".result-actions .outline-button"));
+    const digitalTopicButton = document.querySelectorAll(".topic-button")[3];
+    if (!(digitalTopicButton instanceof HTMLButtonElement)) {
+      throw new Error("Expected the digital bonus topic button");
+    }
+    await user.click(digitalTopicButton);
+
+    storage.failWrites = true;
+    await user.click(requiredButton(".bonus-topic-screen .primary-button"));
+    await waitFor(() => {
+      expect(document.querySelector(".bonus-start-error")).not.toBeNull();
+    });
+
+    storage.failWrites = false;
+    timeProvider.set(new Date("2026-07-29T03:00:00.000Z"));
+    await user.click(requiredButton(".bonus-topic-screen .primary-button"));
+    await waitFor(() => {
+      expect(
+        screen.getByRole("heading", { name: firstDigitalQuestion.prompt }),
+      ).toBeInTheDocument();
+    });
+    await waitFor(async () => {
+      const loaded = await repository.load();
+      expect(loaded.kind).not.toBe("unrecoverable");
+      if (loaded.kind !== "unrecoverable") {
+        expect(loaded.state.timeObservation.lastObservedKstDate).toBe(
+          "2026-07-29",
+        );
+      }
+    });
+
+    timeProvider.set(new Date("2026-07-30T03:00:00.000Z"));
+    fireEvent(window, new Event("pageshow"));
+    timeProvider.set(new Date("2026-07-31T03:00:00.000Z"));
+    await user.click(
+      screen.getByRole("button", {
+        name: firstDigitalQuestion.choices[firstDigitalQuestion.answerIndex],
+      }),
+    );
+
+    await waitFor(async () => {
+      const loaded = await repository.load();
+      expect(loaded.kind).not.toBe("unrecoverable");
+      if (loaded.kind !== "unrecoverable") {
+        expect(loaded.state.sessions).toHaveProperty(
+          "2026-07-28:bonus:digital",
+        );
+        expect(loaded.state.sessions).not.toHaveProperty(
+          "2026-07-31:bonus:digital",
+        );
+        expect(loaded.state.answerEvents.at(-1)).toMatchObject({
+          sessionKey: "2026-07-28:bonus:digital",
+          answeredAt: "2026-07-31T03:00:00.000Z",
+        });
       }
     });
   });

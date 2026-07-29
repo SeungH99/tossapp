@@ -47,12 +47,19 @@ export function observeTime(
     observation.lastObservedKstDate,
   );
   const validDate = observation.lastValidKstDate;
+  const observedVsValid =
+    validDate == null ? null : compareKstDateKeys(dateKey, validDate);
+  const lastObservedVsValid =
+    validDate == null
+      ? null
+      : compareKstDateKeys(observation.lastObservedKstDate, validDate);
   if (
     observation.confidence === "lowConfidence" &&
     validDate != null &&
-    distance > 0 &&
-    distance <= 7 &&
-    compareKstDateKeys(dateKey, validDate) >= 0
+    observedVsValid != null &&
+    lastObservedVsValid != null &&
+    observedVsValid >= 0 &&
+    (lastObservedVsValid < 0 || (distance > 0 && distance <= 7))
   ) {
     return {
       lastObservedKstDate: dateKey,

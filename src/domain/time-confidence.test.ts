@@ -126,6 +126,27 @@ describe("time confidence", () => {
     });
   });
 
+  it("recovers a rewind over seven days when it catches up to the last valid date", () => {
+    const initial = observeTime(
+      createTimeObservation(),
+      new Date("2026-07-28T03:00:00.000Z"),
+    );
+    const rewound = observeTime(
+      initial,
+      new Date("2026-07-20T03:00:00.000Z"),
+    );
+    const caughtUp = observeTime(
+      rewound,
+      new Date("2026-07-28T03:00:00.000Z"),
+    );
+
+    expect(caughtUp).toEqual({
+      lastObservedKstDate: "2026-07-28",
+      lastValidKstDate: "2026-07-28",
+      confidence: "normal",
+    });
+  });
+
   it("rejects an invalid Date", () => {
     expect(() => observeTime(createTimeObservation(), new Date("invalid"))).toThrow(
       RangeError,
