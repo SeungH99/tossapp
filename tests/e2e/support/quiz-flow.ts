@@ -83,17 +83,20 @@ export interface CorruptedProgressSlots {
   legacy: string | null;
 }
 
-export async function corruptAllProgressSlots(
+export async function readProgressSlots(
   page: Page,
 ): Promise<CorruptedProgressSlots> {
-  return page.evaluate(() => {
+  return page.evaluate(() => ({
+    slotA: localStorage.getItem("geuttae-yojeum:progress:v2:a"),
+    slotB: localStorage.getItem("geuttae-yojeum:progress:v2:b"),
+    legacy: localStorage.getItem("geuttae-yojeum:progress"),
+  }));
+}
+
+export async function corruptAllProgressSlots(page: Page): Promise<void> {
+  await page.evaluate(() => {
     localStorage.setItem("geuttae-yojeum:progress:v2:a", "{broken-a");
     localStorage.setItem("geuttae-yojeum:progress:v2:b", "{broken-b");
     localStorage.setItem("geuttae-yojeum:progress", "{broken-legacy");
-    return {
-      slotA: localStorage.getItem("geuttae-yojeum:progress:v2:a"),
-      slotB: localStorage.getItem("geuttae-yojeum:progress:v2:b"),
-      legacy: localStorage.getItem("geuttae-yojeum:progress"),
-    };
   });
 }

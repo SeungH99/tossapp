@@ -6,6 +6,7 @@ import {
   corruptAllProgressSlots,
   installClipboardFallback,
   openFreshApp,
+  readProgressSlots,
 } from "./support/quiz-flow";
 
 test("reload restores an answered in-progress core question", async ({
@@ -57,7 +58,8 @@ test("corrupt progress is preserved while no-save recovery returns home", async 
   page,
 }) => {
   await openFreshApp(page);
-  const preservedSlots = await corruptAllProgressSlots(page);
+  await corruptAllProgressSlots(page);
+  const preservedSlots = await readProgressSlots(page);
   await page.reload();
 
   await expect(
@@ -72,11 +74,5 @@ test("corrupt progress is preserved while no-save recovery returns home", async 
   await page.getByRole("button", { name: "오늘의 3문제 시작" }).click();
   await page.locator(".answer-button").first().click();
   await expect(page.locator(".explanation-card")).toBeVisible();
-  expect(
-    await page.evaluate(() => ({
-      slotA: localStorage.getItem("geuttae-yojeum:progress:v2:a"),
-      slotB: localStorage.getItem("geuttae-yojeum:progress:v2:b"),
-      legacy: localStorage.getItem("geuttae-yojeum:progress"),
-    })),
-  ).toEqual(preservedSlots);
+  expect(await readProgressSlots(page)).toEqual(preservedSlots);
 });
