@@ -552,43 +552,48 @@ export default function QuizApp({
     return observedNow;
   }, [now, timeProvider]);
 
-  const observeCurrentTime = useCallback((): Date => {
-    const observedNow = readCurrentTime();
-    const timeObservation = observeTime(
-      progressRef.current.timeObservation,
-      observedNow,
-    );
-    if (
-      timeObservation.lastObservedKstDate ===
-        progressRef.current.timeObservation.lastObservedKstDate &&
-      timeObservation.lastValidKstDate ===
-        progressRef.current.timeObservation.lastValidKstDate &&
-      timeObservation.confidence === progressRef.current.timeObservation.confidence
-    ) {
-      return observedNow;
-    }
-    const progress = {
-      ...progressRef.current,
-      timeObservation,
-    };
-    progressRef.current = progress;
+  const observeCurrentTime = useCallback(
+    (persistObservation = true): Date => {
+      const observedNow = readCurrentTime();
+      const timeObservation = observeTime(
+        progressRef.current.timeObservation,
+        observedNow,
+      );
+      const changed =
+        timeObservation.lastObservedKstDate !==
+          progressRef.current.timeObservation.lastObservedKstDate ||
+        timeObservation.lastValidKstDate !==
+          progressRef.current.timeObservation.lastValidKstDate ||
+        timeObservation.confidence !==
+          progressRef.current.timeObservation.confidence;
+      if (changed) {
+        progressRef.current = {
+          ...progressRef.current,
+          timeObservation,
+        };
+      }
 
-    if (
-      repository != null &&
-      hydrated &&
-      persistenceWritable &&
-      !noSaveMode
-    ) {
-      void repository.save(progress).catch(() => undefined);
-    }
-    return observedNow;
-  }, [
-    hydrated,
-    noSaveMode,
-    persistenceWritable,
-    readCurrentTime,
-    repository,
-  ]);
+      if (
+        persistObservation &&
+        repository != null &&
+        hydrated &&
+        persistenceWritable &&
+        !noSaveMode
+      ) {
+        void repository
+          .observeTime(observedNow)
+          .then((persisted) => {
+            progressRef.current = {
+              ...progressRef.current,
+              timeObservation: persisted.timeObservation,
+            };
+          })
+          .catch(() => undefined);
+      }
+      return observedNow;
+    },
+    [hydrated, noSaveMode, persistenceWritable, readCurrentTime, repository],
+  );
 
   const track = useCallback(
     (name: string, params: AnalyticsParams = {}) => {
@@ -703,12 +708,25 @@ export default function QuizApp({
         setEntitlement(grantedEntitlement);
         setCompletedBonusIds(progress.completedBonusIds);
 
-        if (
-          grantedEntitlement !== progress.bonus ||
-          hydratedProgress.timeObservation !== progress.timeObservation
-        ) {
-          void repository.save(hydratedProgress).catch(() => undefined);
+        if (grantedEntitlement !== progress.bonus) {
+          void repository
+            .save({
+              ...progress,
+              bonus: grantedEntitlement,
+            })
+            .catch(() => undefined);
         }
+        void repository
+          .observeTime(initialNow)
+          .then((persisted) => {
+            if (active) {
+              progressRef.current = {
+                ...progressRef.current,
+                timeObservation: persisted.timeObservation,
+              };
+            }
+          })
+          .catch(() => undefined);
 
         const activeBonusEntry = Object.entries(progress.sessions).find(
           ([key, storedSession]) =>
@@ -727,8 +745,7 @@ export default function QuizApp({
           );
 
           if (isKnownTopic) {
-            const storedStartId =
-              progress.latestBonusStartCommandIds[bonusKey];
+            const storedStartId = progress.latestBonusStartCommandIds[bonusKey];
             const storedStart =
               storedStartId == null
                 ? undefined
@@ -775,17 +792,21 @@ export default function QuizApp({
     };
   }, [bonusQuestions, initialDateKey, initialNow, repository, storageRetry]);
 
-  const persistSnapshot = (progress: ProgressState) => {
+  const persistSnapshot = (progress: ProgressState, observedAt?: Date) => {
     progressRef.current = progress;
     setSavedSessions(progress.sessions);
     if (repository != null && persistenceWritable) {
-      void repository.save(progress).catch(() => {
+      void repository.save(progress, observedAt).catch(() => {
         setPersistenceWritable(false);
       });
     }
   };
 
-  const submitAnswer = (command: AnswerCommand, target: "core" | "bonus") => {
+  const submitAnswer = (
+    command: AnswerCommand,
+    target: "core" | "bonus",
+    observedAt: Date,
+  ) => {
     const optimistic = applyAnswerCommand(progressRef.current, command);
     progressRef.current = optimistic.state;
     pendingAnswerRef.current = { command, target };
@@ -807,7 +828,7 @@ export default function QuizApp({
 
     setAnswerSaveStatus("saving");
     void repository
-      .commitAnswer(command)
+      .commitAnswer(command, observedAt)
       .then((result) => {
         progressRef.current = result.state;
         setSavedSessions(result.state.sessions);
@@ -828,8 +849,8 @@ export default function QuizApp({
     if (pending == null || answerSaveStatus === "saving") {
       return;
     }
-    observeCurrentTime();
-    submitAnswer(pending.command, pending.target);
+    const observedAt = observeCurrentTime(false);
+    submitAnswer(pending.command, pending.target, observedAt);
   };
 
   const handleStartCore = () => {
@@ -846,7 +867,7 @@ export default function QuizApp({
     if (session.phase !== "question") {
       return;
     }
-    const answeredAt = observeCurrentTime();
+    const answeredAt = observeCurrentTime(false);
     const question = questions[session.currentIndex];
     track("core_answer");
     submitAnswer(
@@ -859,6 +880,7 @@ export default function QuizApp({
         answeredAt: answeredAt.toISOString(),
       },
       "core",
+      answeredAt,
     );
   };
 
@@ -875,12 +897,13 @@ export default function QuizApp({
     setAnswerSaveStatus("idle");
     pendingAnswerRef.current = null;
     let nextEntitlement = entitlement;
+    let completedAt: Date | undefined;
     const nextSessions = {
       ...progressRef.current.sessions,
       [session.dateKey]: next,
     };
     if (next.phase === "completed") {
-      observeCurrentTime();
+      completedAt = observeCurrentTime(false);
       const streak = calculateCompletionStreak(session.dateKey, nextSessions);
       nextEntitlement = grantStreakTicket(
         entitlement,
@@ -894,11 +917,14 @@ export default function QuizApp({
       });
       setScreen("result");
     }
-    persistSnapshot({
-      ...progressRef.current,
-      sessions: nextSessions,
-      bonus: nextEntitlement,
-    });
+    persistSnapshot(
+      {
+        ...progressRef.current,
+        sessions: nextSessions,
+        bonus: nextEntitlement,
+      },
+      completedAt,
+    );
   };
 
   const handleShare = () => {
@@ -1028,20 +1054,28 @@ export default function QuizApp({
           }
 
           setBonusStartStatus("saving");
+          const grantObservedAt = observeCurrentTime(false);
+          state = progressRef.current;
           const grant = useRepository
-            ? await repository.grantBonusTicket(pending.rewardGrantId)
+            ? await repository.grantBonusTicket(
+                pending.rewardGrantId,
+                grantObservedAt,
+              )
             : grantBonusTicketCommand(state, pending.rewardGrantId);
           state = grant.state;
           progressRef.current = grant.state;
         }
 
         setBonusStartStatus("saving");
+        const startObservedAt = observeCurrentTime(false);
+        state = progressRef.current;
         const result = useRepository
           ? await repository.startBonusSession(
               pending.commandId,
               pending.dateKey,
               topic,
               bonusQuestions,
+              startObservedAt,
             )
           : startBonusSessionCommand(
               state,
@@ -1067,7 +1101,7 @@ export default function QuizApp({
     if (bonusSession == null || bonusSession.phase !== "question") {
       return;
     }
-    const answeredAt = observeCurrentTime();
+    const answeredAt = observeCurrentTime(false);
     const question = bonusSet[bonusSession.currentIndex];
     submitAnswer(
       {
@@ -1079,6 +1113,7 @@ export default function QuizApp({
         answeredAt: answeredAt.toISOString(),
       },
       "bonus",
+      answeredAt,
     );
   };
 

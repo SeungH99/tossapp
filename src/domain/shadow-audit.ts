@@ -67,9 +67,7 @@ export function isShadowAudit(value: unknown): value is ShadowAudit {
   );
 }
 
-export function createShadowAudit(
-  input: CreateShadowAuditInput,
-): ShadowAudit {
+export function createShadowAudit(input: CreateShadowAuditInput): ShadowAudit {
   return {
     legacyQuestionIds: [...input.legacyQuestionIds],
     shadowQuestionIds: [...input.shadowQuestionIds],
@@ -83,7 +81,7 @@ export function appendShadowAudit(
   audit: ShadowAudit,
   timeConfidence: TimeConfidence,
 ): ShadowAudit[] {
-  const retained = audits.map(createShadowAudit);
+  const retained = audits.map(createShadowAudit).slice(-SHADOW_AUDIT_LIMIT);
   if (timeConfidence === "lowConfidence") {
     return retained;
   }

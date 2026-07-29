@@ -82,6 +82,32 @@ describe("shadow audit", () => {
     expect(result).toEqual(existing);
   });
 
+  it("bounds an already oversized audit ring even at low confidence", () => {
+    const existing = Array.from({ length: 101 }, (_, index) =>
+      createShadowAudit({
+        legacyQuestionIds: [`legacy-${index}`],
+        shadowQuestionIds: [`shadow-${index}`],
+        policyVersion: "personalization-v1",
+        reasonCode: "mixed-accuracy",
+      }),
+    );
+
+    const result = appendShadowAudit(
+      existing,
+      createShadowAudit({
+        legacyQuestionIds: ["not-appended"],
+        shadowQuestionIds: ["not-appended"],
+        policyVersion: "personalization-v1",
+        reasonCode: "low-confidence",
+      }),
+      "lowConfidence",
+    );
+
+    expect(result).toHaveLength(100);
+    expect(result[0].legacyQuestionIds).toEqual(["legacy-1"]);
+    expect(result[99].legacyQuestionIds).toEqual(["legacy-100"]);
+  });
+
   it("exports audit JSON only when the caller explicitly identifies development", () => {
     const audits = [
       createShadowAudit({
