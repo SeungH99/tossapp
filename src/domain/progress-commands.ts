@@ -1,4 +1,6 @@
-import type { Question } from "./question";
+import { unlockBonus, type BonusUnlockSource } from "./bonus-entitlement";
+import { selectBonusQuestions } from "./bonus-selection";
+import type { BonusQuestion, BonusTopic, Question } from "./question";
 import type {
   AnswerCheckpoint,
   AnswerEvent,
@@ -6,6 +8,7 @@ import type {
 } from "./progress-state";
 import {
   answerCurrentQuestion,
+  createQuizSession,
   type QuizSession,
 } from "./quiz-session";
 
@@ -25,6 +28,28 @@ export interface ApplyAnswerResult {
   state: ProgressState;
   session: QuizSession;
 }
+
+export interface GrantBonusTicketResult {
+  applied: boolean;
+  state: ProgressState;
+}
+
+export type StartBonusSessionResult =
+  | {
+      applied: true;
+      state: ProgressState;
+      source: BonusUnlockSource;
+      session: QuizSession;
+      questionIds: string[];
+    }
+  | {
+      applied: false;
+      reason: "duplicate" | "no-questions" | "reward-ad-required";
+      state: ProgressState;
+      source?: BonusUnlockSource;
+      session?: QuizSession;
+      questionIds?: string[];
+    };
 
 function foldEvent(
   checkpoint: AnswerCheckpoint,
@@ -128,5 +153,121 @@ export function applyAnswerCommand(
     applied: true,
     state: nextState,
     session: nextSession,
+  };
+}
+
+export function grantBonusTicketCommand(
+  state: ProgressState,
+  rewardGrantId: string,
+): GrantBonusTicketResult {
+  if (rewardGrantId.trim().length === 0) {
+    throw new TypeError("rewardGrantId must not be empty");
+  }
+
+  if (state.rewardGrantIds.includes(rewardGrantId)) {
+    return { applied: false, state };
+  }
+
+  return {
+    applied: true,
+    state: {
+      ...state,
+      bonus: {
+        ...state.bonus,
+        ticketCount: state.bonus.ticketCount + 1,
+      },
+      rewardGrantIds: [...state.rewardGrantIds, rewardGrantId],
+      rewardAdTicketCount: state.rewardAdTicketCount + 1,
+    },
+  };
+}
+
+export function startBonusSessionCommand(
+  state: ProgressState,
+  commandId: string,
+  dateKey: string,
+  topic: BonusTopic,
+  bonusQuestions: BonusQuestion[],
+): StartBonusSessionResult {
+  if (commandId.trim().length === 0) {
+    throw new TypeError("commandId must not be empty");
+  }
+
+  const completed = Object.hasOwn(state.bonusStartCommands, commandId)
+    ? state.bonusStartCommands[commandId]
+    : undefined;
+  if (completed != null) {
+    return {
+      applied: false,
+      reason: "duplicate",
+      state,
+      source: completed.source,
+      session: state.sessions[completed.sessionKey],
+      questionIds: completed.questionIds,
+    };
+  }
+
+  const selection = selectBonusQuestions(
+    topic,
+    bonusQuestions,
+    new Set(state.completedBonusIds),
+  );
+  if (selection.questions.length === 0) {
+    return { applied: false, reason: "no-questions", state };
+  }
+
+  const rewardAdTicketAvailable = state.rewardAdTicketCount > 0;
+  const unlock = unlockBonus(
+    state.bonus,
+    commandId,
+    rewardAdTicketAvailable ? "reward_ad" : "streak_ticket",
+  );
+  if (unlock.source === "reward_ad" && state.bonus.ticketCount === 0) {
+    return {
+      applied: false,
+      reason: "reward-ad-required",
+      state,
+      source: unlock.source,
+    };
+  }
+
+  const sessionKey = `${dateKey}:bonus:${topic}`;
+  const session = createQuizSession(sessionKey);
+  const questionIds = selection.questions.map((question) => question.id);
+  const record = {
+    commandId,
+    dateKey,
+    topic,
+    sessionKey,
+    questionIds,
+    source: unlock.source,
+  };
+  const nextState: ProgressState = {
+    ...state,
+    bonus: unlock.state,
+    rewardAdTicketCount:
+      unlock.source === "reward_ad"
+        ? state.rewardAdTicketCount - 1
+        : state.rewardAdTicketCount,
+    sessions: {
+      ...state.sessions,
+      [sessionKey]: session,
+    },
+    bonusStartCommands: {
+      ...state.bonusStartCommands,
+      [commandId]: record,
+    },
+    latestBonusStartCommandIds: {
+      ...state.latestBonusStartCommandIds,
+      [sessionKey]: commandId,
+    },
+  };
+
+  return {
+    applied: true,
+    state: nextState,
+    source: unlock.source,
+    session,
+    questionIds,
   };
 }

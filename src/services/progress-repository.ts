@@ -4,15 +4,21 @@ import {
 } from "../domain/bonus-entitlement";
 import {
   applyAnswerCommand,
+  grantBonusTicketCommand,
+  startBonusSessionCommand,
   type AnswerCommand,
   type ApplyAnswerResult,
+  type GrantBonusTicketResult,
+  type StartBonusSessionResult,
 } from "../domain/progress-commands";
 import type {
   AnswerCheckpoint,
   AnswerEvent,
+  BonusStartCommandRecord,
   ProgressState,
   ProgressStateV1,
 } from "../domain/progress-state";
+import type { BonusQuestion, BonusTopic } from "../domain/question";
 import type { QuizSession } from "../domain/quiz-session";
 
 export type {
@@ -88,6 +94,10 @@ export function createEmptyProgress(): ProgressState {
       correctAnswers: 0,
       byQuestion: {},
     },
+    rewardGrantIds: [],
+    rewardAdTicketCount: 0,
+    bonusStartCommands: {},
+    latestBonusStartCommandIds: {},
   };
 }
 
@@ -163,7 +173,9 @@ function isBonusEntitlement(value: unknown): value is BonusEntitlement {
       (attempt) =>
         isRecord(attempt) &&
         typeof attempt.attemptId === "string" &&
-        ["first_free", "streak_ticket"].includes(String(attempt.source)),
+        ["first_free", "streak_ticket", "reward_ad"].includes(
+          String(attempt.source),
+        ),
     )
   );
 }
@@ -198,6 +210,55 @@ function isAnswerCheckpoint(value: unknown): value is AnswerCheckpoint {
   );
 }
 
+function isBonusStartCommandRecord(
+  value: unknown,
+): value is BonusStartCommandRecord {
+  return (
+    isRecord(value) &&
+    typeof value.commandId === "string" &&
+    typeof value.dateKey === "string" &&
+    [
+      "nostalgia",
+      "korean-life",
+      "language",
+      "digital",
+      "safety",
+      "nature-general",
+    ].includes(String(value.topic)) &&
+    typeof value.sessionKey === "string" &&
+    isStringArray(value.questionIds) &&
+    ["first_free", "streak_ticket", "reward_ad"].includes(
+      String(value.source),
+    )
+  );
+}
+
+function isBonusStartCommands(
+  value: unknown,
+): value is Record<string, BonusStartCommandRecord> {
+  return (
+    isRecord(value) &&
+    Object.values(value).every(isBonusStartCommandRecord)
+  );
+}
+
+function isStringRecord(value: unknown): value is Record<string, string> {
+  return (
+    isRecord(value) &&
+    Object.values(value).every((candidate) => typeof candidate === "string")
+  );
+}
+
+function inferLatestBonusStartCommandIds(
+  commands: Record<string, BonusStartCommandRecord>,
+): Record<string, string> {
+  const latestBySession: Record<string, string> = {};
+  for (const command of Object.values(commands)) {
+    latestBySession[command.sessionKey] = command.commandId;
+  }
+  return latestBySession;
+}
+
 function hasValidProgressFields(
   value: Record<string, unknown>,
 ): boolean {
@@ -217,15 +278,75 @@ function isProgressStateV1(value: unknown): value is ProgressStateV1 {
   );
 }
 
-function isProgressState(value: unknown): value is ProgressState {
-  return (
-    isRecord(value) &&
-    value.version === 2 &&
-    hasValidProgressFields(value) &&
-    Array.isArray(value.answerEvents) &&
-    value.answerEvents.every(isAnswerEvent) &&
-    isAnswerCheckpoint(value.answerCheckpoint)
+function normalizeProgressState(value: unknown): ProgressState | null {
+  if (
+    !isRecord(value) ||
+    value.version !== 2 ||
+    !hasValidProgressFields(value) ||
+    !Array.isArray(value.answerEvents) ||
+    !value.answerEvents.every(isAnswerEvent) ||
+    !isAnswerCheckpoint(value.answerCheckpoint)
+  ) {
+    return null;
+  }
+
+  const rewardGrantIds =
+    value.rewardGrantIds === undefined
+      ? []
+      : isStringArray(value.rewardGrantIds)
+        ? value.rewardGrantIds
+        : null;
+  const bonusStartCommands =
+    value.bonusStartCommands === undefined
+      ? {}
+      : isBonusStartCommands(value.bonusStartCommands)
+        ? value.bonusStartCommands
+        : null;
+  if (rewardGrantIds == null || bonusStartCommands == null) {
+    return null;
+  }
+  const inferredRewardAdTicketCount = Math.min(
+    rewardGrantIds.length,
+    Math.max(
+      0,
+      Number((value.bonus as BonusEntitlement).ticketCount) -
+        (value.bonus as BonusEntitlement).grantedMilestones.length,
+    ),
   );
+  const rewardAdTicketCount =
+    value.rewardAdTicketCount === undefined
+      ? inferredRewardAdTicketCount
+      : Number.isInteger(value.rewardAdTicketCount) &&
+          Number(value.rewardAdTicketCount) >= 0 &&
+          Number(value.rewardAdTicketCount) <=
+            Number((value.bonus as BonusEntitlement).ticketCount)
+        ? Number(value.rewardAdTicketCount)
+        : null;
+  const latestBonusStartCommandIds =
+    value.latestBonusStartCommandIds === undefined
+      ? inferLatestBonusStartCommandIds(bonusStartCommands)
+      : isStringRecord(value.latestBonusStartCommandIds)
+        ? value.latestBonusStartCommandIds
+        : null;
+  if (
+    rewardAdTicketCount == null ||
+    latestBonusStartCommandIds == null
+  ) {
+    return null;
+  }
+
+  return {
+    version: 2,
+    sessions: value.sessions as Record<string, QuizSession>,
+    bonus: value.bonus as BonusEntitlement,
+    completedBonusIds: value.completedBonusIds as string[],
+    answerEvents: value.answerEvents as AnswerEvent[],
+    answerCheckpoint: value.answerCheckpoint as AnswerCheckpoint,
+    rewardGrantIds,
+    rewardAdTicketCount,
+    bonusStartCommands,
+    latestBonusStartCommandIds,
+  };
 }
 
 function migrateV1ToV2(progress: ProgressStateV1): ProgressState {
@@ -240,11 +361,20 @@ function migrateV1ToV2(progress: ProgressStateV1): ProgressState {
       correctAnswers: 0,
       byQuestion: {},
     },
+    rewardGrantIds: [],
+    rewardAdTicketCount: 0,
+    bonusStartCommands: {},
+    latestBonusStartCommandIds: {},
   };
 }
 
 function checksumInput(
-  envelope: Omit<ProgressEnvelopeV2, "checksum">,
+  envelope: {
+    schemaVersion: 2;
+    revision: number;
+    writtenAt: string;
+    payload: unknown;
+  },
 ): string {
   return JSON.stringify({
     schemaVersion: envelope.schemaVersion,
@@ -307,24 +437,28 @@ function parseSlot(
       Number(parsed.revision) < 1 ||
       typeof parsed.checksum !== "string" ||
       typeof parsed.writtenAt !== "string" ||
-      !isProgressState(parsed.payload)
+      normalizeProgressState(parsed.payload) == null
     ) {
       return { kind: "invalid", name, raw };
     }
 
+    const payload = normalizeProgressState(parsed.payload);
+    if (payload == null) {
+      return { kind: "invalid", name, raw };
+    }
     const envelope: ProgressEnvelopeV2 = {
       schemaVersion: 2,
       revision: Number(parsed.revision),
       checksum: parsed.checksum,
       writtenAt: parsed.writtenAt,
-      payload: parsed.payload,
+      payload,
     };
     const expected = checksum(
       checksumInput({
         schemaVersion: envelope.schemaVersion,
         revision: envelope.revision,
         writtenAt: envelope.writtenAt,
-        payload: envelope.payload,
+        payload: parsed.payload,
       }),
     );
 
@@ -456,9 +590,10 @@ export class ProgressRepository {
   private async saveImmediately(
     progress: ProgressState | ProgressStateV1,
   ): Promise<void> {
-    const nextProgress =
-      progress.version === 1 ? migrateV1ToV2(progress) : progress;
-    if (!isProgressState(nextProgress)) {
+    const nextProgress = normalizeProgressState(
+      progress.version === 1 ? migrateV1ToV2(progress) : progress,
+    );
+    if (nextProgress == null) {
       throw new TypeError("Invalid progress state");
     }
 
@@ -513,6 +648,47 @@ export class ProgressRepository {
       }
 
       const result = applyAnswerCommand(loaded.state, command);
+      if (result.applied) {
+        await this.saveImmediately(result.state);
+      }
+      return result;
+    });
+  }
+
+  grantBonusTicket(rewardGrantId: string): Promise<GrantBonusTicketResult> {
+    return this.enqueue(async () => {
+      const loaded = await this.load();
+      if (loaded.kind === "unrecoverable") {
+        throw new ProgressWriteBlockedError();
+      }
+
+      const result = grantBonusTicketCommand(loaded.state, rewardGrantId);
+      if (result.applied) {
+        await this.saveImmediately(result.state);
+      }
+      return result;
+    });
+  }
+
+  startBonusSession(
+    commandId: string,
+    dateKey: string,
+    topic: BonusTopic,
+    bonusQuestions: BonusQuestion[],
+  ): Promise<StartBonusSessionResult> {
+    return this.enqueue(async () => {
+      const loaded = await this.load();
+      if (loaded.kind === "unrecoverable") {
+        throw new ProgressWriteBlockedError();
+      }
+
+      const result = startBonusSessionCommand(
+        loaded.state,
+        commandId,
+        dateKey,
+        topic,
+        bonusQuestions,
+      );
       if (result.applied) {
         await this.saveImmediately(result.state);
       }
