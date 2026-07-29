@@ -8,13 +8,14 @@ import {
   openFreshApp,
 } from "./support/quiz-flow";
 
-test("home, explanation, result, and bonus offer have no blocking axe issues", async ({
+test("home, question, explanation, result, and bonus offer have no blocking axe issues", async ({
   page,
 }) => {
   await openFreshApp(page);
   await expectNoBlockingAxeViolations(page);
 
   await page.getByRole("button", { name: "오늘의 3문제 시작" }).click();
+  await expectNoBlockingAxeViolations(page);
   await answerCurrentQuestion(page);
   await expectNoBlockingAxeViolations(page);
 
