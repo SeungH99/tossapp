@@ -136,9 +136,91 @@ describe("applyAnswerCommand", () => {
       correctAnswers: 1,
     });
   });
+
 });
 
 describe("bonus progress commands", () => {
+  it("keeps the legacy bonus question order while recording the pilot shadow decision", () => {
+    const result = progressCommands.startBonusSessionCommand(
+      createEmptyProgress(),
+      "shadowed-digital-start",
+      "2026-07-28",
+      "digital",
+      bonusQuestions,
+    );
+
+    expect(result).toMatchObject({
+      applied: true,
+      questionIds: ["bonus-digital-1", "bonus-digital-2"],
+    });
+    expect(result.state.bonusStartCommands["shadowed-digital-start"])
+      .toMatchObject({ questionIds: ["bonus-digital-1", "bonus-digital-2"] });
+    expect(result.state.shadowAudits).toEqual([
+      {
+        legacyQuestionIds: ["bonus-digital-1", "bonus-digital-2"],
+        shadowQuestionIds: ["bonus-digital-1", "bonus-digital-2"],
+        policyVersion: "personalization-v1",
+        reasonCode: "insufficient-history",
+      },
+    ]);
+  });
+
+  it("records a safety pilot decision without changing the legacy selection", () => {
+    const safetyQuestions = bonusQuestions.map((question) => ({
+      ...question,
+      id: question.id.replace("digital", "safety"),
+      conceptId: question.conceptId.replace("digital", "safety"),
+      topic: "safety" as const,
+    }));
+
+    const result = progressCommands.startBonusSessionCommand(
+      createEmptyProgress(),
+      "shadowed-safety-start",
+      "2026-07-28",
+      "safety",
+      safetyQuestions,
+    );
+
+    expect(result).toMatchObject({
+      applied: true,
+      questionIds: ["bonus-safety-1", "bonus-safety-2"],
+    });
+    expect(result.state.bonusStartCommands["shadowed-safety-start"])
+      .toMatchObject({ questionIds: ["bonus-safety-1", "bonus-safety-2"] });
+    expect(result.state.shadowAudits[0]).toMatchObject({
+      legacyQuestionIds: ["bonus-safety-1", "bonus-safety-2"],
+      shadowQuestionIds: ["bonus-safety-1", "bonus-safety-2"],
+      reasonCode: "insufficient-history",
+    });
+  });
+
+  it("starts a non-pilot topic with its legacy selection without retaining a shadow audit", () => {
+    const nostalgiaQuestions = bonusQuestions.map((question) => ({
+      ...question,
+      id: question.id.replace("digital", "nostalgia"),
+      conceptId: question.conceptId.replace("digital", "nostalgia"),
+      topic: "nostalgia" as const,
+    }));
+
+    const result = progressCommands.startBonusSessionCommand(
+      createEmptyProgress(),
+      "nostalgia-start",
+      "2026-07-28",
+      "nostalgia",
+      nostalgiaQuestions,
+    );
+
+    expect(result).toMatchObject({
+      applied: true,
+      questionIds: ["bonus-nostalgia-1", "bonus-nostalgia-2"],
+    });
+    expect(result.state.sessions["2026-07-28:bonus:nostalgia"])
+      .toMatchObject({ phase: "question" });
+    expect(result.state.bonusStartCommands["nostalgia-start"])
+      .toMatchObject({ questionIds: ["bonus-nostalgia-1", "bonus-nostalgia-2"] });
+    expect(result.state.shadowAudits).toEqual([]);
+  });
+
   it("같은 rewardGrantId를 다시 적용해도 보너스 이용권은 한 번만 지급한다", () => {
     expect(progressCommands).toHaveProperty("grantBonusTicketCommand");
     const grantBonusTicketCommand = progressCommands.grantBonusTicketCommand;

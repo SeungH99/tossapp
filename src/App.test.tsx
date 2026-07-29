@@ -1044,6 +1044,8 @@ describe("QuizApp", () => {
         },
       },
     ]);
+    expect(JSON.stringify(analyticsEvents)).not.toContain("bonus-digital-1");
+    expect(JSON.stringify(analyticsEvents)).not.toContain("selectedIndex");
   });
 
   it("보너스 시작 저장이 끝날 때까지 화면을 유지하고 빠른 중복 클릭으로는 한 세션만 만든다", async () => {
@@ -1621,6 +1623,8 @@ describe("QuizApp", () => {
         "selectedIndex",
         "isCorrect",
         "answeredAt",
+        "legacyQuestionIds",
+        "shadowQuestionIds",
       ]),
     );
   });
