@@ -18,7 +18,7 @@ export async function answerCurrentQuestion(
 ): Promise<void> {
   await page.locator(".answer-button").nth(choiceIndex).click();
   await expect(page.locator(".explanation-card")).toBeVisible();
-  await expect(page.getByText("정답이에요")).toBeVisible();
+  await expect(page.getByText("저장됐어요.")).toBeVisible();
 }
 
 export async function finishQuiz(
@@ -58,4 +58,29 @@ export async function startFirstFreeBonus(
   await page.getByRole("button", { name: topicLabel }).click();
   await page.getByRole("button", { name: "첫 보너스 무료로 시작" }).click();
   await expect(page.locator(".quiz-screen")).toBeVisible();
+}
+
+export async function installClipboardFallback(page: Page): Promise<void> {
+  await page.addInitScript(() => {
+    Object.defineProperty(navigator, "share", {
+      configurable: true,
+      value: undefined,
+    });
+    Object.defineProperty(navigator, "clipboard", {
+      configurable: true,
+      value: {
+        writeText: async (value: string) => {
+          localStorage.setItem("e2e:clipboard", value);
+        },
+      },
+    });
+  });
+}
+
+export async function corruptAllProgressSlots(page: Page): Promise<void> {
+  await page.evaluate(() => {
+    localStorage.setItem("geuttae-yojeum:progress:v2:a", "{broken-a");
+    localStorage.setItem("geuttae-yojeum:progress:v2:b", "{broken-b");
+    localStorage.setItem("geuttae-yojeum:progress", "{broken-legacy");
+  });
 }
