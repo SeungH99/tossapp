@@ -43,3 +43,12 @@ ID가 사용되므로 실제 수익은 발생하지 않습니다.
 - `src/services/quiz-share.ts`의 `intoss://` 딥링크
 
 문제와 출처는 `src/data/questions.ts`에서 관리합니다.
+
+## 프로젝트 문서
+
+- [디자인 시스템](DESIGN.md)
+- [변경 기록](CHANGELOG.md)
+- [후속 작업](TODOS.md)
+- [MVP 설계](docs/superpowers/specs/2026-07-27-geuttae-yojeum-mvp-design.md)
+- [CEO 검토 계획](docs/superpowers/specs/2026-07-27-geuttae-yojeum-ceo-review.md)
+- [엔지니어링 테스트 계획](docs/superpowers/specs/2026-07-28-geuttae-yojeum-eng-test-plan.md)
