@@ -9,21 +9,17 @@ import {
 } from "./personalization-policy";
 import type { AnswerEvent } from "./progress-state";
 import type { BonusQuestion, BonusTopic, InternalDifficulty } from "./question";
-import { createShadowAudit, type ShadowAudit } from "./shadow-audit";
+import {
+  createShadowAudit,
+  type ShadowAudit,
+  type ShadowReasonCode as SharedShadowReasonCode,
+} from "./shadow-audit";
 import type { TimeConfidence } from "./time-confidence";
 
 const PILOT_TOPICS: readonly BonusTopic[] = ["digital", "safety"];
 const SELECTION_LIMIT = 3;
 
-export type ShadowReasonCode =
-  | "consecutive-wrong"
-  | "low-accuracy"
-  | "high-accuracy"
-  | "insufficient-history"
-  | "mixed-accuracy"
-  | "low-confidence"
-  | "outside-pilot"
-  | "insufficient-catalog";
+export type ShadowReasonCode = SharedShadowReasonCode;
 
 export interface ShadowSelectionInput {
   topic: BonusTopic;

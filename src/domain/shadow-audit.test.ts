@@ -4,6 +4,7 @@ import {
   appendShadowAudit,
   createShadowAudit,
   exportShadowAuditJson,
+  isShadowAudit,
 } from "./shadow-audit";
 
 describe("shadow audit", () => {
@@ -24,6 +25,17 @@ describe("shadow audit", () => {
     expect(JSON.stringify(audit)).not.toMatch(
       /isCorrect|selectedIndex|answeredAt|attemptId|sessionKey|userId|reward/i,
     );
+  });
+
+  it("rejects a free-form reason code", () => {
+    expect(
+      isShadowAudit({
+        legacyQuestionIds: ["legacy-1"],
+        shadowQuestionIds: ["shadow-1"],
+        policyVersion: "personalization-v1",
+        reasonCode: "member@example.com",
+      }),
+    ).toBe(false);
   });
 
   it("retains only the newest 100 audits", () => {

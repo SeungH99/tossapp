@@ -2,18 +2,31 @@ import type { TimeConfidence } from "./time-confidence";
 
 export const SHADOW_AUDIT_LIMIT = 100;
 
+export const SHADOW_REASON_CODES = [
+  "consecutive-wrong",
+  "low-accuracy",
+  "high-accuracy",
+  "insufficient-history",
+  "mixed-accuracy",
+  "low-confidence",
+  "outside-pilot",
+  "insufficient-catalog",
+] as const;
+
+export type ShadowReasonCode = (typeof SHADOW_REASON_CODES)[number];
+
 export interface ShadowAudit {
   legacyQuestionIds: string[];
   shadowQuestionIds: string[];
   policyVersion: string;
-  reasonCode: string;
+  reasonCode: ShadowReasonCode;
 }
 
 export interface CreateShadowAuditInput {
   legacyQuestionIds: readonly string[];
   shadowQuestionIds: readonly string[];
   policyVersion: string;
-  reasonCode: string;
+  reasonCode: ShadowReasonCode;
 }
 
 function isStringArray(value: unknown): value is string[] {
@@ -25,6 +38,13 @@ function isStringArray(value: unknown): value is string[] {
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value != null && !Array.isArray(value);
+}
+
+export function isShadowReasonCode(value: unknown): value is ShadowReasonCode {
+  return (
+    typeof value === "string" &&
+    (SHADOW_REASON_CODES as readonly string[]).includes(value)
+  );
 }
 
 export function isShadowAudit(value: unknown): value is ShadowAudit {
@@ -43,8 +63,7 @@ export function isShadowAudit(value: unknown): value is ShadowAudit {
     isStringArray(value.shadowQuestionIds) &&
     typeof value.policyVersion === "string" &&
     value.policyVersion.trim().length > 0 &&
-    typeof value.reasonCode === "string" &&
-    value.reasonCode.trim().length > 0
+    isShadowReasonCode(value.reasonCode)
   );
 }
 

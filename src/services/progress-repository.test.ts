@@ -307,16 +307,15 @@ describe("ProgressRepository", () => {
     expect(restored.shadowAudits).toEqual(shadowAudits);
   });
 
-  it("rejects malformed and over-limit persisted shadow audits", async () => {
-    const malformedPayload: Record<string, unknown> = {
+  it("rejects noncanonical and over-limit persisted shadow audits", async () => {
+    const noncanonicalReasonPayload: Record<string, unknown> = {
       ...createEmptyProgress(),
       shadowAudits: [
         {
           legacyQuestionIds: ["legacy-1"],
           shadowQuestionIds: ["shadow-1"],
           policyVersion: "personalization-v1",
-          reasonCode: "high-accuracy",
-          attemptId: "must-not-persist",
+          reasonCode: "member@example.com",
         },
       ],
     };
@@ -331,7 +330,7 @@ describe("ProgressRepository", () => {
     };
     window.localStorage.setItem(
       progressStorageKeys.slotA,
-      legacyV2Envelope(malformedPayload),
+      legacyV2Envelope(noncanonicalReasonPayload),
     );
     window.localStorage.setItem(
       progressStorageKeys.slotB,

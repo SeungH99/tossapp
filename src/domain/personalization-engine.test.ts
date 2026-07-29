@@ -136,6 +136,7 @@ describe("selectShadowBonusQuestions", () => {
     const result = select([
       answer("old-one", false),
       answer("old-two", false),
+      answer("old-three", false),
       ...Array.from({ length: 8 }, (_, index) => answer(`recent-${index}`, true)),
     ]);
 
