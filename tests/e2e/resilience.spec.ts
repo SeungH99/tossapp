@@ -14,12 +14,24 @@ test("reload restores an answered in-progress core question", async ({
   await openFreshApp(page);
   await page.getByRole("button", { name: "오늘의 3문제 시작" }).click();
   const prompt = await page.locator(".question-section h1").innerText();
+  const selectedChoice = page.locator(".answer-button").nth(1);
+  const selectedChoiceText = await selectedChoice.innerText();
   await answerCurrentQuestion(page, 1);
+  const answerStatus = await page.locator(".explanation-card strong").innerText();
+  const explanation = await page
+    .locator(".explanation-card > p:not(.answer-save-status)")
+    .innerText();
 
   await page.reload();
 
   await expect(page.locator(".question-section h1")).toHaveText(prompt);
-  await expect(page.locator(".answer-button.selected")).toHaveCount(1);
+  await expect(
+    page.getByRole("button", { name: selectedChoiceText }),
+  ).toHaveClass(/(^|\s)selected(\s|$)/);
+  await expect(page.locator(".explanation-card strong")).toHaveText(answerStatus);
+  await expect(
+    page.locator(".explanation-card > p:not(.answer-save-status)"),
+  ).toHaveText(explanation);
   await expect(page.locator(".explanation-card")).toBeVisible();
 });
 
@@ -45,7 +57,7 @@ test("corrupt progress is preserved while no-save recovery returns home", async 
   page,
 }) => {
   await openFreshApp(page);
-  await corruptAllProgressSlots(page);
+  const preservedSlots = await corruptAllProgressSlots(page);
   await page.reload();
 
   await expect(
@@ -57,9 +69,14 @@ test("corrupt progress is preserved while no-save recovery returns home", async 
   await expect(
     page.getByRole("button", { name: "오늘의 3문제 시작" }),
   ).toBeVisible();
+  await page.getByRole("button", { name: "오늘의 3문제 시작" }).click();
+  await page.locator(".answer-button").first().click();
+  await expect(page.locator(".explanation-card")).toBeVisible();
   expect(
-    await page.evaluate(() =>
-      localStorage.getItem("geuttae-yojeum:progress:v2:a"),
-    ),
-  ).toBe("{broken-a");
+    await page.evaluate(() => ({
+      slotA: localStorage.getItem("geuttae-yojeum:progress:v2:a"),
+      slotB: localStorage.getItem("geuttae-yojeum:progress:v2:b"),
+      legacy: localStorage.getItem("geuttae-yojeum:progress"),
+    })),
+  ).toEqual(preservedSlots);
 });
