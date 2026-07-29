@@ -194,6 +194,33 @@ describe("bonus progress commands", () => {
     });
   });
 
+  it("starts a non-pilot topic with its legacy selection without retaining a shadow audit", () => {
+    const nostalgiaQuestions = bonusQuestions.map((question) => ({
+      ...question,
+      id: question.id.replace("digital", "nostalgia"),
+      conceptId: question.conceptId.replace("digital", "nostalgia"),
+      topic: "nostalgia" as const,
+    }));
+
+    const result = progressCommands.startBonusSessionCommand(
+      createEmptyProgress(),
+      "nostalgia-start",
+      "2026-07-28",
+      "nostalgia",
+      nostalgiaQuestions,
+    );
+
+    expect(result).toMatchObject({
+      applied: true,
+      questionIds: ["bonus-nostalgia-1", "bonus-nostalgia-2"],
+    });
+    expect(result.state.sessions["2026-07-28:bonus:nostalgia"])
+      .toMatchObject({ phase: "question" });
+    expect(result.state.bonusStartCommands["nostalgia-start"])
+      .toMatchObject({ questionIds: ["bonus-nostalgia-1", "bonus-nostalgia-2"] });
+    expect(result.state.shadowAudits).toEqual([]);
+  });
+
   it("같은 rewardGrantId를 다시 적용해도 보너스 이용권은 한 번만 지급한다", () => {
     expect(progressCommands).toHaveProperty("grantBonusTicketCommand");
     const grantBonusTicketCommand = progressCommands.grantBonusTicketCommand;

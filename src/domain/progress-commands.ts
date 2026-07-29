@@ -266,11 +266,14 @@ export function startBonusSessionCommand(
       ...state.latestBonusStartCommandIds,
       [sessionKey]: commandId,
     },
-    shadowAudits: appendShadowAudit(
-      state.shadowAudits,
-      decision.audit,
-      state.timeObservation.confidence,
-    ),
+    shadowAudits:
+      topic === "digital" || topic === "safety"
+        ? appendShadowAudit(
+            state.shadowAudits,
+            decision.audit,
+            state.timeObservation.confidence,
+          )
+        : state.shadowAudits,
   };
 
   return {
