@@ -21,7 +21,7 @@ export function printContentValidationReport(
 ): 0 | 1 {
   if (report.issues.length === 0) {
     writeLine(
-      `콘텐츠 검증 통과: 핵심 ${report.coreCount}개 보너스 ${report.bonusCount}개`,
+      `콘텐츠 검증 통과: 핵심 ${report.coreCount}개, 보너스 ${report.bonusCount}개`,
     );
     return 0;
   }

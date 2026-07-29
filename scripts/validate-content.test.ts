@@ -12,7 +12,7 @@ describe("printContentValidationReport", () => {
     );
 
     expect(code).toBe(0);
-    expect(lines).toEqual(["콘텐츠 검증 통과: 핵심 90개 보너스 90개"]);
+    expect(lines).toEqual(["콘텐츠 검증 통과: 핵심 90개, 보너스 90개"]);
   });
 
   it("prints structured failures and returns one", () => {
