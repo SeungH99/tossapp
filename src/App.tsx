@@ -225,6 +225,7 @@ function QuizScreen({
       <div
         className="progress-track"
         role="progressbar"
+        aria-label="퀴즈 진행"
         aria-valuemin={1}
         aria-valuemax={questions.length}
         aria-valuenow={session.currentIndex + 1}
@@ -246,6 +247,7 @@ function QuizScreen({
 
             return (
               <button
+                aria-pressed={isSelected}
                 className={[
                   "answer-button",
                   isSelected ? "selected" : "",
@@ -277,7 +279,13 @@ function QuizScreen({
         >
           <strong>{answer.isCorrect ? "정답이에요" : "아쉬워요"}</strong>
           <p>{question.explanation}</p>
-          <a href={question.source.url} rel="noreferrer" target="_blank">
+          <a
+            href={question.source.url}
+            rel="noreferrer"
+            style={{ color: "#4e5968" }}
+            tabIndex={0}
+            target="_blank"
+          >
             {question.source.name}
           </a>
           {saveStatus === "saving" ? (

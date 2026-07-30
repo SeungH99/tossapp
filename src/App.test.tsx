@@ -171,6 +171,7 @@ describe("QuizApp", () => {
         );
       }
     });
+    await screen.findByRole("button", { name: "오늘의 3문제 시작" });
 
     timeProvider.set(new Date("2026-07-29T03:00:00.000Z"));
     fireEvent(window, new Event("pageshow"));

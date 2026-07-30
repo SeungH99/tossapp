@@ -1,7 +1,7 @@
 import {
   createBonusQuestion,
-  BonusTopic,
-  CoreLens,
+  type BonusTopic,
+  type CoreLens,
   type BonusQuestion,
 } from "../domain/question";
 

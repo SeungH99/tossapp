@@ -31,6 +31,22 @@ npm run build
 
 `npm run build`가 성공하면 프로젝트 루트에 `geuttae-yojeum.ait`가 생성됩니다.
 
+## 출시 후보 검증
+
+Node 24에서 의존성을 잠금 파일 그대로 설치하고 전체 출시 계약을 실행합니다.
+
+```bash
+npm ci
+npm run verify:release
+```
+
+자동 검사가 끝나면
+[`docs/release/apps-in-toss-sandbox-checklist.md`](docs/release/apps-in-toss-sandbox-checklist.md)를
+iOS와 Android Apps in Toss 샌드박스 QR에서 완료해야 합니다. CI의 `.ait`는 테스트
+광고 ID를 사용하므로 콘솔 업로드 전에 운영 광고 그룹 ID로 다시 빌드합니다.
+체크리스트는 운영 artifact provenance부터 콘솔 업로드, QR 검증, 출시 승인,
+출시 후 확인과 롤백까지 실제 순서를 포함합니다.
+
 ## 출시 전 설정
 
 `.env.example`을 참고해 앱인토스 콘솔의 실제 보상형 광고 그룹 ID를
