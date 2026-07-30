@@ -1,5 +1,7 @@
 import { defineConfig } from "@playwright/test";
 
+const snapshotEnvironment = process.env.CI ? "windows-ci" : process.platform;
+
 export default defineConfig({
   testDir: "./tests/e2e",
   fullyParallel: true,
@@ -12,7 +14,7 @@ export default defineConfig({
     ["html", { outputFolder: "playwright-report", open: "never" }],
   ],
   snapshotPathTemplate:
-    "{testDir}/__screenshots__/{testFileName}/{arg}{-projectName}{ext}",
+    `{testDir}/__screenshots__/{testFileName}/${snapshotEnvironment}/{arg}{-projectName}{ext}`,
   expect: {
     timeout: 10_000,
     toHaveScreenshot: {
