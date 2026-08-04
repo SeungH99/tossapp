@@ -1,0 +1,2258 @@
+{
+  "id": "bonus-nostalgia-002",
+  "kind": "bonus",
+  "contentVersion": "2026.08.180d",
+  "reviewStatus": "reviewed",
+  "questions": [
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s30-gentle-traditional-wedding-1",
+      "conceptId": "nostalgia-traditional-wedding-pack2-fact-1",
+      "variant": "ceremony-scene-recognition",
+      "setIndex": 30,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "1970년대 이전 전통 혼례에서 신랑이 신부 집으로 갈 때 흔히 떠올릴 수 있는 모습은 무엇일까요?",
+      "choices": [
+        "두루마기를 입고 가마를 타는 모습",
+        "양복을 입고 택시를 타는 모습",
+        "사모관대를 하고 조랑말을 타는 모습"
+      ],
+      "answerIndex": 2,
+      "explanation": "전통 혼례에서는 사모관대를 한 신랑이 조랑말을 타고 신부의 집으로 가 초례상을 마주했습니다. 이처럼 절차가 복잡한 혼례는 1970년대 이후 거의 사라졌습니다.",
+      "source": {
+        "name": "국가기록원 「결혼」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/marriage.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s30-steady-family-ceremony-rules-1",
+      "conceptId": "nostalgia-family-ceremony-rules-pack2-fact-1",
+      "variant": "simplification-purpose",
+      "setIndex": 30,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "1969년 가정의례 관련 법률과 준칙은 어떤 사회적 배경에서 나왔나요?",
+      "choices": [
+        "지역마다 다른 전통 의례를 한 가지 형식으로 보존하려는 목적",
+        "혼례·장례 시설과 종사자의 자격을 새로 표준화하려는 목적",
+        "화려해진 의례의 낭비를 줄이고 절차를 간소화하려는 목적"
+      ],
+      "answerIndex": 2,
+      "explanation": "산업화와 함께 소비적이고 화려한 의례가 늘자 정부는 1969년 낭비를 억제하고 절차를 합리화한다는 취지로 법률과 준칙을 시행했습니다.",
+      "source": {
+        "name": "국가기록원 「가정의례준칙」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/homeRule.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s30-stretch-school-entrance-1",
+      "conceptId": "nostalgia-school-entrance-pack2-fact-1",
+      "variant": "lottery-reform-purpose",
+      "setIndex": 30,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "1969년 학생이 물레를 돌려 은행알을 뽑는 중학교 배정 사진이 남아 있습니다. 이 추첨을 도입한 까닭은 무엇일까요?",
+      "choices": [
+        "입학시험 없이 학생을 여러 중학교에 배정하기 위해서입니다",
+        "입학시험 합격자를 학교 안의 반과 교실에 나누기 위해서입니다",
+        "한 학교 지원자를 오전반과 오후반으로 나누기 위해서입니다"
+      ],
+      "answerIndex": 0,
+      "explanation": "정부는 1968년 중학교 평준화와 무시험 진학을 발표했습니다. 이듬해 학생이 물레를 돌려 학교 번호가 적힌 은행알을 뽑은 것은 시험 대신 배정하기 위한 절차였습니다.",
+      "source": {
+        "name": "국가기록원 「입학」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/entrance.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s31-gentle-home-appliances-1",
+      "conceptId": "nostalgia-home-appliances-pack2-fact-1",
+      "variant": "first-refrigerator-recognition",
+      "setIndex": 31,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "1965년 처음 출시된 국산 냉장고의 제품 이름은 무엇이었나요?",
+      "choices": [
+        "백조냉장고 GR-110",
+        "은하냉장고 GR-210",
+        "눈표냉장고 GR-120"
+      ],
+      "answerIndex": 2,
+      "explanation": "1965년 우리나라 최초의 국산 냉장고가 ‘눈표냉장고 GR-120’이라는 이름으로 출시됐습니다.",
+      "source": {
+        "name": "국가기록원 「가전제품」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/appliances.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s31-steady-national-assembly-building-1",
+      "conceptId": "nostalgia-national-assembly-building-pack2-fact-1",
+      "variant": "postwar-move-context",
+      "setIndex": 31,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "6·25전쟁 뒤 국회가 여러 건물을 옮겨 쓰다가 1975년에 자리 잡은 곳은 어디였나요?",
+      "choices": [
+        "서울 남산 국립극장",
+        "서울 여의도 국회의사당",
+        "서울 잠실 종합운동장"
+      ],
+      "answerIndex": 1,
+      "explanation": "국회는 중앙청 중앙홀과 시민회관 별관 등 여러 곳을 거친 뒤 1975년 9월 여의도의 현재 국회의사당으로 옮겼습니다.",
+      "source": {
+        "name": "국가기록원 「국회의사당」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/parliamentBldg.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s31-stretch-graduation-customs-1",
+      "conceptId": "nostalgia-graduation-customs-pack2-fact-1",
+      "variant": "flour-uniform-sequence",
+      "setIndex": 31,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "교복 변화와 졸업식 밀가루 세례의 순서를 바르게 이은 것은 무엇인가요?",
+      "choices": [
+        "1983년 교복 재도입·세례 증가 → 1986년 교복 자율화·세례 감소",
+        "1983년 교복 자율화·세례 증가 → 1986년 교복 재도입·세례 소멸",
+        "1983년 교복 자율화·세례 감소 → 1986년 교복 재도입·세례 재등장"
+      ],
+      "answerIndex": 2,
+      "explanation": "1983년 교복 자율화로 사복을 입으면서 밀가루 세례가 잠시 줄었고, 1986년 교복이 부활하자 다시 나타났습니다. 복장 변화와 졸업 풍습이 맞물린 사례입니다.",
+      "source": {
+        "name": "국가기록원 「졸업」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/graduate.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s32-gentle-national-gymnastics-1",
+      "conceptId": "nostalgia-national-gymnastics-pack2-fact-1",
+      "variant": "twelve-movements-recognition",
+      "setIndex": 32,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "1977년 새로 보급된 국민체조는 모두 몇 가지 동작으로 구성됐나요?",
+      "choices": [
+        "8가지 동작",
+        "12가지 동작",
+        "16가지 동작"
+      ],
+      "answerIndex": 1,
+      "explanation": "1977년 3월 새로 만든 국민체조는 12가지 동작으로 구성됐으며, 특히 학교를 중심으로 널리 보급됐습니다.",
+      "source": {
+        "name": "국가기록원 「국민건강체조」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/gymnastics.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s32-steady-workers-day-1",
+      "conceptId": "nostalgia-workers-day-pack2-fact-1",
+      "variant": "commemoration-date-change",
+      "setIndex": 32,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "우리나라 근로자의 날 기념 날짜는 시대에 따라 어떻게 바뀌었나요?",
+      "choices": [
+        "1958년부터 3월 10일 → 1994년부터 5월 1일",
+        "1958년부터 5월 1일 → 1994년부터 3월 10일",
+        "1963년부터 8월 15일 → 1994년부터 10월 3일"
+      ],
+      "answerIndex": 0,
+      "explanation": "1958년부터 대한노총 결성일인 3월 10일을 노동절로 삼았고, 1994년 법을 고쳐 국제 노동절과 같은 5월 1일로 되돌렸습니다.",
+      "source": {
+        "name": "국가기록원 「근로자의 날」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/LaborDay.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s32-stretch-dansungsa-cinema-1",
+      "conceptId": "nostalgia-dansungsa-cinema-pack2-fact-1",
+      "variant": "film-history-headline",
+      "setIndex": 32,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "1907년 개관부터 1919년 ‘의리적 구토’ 상영까지를 다룬 기사에는 어떤 제목이 어울릴까요?",
+      "choices": [
+        "일반 극장 문 닫고 외국 영화 배급사 사무실로",
+        "창과 무용의 무대에서 한국 영화 상영의 거점으로",
+        "영화 상영을 접고 전통 공연 전용 극장으로 복귀"
+      ],
+      "answerIndex": 1,
+      "explanation": "단성사는 처음 창과 무용 등을 올리는 일반 극장이었지만 영화 상설관으로 발전했습니다. 1919년에는 한국인이 국내 자본으로 만든 ‘의리적 구토’를 상영했습니다.",
+      "source": {
+        "name": "국가기록원 「단성사」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/Dansungsa.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s33-gentle-night-curfew-1",
+      "conceptId": "nostalgia-night-curfew-pack2-fact-1",
+      "variant": "curfew-hours-recognition",
+      "setIndex": 33,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "1954년 전국으로 확대된 야간통행금지가 처음 적용한 시간대는 어느 구간이었나요?",
+      "choices": [
+        "밤 8시부터 자정까지",
+        "새벽 1시부터 아침 7시까지",
+        "밤 10시부터 새벽 4시까지"
+      ],
+      "answerIndex": 2,
+      "explanation": "6·25전쟁 뒤인 1954년 4월 야간통행금지는 전국으로 확대되어 밤 10시부터 새벽 4시까지 적용됐습니다.",
+      "source": {
+        "name": "국가기록원 「야간통행금지와 해제」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/curfew.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s33-steady-rural-volunteer-work-1",
+      "conceptId": "nostalgia-rural-volunteer-work-pack2-fact-1",
+      "variant": "movement-roots",
+      "setIndex": 33,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "대학생 ‘농활’의 역사적 뿌리를 설명하는 활동으로 가장 알맞은 조합은 무엇인가요?",
+      "choices": [
+        "새마을운동과 농업기계화 시범사업",
+        "농촌계몽활동과 브나로드 운동",
+        "4H운동과 향토개척단의 정착사업"
+      ],
+      "answerIndex": 1,
+      "explanation": "농촌봉사활동은 농촌을 이해하고 일손을 돕는 활동으로, 농촌계몽운동과 1930년대 브나로드 운동 등에서 그 기원을 찾습니다.",
+      "source": {
+        "name": "국가기록원 「농촌봉사활동」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/RuralService.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s33-stretch-popular-song-history-1",
+      "conceptId": "nostalgia-popular-song-history-pack2-fact-1",
+      "variant": "postwar-emotion-inference",
+      "setIndex": 33,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "‘굳세어라 금순아’와 ‘이별의 부산정거장’은 왜 전쟁 뒤 큰 공감을 얻었을까요?",
+      "choices": [
+        "피란과 이별, 귀향을 겪은 사람들의 감정을 노래했기 때문입니다",
+        "전후 복구와 새 도시 생활에 대한 희망을 경쾌하게 노래했기 때문입니다",
+        "젊은 연인의 사랑과 세대 갈등을 중심으로 노래했기 때문입니다"
+      ],
+      "answerIndex": 0,
+      "explanation": "두 노래는 전쟁과 피란으로 헤어진 가족, 고향으로 돌아가는 사람들의 기쁨과 설움을 담았습니다. 당대의 공동 경험이 공감의 바탕이 됐습니다.",
+      "source": {
+        "name": "국가기록원 「대중가요」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/popSong.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s34-gentle-briquette-life-1",
+      "conceptId": "nostalgia-briquette-life-pack2-fact-1",
+      "variant": "steady-heat-convenience",
+      "setIndex": 34,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "장작불에 비해 연탄이 부엌일을 한결 덜어 준 까닭은 무엇이었나요?",
+      "choices": [
+        "계속 지피지 않아도 일정한 열을 유지했기 때문",
+        "아궁이와 굴뚝을 장작 때보다 자주 손질했기 때문",
+        "연탄이 탄 뒤에는 재가 거의 남지 않았기 때문"
+      ],
+      "answerIndex": 0,
+      "explanation": "연탄은 장작보다 관리하기 편하고 일정한 열을 오래 유지했습니다. 솥에 물을 올려 두면 더운물도 넉넉히 쓸 수 있어 부엌일의 수고를 덜었습니다.",
+      "source": {
+        "name": "국가기록원 「연탄」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/briguette.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s34-steady-daehakro-culture-street-1",
+      "conceptId": "nostalgia-daehakro-culture-street-pack2-fact-1",
+      "variant": "street-name-context",
+      "setIndex": 34,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "동숭동 일대가 오랫동안 젊음의 거리이자 ‘대학로’로 불린 배경은 무엇이었나요?",
+      "choices": [
+        "여러 사설학원이 모여 입시 준비생이 많이 찾았기 때문입니다",
+        "성균관대학교 한 학교의 교정 전체가 도로였기 때문입니다",
+        "1975년까지 서울대학교가 있어 학생들이 많이 모였기 때문입니다"
+      ],
+      "answerIndex": 2,
+      "explanation": "경성제국대학을 거쳐 서울대학교가 1975년 관악으로 옮기기 전까지 이 일대에 있었고, 학생과 젊은이들이 모이며 대학로라는 정체성이 생겼습니다.",
+      "source": {
+        "name": "국가기록원 「대학로」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/Daehak-ro.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s34-stretch-madangnori-1",
+      "conceptId": "nostalgia-madangnori-pack2-fact-1",
+      "variant": "genre-distinction",
+      "setIndex": 34,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "1970년대 마당극과 1981년 이후 마당놀이는 두 갈래를 어떻게 구분할까요?",
+      "choices": [
+        "마당극은 사회비판에, 마당놀이는 고전 소재의 춤·노래·재담에 무게를 뒀습니다",
+        "마당극은 고전 재담에, 마당놀이는 현실 사회비판에 더 무게를 뒀습니다",
+        "마당극은 방송사 기획 공연으로, 마당놀이는 대학가의 사회비판 연극으로 출발했습니다"
+      ],
+      "answerIndex": 0,
+      "explanation": "마당극은 1970년대 자생한 사회비판적 연극 양식입니다. 방송사 마당놀이는 ‘허생전’처럼 익숙한 고전을 춤과 노래, 재담으로 풀어 대중 공연으로 자리 잡았습니다.",
+      "source": {
+        "name": "국가기록원 「마당놀이」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/Playground.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s35-gentle-post-office-mailbox-1",
+      "conceptId": "nostalgia-post-office-mailbox-pack2-fact-1",
+      "variant": "office-name-change",
+      "setIndex": 35,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "1949년 법이 바뀌면서 이전의 ‘우편국’은 어떤 이름으로 불리게 됐나요?",
+      "choices": [
+        "전신소",
+        "배달국",
+        "우체국"
+      ],
+      "answerIndex": 2,
+      "explanation": "1949년 「지방체신관서설치법」에 따라 ‘우편국’이라는 명칭이 오늘날 익숙한 ‘우체국’으로 바뀌었습니다.",
+      "source": {
+        "name": "국가기록원 「우체국과 집배원」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/postOffice.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s35-steady-seollal-holiday-1",
+      "conceptId": "nostalgia-seollal-holiday-pack2-fact-1",
+      "variant": "folk-day-name",
+      "setIndex": 35,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "1985년 음력설이 하루 공휴일로 다시 지정됐을 때 붙인 이름은 무엇이었나요?",
+      "choices": [
+        "겨레의 날",
+        "민속의 날",
+        "고향의 날"
+      ],
+      "answerIndex": 1,
+      "explanation": "1985년 음력설은 ‘민속의 날’이라는 이름으로 하루 공휴일이 됐습니다. 이 이름은 1986년부터 1988년까지 이어졌습니다.",
+      "source": {
+        "name": "국가기록원 「명절(설, 추석)」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/holiday.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s35-stretch-culture-film-1",
+      "conceptId": "nostalgia-culture-film-pack2-fact-1",
+      "variant": "cinema-program-reconstruction",
+      "setIndex": 35,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "1962년 영화법 뒤 극장의 상영표를 가장 가깝게 재현한 것은 무엇인가요?",
+      "choices": [
+        "문화영화는 별도 교육관에서만 틀고 극장에서는 개봉영화만 상영",
+        "개봉영화가 끝난 뒤 희망 관객에게만 문화영화를 유료 상영",
+        "계몽·교육 내용을 담은 문화영화와 개봉영화를 함께 상영"
+      ],
+      "answerIndex": 2,
+      "explanation": "문화영화는 국민 계몽과 교육, 정책 홍보를 위해 국가가 만든 영상이었습니다. 개봉영화와 동시 상영을 의무화해 많은 관객에게 메시지를 전달했습니다.",
+      "source": {
+        "name": "국가기록원 「문화영화」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/cultureMovie.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s36-gentle-paper-saving-1",
+      "conceptId": "nostalgia-paper-saving-pack2-fact-1",
+      "variant": "envelope-reuse-memory",
+      "setIndex": 36,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "1950·1960년대 관공서에서 종이를 아끼려고 권한 봉투 재사용법은 무엇이었나요?",
+      "choices": [
+        "겉면의 주소만 지우고 그대로 쓰기",
+        "관용 봉투를 뒤집어 다시 쓰기",
+        "봉투를 잘게 잘라 메모지로만 쓰기"
+      ],
+      "answerIndex": 1,
+      "explanation": "종이가 귀했던 1950~60년대에는 관용 봉투를 뒤집어 다시 쓰는 방법까지 절약 사례로 강조했습니다.",
+      "source": {
+        "name": "국가기록원 「종이절약운동」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/savePaper.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s36-steady-railway-modernization-1",
+      "conceptId": "nostalgia-railway-modernization-pack2-fact-1",
+      "variant": "diesel-era-journey-memory",
+      "setIndex": 36,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "1964년 디젤기관차가 운행되기 전 야간 준급행을 탄 승객의 얼굴과 콧구멍이 검어지곤 한 까닭은 무엇이었나요?",
+      "choices": [
+        "객차 난방용 석탄 난로의 연기가 실내에 머물렀기 때문입니다",
+        "터널을 지날 때 철길의 흙먼지가 열린 창문으로 들어왔기 때문입니다",
+        "증기기관차가 내뿜은 그을음이 객차 안으로 들어왔기 때문입니다"
+      ],
+      "answerIndex": 2,
+      "explanation": "디젤기관차가 보급되기 전에는 증기기관차의 연기와 그을음이 여행의 불편으로 남았습니다. 밤새 준급행을 타면 얼굴과 콧구멍이 검어지기도 했습니다.",
+      "source": {
+        "name": "국가기록원 「철도」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/rapidRailway.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s36-stretch-modern-theater-1",
+      "conceptId": "nostalgia-modern-theater-pack2-fact-1",
+      "variant": "regional-stage-result",
+      "setIndex": 36,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "국립극장 신축과 전국지방연극제 시작 뒤의 기록으로 가장 자연스러운 것은 무엇인가요?",
+      "choices": [
+        "지역 극단은 늘었지만 공연할 소극장은 줄어 순회무대만 남았습니다",
+        "공연 기반이 넓어지며 지역 소극장과 극단도 늘어났습니다",
+        "지역 소극장은 늘었지만 지방연극제에는 서울 극단만 참가했습니다"
+      ],
+      "answerIndex": 1,
+      "explanation": "국립극장과 연극인회관 같은 기반이 마련되고 전국지방연극제가 시작되면서 서울뿐 아니라 지역에도 소극장과 극단이 빠르게 늘었습니다.",
+      "source": {
+        "name": "국가기록원 「연극」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/Theater.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s37-gentle-postage-stamp-1",
+      "conceptId": "nostalgia-postage-stamp-pack2-fact-1",
+      "variant": "first-stamp-series",
+      "setIndex": 37,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "1962년 선보인 우리나라 최초의 시리즈 우표는 무엇을 주제로 했나요?",
+      "choices": [
+        "경제개발 5개년 계획",
+        "서울올림픽 개최 준비",
+        "전국 우표전시회 개최"
+      ],
+      "answerIndex": 0,
+      "explanation": "1962년 경제개발 5개년 계획을 주제로 한 우표가 발행됐습니다. 여러 장을 한 주제로 이어 만든 우리나라 최초의 시리즈 우표였습니다.",
+      "source": {
+        "name": "국가기록원 「우표」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/Stamp.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s37-steady-electric-light-1",
+      "conceptId": "nostalgia-electric-light-pack2-fact-1",
+      "variant": "utility-company-formation",
+      "setIndex": 37,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "1961년 세 전기사업체가 하나로 합쳐져 출범한 회사는 무엇이었나요?",
+      "choices": [
+        "한국전력주식회사",
+        "한국수력발전공사",
+        "대한송전주식회사"
+      ],
+      "answerIndex": 0,
+      "explanation": "1961년 7월 1일 기존 전기사업체 세 곳을 통합해 한국전력주식회사가 출범했습니다. 전력 공급을 한 조직에서 맡기 시작한 변화였습니다.",
+      "source": {
+        "name": "국가기록원 「전기」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/electronic.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s37-stretch-fashion-show-1",
+      "conceptId": "nostalgia-fashion-show-pack2-fact-1",
+      "variant": "ready-to-wear-transition",
+      "setIndex": 37,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "1970년대 기성복 대량생산이 양장 생활과 패션쇼에 함께 끼친 변화는 무엇이었나요?",
+      "choices": [
+        "기성복 생산이 늘수록 맞춤 양장점이 커지고 디자이너 개인 쇼만 남았습니다",
+        "옷감 업체가 패션쇼를 독점하면서 완성된 기성복 판매는 오히려 줄었습니다",
+        "맞춤복 중심에서 기성복 구매로 옮겨가고 업체 주도 쇼가 늘었습니다"
+      ],
+      "answerIndex": 2,
+      "explanation": "기성복이 대량생산되면서 사람들은 양장점 맞춤복 대신 완성된 옷을 쉽게 살 수 있게 됐습니다. 패션쇼도 디자이너 중심에서 기성복 업체가 주도하는 형태로 넓어졌습니다.",
+      "source": {
+        "name": "국가기록원 「패션쇼」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/fashionShow.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s38-gentle-direct-distance-dialing-1",
+      "conceptId": "nostalgia-direct-distance-dialing-pack2-fact-1",
+      "variant": "seoul-busan-direct-call",
+      "setIndex": 38,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "교환원을 거치지 않고 서울과 부산 사이에 직접 장거리 전화를 걸 수 있게 된 해는 언제였나요?",
+      "choices": [
+        "1961년",
+        "1971년",
+        "1981년"
+      ],
+      "answerIndex": 1,
+      "explanation": "1971년 3월 31일부터 서울과 부산 사이에 장거리자동전화가 열려 이용자가 직접 번호를 눌러 통화할 수 있었습니다.",
+      "source": {
+        "name": "국가기록원 「장거리자동전화(DDD)」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/tellephone.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s38-steady-modern-waterworks-1",
+      "conceptId": "nostalgia-modern-waterworks-pack2-fact-1",
+      "variant": "household-water-use-inference",
+      "setIndex": 38,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "1960·1970년대 외국 차관으로 상수도 시설을 늘리고 급수율을 높인 흐름을 가정생활 장면으로 옮기면 무엇이 가장 알맞나요?",
+      "choices": [
+        "빗물 저장 탱크를 설치해 수돗물 사용을 줄이는 가정이 늘었습니다",
+        "공동 우물이나 물장수에 덜 의지하고 수도꼭지에서 물을 받아 쓰는 가정이 늘었습니다",
+        "도시 가정이 수도관 대신 강물을 직접 길어다 쓰는 일이 늘었습니다"
+      ],
+      "answerIndex": 1,
+      "explanation": "1960·1970년대 상수도 시설이 확대되고 급수율이 높아지면서 더 많은 가정이 수도관을 통해 물을 공급받았습니다. 공동 우물이나 물장수에 의지하던 생활도 점차 줄었습니다.",
+      "source": {
+        "name": "국가기록원 「상수도」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/waterworks.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s38-stretch-korean-folk-village-1",
+      "conceptId": "nostalgia-korean-folk-village-pack2-fact-1",
+      "variant": "purpose-and-chronology-match",
+      "setIndex": 38,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "관광 진흥을 위한 전통생활 전시 사업의 기획안을 고른다면, 한국민속촌 기록과 맞는 조합은 무엇인가요?",
+      "choices": [
+        "산업화된 도시 생활을 소개하고, 1972년 자문 뒤 1973년 착공해 1974년 개관",
+        "전통 가옥·생활상을 한곳에 재현하고, 1972년 착공 뒤 1973년 자문을 거쳐 1974년 개관",
+        "전통 가옥·생활상을 한곳에 재현하고, 1972년 자문 뒤 1973년 착공해 1974년 개관"
+      ],
+      "answerIndex": 2,
+      "explanation": "정부는 관광 진흥을 위해 자문위원회를 꾸리고 이듬해 공사를 시작해 다시 이듬해 문을 열었습니다. 계획적으로 빠르게 조성한 전통생활 전시 사업이었습니다.",
+      "source": {
+        "name": "국가기록원 「한국민속촌」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/KFV.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s39-gentle-hangul-typewriter-1",
+      "conceptId": "nostalgia-hangul-typewriter-pack2-fact-1",
+      "variant": "agency-keyboard-preference",
+      "setIndex": 39,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "1960년대 행정 문서의 처리 효율을 중시한 국방부·외무부가 주로 택한 한글 타자기 방식은 무엇이었나요?",
+      "choices": [
+        "김동훈식 다섯벌식 타자기",
+        "표준 네벌식 타자기",
+        "공병우식 세벌식 타자기"
+      ],
+      "answerIndex": 2,
+      "explanation": "공병우식 세벌식은 빠른 속도가 장점이어서 국방부와 외무부가 선호했습니다. 문교부와 원호처는 글씨가 단정한 김동훈식 다섯벌식을 주로 썼습니다.",
+      "source": {
+        "name": "국가기록원 「타자기」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/typewriter.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s39-steady-private-tutoring-1",
+      "conceptId": "nostalgia-private-tutoring-pack2-fact-1",
+      "variant": "exam-pressure-shift",
+      "setIndex": 39,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "1968년 중학교 무시험제가 시행된 뒤 과외 열풍이 사라지지 않고 보인 변화는 무엇이었나요?",
+      "choices": [
+        "과외 중심이 중학생에서 초등 저학년으로 더 내려갔습니다",
+        "중학교 진학 경쟁은 그대로이고 과외 과목만 예체능으로 바뀌었습니다",
+        "과외 대상이 초등 고학년에서 중학생 중심으로 옮겨갔습니다"
+      ],
+      "answerIndex": 2,
+      "explanation": "중학교 입시는 없어졌지만 고교 진학 경쟁이 커져 과외의 중심이 초등학교 5·6학년에서 중학교 2·3학년으로 이동했습니다.",
+      "source": {
+        "name": "국가기록원 「과외」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/privateLesson.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s39-stretch-national-theater-1",
+      "conceptId": "nostalgia-national-theater-pack2-fact-1",
+      "variant": "opening-scale-and-work-match",
+      "setIndex": 39,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "1973년 남산 국립극장 개관 기록을 복원하려 합니다. 대극장 규모와 개관작을 알맞게 짝지은 것은 무엇인가요?",
+      "choices": [
+        "1,494석 대극장 — ‘성웅 이순신’",
+        "344석 대극장 — ‘성웅 이순신’",
+        "1,494석 대극장 — ‘원술랑’"
+      ],
+      "answerIndex": 0,
+      "explanation": "1973년 문을 연 남산 국립극장은 1,494석 대극장과 344석 소극장을 갖췄고, 개관작으로 ‘성웅 이순신’을 공연했습니다. ‘원술랑’은 1950년 국립극장 창립 때의 개막작입니다.",
+      "source": {
+        "name": "국가기록원 「국립극장」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/nationalTheater.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s40-gentle-television-broadcast-1",
+      "conceptId": "nostalgia-television-broadcast-pack2-fact-1",
+      "variant": "national-tv-opening",
+      "setIndex": 40,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "국영 서울텔레비전방송국이 문을 열어 본격적인 TV 시대가 시작된 날은 언제였나요?",
+      "choices": [
+        "1956년 12월 31일",
+        "1969년 12월 31일",
+        "1961년 12월 31일"
+      ],
+      "answerIndex": 2,
+      "explanation": "1961년 12월 31일 국영 서울텔레비전방송국이 개국하면서 우리나라의 본격적인 텔레비전 방송 시대가 열렸습니다.",
+      "source": {
+        "name": "국가기록원 「텔레비전 방송」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/television.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s40-steady-school-meals-1",
+      "conceptId": "nostalgia-school-meals-pack2-fact-1",
+      "variant": "aid-meal-content",
+      "setIndex": 40,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "1953년 국제 원조로 아동에게 매일 150만 컵씩 무상 제공된 급식은 무엇이었나요?",
+      "choices": [
+        "곡물로 만든 식빵",
+        "쌀을 모아 지은 밥",
+        "탈지분유를 탄 우유"
+      ],
+      "answerIndex": 2,
+      "explanation": "1953년 국제연합아동기금과 미국경제협조처가 탈지분유를 지원해 매일 150만 컵이 아동에게 무상 제공됐습니다. 곡물 식빵 지원은 1963년의 일입니다.",
+      "source": {
+        "name": "국가기록원 「급식」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/cafeteria.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s40-stretch-sejong-center-1",
+      "conceptId": "nostalgia-sejong-center-pack2-fact-1",
+      "variant": "name-change-history",
+      "setIndex": 40,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "건설 중이던 ‘우남회관’은 1960년에 왜 ‘시민회관’으로 이름이 달라졌을까요?",
+      "choices": [
+        "서울시가 국립극장에서 운영을 넘겨받아 시민용 공연장임을 드러내려 했습니다",
+        "4·19혁명 뒤 이승만 대통령이 물러나며 기존 이름을 바꿨습니다",
+        "건축비를 보탠 시민 성금을 기념해 기부자를 아우르는 이름으로 바꿨습니다"
+      ],
+      "answerIndex": 1,
+      "explanation": "1960년 4·19혁명과 이승만 대통령의 하야 뒤 서울시의회는 건설 중인 우남회관의 이름을 시민회관으로 변경했습니다.",
+      "source": {
+        "name": "국가기록원 「세종문화회관」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/sejongCulture.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s41-gentle-overseas-travel-1",
+      "conceptId": "nostalgia-overseas-travel-pack2-fact-1",
+      "variant": "travel-liberalization-year",
+      "setIndex": 41,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "국민의 해외여행이 전면 자유화된 해는 언제였을까요?",
+      "choices": [
+        "1989년",
+        "1979년",
+        "1999년"
+      ],
+      "answerIndex": 0,
+      "explanation": "해외여행 제한은 단계적으로 완화되다가 1989년에 전면 자유화됐습니다. 그해 출국자 수가 처음 100만 명을 넘었습니다.",
+      "source": {
+        "name": "국가기록원 「해외여행 자유화」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/globalTravel.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s41-steady-university-admissions-1",
+      "conceptId": "nostalgia-university-admissions-pack2-fact-1",
+      "variant": "system-change-context",
+      "setIndex": 41,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "해방 이후 대학입시에서 예비고사·연합고사·수능처럼 제도가 여러 번 바뀐 사실이 보여 주는 점은 무엇인가요?",
+      "choices": [
+        "대학별 선발 시기 조정이 중심이어서 국가 시험의 성격은 거의 이어졌습니다",
+        "대학입시가 학교 교육 방향에 큰 영향을 주며 계속 조정돼 왔습니다",
+        "입시 방식은 자주 바뀌었지만 초·중·고 교육 운영과는 별개로 다뤄졌습니다"
+      ],
+      "answerIndex": 1,
+      "explanation": "대학입시는 초·중·고 교육 방향에도 영향을 주어 해방 이후 열 번이 넘는 변화를 거쳤습니다. 예비고사와 연합고사, 수능 등이 그 흐름에 포함돼 있습니다.",
+      "source": {
+        "name": "국가기록원 「대학입시」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/univEnt.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s41-stretch-gyeongbu-expressway-1",
+      "conceptId": "nostalgia-gyeongbu-expressway-pack2-fact-1",
+      "variant": "construction-pace-calculation",
+      "setIndex": 41,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "1968년 2월 착공해 1970년 7월 전 구간을 연 약 428km 경부고속도로를 월평균으로 단순 환산하면 한 달에 약 몇 km씩 공사한 셈인가요?",
+      "choices": [
+        "약 7km",
+        "약 29km",
+        "약 15km"
+      ],
+      "answerIndex": 2,
+      "explanation": "1968년 2월부터 1970년 7월까지는 약 29개월입니다. 전체 428km를 29개월로 나누면 한 달 평균 약 14.8km, 곧 약 15km입니다.",
+      "source": {
+        "name": "국가기록원 「경부고속도로」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/exway.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s42-gentle-christmas-memory-1",
+      "conceptId": "nostalgia-christmas-memory-pack2-fact-1",
+      "variant": "holiday-after-liberation",
+      "setIndex": 42,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "광복 뒤 크리스마스를 공휴일로 지정한 행정 주체는 어디였나요?",
+      "choices": [
+        "미군정",
+        "대한제국",
+        "조선총독부"
+      ],
+      "answerIndex": 0,
+      "explanation": "크리스마스는 1884년 선교사들을 통해 들어왔고, 1945년 광복 뒤 미군정에 의해 공휴일로 지정됐습니다.",
+      "source": {
+        "name": "국가기록원 「크리스마스」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/christmas.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s42-steady-university-festival-1",
+      "conceptId": "nostalgia-university-festival-pack2-fact-1",
+      "variant": "festival-era-comparison",
+      "setIndex": 42,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "1960년대와 1970년대 대학축제의 대표 분위기를 알맞게 비교한 것은 무엇인가요?",
+      "choices": [
+        "1960년대에는 포크댄스·가장행렬, 1970년대에는 탈춤·민속놀이가 두드러졌습니다",
+        "1960년대에는 탈춤·씨름, 1970년대에는 포크댄스·가장행렬이 두드러졌습니다",
+        "두 시기 모두 인기 가수 공연만 열고 학생 참여 행사는 줄었습니다"
+      ],
+      "answerIndex": 0,
+      "explanation": "1960년대 축전은 포크댄스와 가장행렬 등 서구 문화를 받아들이는 통로였고, 1970년대에는 탈춤 부흥과 씨름·줄다리기 같은 민속놀이가 두드러졌습니다.",
+      "source": {
+        "name": "국가기록원 「대학축제」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/uvFestival.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s42-stretch-guro-industrial-complex-1",
+      "conceptId": "nostalgia-guro-industrial-complex-pack2-fact-1",
+      "variant": "growth-engine-evidence",
+      "setIndex": 42,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "고용 급증과 국가 수출 10% 기록은 구로공단의 어떤 위상을 보여 주나요?",
+      "choices": [
+        "근로자는 늘었지만 수출 기여는 작아 내수용 소규모 공장에 머물렀습니다",
+        "자동화 설비로 수출은 커졌지만 고용은 거의 늘지 않은 자본집약 공단이었습니다",
+        "구로공단이 수출 산업과 도시 고용의 핵심 거점으로 급성장했습니다"
+      ],
+      "answerIndex": 2,
+      "explanation": "가동 초기보다 고용 규모가 수십 배 커졌고 수출 비중도 높았습니다. 이는 구로공단이 1970년대 경제성장의 중요한 생산·고용 거점이었음을 보여 주는 근거입니다.",
+      "source": {
+        "name": "국가기록원 「구로공단」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/gurogongdan.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s43-gentle-waste-volume-fee-1",
+      "conceptId": "nostalgia-waste-volume-fee-pack2-fact-1",
+      "variant": "pilot-districts",
+      "setIndex": 43,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "쓰레기종량제가 전국 시행에 앞서 서울 일부 지역에서 시범 실시된 해는 언제였나요?",
+      "choices": [
+        "1984년",
+        "1994년",
+        "2004년"
+      ],
+      "answerIndex": 1,
+      "explanation": "쓰레기종량제는 1994년 4월 서울 중구·성북구·송파구의 서로 다른 생활 지역에서 먼저 시범 실시됐습니다.",
+      "source": {
+        "name": "국가기록원 「쓰레기종량제」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/TrashWeight.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s43-steady-school-vacation-1",
+      "conceptId": "nostalgia-school-vacation-pack2-fact-1",
+      "variant": "vacation-learning-shift",
+      "setIndex": 43,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "1970년대 방학을 학교생활의 연장으로 보게 된 흐름을 보여 주는 사례는 무엇인가요?",
+      "choices": [
+        "KBS ‘방학생활’ 방송과 문교부의 『탐구생활』 배포",
+        "문교부의 『방학생활』 교재와 KBS의 『탐구생활』 방송",
+        "KBS의 학기 중 보충방송과 학교별 유료 참고서 배포"
+      ],
+      "answerIndex": 0,
+      "explanation": "1971년 KBS는 방학 학습 방송을 내보냈고, 문교부는 1979년부터 『탐구생활』을 무료 배포했습니다. 방학도 학습의 연장으로 본 변화입니다.",
+      "source": {
+        "name": "국가기록원 「방학」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/vacation.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s43-stretch-seoul-overpasses-1",
+      "conceptId": "nostalgia-seoul-overpasses-pack2-fact-1",
+      "variant": "traffic-response-inference",
+      "setIndex": 43,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "인구와 교통량이 급증한 서울에서 아현고가도로는 어떤 교통 해법이었나요?",
+      "choices": [
+        "교차로 정체를 줄이고 차량 흐름을 빠르게 잇기 위한 대응이었습니다",
+        "도심 진입 차량을 외곽 주차장에 세우고 대중교통으로 바꾸게 한 대응이었습니다",
+        "철도 건널목에서만 차량을 우회시켜 도심 교차로는 그대로 둔 대응이었습니다"
+      ],
+      "answerIndex": 0,
+      "explanation": "서울의 인구와 자동차가 늘며 교차로 정체가 심해졌습니다. 차가 신호를 덜 받고 지나도록 고가도로를 놓은 것이 당시의 교통 대책이었습니다.",
+      "source": {
+        "name": "국가기록원 「고가도로」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/highRoad.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s44-gentle-seoul-subway-1",
+      "conceptId": "nostalgia-seoul-subway-pack2-fact-1",
+      "variant": "fire-resistant-seats",
+      "setIndex": 44,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "2003년 대구 지하철 화재 뒤, 2006년부터 객실 좌석을 어떤 재료로 바꾸기 시작했나요?",
+      "choices": [
+        "불에 잘 타지 않는 불연성 소재",
+        "쿠션을 두껍게 넣은 천 소재",
+        "무게를 줄인 얇은 나무 소재"
+      ],
+      "answerIndex": 0,
+      "explanation": "대구 지하철 화재를 계기로 천으로 덮여 있던 객실 좌석은 2006년부터 불에 잘 타지 않는 소재로 교체되기 시작했습니다.",
+      "source": {
+        "name": "국가기록원 「지하철」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/subway.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s44-steady-teachers-day-1",
+      "conceptId": "nostalgia-teachers-day-pack2-fact-1",
+      "variant": "student-origin-sequence",
+      "setIndex": 44,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "학생들의 병문안 봉사는 어떻게 전국적인 은사 감사 행사로 퍼졌나요?",
+      "choices": [
+        "1958년 정부 포상식에서 시작해 1963년 한 학교 행사로 줄었습니다",
+        "1963년 기업 광고에서 시작해 1958년 학생 봉사로 바뀌었습니다",
+        "1958년 RCY 학생들의 병문안 봉사에서 시작해 1963년 전국 행사로 넓어졌습니다"
+      ],
+      "answerIndex": 2,
+      "explanation": "1958년 강경고 RCY 학생들의 병문안 봉사가 계기가 됐고, 충남의 ‘은사의 날’을 거쳐 1963년 전국 행사로 확대됐습니다. ‘스승의 날’이라는 이름은 1964년에 붙었습니다.",
+      "source": {
+        "name": "국가기록원 「스승의 날」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/teachersDay.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s44-stretch-dongdaemun-stadium-1",
+      "conceptId": "nostalgia-dongdaemun-stadium-pack2-fact-1",
+      "variant": "stadium-name-role-change",
+      "setIndex": 44,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "1984년 잠실 서울종합운동장이 생긴 뒤 이듬해 ‘서울운동장’이 ‘동대문운동장’으로 바뀐 이름은 무엇을 보여 주나요?",
+      "choices": [
+        "기존 서울운동장이 대표 명칭을 유지하고 잠실 경기장만 지역 이름을 썼습니다",
+        "대표 종합경기장 역할이 잠실로 옮겨가며 기존 경기장을 지역 이름으로 구분했습니다",
+        "두 경기장이 같은 대표 역할을 나눠 가져 별도 이름으로 구분할 필요가 없었습니다"
+      ],
+      "answerIndex": 1,
+      "explanation": "잠실에 새 서울종합운동장이 문을 열면서 기존 서울운동장은 더 이상 유일한 대표 경기장이 아니었습니다. 그래서 1985년 동대문운동장으로 이름을 바꿨습니다.",
+      "source": {
+        "name": "국가기록원 「동대문운동장과 장충체육관」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/ddpGym.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s45-gentle-traditional-wedding-2",
+      "conceptId": "nostalgia-traditional-wedding-pack2-fact-2",
+      "variant": "ceremony-change-recognition",
+      "setIndex": 45,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "사모관대와 원삼·족두리 차림의 전통 결혼식은 언제부터 보기 드물어졌나요?",
+      "choices": [
+        "1970년대 이후",
+        "1930년대 이후",
+        "2000년대 이후"
+      ],
+      "answerIndex": 0,
+      "explanation": "신랑이 사모관대, 신부가 원삼과 족두리를 갖추는 전통 결혼식은 복잡한 절차 때문에 1970년대 이후 거의 사라졌습니다.",
+      "source": {
+        "name": "국가기록원 「결혼」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/marriage.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s45-steady-family-ceremony-rules-2",
+      "conceptId": "nostalgia-family-ceremony-rules-pack2-fact-2",
+      "variant": "rule-change-sequence",
+      "setIndex": 45,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "가정의례준칙의 제도 변화는 어떤 시간 순서로 이어졌나요?",
+      "choices": [
+        "1973년 최초 제정 → 1969년 대통령령 확정 → 1999년 기존 준칙 폐지",
+        "1969년 최초 제정 → 1999년 대통령령 확정 → 1973년 기존 준칙 폐지",
+        "1969년 최초 제정 → 1973년 대통령령 확정 → 1999년 기존 준칙 폐지"
+      ],
+      "answerIndex": 2,
+      "explanation": "준칙은 1969년 처음 마련됐고 1973년 대통령령으로 확정·공포됐습니다. 기존 준칙은 1999년 폐지되고 완화된 건전가정의례준칙으로 바뀌었습니다.",
+      "source": {
+        "name": "국가기록원 「가정의례준칙」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/homeRule.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s45-stretch-school-entrance-2",
+      "conceptId": "nostalgia-school-entrance-pack2-fact-2",
+      "variant": "entrance-culture-change",
+      "setIndex": 45,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "명찰·콧수건에서 1박 2일 오리엔테이션까지, 입학 경험은 어떻게 넓어졌나요?",
+      "choices": [
+        "신입생의 복장과 규율을 같은 방식으로 더 엄격히 통일했습니다",
+        "입학 행사가 소속 표시에서 새 환경 적응 프로그램까지 넓어졌습니다",
+        "학교급별 차이 없이 짧은 공식 입학식만 남기는 방향으로 줄었습니다"
+      ],
+      "answerIndex": 1,
+      "explanation": "초등 입학식은 새 학생임을 표시하고 생활을 챙기는 데 초점이 있었고, 대학에서는 1970년대부터 숙박형 오리엔테이션이 생겼습니다. 입학 경험의 범위가 넓어진 흐름입니다.",
+      "source": {
+        "name": "국가기록원 「입학」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/entrance.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s46-gentle-home-appliances-2",
+      "conceptId": "nostalgia-home-appliances-pack2-fact-2",
+      "variant": "first-home-air-conditioner",
+      "setIndex": 46,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "우리나라 최초의 가정용 에어컨 GA-111이 등장한 시기는 언제였나요?",
+      "choices": [
+        "1958년",
+        "1968년",
+        "1978년"
+      ],
+      "answerIndex": 1,
+      "explanation": "국산 냉장고가 나온 지 3년 뒤인 1968년, 우리나라 최초의 가정용 에어컨 GA-111이 등장했습니다.",
+      "source": {
+        "name": "국가기록원 「가전제품」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/appliances.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s46-steady-national-assembly-building-2",
+      "conceptId": "nostalgia-national-assembly-building-pack2-fact-2",
+      "variant": "construction-sequence",
+      "setIndex": 46,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "여의도 국회의사당 건립은 어떤 순서로 진행됐나요?",
+      "choices": [
+        "1967년 건립 발표 뒤 공사를 거쳐 1975년 준공",
+        "1975년 건립 발표 뒤 1967년 준공",
+        "1948년 준공 뒤 1975년 건립 발표"
+      ],
+      "answerIndex": 0,
+      "explanation": "1967년 12월 여의도 건립 계획이 발표됐고, 큰 공사를 거쳐 1975년 8월 건물이 준공됐습니다.",
+      "source": {
+        "name": "국가기록원 「국회의사당」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/parliamentBldg.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s46-stretch-graduation-customs-2",
+      "conceptId": "nostalgia-graduation-customs-pack2-fact-2",
+      "variant": "ceremony-symbols-combination",
+      "setIndex": 46,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "1946년 졸업식 노래와 1908년부터 보인 학위복 기록을 함께 볼 때 두 요소의 공통 역할은 무엇일까요?",
+      "choices": [
+        "졸업이라는 이별과 성취를 눈과 귀로 상징하는 의례 요소입니다",
+        "졸업생의 성적과 진학 학교를 공개하는 행정 표지입니다",
+        "대학 졸업식에만 허용되고 초·중등학교와는 무관한 장식입니다"
+      ],
+      "answerIndex": 0,
+      "explanation": "학위복은 졸업자의 성취를 시각적으로 드러내고, 졸업식 노래는 이별과 축하의 감정을 함께 나눕니다. 둘 다 졸업 의례를 기억하게 하는 상징입니다.",
+      "source": {
+        "name": "국가기록원 「졸업」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/graduate.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s47-gentle-national-gymnastics-2",
+      "conceptId": "nostalgia-national-gymnastics-pack2-fact-2",
+      "variant": "new-millennium-replacement",
+      "setIndex": 47,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "오랫동안 학교와 직장에서 하던 국민체조를 1999년에 이어받은 체조는 무엇이었나요?",
+      "choices": [
+        "국민교육 준비체조",
+        "새천년 건강체조",
+        "서울올림픽 기념체조"
+      ],
+      "answerIndex": 1,
+      "explanation": "1977년부터 널리 보급된 국민체조는 1999년에 개발된 ‘새천년 건강체조’로 이어졌습니다.",
+      "source": {
+        "name": "국가기록원 「국민건강체조」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/gymnastics.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s47-steady-workers-day-2",
+      "conceptId": "nostalgia-workers-day-pack2-fact-2",
+      "variant": "name-and-date-context",
+      "setIndex": 47,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "1963년 법 제정과 1994년 법 개정이 바꾼 내용의 차이는 무엇인가요?",
+      "choices": [
+        "1963년에는 명칭을 근로자의 날로, 1994년에는 날짜를 5월 1일로 바꿨습니다",
+        "1963년에는 날짜를 5월 1일로, 1994년에는 명칭을 노동절로 바꿨습니다",
+        "두 해 모두 기념일을 폐지하고 별도의 행사를 금지했습니다"
+      ],
+      "answerIndex": 0,
+      "explanation": "1963년 법률은 ‘노동절’을 ‘근로자의 날’로 부르게 했고, 1994년 개정은 오랫동안 3월 10일이던 날짜를 5월 1일로 변경했습니다.",
+      "source": {
+        "name": "국가기록원 「근로자의 날」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/LaborDay.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s47-stretch-dansungsa-cinema-2",
+      "conceptId": "nostalgia-dansungsa-cinema-pack2-fact-2",
+      "variant": "film-archive-folder-title",
+      "setIndex": 47,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "관현악단·영화잡지·나운규 영결식 기록을 한 기록철로 묶을 때 가장 알맞은 제목은 무엇인가요?",
+      "choices": [
+        "단성사와 분리돼 운영된 영화음악·출판 기관",
+        "전통 공연 전용관으로 돌아가기 위한 단성사 행사",
+        "상영관을 넘어선 단성사의 영화문화 활동"
+      ],
+      "answerIndex": 2,
+      "explanation": "전문 영화음악 연주단과 영화잡지, 영화인 추모 행사는 단성사가 단순 상영관을 넘어 한국 영화문화의 거점이었음을 보여 주는 근거입니다.",
+      "source": {
+        "name": "국가기록원 「단성사」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/Dansungsa.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s48-gentle-night-curfew-2",
+      "conceptId": "nostalgia-night-curfew-pack2-fact-2",
+      "variant": "curfew-lift-date",
+      "setIndex": 48,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "오랫동안 이어진 야간통행금지가 전국적으로 해제된 해는 몇 년이었나요?",
+      "choices": [
+        "1972년",
+        "1992년",
+        "1982년"
+      ],
+      "answerIndex": 2,
+      "explanation": "야간통행금지는 1982년 1월 5일에서 6일로 넘어가는 자정부터 해제됐습니다. 1945년에 시작된 뒤 36년 넘게 이어진 제도였습니다.",
+      "source": {
+        "name": "국가기록원 「야간통행금지와 해제」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/curfew.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s48-steady-rural-volunteer-work-2",
+      "conceptId": "nostalgia-rural-volunteer-work-pack2-fact-2",
+      "variant": "participation-name-and-purpose",
+      "setIndex": 48,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "1980년대 대학생들이 단순 일손 돕기를 넘어 농민과 지역 문제를 함께 논의했습니다. 이 변화에 맞춰 쓰기 시작한 명칭과 취지는 무엇인가요?",
+      "choices": [
+        "농촌계몽활동 — 학생이 지식을 일방적으로 전달하는 계몽을 강조",
+        "농업근로봉사 — 학생이 부족한 노동력을 대신하는 근로를 강조",
+        "농민학생연대활동 — 농민과 학생이 함께하는 연대를 강조"
+      ],
+      "answerIndex": 2,
+      "explanation": "1980년대부터는 농민과 학생이 하나 된다는 의미를 드러내기 위해 농촌봉사활동을 ‘농민학생연대활동’이라고 부르기 시작했습니다.",
+      "source": {
+        "name": "국가기록원 「농촌봉사활동」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/RuralService.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s48-stretch-popular-song-history-2",
+      "conceptId": "nostalgia-popular-song-history-pack2-fact-2",
+      "variant": "broadcast-song-synergy",
+      "setIndex": 48,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "1956년 라디오 연속극 ‘청실홍실’과 주제가가 함께 인기를 끈 사실에서 알 수 있는 대중문화의 특징은 무엇인가요?",
+      "choices": [
+        "드라마가 성공한 뒤 이미 유명한 노래를 뒤늦게 광고에만 사용했습니다",
+        "방송 이야기와 노래가 서로의 인기를 키우는 결합이 나타났습니다",
+        "노래가 먼저 유행해 같은 제목을 빌렸지만 줄거리와는 관계가 없었습니다"
+      ],
+      "answerIndex": 1,
+      "explanation": "인기 라디오 드라마의 이야기를 기다리는 청취자들이 주제가도 함께 기억했습니다. 방송 프로그램과 대중가요가 서로 확산시킨 사례입니다.",
+      "source": {
+        "name": "국가기록원 「대중가요」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/popSong.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s49-gentle-briquette-life-2",
+      "conceptId": "nostalgia-briquette-life-pack2-fact-2",
+      "variant": "large-briquette-use",
+      "setIndex": 49,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "1957년에 만들어진 31공탄과 49공탄 같은 큰 연탄은 주로 어디에서 사용했나요?",
+      "choices": [
+        "일반 가정의 온돌 난방",
+        "영업용 시설",
+        "증기기관차의 동력 공급"
+      ],
+      "answerIndex": 1,
+      "explanation": "연탄의 크기와 구멍 수는 화력과 관련이 있습니다. 31공탄과 49공탄 같은 대형 연탄은 높은 열이 필요한 영업용으로 널리 쓰였습니다.",
+      "source": {
+        "name": "국가기록원 「연탄」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/briguette.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s49-steady-daehakro-culture-street-2",
+      "conceptId": "nostalgia-daehakro-culture-street-pack2-fact-2",
+      "variant": "car-free-culture-link",
+      "setIndex": 49,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "1985년 대학로를 ‘차 없는 거리’로 만든 조치와 함께 추진된 변화는 어느 것이었나요?",
+      "choices": [
+        "차량 통행을 늘리며 상업·업무 중심 도로로 확장했습니다",
+        "보행 구간은 만들었지만 문화시설은 외곽으로 이전했습니다",
+        "이화사거리부터 혜화로터리 구간을 문화예술의 거리로 조성했습니다"
+      ],
+      "answerIndex": 2,
+      "explanation": "정부는 1985년 대학로 일부를 차 없는 거리로 만들고, 이화사거리에서 혜화로터리까지를 문화예술의 거리로 꾸몄습니다.",
+      "source": {
+        "name": "국가기록원 「대학로」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/Daehak-ro.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s49-stretch-madangnori-2",
+      "conceptId": "nostalgia-madangnori-pack2-fact-2",
+      "variant": "circular-stage-caption",
+      "setIndex": 49,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "마당놀이 공연장 배치도에는 어느 설명이 맞나요?",
+      "choices": [
+        "원형무대를 네 면의 관객이 둘러싸 배우와 즉석에서 호응합니다",
+        "원형무대 한쪽에만 객석을 두어 배우의 정면 연기에 집중합니다",
+        "액자형 무대와 객석 사이를 넓혀 관객 반응과 공연을 분리합니다"
+      ],
+      "answerIndex": 0,
+      "explanation": "마당놀이는 관객이 무대를 둘러싸는 구조여서 배우가 여러 방향으로 말을 걸고 관객도 즉시 반응할 수 있습니다. 참여와 소통이 공연의 중요한 맛입니다.",
+      "source": {
+        "name": "국가기록원 「마당놀이」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/Playground.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s50-gentle-post-office-mailbox-2",
+      "conceptId": "nostalgia-post-office-mailbox-pack2-fact-2",
+      "variant": "mailbox-color-memory",
+      "setIndex": 50,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "주황·파랑이나 빨강·파랑 두 색을 거친 우체통이 1982년 다시 통일된 색은 무엇이었나요?",
+      "choices": [
+        "빨간색",
+        "초록색",
+        "노란색"
+      ],
+      "answerIndex": 0,
+      "explanation": "우체통은 시기별로 두 가지 색을 쓰기도 했지만, 1982년 체신부가 전국 우체통을 다시 빨간색 하나로 통일했습니다.",
+      "source": {
+        "name": "국가기록원 「우체국과 집배원」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/postOffice.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s50-steady-seollal-holiday-2",
+      "conceptId": "nostalgia-seollal-holiday-pack2-fact-2",
+      "variant": "three-day-seollal-restoration",
+      "setIndex": 50,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "1989년 ‘민속의 날’이 ‘설날’로 바뀌면서 공휴일은 어떻게 달라졌나요?",
+      "choices": [
+        "설날 앞뒤 하루까지 포함한 3일 연휴가 됐습니다",
+        "설날 당일만 쉬는 하루 공휴일로 유지됐습니다",
+        "양력 1월 1일과 묶은 이틀 연휴가 됐습니다"
+      ],
+      "answerIndex": 0,
+      "explanation": "1989년부터 ‘민속의 날’은 다시 ‘설날’이라는 이름을 찾았습니다. 설날 전날과 다음 날도 공휴일로 정해져 3일 연휴가 됐습니다.",
+      "source": {
+        "name": "국가기록원 「명절(설, 추석)」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/holiday.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s50-stretch-culture-film-2",
+      "conceptId": "nostalgia-culture-film-pack2-fact-2",
+      "variant": "longer-survival-inference",
+      "setIndex": 50,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "애국가와 대한뉴스 상영이 끝난 뒤에도 문화영화가 1995년까지 이어졌다는 사실이 뜻하는 바는 무엇인가요?",
+      "choices": [
+        "문화영화가 상업영화보다 흥행해 관객 선택으로만 계속 상영됐습니다",
+        "극장 내 정책·교육 영상 관행이 다른 의무 상영물보다 오래 남았습니다",
+        "세 의무 상영물이 같은 해 함께 끝나 극장 관행도 즉시 바뀌었습니다"
+      ],
+      "answerIndex": 1,
+      "explanation": "극장의 의무 상영물 가운데 애국가와 대한뉴스가 먼저 중단됐지만 문화영화는 1995년까지 계속됐습니다. 계몽·교육 영상 관행이 더 오래 지속된 셈입니다.",
+      "source": {
+        "name": "국가기록원 「문화영화」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/cultureMovie.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s51-gentle-paper-saving-2",
+      "conceptId": "nostalgia-paper-saving-pack2-fact-2",
+      "variant": "government-first-campaign",
+      "setIndex": 51,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "1974년 종이절약운동을 범국민적으로 넓히기 전에 먼저 실천하도록 한 곳은 어디였나요?",
+      "choices": [
+        "서점과 출판사만",
+        "정부기관과 산하단체",
+        "농촌의 일반 가정만"
+      ],
+      "answerIndex": 1,
+      "explanation": "1974년 3월 대통령 지시로 정부기관과 산하단체가 먼저 종이 절약을 실천하고 이를 범국민 운동으로 넓히도록 했습니다.",
+      "source": {
+        "name": "국가기록원 「종이절약운동」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/savePaper.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s51-steady-railway-modernization-2",
+      "conceptId": "nostalgia-railway-modernization-pack2-fact-2",
+      "variant": "seventies-modernization-sequence",
+      "setIndex": 51,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "1970년대 철도 현대화의 순서를 바르게 나타낸 것은 무엇인가요?",
+      "choices": [
+        "1972년 수도권 전철 개통 뒤 1974년 전기기관차 도입",
+        "1972년 전기기관차 도입 뒤 1974년 수도권 전철 개통",
+        "1972년 디젤기관차 도입 뒤 1974년 새마을호 첫 운행"
+      ],
+      "answerIndex": 1,
+      "explanation": "1972년 전기기관차가 도입됐고 1974년 수도권 전철과 서울 지하철이 개통했습니다. 철도 동력과 도시 교통이 차례로 현대화된 흐름입니다.",
+      "source": {
+        "name": "국가기록원 「철도」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/rapidRailway.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s51-stretch-modern-theater-2",
+      "conceptId": "nostalgia-modern-theater-pack2-fact-2",
+      "variant": "international-festival-brochure",
+      "setIndex": 51,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "1986년 아시안게임과 1988년 서울올림픽 무렵의 연극 행사 안내문에 가장 어울리는 내용은 무엇인가요?",
+      "choices": [
+        "해외 작품과 예술인이 오가는 국제교류가 활발해졌습니다",
+        "국내 극단의 지방 순회만 늘고 해외 초청은 이전 수준에 머물렀습니다",
+        "해외 작품은 영상으로만 소개하고 예술인 교류는 열지 않았습니다"
+      ],
+      "answerIndex": 0,
+      "explanation": "두 국제 스포츠 행사를 전후해 해외와의 문화 교류가 넓어졌고, 연극계에서도 작품과 인력이 오가는 국제교류가 활발해졌습니다.",
+      "source": {
+        "name": "국가기록원 「연극」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/Theater.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s52-gentle-postage-stamp-2",
+      "conceptId": "nostalgia-postage-stamp-pack2-fact-2",
+      "variant": "olympic-stamp-memory",
+      "setIndex": 52,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "국가기록원에서 ‘88 서울 올림픽 우표’를 자료로 소개한 연도는 언제인가요?",
+      "choices": [
+        "1987년",
+        "1986년",
+        "1988년"
+      ],
+      "answerIndex": 0,
+      "explanation": "국가기록원에는 88 서울 올림픽 우표가 1987년 자료로 남아 있습니다. 큰 행사를 앞두고 기념우표를 미리 발행하던 모습을 보여 줍니다.",
+      "source": {
+        "name": "국가기록원 「우표」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/Stamp.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s52-steady-electric-light-2",
+      "conceptId": "nostalgia-electric-light-pack2-fact-2",
+      "variant": "supply-and-demand-context",
+      "setIndex": 52,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "1966년 발전 설비가 늘었는데도 1967~1968년에 제한송전이 다시 시행된 까닭은 무엇이었나요?",
+      "choices": [
+        "전쟁 복구가 끝난 뒤 발전소들이 다시 장기간 멈췄기 때문입니다",
+        "고도성장으로 전력 수요가 해마다 빠르게 늘었기 때문입니다",
+        "일부 지역 송전선 공사가 늦어 새 전력을 나누기 어려웠기 때문입니다"
+      ],
+      "answerIndex": 1,
+      "explanation": "발전소 건설로 1966년 말 설비용량이 약 두 배가 됐지만, 경제성장으로 전력 수요가 매년 30%씩 늘어 공급이 다시 부족해졌습니다.",
+      "source": {
+        "name": "국가기록원 「전기」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/electronic.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s52-stretch-fashion-show-2",
+      "conceptId": "nostalgia-fashion-show-pack2-fact-2",
+      "variant": "industry-formation-evidence",
+      "setIndex": 52,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "1956년 첫 패션쇼와 1962년 앙드레 김의 데뷔 쇼가 함께 보여 주는 흐름은 무엇인가요?",
+      "choices": [
+        "섬유업체의 신소재 판촉이 중심이 되고 디자이너는 뒤에서 제작을 맡는 흐름",
+        "전문 디자이너와 공개 쇼를 중심으로 패션 산업이 자리 잡는 흐름",
+        "양장점의 맞춤복 발표회가 중심이 되어 소규모 고객 행사로 자리 잡는 흐름"
+      ],
+      "answerIndex": 1,
+      "explanation": "1950년대 공개 패션쇼가 시작되고 1960년대 전문 디자이너의 활동이 두드러졌습니다. 옷을 디자인하고 무대에서 소개하는 현대 패션 산업의 기반이 형성된 흐름입니다.",
+      "source": {
+        "name": "국가기록원 「패션쇼」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/fashionShow.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s53-gentle-direct-distance-dialing-2",
+      "conceptId": "nostalgia-direct-distance-dialing-pack2-fact-2",
+      "variant": "one-phone-household",
+      "setIndex": 53,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "전화 회선 1천만 개가 공급돼 ‘1가구 1전화’ 시대에 들어선 해는 몇 년이었을까요?",
+      "choices": [
+        "1977년",
+        "1997년",
+        "1987년"
+      ],
+      "answerIndex": 2,
+      "explanation": "농촌 전화 자동화와 통화권 확대가 이어진 뒤 1987년 전화 회선이 1천만 개에 이르러 1가구 1전화 시대가 열렸습니다.",
+      "source": {
+        "name": "국가기록원 「장거리자동전화(DDD)」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/tellephone.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s53-steady-modern-waterworks-2",
+      "conceptId": "nostalgia-modern-waterworks-pack2-fact-2",
+      "variant": "supply-rate-growth",
+      "setIndex": 53,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "1960년 22%였던 상수도 급수율이 1976년에는 어느 정도로 높아졌나요?",
+      "choices": [
+        "56%",
+        "46%",
+        "66%"
+      ],
+      "answerIndex": 0,
+      "explanation": "상수도 시설이 늘면서 급수율은 1960년 22%에서 1971년 36%, 1976년 56%로 높아졌습니다.",
+      "source": {
+        "name": "국가기록원 「상수도」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/waterworks.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s53-stretch-korean-folk-village-2",
+      "conceptId": "nostalgia-korean-folk-village-pack2-fact-2",
+      "variant": "period-drama-location-note",
+      "setIndex": 53,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "‘춘향전’과 ‘전설의 고향’ 제작진에게 어울리는 촬영지 답사 메모를 골라 보세요.",
+      "choices": [
+        "전통 유물은 많지만 야외 가옥이 없어 실내 장면 촬영에 알맞았습니다",
+        "옛 가옥은 한 채뿐이라 작품마다 새 마을 세트를 짓기에 알맞았습니다",
+        "옛 가옥과 생활공간을 한곳에서 재현해 시대극 배경으로 쓰기 좋았습니다"
+      ],
+      "answerIndex": 2,
+      "explanation": "한국민속촌에는 여러 지역의 전통 가옥과 생활공간이 재현돼 있습니다. 한 장소에서 다양한 옛 장면을 만들 수 있어 오랫동안 사극 촬영지로 활용됐습니다.",
+      "source": {
+        "name": "국가기록원 「한국민속촌」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/KFV.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s54-gentle-hangul-typewriter-2",
+      "conceptId": "nostalgia-hangul-typewriter-pack2-fact-2",
+      "variant": "typing-education-boom",
+      "setIndex": 54,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "1969년 상업고등학교에서 무엇이 타자교육 붐을 일으켰나요?",
+      "choices": [
+        "은행이 타자 기능이 뛰어난 졸업예정자를 추천해 달라고 했습니다",
+        "관공서가 손글씨 공문을 우대하도록 채용 기준을 바꿨습니다",
+        "여러 대학이 상고 출신 지원자에게 타자 실기 성적을 요구했습니다"
+      ],
+      "answerIndex": 0,
+      "explanation": "1969년 한 은행이 학업성적과 타자 기능이 우수한 상고 졸업예정자를 추천해 달라고 요청했습니다. 취업에 도움이 된다는 인식이 퍼지며 타자교육이 활기를 띠었습니다.",
+      "source": {
+        "name": "국가기록원 「타자기」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/typewriter.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s54-steady-private-tutoring-2",
+      "conceptId": "nostalgia-private-tutoring-pack2-fact-2",
+      "variant": "ban-and-relaxation-sequence",
+      "setIndex": 54,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "1980년 과외 전면 금지 뒤 제한은 어떤 순서로 완화됐나요?",
+      "choices": [
+        "1988년 대학생 비영리 과외 일부 허용 → 1989년 보충수업 부활",
+        "1988년 보충수업 부활 → 1989년 대학생 비영리 과외 일부 허용",
+        "1988년 보충수업 부활 → 1989년 대학생 영리 과외 전면 허용"
+      ],
+      "answerIndex": 1,
+      "explanation": "1980년 과외를 전면 금지했지만 1988년 중·고교 보충수업이 부활했고, 1989년에는 대학생의 비영리 과외 등이 일부 허용됐습니다.",
+      "source": {
+        "name": "국가기록원 「과외」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/privateLesson.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s54-stretch-national-theater-2",
+      "conceptId": "nostalgia-national-theater-pack2-fact-2",
+      "variant": "namsan-center-inference",
+      "setIndex": 54,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "1973년 남산 국립극장에 대·소극장과 여러 전속단체를 함께 둔 설계가 겨냥한 효과는 무엇이었을까요?",
+      "choices": [
+        "전속단체를 지역별로 흩어 국립극장은 대관 전용으로 쓰려는 효과",
+        "연극 한 장르에 예산을 집중하고 다른 공연은 민간에 맡기려는 효과",
+        "연극·창극·무용·오페라 등 여러 공연을 한 거점에서 키우려는 효과"
+      ],
+      "answerIndex": 2,
+      "explanation": "새 국립극장은 두 공연장과 국립극단·창극단·무용단·오페라단 등 여러 단체를 갖췄습니다. 다양한 공연예술을 한 국가 거점에서 육성하려는 구성이었습니다.",
+      "source": {
+        "name": "국가기록원 「국립극장」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/nationalTheater.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s55-gentle-television-broadcast-2",
+      "conceptId": "nostalgia-television-broadcast-pack2-fact-2",
+      "variant": "tbc-name-change",
+      "setIndex": 55,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "중앙방송이 KBS와 이름이 비슷하다는 이유로 1966년에 바꾼 방송사 이름은 무엇이었나요?",
+      "choices": [
+        "MBC",
+        "DBS",
+        "TBC"
+      ],
+      "answerIndex": 2,
+      "explanation": "중앙방송은 서울중앙방송국과 사명이 비슷해 1966년 7월 동양방송을 뜻하는 TBC로 이름을 바꿨습니다.",
+      "source": {
+        "name": "국가기록원 「텔레비전 방송」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/television.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s55-steady-school-meals-2",
+      "conceptId": "nostalgia-school-meals-pack2-fact-2",
+      "variant": "paid-meal-to-law",
+      "setIndex": 55,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "빵·우유 유료급식과 학교급식법 제정은 어떤 순서였나요?",
+      "choices": [
+        "1970년 빵·우유 유료급식 시작 → 1981년 학교급식법 제정",
+        "1981년 학교급식법 제정 → 1970년 빵·우유 유료급식 시작",
+        "1970년 학교급식 폐지 → 1981년 도시락 반입 금지"
+      ],
+      "answerIndex": 0,
+      "explanation": "1970년 9월 초등학교에 빵과 우유를 주는 유료급식이 시작됐고, 제도를 정비해 1981년 학교급식법과 시행령을 만들었습니다.",
+      "source": {
+        "name": "국가기록원 「급식」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/cafeteria.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s55-stretch-sejong-center-2",
+      "conceptId": "nostalgia-sejong-center-pack2-fact-2",
+      "variant": "fire-to-replacement-sequence",
+      "setIndex": 55,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "시민회관 화재에서 세종문화회관 개관까지는 어떤 재건 흐름이었나요?",
+      "choices": [
+        "불탄 시민회관을 원형대로 수리한 뒤 이름만 세종문화회관으로 바꿨습니다",
+        "소실된 대형 공연장을 대신할 새 문화회관을 같은 자리에서 마련했습니다",
+        "시민회관 터는 공원으로 남기고 새 회관은 다른 도시에 세웠습니다"
+      ],
+      "answerIndex": 1,
+      "explanation": "시민회관은 1972년 공연 중 난 불로 전소됐습니다. 그 자리에 새 회관을 지어 1978년 ‘세종문화회관’이라는 이름으로 개관했습니다.",
+      "source": {
+        "name": "국가기록원 「세종문화회관」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/sejongCulture.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s56-gentle-overseas-travel-2",
+      "conceptId": "nostalgia-overseas-travel-pack2-fact-2",
+      "variant": "travel-education-end",
+      "setIndex": 56,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "해외여행자가 거쳐야 했던 반공교육이 관광객 증가로 폐지된 해는 언제였나요?",
+      "choices": [
+        "1992년",
+        "1982년",
+        "2002년"
+      ],
+      "answerIndex": 0,
+      "explanation": "해외여행 자유화 뒤에도 출국자는 반공교육을 받아야 했지만, 늘어난 여행객을 감당하기 어려워 1992년에 폐지됐습니다.",
+      "source": {
+        "name": "국가기록원 「해외여행 자유화」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/globalTravel.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s56-steady-university-admissions-2",
+      "conceptId": "nostalgia-university-admissions-pack2-fact-2",
+      "variant": "csat-development-sequence",
+      "setIndex": 56,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "대학수학능력시험은 도입 전에 어떤 준비 과정을 거쳤나요?",
+      "choices": [
+        "1985년부터 연구해 1990학년도에 곧바로 도입됐습니다",
+        "1985년부터 연구·공청회를 거쳐 1994학년도에 도입됐습니다",
+        "1989년부터 연구·공청회를 거쳐 1995학년도에 도입됐습니다"
+      ],
+      "answerIndex": 1,
+      "explanation": "현재의 수능은 1985년부터 연구와 검토, 공청회를 거쳐 대학입시 개선안으로 마련됐고 1994학년도부터 시행됐습니다.",
+      "source": {
+        "name": "국가기록원 「대학입시」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/univEnt.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s56-stretch-gyeongbu-expressway-2",
+      "conceptId": "nostalgia-gyeongbu-expressway-pack2-fact-2",
+      "variant": "network-completion-reasoning",
+      "setIndex": 56,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "서울–인천 고속도로가 1968년 먼저 열리고 대구–부산 구간이 1970년 마지막으로 완성된 사실이 뜻하는 것은 무엇인가요?",
+      "choices": [
+        "구간별 개통을 거쳐 수도권과 부산을 잇는 고속도로망이 완성됐습니다",
+        "서울–인천 구간을 경부선의 마지막 구간으로 편입해 부산까지 연장했습니다",
+        "대구–부산을 먼저 열고 수도권 구간은 1970년 이후에 처음 착공했습니다"
+      ],
+      "answerIndex": 0,
+      "explanation": "경인고속도로가 먼저 문을 열었고 경부선은 여러 구간을 차례로 완성했습니다. 마지막 대구–부산 구간이 이어지며 서울과 부산의 전 구간이 연결됐습니다.",
+      "source": {
+        "name": "국가기록원 「경부고속도로」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/exway.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s57-gentle-christmas-memory-2",
+      "conceptId": "nostalgia-christmas-memory-pack2-fact-2",
+      "variant": "eighties-gift-memory",
+      "setIndex": 57,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "1980년대 크리스마스의 인기 선물로 기록된 조합은 어느 것이었나요?",
+      "choices": [
+        "학용품 선물세트와 모형 자동차",
+        "종합과자선물세트와 바비 인형",
+        "손목시계와 인기 가수의 음반"
+      ],
+      "answerIndex": 1,
+      "explanation": "1980년대에는 종합과자선물세트와 바비 인형이 인기 선물이었고, 중반에는 프라이드치킨도 인기 먹거리로 꼽혔습니다.",
+      "source": {
+        "name": "국가기록원 「크리스마스」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/christmas.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s57-steady-university-festival-2",
+      "conceptId": "nostalgia-university-festival-pack2-fact-2",
+      "variant": "daedongje-name-spread",
+      "setIndex": 57,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "1980년대 중반 이후 여러 대학축제가 ‘대동제’라는 이름을 쓰게 된 변화는 무엇을 강조한 것이었나요?",
+      "choices": [
+        "학생 공동체가 함께 어울린다는 뜻을 앞세운 변화였습니다",
+        "대학별 축제를 전국 단위 경연대회로 통합하려는 변화였습니다",
+        "학과별 행사를 서로 분리해 소규모로 운영하려는 변화였습니다"
+      ],
+      "answerIndex": 0,
+      "explanation": "1980년대 대학들은 축제 명칭을 ‘대동제’로 바꾸기 시작했습니다. ‘대동’은 여럿이 크게 하나로 어울린다는 공동체적 의미를 담습니다.",
+      "source": {
+        "name": "국가기록원 「대학축제」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/uvFestival.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s57-stretch-guro-industrial-complex-2",
+      "conceptId": "nostalgia-guro-industrial-complex-pack2-fact-2",
+      "variant": "industrial-transition-inference",
+      "setIndex": 57,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "구로공단의 수출과 노동자 수가 줄어든 뒤 2000년 ‘서울디지털산업단지’로 이름을 바꾼 변화는 무엇을 시사하나요?",
+      "choices": [
+        "명칭만 바꾸고 섬유·봉제 중심 생산구조를 그대로 유지하려는 흐름입니다",
+        "섬유·봉제 중심 공단에서 새로운 산업 중심지로 전환하려는 흐름입니다",
+        "제조시설을 모두 주거단지로 바꿔 산업 기능을 끝내려는 흐름입니다"
+      ],
+      "answerIndex": 1,
+      "explanation": "기존 제조업 공단의 규모가 줄어들자 지역은 산업 구조를 바꾸기 시작했습니다. 새 명칭은 디지털 산업 거점으로의 전환을 드러낸 기록입니다.",
+      "source": {
+        "name": "국가기록원 「구로공단」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/gurogongdan.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s58-gentle-waste-volume-fee-2",
+      "conceptId": "nostalgia-waste-volume-fee-pack2-fact-2",
+      "variant": "nationwide-start",
+      "setIndex": 58,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "시범 사업 뒤 쓰레기종량제가 전국에서 시행되기 시작한 날짜는 언제였나요?",
+      "choices": [
+        "1990년 1월 1일",
+        "1995년 1월 1일",
+        "2000년 1월 1일"
+      ],
+      "answerIndex": 1,
+      "explanation": "시범 실시의 성과를 바탕으로 1995년 1월 1일부터 쓰레기종량제가 전국적으로 시행됐습니다.",
+      "source": {
+        "name": "국가기록원 「쓰레기종량제」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/TrashWeight.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s58-steady-school-vacation-2",
+      "conceptId": "nostalgia-school-vacation-pack2-fact-2",
+      "variant": "nature-homework-change",
+      "setIndex": 58,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "1990년대에 곤충·식물 채집 방학숙제가 사라지게 된 직접적인 계기는 무엇이었나요?",
+      "choices": [
+        "1994년부터 완성 표본을 사서 제출하도록 바꿨기 때문입니다",
+        "1994년 환경 방학을 정하며 채집 숙제를 금지했습니다",
+        "도시 학생의 자연 관찰이 줄며 별도 지침 없이 사라졌기 때문입니다"
+      ],
+      "answerIndex": 1,
+      "explanation": "환경처와 한국교총은 1994년 여름을 ‘환경 방학’으로 정하고 곤충과 식물 채집 숙제를 금지했습니다.",
+      "source": {
+        "name": "국가기록원 「방학」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/vacation.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s58-stretch-seoul-overpasses-2",
+      "conceptId": "nostalgia-seoul-overpasses-pack2-fact-2",
+      "variant": "symbol-to-removal-inference",
+      "setIndex": 58,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "1970년대 근대화의 상징이던 고가도로들이 2000년대 들어 차례로 철거된 사실에서 읽을 수 있는 변화는 무엇인가요?",
+      "choices": [
+        "도심 자동차 통행이 크게 줄어 고가도로를 포함한 간선도로가 필요 없어졌습니다",
+        "낡은 고가도로를 더 넓은 고가도로로 바꾸는 기술 개선만 중요해졌습니다",
+        "도시가 차량 소통뿐 아니라 노후 시설과 거리 환경도 함께 고려하게 됐습니다"
+      ],
+      "answerIndex": 2,
+      "explanation": "고가도로는 한때 빠른 차량 흐름의 상징이었지만 시간이 지나 노후화와 도시 경관 문제가 커졌습니다. 철거는 도시 우선순위가 달라진 결과입니다.",
+      "source": {
+        "name": "국가기록원 「고가도로」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/highRoad.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s59-gentle-seoul-subway-2",
+      "conceptId": "nostalgia-seoul-subway-pack2-fact-2",
+      "variant": "network-expansion",
+      "setIndex": 59,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "서울 지하철 3호선과 4호선이 완전 개통돼 본격적인 지하철 시대가 열린 해는 몇 년인가요?",
+      "choices": [
+        "1975년",
+        "1995년",
+        "1985년"
+      ],
+      "answerIndex": 2,
+      "explanation": "1호선 개통 뒤 노선 건설이 이어졌고, 1985년 10월 3호선과 4호선이 완전 개통되면서 지하철망이 크게 넓어졌습니다.",
+      "source": {
+        "name": "국가기록원 「지하철」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/subway.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s59-steady-teachers-day-2",
+      "conceptId": "nostalgia-teachers-day-pack2-fact-2",
+      "variant": "date-abolish-revival",
+      "setIndex": 59,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "스승의 날 날짜와 제도 변화를 올바른 순서로 나열한 것은 무엇인가요?",
+      "choices": [
+        "1973년 5월 15일 지정 → 1965년 폐지 → 1982년 부활",
+        "1965년 폐지 → 1973년 부활 → 1982년 날짜 첫 지정",
+        "1965년 5월 15일 지정 → 1973년 통합 폐지 → 1982년 부활"
+      ],
+      "answerIndex": 2,
+      "explanation": "1965년 세종대왕 탄신일인 5월 15일로 정했고, 1973년 기념일 통폐합 때 사라졌다가 1982년 법정기념일로 부활했습니다.",
+      "source": {
+        "name": "국가기록원 「스승의 날」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/teachersDay.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-002-s59-stretch-dongdaemun-stadium-2",
+      "conceptId": "nostalgia-dongdaemun-stadium-pack2-fact-2",
+      "variant": "seasonal-photo-album-caption",
+      "setIndex": 59,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "여름 수영장과 겨울 스케이트장 사진을 담은 동대문운동장 앨범에는 어떤 표제가 어울릴까요?",
+      "choices": [
+        "계절마다 시민이 찾는 복합 스포츠·여가 공간이었습니다",
+        "국가대표 선수를 위해 계절별 훈련장을 바꾼 전용 경기장이었습니다",
+        "축구장 공사 기간에 계절 시설을 잠시 시험한 임시 경기장이었습니다"
+      ],
+      "answerIndex": 0,
+      "explanation": "동대문운동장은 국가대표 축구의 무대이면서 계절에 따라 수영과 스케이트도 즐기는 곳이었습니다. 경기 관람과 시민 여가가 겹친 추억의 공간입니다.",
+      "source": {
+        "name": "국가기록원 「동대문운동장과 장충체육관」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/ddpGym.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    }
+  ]
+}

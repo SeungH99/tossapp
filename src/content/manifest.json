@@ -82,6 +82,18 @@
       "topic": "nostalgia",
       "setStart": 0,
       "setEnd": 29
+    },
+    {
+      "id": "bonus-nostalgia-002",
+      "path": "src/content/bonus/nostalgia/pack-002.json",
+      "sha256": "dab42642e824295bb0f416f7a9b25ed18d4eb6a246d83edc80d85e0b3f15974b",
+      "questionCount": 90,
+      "setCount": 30,
+      "reviewStatus": "reviewed",
+      "kind": "bonus",
+      "topic": "nostalgia",
+      "setStart": 30,
+      "setEnd": 59
     }
   ]
 }
