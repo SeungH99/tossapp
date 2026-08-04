@@ -2,6 +2,73 @@
   "releaseStart": "2026-07-28",
   "releaseEnd": "2027-01-23",
   "contentVersion": "2026.08.180d",
-  "corePacks": [],
+  "corePacks": [
+    {
+      "id": "core-001",
+      "path": "src/content/core/pack-001.json",
+      "sha256": "922c7773b4df8831a1e4014371628f8c41a8559c147b8d4cce3ed217083fecf2",
+      "questionCount": 90,
+      "setCount": 30,
+      "reviewStatus": "reviewed",
+      "kind": "core",
+      "dateStart": "2026-07-28",
+      "dateEnd": "2026-08-26"
+    },
+    {
+      "id": "core-002",
+      "path": "src/content/core/pack-002.json",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "questionCount": 90,
+      "setCount": 30,
+      "reviewStatus": "reviewed",
+      "kind": "core",
+      "dateStart": "2026-08-27",
+      "dateEnd": "2026-09-25"
+    },
+    {
+      "id": "core-003",
+      "path": "src/content/core/pack-003.json",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "questionCount": 90,
+      "setCount": 30,
+      "reviewStatus": "reviewed",
+      "kind": "core",
+      "dateStart": "2026-09-26",
+      "dateEnd": "2026-10-25"
+    },
+    {
+      "id": "core-004",
+      "path": "src/content/core/pack-004.json",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "questionCount": 90,
+      "setCount": 30,
+      "reviewStatus": "reviewed",
+      "kind": "core",
+      "dateStart": "2026-10-26",
+      "dateEnd": "2026-11-24"
+    },
+    {
+      "id": "core-005",
+      "path": "src/content/core/pack-005.json",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "questionCount": 90,
+      "setCount": 30,
+      "reviewStatus": "reviewed",
+      "kind": "core",
+      "dateStart": "2026-11-25",
+      "dateEnd": "2026-12-24"
+    },
+    {
+      "id": "core-006",
+      "path": "src/content/core/pack-006.json",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "questionCount": 90,
+      "setCount": 30,
+      "reviewStatus": "reviewed",
+      "kind": "core",
+      "dateStart": "2026-12-25",
+      "dateEnd": "2027-01-23"
+    }
+  ],
   "bonusPacks": []
 }
