@@ -6,7 +6,7 @@
     {
       "id": "core-001",
       "path": "src/content/core/pack-001.json",
-      "sha256": "2b1da80a8d0cf100416d770467d0bbd97410afbbf3dfa2474cde2b6fb4cfad20",
+      "sha256": "2c3b4ecc3c82c72cfd0705d02c25d667f92c033b6c0c8d87c6f1268bb9c43e56",
       "questionCount": 90,
       "setCount": 30,
       "reviewStatus": "reviewed",
