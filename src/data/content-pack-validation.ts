@@ -45,6 +45,22 @@ export interface ContentLibraryPack {
   sha256: string;
 }
 
+export function validateManifestContentVersion(
+  value: unknown,
+): ContentPackValidationIssue[] {
+  if (typeof value === "string" && value.trim().length > 0) return [];
+  return [
+    {
+      code: "schema",
+      severity: "error",
+      scope: "manifest:contentVersion",
+      message: "Manifest contentVersion must be a non-empty string.",
+      expected: "non-empty string",
+      actual: String(value),
+    },
+  ];
+}
+
 export type ContentLibraryValidationScope =
   "full" | "core" | `bonus:${BonusTopic}`;
 
@@ -1022,6 +1038,12 @@ export function validateContentLibrary(
   scope: ContentLibraryValidationScope = "full",
 ): ContentValidationReport {
   const issues: ContentPackValidationIssue[] = [];
+  const manifestVersionIssues = validateManifestContentVersion(
+    manifest.contentVersion,
+  );
+  issues.push(...manifestVersionIssues);
+  const manifestContentVersion =
+    manifestVersionIssues.length === 0 ? manifest.contentVersion : undefined;
   const descriptors = descriptorsForScope(manifest, scope);
   const descriptorPaths = new Set(
     descriptors.map(({ path }) => path.replace(/\\/g, "/")),
@@ -1086,7 +1108,7 @@ export function validateContentLibrary(
     const report = validateContentPack(
       file.pack,
       descriptor,
-      manifest.contentVersion,
+      manifestContentVersion,
     );
     issues.push(...report.issues);
     questionCount += report.questionCount;

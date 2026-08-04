@@ -150,6 +150,38 @@ describe("validate-content-pack CLI", () => {
     expect(readFileSync(workspace.manifestPath)).toEqual(before);
   });
 
+  it("leaves the manifest byte-for-byte unchanged when contentVersion is missing", async () => {
+    const workspace = createWorkspace(validPack);
+    const manifest = JSON.parse(
+      readFileSync(workspace.manifestPath, "utf8"),
+    ) as Record<string, unknown>;
+    delete manifest.contentVersion;
+    writeFileSync(
+      workspace.manifestPath,
+      `${JSON.stringify(manifest, null, 2)}\n`,
+      "utf8",
+    );
+    const before = readFileSync(workspace.manifestPath);
+
+    const result = await runPackValidation({
+      cwd: workspace.directory,
+      packPath: workspace.packPath,
+      manifestPath: workspace.manifestPath,
+      updateManifest: true,
+      writeLine: () => undefined,
+    });
+
+    expect(result.exitCode).toBe(1);
+    expect(result.report.issues).toContainEqual(
+      expect.objectContaining({
+        code: "schema",
+        scope: "manifest:contentVersion",
+        expected: "non-empty string",
+      }),
+    );
+    expect(readFileSync(workspace.manifestPath)).toEqual(before);
+  });
+
   it("atomically updates only the valid pack matching descriptor", async () => {
     const workspace = createWorkspace(validPack);
 

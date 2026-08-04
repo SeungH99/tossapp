@@ -17,6 +17,7 @@ import {
   type ContentPackValidationIssue,
   type ContentValidationReport,
   validateContentPack,
+  validateManifestContentVersion,
 } from "../src/data/content-pack-validation";
 
 export interface PackValidationOptions {
@@ -223,6 +224,27 @@ export async function runPackValidation(
       readFileSync(manifestPath, "utf8"),
     ) as ContentManifest;
     matchingDescriptor = findDescriptor(manifest, cwd, packPath);
+  }
+
+  if (manifest != null) {
+    const manifestVersionIssues = validateManifestContentVersion(
+      manifest.contentVersion,
+    );
+    if (manifestVersionIssues.length > 0) {
+      const report: ContentValidationReport = {
+        packCount: 1,
+        questionCount: Array.isArray(candidate.questions)
+          ? candidate.questions.length
+          : 0,
+        setCount: 0,
+        issues: manifestVersionIssues,
+      };
+      return {
+        exitCode: printPackValidationReport(report, writeLine),
+        report,
+        updatedManifest: false,
+      };
+    }
   }
 
   if (

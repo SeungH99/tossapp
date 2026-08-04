@@ -387,6 +387,43 @@ describe("validateContentPack", () => {
 });
 
 describe("validateContentLibrary", () => {
+  it.each([
+    { label: "missing full", value: undefined, scope: "full" as const },
+    { label: "empty core", value: "", scope: "core" as const },
+    {
+      label: "non-string bonus",
+      value: 202608,
+      scope: "bonus:digital" as const,
+    },
+  ])("rejects a $label manifest contentVersion", ({ value, scope }) => {
+    const core = scope === "core" ? buildCoreLibrary() : undefined;
+    const digital =
+      scope === "bonus:digital" ? buildBonusTopicLibrary("digital") : undefined;
+    const manifest = manifestWith(
+      core?.descriptors ?? [],
+      digital?.descriptors ?? [],
+    ) as unknown as Record<string, unknown>;
+    if (value === undefined) {
+      delete manifest.contentVersion;
+    } else {
+      manifest.contentVersion = value;
+    }
+
+    const report = validateContentLibrary(
+      manifest as unknown as ContentManifest,
+      core?.packs ?? digital?.packs ?? [],
+      scope,
+    );
+
+    expect(report.issues).toContainEqual(
+      expect.objectContaining({
+        code: "schema",
+        scope: "manifest:contentVersion",
+        expected: "non-empty string",
+      }),
+    );
+  });
+
   it("rejects an empty default library with exact release totals", () => {
     const report = validateContentLibrary(manifestWith([], []), []);
 
