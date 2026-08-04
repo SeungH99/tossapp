@@ -13,7 +13,7 @@ export function createInMemoryContentCatalog(
   return {
     async loadCoreSet(dateKey): Promise<ContentLoadResult<CoreQuestion[]>> {
       const questions = coreSets[dateKey];
-      return questions
+      return questions && questions.length > 0
         ? { ok: true, value: questions, packId: `in-memory:core:${dateKey}` }
         : { ok: false, reason: "missing-set" };
     },
@@ -23,7 +23,7 @@ export function createInMemoryContentCatalog(
       setIndex,
     ): Promise<ContentLoadResult<BonusQuestion[]>> {
       const questions = bonusSets[topic]?.[setIndex];
-      return questions
+      return questions && questions.length > 0
         ? {
             ok: true,
             value: questions,

@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import { createPackedContentCatalog } from "./content-catalog";
 import { createInMemoryContentCatalog } from "./in-memory-content-catalog";
+import { createViteContentCatalog } from "./vite-content-catalog";
 import type { BonusContentPack, ContentManifest, CoreContentPack } from "./types";
 
 const metadata = {
@@ -126,5 +127,38 @@ describe("content catalog", () => {
     );
 
     await expect(catalog.loadBonusSet("digital", 0)).resolves.toEqual({ ok: true, value: bonusPack001.questions, packId: "in-memory:bonus:digital:0" });
+  });
+
+  it("reports missing-set for an empty in-memory core set", async () => {
+    const catalog = createInMemoryContentCatalog(
+      { "2026-07-28": [] },
+      {},
+    );
+
+    await expect(catalog.loadCoreSet("2026-07-28")).resolves.toEqual({
+      ok: false,
+      reason: "missing-set",
+    });
+  });
+
+  it("reports missing-set for an empty in-memory bonus set", async () => {
+    const catalog = createInMemoryContentCatalog(
+      {},
+      { digital: { 0: [] } },
+    );
+
+    await expect(catalog.loadBonusSet("digital", 0)).resolves.toEqual({
+      ok: false,
+      reason: "missing-set",
+    });
+  });
+
+  it("creates a Vite catalog with the empty manifest", async () => {
+    const catalog = createViteContentCatalog();
+
+    await expect(catalog.loadCoreSet("2026-07-28")).resolves.toEqual({
+      ok: false,
+      reason: "missing-set",
+    });
   });
 });
