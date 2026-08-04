@@ -6,7 +6,7 @@
     {
       "id": "core-001",
       "path": "src/content/core/pack-001.json",
-      "sha256": "2c3b4ecc3c82c72cfd0705d02c25d667f92c033b6c0c8d87c6f1268bb9c43e56",
+      "sha256": "9e0fd55dce63061fb4753b8ffccd8c58cf1f1f7c27b6997034ce2fbf33769394",
       "questionCount": 90,
       "setCount": 30,
       "reviewStatus": "reviewed",
@@ -17,7 +17,7 @@
     {
       "id": "core-002",
       "path": "src/content/core/pack-002.json",
-      "sha256": "c50138ac4fc7e4b7d930f0dc420e95db32b7e3f71ec4997745492acf2bbaecb0",
+      "sha256": "06b44558b5ae3d85eb0477187bd561a80c213da4da73fd6e0f03fd5ee156d51f",
       "questionCount": 90,
       "setCount": 30,
       "reviewStatus": "reviewed",
