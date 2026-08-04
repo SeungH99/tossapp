@@ -742,6 +742,67 @@ describe("QuizApp", () => {
     ).toBeEnabled();
   });
 
+  it("보너스 퀴즈 결과에는 방금 푼 보너스 점수를 보여 준다", async () => {
+    const user = userEvent.setup();
+    const bonusQuestionIds = [
+      "bonus-digital-1",
+      "bonus-digital-2",
+      "bonus-digital-3",
+    ];
+    const bonusQuestions = bonusQuestionIds.map((questionId) => {
+      const question = bundledBonusQuestions.find(
+        (candidate) => candidate.id === questionId,
+      );
+      if (question == null) {
+        throw new Error(`Missing fixture question ${questionId}`);
+      }
+      return question;
+    });
+
+    render(
+      <QuizApp
+        now={new Date("2026-07-28T03:00:00.000Z")}
+        coreQuestions={coreQuestions}
+        bonusQuestions={bundledBonusQuestions}
+      />,
+    );
+
+    await user.click(screen.getByRole("button", { name: "오늘의 3문제 시작" }));
+    await user.click(screen.getByRole("button", { name: "동전" }));
+    await user.click(screen.getByRole("button", { name: "다음 문제" }));
+    await user.click(screen.getByRole("button", { name: "블루투스" }));
+    await user.click(screen.getByRole("button", { name: "다음 문제" }));
+    await user.click(screen.getByRole("button", { name: "창문 열기" }));
+    await user.click(screen.getByRole("button", { name: "결과 보기" }));
+    expect(screen.getByLabelText("오늘 점수 2 / 3")).toBeInTheDocument();
+
+    await user.click(
+      screen.getByRole("button", { name: "원하는 주제로 보너스 3문제" }),
+    );
+    await user.click(screen.getByRole("button", { name: "디지털 생활" }));
+    await user.click(
+      screen.getByRole("button", { name: "첫 보너스 무료로 시작" }),
+    );
+
+    for (const [index, question] of bonusQuestions.entries()) {
+      expect(
+        await screen.findByRole("heading", { name: question.prompt }),
+      ).toBeInTheDocument();
+      await user.click(
+        screen.getByRole("button", {
+          name: question.choices[question.answerIndex],
+        }),
+      );
+      await user.click(
+        screen.getByRole("button", {
+          name: index === bonusQuestions.length - 1 ? "결과 보기" : "다음 문제",
+        }),
+      );
+    }
+
+    expect(screen.getByLabelText("오늘 점수 3 / 3")).toBeInTheDocument();
+  });
+
   it("저장된 오늘 진행이 있으면 다음 문제부터 복구한다", async () => {
     window.localStorage.clear();
     const repository = new ProgressRepository(
