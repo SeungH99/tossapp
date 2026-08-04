@@ -86,6 +86,7 @@ export class AppsInTossRewardAdGateway implements RewardAdGateway {
           }
           if (event.type === "userEarnedReward") {
             reward ??= { rewardGrantId: this.createRewardGrantId() };
+            finish(reward);
           }
           if (event.type === "dismissed") {
             finish(reward);

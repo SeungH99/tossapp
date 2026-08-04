@@ -23,6 +23,37 @@ describe("AppsInTossRewardAdGateway", () => {
     vi.clearAllMocks();
   });
 
+  it("resolves the reward event without waiting for a dismissed event", async () => {
+    let params: Parameters<typeof sdk.show>[0] | undefined;
+    const cleanup = vi.fn();
+    sdk.showIsSupported.mockReturnValue(true);
+    sdk.show.mockImplementation((nextParams) => {
+      params = nextParams;
+      return cleanup;
+    });
+
+    const gateway = new AppsInTossRewardAdGateway(
+      "bonus-ad-group",
+      () => "earned-reward-id",
+    );
+    const reward = gateway.show();
+
+    params?.onEvent({
+      type: "userEarnedReward",
+      data: { unitType: "bonus", unitAmount: 1 },
+    });
+
+    await expect(
+      Promise.race([
+        reward,
+        new Promise((resolve) => {
+          setTimeout(() => resolve("still-pending"), 0);
+        }),
+      ]),
+    ).resolves.toEqual({ rewardGrantId: "earned-reward-id" });
+    expect(cleanup).toHaveBeenCalledTimes(1);
+  });
+
   it("한 번의 광고 표시에서 중복 보상 콜백이 와도 한 개의 안정적인 보상 ID만 반환한다", async () => {
     let params: Parameters<typeof sdk.show>[0] | undefined;
     const cleanup = vi.fn();
@@ -39,8 +70,14 @@ describe("AppsInTossRewardAdGateway", () => {
     );
     const reward = gateway.show();
 
-    params?.onEvent({ type: "userEarnedReward" });
-    params?.onEvent({ type: "userEarnedReward" });
+    params?.onEvent({
+      type: "userEarnedReward",
+      data: { unitType: "bonus", unitAmount: 1 },
+    });
+    params?.onEvent({
+      type: "userEarnedReward",
+      data: { unitType: "bonus", unitAmount: 1 },
+    });
     params?.onEvent({ type: "dismissed" });
     params?.onEvent({ type: "dismissed" });
 
@@ -66,7 +103,10 @@ describe("AppsInTossRewardAdGateway", () => {
     const reward = gateway.show();
 
     params?.onEvent({ type: "dismissed" });
-    params?.onEvent({ type: "userEarnedReward" });
+    params?.onEvent({
+      type: "userEarnedReward",
+      data: { unitType: "bonus", unitAmount: 1 },
+    });
 
     await expect(reward).resolves.toBeNull();
     expect(createRewardGrantId).not.toHaveBeenCalled();

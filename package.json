@@ -4,10 +4,10 @@
   "version": "0.1.1.0",
   "type": "module",
   "scripts": {
-    "dev": "granite dev",
+    "dev": "vite dev",
     "dev:web": "vite --configLoader runner --host 127.0.0.1",
     "prebuild": "node scripts/clean-build.mjs",
-    "build": "ait build",
+    "build": "vite build && ait build",
     "prebuild:web": "node scripts/clean-build.mjs",
     "build:web": "vite build --configLoader runner",
     "typecheck": "tsc -b --pretty false",
@@ -25,7 +25,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@apps-in-toss/web-framework": "^2.10.7",
+    "@apps-in-toss/web-framework": "3.0.1",
     "@emotion/react": "^11.14.0",
     "@toss/tds-colors": "latest",
     "@toss/tds-mobile": "latest",
