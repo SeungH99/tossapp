@@ -1,7 +1,4 @@
-import type {
-  BonusEntitlement,
-  BonusUnlockSource,
-} from "./bonus-entitlement";
+import type { BonusEntitlement, BonusUnlockSource } from "./bonus-entitlement";
 import type {
   BonusTopic,
   CoreLens,
@@ -54,7 +51,7 @@ export interface BonusStartCommandRecord {
   source: BonusUnlockSource;
 }
 
-export interface ProgressState {
+export interface ProgressStateV2 {
   version: 2;
   sessions: Record<string, QuizSession>;
   bonus: BonusEntitlement;
@@ -67,4 +64,14 @@ export interface ProgressState {
   latestBonusStartCommandIds: Record<string, string>;
   timeObservation: TimeObservation;
   shadowAudits: ShadowAudit[];
+}
+
+export interface BonusTopicProgress {
+  completedSetIndexes: number[];
+  lastCompletedDateKey?: string;
+}
+
+export interface ProgressState extends Omit<ProgressStateV2, "version"> {
+  version: 3;
+  bonusTopicProgress: Record<BonusTopic, BonusTopicProgress>;
 }

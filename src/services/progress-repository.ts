@@ -2,6 +2,7 @@ import {
   createBonusEntitlement,
   type BonusEntitlement,
 } from "../domain/bonus-entitlement";
+import legacyQuestionMap from "../content/legacy-map.json";
 import {
   applyAnswerCommand,
   grantBonusTicketCommand,
@@ -17,6 +18,7 @@ import type {
   BonusStartCommandRecord,
   ProgressState,
   ProgressStateV1,
+  ProgressStateV2,
 } from "../domain/progress-state";
 import type { BonusQuestion, BonusTopic } from "../domain/question";
 import type { QuizSession } from "../domain/quiz-session";
@@ -34,14 +36,88 @@ import {
 export type {
   AnswerCheckpoint,
   AnswerEvent,
+  BonusTopicProgress,
   ProgressState,
   ProgressStateV1,
+  ProgressStateV2,
 } from "../domain/progress-state";
+
+export interface LegacyQuestionTarget {
+  topic: BonusTopic;
+  setIndex: number;
+}
+
+export type LegacyQuestionMap = Record<string, LegacyQuestionTarget>;
+
+const bundledLegacyQuestionMap = legacyQuestionMap as LegacyQuestionMap;
+
+const BONUS_TOPICS = [
+  "nostalgia",
+  "korean-life",
+  "language",
+  "digital",
+  "safety",
+  "nature-general",
+] as const satisfies readonly BonusTopic[];
+
+function createEmptyBonusTopicProgress(): ProgressState["bonusTopicProgress"] {
+  return {
+    nostalgia: { completedSetIndexes: [] },
+    "korean-life": { completedSetIndexes: [] },
+    language: { completedSetIndexes: [] },
+    digital: { completedSetIndexes: [] },
+    safety: { completedSetIndexes: [] },
+    "nature-general": { completedSetIndexes: [] },
+  };
+}
+
+export function migrateV2ToV3(
+  progress: ProgressStateV2,
+  legacyMap: LegacyQuestionMap,
+): ProgressState {
+  const completedIds = new Set(progress.completedBonusIds);
+  const mappedSets = new Map<
+    string,
+    { target: LegacyQuestionTarget; questionIds: string[] }
+  >();
+
+  for (const [questionId, target] of Object.entries(legacyMap)) {
+    const key = `${target.topic}:${target.setIndex}`;
+    const mappedSet = mappedSets.get(key) ?? { target, questionIds: [] };
+    mappedSet.questionIds.push(questionId);
+    mappedSets.set(key, mappedSet);
+  }
+
+  const bonusTopicProgress = createEmptyBonusTopicProgress();
+  for (const { target, questionIds } of mappedSets.values()) {
+    if (
+      questionIds.length === 3 &&
+      questionIds.every((questionId) => completedIds.has(questionId))
+    ) {
+      bonusTopicProgress[target.topic].completedSetIndexes.push(
+        target.setIndex,
+      );
+    }
+  }
+  for (const topic of BONUS_TOPICS) {
+    bonusTopicProgress[topic].completedSetIndexes.sort(
+      (left, right) => left - right,
+    );
+  }
+
+  return {
+    ...progress,
+    version: 3,
+    bonusTopicProgress,
+  };
+}
 
 export const progressStorageKeys = {
   legacy: "geuttae-yojeum:progress",
-  slotA: "geuttae-yojeum:progress:v2:a",
-  slotB: "geuttae-yojeum:progress:v2:b",
+  v2SlotA: "geuttae-yojeum:progress:v2:a",
+  v2SlotB: "geuttae-yojeum:progress:v2:b",
+  slotA: "geuttae-yojeum:progress:v3:a",
+  slotB: "geuttae-yojeum:progress:v3:b",
 } as const;
 export const MAX_PROGRESS_ENVELOPE_BYTES = 512 * 1024;
 
@@ -57,12 +133,22 @@ interface ProgressEnvelopeV2 {
   revision: number;
   checksum: string;
   writtenAt: string;
+  payload: ProgressStateV2;
+}
+
+interface ProgressEnvelopeV3 {
+  schemaVersion: 3;
+  revision: number;
+  checksum: string;
+  writtenAt: string;
   payload: ProgressState;
 }
 
 export interface PreservedSlots {
   slotA: string | null;
   slotB: string | null;
+  v2SlotA: string | null;
+  v2SlotB: string | null;
   legacy: string | null;
 }
 
@@ -72,7 +158,7 @@ export type ProgressLoadResult =
   | {
       kind: "migrated";
       state: ProgressState;
-      fromVersion: 1;
+      fromVersion: 1 | 2;
     }
   | {
       kind: "recovered-slot";
@@ -82,19 +168,19 @@ export type ProgressLoadResult =
     }
   | { kind: "unrecoverable"; preservedRaw: PreservedSlots };
 
-type SlotRead =
+type SlotRead<TEnvelope> =
   | { kind: "missing"; name: SlotName; raw: null }
   | { kind: "invalid"; name: SlotName; raw: string }
   | {
       kind: "valid";
       name: SlotName;
       raw: string;
-      envelope: ProgressEnvelopeV2;
+      envelope: TEnvelope;
     };
 
 export function createEmptyProgress(): ProgressState {
   return {
-    version: 2,
+    version: 3,
     sessions: {},
     bonus: createBonusEntitlement(),
     completedBonusIds: [],
@@ -110,6 +196,7 @@ export function createEmptyProgress(): ProgressState {
     latestBonusStartCommandIds: {},
     timeObservation: createTimeObservation(),
     shadowAudits: [],
+    bonusTopicProgress: createEmptyBonusTopicProgress(),
   };
 }
 
@@ -329,7 +416,7 @@ function isProgressStateV1(value: unknown): value is ProgressStateV1 {
   );
 }
 
-function normalizeProgressState(value: unknown): ProgressState | null {
+function normalizeProgressStateV2(value: unknown): ProgressStateV2 | null {
   if (
     !isRecord(value) ||
     value.version !== 2 ||
@@ -416,7 +503,64 @@ function normalizeProgressState(value: unknown): ProgressState | null {
   };
 }
 
-function migrateV1ToV2(progress: ProgressStateV1): ProgressState {
+function normalizeBonusTopicProgress(
+  value: unknown,
+): ProgressState["bonusTopicProgress"] | null {
+  if (
+    !isRecord(value) ||
+    Object.keys(value).length !== BONUS_TOPICS.length ||
+    !BONUS_TOPICS.every((topic) => Object.hasOwn(value, topic))
+  ) {
+    return null;
+  }
+
+  const normalized = createEmptyBonusTopicProgress();
+  for (const topic of BONUS_TOPICS) {
+    const progress = value[topic];
+    if (
+      !isRecord(progress) ||
+      !Array.isArray(progress.completedSetIndexes) ||
+      !progress.completedSetIndexes.every(
+        (setIndex) =>
+          Number.isInteger(setIndex) &&
+          Number(setIndex) >= 0 &&
+          Number(setIndex) < 180,
+      ) ||
+      (progress.lastCompletedDateKey !== undefined &&
+        typeof progress.lastCompletedDateKey !== "string")
+    ) {
+      return null;
+    }
+
+    normalized[topic] = {
+      completedSetIndexes: [
+        ...new Set(progress.completedSetIndexes as number[]),
+      ].sort((left, right) => left - right),
+      ...(typeof progress.lastCompletedDateKey === "string"
+        ? { lastCompletedDateKey: progress.lastCompletedDateKey }
+        : {}),
+    };
+  }
+
+  return normalized;
+}
+
+function normalizeProgressState(value: unknown): ProgressState | null {
+  if (!isRecord(value) || value.version !== 3) {
+    return null;
+  }
+  const v2 = normalizeProgressStateV2({ ...value, version: 2 });
+  const bonusTopicProgress = normalizeBonusTopicProgress(
+    value.bonusTopicProgress,
+  );
+  if (v2 == null || bonusTopicProgress == null) {
+    return null;
+  }
+
+  return { ...v2, version: 3, bonusTopicProgress };
+}
+
+function migrateV1ToV2(progress: ProgressStateV1): ProgressStateV2 {
   return {
     version: 2,
     sessions: progress.sessions,
@@ -438,7 +582,7 @@ function migrateV1ToV2(progress: ProgressStateV1): ProgressState {
 }
 
 function checksumInput(envelope: {
-  schemaVersion: 2;
+  schemaVersion: 2 | 3;
   revision: number;
   writtenAt: string;
   payload: unknown;
@@ -464,9 +608,9 @@ function createEnvelope(
   progress: ProgressState,
   revision: number,
   writtenAt: string,
-): ProgressEnvelopeV2 {
+): ProgressEnvelopeV3 {
   const unsigned = {
-    schemaVersion: 2 as const,
+    schemaVersion: 3 as const,
     revision,
     writtenAt,
     payload: progress,
@@ -478,7 +622,7 @@ function createEnvelope(
   };
 }
 
-function serializeEnvelope(envelope: ProgressEnvelopeV2): string {
+function serializeEnvelope(envelope: ProgressEnvelopeV3): string {
   const serialized = JSON.stringify(envelope);
   const byteLength = new TextEncoder().encode(serialized).byteLength;
   if (byteLength > MAX_PROGRESS_ENVELOPE_BYTES) {
@@ -487,7 +631,12 @@ function serializeEnvelope(envelope: ProgressEnvelopeV2): string {
   return serialized;
 }
 
-function parseSlot(name: SlotName, raw: string | null): SlotRead {
+function parseSlot<TProgress, TVersion extends 2 | 3>(
+  name: SlotName,
+  raw: string | null,
+  schemaVersion: TVersion,
+  normalize: (value: unknown) => TProgress | null,
+): SlotRead<TVersion extends 2 ? ProgressEnvelopeV2 : ProgressEnvelopeV3> {
   if (raw == null) {
     return { kind: "missing", name, raw };
   }
@@ -496,7 +645,7 @@ function parseSlot(name: SlotName, raw: string | null): SlotRead {
     const parsed: unknown = JSON.parse(raw);
     if (
       !isRecord(parsed) ||
-      parsed.schemaVersion !== 2 ||
+      parsed.schemaVersion !== schemaVersion ||
       !Number.isInteger(parsed.revision) ||
       Number(parsed.revision) < 1 ||
       typeof parsed.checksum !== "string" ||
@@ -506,7 +655,7 @@ function parseSlot(name: SlotName, raw: string | null): SlotRead {
     }
     const expected = checksum(
       checksumInput({
-        schemaVersion: 2,
+        schemaVersion,
         revision: Number(parsed.revision),
         writtenAt: parsed.writtenAt,
         payload: parsed.payload,
@@ -517,17 +666,19 @@ function parseSlot(name: SlotName, raw: string | null): SlotRead {
       return { kind: "invalid", name, raw };
     }
 
-    const payload = normalizeProgressState(parsed.payload);
+    const payload = normalize(parsed.payload);
     if (payload == null) {
       return { kind: "invalid", name, raw };
     }
-    const envelope: ProgressEnvelopeV2 = {
-      schemaVersion: 2,
+    const envelope = {
+      schemaVersion,
       revision: Number(parsed.revision),
       checksum: parsed.checksum,
       writtenAt: parsed.writtenAt,
       payload,
-    };
+    } as unknown as TVersion extends 2
+      ? ProgressEnvelopeV2
+      : ProgressEnvelopeV3;
 
     return { kind: "valid", name, raw, envelope };
   } catch {
@@ -552,6 +703,21 @@ function keyForSlot(name: SlotName): string {
   return name === "A" ? progressStorageKeys.slotA : progressStorageKeys.slotB;
 }
 
+function normalizeProgressInput(
+  progress: ProgressState | ProgressStateV1 | ProgressStateV2,
+): ProgressState | null {
+  if (progress.version === 1) {
+    return migrateV2ToV3(migrateV1ToV2(progress), bundledLegacyQuestionMap);
+  }
+  if (progress.version === 2) {
+    const normalized = normalizeProgressStateV2(progress);
+    return normalized == null
+      ? null
+      : migrateV2ToV3(normalized, bundledLegacyQuestionMap);
+  }
+  return normalizeProgressState(progress);
+}
+
 export class ProgressRepository {
   private writeTail: Promise<void> = Promise.resolve();
 
@@ -561,12 +727,14 @@ export class ProgressRepository {
   ) {}
 
   private async readRaw(): Promise<PreservedSlots> {
-    const [slotA, slotB, legacy] = await Promise.all([
+    const [slotA, slotB, v2SlotA, v2SlotB, legacy] = await Promise.all([
       this.storage.getItem(progressStorageKeys.slotA),
       this.storage.getItem(progressStorageKeys.slotB),
+      this.storage.getItem(progressStorageKeys.v2SlotA),
+      this.storage.getItem(progressStorageKeys.v2SlotB),
       this.storage.getItem(progressStorageKeys.legacy),
     ]);
-    return { slotA, slotB, legacy };
+    return { slotA, slotB, v2SlotA, v2SlotB, legacy };
   }
 
   private async initializeSlots(progress: ProgressState): Promise<void> {
@@ -580,12 +748,14 @@ export class ProgressRepository {
   async load(): Promise<ProgressLoadResult> {
     const preservedRaw = await this.readRaw();
     const slots = [
-      parseSlot("A", preservedRaw.slotA),
-      parseSlot("B", preservedRaw.slotB),
+      parseSlot("A", preservedRaw.slotA, 3, normalizeProgressState),
+      parseSlot("B", preservedRaw.slotB, 3, normalizeProgressState),
     ];
     const validSlots = slots
       .filter(
-        (slot): slot is Extract<SlotRead, { kind: "valid" }> =>
+        (
+          slot,
+        ): slot is Extract<SlotRead<ProgressEnvelopeV3>, { kind: "valid" }> =>
           slot.kind === "valid",
       )
       .sort((left, right) => right.envelope.revision - left.envelope.revision);
@@ -610,13 +780,45 @@ export class ProgressRepository {
       };
     }
 
+    const v2Slots = [
+      parseSlot("A", preservedRaw.v2SlotA, 2, normalizeProgressStateV2),
+      parseSlot("B", preservedRaw.v2SlotB, 2, normalizeProgressStateV2),
+    ];
+    const validV2Slots = v2Slots
+      .filter(
+        (
+          slot,
+        ): slot is Extract<SlotRead<ProgressEnvelopeV2>, { kind: "valid" }> =>
+          slot.kind === "valid",
+      )
+      .sort((left, right) => right.envelope.revision - left.envelope.revision);
+    if (validV2Slots.length > 0) {
+      const migrated = migrateV2ToV3(
+        validV2Slots[0].envelope.payload,
+        bundledLegacyQuestionMap,
+      );
+      if (preservedRaw.slotA == null && preservedRaw.slotB == null) {
+        try {
+          await this.initializeSlots(migrated);
+        } catch {
+          // Untouched v2 slots remain authoritative and migration is retried.
+        }
+      }
+      return { kind: "migrated", state: migrated, fromVersion: 2 };
+    }
+
     const legacy = decodeV1(preservedRaw.legacy);
     if (legacy != null) {
-      const migrated = migrateV1ToV2(legacy);
-      try {
-        await this.initializeSlots(migrated);
-      } catch {
-        // The untouched v1 value remains authoritative and migration is retried.
+      const migrated = migrateV2ToV3(
+        migrateV1ToV2(legacy),
+        bundledLegacyQuestionMap,
+      );
+      if (preservedRaw.slotA == null && preservedRaw.slotB == null) {
+        try {
+          await this.initializeSlots(migrated);
+        } catch {
+          // The untouched v1 value remains authoritative and migration is retried.
+        }
       }
       return {
         kind: "migrated",
@@ -628,6 +830,8 @@ export class ProgressRepository {
     if (
       preservedRaw.slotA == null &&
       preservedRaw.slotB == null &&
+      preservedRaw.v2SlotA == null &&
+      preservedRaw.v2SlotB == null &&
       preservedRaw.legacy == null
     ) {
       return { kind: "empty", state: createEmptyProgress() };
@@ -646,20 +850,20 @@ export class ProgressRepository {
   }
 
   private async saveImmediately(
-    progress: ProgressState | ProgressStateV1,
+    progress: ProgressState | ProgressStateV1 | ProgressStateV2,
   ): Promise<void> {
-    const nextProgress = normalizeProgressState(
-      progress.version === 1 ? migrateV1ToV2(progress) : progress,
-    );
+    const nextProgress = normalizeProgressInput(progress);
     if (nextProgress == null) {
       throw new TypeError("Invalid progress state");
     }
 
     const raw = await this.readRaw();
-    const slotA = parseSlot("A", raw.slotA);
-    const slotB = parseSlot("B", raw.slotB);
+    const slotA = parseSlot("A", raw.slotA, 3, normalizeProgressState);
+    const slotB = parseSlot("B", raw.slotB, 3, normalizeProgressState);
     const validSlots = [slotA, slotB].filter(
-      (slot): slot is Extract<SlotRead, { kind: "valid" }> =>
+      (
+        slot,
+      ): slot is Extract<SlotRead<ProgressEnvelopeV3>, { kind: "valid" }> =>
         slot.kind === "valid",
     );
 
@@ -691,7 +895,7 @@ export class ProgressRepository {
   }
 
   save(
-    progress: ProgressState | ProgressStateV1,
+    progress: ProgressState | ProgressStateV1 | ProgressStateV2,
     observedAt?: Date,
   ): Promise<void> {
     if (observedAt == null) {
@@ -703,9 +907,7 @@ export class ProgressRepository {
       if (loaded.kind === "unrecoverable") {
         throw new ProgressWriteBlockedError();
       }
-      const normalized = normalizeProgressState(
-        progress.version === 1 ? migrateV1ToV2(progress) : progress,
-      );
+      const normalized = normalizeProgressInput(progress);
       if (normalized == null) {
         throw new TypeError("Invalid progress state");
       }
