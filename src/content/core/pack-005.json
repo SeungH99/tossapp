@@ -1299,14 +1299,14 @@
       "lens": "life",
       "topic": "nature-general",
       "internalDifficulty": "stretch",
-      "prompt": "세제 분자가 물과 기름 사이에 자리할 때 두 부분은 각각 무엇과 잘 어울리나요?",
+      "prompt": "물방울 표면에 세제를 넣은 뒤 둥근 모양이 무너졌습니다. 이를 분자 수준에서 가장 정확히 설명한 것은?",
       "choices": [
-        "머리는 기름과, 꼬리는 물과 잘 어울린다",
-        "머리와 꼬리 모두 물과만 잘 어울린다",
-        "머리는 물과, 꼬리는 기름과 잘 어울린다"
+        "전하를 띠지 않은 끝은 물속에, 전하를 띤 끝은 밖에 놓여 물 분자를 바깥쪽으로 끌었다",
+        "전하를 띤 끝은 물속에, 전하를 띠지 않은 끝은 밖에 놓여 물 분자를 안쪽으로 더 끌었다",
+        "전하를 띤 끝은 물속에, 전하를 띠지 않은 끝은 밖에 놓여 물 분자를 바깥쪽으로 끌었다"
       ],
       "answerIndex": 2,
-      "explanation": "세제 분자의 머리는 물과 잘 어울리고 꼬리는 기름과 잘 어울립니다. 이 구조가 물과 기름 사이에서 작용해 표면 장력을 낮추고 기름때가 물에 퍼지도록 돕습니다.",
+      "explanation": "세제 분자는 전하를 띤 끝을 물속에 두고 전하를 띠지 않은 긴 끝을 물 밖으로 내민 채 표면에 퍼집니다. 표면 물 분자가 전하를 띤 끝에 바깥쪽으로 끌리면서 기존의 안쪽 인력과 맞서 표면 장력이 줄고 둥근 모양이 무너집니다.",
       "source": {
         "name": "American Chemical Society",
         "url": "https://www.acs.org/middleschoolchemistry/lessonplans/chapter5/lesson2.html"
@@ -1713,14 +1713,14 @@
       "lens": "life",
       "topic": "nature-general",
       "internalDifficulty": "stretch",
-      "prompt": "뒤뜰 퇴비에서 갈색 재료와 초록 재료의 권장 배합은 어느 정도인가요?",
+      "prompt": "부피 기준으로 초록 재료 2통을 넣었다면 EPA 권장 배합에 맞추기 위해 갈색 재료는 어느 정도 넣어야 할까요?",
       "choices": [
-        "갈색 재료 1부에 초록 재료 3부",
-        "갈색 재료 2~3부에 초록 재료 1부",
-        "갈색 재료와 초록 재료를 항상 같은 양"
+        "부피 기준 약 2~3통",
+        "부피 기준 약 4~6통",
+        "부피 기준 약 6~8통"
       ],
       "answerIndex": 1,
-      "explanation": "탄소를 공급하는 갈색 재료를 2~3부, 질소를 공급하는 초록 재료를 1부 정도 섞으면 균형 잡힌 퇴비화를 돕습니다.",
+      "explanation": "EPA는 부피 기준 초록 재료 1부당 갈색 재료 2~3부를 권합니다. 따라서 초록 재료 2통에는 갈색 재료 4~6통이 알맞습니다.",
       "source": {
         "name": "U.S. Environmental Protection Agency",
         "url": "https://www.epa.gov/recycle/composting-home"
