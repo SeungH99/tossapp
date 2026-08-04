@@ -1,0 +1,2078 @@
+{
+  "id": "core-002",
+  "kind": "core",
+  "contentVersion": "2026.08.180d",
+  "reviewStatus": "reviewed",
+  "questions": [
+    {
+      "kind": "core",
+      "id": "2026-08-27-then-31-v1",
+      "dateKey": "2026-08-27",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "옛 기록에 ‘자리값에 맞춰 막대의 알을 손가락으로 움직였다’라고 적혀 있습니다. 주산의 주된 쓰임은 무엇이었을까요?",
+      "choices": [
+        "덧셈과 뺄셈 같은 계산을 하는 일",
+        "곡식에서 겨와 가벼운 찌꺼기를 가르는 일",
+        "내린 비의 양을 일정한 그릇으로 재는 일"
+      ],
+      "answerIndex": 0,
+      "explanation": "주산은 덧셈과 뺄셈 같은 계산을 하는 일에 쓰였어요. 이름만 떠올리기보다 당시 쓰임을 함께 알아 두면 생활사의 변화가 더 잘 보여요.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-27-now-31-v1",
+      "dateKey": "2026-08-27",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "화면에서 브라우저 위쪽에 현재 사이트 주소가 표시된다는 모습이 보입니다. 관련된 주소창의 뜻은 무엇일까요?",
+      "choices": [
+        "내 기기의 파일을 인터넷 서비스로 보내는 작업",
+        "웹사이트 주소나 검색어를 입력하는 칸",
+        "인터넷 서비스에서 상품·요금을 지급하는 절차"
+      ],
+      "answerIndex": 1,
+      "explanation": "주소창은 웹사이트 주소나 검색어를 입력하는 칸입니다. 비슷해 보이는 기능과 목적을 구분하면 설정을 더 자신 있게 선택할 수 있어요.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-27-life-31-v1",
+      "dateKey": "2026-08-27",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "평소 방충망 틈과 배수구 주변을 점검한다는 대비가 필요합니다. 실제 모기 발생 상황에서 우선 행동은 무엇일까요?",
+      "choices": [
+        "창문을 열고 제품 표시의 희석·사용법을 지킨다",
+        "정격 용량을 확인하고 고출력 기기를 한곳에 몰아 쓰지 않는다",
+        "화분받침과 빈 용기의 고인 물을 없앤다"
+      ],
+      "answerIndex": 2,
+      "explanation": "모기 발생 상황에서는 화분받침과 빈 용기의 고인 물을 없앤다는 대응이 우선입니다. 주변 위험을 키우지 않으면서 안전한 곳에서 도움을 요청하세요.",
+      "source": {
+        "name": "질병관리청",
+        "url": "https://www.kdca.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-28-then-32-v1",
+      "dateKey": "2026-08-28",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "옛 기록에 ‘색소 면을 두 종이 사이에 놓고 위에서 눌러 썼다’라고 적혀 있습니다. 먹지의 주된 쓰임은 무엇이었을까요?",
+      "choices": [
+        "수확한 곡식의 낟알을 떨어내는 일",
+        "한 번 쓴 글씨를 아래 종이에도 복사하는 일",
+        "먼 곳에 위급한 소식을 빠르게 전하는 일"
+      ],
+      "answerIndex": 1,
+      "explanation": "먹지은 한 번 쓴 글씨를 아래 종이에도 복사하는 일에 쓰였어요. 이름만 떠올리기보다 당시 쓰임을 함께 알아 두면 생활사의 변화가 더 잘 보여요.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-28-now-32-v1",
+      "dateKey": "2026-08-28",
+      "lens": "now",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "화면에서 검색어 아래 제목·주소·요약 목록이 나온다는 모습이 보입니다. 관련된 검색 엔진의 뜻은 무엇일까요?",
+      "choices": [
+        "메시지나 전자우편에 함께 보내는 별도 파일",
+        "등록한 수단을 인증 한 번으로 빠르게 사용하는 결제 방식",
+        "인터넷 문서를 색인해 검색 결과를 보여 주는 서비스"
+      ],
+      "answerIndex": 2,
+      "explanation": "검색 엔진은 인터넷 문서를 색인해 검색 결과를 보여 주는 서비스입니다. 비슷해 보이는 기능과 목적을 구분하면 설정을 더 자신 있게 선택할 수 있어요.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-28-life-32-v1",
+      "dateKey": "2026-08-28",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "gentle",
+      "prompt": "평소 풀 위에 옷을 벗어 두거나 바로 눕지 않는다는 대비가 필요합니다. 실제 야외 진드기 상황에서 우선 행동은 무엇일까요?",
+      "choices": [
+        "풀밭에서는 긴 옷을 입고 귀가 뒤 옷과 몸을 확인한다",
+        "두꺼운 종이 등으로 감싸 내용물을 표시해 배출한다",
+        "접거나 무거운 물건을 올리지 않고 낮은 온도로 관리한다"
+      ],
+      "answerIndex": 0,
+      "explanation": "야외 진드기 상황에서는 풀밭에서는 긴 옷을 입고 귀가 뒤 옷과 몸을 확인한다는 대응이 우선입니다. 주변 위험을 키우지 않으면서 안전한 곳에서 도움을 요청하세요.",
+      "source": {
+        "name": "질병관리청",
+        "url": "https://www.kdca.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-29-then-33-v1",
+      "dateKey": "2026-08-29",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "옛 기록에 ‘연료통의 석유를 심지에 올려 불꽃을 조절했다’라고 적혀 있습니다. 석유곤로의 주된 쓰임은 무엇이었을까요?",
+      "choices": [
+        "논밭의 흙을 갈아엎는 일",
+        "공문서와 관리의 장거리 이동을 돕는 일",
+        "석유를 태워 음식을 조리하는 일"
+      ],
+      "answerIndex": 2,
+      "explanation": "석유곤로은 석유를 태워 음식을 조리하는 일에 쓰였어요. 이름만 떠올리기보다 당시 쓰임을 함께 알아 두면 생활사의 변화가 더 잘 보여요.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-29-now-33-v1",
+      "dateKey": "2026-08-29",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "gentle",
+      "prompt": "화면에서 별표를 누르면 저장 목록에 페이지가 추가된다는 모습이 보입니다. 관련된 북마크의 뜻은 무엇일까요?",
+      "choices": [
+        "자주 찾는 웹페이지 주소를 저장하는 기능",
+        "여러 파일을 하나로 묶고 용량을 줄인 파일",
+        "한 번 또는 짧은 시간만 유효한 로그인 코드"
+      ],
+      "answerIndex": 0,
+      "explanation": "북마크은 자주 찾는 웹페이지 주소를 저장하는 기능입니다. 비슷해 보이는 기능과 목적을 구분하면 설정을 더 자신 있게 선택할 수 있어요.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-29-life-33-v1",
+      "dateKey": "2026-08-29",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "steady",
+      "prompt": "평소 자외선 지수를 확인해 야외 시간을 조정한다는 대비가 필요합니다. 실제 강한 자외선 상황에서 우선 행동은 무엇일까요?",
+      "choices": [
+        "내용물을 비우고 가능한 한 깨끗이 한 뒤 재질별로 나눈다",
+        "그늘과 모자·긴 옷을 활용해 노출 시간을 줄인다",
+        "빠짐·찌그러짐과 주변 막힘이 없는지 확인한다"
+      ],
+      "answerIndex": 1,
+      "explanation": "강한 자외선 상황에서는 그늘과 모자·긴 옷을 활용해 노출 시간을 줄인다는 대응이 우선입니다. 주변 위험을 키우지 않으면서 안전한 곳에서 도움을 요청하세요.",
+      "source": {
+        "name": "질병관리청",
+        "url": "https://www.kdca.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-30-then-34-v1",
+      "dateKey": "2026-08-30",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "옛 기록에 ‘윗칸의 큰 얼음이 녹으며 내부 열을 빼앗았다’라고 적혀 있습니다. 얼음냉장고의 주된 쓰임은 무엇이었을까요?",
+      "choices": [
+        "전기 없이 음식물을 차갑게 두는 일",
+        "깊은 우물에서 물을 길어 올리는 일",
+        "볏짚으로 발을 보호하는 일"
+      ],
+      "answerIndex": 0,
+      "explanation": "얼음냉장고은 전기 없이 음식물을 차갑게 두는 일에 쓰였어요. 이름만 떠올리기보다 당시 쓰임을 함께 알아 두면 생활사의 변화가 더 잘 보여요.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-30-now-34-v1",
+      "dateKey": "2026-08-30",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "화면에서 상단이나 하단에 페이지별 작은 제목이 나열된다는 모습이 보입니다. 관련된 브라우저 탭의 뜻은 무엇일까요?",
+      "choices": [
+        "기기와 프로그램이 달라도 배치를 비교적 일정하게 보여 주는 문서 형식",
+        "여러 웹페이지를 한 창에서 나눠 여는 기능",
+        "로그인할 때 물리 장치나 기기 내 키로 본인을 확인하는 수단"
+      ],
+      "answerIndex": 1,
+      "explanation": "브라우저 탭은 여러 웹페이지를 한 창에서 나눠 여는 기능입니다. 비슷해 보이는 기능과 목적을 구분하면 설정을 더 자신 있게 선택할 수 있어요.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-30-life-34-v1",
+      "dateKey": "2026-08-30",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "평소 외출할 때 마실 물과 쉬는 시간을 준비한다는 대비가 필요합니다. 실제 더운 날 수분 상황에서 우선 행동은 무엇일까요?",
+      "choices": [
+        "물기와 이물질을 줄여 정해진 전용 방식으로 배출한다",
+        "한파 때 노출 배관을 보온하고 물 흐름을 관리한다",
+        "갈증이 심해지기 전 물을 나누어 마신다"
+      ],
+      "answerIndex": 2,
+      "explanation": "더운 날 수분 상황에서는 갈증이 심해지기 전 물을 나누어 마신다는 대응이 우선입니다. 주변 위험을 키우지 않으면서 안전한 곳에서 도움을 요청하세요.",
+      "source": {
+        "name": "질병관리청",
+        "url": "https://www.kdca.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-31-then-35-v1",
+      "dateKey": "2026-08-31",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "옛 기록에 ‘얇은 알루미늄 용기를 난로 위에 올려 데우기도 했다’라고 적혀 있습니다. 양은도시락의 주된 쓰임은 무엇이었을까요?",
+      "choices": [
+        "지하수를 지상으로 끌어올리는 일",
+        "밥과 반찬을 학교나 일터에 싸 가는 일",
+        "조선 시대 성인 남성이 격식에 맞춰 머리에 쓰는 일"
+      ],
+      "answerIndex": 1,
+      "explanation": "양은도시락은 밥과 반찬을 학교나 일터에 싸 가는 일에 쓰였어요. 이름만 떠올리기보다 당시 쓰임을 함께 알아 두면 생활사의 변화가 더 잘 보여요.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-31-now-35-v1",
+      "dateKey": "2026-08-31",
+      "lens": "now",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "화면에서 재방문했을 때 언어나 장바구니 설정이 남아 있다는 모습이 보입니다. 관련된 웹 쿠키의 뜻은 무엇일까요?",
+      "choices": [
+        "현재 화면을 이미지로 저장하는 기능",
+        "여러 사람이 함께 접속할 수 있는 무선 인터넷",
+        "사이트가 로그인 상태나 설정을 기억하도록 저장하는 작은 데이터"
+      ],
+      "answerIndex": 2,
+      "explanation": "웹 쿠키은 사이트가 로그인 상태나 설정을 기억하도록 저장하는 작은 데이터입니다. 비슷해 보이는 기능과 목적을 구분하면 설정을 더 자신 있게 선택할 수 있어요.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-31-life-35-v1",
+      "dateKey": "2026-08-31",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "gentle",
+      "prompt": "평소 침실은 휴식 중심으로 정돈하고 늦은 화면 사용을 줄인다는 대비가 필요합니다. 실제 수면 환경 상황에서 우선 행동은 무엇일까요?",
+      "choices": [
+        "잠들기 전 조명과 소음을 줄이고 일정한 시간을 지킨다",
+        "일반 쓰레기와 섞지 않고 전용 수거함에 낸다",
+        "바닥 물기를 닦고 미끄럼 방지 매트를 고정한다"
+      ],
+      "answerIndex": 0,
+      "explanation": "수면 환경 상황에서는 잠들기 전 조명과 소음을 줄이고 일정한 시간을 지킨다는 대응이 우선입니다. 주변 위험을 키우지 않으면서 안전한 곳에서 도움을 요청하세요.",
+      "source": {
+        "name": "질병관리청",
+        "url": "https://www.kdca.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-01-then-36-v1",
+      "dateKey": "2026-09-01",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "옛 기록에 ‘넓게 파낸 나무 그릇에 재료를 담아 손질했다’라고 적혀 있습니다. 함지박의 주된 쓰임은 무엇이었을까요?",
+      "choices": [
+        "방향을 찾는 일",
+        "한복 차림에서 발을 감싸 보온하는 일",
+        "많은 양의 식재료를 씻거나 버무리는 일"
+      ],
+      "answerIndex": 2,
+      "explanation": "함지박은 많은 양의 식재료를 씻거나 버무리는 일에 쓰였어요. 이름만 떠올리기보다 당시 쓰임을 함께 알아 두면 생활사의 변화가 더 잘 보여요.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-01-now-36-v1",
+      "dateKey": "2026-09-01",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "gentle",
+      "prompt": "화면에서 같은 페이지가 두 번째에는 더 빨리 열린다는 모습이 보입니다. 관련된 캐시의 뜻은 무엇일까요?",
+      "choices": [
+        "자주 쓰는 웹 자료를 임시 저장해 다시 빨리 여는 공간",
+        "인터넷으로 여러 사람이 영상과 음성 대화를 하는 기능",
+        "공용망에서 기기와 서비스 사이 통신 경로를 암호화하는 기술"
+      ],
+      "answerIndex": 0,
+      "explanation": "캐시은 자주 쓰는 웹 자료를 임시 저장해 다시 빨리 여는 공간입니다. 비슷해 보이는 기능과 목적을 구분하면 설정을 더 자신 있게 선택할 수 있어요.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-01-life-36-v1",
+      "dateKey": "2026-09-01",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "steady",
+      "prompt": "평소 사용 전 그림문자와 주의사항을 확인한다는 대비가 필요합니다. 실제 생활화학제품 보관 상황에서 우선 행동은 무엇일까요?",
+      "choices": [
+        "조리를 마치면 불꽃이 꺼졌는지 보고 중간밸브를 잠근다",
+        "원래 용기와 표시를 유지하고 어린이 손이 닿지 않게 둔다",
+        "평평한 바닥에 완전히 펴고 다른 사람에게 지지를 부탁한다"
+      ],
+      "answerIndex": 1,
+      "explanation": "생활화학제품 보관 상황에서는 원래 용기와 표시를 유지하고 어린이 손이 닿지 않게 둔다는 대응이 우선입니다. 주변 위험을 키우지 않으면서 안전한 곳에서 도움을 요청하세요.",
+      "source": {
+        "name": "질병관리청",
+        "url": "https://www.kdca.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-02-then-37-v1",
+      "dateKey": "2026-09-02",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "옛 기록에 ‘움푹한 통에 재료를 넣고 공이로 반복해 찧었다’라고 적혀 있습니다. 절구의 주된 쓰임은 무엇이었을까요?",
+      "choices": [
+        "곡식이나 양념을 찧어 잘게 만드는 일",
+        "햇빛으로 낮의 시각을 짐작하는 일",
+        "한복 바지의 아랫단을 여미는 일"
+      ],
+      "answerIndex": 0,
+      "explanation": "절구은 곡식이나 양념을 찧어 잘게 만드는 일에 쓰였어요. 이름만 떠올리기보다 당시 쓰임을 함께 알아 두면 생활사의 변화가 더 잘 보여요.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-02-now-37-v1",
+      "dateKey": "2026-09-02",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "화면에서 화살표가 아래를 향한 아이콘과 진행률이 보인다는 모습이 보입니다. 관련된 다운로드의 뜻은 무엇일까요?",
+      "choices": [
+        "내 화면을 다른 참가자에게 실시간으로 보여 주는 기능",
+        "인터넷의 파일을 내 기기로 받는 작업",
+        "전자문서의 작성자와 변경 여부를 확인하는 기술"
+      ],
+      "answerIndex": 1,
+      "explanation": "다운로드은 인터넷의 파일을 내 기기로 받는 작업입니다. 비슷해 보이는 기능과 목적을 구분하면 설정을 더 자신 있게 선택할 수 있어요.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-02-life-37-v1",
+      "dateKey": "2026-09-02",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "평소 한 제품 사용 뒤 충분히 헹구고 환기한다는 대비가 필요합니다. 실제 세제 혼합 상황에서 우선 행동은 무엇일까요?",
+      "choices": [
+        "반복해 내려가면 무리하게 올리지 말고 원인을 점검받는다",
+        "손잡이가 바깥으로 나오지 않게 전용 장소에 보관한다",
+        "서로 다른 세제를 임의로 섞지 않고 표시대로 사용한다"
+      ],
+      "answerIndex": 2,
+      "explanation": "세제 혼합 상황에서는 서로 다른 세제를 임의로 섞지 않고 표시대로 사용한다는 대응이 우선입니다. 주변 위험을 키우지 않으면서 안전한 곳에서 도움을 요청하세요.",
+      "source": {
+        "name": "환경부",
+        "url": "https://www.me.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-03-then-38-v1",
+      "dateKey": "2026-09-03",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "옛 기록에 ‘곡식을 까불어 바람에 가벼운 부분을 날렸다’라고 적혀 있습니다. 키의 주된 쓰임은 무엇이었을까요?",
+      "choices": [
+        "내린 비의 양을 일정한 그릇으로 재는 일",
+        "곡식에서 겨와 가벼운 찌꺼기를 가르는 일",
+        "한복 저고리의 앞섶을 여미는 일"
+      ],
+      "answerIndex": 1,
+      "explanation": "키은 곡식에서 겨와 가벼운 찌꺼기를 가르는 일에 쓰였어요. 이름만 떠올리기보다 당시 쓰임을 함께 알아 두면 생활사의 변화가 더 잘 보여요.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-03-now-38-v1",
+      "dateKey": "2026-09-03",
+      "lens": "now",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "화면에서 화살표가 위를 향하거나 전송 진행률이 보인다는 모습이 보입니다. 관련된 업로드의 뜻은 무엇일까요?",
+      "choices": [
+        "인터넷 서비스에서 상품·요금을 지급하는 절차",
+        "공공기관이나 시설이 제공하는 무선 인터넷",
+        "내 기기의 파일을 인터넷 서비스로 보내는 작업"
+      ],
+      "answerIndex": 2,
+      "explanation": "업로드은 내 기기의 파일을 인터넷 서비스로 보내는 작업입니다. 비슷해 보이는 기능과 목적을 구분하면 설정을 더 자신 있게 선택할 수 있어요.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-03-life-38-v1",
+      "dateKey": "2026-09-03",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "gentle",
+      "prompt": "평소 장갑을 준비하고 산성 제품과 따로 보관한다는 대비가 필요합니다. 실제 표백제 사용 상황에서 우선 행동은 무엇일까요?",
+      "choices": [
+        "창문을 열고 제품 표시의 희석·사용법을 지킨다",
+        "정격 용량을 확인하고 고출력 기기를 한곳에 몰아 쓰지 않는다",
+        "온도를 먼저 확인하고 용기를 몸에서 떨어져 옮긴다"
+      ],
+      "answerIndex": 0,
+      "explanation": "표백제 사용 상황에서는 창문을 열고 제품 표시의 희석·사용법을 지킨다는 대응이 우선입니다. 주변 위험을 키우지 않으면서 안전한 곳에서 도움을 요청하세요.",
+      "source": {
+        "name": "환경부",
+        "url": "https://www.me.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-04-then-39-v1",
+      "dateKey": "2026-09-04",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "옛 기록에 ‘긴 자루 끝의 회전 막대로 곡식단을 내리쳤다’라고 적혀 있습니다. 도리깨의 주된 쓰임은 무엇이었을까요?",
+      "choices": [
+        "먼 곳에 위급한 소식을 빠르게 전하는 일",
+        "명절 놀이에서 말의 이동 칸 수를 정하는 일",
+        "수확한 곡식의 낟알을 떨어내는 일"
+      ],
+      "answerIndex": 2,
+      "explanation": "도리깨은 수확한 곡식의 낟알을 떨어내는 일에 쓰였어요. 이름만 떠올리기보다 당시 쓰임을 함께 알아 두면 생활사의 변화가 더 잘 보여요.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-04-now-39-v1",
+      "dateKey": "2026-09-04",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "gentle",
+      "prompt": "화면에서 클립 모양 옆에 파일명과 용량이 표시된다는 모습이 보입니다. 관련된 첨부파일의 뜻은 무엇일까요?",
+      "choices": [
+        "메시지나 전자우편에 함께 보내는 별도 파일",
+        "등록한 수단을 인증 한 번으로 빠르게 사용하는 결제 방식",
+        "화면을 눌러 주문·발권·접수를 스스로 처리하는 단말기"
+      ],
+      "answerIndex": 0,
+      "explanation": "첨부파일은 메시지나 전자우편에 함께 보내는 별도 파일입니다. 비슷해 보이는 기능과 목적을 구분하면 설정을 더 자신 있게 선택할 수 있어요.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-04-life-39-v1",
+      "dateKey": "2026-09-04",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "steady",
+      "prompt": "평소 유리 용기를 안정된 곳에 두어 떨어짐을 막는다는 대비가 필요합니다. 실제 깨진 유리 배출 상황에서 우선 행동은 무엇일까요?",
+      "choices": [
+        "접거나 무거운 물건을 올리지 않고 낮은 온도로 관리한다",
+        "두꺼운 종이 등으로 감싸 내용물을 표시해 배출한다",
+        "목줄을 알맞게 잡고 주변 사람·동물과 거리를 조절한다"
+      ],
+      "answerIndex": 1,
+      "explanation": "깨진 유리 배출 상황에서는 두꺼운 종이 등으로 감싸 내용물을 표시해 배출한다는 대응이 우선입니다. 주변 위험을 키우지 않으면서 안전한 곳에서 도움을 요청하세요.",
+      "source": {
+        "name": "환경부",
+        "url": "https://www.me.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-05-then-40-v1",
+      "dateKey": "2026-09-05",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "옛 기록에 ‘소가 끄는 날을 흙 속에 넣어 이랑을 만들었다’라고 적혀 있습니다. 쟁기의 주된 쓰임은 무엇이었을까요?",
+      "choices": [
+        "논밭의 흙을 갈아엎는 일",
+        "공문서와 관리의 장거리 이동을 돕는 일",
+        "발로 차 올리며 횟수를 겨루는 놀이를 하는 일"
+      ],
+      "answerIndex": 0,
+      "explanation": "쟁기은 논밭의 흙을 갈아엎는 일에 쓰였어요. 이름만 떠올리기보다 당시 쓰임을 함께 알아 두면 생활사의 변화가 더 잘 보여요.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-05-now-40-v1",
+      "dateKey": "2026-09-05",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "화면에서 파일 이름 끝에 zip 같은 확장자가 붙는다는 모습이 보입니다. 관련된 압축파일의 뜻은 무엇일까요?",
+      "choices": [
+        "한 번 또는 짧은 시간만 유효한 로그인 코드",
+        "여러 파일을 하나로 묶고 용량을 줄인 파일",
+        "기관 창구 없이 증명서를 발급받는 공공 단말기"
+      ],
+      "answerIndex": 1,
+      "explanation": "압축파일은 여러 파일을 하나로 묶고 용량을 줄인 파일입니다. 비슷해 보이는 기능과 목적을 구분하면 설정을 더 자신 있게 선택할 수 있어요.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-05-life-40-v1",
+      "dateKey": "2026-09-05",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "평소 지역별 배출 요일과 품목 표시를 확인한다는 대비가 필요합니다. 실제 재활용 분리배출 상황에서 우선 행동은 무엇일까요?",
+      "choices": [
+        "빠짐·찌그러짐과 주변 막힘이 없는지 확인한다",
+        "해 지기 전 돌아올 수 있는 코스와 날씨를 확인한다",
+        "내용물을 비우고 가능한 한 깨끗이 한 뒤 재질별로 나눈다"
+      ],
+      "answerIndex": 2,
+      "explanation": "재활용 분리배출 상황에서는 내용물을 비우고 가능한 한 깨끗이 한 뒤 재질별로 나눈다는 대응이 우선입니다. 주변 위험을 키우지 않으면서 안전한 곳에서 도움을 요청하세요.",
+      "source": {
+        "name": "환경부",
+        "url": "https://www.me.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-06-then-41-v1",
+      "dateKey": "2026-09-06",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "옛 기록에 ‘줄에 매단 통을 내려 물을 담고 손으로 끌어올렸다’라고 적혀 있습니다. 우물두레박의 주된 쓰임은 무엇이었을까요?",
+      "choices": [
+        "볏짚으로 발을 보호하는 일",
+        "깊은 우물에서 물을 길어 올리는 일",
+        "겨울철 얼음판이나 마당에서 돌리며 노는 일"
+      ],
+      "answerIndex": 1,
+      "explanation": "우물두레박은 깊은 우물에서 물을 길어 올리는 일에 쓰였어요. 이름만 떠올리기보다 당시 쓰임을 함께 알아 두면 생활사의 변화가 더 잘 보여요.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-06-now-41-v1",
+      "dateKey": "2026-09-06",
+      "lens": "now",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "화면에서 파일 이름 끝에 pdf가 표시된다는 모습이 보입니다. 관련된 PDF 문서의 뜻은 무엇일까요?",
+      "choices": [
+        "로그인할 때 물리 장치나 기기 내 키로 본인을 확인하는 수단",
+        "스마트폰 앱에서 신원 정보를 제시하는 전자 신분증",
+        "기기와 프로그램이 달라도 배치를 비교적 일정하게 보여 주는 문서 형식"
+      ],
+      "answerIndex": 2,
+      "explanation": "PDF 문서은 기기와 프로그램이 달라도 배치를 비교적 일정하게 보여 주는 문서 형식입니다. 비슷해 보이는 기능과 목적을 구분하면 설정을 더 자신 있게 선택할 수 있어요.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-06-life-41-v1",
+      "dateKey": "2026-09-06",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "gentle",
+      "prompt": "평소 지역 기준에서 음식물로 받지 않는 품목을 확인한다는 대비가 필요합니다. 실제 음식물류 폐기물 상황에서 우선 행동은 무엇일까요?",
+      "choices": [
+        "물기와 이물질을 줄여 정해진 전용 방식으로 배출한다",
+        "한파 때 노출 배관을 보온하고 물 흐름을 관리한다",
+        "해안과 평행하게 이동해 흐름에서 벗어난 뒤 구조를 요청한다"
+      ],
+      "answerIndex": 0,
+      "explanation": "음식물류 폐기물 상황에서는 물기와 이물질을 줄여 정해진 전용 방식으로 배출한다는 대응이 우선입니다. 주변 위험을 키우지 않으면서 안전한 곳에서 도움을 요청하세요.",
+      "source": {
+        "name": "환경부",
+        "url": "https://www.me.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-07-then-42-v1",
+      "dateKey": "2026-09-07",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "옛 기록에 ‘손잡이를 반복해 움직여 압력 차를 만들었다’라고 적혀 있습니다. 수동펌프의 주된 쓰임은 무엇이었을까요?",
+      "choices": [
+        "조선 시대 성인 남성이 격식에 맞춰 머리에 쓰는 일",
+        "화살 모양 막대를 항아리에 던져 넣는 놀이를 하는 일",
+        "지하수를 지상으로 끌어올리는 일"
+      ],
+      "answerIndex": 2,
+      "explanation": "수동펌프은 지하수를 지상으로 끌어올리는 일에 쓰였어요. 이름만 떠올리기보다 당시 쓰임을 함께 알아 두면 생활사의 변화가 더 잘 보여요.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-07-now-42-v1",
+      "dateKey": "2026-09-07",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "gentle",
+      "prompt": "화면에서 사진 앱에 화면 모양 그대로 이미지가 생긴다는 모습이 보입니다. 관련된 화면 캡처의 뜻은 무엇일까요?",
+      "choices": [
+        "현재 화면을 이미지로 저장하는 기능",
+        "여러 사람이 함께 접속할 수 있는 무선 인터넷",
+        "대중교통 단말기에 대어 요금을 처리하는 전자 수단"
+      ],
+      "answerIndex": 0,
+      "explanation": "화면 캡처은 현재 화면을 이미지로 저장하는 기능입니다. 비슷해 보이는 기능과 목적을 구분하면 설정을 더 자신 있게 선택할 수 있어요.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-07-life-42-v1",
+      "dateKey": "2026-09-07",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "steady",
+      "prompt": "평소 아파트·주민센터의 수거함 위치를 알아 둔다는 대비가 필요합니다. 실제 폐건전지 상황에서 우선 행동은 무엇일까요?",
+      "choices": [
+        "바닥 물기를 닦고 미끄럼 방지 매트를 고정한다",
+        "일반 쓰레기와 섞지 않고 전용 수거함에 낸다",
+        "보폭을 줄이고 발바닥 전체로 천천히 걷는다"
+      ],
+      "answerIndex": 1,
+      "explanation": "폐건전지 상황에서는 일반 쓰레기와 섞지 않고 전용 수거함에 낸다는 대응이 우선입니다. 주변 위험을 키우지 않으면서 안전한 곳에서 도움을 요청하세요.",
+      "source": {
+        "name": "환경부",
+        "url": "https://www.me.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-08-then-43-v1",
+      "dateKey": "2026-09-08",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "옛 기록에 ‘자유롭게 도는 자침이 남북 방향을 가리키게 했다’라고 적혀 있습니다. 나침반의 주된 쓰임은 무엇이었을까요?",
+      "choices": [
+        "방향을 찾는 일",
+        "한복 차림에서 발을 감싸 보온하는 일",
+        "바람을 이용해 하늘에 띄우는 놀이를 하는 일"
+      ],
+      "answerIndex": 0,
+      "explanation": "나침반은 방향을 찾는 일에 쓰였어요. 이름만 떠올리기보다 당시 쓰임을 함께 알아 두면 생활사의 변화가 더 잘 보여요.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-08-now-43-v1",
+      "dateKey": "2026-09-08",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "화면에서 참가자 영상 칸과 음소거 버튼이 보인다는 모습이 보입니다. 관련된 화상회의의 뜻은 무엇일까요?",
+      "choices": [
+        "공용망에서 기기와 서비스 사이 통신 경로를 암호화하는 기술",
+        "인터넷으로 여러 사람이 영상과 음성 대화를 하는 기능",
+        "현재 위치와 목적지를 바탕으로 길을 안내하는 서비스"
+      ],
+      "answerIndex": 1,
+      "explanation": "화상회의은 인터넷으로 여러 사람이 영상과 음성 대화를 하는 기능입니다. 비슷해 보이는 기능과 목적을 구분하면 설정을 더 자신 있게 선택할 수 있어요.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-08-life-43-v1",
+      "dateKey": "2026-09-08",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "평소 외출 전 밸브와 가스기기 상태를 확인한다는 대비가 필요합니다. 실제 가스밸브 상황에서 우선 행동은 무엇일까요?",
+      "choices": [
+        "평평한 바닥에 완전히 펴고 다른 사람에게 지지를 부탁한다",
+        "승무원 안내를 듣고 비상장치 위치와 사용법을 확인한다",
+        "조리를 마치면 불꽃이 꺼졌는지 보고 중간밸브를 잠근다"
+      ],
+      "answerIndex": 2,
+      "explanation": "가스밸브 상황에서는 조리를 마치면 불꽃이 꺼졌는지 보고 중간밸브를 잠근다는 대응이 우선입니다. 주변 위험을 키우지 않으면서 안전한 곳에서 도움을 요청하세요.",
+      "source": {
+        "name": "환경부",
+        "url": "https://www.me.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-09-then-44-v1",
+      "dateKey": "2026-09-09",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "옛 기록에 ‘태양 위치에 따라 생기는 그림자의 방향을 읽었다’라고 적혀 있습니다. 해시계의 주된 쓰임은 무엇이었을까요?",
+      "choices": [
+        "한복 바지의 아랫단을 여미는 일",
+        "햇빛으로 낮의 시각을 짐작하는 일",
+        "두 편이 말의 움직임으로 승부하는 놀이를 하는 일"
+      ],
+      "answerIndex": 1,
+      "explanation": "해시계은 햇빛으로 낮의 시각을 짐작하는 일에 쓰였어요. 이름만 떠올리기보다 당시 쓰임을 함께 알아 두면 생활사의 변화가 더 잘 보여요.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-09-now-44-v1",
+      "dateKey": "2026-09-09",
+      "lens": "now",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "화면에서 공유 중이라는 테두리나 표시가 나타난다는 모습이 보입니다. 관련된 화면 공유의 뜻은 무엇일까요?",
+      "choices": [
+        "전자문서의 작성자와 변경 여부를 확인하는 기술",
+        "말이나 글을 다른 언어로 즉시 바꾸어 보여 주는 기능",
+        "내 화면을 다른 참가자에게 실시간으로 보여 주는 기능"
+      ],
+      "answerIndex": 2,
+      "explanation": "화면 공유은 내 화면을 다른 참가자에게 실시간으로 보여 주는 기능입니다. 비슷해 보이는 기능과 목적을 구분하면 설정을 더 자신 있게 선택할 수 있어요.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-09-life-44-v1",
+      "dateKey": "2026-09-09",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "gentle",
+      "prompt": "평소 시험 버튼과 분전반 위치를 정기적으로 확인한다는 대비가 필요합니다. 실제 누전차단기 상황에서 우선 행동은 무엇일까요?",
+      "choices": [
+        "반복해 내려가면 무리하게 올리지 말고 원인을 점검받는다",
+        "손잡이가 바깥으로 나오지 않게 전용 장소에 보관한다",
+        "안전한 곳으로 이동해 112에 위치와 상황을 알린다"
+      ],
+      "answerIndex": 0,
+      "explanation": "누전차단기 상황에서는 반복해 내려가면 무리하게 올리지 말고 원인을 점검받는다는 대응이 우선입니다. 주변 위험을 키우지 않으면서 안전한 곳에서 도움을 요청하세요.",
+      "source": {
+        "name": "한국전기안전공사",
+        "url": "https://www.kesco.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-10-then-45-v1",
+      "dateKey": "2026-09-10",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "옛 기록에 ‘원통에 모인 빗물의 깊이를 자로 측정했다’라고 적혀 있습니다. 측우기의 주된 쓰임은 무엇이었을까요?",
+      "choices": [
+        "한복 저고리의 앞섶을 여미는 일",
+        "농악과 사물놀이에서 높은 금속음을 내는 일",
+        "내린 비의 양을 일정한 그릇으로 재는 일"
+      ],
+      "answerIndex": 2,
+      "explanation": "측우기은 내린 비의 양을 일정한 그릇으로 재는 일에 쓰였어요. 이름만 떠올리기보다 당시 쓰임을 함께 알아 두면 생활사의 변화가 더 잘 보여요.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-10-now-45-v1",
+      "dateKey": "2026-09-10",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "gentle",
+      "prompt": "화면에서 승인 화면에 판매자와 결제 금액이 함께 나온다는 모습이 보입니다. 관련된 온라인 결제의 뜻은 무엇일까요?",
+      "choices": [
+        "인터넷 서비스에서 상품·요금을 지급하는 절차",
+        "공공기관이나 시설이 제공하는 무선 인터넷",
+        "파일 전체를 받기 전부터 인터넷으로 영상·음악을 재생하는 방식"
+      ],
+      "answerIndex": 0,
+      "explanation": "온라인 결제은 인터넷 서비스에서 상품·요금을 지급하는 절차입니다. 비슷해 보이는 기능과 목적을 구분하면 설정을 더 자신 있게 선택할 수 있어요.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-10-life-45-v1",
+      "dateKey": "2026-09-10",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "steady",
+      "prompt": "평소 먼지와 변색·헐거움이 있는지 살핀다는 대비가 필요합니다. 실제 멀티탭 상황에서 우선 행동은 무엇일까요?",
+      "choices": [
+        "온도를 먼저 확인하고 용기를 몸에서 떨어져 옮긴다",
+        "정격 용량을 확인하고 고출력 기기를 한곳에 몰아 쓰지 않는다",
+        "119에 위치와 위험 상황, 필요한 도움을 차분히 말한다"
+      ],
+      "answerIndex": 1,
+      "explanation": "멀티탭 상황에서는 정격 용량을 확인하고 고출력 기기를 한곳에 몰아 쓰지 않는다는 대응이 우선입니다. 주변 위험을 키우지 않으면서 안전한 곳에서 도움을 요청하세요.",
+      "source": {
+        "name": "한국전기안전공사",
+        "url": "https://www.kesco.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-11-then-46-v1",
+      "dateKey": "2026-09-11",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "옛 기록에 ‘낮에는 연기, 밤에는 불빛의 수로 신호를 보냈다’라고 적혀 있습니다. 봉수대의 주된 쓰임은 무엇이었을까요?",
+      "choices": [
+        "먼 곳에 위급한 소식을 빠르게 전하는 일",
+        "명절 놀이에서 말의 이동 칸 수를 정하는 일",
+        "전통 장단에서 서로 다른 두 북면을 연주하는 일"
+      ],
+      "answerIndex": 0,
+      "explanation": "봉수대은 먼 곳에 위급한 소식을 빠르게 전하는 일에 쓰였어요. 이름만 떠올리기보다 당시 쓰임을 함께 알아 두면 생활사의 변화가 더 잘 보여요.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-11-now-46-v1",
+      "dateKey": "2026-09-11",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "화면에서 비밀번호나 생체 확인 뒤 등록 카드가 표시된다는 모습이 보입니다. 관련된 간편결제의 뜻은 무엇일까요?",
+      "choices": [
+        "화면을 눌러 주문·발권·접수를 스스로 처리하는 단말기",
+        "등록한 수단을 인증 한 번으로 빠르게 사용하는 결제 방식",
+        "인터넷에서 회차별 음성 프로그램을 구독해 듣는 서비스"
+      ],
+      "answerIndex": 1,
+      "explanation": "간편결제은 등록한 수단을 인증 한 번으로 빠르게 사용하는 결제 방식입니다. 비슷해 보이는 기능과 목적을 구분하면 설정을 더 자신 있게 선택할 수 있어요.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-11-life-46-v1",
+      "dateKey": "2026-09-11",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "평소 사용 전 표면 손상과 조절기 상태를 확인한다는 대비가 필요합니다. 실제 전기장판 상황에서 우선 행동은 무엇일까요?",
+      "choices": [
+        "목줄을 알맞게 잡고 주변 사람·동물과 거리를 조절한다",
+        "발신 내용과 지역을 확인하고 안내된 행동요령을 따른다",
+        "접거나 무거운 물건을 올리지 않고 낮은 온도로 관리한다"
+      ],
+      "answerIndex": 2,
+      "explanation": "전기장판 상황에서는 접거나 무거운 물건을 올리지 않고 낮은 온도로 관리한다는 대응이 우선입니다. 주변 위험을 키우지 않으면서 안전한 곳에서 도움을 요청하세요.",
+      "source": {
+        "name": "한국전기안전공사",
+        "url": "https://www.kesco.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-12-then-47-v1",
+      "dateKey": "2026-09-12",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "옛 기록에 ‘길목마다 말과 숙소를 마련해 다음 구간을 이었다’라고 적혀 있습니다. 역참의 주된 쓰임은 무엇이었을까요?",
+      "choices": [
+        "발로 차 올리며 횟수를 겨루는 놀이를 하는 일",
+        "공문서와 관리의 장거리 이동을 돕는 일",
+        "채소나 곡식을 담고 물기를 빼는 일"
+      ],
+      "answerIndex": 1,
+      "explanation": "역참은 공문서와 관리의 장거리 이동을 돕는 일에 쓰였어요. 이름만 떠올리기보다 당시 쓰임을 함께 알아 두면 생활사의 변화가 더 잘 보여요.",
+      "source": {
+        "name": "국가기록원",
+        "url": "https://www.archives.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-12-now-47-v1",
+      "dateKey": "2026-09-12",
+      "lens": "now",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "화면에서 숫자 코드와 남은 시간이 함께 나타난다는 모습이 보입니다. 관련된 일회용 인증번호의 뜻은 무엇일까요?",
+      "choices": [
+        "기관 창구 없이 증명서를 발급받는 공공 단말기",
+        "네모 무늬에 주소나 정보를 담아 카메라로 여는 기능",
+        "한 번 또는 짧은 시간만 유효한 로그인 코드"
+      ],
+      "answerIndex": 2,
+      "explanation": "일회용 인증번호은 한 번 또는 짧은 시간만 유효한 로그인 코드입니다. 비슷해 보이는 기능과 목적을 구분하면 설정을 더 자신 있게 선택할 수 있어요.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-12-life-47-v1",
+      "dateKey": "2026-09-12",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "gentle",
+      "prompt": "평소 점검과 환기를 하고 임의로 구조를 바꾸지 않는다는 대비가 필요합니다. 실제 보일러 배기통 상황에서 우선 행동은 무엇일까요?",
+      "choices": [
+        "빠짐·찌그러짐과 주변 막힘이 없는지 확인한다",
+        "해 지기 전 돌아올 수 있는 코스와 날씨를 확인한다",
+        "불꽃과 전기 스위치를 피하고 창문을 열어 환기한다"
+      ],
+      "answerIndex": 0,
+      "explanation": "보일러 배기통 상황에서는 빠짐·찌그러짐과 주변 막힘이 없는지 확인한다는 대응이 우선입니다. 주변 위험을 키우지 않으면서 안전한 곳에서 도움을 요청하세요.",
+      "source": {
+        "name": "한국전기안전공사",
+        "url": "https://www.kesco.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-13-then-48-v1",
+      "dateKey": "2026-09-13",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "옛 기록에 ‘새끼 꼰 짚을 발 모양으로 엮어 신었다’라고 적혀 있습니다. 짚신의 주된 쓰임은 무엇이었을까요?",
+      "choices": [
+        "겨울철 얼음판이나 마당에서 돌리며 노는 일",
+        "숯불의 열로 방을 덥히거나 간단히 데우는 일",
+        "볏짚으로 발을 보호하는 일"
+      ],
+      "answerIndex": 2,
+      "explanation": "짚신은 볏짚으로 발을 보호하는 일에 쓰였어요. 이름만 떠올리기보다 당시 쓰임을 함께 알아 두면 생활사의 변화가 더 잘 보여요.",
+      "source": {
+        "name": "국가기록원",
+        "url": "https://www.archives.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-13-now-48-v1",
+      "dateKey": "2026-09-13",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "gentle",
+      "prompt": "화면에서 로그인 과정에서 키를 꽂거나 가까이 대라는 안내가 뜬다는 모습이 보입니다. 관련된 보안키의 뜻은 무엇일까요?",
+      "choices": [
+        "로그인할 때 물리 장치나 기기 내 키로 본인을 확인하는 수단",
+        "스마트폰 앱에서 신원 정보를 제시하는 전자 신분증",
+        "공유기와 기기를 무선으로 인터넷에 연결하는 기술"
+      ],
+      "answerIndex": 0,
+      "explanation": "보안키은 로그인할 때 물리 장치나 기기 내 키로 본인을 확인하는 수단입니다. 비슷해 보이는 기능과 목적을 구분하면 설정을 더 자신 있게 선택할 수 있어요.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-13-life-48-v1",
+      "dateKey": "2026-09-13",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "steady",
+      "prompt": "평소 기온이 크게 내려가기 전 계량기함을 보온한다는 대비가 필요합니다. 실제 수도 동파 상황에서 우선 행동은 무엇일까요?",
+      "choices": [
+        "해안과 평행하게 이동해 흐름에서 벗어난 뒤 구조를 요청한다",
+        "한파 때 노출 배관을 보온하고 물 흐름을 관리한다",
+        "전원을 안전하게 끊고 적합한 소화기로 대응하며 119에 알린다"
+      ],
+      "answerIndex": 1,
+      "explanation": "수도 동파 상황에서는 한파 때 노출 배관을 보온하고 물 흐름을 관리한다는 대응이 우선입니다. 주변 위험을 키우지 않으면서 안전한 곳에서 도움을 요청하세요.",
+      "source": {
+        "name": "한국전기안전공사",
+        "url": "https://www.kesco.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-14-then-49-v1",
+      "dateKey": "2026-09-14",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "옛 기록에 ‘말총과 대나무를 엮은 관모를 끈으로 고정했다’라고 적혀 있습니다. 갓의 주된 쓰임은 무엇이었을까요?",
+      "choices": [
+        "조선 시대 성인 남성이 격식에 맞춰 머리에 쓰는 일",
+        "화살 모양 막대를 항아리에 던져 넣는 놀이를 하는 일",
+        "개울가나 빨래터에서 옷의 때를 빼는 일"
+      ],
+      "answerIndex": 0,
+      "explanation": "갓은 조선 시대 성인 남성이 격식에 맞춰 머리에 쓰는 일에 쓰였어요. 이름만 떠올리기보다 당시 쓰임을 함께 알아 두면 생활사의 변화가 더 잘 보여요.",
+      "source": {
+        "name": "국가기록원",
+        "url": "https://www.archives.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-14-now-49-v1",
+      "dateKey": "2026-09-14",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "화면에서 비밀번호 없이 연결되거나 이용 동의 화면이 뜬다는 모습이 보입니다. 관련된 공개 와이파이의 뜻은 무엇일까요?",
+      "choices": [
+        "대중교통 단말기에 대어 요금을 처리하는 전자 수단",
+        "여러 사람이 함께 접속할 수 있는 무선 인터넷",
+        "가까운 기기끼리 저전력 무선 연결을 만드는 기술"
+      ],
+      "answerIndex": 1,
+      "explanation": "공개 와이파이은 여러 사람이 함께 접속할 수 있는 무선 인터넷입니다. 비슷해 보이는 기능과 목적을 구분하면 설정을 더 자신 있게 선택할 수 있어요.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-14-life-49-v1",
+      "dateKey": "2026-09-14",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "평소 손잡이와 충분한 조명을 마련한다는 대비가 필요합니다. 실제 욕실 미끄럼 상황에서 우선 행동은 무엇일까요?",
+      "choices": [
+        "보폭을 줄이고 발바닥 전체로 천천히 걷는다",
+        "불을 끄고 뚜껑이나 방화 덮개로 산소를 차단한다",
+        "바닥 물기를 닦고 미끄럼 방지 매트를 고정한다"
+      ],
+      "answerIndex": 2,
+      "explanation": "욕실 미끄럼 상황에서는 바닥 물기를 닦고 미끄럼 방지 매트를 고정한다는 대응이 우선입니다. 주변 위험을 키우지 않으면서 안전한 곳에서 도움을 요청하세요.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-15-then-50-v1",
+      "dateKey": "2026-09-15",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "옛 기록에 ‘천을 발 모양으로 재단해 꿰매 신었다’라고 적혀 있습니다. 버선의 주된 쓰임은 무엇이었을까요?",
+      "choices": [
+        "바람을 이용해 하늘에 띄우는 놀이를 하는 일",
+        "한복 차림에서 발을 감싸 보온하는 일",
+        "천 조각을 빠르고 일정하게 꿰매는 일"
+      ],
+      "answerIndex": 1,
+      "explanation": "버선은 한복 차림에서 발을 감싸 보온하는 일에 쓰였어요. 이름만 떠올리기보다 당시 쓰임을 함께 알아 두면 생활사의 변화가 더 잘 보여요.",
+      "source": {
+        "name": "국가기록원",
+        "url": "https://www.archives.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-15-now-50-v1",
+      "dateKey": "2026-09-15",
+      "lens": "now",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "화면에서 상태 표시줄에 VPN 글자나 열쇠 아이콘이 보인다는 모습이 보입니다. 관련된 가상사설망의 뜻은 무엇일까요?",
+      "choices": [
+        "현재 위치와 목적지를 바탕으로 길을 안내하는 서비스",
+        "아주 가까운 거리에서 태그나 결제 정보를 주고받는 기술",
+        "공용망에서 기기와 서비스 사이 통신 경로를 암호화하는 기술"
+      ],
+      "answerIndex": 2,
+      "explanation": "가상사설망은 공용망에서 기기와 서비스 사이 통신 경로를 암호화하는 기술입니다. 비슷해 보이는 기능과 목적을 구분하면 설정을 더 자신 있게 선택할 수 있어요.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-15-life-50-v1",
+      "dateKey": "2026-09-15",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "gentle",
+      "prompt": "평소 사용 전 발판과 잠금장치 손상을 확인한다는 대비가 필요합니다. 실제 사다리 사용 상황에서 우선 행동은 무엇일까요?",
+      "choices": [
+        "평평한 바닥에 완전히 펴고 다른 사람에게 지지를 부탁한다",
+        "승무원 안내를 듣고 비상장치 위치와 사용법을 확인한다",
+        "안전핀을 뽑고 노즐을 불 쪽에 향해 손잡이를 누른다"
+      ],
+      "answerIndex": 0,
+      "explanation": "사다리 사용 상황에서는 평평한 바닥에 완전히 펴고 다른 사람에게 지지를 부탁한다는 대응이 우선입니다. 주변 위험을 키우지 않으면서 안전한 곳에서 도움을 요청하세요.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-16-then-51-v1",
+      "dateKey": "2026-09-16",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "옛 기록에 ‘발목 부분에 끈을 둘러 매어 바짓단을 고정했다’라고 적혀 있습니다. 대님의 주된 쓰임은 무엇이었을까요?",
+      "choices": [
+        "두 편이 말의 움직임으로 승부하는 놀이를 하는 일",
+        "밖에서 동전을 넣어 전화를 거는 일",
+        "한복 바지의 아랫단을 여미는 일"
+      ],
+      "answerIndex": 2,
+      "explanation": "대님은 한복 바지의 아랫단을 여미는 일에 쓰였어요. 이름만 떠올리기보다 당시 쓰임을 함께 알아 두면 생활사의 변화가 더 잘 보여요.",
+      "source": {
+        "name": "국가기록원",
+        "url": "https://www.archives.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-16-now-51-v1",
+      "dateKey": "2026-09-16",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "gentle",
+      "prompt": "화면에서 인증 뒤 서명 완료와 검증 정보가 표시된다는 모습이 보입니다. 관련된 전자서명의 뜻은 무엇일까요?",
+      "choices": [
+        "전자문서의 작성자와 변경 여부를 확인하는 기술",
+        "말이나 글을 다른 언어로 즉시 바꾸어 보여 주는 기능",
+        "위성 신호로 기기의 위치를 계산하는 기술"
+      ],
+      "answerIndex": 0,
+      "explanation": "전자서명은 전자문서의 작성자와 변경 여부를 확인하는 기술입니다. 비슷해 보이는 기능과 목적을 구분하면 설정을 더 자신 있게 선택할 수 있어요.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-16-life-51-v1",
+      "dateKey": "2026-09-16",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "steady",
+      "prompt": "평소 무딘 칼도 안전하게 다루고 도마가 움직이지 않게 한다는 대비가 필요합니다. 실제 주방 칼 상황에서 우선 행동은 무엇일까요?",
+      "choices": [
+        "안전한 곳으로 이동해 112에 위치와 상황을 알린다",
+        "손잡이가 바깥으로 나오지 않게 전용 장소에 보관한다",
+        "젖은 수건보다 낮은 자세와 빠른 계단 대피를 우선한다"
+      ],
+      "answerIndex": 1,
+      "explanation": "주방 칼 상황에서는 손잡이가 바깥으로 나오지 않게 전용 장소에 보관한다는 대응이 우선입니다. 주변 위험을 키우지 않으면서 안전한 곳에서 도움을 요청하세요.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-17-then-52-v1",
+      "dateKey": "2026-09-17",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "옛 기록에 ‘두 가닥 끈을 고리와 매듭으로 묶었다’라고 적혀 있습니다. 고름의 주된 쓰임은 무엇이었을까요?",
+      "choices": [
+        "한복 저고리의 앞섶을 여미는 일",
+        "농악과 사물놀이에서 높은 금속음을 내는 일",
+        "가정에서 전화번호를 연결하는 일"
+      ],
+      "answerIndex": 0,
+      "explanation": "고름은 한복 저고리의 앞섶을 여미는 일에 쓰였어요. 이름만 떠올리기보다 당시 쓰임을 함께 알아 두면 생활사의 변화가 더 잘 보여요.",
+      "source": {
+        "name": "국가기록원",
+        "url": "https://www.archives.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-17-now-52-v1",
+      "dateKey": "2026-09-17",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "화면에서 시설 표지와 같은 이름의 접속망이 목록에 보인다는 모습이 보입니다. 관련된 공공 와이파이의 뜻은 무엇일까요?",
+      "choices": [
+        "파일 전체를 받기 전부터 인터넷으로 영상·음악을 재생하는 방식",
+        "공공기관이나 시설이 제공하는 무선 인터넷",
+        "인터넷 서버에 파일을 보관하고 여러 기기에서 여는 서비스"
+      ],
+      "answerIndex": 1,
+      "explanation": "공공 와이파이은 공공기관이나 시설이 제공하는 무선 인터넷입니다. 비슷해 보이는 기능과 목적을 구분하면 설정을 더 자신 있게 선택할 수 있어요.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-17-life-52-v1",
+      "dateKey": "2026-09-17",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "평소 주전자 전선과 냄비 손잡이를 통로에서 치운다는 대비가 필요합니다. 실제 뜨거운 물 상황에서 우선 행동은 무엇일까요?",
+      "choices": [
+        "119에 위치와 위험 상황, 필요한 도움을 차분히 말한다",
+        "설명서를 확인하고 지지대 고정 뒤 벨트를 가슴에 맞춘다",
+        "온도를 먼저 확인하고 용기를 몸에서 떨어져 옮긴다"
+      ],
+      "answerIndex": 2,
+      "explanation": "뜨거운 물 상황에서는 온도를 먼저 확인하고 용기를 몸에서 떨어져 옮긴다는 대응이 우선입니다. 주변 위험을 키우지 않으면서 안전한 곳에서 도움을 요청하세요.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-18-then-53-v1",
+      "dateKey": "2026-09-18",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "옛 기록에 ‘네 가락을 던져 엎어지고 젖혀진 모양을 셌다’라고 적혀 있습니다. 윷의 주된 쓰임은 무엇이었을까요?",
+      "choices": [
+        "전통 장단에서 서로 다른 두 북면을 연주하는 일",
+        "명절 놀이에서 말의 이동 칸 수를 정하는 일",
+        "짧은 연락 번호를 휴대해 확인하는 일"
+      ],
+      "answerIndex": 1,
+      "explanation": "윷은 명절 놀이에서 말의 이동 칸 수를 정하는 일에 쓰였어요. 이름만 떠올리기보다 당시 쓰임을 함께 알아 두면 생활사의 변화가 더 잘 보여요.",
+      "source": {
+        "name": "국가기록원",
+        "url": "https://www.archives.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-18-now-53-v1",
+      "dateKey": "2026-09-18",
+      "lens": "now",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "화면에서 큰 터치 화면에 단계별 선택 항목이 나온다는 모습이 보입니다. 관련된 키오스크의 뜻은 무엇일까요?",
+      "choices": [
+        "인터넷에서 회차별 음성 프로그램을 구독해 듣는 서비스",
+        "원본 손실에 대비해 별도 사본을 만드는 작업",
+        "화면을 눌러 주문·발권·접수를 스스로 처리하는 단말기"
+      ],
+      "answerIndex": 2,
+      "explanation": "키오스크은 화면을 눌러 주문·발권·접수를 스스로 처리하는 단말기입니다. 비슷해 보이는 기능과 목적을 구분하면 설정을 더 자신 있게 선택할 수 있어요.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-18-life-53-v1",
+      "dateKey": "2026-09-18",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "gentle",
+      "prompt": "평소 인식표와 배변용품을 준비한다는 대비가 필요합니다. 실제 반려동물과 외출 상황에서 우선 행동은 무엇일까요?",
+      "choices": [
+        "목줄을 알맞게 잡고 주변 사람·동물과 거리를 조절한다",
+        "발신 내용과 지역을 확인하고 안내된 행동요령을 따른다",
+        "떨어지는 물건을 피해 탁자 아래에서 머리를 보호한다"
+      ],
+      "answerIndex": 0,
+      "explanation": "반려동물과 외출 상황에서는 목줄을 알맞게 잡고 주변 사람·동물과 거리를 조절한다는 대응이 우선입니다. 주변 위험을 키우지 않으면서 안전한 곳에서 도움을 요청하세요.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-19-then-54-v1",
+      "dateKey": "2026-09-19",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "옛 기록에 ‘엽전 모양의 추와 술을 발 안쪽으로 계속 찼다’라고 적혀 있습니다. 제기의 주된 쓰임은 무엇이었을까요?",
+      "choices": [
+        "채소나 곡식을 담고 물기를 빼는 일",
+        "음악이나 음성을 자성 띠에 기록하는 일",
+        "발로 차 올리며 횟수를 겨루는 놀이를 하는 일"
+      ],
+      "answerIndex": 2,
+      "explanation": "제기은 발로 차 올리며 횟수를 겨루는 놀이를 하는 일에 쓰였어요. 이름만 떠올리기보다 당시 쓰임을 함께 알아 두면 생활사의 변화가 더 잘 보여요.",
+      "source": {
+        "name": "국가기록원",
+        "url": "https://www.archives.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-19-now-54-v1",
+      "dateKey": "2026-09-19",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "gentle",
+      "prompt": "화면에서 본인 확인 뒤 문서 종류와 매수를 고르는 화면이 나온다는 모습이 보입니다. 관련된 무인민원발급기의 뜻은 무엇일까요?",
+      "choices": [
+        "기관 창구 없이 증명서를 발급받는 공공 단말기",
+        "네모 무늬에 주소나 정보를 담아 카메라로 여는 기능",
+        "비밀번호 외에 한 가지 확인 수단을 더 요구하는 보호 방식"
+      ],
+      "answerIndex": 0,
+      "explanation": "무인민원발급기은 기관 창구 없이 증명서를 발급받는 공공 단말기입니다. 비슷해 보이는 기능과 목적을 구분하면 설정을 더 자신 있게 선택할 수 있어요.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-19-life-54-v1",
+      "dateKey": "2026-09-19",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "steady",
+      "prompt": "평소 물·보온옷·충전된 연락수단을 준비한다는 대비가 필요합니다. 실제 산행 상황에서 우선 행동은 무엇일까요?",
+      "choices": [
+        "불꽃과 전기 스위치를 피하고 창문을 열어 환기한다",
+        "해 지기 전 돌아올 수 있는 코스와 날씨를 확인한다",
+        "실내로 이동하고 창문과 날아갈 물건을 점검한다"
+      ],
+      "answerIndex": 1,
+      "explanation": "산행 상황에서는 해 지기 전 돌아올 수 있는 코스와 날씨를 확인한다는 대응이 우선입니다. 주변 위험을 키우지 않으면서 안전한 곳에서 도움을 요청하세요.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-20-then-55-v1",
+      "dateKey": "2026-09-20",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "옛 기록에 ‘채로 몸통을 쳐 회전 속도를 유지했다’라고 적혀 있습니다. 팽이의 주된 쓰임은 무엇이었을까요?",
+      "choices": [
+        "겨울철 얼음판이나 마당에서 돌리며 노는 일",
+        "숯불의 열로 방을 덥히거나 간단히 데우는 일",
+        "홈에 담긴 음악을 재생하는 일"
+      ],
+      "answerIndex": 0,
+      "explanation": "팽이은 겨울철 얼음판이나 마당에서 돌리며 노는 일에 쓰였어요. 이름만 떠올리기보다 당시 쓰임을 함께 알아 두면 생활사의 변화가 더 잘 보여요.",
+      "source": {
+        "name": "국가기록원",
+        "url": "https://www.archives.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-20-now-55-v1",
+      "dateKey": "2026-09-20",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "화면에서 검증용 QR이나 필요한 정보만 선택하는 화면이 나온다는 모습이 보입니다. 관련된 모바일 신분증의 뜻은 무엇일까요?",
+      "choices": [
+        "공유기와 기기를 무선으로 인터넷에 연결하는 기술",
+        "스마트폰 앱에서 신원 정보를 제시하는 전자 신분증",
+        "서로 다른 긴 비밀번호를 생성하고 보관하는 도구"
+      ],
+      "answerIndex": 1,
+      "explanation": "모바일 신분증은 스마트폰 앱에서 신원 정보를 제시하는 전자 신분증입니다. 비슷해 보이는 기능과 목적을 구분하면 설정을 더 자신 있게 선택할 수 있어요.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-20-life-55-v1",
+      "dateKey": "2026-09-20",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "평소 안전요원이 있는 구역과 경고 깃발을 확인한다는 대비가 필요합니다. 실제 해변 이안류 상황에서 우선 행동은 무엇일까요?",
+      "choices": [
+        "전원을 안전하게 끊고 적합한 소화기로 대응하며 119에 알린다",
+        "한낮 야외활동을 줄이고 물을 조금씩 자주 마신다",
+        "해안과 평행하게 이동해 흐름에서 벗어난 뒤 구조를 요청한다"
+      ],
+      "answerIndex": 2,
+      "explanation": "해변 이안류 상황에서는 해안과 평행하게 이동해 흐름에서 벗어난 뒤 구조를 요청한다는 대응이 우선입니다. 주변 위험을 키우지 않으면서 안전한 곳에서 도움을 요청하세요.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-21-then-56-v1",
+      "dateKey": "2026-09-21",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "옛 기록에 ‘정해진 거리에서 번갈아 던져 들어간 수를 셌다’라고 적혀 있습니다. 투호의 주된 쓰임은 무엇이었을까요?",
+      "choices": [
+        "개울가나 빨래터에서 옷의 때를 빼는 일",
+        "화살 모양 막대를 항아리에 던져 넣는 놀이를 하는 일",
+        "컴퓨터 문서를 저장하고 옮기는 일"
+      ],
+      "answerIndex": 1,
+      "explanation": "투호은 화살 모양 막대를 항아리에 던져 넣는 놀이를 하는 일에 쓰였어요. 이름만 떠올리기보다 당시 쓰임을 함께 알아 두면 생활사의 변화가 더 잘 보여요.",
+      "source": {
+        "name": "국가기록원",
+        "url": "https://www.archives.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-21-now-56-v1",
+      "dateKey": "2026-09-21",
+      "lens": "now",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "화면에서 단말기에서 승인음과 잔액이 나타난다는 모습이 보입니다. 관련된 교통카드의 뜻은 무엇일까요?",
+      "choices": [
+        "가까운 기기끼리 저전력 무선 연결을 만드는 기술",
+        "지문이나 얼굴 특징으로 사용자를 확인하는 기능",
+        "대중교통 단말기에 대어 요금을 처리하는 전자 수단"
+      ],
+      "answerIndex": 2,
+      "explanation": "교통카드은 대중교통 단말기에 대어 요금을 처리하는 전자 수단입니다. 비슷해 보이는 기능과 목적을 구분하면 설정을 더 자신 있게 선택할 수 있어요.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-21-life-56-v1",
+      "dateKey": "2026-09-21",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "gentle",
+      "prompt": "평소 미끄럼이 적은 신발과 손이 자유로운 가방을 쓴다는 대비가 필요합니다. 실제 빙판길 상황에서 우선 행동은 무엇일까요?",
+      "choices": [
+        "보폭을 줄이고 발바닥 전체로 천천히 걷는다",
+        "불을 끄고 뚜껑이나 방화 덮개로 산소를 차단한다",
+        "노출 부위를 보온하고 수도·난방 상태를 확인한다"
+      ],
+      "answerIndex": 0,
+      "explanation": "빙판길 상황에서는 보폭을 줄이고 발바닥 전체로 천천히 걷는다는 대응이 우선입니다. 주변 위험을 키우지 않으면서 안전한 곳에서 도움을 요청하세요.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-22-then-57-v1",
+      "dateKey": "2026-09-22",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "옛 기록에 ‘줄의 장력과 꼬리로 자세를 조절했다’라고 적혀 있습니다. 연의 주된 쓰임은 무엇이었을까요?",
+      "choices": [
+        "천 조각을 빠르고 일정하게 꿰매는 일",
+        "빛을 필름에 기록해 사진을 남기는 일",
+        "바람을 이용해 하늘에 띄우는 놀이를 하는 일"
+      ],
+      "answerIndex": 2,
+      "explanation": "연은 바람을 이용해 하늘에 띄우는 놀이를 하는 일에 쓰였어요. 이름만 떠올리기보다 당시 쓰임을 함께 알아 두면 생활사의 변화가 더 잘 보여요.",
+      "source": {
+        "name": "국가기록원",
+        "url": "https://www.archives.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-22-now-57-v1",
+      "dateKey": "2026-09-22",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "gentle",
+      "prompt": "화면에서 지도 위 경로와 다음 회전 거리가 표시된다는 모습이 보입니다. 관련된 내비게이션의 뜻은 무엇일까요?",
+      "choices": [
+        "현재 위치와 목적지를 바탕으로 길을 안내하는 서비스",
+        "아주 가까운 거리에서 태그나 결제 정보를 주고받는 기술",
+        "문자메시지의 링크나 앱 설치로 피해를 유도하는 사기"
+      ],
+      "answerIndex": 0,
+      "explanation": "내비게이션은 현재 위치와 목적지를 바탕으로 길을 안내하는 서비스입니다. 비슷해 보이는 기능과 목적을 구분하면 설정을 더 자신 있게 선택할 수 있어요.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-22-life-57-v1",
+      "dateKey": "2026-09-22",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "steady",
+      "prompt": "평소 탑승할 때 비상문과 신고 장치 위치를 살핀다는 대비가 필요합니다. 실제 대중교통 비상 상황에서 우선 행동은 무엇일까요?",
+      "choices": [
+        "안전핀을 뽑고 노즐을 불 쪽에 향해 손잡이를 누른다",
+        "승무원 안내를 듣고 비상장치 위치와 사용법을 확인한다",
+        "튼튼한 건물이나 닫힌 자동차 안으로 이동한다"
+      ],
+      "answerIndex": 1,
+      "explanation": "대중교통 비상 상황에서는 승무원 안내를 듣고 비상장치 위치와 사용법을 확인한다는 대응이 우선입니다. 주변 위험을 키우지 않으면서 안전한 곳에서 도움을 요청하세요.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-23-then-58-v1",
+      "dateKey": "2026-09-23",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "옛 기록에 ‘초와 한이 정해진 행마법에 따라 말을 옮겼다’라고 적혀 있습니다. 장기의 주된 쓰임은 무엇이었을까요?",
+      "choices": [
+        "두 편이 말의 움직임으로 승부하는 놀이를 하는 일",
+        "밖에서 동전을 넣어 전화를 거는 일",
+        "투명 필름 사진을 큰 화면에 비추는 일"
+      ],
+      "answerIndex": 0,
+      "explanation": "장기은 두 편이 말의 움직임으로 승부하는 놀이를 하는 일에 쓰였어요. 이름만 떠올리기보다 당시 쓰임을 함께 알아 두면 생활사의 변화가 더 잘 보여요.",
+      "source": {
+        "name": "국가기록원",
+        "url": "https://www.archives.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-23-now-58-v1",
+      "dateKey": "2026-09-23",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "화면에서 원문 아래에 선택한 언어의 번역문이 나타난다는 모습이 보입니다. 관련된 실시간 번역의 뜻은 무엇일까요?",
+      "choices": [
+        "위성 신호로 기기의 위치를 계산하는 기술",
+        "말이나 글을 다른 언어로 즉시 바꾸어 보여 주는 기능",
+        "기관이나 지인을 사칭해 계정·금융 정보를 빼내는 사기"
+      ],
+      "answerIndex": 1,
+      "explanation": "실시간 번역은 말이나 글을 다른 언어로 즉시 바꾸어 보여 주는 기능입니다. 비슷해 보이는 기능과 목적을 구분하면 설정을 더 자신 있게 선택할 수 있어요.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-23-life-58-v1",
+      "dateKey": "2026-09-23",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "평소 낯선 장소에서는 도로명이나 주변 표지를 확인한다는 대비가 필요합니다. 실제 범죄 긴급 신고 상황에서 우선 행동은 무엇일까요?",
+      "choices": [
+        "젖은 수건보다 낮은 자세와 빠른 계단 대피를 우선한다",
+        "산에서 멀어지는 방향으로 대피하고 119에 신고한다",
+        "안전한 곳으로 이동해 112에 위치와 상황을 알린다"
+      ],
+      "answerIndex": 2,
+      "explanation": "범죄 긴급 신고 상황에서는 안전한 곳으로 이동해 112에 위치와 상황을 알린다는 대응이 우선입니다. 주변 위험을 키우지 않으면서 안전한 곳에서 도움을 요청하세요.",
+      "source": {
+        "name": "소방청",
+        "url": "https://www.nfa.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-24-then-59-v1",
+      "dateKey": "2026-09-24",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "옛 기록에 ‘작은 놋쇠 징을 채로 쳐 장단을 이끌었다’라고 적혀 있습니다. 꽹과리의 주된 쓰임은 무엇이었을까요?",
+      "choices": [
+        "가정에서 전화번호를 연결하는 일",
+        "농악과 사물놀이에서 높은 금속음을 내는 일",
+        "같은 문서를 여러 장 복제하는 일"
+      ],
+      "answerIndex": 1,
+      "explanation": "꽹과리은 농악과 사물놀이에서 높은 금속음을 내는 일에 쓰였어요. 이름만 떠올리기보다 당시 쓰임을 함께 알아 두면 생활사의 변화가 더 잘 보여요.",
+      "source": {
+        "name": "국가기록원",
+        "url": "https://www.archives.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-24-now-59-v1",
+      "dateKey": "2026-09-24",
+      "lens": "now",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "화면에서 재생 막대가 움직이며 남은 내용은 계속 전송된다는 모습이 보입니다. 관련된 스트리밍의 뜻은 무엇일까요?",
+      "choices": [
+        "인터넷 서버에 파일을 보관하고 여러 기기에서 여는 서비스",
+        "파일을 못 쓰게 만든 뒤 대가를 요구하는 악성 프로그램",
+        "파일 전체를 받기 전부터 인터넷으로 영상·음악을 재생하는 방식"
+      ],
+      "answerIndex": 2,
+      "explanation": "스트리밍은 파일 전체를 받기 전부터 인터넷으로 영상·음악을 재생하는 방식입니다. 비슷해 보이는 기능과 목적을 구분하면 설정을 더 자신 있게 선택할 수 있어요.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-24-life-59-v1",
+      "dateKey": "2026-09-24",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "gentle",
+      "prompt": "평소 집 주소와 공동현관 진입 방법을 가족과 공유한다는 대비가 필요합니다. 실제 화재·구조·구급 신고 상황에서 우선 행동은 무엇일까요?",
+      "choices": [
+        "119에 위치와 위험 상황, 필요한 도움을 차분히 말한다",
+        "설명서를 확인하고 지지대 고정 뒤 벨트를 가슴에 맞춘다",
+        "침수 도로에 들어가지 말고 높은 곳으로 이동한다"
+      ],
+      "answerIndex": 0,
+      "explanation": "화재·구조·구급 신고 상황에서는 119에 위치와 위험 상황, 필요한 도움을 차분히 말한다는 대응이 우선입니다. 주변 위험을 키우지 않으면서 안전한 곳에서 도움을 요청하세요.",
+      "source": {
+        "name": "소방청",
+        "url": "https://www.nfa.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-25-then-60-v1",
+      "dateKey": "2026-09-25",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "옛 기록에 ‘채와 손을 사용해 양쪽 가죽면의 다른 음색을 냈다’라고 적혀 있습니다. 장구의 주된 쓰임은 무엇이었을까요?",
+      "choices": [
+        "짧은 연락 번호를 휴대해 확인하는 일",
+        "종이에 글자를 일정하게 찍는 일",
+        "전통 장단에서 서로 다른 두 북면을 연주하는 일"
+      ],
+      "answerIndex": 2,
+      "explanation": "장구은 전통 장단에서 서로 다른 두 북면을 연주하는 일에 쓰였어요. 이름만 떠올리기보다 당시 쓰임을 함께 알아 두면 생활사의 변화가 더 잘 보여요.",
+      "source": {
+        "name": "국가기록원",
+        "url": "https://www.archives.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-25-now-60-v1",
+      "dateKey": "2026-09-25",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "gentle",
+      "prompt": "화면에서 프로그램 아래에 날짜별 에피소드 목록이 보인다는 모습이 보입니다. 관련된 팟캐스트의 뜻은 무엇일까요?",
+      "choices": [
+        "인터넷에서 회차별 음성 프로그램을 구독해 듣는 서비스",
+        "원본 손실에 대비해 별도 사본을 만드는 작업",
+        "기기에 해로운 동작을 하도록 만든 프로그램"
+      ],
+      "answerIndex": 0,
+      "explanation": "팟캐스트은 인터넷에서 회차별 음성 프로그램을 구독해 듣는 서비스입니다. 비슷해 보이는 기능과 목적을 구분하면 설정을 더 자신 있게 선택할 수 있어요.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-25-life-60-v1",
+      "dateKey": "2026-09-25",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "steady",
+      "prompt": "평소 휴대전화의 재난 알림 설정과 소리를 미리 확인한다는 대비가 필요합니다. 실제 긴급재난문자 상황에서 우선 행동은 무엇일까요?",
+      "choices": [
+        "떨어지는 물건을 피해 탁자 아래에서 머리를 보호한다",
+        "발신 내용과 지역을 확인하고 안내된 행동요령을 따른다",
+        "농도가 높은 날에는 노출을 줄이고 귀가 뒤 씻는다"
+      ],
+      "answerIndex": 1,
+      "explanation": "긴급재난문자 상황에서는 발신 내용과 지역을 확인하고 안내된 행동요령을 따른다는 대응이 우선입니다. 주변 위험을 키우지 않으면서 안전한 곳에서 도움을 요청하세요.",
+      "source": {
+        "name": "소방청",
+        "url": "https://www.nfa.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    }
+  ]
+}
