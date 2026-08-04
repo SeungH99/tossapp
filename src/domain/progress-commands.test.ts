@@ -3,16 +3,21 @@ import { describe, expect, it } from "vitest";
 import { createEmptyProgress } from "../services/progress-repository";
 import * as progressCommands from "./progress-commands";
 import type { BonusQuestion, CoreQuestion } from "./question";
+
+const contentMetadata = {
+  contentVersion: "test",
+  reviewStatus: "reviewed" as const,
+  reviewedAt: "2026-08-04",
+};
 import { createQuizSession } from "./quiz-session";
-import {
-  ANSWER_EVENT_LIMIT,
-  applyAnswerCommand,
-} from "./progress-commands";
+import { ANSWER_EVENT_LIMIT, applyAnswerCommand } from "./progress-commands";
 
 const question: CoreQuestion = {
   kind: "core",
   id: "then-phone",
   dateKey: "2026-07-28",
+  internalDifficulty: "gentle",
+  ...contentMetadata,
   lens: "then",
   topic: "nostalgia",
   prompt: "공중전화에서 통화를 이어 가려면 무엇을 넣었을까요?",
@@ -29,6 +34,8 @@ const bonusQuestions: BonusQuestion[] = [
     conceptId: "digital-1",
     variant: "base",
     internalDifficulty: "steady",
+    setIndex: 0,
+    ...contentMetadata,
     lens: "now",
     topic: "digital",
     prompt: "디지털 문제 1",
@@ -43,6 +50,8 @@ const bonusQuestions: BonusQuestion[] = [
     conceptId: "digital-2",
     variant: "base",
     internalDifficulty: "steady",
+    setIndex: 0,
+    ...contentMetadata,
     lens: "now",
     topic: "digital",
     prompt: "디지털 문제 2",
@@ -136,7 +145,6 @@ describe("applyAnswerCommand", () => {
       correctAnswers: 1,
     });
   });
-
 });
 
 describe("bonus progress commands", () => {
@@ -153,8 +161,9 @@ describe("bonus progress commands", () => {
       applied: true,
       questionIds: ["bonus-digital-1", "bonus-digital-2"],
     });
-    expect(result.state.bonusStartCommands["shadowed-digital-start"])
-      .toMatchObject({ questionIds: ["bonus-digital-1", "bonus-digital-2"] });
+    expect(
+      result.state.bonusStartCommands["shadowed-digital-start"],
+    ).toMatchObject({ questionIds: ["bonus-digital-1", "bonus-digital-2"] });
     expect(result.state.shadowAudits).toEqual([
       {
         legacyQuestionIds: ["bonus-digital-1", "bonus-digital-2"],
@@ -185,8 +194,9 @@ describe("bonus progress commands", () => {
       applied: true,
       questionIds: ["bonus-safety-1", "bonus-safety-2"],
     });
-    expect(result.state.bonusStartCommands["shadowed-safety-start"])
-      .toMatchObject({ questionIds: ["bonus-safety-1", "bonus-safety-2"] });
+    expect(
+      result.state.bonusStartCommands["shadowed-safety-start"],
+    ).toMatchObject({ questionIds: ["bonus-safety-1", "bonus-safety-2"] });
     expect(result.state.shadowAudits[0]).toMatchObject({
       legacyQuestionIds: ["bonus-safety-1", "bonus-safety-2"],
       shadowQuestionIds: ["bonus-safety-1", "bonus-safety-2"],
@@ -214,10 +224,12 @@ describe("bonus progress commands", () => {
       applied: true,
       questionIds: ["bonus-nostalgia-1", "bonus-nostalgia-2"],
     });
-    expect(result.state.sessions["2026-07-28:bonus:nostalgia"])
-      .toMatchObject({ phase: "question" });
-    expect(result.state.bonusStartCommands["nostalgia-start"])
-      .toMatchObject({ questionIds: ["bonus-nostalgia-1", "bonus-nostalgia-2"] });
+    expect(result.state.sessions["2026-07-28:bonus:nostalgia"]).toMatchObject({
+      phase: "question",
+    });
+    expect(result.state.bonusStartCommands["nostalgia-start"]).toMatchObject({
+      questionIds: ["bonus-nostalgia-1", "bonus-nostalgia-2"],
+    });
     expect(result.state.shadowAudits).toEqual([]);
   });
 

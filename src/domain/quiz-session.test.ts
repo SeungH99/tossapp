@@ -1,6 +1,12 @@
 import { describe, expect, it } from "vitest";
 
 import type { CoreQuestion } from "./question";
+
+const contentMetadata = {
+  contentVersion: "test",
+  reviewStatus: "reviewed" as const,
+  reviewedAt: "2026-08-04",
+};
 import {
   advanceQuiz,
   answerCurrentQuestion,
@@ -14,6 +20,8 @@ const questions: CoreQuestion[] = [
     kind: "core",
     id: "life-1",
     dateKey: "2026-07-28",
+    internalDifficulty: "gentle",
+    ...contentMetadata,
     lens: "life",
     topic: "safety",
     prompt: "생활 문제",
@@ -26,6 +34,8 @@ const questions: CoreQuestion[] = [
     kind: "core",
     id: "then-1",
     dateKey: "2026-07-28",
+    internalDifficulty: "steady",
+    ...contentMetadata,
     lens: "then",
     topic: "nostalgia",
     prompt: "그때 문제",
@@ -38,6 +48,8 @@ const questions: CoreQuestion[] = [
     kind: "core",
     id: "now-1",
     dateKey: "2026-07-28",
+    internalDifficulty: "stretch",
+    ...contentMetadata,
     lens: "now",
     topic: "digital",
     prompt: "요즘 문제",
@@ -50,6 +62,8 @@ const questions: CoreQuestion[] = [
     kind: "core",
     id: "other-day",
     dateKey: "2026-07-29",
+    internalDifficulty: "gentle",
+    ...contentMetadata,
     lens: "then",
     topic: "nostalgia",
     prompt: "다른 날 문제",

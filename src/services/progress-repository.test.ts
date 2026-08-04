@@ -2,6 +2,12 @@ import { beforeEach, describe, expect, it } from "vitest";
 
 import { createBonusEntitlement } from "../domain/bonus-entitlement";
 import type { BonusQuestion, CoreQuestion } from "../domain/question";
+
+const contentMetadata = {
+  contentVersion: "test",
+  reviewStatus: "reviewed" as const,
+  reviewedAt: "2026-08-04",
+};
 import { createQuizSession } from "../domain/quiz-session";
 import { createShadowAudit } from "../domain/shadow-audit";
 import {
@@ -33,6 +39,8 @@ const question: CoreQuestion = {
   kind: "core",
   id: "then-phone",
   dateKey: "2026-07-28",
+  internalDifficulty: "gentle",
+  ...contentMetadata,
   lens: "then",
   topic: "nostalgia",
   prompt: "공중전화에서 통화를 이어 가려면 무엇을 넣었을까요?",
@@ -49,6 +57,8 @@ const bonusQuestions: BonusQuestion[] = [
     conceptId: "digital-1",
     variant: "base",
     internalDifficulty: "steady",
+    setIndex: 0,
+    ...contentMetadata,
     lens: "now",
     topic: "digital",
     prompt: "디지털 문제 1",

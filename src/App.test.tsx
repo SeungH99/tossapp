@@ -35,6 +35,10 @@ const coreQuestions: CoreQuestion[] = [
       name: "국가기록원 생활사 자료",
       url: "https://www.archives.go.kr/",
     },
+    internalDifficulty: "gentle",
+    contentVersion: "test",
+    reviewStatus: "reviewed",
+    reviewedAt: "2026-08-04",
   },
   {
     kind: "core",
@@ -50,6 +54,10 @@ const coreQuestions: CoreQuestion[] = [
       name: "디지털배움터",
       url: "https://www.xn--2z1bw8k1pjz5ccumkb.kr/",
     },
+    internalDifficulty: "steady",
+    contentVersion: "test",
+    reviewStatus: "reviewed",
+    reviewedAt: "2026-08-04",
   },
   {
     kind: "core",
@@ -65,6 +73,10 @@ const coreQuestions: CoreQuestion[] = [
       name: "한국가스안전공사",
       url: "https://www.kgs.or.kr/",
     },
+    internalDifficulty: "stretch",
+    contentVersion: "test",
+    reviewStatus: "reviewed",
+    reviewedAt: "2026-08-04",
   },
 ];
 
