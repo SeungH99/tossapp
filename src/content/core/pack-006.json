@@ -6,22 +6,22 @@
   "questions": [
     {
       "kind": "core",
-      "id": "2026-12-25-then-31-v3",
+      "id": "2026-12-25-then-1-v3",
       "dateKey": "2026-12-25",
       "lens": "then",
       "topic": "nostalgia",
       "internalDifficulty": "gentle",
-      "prompt": "주산은 자리값에 맞춰 막대의 알을 손가락으로 움직였다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "prompt": "1930년대 응접실 의자 등받이에 작은 천을 걸어 둔 가장 실용적인 까닭은?",
       "choices": [
-        "전자계산기",
-        "현대 타악기 세트",
-        "메신저 알림"
+        "겨울에 머리 닿는 곳을 덥히려고",
+        "머릿기름이 천에 스미는 걸 막으려고",
+        "창가에서 천의 색바램을 막으려고"
       ],
-      "answerIndex": 0,
-      "explanation": "주산이 하던 일은 오늘날 전자계산기이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "answerIndex": 1,
+      "explanation": "앤티매커서는 머리받침에 닿는 기름과 때가 의자 천에 스미지 않도록 덮던 작은 천입니다.",
       "source": {
-        "name": "국립민속박물관 한국민속대백과사전",
-        "url": "https://folkency.nfm.go.kr/"
+        "name": "London Museum",
+        "url": "https://www.londonmuseum.org.uk/collections/v/object-460407/household-textile-antimaccassar/"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -29,22 +29,22 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-25-now-31-v3",
+      "id": "2026-12-25-now-1-v3",
       "dateKey": "2026-12-25",
       "lens": "now",
       "topic": "digital",
       "internalDifficulty": "steady",
-      "prompt": "주소창을 쓸 때는 도메인 철자와 https 연결 여부를 확인한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "prompt": "휴대전화를 NFC 표시에 거의 맞닿게 대야 인식이 잘 되는 까닭은?",
       "choices": [
-        "기기를 단말기에 가까이 댈 때 반응한다",
-        "브라우저 위쪽에 현재 사이트 주소가 표시된다",
-        "택배·과태료를 재촉하며 짧은 주소를 보낸다"
+        "통신 거리가 보통 2m 안팎으로 정해져 있어서",
+        "통신 거리가 보통 2cm 안팎으로 짧아서",
+        "통신 거리가 보통 20m 안팎으로 정해져 있어서"
       ],
       "answerIndex": 1,
-      "explanation": "주소창의 대표적인 화면 단서는 브라우저 위쪽에 현재 사이트 주소가 표시된다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "explanation": "NFC는 13.56MHz를 쓰는 근거리 통신으로, 일반적인 작동 범위가 최대 약 2cm입니다. 그래서 멀리 떨어뜨려 읽기보다 표시된 안테나 자리에 가까이 대는 방식이 알맞습니다.",
       "source": {
-        "name": "한국인터넷진흥원",
-        "url": "https://www.kisa.or.kr/"
+        "name": "NFC Forum",
+        "url": "https://nfc-forum.org/learn/nfc-technology/"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -52,22 +52,22 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-25-life-31-v3",
+      "id": "2026-12-25-life-1-v3",
       "dateKey": "2026-12-25",
       "lens": "life",
       "topic": "nature-general",
       "internalDifficulty": "stretch",
-      "prompt": "모기 발생에는 모기는 적은 양의 고인 물에서도 번식할 수 있다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "prompt": "세탁 표시의 빈 삼각형 안에 사선 두 줄이 그어져 있습니다. 허용되는 처리는?",
       "choices": [
-        "산림 가까이에서 불씨와 담배를 사용하지 않는다",
-        "반사 소재나 밝은 색 소지품을 활용한다",
-        "방충망 틈과 배수구 주변을 점검한다"
+        "염소계 표백만 가능하고 산소계는 피한다",
+        "어떤 표백제도 쓰지 않고 드라이클리닝한다",
+        "산소계 표백만 가능하고 염소계는 피한다"
       ],
       "answerIndex": 2,
-      "explanation": "예방을 위해서는 방충망 틈과 배수구 주변을 점검한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "explanation": "GINETEX 표시에서 삼각형 속 두 사선은 산소계 표백제는 허용하지만 염소계 표백제는 허용하지 않는다는 뜻입니다. 실제 세탁에서는 옷에 붙은 전체 라벨을 함께 확인해야 합니다.",
       "source": {
-        "name": "질병관리청",
-        "url": "https://www.kdca.go.kr/"
+        "name": "GINETEX Switzerland",
+        "url": "https://www.ginetex.ch/en/pflegekennzeichnung/pflegesymbole/"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -75,22 +75,22 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-26-then-32-v3",
+      "id": "2026-12-26-then-2-v3",
       "dateKey": "2026-12-26",
       "lens": "then",
-      "topic": "korean-life",
-      "internalDifficulty": "steady",
-      "prompt": "먹지은 색소 면을 두 종이 사이에 놓고 위에서 눌러 썼다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "1970년대 브레빌 샌드위치 기계가 먹기 편하게 만든 핵심 모양은?",
       "choices": [
-        "플라스틱 채반",
-        "디지털 문서 복사",
-        "디지털 음원 파일"
+        "대각선으로 둘로 자르고 테두리를 봉했다",
+        "빵을 자르지 않고 가장자리만 봉했다",
+        "가운데를 네모 두 칸으로 눌러 나눴다"
       ],
-      "answerIndex": 1,
-      "explanation": "먹지이 하던 일은 오늘날 디지털 문서 복사이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "answerIndex": 0,
+      "explanation": "브레빌 기계는 빵을 대각선으로 자르면서 가장자리를 눌러 속재료를 안에 봉했습니다.",
       "source": {
-        "name": "국립민속박물관 한국민속대백과사전",
-        "url": "https://folkency.nfm.go.kr/"
+        "name": "Powerhouse Collection",
+        "url": "https://collection.powerhouse.com.au/object/381765"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -98,22 +98,22 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-26-now-32-v3",
+      "id": "2026-12-26-now-2-v3",
       "dateKey": "2026-12-26",
       "lens": "now",
-      "topic": "language",
-      "internalDifficulty": "stretch",
-      "prompt": "검색 엔진을 쓸 때는 광고 표시와 공식 사이트 도메인을 구분한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "USB-C 단자 모양이 같다는 사실만으로는 알 수 없는 항목은?",
       "choices": [
-        "지도에서 현재 위치 점이 이동한다",
-        "비밀번호 입력을 서두르게 하는 가짜 화면이 나온다",
-        "검색어 아래 제목·주소·요약 목록이 나온다"
+        "지원하는 데이터 속도와 충전 전력",
+        "플러그를 뒤집어 꽂을 수 있는지",
+        "단자가 USB-C 규격 모양인지"
       ],
-      "answerIndex": 2,
-      "explanation": "검색 엔진의 대표적인 화면 단서는 검색어 아래 제목·주소·요약 목록이 나온다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "answerIndex": 0,
+      "explanation": "USB-C는 커넥터의 형태를 가리킵니다. 같은 모양이어도 USB 2.0, USB4, USB Power Delivery 지원 여부가 다를 수 있어 제품 표기를 따로 봐야 합니다.",
       "source": {
-        "name": "한국인터넷진흥원",
-        "url": "https://www.kisa.or.kr/"
+        "name": "USB Implementers Forum",
+        "url": "https://www.usb.org/sites/default/files/usb_type-c_language_product_and_packaging_guidelines_20230320.pdf"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -121,22 +121,22 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-26-life-32-v3",
+      "id": "2026-12-26-life-2-v3",
       "dateKey": "2026-12-26",
       "lens": "life",
       "topic": "nature-general",
-      "internalDifficulty": "gentle",
-      "prompt": "야외 진드기에는 진드기가 피부에 붙기 전 노출을 줄이는 것이 중요하다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "internalDifficulty": "stretch",
+      "prompt": "달걀 얼룩과 식용유 얼룩에 같은 효소 하나가 똑같이 잘 듣지 않는 까닭은?",
       "choices": [
-        "풀 위에 옷을 벗어 두거나 바로 눕지 않는다",
-        "홍수특보와 지역 대피로를 미리 확인한다",
-        "회전하는 대형차 주변에서는 먼저 보내고 이동한다"
+        "효소마다 작동 온도만 다르고 분해 대상은 같아서",
+        "효소마다 잘 분해하는 분자 종류가 정해져 있어서",
+        "효소가 얼룩의 색에 따라 결합 부위를 바꾸어서"
       ],
-      "answerIndex": 0,
-      "explanation": "예방을 위해서는 풀 위에 옷을 벗어 두거나 바로 눕지 않는다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "answerIndex": 1,
+      "explanation": "효소는 특정한 구조의 분자와 선택적으로 결합해 반응을 돕습니다. 얼룩의 주성분이 다르면 알맞은 효소도 달라집니다.",
       "source": {
-        "name": "질병관리청",
-        "url": "https://www.kdca.go.kr/"
+        "name": "Science Learning Hub",
+        "url": "https://www.sciencelearn.org.nz/resources/1947-enzymes-in-washing-powders"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -144,22 +144,22 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-27-then-33-v3",
+      "id": "2026-12-27-then-3-v3",
       "dateKey": "2026-12-27",
       "lens": "then",
       "topic": "nostalgia",
-      "internalDifficulty": "stretch",
-      "prompt": "석유곤로은 연료통의 석유를 심지에 올려 불꽃을 조절했다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "internalDifficulty": "gentle",
+      "prompt": "아일랜드 농촌에 전기가 들어온 뒤 주방 세탁기 사용이 가능해진 연결 고리는?",
       "choices": [
-        "전기난로",
-        "음원 스트리밍",
-        "가스레인지"
+        "연탄 보일러가 더 큰 솥을 덥혔다",
+        "빗물통이 지붕 아래로 옮겨졌다",
+        "전기 펌프가 집 안에 수돗물을 보냈다"
       ],
       "answerIndex": 2,
-      "explanation": "석유곤로이 하던 일은 오늘날 가스레인지이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "explanation": "농촌 전기화로 전기 펌프가 수돗물을 집 안에 공급하자 주방에서도 세탁기를 쓸 수 있었습니다.",
       "source": {
-        "name": "국립민속박물관 한국민속대백과사전",
-        "url": "https://folkency.nfm.go.kr/"
+        "name": "National Museum of Ireland",
+        "url": "https://www.museum.ie/en-IE/Collections-Research/Folklife-Collections/Kitchen-Power/Kitchen-Power-Online/Kitchen-Power-The-Promise-of-Modernity/The-Promise-of-Modernity-Servis-Supertwin-twin-tub"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -167,22 +167,22 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-27-now-33-v3",
+      "id": "2026-12-27-now-3-v3",
       "dateKey": "2026-12-27",
       "lens": "now",
       "topic": "digital",
-      "internalDifficulty": "gentle",
-      "prompt": "북마크을 쓸 때는 이름과 폴더를 정리해 다시 찾기 쉽게 한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "internalDifficulty": "steady",
+      "prompt": "무선 충전 패드와 휴대전화 안에서 한 쌍으로 전력을 옮기는 부품은?",
       "choices": [
-        "별표를 누르면 저장 목록에 페이지가 추가된다",
-        "다른 기기에서도 같은 계정의 파일이 보인다",
-        "문서가 열리지 않고 금전을 요구하는 안내가 뜬다"
+        "적외선 램프와 빛 센서",
+        "스피커 진동판과 마이크",
+        "송신 코일과 수신 코일"
       ],
-      "answerIndex": 0,
-      "explanation": "북마크의 대표적인 화면 단서는 별표를 누르면 저장 목록에 페이지가 추가된다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "answerIndex": 2,
+      "explanation": "자기 유도식 무선 충전은 패드의 송신 코일과 기기의 수신 코일이 자기적으로 결합해 전력을 전달합니다.",
       "source": {
-        "name": "한국인터넷진흥원",
-        "url": "https://www.kisa.or.kr/"
+        "name": "Wireless Power Consortium",
+        "url": "https://www.wirelesspowerconsortium.com/knowledge-base/magnetic-induction/"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -190,22 +190,22 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-27-life-33-v3",
+      "id": "2026-12-27-life-3-v3",
       "dateKey": "2026-12-27",
       "lens": "life",
       "topic": "nature-general",
-      "internalDifficulty": "steady",
-      "prompt": "강한 자외선에는 자외선은 흐린 날에도 일부 지표에 도달한다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "internalDifficulty": "stretch",
+      "prompt": "세탁한 울 니트를 평평한 수건 위에 뉘어 말리는 주된 목적은?",
       "choices": [
-        "공식 대기질 정보를 확인해 활동 시간을 조정한다",
-        "자외선 지수를 확인해 야외 시간을 조정한다",
-        "모든 좌석에서 짧은 거리라도 착용한다"
+        "젖은 옷의 무게로 형태가 늘어나는 일을 줄이기 위해",
+        "수건이 물기를 빨리 흡수해 건조 시간을 줄이기 위해",
+        "젖은 상태에서 섬유를 고르게 수축시키기 위해"
       ],
-      "answerIndex": 1,
-      "explanation": "예방을 위해서는 자외선 지수를 확인해 야외 시간을 조정한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "answerIndex": 0,
+      "explanation": "특히 니트 울 의류는 젖었을 때 무게가 한곳에 실리면 형태가 변하기 쉽습니다. 회전식 건조 허용 표시가 없다면 원래 모양을 잡아 평평하게 말리는 방법이 권장됩니다.",
       "source": {
-        "name": "질병관리청",
-        "url": "https://www.kdca.go.kr/"
+        "name": "Woolmark",
+        "url": "https://www.woolmark.com/care/how-to-dry-wool/"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -213,22 +213,22 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-28-then-34-v3",
+      "id": "2026-12-28-then-4-v3",
       "dateKey": "2026-12-28",
       "lens": "then",
       "topic": "nostalgia",
       "internalDifficulty": "gentle",
-      "prompt": "얼음냉장고은 윗칸의 큰 얼음이 녹으며 내부 열을 빼앗았다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "prompt": "웨일스의 옛 ‘롱하우스’는 사람과 가축의 공간을 어떻게 이어 놓았을까?",
       "choices": [
-        "전기냉장고",
-        "세탁기",
-        "USB 저장장치"
+        "집 양끝에 두고 가운데 통로를 함께 썼다",
+        "서로 다른 층에 두고 사다리로 오갔다",
+        "마당 양쪽 별채로 떼고 담을 둘렀다"
       ],
       "answerIndex": 0,
-      "explanation": "얼음냉장고이 하던 일은 오늘날 전기냉장고이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "explanation": "롱하우스는 한쪽 끝에 사람, 다른 끝에 가축을 두고 두 공간 사이의 공용 통로를 이용했습니다.",
       "source": {
-        "name": "국립민속박물관 한국민속대백과사전",
-        "url": "https://folkency.nfm.go.kr/"
+        "name": "Museum Wales",
+        "url": "https://museum.wales/collections/online/object/deb8caf7-6468-329f-8e0d-a93060390516/Cilewent-farmhouse/content/"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -236,22 +236,22 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-28-now-34-v3",
+      "id": "2026-12-28-now-4-v3",
       "dateKey": "2026-12-28",
       "lens": "now",
       "topic": "digital",
       "internalDifficulty": "steady",
-      "prompt": "브라우저 탭을 쓸 때는 민감한 작업을 마친 탭은 닫고 로그아웃한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "prompt": "SD 카드의 V30 같은 속도 등급 숫자가 보장하는 기준은?",
       "choices": [
-        "복원할 수 있는 최근 사본 날짜가 표시된다",
-        "상단이나 하단에 페이지별 작은 제목이 나열된다",
-        "설명 없는 권한 요청과 이상한 광고가 늘어난다"
+        "카드가 낼 수 있는 순간 최고 속도",
+        "저장 가능한 동영상의 최대 분량",
+        "조건에 맞춘 최소 연속 쓰기 속도"
       ],
-      "answerIndex": 1,
-      "explanation": "브라우저 탭의 대표적인 화면 단서는 상단이나 하단에 페이지별 작은 제목이 나열된다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "answerIndex": 2,
+      "explanation": "SD 속도 등급은 최고 기록이 아니라 일정 조건에서 보장되는 최소 연속 쓰기 성능을 나타냅니다. 영상 촬영 때 프레임이 빠지는 일을 줄이는 데 중요한 기준입니다.",
       "source": {
-        "name": "한국인터넷진흥원",
-        "url": "https://www.kisa.or.kr/"
+        "name": "SD Association",
+        "url": "https://www.sdcard.org/press/thoughtleadership/the-more-you-know-the-evolution-of-sd-ratings-for-new-applications/"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -259,22 +259,22 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-28-life-34-v3",
+      "id": "2026-12-28-life-4-v3",
       "dateKey": "2026-12-28",
       "lens": "life",
       "topic": "nature-general",
       "internalDifficulty": "stretch",
-      "prompt": "더운 날 수분에는 땀으로 잃은 수분을 제때 보충해야 체온 조절을 돕는다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "prompt": "채소를 소금물에서 발효할 때 신맛이 늘어나는 핵심 과정은?",
       "choices": [
-        "황사 예보가 있으면 실외 물품을 미리 덮는다",
-        "금이 가거나 큰 충격을 받은 헬멧은 상태를 확인한다",
-        "외출할 때 마실 물과 쉬는 시간을 준비한다"
+        "미생물이 채소의 당을 먹고 젖산을 만든다",
+        "효모가 채소 단백질을 분해해 아세트산을 만든다",
+        "소금이 채소 지방을 산화해 구연산을 만든다"
       ],
-      "answerIndex": 2,
-      "explanation": "예방을 위해서는 외출할 때 마실 물과 쉬는 시간을 준비한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "answerIndex": 0,
+      "explanation": "젖산 발효에서는 미생물이 채소에 든 당을 이용해 젖산을 만듭니다. 이 문항은 발효 원리를 설명하며, 실제 제조·보관은 검증된 조리 지침을 따라야 합니다.",
       "source": {
-        "name": "질병관리청",
-        "url": "https://www.kdca.go.kr/"
+        "name": "Exploratorium",
+        "url": "https://annex.exploratorium.edu/cooking/pickles/fermentation.html"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -282,45 +282,22 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-29-then-35-v3",
+      "id": "2026-12-29-then-5-v3",
       "dateKey": "2026-12-29",
       "lens": "then",
-      "topic": "korean-life",
-      "internalDifficulty": "steady",
-      "prompt": "양은도시락은 얇은 알루미늄 용기를 난로 위에 올려 데우기도 했다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "1947년 터퍼가 만든 ‘터퍼 씰’이 주방에서 해결하려던 두 가지 불편은?",
       "choices": [
-        "전동 재봉기",
-        "보온도시락",
-        "디지털카메라"
-      ],
-      "answerIndex": 1,
-      "explanation": "양은도시락이 하던 일은 오늘날 보온도시락이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
-      "source": {
-        "name": "국립민속박물관 한국민속대백과사전",
-        "url": "https://folkency.nfm.go.kr/"
-      },
-      "contentVersion": "2026.08.180d",
-      "reviewStatus": "reviewed",
-      "reviewedAt": "2026-08-04"
-    },
-    {
-      "kind": "core",
-      "id": "2026-12-29-now-35-v3",
-      "dateKey": "2026-12-29",
-      "lens": "now",
-      "topic": "language",
-      "internalDifficulty": "stretch",
-      "prompt": "웹 쿠키을 쓸 때는 공용 기기에서는 사용 뒤 로그아웃하고 데이터를 지운다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
-      "choices": [
-        "로그인 뒤 추가 인증번호나 승인 요청이 뜬다",
-        "의심 번호가 경고 문구와 함께 표시된다",
-        "재방문했을 때 언어나 장바구니 설정이 남아 있다"
+        "그릇이 뜨겁고 손잡이가 미끄러운 점",
+        "뚜껑이 무겁고 색이 쉽게 바래는 점",
+        "내용물이 새고 음식이 상하기 쉬운 점"
       ],
       "answerIndex": 2,
-      "explanation": "웹 쿠키의 대표적인 화면 단서는 재방문했을 때 언어나 장바구니 설정이 남아 있다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "explanation": "터퍼 씰은 공기와 물을 막아 흘림과 식품 변질을 줄이도록 고안됐습니다.",
       "source": {
-        "name": "한국인터넷진흥원",
-        "url": "https://www.kisa.or.kr/"
+        "name": "The Museum of Modern Art",
+        "url": "https://www.moma.org/collection/works/2757"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -328,22 +305,45 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-29-life-35-v3",
+      "id": "2026-12-29-now-5-v3",
+      "dateKey": "2026-12-29",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "흑백 전자종이 화면에서 글자와 바탕색을 바꾸는 방식은?",
+      "choices": [
+        "액정 뒤 조명을 빠르게 깜박인다",
+        "전기장으로 대전된 검정·흰색 입자를 움직인다",
+        "종이 밑의 잉크를 열로 녹여 섞는다"
+      ],
+      "answerIndex": 1,
+      "explanation": "전자잉크의 미세 캡슐에는 서로 다른 전하를 띤 검정·흰색 입자가 들어 있습니다. 전기장을 걸면 원하는 입자가 위로 이동해 보이는 색이 달라집니다.",
+      "source": {
+        "name": "E Ink",
+        "url": "https://www.eink.com/tech/detail/How_it_works"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-29-life-5-v3",
       "dateKey": "2026-12-29",
       "lens": "life",
       "topic": "nature-general",
-      "internalDifficulty": "gentle",
-      "prompt": "수면 환경에는 규칙적인 빛과 시간 단서가 몸의 수면 리듬을 돕는다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "internalDifficulty": "stretch",
+      "prompt": "홀랜다이즈 소스에서 달걀노른자가 물과 버터의 분리를 늦추는 역할은?",
       "choices": [
-        "침실은 휴식 중심으로 정돈하고 늦은 화면 사용을 줄인다",
-        "연소기구 배기통과 환기 상태를 점검한다",
-        "비상통화 버튼 위치를 탑승할 때 확인한다"
+        "버터 방울을 크게 뭉쳐 소스 위로 띄운다",
+        "물을 버터 속에 완전히 녹여 한 물질로 만든다",
+        "두 액체 경계에 붙어 작은 지방 방울을 안정시킨다"
       ],
-      "answerIndex": 0,
-      "explanation": "예방을 위해서는 침실은 휴식 중심으로 정돈하고 늦은 화면 사용을 줄인다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "answerIndex": 2,
+      "explanation": "달걀노른자의 유화 성분은 물과 지방 사이 경계에 자리 잡아 작은 버터 방울이 다시 뭉치는 것을 막습니다.",
       "source": {
-        "name": "질병관리청",
-        "url": "https://www.kdca.go.kr/"
+        "name": "Exploratorium",
+        "url": "https://annex.exploratorium.edu/cooking/eggs/recipe-hollandaise.html"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -351,22 +351,22 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-30-then-36-v3",
+      "id": "2026-12-30-then-6-v3",
       "dateKey": "2026-12-30",
       "lens": "then",
       "topic": "nostalgia",
-      "internalDifficulty": "stretch",
-      "prompt": "함지박은 넓게 파낸 나무 그릇에 재료를 담아 손질했다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "internalDifficulty": "gentle",
+      "prompt": "병 우유가 흔해지기 전, 19세기 말 도시에서 집집마다 다니던 우유 장수는 우유를 어떻게 건넸을까?",
       "choices": [
-        "휴대전화 통화",
-        "디지털 프로젝터",
-        "대형 조리용 볼"
+        "정량 유리병에 담아 손님 집 문 앞에 놓았다",
+        "큰 통에서 떠서 손님이 내민 주전자에 담았다",
+        "우유표만 건네고 손님이 가게에서 찾아가게 했다"
       ],
-      "answerIndex": 2,
-      "explanation": "함지박이 하던 일은 오늘날 대형 조리용 볼이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "answerIndex": 1,
+      "explanation": "판매원은 큰 우유통을 수레로 끌고 다니며 국자로 떠서 손님이 내민 주전자나 용기에 담았습니다.",
       "source": {
-        "name": "국립민속박물관 한국민속대백과사전",
-        "url": "https://folkency.nfm.go.kr/"
+        "name": "The Museum of English Rural Life",
+        "url": "https://www.reading.ac.uk/adlib/Details/collect/3986"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -374,22 +374,22 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-30-now-36-v3",
+      "id": "2026-12-30-now-6-v3",
       "dateKey": "2026-12-30",
       "lens": "now",
       "topic": "digital",
-      "internalDifficulty": "gentle",
-      "prompt": "캐시을 쓸 때는 화면이 오래된 내용이면 새로고침하거나 캐시를 정리한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "internalDifficulty": "steady",
+      "prompt": "1989년 CERN에서 월드 와이드 웹을 처음 구상한 주된 목적은?",
       "choices": [
-        "같은 페이지가 두 번째에는 더 빨리 열린다",
-        "사이트마다 다른 비밀번호를 자동 완성한다",
-        "처음 기능을 쓸 때 접근 허용 창이 뜬다"
+        "여러 연구기관의 과학자들이 정보를 쉽게 공유하게 하려고",
+        "입자가속기 자석의 전력을 자동으로 조절하려고",
+        "연구소 출입증과 실험 예약만 중앙 관리하려고"
       ],
       "answerIndex": 0,
-      "explanation": "캐시의 대표적인 화면 단서는 같은 페이지가 두 번째에는 더 빨리 열린다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "explanation": "팀 버너스리는 대학과 연구소의 과학자들이 정보를 더 쉽게 공유하도록 웹을 구상하고 개발했습니다.",
       "source": {
-        "name": "한국인터넷진흥원",
-        "url": "https://www.kisa.or.kr/"
+        "name": "CERN",
+        "url": "https://home.cern/science/computing/the-birth-of-the-web/"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -397,22 +397,22 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-30-life-36-v3",
+      "id": "2026-12-30-life-6-v3",
       "dateKey": "2026-12-30",
       "lens": "life",
       "topic": "nature-general",
-      "internalDifficulty": "steady",
-      "prompt": "생활화학제품 보관에는 다른 병에 옮기면 내용물을 음료로 잘못 알 수 있다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "internalDifficulty": "stretch",
+      "prompt": "빵 껍질과 구운 고기에서 갈색과 복합적인 향을 만드는 마이야르 반응에 필요한 조합은?",
       "choices": [
-        "물 쓰는 곳과 전기기구의 거리를 충분히 둔다",
-        "사용 전 그림문자와 주의사항을 확인한다",
-        "유모차와 큰 짐은 엘리베이터를 이용한다"
+        "물과 식염의 염소 성분",
+        "환원당과 단백질의 아미노 성분",
+        "지방과 이산화탄소 기포"
       ],
       "answerIndex": 1,
-      "explanation": "예방을 위해서는 사용 전 그림문자와 주의사항을 확인한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "explanation": "마이야르 반응은 당과 아미노산·단백질의 아미노 성분이 반응해 여러 갈색 물질과 향미 화합물을 만드는 과정입니다.",
       "source": {
-        "name": "질병관리청",
-        "url": "https://www.kdca.go.kr/"
+        "name": "Exploratorium",
+        "url": "https://annex.exploratorium.edu/cooking/bread/caramels-story.html"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -420,22 +420,22 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-31-then-37-v3",
+      "id": "2026-12-31-then-7-v3",
       "dateKey": "2026-12-31",
       "lens": "then",
       "topic": "nostalgia",
       "internalDifficulty": "gentle",
-      "prompt": "절구은 움푹한 통에 재료를 넣고 공이로 반복해 찧었다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "prompt": "1962년형 ‘후버 콘스텔레이션’ 청소기는 바퀴 대신 어떤 힘으로 바닥을 따라 움직였을까?",
       "choices": [
-        "전동절구",
-        "터치식 전화 앱",
-        "복합기"
+        "솔이 돌며 만드는 앞쪽의 당기는 힘",
+        "손잡이 안에 감긴 얇은 금속 스프링",
+        "배기 공기로 만든 바닥 위의 공기층"
       ],
-      "answerIndex": 0,
-      "explanation": "절구이 하던 일은 오늘날 전동절구이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "answerIndex": 2,
+      "explanation": "콘스텔레이션은 배출 공기로 아래에 공기층을 만들어 바퀴 없이 미끄러지듯 움직였습니다.",
       "source": {
-        "name": "국립민속박물관 한국민속대백과사전",
-        "url": "https://folkency.nfm.go.kr/"
+        "name": "Museum of the Home",
+        "url": "https://museumofthehome.org.uk/whats-on/home-galleries/housework/"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -443,22 +443,22 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-31-now-37-v3",
+      "id": "2026-12-31-now-7-v3",
       "dateKey": "2026-12-31",
       "lens": "now",
       "topic": "digital",
       "internalDifficulty": "steady",
-      "prompt": "다운로드을 쓸 때는 확장자와 출처를 확인한 뒤 열고 저장 위치를 기억한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "prompt": "상점 계산대에서 바코드로 처음 스캔된 상품으로 기록된 것은?",
       "choices": [
-        "센서가 지문 또는 얼굴 확인을 요청한다",
-        "화살표가 아래를 향한 아이콘과 진행률이 보인다",
-        "설정에 허용 안 함·사용 중·항상 같은 선택지가 보인다"
+        "리글리 껌 한 묶음",
+        "통조림 수프 한 상자",
+        "세탁 세제 한 병"
       ],
-      "answerIndex": 1,
-      "explanation": "다운로드의 대표적인 화면 단서는 화살표가 아래를 향한 아이콘과 진행률이 보인다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "answerIndex": 0,
+      "explanation": "1974년 6월 26일 미국 오하이오주의 한 슈퍼마켓에서 리글리 껌이 세계 최초의 계산대 바코드 스캔 상품이 됐습니다.",
       "source": {
-        "name": "한국인터넷진흥원",
-        "url": "https://www.kisa.or.kr/"
+        "name": "GS1",
+        "url": "https://www.gs1.org/about/50YearsOfGS1"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -466,45 +466,22 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-31-life-37-v3",
+      "id": "2026-12-31-life-7-v3",
       "dateKey": "2026-12-31",
       "lens": "life",
-      "topic": "safety",
+      "topic": "nature-general",
       "internalDifficulty": "stretch",
-      "prompt": "세제 혼합에는 성분 조합에 따라 자극성 기체나 열이 생길 수 있다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "prompt": "전분을 푼 소스를 가열할 때 처음 나타나는 젤라틴화 과정은?",
       "choices": [
-        "밝은 옷을 입고 휴대전화 화면을 보며 걷지 않는다",
-        "냉장 온도와 음식 보관 시간을 확인한다",
-        "한 제품 사용 뒤 충분히 헹구고 환기한다"
-      ],
-      "answerIndex": 2,
-      "explanation": "예방을 위해서는 한 제품 사용 뒤 충분히 헹구고 환기한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
-      "source": {
-        "name": "환경부",
-        "url": "https://www.me.go.kr/"
-      },
-      "contentVersion": "2026.08.180d",
-      "reviewStatus": "reviewed",
-      "reviewedAt": "2026-08-04"
-    },
-    {
-      "kind": "core",
-      "id": "2027-01-01-then-38-v3",
-      "dateKey": "2027-01-01",
-      "lens": "then",
-      "topic": "korean-life",
-      "internalDifficulty": "steady",
-      "prompt": "키은 곡식을 까불어 바람에 가벼운 부분을 날렸다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
-      "choices": [
-        "메신저 알림",
-        "곡물 선별기",
-        "문서작성 프로그램"
+        "전분 알갱이가 물을 내보내며 더 작고 단단해진다",
+        "전분 알갱이가 물을 흡수해 부풀다가 구조가 풀린다",
+        "전분 알갱이가 기름을 흡수한 채 그대로 굳는다"
       ],
       "answerIndex": 1,
-      "explanation": "키이 하던 일은 오늘날 곡물 선별기이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "explanation": "액체 속 전분 알갱이는 가열되면 물을 흡수해 팽창하고, 더 진행되면 구조가 무너지며 전분 분자가 밖으로 풀려납니다.",
       "source": {
-        "name": "국립민속박물관 한국민속대백과사전",
-        "url": "https://folkency.nfm.go.kr/"
+        "name": "Institute of Food Science and Technology",
+        "url": "https://www.ifst.org/lovefoodlovescience/resources/carbohydrates-gelatinisation"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -512,22 +489,45 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-01-now-38-v3",
+      "id": "2027-01-01-then-8-v3",
+      "dateKey": "2027-01-01",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "울퉁불퉁한 흙바닥이 많던 아일랜드 옛집에서 세 다리 의자가 잘 맞았던 까닭은?",
+      "choices": [
+        "다리 사이에 장작을 쌓기 편해서",
+        "고르지 않은 바닥에도 안정적으로 놓여서",
+        "의자를 벽에 걸어 말리기 가벼워서"
+      ],
+      "answerIndex": 1,
+      "explanation": "세 다리 구조는 고르지 않은 바닥에도 안정적으로 놓여 옛집에 잘 맞았습니다.",
+      "source": {
+        "name": "National Museum of Ireland",
+        "url": "https://www.museum.ie/getmedia/ec521e98-aa53-4ae7-af5c-bfa1b59e77cb/tp_guide_web_en.pdf"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2027-01-01-now-8-v3",
       "dateKey": "2027-01-01",
       "lens": "now",
-      "topic": "language",
-      "internalDifficulty": "stretch",
-      "prompt": "업로드을 쓸 때는 개인정보가 든 파일인지와 공개 범위를 확인한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "파일 이름 끝의 ‘mp3’가 줄여 쓴 원래 규격명은?",
       "choices": [
-        "택배·과태료를 재촉하며 짧은 주소를 보낸다",
-        "상단에 앱 이름과 새 내용 배너가 뜬다",
-        "화살표가 위를 향하거나 전송 진행률이 보인다"
+        "Music Packet version 3",
+        "Media Playback 3-channel",
+        "MPEG-1 Audio Layer-3"
       ],
       "answerIndex": 2,
-      "explanation": "업로드의 대표적인 화면 단서는 화살표가 위를 향하거나 전송 진행률이 보인다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "explanation": "mp3는 MPEG-1 표준의 세 번째 오디오 계층인 ‘MPEG-1 Audio Layer-3’를 줄인 이름입니다. 1995년 Fraunhofer IIS의 내부 이메일 투표로 확정됐습니다.",
       "source": {
-        "name": "한국인터넷진흥원",
-        "url": "https://www.kisa.or.kr/"
+        "name": "Fraunhofer IIS",
+        "url": "https://www.iis.fraunhofer.de/en/magazin/panorama/2025/30-years-of-mp3.html"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -535,22 +535,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-01-life-38-v3",
+      "id": "2027-01-01-life-8-v3",
       "dateKey": "2027-01-01",
       "lens": "life",
-      "topic": "safety",
-      "internalDifficulty": "gentle",
-      "prompt": "표백제 사용에는 밀폐 공간에서는 자극성 증기가 쌓일 수 있다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "지역에 따라 수돗물의 ‘경도’가 달라지는 데 가장 크게 관여하는 용존 성분은?",
       "choices": [
-        "장갑을 준비하고 산성 제품과 따로 보관한다",
-        "반사 소재나 밝은 색 소지품을 활용한다",
-        "냉장고를 과도하게 채우지 않아 찬 공기가 돌게 한다"
+        "칼슘과 마그네슘",
+        "나트륨과 칼륨",
+        "철과 망간"
       ],
       "answerIndex": 0,
-      "explanation": "예방을 위해서는 장갑을 준비하고 산성 제품과 따로 보관한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "explanation": "물의 경도는 주로 암석을 지나며 녹아든 칼슘과 마그네슘 양에 좌우됩니다. 지역 지질이 다르면 경도도 달라질 수 있습니다.",
       "source": {
-        "name": "환경부",
-        "url": "https://www.me.go.kr/"
+        "name": "UK Drinking Water Inspectorate",
+        "url": "https://www.dwi.gov.uk/consumers/learn-more-about-your-water/water-hardness-hard-water/"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -558,22 +558,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-02-then-39-v3",
+      "id": "2027-01-02-then-9-v3",
       "dateKey": "2027-01-02",
       "lens": "then",
       "topic": "nostalgia",
-      "internalDifficulty": "stretch",
-      "prompt": "도리깨은 긴 자루 끝의 회전 막대로 곡식단을 내리쳤다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "internalDifficulty": "gentle",
+      "prompt": "조지·빅토리아 시대 대저택의 하인이 직장을 옮길 때 함께 가져가던 것은?",
       "choices": [
-        "디지털 음원 파일",
-        "교통카드",
-        "탈곡기"
+        "옷과 생활용품을 담은 나무 상자",
+        "침구를 말아 묶은 천 꾸러미",
+        "식기와 촛대를 담은 운반 바구니"
       ],
-      "answerIndex": 2,
-      "explanation": "도리깨이 하던 일은 오늘날 탈곡기이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "answerIndex": 0,
+      "explanation": "대부분의 하인은 개인 물건을 넣은 자기 상자를 직장마다 가져갔고 나머지 가구는 고용주가 댔습니다.",
       "source": {
-        "name": "국립민속박물관 한국민속대백과사전",
-        "url": "https://folkency.nfm.go.kr/"
+        "name": "National Trust",
+        "url": "https://www.nationaltrust.org.uk/discover/history/what-were-georgian-and-victorian-servants-rooms-like"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -581,45 +581,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-02-now-39-v3",
+      "id": "2027-01-02-now-9-v3",
       "dateKey": "2027-01-02",
       "lens": "now",
       "topic": "digital",
-      "internalDifficulty": "gentle",
-      "prompt": "첨부파일을 쓸 때는 예상한 발신자와 파일인지 확인한 뒤 연다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
-      "choices": [
-        "클립 모양 옆에 파일명과 용량이 표시된다",
-        "비밀번호 입력을 서두르게 하는 가짜 화면이 나온다",
-        "상태 표시줄에 비행기 모양이 나타난다"
-      ],
-      "answerIndex": 0,
-      "explanation": "첨부파일의 대표적인 화면 단서는 클립 모양 옆에 파일명과 용량이 표시된다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
-      "source": {
-        "name": "한국인터넷진흥원",
-        "url": "https://www.kisa.or.kr/"
-      },
-      "contentVersion": "2026.08.180d",
-      "reviewStatus": "reviewed",
-      "reviewedAt": "2026-08-04"
-    },
-    {
-      "kind": "core",
-      "id": "2027-01-02-life-39-v3",
-      "dateKey": "2027-01-02",
-      "lens": "life",
-      "topic": "safety",
       "internalDifficulty": "steady",
-      "prompt": "깨진 유리 배출에는 수거하는 사람이 날카로운 조각에 베일 수 있다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "prompt": "PDF/A가 장기 보존을 위해 문서를 스스로 완결되게 만드는 방법은?",
       "choices": [
-        "회전하는 대형차 주변에서는 먼저 보내고 이동한다",
-        "유리 용기를 안정된 곳에 두어 떨어짐을 막는다",
-        "사용한 칼과 도마를 세척·건조한 뒤 다시 쓴다"
+        "글꼴을 외부 서버 주소로만 연결해 둔다",
+        "글꼴 등 표시 요소를 파일 안에 포함한다",
+        "문서를 열 때마다 새 편집 앱으로 변환한다"
       ],
       "answerIndex": 1,
-      "explanation": "예방을 위해서는 유리 용기를 안정된 곳에 두어 떨어짐을 막는다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "explanation": "PDF/A는 문서를 올바르게 표시하는 데 필요한 요소를 파일 안에 담도록 합니다. 대표적으로 사용한 글꼴을 포함해 나중에도 같은 모습으로 열 수 있게 합니다.",
       "source": {
-        "name": "환경부",
-        "url": "https://www.me.go.kr/"
+        "name": "PDF Association",
+        "url": "https://pdfa.org/pdf-a-basics/"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -627,22 +604,45 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-03-then-40-v3",
+      "id": "2027-01-02-life-9-v3",
+      "dateKey": "2027-01-02",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "싱크대 아래 U자형 배관에 늘 조금의 물이 남도록 만든 가장 중요한 이유는?",
+      "choices": [
+        "배수관 내부의 압력을 항상 일정하게 유지하기 위해",
+        "고형 찌꺼기를 모두 걸러 배관에 남기기 위해",
+        "하수 가스가 실내로 올라오는 길을 물로 막기 위해"
+      ],
+      "answerIndex": 2,
+      "explanation": "트랩에 남은 물은 배수관 쪽 공기와 실내 사이에 물막이를 만듭니다. 오랫동안 쓰지 않아 마르면 냄새가 들어올 수 있는 까닭도 여기에 있습니다.",
+      "source": {
+        "name": "IAPMO",
+        "url": "https://forms.iapmo.org/email_marketing/codespotlight/2020/Oct8.htm"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2027-01-03-then-10-v3",
       "dateKey": "2027-01-03",
       "lens": "then",
       "topic": "nostalgia",
       "internalDifficulty": "gentle",
-      "prompt": "쟁기은 소가 끄는 날을 흙 속에 넣어 이랑을 만들었다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "prompt": "연탄 크기가 처음 표준화되고 ‘연탄’이라는 이름이 생긴 때는?",
       "choices": [
-        "트랙터",
-        "음원 스트리밍",
-        "온라인 연락처 검색"
+        "1930년대 민간 공장 생산 때",
+        "1961년 정부 표준화 때",
+        "1970년대 구매카드 시행 때"
       ],
-      "answerIndex": 0,
-      "explanation": "쟁기이 하던 일은 오늘날 트랙터이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "answerIndex": 1,
+      "explanation": "정부가 1961년 연탄 크기를 처음 표준화하고 ‘연탄’이라는 명칭을 정했습니다. 이후 규격이 더 바뀌었고 오늘날 표준은 1980년에 정해졌습니다.",
       "source": {
-        "name": "국립민속박물관 한국민속대백과사전",
-        "url": "https://folkency.nfm.go.kr/"
+        "name": "대한민국역사박물관",
+        "url": "https://www.much.go.kr/ENG/contents/E02020000000.do?exhCode=EXH_0000000212&schM=view"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -650,22 +650,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-03-now-40-v3",
+      "id": "2027-01-03-now-10-v3",
       "dateKey": "2027-01-03",
       "lens": "now",
       "topic": "digital",
       "internalDifficulty": "steady",
-      "prompt": "압축파일을 쓸 때는 출처를 확인하고 별도 폴더에 풀어 내용을 살핀다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "prompt": "충전식 리튬이온전지에서 충전과 방전을 오갈 때 전해질 안을 이동하는 것은?",
       "choices": [
-        "문서가 열리지 않고 금전을 요구하는 안내가 뜬다",
-        "파일 이름 끝에 zip 같은 확장자가 붙는다",
-        "초승달 모양과 함께 알림 소리가 줄어든다"
+        "바깥 회로를 흐르는 자유 전자",
+        "전하를 띤 리튬 이온",
+        "전극을 이루는 금속판 전체"
       ],
       "answerIndex": 1,
-      "explanation": "압축파일의 대표적인 화면 단서는 파일 이름 끝에 zip 같은 확장자가 붙는다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "explanation": "리튬이온전지는 두 전극 사이를 리튬 이온이 오가며 에너지를 저장하고 내보냅니다. 전자는 바깥 회로로 흐르고 이온은 전해질을 통과합니다.",
       "source": {
-        "name": "한국인터넷진흥원",
-        "url": "https://www.kisa.or.kr/"
+        "name": "The Nobel Prize",
+        "url": "https://www.nobelprize.org/prizes/chemistry/2019/popular-information/"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -673,91 +673,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-03-life-40-v3",
+      "id": "2027-01-03-life-10-v3",
       "dateKey": "2027-01-03",
       "lens": "life",
-      "topic": "safety",
+      "topic": "nature-general",
       "internalDifficulty": "stretch",
-      "prompt": "재활용 분리배출에는 오염과 다른 재질이 섞이면 선별과 재활용이 어려워진다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "prompt": "세탁기 급수가 멈출 때 벽 안에서 ‘쿵’ 소리가 나는 현상과 가장 가까운 설명은?",
       "choices": [
-        "모든 좌석에서 짧은 거리라도 착용한다",
-        "외출 후와 조리 전 손 씻을 시간을 정한다",
-        "지역별 배출 요일과 품목 표시를 확인한다"
-      ],
-      "answerIndex": 2,
-      "explanation": "예방을 위해서는 지역별 배출 요일과 품목 표시를 확인한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
-      "source": {
-        "name": "환경부",
-        "url": "https://www.me.go.kr/"
-      },
-      "contentVersion": "2026.08.180d",
-      "reviewStatus": "reviewed",
-      "reviewedAt": "2026-08-04"
-    },
-    {
-      "kind": "core",
-      "id": "2027-01-04-then-41-v3",
-      "dateKey": "2027-01-04",
-      "lens": "then",
-      "topic": "korean-life",
-      "internalDifficulty": "steady",
-      "prompt": "우물두레박은 줄에 매단 통을 내려 물을 담고 손으로 끌어올렸다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
-      "choices": [
-        "USB 저장장치",
-        "수도 펌프",
-        "휴대전화 문자"
-      ],
-      "answerIndex": 1,
-      "explanation": "우물두레박이 하던 일은 오늘날 수도 펌프이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
-      "source": {
-        "name": "국립민속박물관 한국민속대백과사전",
-        "url": "https://folkency.nfm.go.kr/"
-      },
-      "contentVersion": "2026.08.180d",
-      "reviewStatus": "reviewed",
-      "reviewedAt": "2026-08-04"
-    },
-    {
-      "kind": "core",
-      "id": "2027-01-04-now-41-v3",
-      "dateKey": "2027-01-04",
-      "lens": "now",
-      "topic": "language",
-      "internalDifficulty": "stretch",
-      "prompt": "PDF 문서을 쓸 때는 서명이나 입력 전 문서 출처와 전체 페이지를 확인한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
-      "choices": [
-        "설명 없는 권한 요청과 이상한 광고가 늘어난다",
-        "설정의 글꼴 크기 막대를 움직이면 문자가 커진다",
-        "파일 이름 끝에 pdf가 표시된다"
-      ],
-      "answerIndex": 2,
-      "explanation": "PDF 문서의 대표적인 화면 단서는 파일 이름 끝에 pdf가 표시된다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
-      "source": {
-        "name": "한국인터넷진흥원",
-        "url": "https://www.kisa.or.kr/"
-      },
-      "contentVersion": "2026.08.180d",
-      "reviewStatus": "reviewed",
-      "reviewedAt": "2026-08-04"
-    },
-    {
-      "kind": "core",
-      "id": "2027-01-04-life-41-v3",
-      "dateKey": "2027-01-04",
-      "lens": "life",
-      "topic": "safety",
-      "internalDifficulty": "gentle",
-      "prompt": "음식물류 폐기물에는 비닐과 금속 같은 이물질은 처리 과정에 방해가 된다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
-      "choices": [
-        "지역 기준에서 음식물로 받지 않는 품목을 확인한다",
-        "금이 가거나 큰 충격을 받은 헬멧은 상태를 확인한다",
-        "사용한 휴지는 버리고 손을 깨끗이 한다"
+        "빠르게 닫힌 밸브가 압력 충격을 만들고 배관을 움직인다",
+        "온수와 냉수의 온도 차로 배관이 천천히 늘어난다",
+        "배수 트랩의 물막이가 흔들리며 공기가 빨려든다"
       ],
       "answerIndex": 0,
-      "explanation": "예방을 위해서는 지역 기준에서 음식물로 받지 않는 품목을 확인한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "explanation": "빠르게 닫히는 밸브는 흐르던 물을 갑자기 멈춰 압력 충격을 만들 수 있습니다. 배관 고정이 느슨하면 관이 벽이나 바닥을 치며 소리가 더 커질 수 있습니다.",
       "source": {
-        "name": "환경부",
-        "url": "https://www.me.go.kr/"
+        "name": "WaterSafe Register",
+        "url": "https://www.watersafe.org.uk/advice/common_plumbing_questions1/noisy_pipes/i_can_hear_a_banging_noise_coming_from_my_pipework_what_could_it_be/"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -765,22 +696,91 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-05-then-42-v3",
+      "id": "2027-01-04-then-11-v3",
+      "dateKey": "2027-01-04",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "19세기부터 쓰인 과자 깡통은 내용물을 다 먹은 뒤 집에서 흔히 어떤 두 번째 일을 맡았을까?",
+      "choices": [
+        "실내 화분을 받치는 물그릇",
+        "장화 흙을 씻는 작은 양동이",
+        "단추와 편지를 모으는 보관함"
+      ],
+      "answerIndex": 2,
+      "explanation": "빈 과자 깡통은 버리지 않고 단추나 편지를 모아 두는 집안 보관함으로 다시 쓰였습니다.",
+      "source": {
+        "name": "Museum of Brands",
+        "url": "https://museumofbrands.com/wp-content/uploads/2024/08/Reuse-Learning-Self-guided-Trail.pdf"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2027-01-04-now-11-v3",
+      "dateKey": "2027-01-04",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "eSIM으로 바뀌어도 기존 SIM과 마찬가지로 계속 맡는 핵심 역할은?",
+      "choices": [
+        "기기를 이동통신망에 안전하게 인증하는 일",
+        "휴대전화 자체의 화면 잠금을 인증하는 일",
+        "와이파이 공유기의 접속 암호를 인증하는 일"
+      ],
+      "answerIndex": 0,
+      "explanation": "eSIM도 SIM의 본래 역할인 이동통신망 인증을 수행합니다. 달라진 점은 가입자 정보를 담은 프로필을 기기에 내장된 보안 요소로 내려받는 방식입니다.",
+      "source": {
+        "name": "GSMA",
+        "url": "https://www.gsma.com/solutions-and-impact/technologies/esim/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2027-01-04-life-11-v3",
+      "dateKey": "2027-01-04",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "집 안 여러 수도꼭지의 압력이 갑자기 낮아졌을 때 공급 문제 말고도 먼저 의심할 수 있는 것은?",
+      "choices": [
+        "한 수도꼭지의 끝 거름망만 막힌 상태",
+        "차단밸브가 덜 열렸거나 집 안에 누수가 있는 상태",
+        "온수기 한 대의 온도 설정만 낮아진 상태"
+      ],
+      "answerIndex": 1,
+      "explanation": "낮은 수압은 공급망뿐 아니라 건물 안 차단밸브가 일부 닫혔거나 누수가 있을 때도 생길 수 있습니다. 원인이 지속되면 공급기관이나 배관 전문가의 확인이 필요합니다.",
+      "source": {
+        "name": "Ofwat",
+        "url": "https://www.ofwat.gov.uk/households/supply-and-standards/water-pressure/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2027-01-05-then-12-v3",
       "dateKey": "2027-01-05",
       "lens": "then",
       "topic": "nostalgia",
-      "internalDifficulty": "stretch",
-      "prompt": "수동펌프은 손잡이를 반복해 움직여 압력 차를 만들었다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "internalDifficulty": "gentle",
+      "prompt": "제1차 세계대전 때 영국 배급표 뒷면에 아직 문도 열지 않은 전쟁박물관이 광고를 실은 목적은?",
       "choices": [
-        "디지털카메라",
-        "계좌이체",
-        "전동 양수기"
+        "가족이 가진 사진과 기록을 보내 달라고",
+        "배급 식품을 박물관에 먼저 기부하라고",
+        "입장권을 배급표와 교환해 주겠다고"
       ],
-      "answerIndex": 2,
-      "explanation": "수동펌프이 하던 일은 오늘날 전동 양수기이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "answerIndex": 0,
+      "explanation": "아직 건립 중이던 전쟁박물관은 배급표 뒷면에서 유가족에게 사진과 생애 기록을 보내 달라고 요청했습니다.",
       "source": {
-        "name": "국립민속박물관 한국민속대백과사전",
-        "url": "https://folkency.nfm.go.kr/"
+        "name": "Imperial War Museums",
+        "url": "https://www.iwm.org.uk/history/iwm/creation/ration-books"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -788,22 +788,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-05-now-42-v3",
+      "id": "2027-01-05-now-12-v3",
       "dateKey": "2027-01-05",
       "lens": "now",
       "topic": "digital",
-      "internalDifficulty": "gentle",
-      "prompt": "화면 캡처을 쓸 때는 개인정보가 보이면 가리거나 잘라낸 뒤 공유한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "internalDifficulty": "steady",
+      "prompt": "Matter 기기를 처음 연결할 때와 평소 통신할 때 쓰이는 기술의 조합은?",
       "choices": [
-        "사진 앱에 화면 모양 그대로 이미지가 생긴다",
-        "의심 번호가 경고 문구와 함께 표시된다",
-        "지정한 동작 뒤 화면 일부가 확대 창에 보인다"
+        "설정은 NFC, 통신은 Zigbee·Z-Wave·USB",
+        "설정은 Wi-Fi, 통신은 Bluetooth Classic만",
+        "설정은 BLE, 통신은 Wi-Fi·Thread·Ethernet"
       ],
-      "answerIndex": 0,
-      "explanation": "화면 캡처의 대표적인 화면 단서는 사진 앱에 화면 모양 그대로 이미지가 생긴다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "answerIndex": 2,
+      "explanation": "Matter는 초기 설정에 Bluetooth Low Energy를 활용하고, 실제 기기 연결에는 Wi-Fi·Thread·Ethernet 같은 기존 네트워크 기술을 사용합니다.",
       "source": {
-        "name": "한국인터넷진흥원",
-        "url": "https://www.kisa.or.kr/"
+        "name": "Connectivity Standards Alliance",
+        "url": "https://csa-iot.org/all-solutions/matter/matter-faq/"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -811,22 +811,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-05-life-42-v3",
+      "id": "2027-01-05-life-12-v3",
       "dateKey": "2027-01-05",
       "lens": "life",
-      "topic": "safety",
-      "internalDifficulty": "steady",
-      "prompt": "폐건전지에는 내부 금속과 전해질을 따로 안전하게 처리할 필요가 있다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "한 음의 주파수를 정확히 두 배로 높였을 때 음악적으로 생기는 변화는?",
       "choices": [
-        "비상통화 버튼 위치를 탑승할 때 확인한다",
-        "아파트·주민센터의 수거함 위치를 알아 둔다",
-        "조리와 청소 뒤 환기 시간을 마련한다"
+        "음높이는 같고 소리의 길이만 절반이 된다",
+        "한 옥타브 낮아지고 음량은 반드시 두 배가 된다",
+        "같은 음이름의 한 옥타브 높은 음이 된다"
       ],
-      "answerIndex": 1,
-      "explanation": "예방을 위해서는 아파트·주민센터의 수거함 위치를 알아 둔다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "answerIndex": 2,
+      "explanation": "주파수 비가 2대 1인 두 음은 한 옥타브 관계입니다. 예를 들어 220Hz를 440Hz로 올리면 한 옥타브 높아집니다.",
       "source": {
-        "name": "환경부",
-        "url": "https://www.me.go.kr/"
+        "name": "UNSW Physclips",
+        "url": "https://www.animations.physics.unsw.edu.au/jw/frequency-pitch-sound.htm"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -834,22 +834,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-06-then-43-v3",
+      "id": "2027-01-06-then-13-v3",
       "dateKey": "2027-01-06",
       "lens": "then",
       "topic": "nostalgia",
       "internalDifficulty": "gentle",
-      "prompt": "나침반은 자유롭게 도는 자침이 남북 방향을 가리키게 했다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "prompt": "1955년 런던 버스의 신형 빠른 발권기가 표 한 장마다 줄였다고 홍보한 시간은?",
       "choices": [
-        "위성항법 지도",
-        "디지털 프로젝터",
-        "가스보일러"
+        "약 1초",
+        "약 10초",
+        "약 1분"
       ],
       "answerIndex": 0,
-      "explanation": "나침반이 하던 일은 오늘날 위성항법 지도이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "explanation": "1955년 보도자료는 신형 발권기가 승객 한 명의 요금을 처리할 때 약 1초를 아낀다고 내세웠습니다.",
       "source": {
-        "name": "국립민속박물관 한국민속대백과사전",
-        "url": "https://folkency.nfm.go.kr/"
+        "name": "London Transport Museum",
+        "url": "https://library.ltmuseum.co.uk/portal/Default/en-GB/RecordView/Index/31949"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -857,22 +857,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-06-now-43-v3",
+      "id": "2027-01-06-now-13-v3",
       "dateKey": "2027-01-06",
       "lens": "now",
       "topic": "digital",
       "internalDifficulty": "steady",
-      "prompt": "화상회의을 쓸 때는 입장 전 마이크·카메라 상태와 표시 이름을 확인한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "prompt": "토카막이 매우 뜨거운 플라스마가 벽에 닿지 않도록 붙잡는 수단은?",
       "choices": [
-        "처음 기능을 쓸 때 접근 허용 창이 뜬다",
-        "참가자 영상 칸과 음소거 버튼이 보인다",
-        "마이크를 누르고 말하면 문장으로 입력된다"
+        "진공 용기 안쪽의 초저온 냉각 벽",
+        "플라스마 둘레에 만든 고압 중성기체 층",
+        "진공 용기 둘레의 강한 자기장"
       ],
-      "answerIndex": 1,
-      "explanation": "화상회의의 대표적인 화면 단서는 참가자 영상 칸과 음소거 버튼이 보인다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "answerIndex": 2,
+      "explanation": "전하를 띤 플라스마 입자는 자기장의 영향을 받습니다. 토카막은 거대한 자기 코일로 플라스마를 도넛 모양 진공 용기 안에 가둡니다.",
       "source": {
-        "name": "한국인터넷진흥원",
-        "url": "https://www.kisa.or.kr/"
+        "name": "ITER Organization",
+        "url": "https://www.iter.org/machine/what-tokamak"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -880,22 +880,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-06-life-43-v3",
+      "id": "2027-01-06-life-13-v3",
       "dateKey": "2027-01-06",
       "lens": "life",
-      "topic": "safety",
+      "topic": "nature-general",
       "internalDifficulty": "stretch",
-      "prompt": "가스밸브에는 의도하지 않은 가스 누출 가능성을 줄인다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "prompt": "소리의 데시벨 수치가 로그 척도라는 설명에 가장 잘 맞는 것은?",
       "choices": [
-        "유모차와 큰 짐은 엘리베이터를 이용한다",
-        "방충망 틈과 배수구 주변을 점검한다",
-        "외출 전 밸브와 가스기기 상태를 확인한다"
+        "1dB씩 늘 때마다 음향 파워가 1와트씩 더해진다",
+        "dB 수치는 물리량의 차이를 그대로 더한 선형 척도다",
+        "같은 dB 차이는 측정한 물리량의 같은 배율 변화를 나타낸다"
       ],
       "answerIndex": 2,
-      "explanation": "예방을 위해서는 외출 전 밸브와 가스기기 상태를 확인한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "explanation": "데시벨은 물리량의 비를 로그로 표현합니다. 그래서 일정한 dB 증가는 기준값에 상관없이 같은 배율의 변화를 뜻합니다.",
       "source": {
-        "name": "환경부",
-        "url": "https://www.me.go.kr/"
+        "name": "UNSW Physclips",
+        "url": "https://www.animations.physics.unsw.edu.au/jw/dB.htm"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -903,22 +903,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-07-then-44-v3",
+      "id": "2027-01-07-then-14-v3",
       "dateKey": "2027-01-07",
       "lens": "then",
-      "topic": "korean-life",
-      "internalDifficulty": "steady",
-      "prompt": "해시계은 태양 위치에 따라 생기는 그림자의 방향을 읽었다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "제2차 세계대전 뒤 생긴 군용품점에서 작업복과 여가복으로 팔린 물건의 원래 출처는?",
       "choices": [
-        "복합기",
-        "디지털시계",
-        "밀폐 저장용기"
+        "폐교에서 남은 학생 제복",
+        "군이 쓰고 남긴 제복과 의류",
+        "호텔이 바꾼 직원 예복"
       ],
       "answerIndex": 1,
-      "explanation": "해시계이 하던 일은 오늘날 디지털시계이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "explanation": "전쟁 뒤 남은 군복과 중고 군용 의류가 작업복·여가복 재고로 흘러들었습니다.",
       "source": {
-        "name": "국립민속박물관 한국민속대백과사전",
-        "url": "https://folkency.nfm.go.kr/"
+        "name": "Black Country Living Museum",
+        "url": "https://bclm.com/plan-your-visit/trails/fun-for-kids/"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -926,45 +926,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-07-now-44-v3",
+      "id": "2027-01-07-now-14-v3",
       "dateKey": "2027-01-07",
       "lens": "now",
-      "topic": "language",
-      "internalDifficulty": "stretch",
-      "prompt": "화면 공유을 쓸 때는 불필요한 창과 알림을 닫고 공유 범위를 선택한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "해외 회의 시간대를 ‘CST’라는 약어만으로 적으면 잘못 해석될 수 있는 까닭은?",
       "choices": [
-        "설정에 허용 안 함·사용 중·항상 같은 선택지가 보인다",
-        "선택한 항목 이름을 기기가 소리 내어 읽는다",
-        "공유 중이라는 테두리나 표시가 나타난다"
-      ],
-      "answerIndex": 2,
-      "explanation": "화면 공유의 대표적인 화면 단서는 공유 중이라는 테두리나 표시가 나타난다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
-      "source": {
-        "name": "한국인터넷진흥원",
-        "url": "https://www.kisa.or.kr/"
-      },
-      "contentVersion": "2026.08.180d",
-      "reviewStatus": "reviewed",
-      "reviewedAt": "2026-08-04"
-    },
-    {
-      "kind": "core",
-      "id": "2027-01-07-life-44-v3",
-      "dateKey": "2027-01-07",
-      "lens": "life",
-      "topic": "safety",
-      "internalDifficulty": "gentle",
-      "prompt": "누전차단기에는 누전이나 과부하 신호일 수 있어 그대로 쓰면 위험하다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
-      "choices": [
-        "시험 버튼과 분전반 위치를 정기적으로 확인한다",
-        "냉장 온도와 음식 보관 시간을 확인한다",
-        "풀 위에 옷을 벗어 두거나 바로 눕지 않는다"
+        "중국과 북미처럼 서로 다른 지역이 같은 약어를 쓰기 때문",
+        "약어가 모든 시차를 한 시간 단위로 반올림하기 때문",
+        "일광절약시간이 시작되면 약어가 자동으로 사라지기 때문"
       ],
       "answerIndex": 0,
-      "explanation": "예방을 위해서는 시험 버튼과 분전반 위치를 정기적으로 확인한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "explanation": "시간대 약어는 세계적으로 하나의 뜻만 갖지 않습니다. CST는 중국과 북미에서 서로 다른 의미로 쓰일 수 있어 국제 일정에는 지역 기반 시간대 이름이나 명확한 시차가 더 안전합니다.",
       "source": {
-        "name": "한국전기안전공사",
-        "url": "https://www.kesco.or.kr/"
+        "name": "IANA Time Zone Database",
+        "url": "https://data.iana.org/time-zones/theory.html#abbreviations"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -972,22 +949,45 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-08-then-45-v3",
+      "id": "2027-01-07-life-14-v3",
+      "dateKey": "2027-01-07",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "무광 벽이 거울처럼 선명한 상을 만들지 않아도 빛을 볼 수 있는 까닭은?",
+      "choices": [
+        "매끈한 면처럼 한 방향으로만 반사돼 눈에 들어온다",
+        "표면의 여러 방향에서 빛이 난반사되어 눈에 들어온다",
+        "표면이 빛의 파장을 바꿔 스스로 같은 색 빛을 낸다"
+      ],
+      "answerIndex": 1,
+      "explanation": "빛의 반사는 거울에만 일어나지 않습니다. 거친 표면에서는 서로 다른 방향을 향한 작은 면들이 빛을 여러 방향으로 반사해 선명한 상 대신 표면이 보입니다.",
+      "source": {
+        "name": "IOPSpark",
+        "url": "https://spark.iop.org/reflection-any-surface"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2027-01-08-then-15-v3",
       "dateKey": "2027-01-08",
       "lens": "then",
       "topic": "nostalgia",
-      "internalDifficulty": "stretch",
-      "prompt": "측우기은 원통에 모인 빗물의 깊이를 자로 측정했다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "internalDifficulty": "gentle",
+      "prompt": "연필심을 만드는 흑연·점토 혼합물에서 단단함을 조절하는 방법은?",
       "choices": [
-        "문서작성 프로그램",
-        "전기다리미",
-        "자동 강수량계"
+        "혼합할 때 넣는 물의 양만 바꾼다",
+        "심을 눌러 뽑는 굵기만 바꾼다",
+        "점토와 흑연의 섞는 비율을 바꾼다"
       ],
       "answerIndex": 2,
-      "explanation": "측우기이 하던 일은 오늘날 자동 강수량계이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "explanation": "1795년 콩테 방식은 점토와 흑연의 비율을 달리해 연필심의 단단함을 조절했습니다.",
       "source": {
-        "name": "국립민속박물관 한국민속대백과사전",
-        "url": "https://folkency.nfm.go.kr/"
+        "name": "British Library",
+        "url": "https://www.bl.uk/stories/blogs/posts/the-history-of-the-pencil"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -995,45 +995,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-08-now-45-v3",
+      "id": "2027-01-08-now-15-v3",
       "dateKey": "2027-01-08",
       "lens": "now",
       "topic": "digital",
-      "internalDifficulty": "gentle",
-      "prompt": "온라인 결제을 쓸 때는 상호·금액·환불 조건을 최종 승인 전에 확인한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
-      "choices": [
-        "승인 화면에 판매자와 결제 금액이 함께 나온다",
-        "상단에 앱 이름과 새 내용 배너가 뜬다",
-        "영상 아래에 말한 내용이 즉시 글자로 나온다"
-      ],
-      "answerIndex": 0,
-      "explanation": "온라인 결제의 대표적인 화면 단서는 승인 화면에 판매자와 결제 금액이 함께 나온다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
-      "source": {
-        "name": "한국인터넷진흥원",
-        "url": "https://www.kisa.or.kr/"
-      },
-      "contentVersion": "2026.08.180d",
-      "reviewStatus": "reviewed",
-      "reviewedAt": "2026-08-04"
-    },
-    {
-      "kind": "core",
-      "id": "2027-01-08-life-45-v3",
-      "dateKey": "2027-01-08",
-      "lens": "life",
-      "topic": "safety",
       "internalDifficulty": "steady",
-      "prompt": "멀티탭에는 허용 전류를 넘으면 전선과 접점이 과열될 수 있다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "prompt": "HDMI ARC를 지원하는 TV와 사운드바를 연결할 때 줄일 수 있는 케이블은?",
       "choices": [
-        "냉장고를 과도하게 채우지 않아 찬 공기가 돌게 한다",
-        "먼지와 변색·헐거움이 있는지 살핀다",
-        "자외선 지수를 확인해 야외 시간을 조정한다"
+        "사운드바에 전원을 공급하는 전원 케이블",
+        "TV 소리를 따로 보내던 오디오 케이블",
+        "TV 방송 신호를 받는 안테나 동축 케이블"
       ],
       "answerIndex": 1,
-      "explanation": "예방을 위해서는 먼지와 변색·헐거움이 있는지 살핀다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "explanation": "Audio Return Channel은 TV에서 나온 소리를 같은 HDMI 연결을 통해 오디오 기기로 되돌려 보냅니다. 별도 음성 케이블을 줄이는 기능입니다.",
       "source": {
-        "name": "한국전기안전공사",
-        "url": "https://www.kesco.or.kr/"
+        "name": "HDMI Licensing Administrator",
+        "url": "https://www.hdmi.org/spec/hdmi1_4b"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1041,22 +1018,45 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-09-then-46-v3",
+      "id": "2027-01-08-life-15-v3",
+      "dateKey": "2027-01-08",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "평면거울에서 얼굴이 거울 뒤에 있는 듯 보이는 거리는 어떻게 정해질까요?",
+      "choices": [
+        "얼굴과 거울 사이 거리만큼 뒤에 있는 듯 보인다",
+        "보는 눈과 거울 사이 거리만큼 뒤에 있는 듯 보인다",
+        "거울 유리 두께만큼 뒤에 있는 듯 보인다"
+      ],
+      "answerIndex": 0,
+      "explanation": "평면거울의 가상상은 물체가 거울 앞에 있는 거리와 같은 거리만큼 거울 뒤에 있는 것처럼 보입니다.",
+      "source": {
+        "name": "IOPSpark",
+        "url": "https://spark.iop.org/seeing-yourself-mirror"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2027-01-09-then-16-v3",
       "dateKey": "2027-01-09",
       "lens": "then",
       "topic": "nostalgia",
       "internalDifficulty": "gentle",
-      "prompt": "봉수대은 낮에는 연기, 밤에는 불빛의 수로 신호를 보냈다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "prompt": "의자 머리받침 덮개 이름 ‘앤티매커서’의 뿌리가 된 당시 유행품은?",
       "choices": [
-        "재난 통신망",
-        "교통카드",
-        "전기분쇄기"
+        "가죽 광택을 내는 매커서 왁스",
+        "머리에 바르는 매커서 오일",
+        "구두끈을 묶는 매커서 매듭"
       ],
-      "answerIndex": 0,
-      "explanation": "봉수대이 하던 일은 오늘날 재난 통신망이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "answerIndex": 1,
+      "explanation": "이 덮개의 이름은 19세기에 유행해 의자에 얼룩을 남기던 매커서 머릿기름에서 나왔습니다.",
       "source": {
-        "name": "국립민속박물관 한국민속대백과사전",
-        "url": "https://folkency.nfm.go.kr/"
+        "name": "London Museum",
+        "url": "https://www.londonmuseum.org.uk/collections/v/object-460407/household-textile-antimaccassar/"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1064,22 +1064,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-09-now-46-v3",
+      "id": "2027-01-09-now-16-v3",
       "dateKey": "2027-01-09",
       "lens": "now",
       "topic": "digital",
       "internalDifficulty": "steady",
-      "prompt": "간편결제을 쓸 때는 기기 잠금과 결제 알림을 켜고 분실 시 즉시 차단한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "prompt": "별도 전원 장치가 없는 일반적인 수동형 NFC 가격표는 읽힐 때 전력을 어디서 얻을까요?",
       "choices": [
-        "상태 표시줄에 비행기 모양이 나타난다",
-        "비밀번호나 생체 확인 뒤 등록 카드가 표시된다",
-        "메뉴 배경이 검거나 짙은 회색으로 바뀐다"
+        "읽는 기기의 자기장에서 유도한 전력",
+        "블루투스 비콘이 광고 신호와 함께 보내는 전력",
+        "와이파이 공유기가 접속 승인 뒤 보내는 전력"
       ],
-      "answerIndex": 1,
-      "explanation": "간편결제의 대표적인 화면 단서는 비밀번호나 생체 확인 뒤 등록 카드가 표시된다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "answerIndex": 0,
+      "explanation": "NFC 연결은 한쪽이 데이터뿐 아니라 전력도 전달할 수 있습니다. 이 특성 덕분에 배터리가 없는 태그도 가까이 온 판독기의 에너지로 응답합니다.",
       "source": {
-        "name": "한국인터넷진흥원",
-        "url": "https://www.kisa.or.kr/"
+        "name": "NFC Forum",
+        "url": "https://nfc-forum.org/learn/nfc-technology/"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1087,45 +1087,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-09-life-46-v3",
+      "id": "2027-01-09-life-16-v3",
       "dateKey": "2027-01-09",
       "lens": "life",
-      "topic": "safety",
+      "topic": "nature-general",
       "internalDifficulty": "stretch",
-      "prompt": "전기장판에는 열선이 꺾이거나 한곳에 열이 모이면 과열될 수 있다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "prompt": "사각형 안에 원이 있고 그 원 안에 점이 찍힌 의류 표시가 알려 주는 내용은?",
       "choices": [
-        "사용한 칼과 도마를 세척·건조한 뒤 다시 쓴다",
-        "외출할 때 마실 물과 쉬는 시간을 준비한다",
-        "사용 전 표면 손상과 조절기 상태를 확인한다"
-      ],
-      "answerIndex": 2,
-      "explanation": "예방을 위해서는 사용 전 표면 손상과 조절기 상태를 확인한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
-      "source": {
-        "name": "한국전기안전공사",
-        "url": "https://www.kesco.or.kr/"
-      },
-      "contentVersion": "2026.08.180d",
-      "reviewStatus": "reviewed",
-      "reviewedAt": "2026-08-04"
-    },
-    {
-      "kind": "core",
-      "id": "2027-01-10-then-47-v3",
-      "dateKey": "2027-01-10",
-      "lens": "then",
-      "topic": "korean-life",
-      "internalDifficulty": "steady",
-      "prompt": "역참은 길목마다 말과 숙소를 마련해 다음 구간을 이었다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
-      "choices": [
-        "온라인 연락처 검색",
-        "고속 교통망",
-        "송풍 기능 화로"
+        "보통 온도로 회전식 건조할 수 있다",
+        "낮은 온도로 회전식 건조할 수 있다",
+        "회전식 건조를 할 수 없다"
       ],
       "answerIndex": 1,
-      "explanation": "역참이 하던 일은 오늘날 고속 교통망이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "explanation": "사각형 속 원은 회전식 건조를 뜻하며, 점 한 개는 낮은 온도의 완화된 건조 과정(배기 온도 최대 60°C)을 나타냅니다. 같은 점 표시라도 다리미 기호 안에 있으면 다림질 온도를 뜻합니다.",
       "source": {
-        "name": "국가기록원",
-        "url": "https://www.archives.go.kr/"
+        "name": "GINETEX Switzerland",
+        "url": "https://www.ginetex.ch/en/pflegekennzeichnung/pflegesymbole/"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1133,22 +1110,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-10-now-47-v3",
+      "id": "2027-01-10-then-17-v3",
       "dateKey": "2027-01-10",
-      "lens": "now",
-      "topic": "language",
-      "internalDifficulty": "stretch",
-      "prompt": "일회용 인증번호을 쓸 때는 누구에게도 전달하지 않고 내가 시작한 요청에만 입력한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "브레빌 샌드위치 기계의 디자인에 영향을 준 앞선 조리도구는 어느 짝인가?",
       "choices": [
-        "초승달 모양과 함께 알림 소리가 줄어든다",
-        "배터리 아이콘 색과 백그라운드 동작이 달라진다",
-        "숫자 코드와 남은 시간이 함께 나타난다"
+        "전기 토스터와 회전식 그릴",
+        "팬케이크 팬과 빵 자르는 틀",
+        "불 위의 재플 아이언과 전기 와플기"
       ],
       "answerIndex": 2,
-      "explanation": "일회용 인증번호의 대표적인 화면 단서는 숫자 코드와 남은 시간이 함께 나타난다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "explanation": "이 제품은 불 위에서 쓰던 재플 아이언과 기존 전기 와플기의 구조에서 아이디어를 얻었습니다.",
       "source": {
-        "name": "한국인터넷진흥원",
-        "url": "https://www.kisa.or.kr/"
+        "name": "Powerhouse Collection",
+        "url": "https://collection.powerhouse.com.au/object/381765"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1156,22 +1133,45 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-10-life-47-v3",
+      "id": "2027-01-10-now-17-v3",
+      "dateKey": "2027-01-10",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "USB 2.0 전용 USB-C 케이블을 USB4 기기에 연결하면 예상되는 결과는?",
+      "choices": [
+        "단자 방향을 바꾸면 USB4 속도가 난다",
+        "연결되더라도 USB 2.0 속도로 동작한다",
+        "충전만 멈추고 데이터는 USB4로 간다"
+      ],
+      "answerIndex": 1,
+      "explanation": "USB-IF는 USB 2.0 전용 USB-C 케이블에 USB 3.2와 USB4 신호선이 구현되지 않는다고 설명합니다. 빠른 기기끼리 연결해도 케이블이 USB 2.0이면 속도는 그 수준으로 제한됩니다.",
+      "source": {
+        "name": "USB Implementers Forum",
+        "url": "https://www.usb.org/sites/default/files/usb_type-c_language_product_and_packaging_guidelines_20230320.pdf"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2027-01-10-life-17-v3",
       "dateKey": "2027-01-10",
       "lens": "life",
-      "topic": "safety",
-      "internalDifficulty": "gentle",
-      "prompt": "보일러 배기통에는 배기가 실내로 새면 일산화탄소가 쌓일 수 있다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "세제 성분표의 프로테아제와 리파아제를 얼룩에 맞게 연결한 조합은?",
       "choices": [
-        "점검과 환기를 하고 임의로 구조를 바꾸지 않는다",
-        "외출 후와 조리 전 손 씻을 시간을 정한다",
-        "침실은 휴식 중심으로 정돈하고 늦은 화면 사용을 줄인다"
+        "프로테아제—단백질, 리파아제—지방",
+        "프로테아제—지방, 리파아제—전분",
+        "프로테아제—전분, 리파아제—단백질"
       ],
       "answerIndex": 0,
-      "explanation": "예방을 위해서는 점검과 환기를 하고 임의로 구조를 바꾸지 않는다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "explanation": "프로테아제는 단백질을, 리파아제는 지방과 기름을 분해합니다. 제품별 사용 온도와 섬유 제한은 세제와 의류 라벨을 우선해야 합니다.",
       "source": {
-        "name": "한국전기안전공사",
-        "url": "https://www.kesco.or.kr/"
+        "name": "Science Learning Hub",
+        "url": "https://www.sciencelearn.org.nz/resources/1947-enzymes-in-washing-powders"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1179,22 +1179,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-11-then-48-v3",
+      "id": "2027-01-11-then-18-v3",
       "dateKey": "2027-01-11",
       "lens": "then",
       "topic": "nostalgia",
-      "internalDifficulty": "stretch",
-      "prompt": "짚신은 새끼 꼰 짚을 발 모양으로 엮어 신었다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "internalDifficulty": "gentle",
+      "prompt": "초기 가정용 세탁기를 주방 한가운데까지 끌어내 쓸 때 필요했던 연결은?",
       "choices": [
-        "휴대전화 문자",
-        "손수레",
-        "생활 신발"
+        "싱크대에 급수·배수 호스를 잇는 일",
+        "창가 햇볕으로 모터를 덥히는 일",
+        "바닥 난방관으로 증기를 빼는 일"
       ],
-      "answerIndex": 2,
-      "explanation": "짚신이 하던 일은 오늘날 생활 신발이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "answerIndex": 0,
+      "explanation": "초기 세탁기는 싱크대에 호스를 대어 물을 넣고 빼야 해서 주방 중앙으로 옮겨 썼습니다.",
       "source": {
-        "name": "국가기록원",
-        "url": "https://www.archives.go.kr/"
+        "name": "National Museum of Ireland",
+        "url": "https://www.museum.ie/en-IE/Collections-Research/Folklife-Collections/Kitchen-Power/Kitchen-Power-Online/Kitchen-Power-The-Promise-of-Modernity/The-Promise-of-Modernity-Servis-Supertwin-twin-tub"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1202,22 +1202,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-11-now-48-v3",
+      "id": "2027-01-11-now-18-v3",
       "dateKey": "2027-01-11",
       "lens": "now",
       "topic": "digital",
-      "internalDifficulty": "gentle",
-      "prompt": "보안키을 쓸 때는 분실에 대비한 예비 인증 수단을 안전하게 보관한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "internalDifficulty": "steady",
+      "prompt": "무선 충전 중 휴대전화 위치를 조금 옮겼더니 충전이 끊겼습니다. 가장 직접적인 이유는?",
       "choices": [
-        "로그인 과정에서 키를 꽂거나 가까이 대라는 안내가 뜬다",
-        "설정의 글꼴 크기 막대를 움직이면 문자가 커진다",
-        "설정에 새 버전 다운로드와 설치 안내가 뜬다"
+        "위치를 옮기면 충전 주파수가 자동으로 달라져서",
+        "옮기는 동안 배터리 온도가 즉시 제한값을 넘어서",
+        "두 코일의 거리와 겹침이 결합 세기를 바꿔서"
       ],
-      "answerIndex": 0,
-      "explanation": "보안키의 대표적인 화면 단서는 로그인 과정에서 키를 꽂거나 가까이 대라는 안내가 뜬다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "answerIndex": 2,
+      "explanation": "코일 사이 결합 계수는 거리와 상대적인 크기·배치에 영향을 받습니다. 패드 중심과 수신 코일이 어긋나면 전달 효율이 떨어질 수 있습니다.",
       "source": {
-        "name": "한국인터넷진흥원",
-        "url": "https://www.kisa.or.kr/"
+        "name": "Wireless Power Consortium",
+        "url": "https://www.wirelesspowerconsortium.com/knowledge-base/magnetic-induction/"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1225,22 +1225,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-11-life-48-v3",
+      "id": "2027-01-11-life-18-v3",
       "dateKey": "2027-01-11",
       "lens": "life",
-      "topic": "safety",
-      "internalDifficulty": "steady",
-      "prompt": "수도 동파에는 배관 속 물이 얼며 부피가 늘어 파손될 수 있다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "젖은 울 스웨터를 옷걸이에 걸었더니 어깨와 길이가 변했습니다. 가장 가까운 원인은?",
       "choices": [
-        "사용한 휴지는 버리고 손을 깨끗이 한다",
-        "기온이 크게 내려가기 전 계량기함을 보온한다",
-        "사용 전 그림문자와 주의사항을 확인한다"
+        "건조 온도가 높아 섬유 비늘이 서로 엉켰기 때문",
+        "남은 세제가 울 섬유를 짧게 수축시켰기 때문",
+        "수분을 머금은 옷의 무게가 좁은 지점에 걸렸기 때문"
       ],
-      "answerIndex": 1,
-      "explanation": "예방을 위해서는 기온이 크게 내려가기 전 계량기함을 보온한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "answerIndex": 2,
+      "explanation": "젖은 니트를 줄이나 옷걸이에 걸면 무게가 아래로 당기고 받침점에 집중돼 늘어질 수 있습니다. 관리 라벨이 허용하는 건조법 안에서 평평하게 받치는 편이 형태 보존에 유리합니다.",
       "source": {
-        "name": "한국전기안전공사",
-        "url": "https://www.kesco.or.kr/"
+        "name": "Woolmark",
+        "url": "https://www.woolmark.com/care/how-to-dry-wool/"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1248,22 +1248,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-12-then-49-v3",
+      "id": "2027-01-12-then-19-v3",
       "dateKey": "2027-01-12",
       "lens": "then",
       "topic": "nostalgia",
       "internalDifficulty": "gentle",
-      "prompt": "갓은 말총과 대나무를 엮은 관모를 끈으로 고정했다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "prompt": "웨일스 농가의 오트밀 상자 뚜껑을 뒤집었을 때 맡았던 뜻밖의 기능은?",
       "choices": [
-        "예식용 모자",
-        "계좌이체",
-        "방적기"
+        "오트밀을 나르는 받침",
+        "빵 반죽을 말리는 선반",
+        "우유 그릇을 덮는 덮개"
       ],
       "answerIndex": 0,
-      "explanation": "갓이 하던 일은 오늘날 예식용 모자이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "explanation": "오트밀 상자 뚜껑은 뒤집으면 곡물을 담아 옮기는 받침으로도 쓸 수 있게 만들어졌습니다.",
       "source": {
-        "name": "국가기록원",
-        "url": "https://www.archives.go.kr/"
+        "name": "Museum Wales",
+        "url": "https://museum.wales/collections/online/object/deb8caf7-6468-329f-8e0d-a93060390516/Cilewent-farmhouse/content/"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1271,22 +1271,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-12-now-49-v3",
+      "id": "2027-01-12-now-19-v3",
       "dateKey": "2027-01-12",
       "lens": "now",
       "topic": "digital",
       "internalDifficulty": "steady",
-      "prompt": "공개 와이파이을 쓸 때는 정확한 망 이름을 확인하고 중요한 거래는 피한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "prompt": "SD 카드에서 A1·A2 표시는 주로 어떤 사용을 염두에 둔 등급일까요?",
       "choices": [
-        "지정한 동작 뒤 화면 일부가 확대 창에 보인다",
-        "비밀번호 없이 연결되거나 이용 동의 화면이 뜬다",
-        "설치 버튼과 개발자·버전 정보가 함께 보인다"
+        "카드로 촬영한 영상의 최대 해상도와 프레임 수",
+        "카드에 저장한 앱의 실행과 데이터 접근",
+        "연속 촬영에서 카메라 버퍼가 비는 최소 시간"
       ],
       "answerIndex": 1,
-      "explanation": "공개 와이파이의 대표적인 화면 단서는 비밀번호 없이 연결되거나 이용 동의 화면이 뜬다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "explanation": "Application Performance Class는 앱을 저장하고 실행할 때 필요한 무작위 읽기·쓰기와 연속 성능의 최저 수준을 함께 다룹니다.",
       "source": {
-        "name": "한국인터넷진흥원",
-        "url": "https://www.kisa.or.kr/"
+        "name": "SD Association",
+        "url": "https://www.sdcard.org/press/thoughtleadership/the-more-you-know-the-evolution-of-sd-ratings-for-new-applications/"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1294,91 +1294,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-12-life-49-v3",
+      "id": "2027-01-12-life-19-v3",
       "dateKey": "2027-01-12",
       "lens": "life",
-      "topic": "safety",
+      "topic": "nature-general",
       "internalDifficulty": "stretch",
-      "prompt": "욕실 미끄럼에는 젖은 타일은 발과 바닥 사이 마찰을 줄인다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "prompt": "빵 반죽에서 효모가 만든 기체가 부피를 키우는 흐름으로 알맞은 것은?",
       "choices": [
-        "조리와 청소 뒤 환기 시간을 마련한다",
-        "한 제품 사용 뒤 충분히 헹구고 환기한다",
-        "손잡이와 충분한 조명을 마련한다"
-      ],
-      "answerIndex": 2,
-      "explanation": "예방을 위해서는 손잡이와 충분한 조명을 마련한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
-      "source": {
-        "name": "국민재난안전포털",
-        "url": "https://www.safekorea.go.kr/"
-      },
-      "contentVersion": "2026.08.180d",
-      "reviewStatus": "reviewed",
-      "reviewedAt": "2026-08-04"
-    },
-    {
-      "kind": "core",
-      "id": "2027-01-13-then-50-v3",
-      "dateKey": "2027-01-13",
-      "lens": "then",
-      "topic": "korean-life",
-      "internalDifficulty": "steady",
-      "prompt": "버선은 천을 발 모양으로 재단해 꿰매 신었다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
-      "choices": [
-        "가스보일러",
-        "양말",
-        "자동직기"
-      ],
-      "answerIndex": 1,
-      "explanation": "버선이 하던 일은 오늘날 양말이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
-      "source": {
-        "name": "국가기록원",
-        "url": "https://www.archives.go.kr/"
-      },
-      "contentVersion": "2026.08.180d",
-      "reviewStatus": "reviewed",
-      "reviewedAt": "2026-08-04"
-    },
-    {
-      "kind": "core",
-      "id": "2027-01-13-now-50-v3",
-      "dateKey": "2027-01-13",
-      "lens": "now",
-      "topic": "language",
-      "internalDifficulty": "stretch",
-      "prompt": "가상사설망을 쓸 때는 신뢰할 수 있는 제공자를 고르고 연결 상태를 확인한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
-      "choices": [
-        "마이크를 누르고 말하면 문장으로 입력된다",
-        "상단 주소창과 앞뒤 이동 버튼이 있다",
-        "상태 표시줄에 VPN 글자나 열쇠 아이콘이 보인다"
-      ],
-      "answerIndex": 2,
-      "explanation": "가상사설망의 대표적인 화면 단서는 상태 표시줄에 VPN 글자나 열쇠 아이콘이 보인다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
-      "source": {
-        "name": "한국인터넷진흥원",
-        "url": "https://www.kisa.or.kr/"
-      },
-      "contentVersion": "2026.08.180d",
-      "reviewStatus": "reviewed",
-      "reviewedAt": "2026-08-04"
-    },
-    {
-      "kind": "core",
-      "id": "2027-01-13-life-50-v3",
-      "dateKey": "2027-01-13",
-      "lens": "life",
-      "topic": "safety",
-      "internalDifficulty": "gentle",
-      "prompt": "사다리 사용에는 기울거나 접히면 중심을 잃고 추락하기 쉽다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
-      "choices": [
-        "사용 전 발판과 잠금장치 손상을 확인한다",
-        "방충망 틈과 배수구 주변을 점검한다",
-        "장갑을 준비하고 산성 제품과 따로 보관한다"
+        "당을 발효해 생긴 이산화탄소가 반죽에 붙잡힌다",
+        "단백질을 분해해 생긴 산소가 반죽에 붙잡힌다",
+        "물을 증발시켜 생긴 수증기가 굽기 전에 갇힌다"
       ],
       "answerIndex": 0,
-      "explanation": "예방을 위해서는 사용 전 발판과 잠금장치 손상을 확인한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "explanation": "효모는 반죽의 당을 발효하며 이산화탄소를 냅니다. 이 기체가 반죽 구조 안에 갇혀 기포를 만들면서 반죽이 부풉니다.",
       "source": {
-        "name": "국민재난안전포털",
-        "url": "https://www.safekorea.go.kr/"
+        "name": "Exploratorium",
+        "url": "https://annex.exploratorium.edu/cooking/pickles/fermentation.html"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1386,22 +1317,91 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-14-then-51-v3",
+      "id": "2027-01-13-then-20-v3",
+      "dateKey": "2027-01-13",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "브라우니 와이즈가 터퍼웨어 판매를 키운 장면에 가까운 것은?",
+      "choices": [
+        "집에 손님을 모아 제품을 보여 주고 판매했다",
+        "백화점 진열대를 빌려 야간 경매를 열었다",
+        "우편 주문표를 신문마다 무료로 끼워 넣었다"
+      ],
+      "answerIndex": 0,
+      "explanation": "브라우니 와이즈는 가정에서 제품을 시연하고 파는 호스티스 파티 방식을 고안해 판매를 넓혔습니다.",
+      "source": {
+        "name": "The Museum of Modern Art",
+        "url": "https://www.moma.org/collection/works/2757"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2027-01-13-now-20-v3",
+      "dateKey": "2027-01-13",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "전자책 단말기가 같은 페이지를 오래 띄울 때 전력을 적게 쓰는 핵심 특성은?",
+      "choices": [
+        "현재 페이지를 메모리에서 매초 다시 그린다",
+        "앞빛을 끄는 동안 픽셀을 계속 새로 고친다",
+        "화면을 바꿀 때만 입자 위치를 다시 구동한다"
+      ],
+      "answerIndex": 2,
+      "explanation": "전자잉크 화면은 쌍안정성이 있어 변하지 않는 픽셀을 계속 새로 구동할 필요가 없습니다. 반면 화면을 자주 갱신하면 전력 효율이 낮아집니다.",
+      "source": {
+        "name": "E Ink",
+        "url": "https://www.eink.com/tech/detail/How_it_works"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2027-01-13-life-20-v3",
+      "dateKey": "2027-01-13",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "홀랜다이즈를 ‘유화액’이라고 부를 때 소스 안의 미세한 구조는?",
+      "choices": [
+        "물방울이 녹인 버터 속에 흩어져 있다",
+        "물과 버터가 분자 수준에서 완전히 녹아 있다",
+        "녹인 버터 방울이 물 성분 속에 흩어져 있다"
+      ],
+      "answerIndex": 2,
+      "explanation": "홀랜다이즈는 버터의 작은 지방 방울이 물을 포함한 연속상에 분산된 유화액입니다. 노른자가 이 분산 상태를 유지하도록 돕습니다.",
+      "source": {
+        "name": "Exploratorium",
+        "url": "https://annex.exploratorium.edu/cooking/eggs/recipe-hollandaise.html"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2027-01-14-then-21-v3",
       "dateKey": "2027-01-14",
       "lens": "then",
       "topic": "nostalgia",
-      "internalDifficulty": "stretch",
-      "prompt": "대님은 발목 부분에 끈을 둘러 매어 바짓단을 고정했다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "internalDifficulty": "gentle",
+      "prompt": "옛 우유 장수의 판매 방식에서 박물관 기록이 특히 짚은 추가 오염원은?",
       "choices": [
-        "밀폐 저장용기",
-        "전기스탠드",
-        "바지 밑단 조임끈"
+        "수레에 매단 가격표 종이",
+        "손님이 내민 주전자나 용기",
+        "판매원이 찬 동전 주머니"
       ],
-      "answerIndex": 2,
-      "explanation": "대님이 하던 일은 오늘날 바지 밑단 조임끈이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "answerIndex": 1,
+      "explanation": "큰 통 자체뿐 아니라 손님이 가져온 주전자나 용기도 우유를 더 오염시킬 수 있었습니다.",
       "source": {
-        "name": "국가기록원",
-        "url": "https://www.archives.go.kr/"
+        "name": "The Museum of English Rural Life",
+        "url": "https://www.reading.ac.uk/adlib/Details/collect/3986"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1409,22 +1409,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-14-now-51-v3",
+      "id": "2027-01-14-now-21-v3",
       "dateKey": "2027-01-14",
       "lens": "now",
       "topic": "digital",
-      "internalDifficulty": "gentle",
-      "prompt": "전자서명을 쓸 때는 서명 대상 문서와 요청 기관을 확인한 뒤 승인한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "internalDifficulty": "steady",
+      "prompt": "웹이 널리 퍼지는 데 힘을 보탠 CERN의 1993년 결정은?",
       "choices": [
-        "인증 뒤 서명 완료와 검증 정보가 표시된다",
-        "선택한 항목 이름을 기기가 소리 내어 읽는다",
-        "브라우저 위쪽에 현재 사이트 주소가 표시된다"
+        "웹 소프트웨어를 퍼블릭 도메인으로 공개한 일",
+        "모든 웹 주소를 유료 회원제로 바꾼 일",
+        "첫 웹사이트를 한 연구소에만 닫은 일"
       ],
       "answerIndex": 0,
-      "explanation": "전자서명의 대표적인 화면 단서는 인증 뒤 서명 완료와 검증 정보가 표시된다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "explanation": "CERN은 1993년 4월 30일 웹 소프트웨어를 퍼블릭 도메인으로 공개했고, 뒤에는 개방형 라이선스 배포도 제공했습니다.",
       "source": {
-        "name": "디지털배움터",
-        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+        "name": "CERN",
+        "url": "https://home.cern/science/computing/the-birth-of-the-web/"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1432,22 +1432,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-14-life-51-v3",
+      "id": "2027-01-14-life-21-v3",
       "dateKey": "2027-01-14",
       "lens": "life",
-      "topic": "safety",
-      "internalDifficulty": "steady",
-      "prompt": "주방 칼에는 떨어지거나 손이 스칠 때 베임 사고가 생길 수 있다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "설탕만 가열해 갈색 시럽이 되는 현상이 마이야르 반응과 다른 점은?",
       "choices": [
-        "풀 위에 옷을 벗어 두거나 바로 눕지 않는다",
-        "무딘 칼도 안전하게 다루고 도마가 움직이지 않게 한다",
-        "유리 용기를 안정된 곳에 두어 떨어짐을 막는다"
+        "단백질의 아미노 성분과 당이 반응하는 마이야르 반응이다",
+        "단백질 없이 당 자체가 분해·재결합하는 캐러멜화다",
+        "물이 빠지며 설탕 결정만 커지는 단순 결정화다"
       ],
       "answerIndex": 1,
-      "explanation": "예방을 위해서는 무딘 칼도 안전하게 다루고 도마가 움직이지 않게 한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "explanation": "캐러멜화는 당을 가열했을 때 당 분자가 분해되고 새로운 화합물이 생기는 과정입니다. 단백질의 아미노 성분이 필요한 마이야르 반응과 구별됩니다.",
       "source": {
-        "name": "국민재난안전포털",
-        "url": "https://www.safekorea.go.kr/"
+        "name": "Exploratorium",
+        "url": "https://annex.exploratorium.edu/cooking/bread/caramels-story.html"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1455,22 +1455,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-15-then-52-v3",
+      "id": "2027-01-15-then-22-v3",
       "dateKey": "2027-01-15",
       "lens": "then",
       "topic": "nostalgia",
       "internalDifficulty": "gentle",
-      "prompt": "고름은 두 가닥 끈을 고리와 매듭으로 묶었다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "prompt": "둥근 공 모양의 1962년형 후버 청소기는 어느 시대 분위기를 담았나?",
       "choices": [
-        "옷 단추",
-        "전기다리미",
-        "전자벽시계"
+        "원자력과 우주개발의 미래감",
+        "중세 성과 기사도의 복고풍",
+        "농가와 수공예의 전원 분위기"
       ],
       "answerIndex": 0,
-      "explanation": "고름이 하던 일은 오늘날 옷 단추이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "explanation": "공 모양 외관은 원자력 시대와 우주개발에서 영감을 받은 미래형 디자인이었습니다.",
       "source": {
-        "name": "국가기록원",
-        "url": "https://www.archives.go.kr/"
+        "name": "Museum of the Home",
+        "url": "https://museumofthehome.org.uk/whats-on/home-galleries/housework/"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1478,22 +1478,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-15-now-52-v3",
+      "id": "2027-01-15-now-22-v3",
       "dateKey": "2027-01-15",
       "lens": "now",
       "topic": "digital",
       "internalDifficulty": "steady",
-      "prompt": "공공 와이파이을 쓸 때는 안내판의 공식 이름과 보안 유형을 대조한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "prompt": "바코드 스캔이 물건의 줄무늬 자체보다 더 많은 정보를 불러올 수 있는 원리는?",
       "choices": [
-        "영상 아래에 말한 내용이 즉시 글자로 나온다",
-        "시설 표지와 같은 이름의 접속망이 목록에 보인다",
-        "검색어 아래 제목·주소·요약 목록이 나온다"
+        "줄 간격에 상품 설명 전체를 그림처럼 담는다",
+        "계산대가 포장 색깔만으로 제조사를 추측한다",
+        "코드 속 식별번호로 관련 상품 정보를 조회한다"
       ],
-      "answerIndex": 1,
-      "explanation": "공공 와이파이의 대표적인 화면 단서는 시설 표지와 같은 이름의 접속망이 목록에 보인다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "answerIndex": 2,
+      "explanation": "GS1 바코드는 물리적인 상품을 고유한 디지털 식별자와 이어 줍니다. 그 식별자를 통해 유통 과정의 관련 정보를 조회하고 공유할 수 있습니다.",
       "source": {
-        "name": "디지털배움터",
-        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+        "name": "GS1",
+        "url": "https://www.gs1.org/about/50YearsOfGS1"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1501,45 +1501,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-15-life-52-v3",
+      "id": "2027-01-15-life-22-v3",
       "dateKey": "2027-01-15",
       "lens": "life",
-      "topic": "safety",
+      "topic": "nature-general",
       "internalDifficulty": "stretch",
-      "prompt": "뜨거운 물에는 증기와 물은 짧은 접촉에도 화상을 일으킬 수 있다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "prompt": "전분 소스가 가열 뒤 걸쭉해지고 식으면서 더 굳을 수 있는 까닭은?",
       "choices": [
-        "자외선 지수를 확인해 야외 시간을 조정한다",
-        "지역별 배출 요일과 품목 표시를 확인한다",
-        "주전자 전선과 냄비 손잡이를 통로에서 치운다"
-      ],
-      "answerIndex": 2,
-      "explanation": "예방을 위해서는 주전자 전선과 냄비 손잡이를 통로에서 치운다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
-      "source": {
-        "name": "국민재난안전포털",
-        "url": "https://www.safekorea.go.kr/"
-      },
-      "contentVersion": "2026.08.180d",
-      "reviewStatus": "reviewed",
-      "reviewedAt": "2026-08-04"
-    },
-    {
-      "kind": "core",
-      "id": "2027-01-16-then-53-v3",
-      "dateKey": "2027-01-16",
-      "lens": "then",
-      "topic": "korean-life",
-      "internalDifficulty": "steady",
-      "prompt": "윷은 네 가락을 던져 엎어지고 젖혀진 모양을 셌다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
-      "choices": [
-        "전기분쇄기",
-        "보드게임 주사위",
-        "스마트폰 알람"
+        "가열 중 전분 알갱이가 물을 내보내 소스가 진해지고, 식으면서 알갱이끼리 서로 달라붙기 때문",
+        "가열 중 풀려난 전분이 액체를 걸쭉하게 하고, 식으면서 더 굳어 젤이 되기 때문",
+        "가열 중 전분이 당으로 분해되어 소스가 진해지고, 식으면서 당 결정이 단단해지기 때문"
       ],
       "answerIndex": 1,
-      "explanation": "윷이 하던 일은 오늘날 보드게임 주사위이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "explanation": "전분 알갱이는 가열되면 물을 흡수해 팽창·파열하고 전분을 액체에 내놓습니다. 이 전분이 소스를 걸쭉하게 하며, 식으면 더 굳어 젤이 됩니다.",
       "source": {
-        "name": "국가기록원",
-        "url": "https://www.archives.go.kr/"
+        "name": "Institute of Food Science and Technology",
+        "url": "https://www.ifst.org/lovefoodlovescience/resources/carbohydrates-gelatinisation"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1547,22 +1524,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-16-now-53-v3",
+      "id": "2027-01-16-then-23-v3",
       "dateKey": "2027-01-16",
-      "lens": "now",
-      "topic": "language",
-      "internalDifficulty": "stretch",
-      "prompt": "키오스크을 쓸 때는 처음 화면의 언어·접근성·도움 요청 버튼을 활용한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "좁은 옛집에서 ‘세틀베드’ 한 점이 낮과 밤에 맡은 역할 조합은?",
       "choices": [
-        "메뉴 배경이 검거나 짙은 회색으로 바뀐다",
-        "별표를 누르면 저장 목록에 페이지가 추가된다",
-        "큰 터치 화면에 단계별 선택 항목이 나온다"
+        "낮에는 식탁, 밤에는 작업대",
+        "낮에는 찬장, 밤에는 옷걸이",
+        "낮에는 의자, 밤에는 침대"
       ],
       "answerIndex": 2,
-      "explanation": "키오스크의 대표적인 화면 단서는 큰 터치 화면에 단계별 선택 항목이 나온다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "explanation": "세틀베드는 낮에는 긴 의자로 쓰다가 밤에는 펼쳐 잠자리로 바꾸는 절약형 가구였습니다.",
       "source": {
-        "name": "디지털배움터",
-        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+        "name": "National Museum of Ireland",
+        "url": "https://www.museum.ie/getmedia/ec521e98-aa53-4ae7-af5c-bfa1b59e77cb/tp_guide_web_en.pdf"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1570,22 +1547,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-16-life-53-v3",
+      "id": "2027-01-16-now-23-v3",
       "dateKey": "2027-01-16",
-      "lens": "life",
-      "topic": "safety",
-      "internalDifficulty": "gentle",
-      "prompt": "반려동물과 외출에는 갑작스러운 움직임이 충돌이나 물림 사고로 이어질 수 있다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "MP3가 소리 파일 크기를 크게 줄이는 데 활용한 사람 청각의 성질은?",
       "choices": [
-        "인식표와 배변용품을 준비한다",
-        "외출할 때 마실 물과 쉬는 시간을 준비한다",
-        "지역 기준에서 음식물로 받지 않는 품목을 확인한다"
+        "잘 들리지 않는 성분은 덜 정밀하게 저장해도 된다",
+        "양쪽 채널에 공통인 소리는 모두 지워도 된다",
+        "주파수가 낮은 소리는 높은 소리보다 덜 중요하다"
       ],
       "answerIndex": 0,
-      "explanation": "예방을 위해서는 인식표와 배변용품을 준비한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "explanation": "MP3는 사람이 듣지 못하거나 잘 알아채지 못하는 소리 성분을 낮은 정밀도로 저장합니다. 이 방법으로 원본보다 파일을 크게 줄이면서 체감 음질을 유지합니다.",
       "source": {
-        "name": "국민재난안전포털",
-        "url": "https://www.safekorea.go.kr/"
+        "name": "Fraunhofer IIS",
+        "url": "https://www.iis.fraunhofer.de/en/magazin/panorama/2025/30-years-of-mp3.html"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1593,22 +1570,45 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-17-then-54-v3",
+      "id": "2027-01-16-life-23-v3",
+      "dateKey": "2027-01-16",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "경수가 많은 지역에서 주전자 안쪽 스케일과 비누 거품 감소가 함께 나타나는 이유는?",
+      "choices": [
+        "용존 탄산가스가 빠지며 비누를 산성으로 만들어서",
+        "물속 나트륨·칼륨이 비누를 더 단단하게 만들어서",
+        "녹아 있던 칼슘·마그네슘이 가열과 비누에 반응해서"
+      ],
+      "answerIndex": 2,
+      "explanation": "경수의 칼슘·마그네슘은 가열 기구에 침전물을 만들 수 있고 비누 성분과 반응해 거품이 잘 나지 않게 합니다.",
+      "source": {
+        "name": "UK Drinking Water Inspectorate",
+        "url": "https://www.dwi.gov.uk/consumers/learn-more-about-your-water/water-hardness-hard-water/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2027-01-17-then-24-v3",
       "dateKey": "2027-01-17",
       "lens": "then",
       "topic": "nostalgia",
-      "internalDifficulty": "stretch",
-      "prompt": "제기은 엽전 모양의 추와 술을 발 안쪽으로 계속 찼다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "internalDifficulty": "gentle",
+      "prompt": "19세기 하인방에서 나무 침대보다 철제 침대를 고른 위생상의 판단은?",
       "choices": [
-        "송풍 기능 화로",
-        "블루투스 스피커",
-        "셔틀콕 놀이"
+        "나무 틈에는 빈대가 숨기 쉬웠다",
+        "철제 틀은 방의 온기를 오래 저장했다",
+        "나무틀은 침구를 자주 찢어 놓았다"
       ],
-      "answerIndex": 2,
-      "explanation": "제기이 하던 일은 오늘날 셔틀콕 놀이이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "answerIndex": 0,
+      "explanation": "철제 틀은 빈대가 숨을 틈이 많은 나무틀보다 위생적이라고 여겨졌습니다.",
       "source": {
-        "name": "국가기록원",
-        "url": "https://www.archives.go.kr/"
+        "name": "National Trust",
+        "url": "https://www.nationaltrust.org.uk/discover/history/what-were-georgian-and-victorian-servants-rooms-like"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1616,45 +1616,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-17-now-54-v3",
+      "id": "2027-01-17-now-24-v3",
       "dateKey": "2027-01-17",
       "lens": "now",
       "topic": "digital",
-      "internalDifficulty": "gentle",
-      "prompt": "무인민원발급기을 쓸 때는 발급 문서와 수수료를 확인하고 출력물을 챙긴다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
-      "choices": [
-        "본인 확인 뒤 문서 종류와 매수를 고르는 화면이 나온다",
-        "배터리 아이콘 색과 백그라운드 동작이 달라진다",
-        "상단이나 하단에 페이지별 작은 제목이 나열된다"
-      ],
-      "answerIndex": 0,
-      "explanation": "무인민원발급기의 대표적인 화면 단서는 본인 확인 뒤 문서 종류와 매수를 고르는 화면이 나온다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
-      "source": {
-        "name": "디지털배움터",
-        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
-      },
-      "contentVersion": "2026.08.180d",
-      "reviewStatus": "reviewed",
-      "reviewedAt": "2026-08-04"
-    },
-    {
-      "kind": "core",
-      "id": "2027-01-17-life-54-v3",
-      "dateKey": "2027-01-17",
-      "lens": "life",
-      "topic": "safety",
       "internalDifficulty": "steady",
-      "prompt": "산행에는 산에서는 기온과 날씨가 빠르게 바뀌고 길을 잃기 쉽다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "prompt": "LED가 전류를 빛으로 바꾸는 발광 원리는?",
       "choices": [
-        "침실은 휴식 중심으로 정돈하고 늦은 화면 사용을 줄인다",
-        "물·보온옷·충전된 연락수단을 준비한다",
-        "아파트·주민센터의 수거함 위치를 알아 둔다"
+        "금속 필라멘트를 달궈 빛과 열을 함께 낸다",
+        "반도체에서 전자와 정공이 결합해 빛을 낸다",
+        "기체를 방전시킨 뒤 형광체를 빛나게 한다"
       ],
       "answerIndex": 1,
-      "explanation": "예방을 위해서는 물·보온옷·충전된 연락수단을 준비한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "explanation": "LED에서는 전자와 정공의 결합으로 광자가 직접 생깁니다. 필라멘트를 고온으로 달구는 백열 방식보다 열 손실을 줄일 수 있습니다.",
       "source": {
-        "name": "국민재난안전포털",
-        "url": "https://www.safekorea.go.kr/"
+        "name": "The Nobel Prize",
+        "url": "https://www.nobelprize.org/prizes/physics/2014/popular-information/"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1662,22 +1639,45 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-18-then-55-v3",
+      "id": "2027-01-17-life-24-v3",
+      "dateKey": "2027-01-17",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "배수 트랩의 물막이가 냄새 차단과 함께 돕는 부수 기능은?",
+      "choices": [
+        "배수관을 따라 해충이 들어오는 것을 막는다",
+        "배수관 안의 압력을 일정하게 유지한다",
+        "고형 찌꺼기를 모두 걸러 하수관을 보호한다"
+      ],
+      "answerIndex": 0,
+      "explanation": "트랩의 물은 하수 가스뿐 아니라 배수관을 통한 일부 해충의 이동도 가로막는 물리적 장벽이 됩니다.",
+      "source": {
+        "name": "IAPMO",
+        "url": "https://forms.iapmo.org/email_marketing/codespotlight/2020/Oct8.htm"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2027-01-18-then-25-v3",
       "dateKey": "2027-01-18",
       "lens": "then",
       "topic": "nostalgia",
       "internalDifficulty": "gentle",
-      "prompt": "팽이은 채로 몸통을 쳐 회전 속도를 유지했다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "prompt": "한국전쟁 뒤 구멍 뚫린 원통형 연탄은 어떤 사람들의 이동을 따라 전국으로 퍼졌나?",
       "choices": [
-        "회전 장난감",
-        "손수레",
-        "컬러 스마트TV"
+        "항구마다 완제품을 내린 외국 선원",
+        "부산에서 고향으로 돌아간 피란민",
+        "과학 준비물을 나눠 준 학교 교사"
       ],
-      "answerIndex": 0,
-      "explanation": "팽이이 하던 일은 오늘날 회전 장난감이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "answerIndex": 1,
+      "explanation": "부산에서 연탄을 본 피란민들이 전쟁 뒤 고향으로 돌아가 직접 만들면서 원통형 연탄이 널리 퍼졌습니다.",
       "source": {
-        "name": "국가기록원",
-        "url": "https://www.archives.go.kr/"
+        "name": "대한민국역사박물관",
+        "url": "https://www.much.go.kr/ENG/contents/E02020000000.do?exhCode=EXH_0000000212&schM=view"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1685,22 +1685,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-18-now-55-v3",
+      "id": "2027-01-18-now-25-v3",
       "dateKey": "2027-01-18",
       "lens": "now",
       "topic": "digital",
       "internalDifficulty": "steady",
-      "prompt": "모바일 신분증을 쓸 때는 공식 앱과 요청 정보 범위를 확인한 뒤 제시한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "prompt": "초기 충전식 리튬전지에서 순수 리튬 금속 대신 탄소 재료를 택해 개선한 점은?",
       "choices": [
-        "설정에 새 버전 다운로드와 설치 안내가 뜬다",
-        "검증용 QR이나 필요한 정보만 선택하는 화면이 나온다",
-        "재방문했을 때 언어나 장바구니 설정이 남아 있다"
+        "두 전극을 모두 순수 리튬판으로 바꿔 용량만 높였다",
+        "전해질의 리튬 이온 이동을 막아 반응을 멈췄다",
+        "금속 돌기가 자라 단락되는 위험을 낮췄다"
       ],
-      "answerIndex": 1,
-      "explanation": "모바일 신분증의 대표적인 화면 단서는 검증용 QR이나 필요한 정보만 선택하는 화면이 나온다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "answerIndex": 2,
+      "explanation": "순수 리튬 금속은 반복 충전 중 뾰족한 결정이 자라 단락을 일으킬 수 있었습니다. 탄소계 재료에 리튬 이온을 받아들이는 방식이 더 안전한 전지로 이어졌습니다.",
       "source": {
-        "name": "디지털배움터",
-        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+        "name": "The Nobel Prize",
+        "url": "https://www.nobelprize.org/prizes/chemistry/2019/popular-information/"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1708,22 +1708,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-18-life-55-v3",
+      "id": "2027-01-18-life-25-v3",
       "dateKey": "2027-01-18",
       "lens": "life",
-      "topic": "safety",
+      "topic": "nature-general",
       "internalDifficulty": "stretch",
-      "prompt": "해변 이안류에는 해안에서 먼 쪽으로 흐르는 좁고 빠른 물길이라 정면 저항이 어렵다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "prompt": "수도관의 충격 소리를 키울 수 있는 조건을 함께 고른 것은?",
       "choices": [
-        "사용 전 그림문자와 주의사항을 확인한다",
-        "외출 전 밸브와 가스기기 상태를 확인한다",
-        "안전요원이 있는 구역과 경고 깃발을 확인한다"
+        "낮은 수압과 단단한 배관 고정",
+        "낮은 수압과 천천히 닫히는 밸브",
+        "높은 수압과 느슨한 배관 고정"
       ],
       "answerIndex": 2,
-      "explanation": "예방을 위해서는 안전요원이 있는 구역과 경고 깃발을 확인한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "explanation": "과도한 수압은 밸브가 닫힐 때의 충격을 키울 수 있고, 단단히 고정되지 않은 관은 움직이며 주변 구조물을 칠 수 있습니다. 반복되는 소리는 원인을 단정하기보다 전문가 점검이 안전합니다.",
       "source": {
-        "name": "국민재난안전포털",
-        "url": "https://www.safekorea.go.kr/"
+        "name": "WaterSafe Register",
+        "url": "https://www.watersafe.org.uk/advice/common_plumbing_questions1/noisy_pipes/i_can_hear_a_banging_noise_coming_from_my_pipework_what_could_it_be/"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1731,22 +1731,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-19-then-56-v3",
+      "id": "2027-01-19-then-26-v3",
       "dateKey": "2027-01-19",
       "lens": "then",
-      "topic": "korean-life",
-      "internalDifficulty": "steady",
-      "prompt": "투호은 정해진 거리에서 번갈아 던져 들어간 수를 셌다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "1960년대 초까지 요구르트 유리병은 다 먹은 뒤 어디로 갔나?",
       "choices": [
-        "방적기",
-        "표적 던지기 게임",
-        "인터넷 라디오"
+        "종이 뚜껑만 할인표로 바꿨다",
+        "가게로 돌려보내 다시 사용했다",
+        "도자기 통 새것과 맞바꿨다"
       ],
       "answerIndex": 1,
-      "explanation": "투호이 하던 일은 오늘날 표적 던지기 게임이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "explanation": "1960년대 초까지 요구르트는 돌려받아 재사용하는 유리병에 담겨 팔리는 일이 일반적이었습니다.",
       "source": {
-        "name": "국가기록원",
-        "url": "https://www.archives.go.kr/"
+        "name": "Museum of Brands",
+        "url": "https://museumofbrands.com/wp-content/uploads/2024/08/Reuse-Learning-Self-guided-Trail.pdf"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1754,22 +1754,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-19-now-56-v3",
+      "id": "2027-01-19-now-26-v3",
       "dateKey": "2027-01-19",
       "lens": "now",
-      "topic": "language",
-      "internalDifficulty": "stretch",
-      "prompt": "교통카드을 쓸 때는 승하차 때 단말기 반응과 잔액 표시를 확인한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "eSIM을 단순한 일반 파일과 구별하는 설명으로 알맞은 것은?",
       "choices": [
-        "설치 버튼과 개발자·버전 정보가 함께 보인다",
-        "같은 페이지가 두 번째에는 더 빨리 열린다",
-        "단말기에서 승인음과 잔액이 나타난다"
+        "가입자 프로필을 운영체제의 일반 폴더에 복사한다",
+        "가입자 프로필을 내장 보안 요소에 안전하게 내려받는다",
+        "접속할 때마다 일회용 프로필을 메모리에만 올린다"
       ],
-      "answerIndex": 2,
-      "explanation": "교통카드의 대표적인 화면 단서는 단말기에서 승인음과 잔액이 나타난다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "answerIndex": 1,
+      "explanation": "GSMA 방식은 SIM 프로필을 기기 안의 Secure Element에 안전하게 다운로드합니다. 탈착식 SIM과 동등한 보호 수준을 목표로 설계됐습니다.",
       "source": {
-        "name": "디지털배움터",
-        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+        "name": "GSMA",
+        "url": "https://www.gsma.com/solutions-and-impact/technologies/esim/"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1777,22 +1777,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-19-life-56-v3",
+      "id": "2027-01-19-life-26-v3",
       "dateKey": "2027-01-19",
       "lens": "life",
-      "topic": "safety",
-      "internalDifficulty": "gentle",
-      "prompt": "빙판길에는 큰 걸음이나 급한 방향 전환은 균형을 잃기 쉽다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "수압 저하가 집 안 문제인지 외부 공급 문제인지 가르는 데 유용한 확인은?",
       "choices": [
-        "미끄럼이 적은 신발과 손이 자유로운 가방을 쓴다",
-        "한 제품 사용 뒤 충분히 헹구고 환기한다",
-        "시험 버튼과 분전반 위치를 정기적으로 확인한다"
+        "공급 지점과 집 안의 압력·유량을 나눠 측정한다",
+        "수도꼭지마다 거름망의 막힘 정도만 비교한다",
+        "온수기 전후의 물 온도만 나눠 측정한다"
       ],
       "answerIndex": 0,
-      "explanation": "예방을 위해서는 미끄럼이 적은 신발과 손이 자유로운 가방을 쓴다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "explanation": "압력과 유량을 적절한 지점에서 측정하면 문제 위치를 좁힐 수 있습니다. 공급기관은 공급측 상태를, 배관 전문가는 건물 내부 상태를 살펴볼 수 있습니다.",
       "source": {
-        "name": "국민재난안전포털",
-        "url": "https://www.safekorea.go.kr/"
+        "name": "Ofwat",
+        "url": "https://www.ofwat.gov.uk/households/supply-and-standards/water-pressure/"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1800,22 +1800,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-20-then-57-v3",
+      "id": "2027-01-20-then-27-v3",
       "dateKey": "2027-01-20",
       "lens": "then",
       "topic": "nostalgia",
-      "internalDifficulty": "stretch",
-      "prompt": "연은 줄의 장력과 꼬리로 자세를 조절했다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "internalDifficulty": "gentle",
+      "prompt": "영국 전쟁박물관이 1920년 문을 열 때 이미 15만 점 넘게 모을 수 있었던 힘은?",
       "choices": [
-        "자동직기",
-        "영상 파일 저장",
-        "스포츠 카이트"
+        "정부가 모든 신문 원본을 넘겨줘서",
+        "군수회사가 새 제품을 한 점씩 보내서",
+        "가족들이 편지·사진·기록을 보내와서"
       ],
       "answerIndex": 2,
-      "explanation": "연이 하던 일은 오늘날 스포츠 카이트이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "explanation": "유가족들이 편지·회고록·사진을 보내오면서 1920년 개관 때 이미 소장품이 15만 점을 넘었습니다.",
       "source": {
-        "name": "국가기록원",
-        "url": "https://www.archives.go.kr/"
+        "name": "Imperial War Museums",
+        "url": "https://www.iwm.org.uk/history/iwm/creation/ration-books"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1823,45 +1823,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-20-now-57-v3",
+      "id": "2027-01-20-now-27-v3",
       "dateKey": "2027-01-20",
       "lens": "now",
       "topic": "digital",
-      "internalDifficulty": "gentle",
-      "prompt": "내비게이션을 쓸 때는 출발 전에 목적지를 정하고 운전 중 조작을 피한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
-      "choices": [
-        "지도 위 경로와 다음 회전 거리가 표시된다",
-        "상단 주소창과 앞뒤 이동 버튼이 있다",
-        "화살표가 아래를 향한 아이콘과 진행률이 보인다"
-      ],
-      "answerIndex": 0,
-      "explanation": "내비게이션의 대표적인 화면 단서는 지도 위 경로와 다음 회전 거리가 표시된다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
-      "source": {
-        "name": "디지털배움터",
-        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
-      },
-      "contentVersion": "2026.08.180d",
-      "reviewStatus": "reviewed",
-      "reviewedAt": "2026-08-04"
-    },
-    {
-      "kind": "core",
-      "id": "2027-01-20-life-57-v3",
-      "dateKey": "2027-01-20",
-      "lens": "life",
-      "topic": "safety",
       "internalDifficulty": "steady",
-      "prompt": "대중교통 비상에는 임의 행동은 다른 승객의 대피와 운행 안전을 방해할 수 있다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "prompt": "Matter 지원 전구를 샀다면 기존 스마트홈 플랫폼은 어떻게 될까요?",
       "choices": [
-        "장갑을 준비하고 산성 제품과 따로 보관한다",
-        "탑승할 때 비상문과 신고 장치 위치를 살핀다",
-        "먼지와 변색·헐거움이 있는지 살핀다"
+        "기존 플랫폼 계정을 하나의 Matter 계정으로 합친다",
+        "Matter가 플랫폼을 없애지 않고 함께 작동한다",
+        "기존 플랫폼 앱을 지우고 Matter 전용 앱만 쓴다"
       ],
       "answerIndex": 1,
-      "explanation": "예방을 위해서는 탑승할 때 비상문과 신고 장치 위치를 살핀다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "explanation": "Matter는 여러 생태계의 기기가 함께 통신하도록 돕는 개방형 프로토콜이며, 현재 쓰는 스마트홈 플랫폼 자체를 대체하지는 않습니다.",
       "source": {
-        "name": "국민재난안전포털",
-        "url": "https://www.safekorea.go.kr/"
+        "name": "Connectivity Standards Alliance",
+        "url": "https://csa-iot.org/all-solutions/matter/matter-faq/"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1869,22 +1846,45 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-21-then-58-v3",
+      "id": "2027-01-20-life-27-v3",
+      "dateKey": "2027-01-20",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "같은 주파수의 음도 악기와 음량에 따라 높이가 아주 조금 다르게 느껴질 수 있는 까닭은?",
+      "choices": [
+        "주파수가 같으면 지각한 음높이도 언제나 완전히 같기 때문",
+        "지각한 음높이는 배음 구성과 음량의 영향도 받기 때문",
+        "음량이 커지면 기본 주파수도 같은 비율로 높아지기 때문"
+      ],
+      "answerIndex": 1,
+      "explanation": "음높이는 주로 기본 주파수로 정해지지만 사람이 느끼는 높이에는 음량과 배음 구성도 약하게 영향을 줍니다. 주파수와 지각을 완전히 같은 개념으로 보면 놓치는 부분입니다.",
+      "source": {
+        "name": "UNSW Physclips",
+        "url": "https://www.animations.physics.unsw.edu.au/jw/frequency-pitch-sound.htm"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2027-01-21-then-28-v3",
       "dateKey": "2027-01-21",
       "lens": "then",
       "topic": "nostalgia",
       "internalDifficulty": "gentle",
-      "prompt": "장기은 초와 한이 정해진 행마법에 따라 말을 옮겼다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "prompt": "1950년대 런던 버스에서 발권기를 몸에 지니고 승객에게 표를 내준 사람은?",
       "choices": [
-        "온라인 장기 게임",
-        "전기스탠드",
-        "디지털 영화관 영사기"
+        "정류장 안내원",
+        "버스 차장",
+        "차고 정비사"
       ],
-      "answerIndex": 0,
-      "explanation": "장기이 하던 일은 오늘날 온라인 장기 게임이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "answerIndex": 1,
+      "explanation": "박물관 기록에는 차장이 세트라이트 발권기로 승객에게 표를 끊어 주는 사진이 남아 있습니다.",
       "source": {
-        "name": "국가기록원",
-        "url": "https://www.archives.go.kr/"
+        "name": "London Transport Museum",
+        "url": "https://library.ltmuseum.co.uk/portal/Default/en-GB/RecordView/Index/31949"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1892,114 +1892,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-21-now-58-v3",
+      "id": "2027-01-21-now-28-v3",
       "dateKey": "2027-01-21",
       "lens": "now",
       "topic": "digital",
       "internalDifficulty": "steady",
-      "prompt": "실시간 번역을 쓸 때는 중요한 이름·날짜·숫자는 원문과 다시 대조한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "prompt": "ITER 토카막이 완성된 뒤 직접 하도록 설계되지 않은 일은?",
       "choices": [
-        "브라우저 위쪽에 현재 사이트 주소가 표시된다",
-        "원문 아래에 선택한 언어의 번역문이 나타난다",
-        "화살표가 위를 향하거나 전송 진행률이 보인다"
-      ],
-      "answerIndex": 1,
-      "explanation": "실시간 번역의 대표적인 화면 단서는 원문 아래에 선택한 언어의 번역문이 나타난다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
-      "source": {
-        "name": "디지털배움터",
-        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
-      },
-      "contentVersion": "2026.08.180d",
-      "reviewStatus": "reviewed",
-      "reviewedAt": "2026-08-04"
-    },
-    {
-      "kind": "core",
-      "id": "2027-01-21-life-58-v3",
-      "dateKey": "2027-01-21",
-      "lens": "life",
-      "topic": "safety",
-      "internalDifficulty": "stretch",
-      "prompt": "범죄 긴급 신고에는 정확한 위치 정보가 경찰의 빠른 출동을 돕는다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
-      "choices": [
-        "유리 용기를 안정된 곳에 두어 떨어짐을 막는다",
-        "사용 전 표면 손상과 조절기 상태를 확인한다",
-        "낯선 장소에서는 도로명이나 주변 표지를 확인한다"
-      ],
-      "answerIndex": 2,
-      "explanation": "예방을 위해서는 낯선 장소에서는 도로명이나 주변 표지를 확인한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
-      "source": {
-        "name": "소방청",
-        "url": "https://www.nfa.go.kr/"
-      },
-      "contentVersion": "2026.08.180d",
-      "reviewStatus": "reviewed",
-      "reviewedAt": "2026-08-04"
-    },
-    {
-      "kind": "core",
-      "id": "2027-01-22-then-59-v3",
-      "dateKey": "2027-01-22",
-      "lens": "then",
-      "topic": "korean-life",
-      "internalDifficulty": "steady",
-      "prompt": "꽹과리은 작은 놋쇠 징을 채로 쳐 장단을 이끌었다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
-      "choices": [
-        "전자벽시계",
-        "공연용 금속 타악기",
-        "전자계산기"
-      ],
-      "answerIndex": 1,
-      "explanation": "꽹과리이 하던 일은 오늘날 공연용 금속 타악기이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
-      "source": {
-        "name": "국가기록원",
-        "url": "https://www.archives.go.kr/"
-      },
-      "contentVersion": "2026.08.180d",
-      "reviewStatus": "reviewed",
-      "reviewedAt": "2026-08-04"
-    },
-    {
-      "kind": "core",
-      "id": "2027-01-22-now-59-v3",
-      "dateKey": "2027-01-22",
-      "lens": "now",
-      "topic": "language",
-      "internalDifficulty": "stretch",
-      "prompt": "스트리밍을 쓸 때는 데이터 사용량과 자동 재생 설정을 확인한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
-      "choices": [
-        "검색어 아래 제목·주소·요약 목록이 나온다",
-        "클립 모양 옆에 파일명과 용량이 표시된다",
-        "재생 막대가 움직이며 남은 내용은 계속 전송된다"
-      ],
-      "answerIndex": 2,
-      "explanation": "스트리밍의 대표적인 화면 단서는 재생 막대가 움직이며 남은 내용은 계속 전송된다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
-      "source": {
-        "name": "디지털배움터",
-        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
-      },
-      "contentVersion": "2026.08.180d",
-      "reviewStatus": "reviewed",
-      "reviewedAt": "2026-08-04"
-    },
-    {
-      "kind": "core",
-      "id": "2027-01-22-life-59-v3",
-      "dateKey": "2027-01-22",
-      "lens": "life",
-      "topic": "safety",
-      "internalDifficulty": "gentle",
-      "prompt": "화재·구조·구급 신고에는 신고 내용이 출동 장비와 대응 준비를 정하는 데 쓰인다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
-      "choices": [
-        "집 주소와 공동현관 진입 방법을 가족과 공유한다",
-        "지역별 배출 요일과 품목 표시를 확인한다",
-        "점검과 환기를 하고 임의로 구조를 바꾸지 않는다"
+        "터빈을 돌려 상업용 전기를 생산하는 일",
+        "장시간 플라스마 운전을 시험하는 일",
+        "핵융합 장치 기술을 큰 규모로 검증하는 일"
       ],
       "answerIndex": 0,
-      "explanation": "예방을 위해서는 집 주소와 공동현관 진입 방법을 가족과 공유한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "explanation": "ITER는 핵융합 플라스마와 관련 기술을 실험하는 시설이며 전기 생산 설비는 갖추지 않습니다. 미래 발전소라면 열로 증기를 만들고 터빈을 돌리게 됩니다.",
       "source": {
-        "name": "소방청",
-        "url": "https://www.nfa.go.kr/"
+        "name": "ITER Organization",
+        "url": "https://www.iter.org/machine/what-tokamak"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -2007,22 +1915,114 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-23-then-60-v3",
+      "id": "2027-01-21-life-28-v3",
+      "dateKey": "2027-01-21",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "다른 조건이 같을 때 음향 파워가 10배가 되면 레벨은 대략 얼마나 늘어날까요?",
+      "choices": [
+        "3dB",
+        "100dB",
+        "10dB"
+      ],
+      "answerIndex": 2,
+      "explanation": "음향 파워의 비가 10배이면 레벨 차이는 10dB입니다. 파워가 두 배일 때는 약 3dB지만, 이것을 사람이 두 배 크게 느낀다는 뜻으로 해석하면 안 됩니다.",
+      "source": {
+        "name": "UNSW Physclips",
+        "url": "https://www.animations.physics.unsw.edu.au/jw/dB.htm"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2027-01-22-then-29-v3",
+      "dateKey": "2027-01-22",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "1900년 무렵 수제 사탕을 녹인 뒤 기름 바른 주철판을 따뜻하게 유지한 까닭은?",
+      "choices": [
+        "구리팬의 색이 묻지 않게 하려고",
+        "완성된 사탕을 곧바로 식히려고",
+        "설탕 반죽을 부드럽게 다루려고"
+      ],
+      "answerIndex": 2,
+      "explanation": "녹인 설탕을 따뜻한 기름칠 주철판에 부으면 굳기 전에 반죽하고 기계로 모양 내기 쉬웠습니다.",
+      "source": {
+        "name": "Black Country Living Museum",
+        "url": "https://bclm.com/plan-your-visit/trails/fun-for-kids/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2027-01-22-now-29-v3",
+      "dateKey": "2027-01-22",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "중력파가 LIGO 간섭계를 지나갈 때 관측 신호가 생기는 원리는?",
+      "choices": [
+        "두 팔의 길이 변화가 합쳐진 빛무늬를 바꾼다",
+        "레이저의 파장만 영구적으로 길어져 색이 바뀐다",
+        "두 팔의 거울이 같은 방향으로 같은 거리만큼 움직인다"
+      ],
+      "answerIndex": 0,
+      "explanation": "중력파는 서로 직각인 간섭계 팔의 길이를 극미하게 다르게 변화시킵니다. 돌아온 두 빛의 위상 관계가 달라지면서 검출기의 밝기 패턴도 바뀝니다.",
+      "source": {
+        "name": "LIGO Laboratory",
+        "url": "https://www.ligo.caltech.edu/LA/page/what-is-interferometer"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2027-01-22-life-29-v3",
+      "dateKey": "2027-01-22",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "거친 종이에서 난반사되는 각각의 작은 빛줄기에도 적용되는 법칙은?",
+      "choices": [
+        "반사각은 언제나 입사각의 정확히 두 배다",
+        "각 미세 면에서 입사각과 반사각이 같다",
+        "거친 표면에서는 반사각이 존재하지 않는다"
+      ],
+      "answerIndex": 1,
+      "explanation": "난반사는 반사 법칙이 사라지는 현상이 아닙니다. 표면의 미세한 면 방향이 제각각이라 전체 빛이 흩어져 보일 뿐, 각 지점에서는 입사각과 반사각이 같습니다.",
+      "source": {
+        "name": "IOPSpark",
+        "url": "https://spark.iop.org/reflection-any-surface"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2027-01-23-then-30-v3",
       "dateKey": "2027-01-23",
       "lens": "then",
       "topic": "nostalgia",
-      "internalDifficulty": "stretch",
-      "prompt": "장구은 채와 손을 사용해 양쪽 가죽면의 다른 음색을 냈다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "internalDifficulty": "gentle",
+      "prompt": "나무 몸통 연필이 나오기 전, 잘 부서지는 흑연 막대를 붙잡아 쓰던 간단한 고정법은?",
       "choices": [
-        "스마트폰 알람",
-        "디지털 문서 복사",
-        "현대 타악기 세트"
+        "납작한 가죽 주머니에 넣었다",
+        "얇은 유리관 안에 밀어 넣었다",
+        "실을 여러 겹 둘러 감았다"
       ],
       "answerIndex": 2,
-      "explanation": "장구이 하던 일은 오늘날 현대 타악기 세트이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "explanation": "부드럽고 잘 부서지는 흑연은 처음엔 실로 감싸 쥐었고, 나중에 속을 판 나무에 넣었습니다.",
       "source": {
-        "name": "국가기록원",
-        "url": "https://www.archives.go.kr/"
+        "name": "British Library",
+        "url": "https://www.bl.uk/stories/blogs/posts/the-history-of-the-pencil"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -2030,22 +2030,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-23-now-60-v3",
+      "id": "2027-01-23-now-30-v3",
       "dateKey": "2027-01-23",
       "lens": "now",
       "topic": "digital",
-      "internalDifficulty": "gentle",
-      "prompt": "팟캐스트을 쓸 때는 자동 다운로드와 재생 속도를 내 상황에 맞게 정한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "internalDifficulty": "steady",
+      "prompt": "HDMI Ethernet Channel을 쓰려면 케이블 표기에서 확인할 항목은?",
       "choices": [
-        "프로그램 아래에 날짜별 에피소드 목록이 보인다",
-        "별표를 누르면 저장 목록에 페이지가 추가된다",
-        "파일 이름 끝에 zip 같은 확장자가 붙는다"
+        "Premium High Speed HDMI Cable 인증인지",
+        "Ultra High Speed HDMI Cable 인증인지",
+        "High Speed HDMI Cable with Ethernet인지"
       ],
-      "answerIndex": 0,
-      "explanation": "팟캐스트의 대표적인 화면 단서는 프로그램 아래에 날짜별 에피소드 목록이 보인다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "answerIndex": 2,
+      "explanation": "HDMI 1.4의 Ethernet Channel은 해당 기능을 지원하는 High Speed HDMI Cable with Ethernet이 필요합니다. 단자 모양이 같아도 케이블 기능 표기는 다를 수 있습니다.",
       "source": {
-        "name": "디지털배움터",
-        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+        "name": "HDMI Licensing Administrator",
+        "url": "https://www.hdmi.org/spec/hdmi1_4b"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -2053,22 +2053,22 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-23-life-60-v3",
+      "id": "2027-01-23-life-30-v3",
       "dateKey": "2027-01-23",
       "lens": "life",
-      "topic": "safety",
-      "internalDifficulty": "steady",
-      "prompt": "긴급재난문자에는 재난 종류와 위치에 따라 필요한 대응이 서로 다르다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "거울이 ‘좌우를 바꾼다’는 익숙한 표현을 더 정확히 풀어 쓴 것은?",
       "choices": [
-        "지역 기준에서 음식물로 받지 않는 품목을 확인한다",
-        "휴대전화의 재난 알림 설정과 소리를 미리 확인한다",
-        "기온이 크게 내려가기 전 계량기함을 보온한다"
+        "앞뒤 방향이 뒤집힌 상을 우리가 좌우 반전처럼 해석한다",
+        "거울은 좌우 광선만 골라 서로 자리를 바꾼다",
+        "거울은 위아래와 좌우를 모두 실제로 회전시킨다"
       ],
-      "answerIndex": 1,
-      "explanation": "예방을 위해서는 휴대전화의 재난 알림 설정과 소리를 미리 확인한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "answerIndex": 0,
+      "explanation": "평면거울은 물체와 거울에 수직인 앞뒤 방향을 뒤집은 가상상을 만듭니다. 우리가 자신과 마주 선 사람을 비교하는 방식 때문에 좌우가 바뀐 것처럼 느끼는 것입니다.",
       "source": {
-        "name": "소방청",
-        "url": "https://www.nfa.go.kr/"
+        "name": "IOPSpark",
+        "url": "https://spark.iop.org/why-lateral-inversion"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",

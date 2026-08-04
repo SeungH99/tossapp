@@ -61,7 +61,7 @@
     {
       "id": "core-006",
       "path": "src/content/core/pack-006.json",
-      "sha256": "995f7a0a62e2e02d2bf5a46e9ae8fccaa9a8e683ade58024c5f5415548b2dd3e",
+      "sha256": "cb2816715fd121a1fcb8402650eb5e55b7cdac466ce89b525b531ae2266cb6d4",
       "questionCount": 90,
       "setCount": 30,
       "reviewStatus": "reviewed",
