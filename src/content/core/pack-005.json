@@ -1,0 +1,2078 @@
+{
+  "id": "core-005",
+  "kind": "core",
+  "contentVersion": "2026.08.180d",
+  "reviewStatus": "reviewed",
+  "questions": [
+    {
+      "kind": "core",
+      "id": "2026-11-25-then-1-v3",
+      "dateKey": "2026-11-25",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "공중전화은 수화기를 들고 동전이나 전화카드를 넣어 번호를 눌렀다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "choices": [
+        "휴대전화 통화",
+        "디지털 영화관 영사기",
+        "전동절구"
+      ],
+      "answerIndex": 0,
+      "explanation": "공중전화이 하던 일은 오늘날 휴대전화 통화이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "source": {
+        "name": "대한민국역사박물관",
+        "url": "https://www.much.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-11-25-now-1-v3",
+      "dateKey": "2026-11-25",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "QR 코드을 쓸 때는 출처를 확인한 뒤 기본 카메라로 읽는다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "choices": [
+        "상단이나 하단에 페이지별 작은 제목이 나열된다",
+        "화면에 연결 주소 미리보기가 나타난다",
+        "파일 이름 끝에 pdf가 표시된다"
+      ],
+      "answerIndex": 1,
+      "explanation": "QR 코드의 대표적인 화면 단서는 화면에 연결 주소 미리보기가 나타난다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-11-25-life-1-v3",
+      "dateKey": "2026-11-25",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "가스 냄새에는 작은 불꽃도 새어 나온 가스에 불을 붙일 수 있다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "choices": [
+        "아파트·주민센터의 수거함 위치를 알아 둔다",
+        "손잡이와 충분한 조명을 마련한다",
+        "가스기기 연결부와 밸브를 정기적으로 점검한다"
+      ],
+      "answerIndex": 2,
+      "explanation": "예방을 위해서는 가스기기 연결부와 밸브를 정기적으로 점검한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-11-26-then-2-v3",
+      "dateKey": "2026-11-26",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "다이얼전화은 손가락으로 숫자 원판을 끝까지 돌린 뒤 놓았다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "choices": [
+        "전자계산기",
+        "터치식 전화 앱",
+        "곡물 선별기"
+      ],
+      "answerIndex": 1,
+      "explanation": "다이얼전화이 하던 일은 오늘날 터치식 전화 앱이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "source": {
+        "name": "대한민국역사박물관",
+        "url": "https://www.much.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-11-26-now-2-v3",
+      "dateKey": "2026-11-26",
+      "lens": "now",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "와이파이을 쓸 때는 공용망에서는 민감한 입력을 피하고 망 이름을 확인한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "choices": [
+        "재방문했을 때 언어나 장바구니 설정이 남아 있다",
+        "사진 앱에 화면 모양 그대로 이미지가 생긴다",
+        "부채꼴 전파 아이콘으로 연결 상태를 본다"
+      ],
+      "answerIndex": 2,
+      "explanation": "와이파이의 대표적인 화면 단서는 부채꼴 전파 아이콘으로 연결 상태를 본다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-11-26-life-2-v3",
+      "dateKey": "2026-11-26",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "gentle",
+      "prompt": "전기기기 화재에는 물을 바로 뿌리면 감전과 전기 확산 위험이 있다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "choices": [
+        "전선 손상과 과부하 여부를 평소 살핀다",
+        "외출 전 밸브와 가스기기 상태를 확인한다",
+        "사용 전 발판과 잠금장치 손상을 확인한다"
+      ],
+      "answerIndex": 0,
+      "explanation": "예방을 위해서는 전선 손상과 과부하 여부를 평소 살핀다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-11-27-then-3-v3",
+      "dateKey": "2026-11-27",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "무선호출기은 호출을 받으면 표시창의 숫자를 보고 전화로 답했다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "choices": [
+        "디지털 문서 복사",
+        "탈곡기",
+        "메신저 알림"
+      ],
+      "answerIndex": 2,
+      "explanation": "무선호출기이 하던 일은 오늘날 메신저 알림이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "source": {
+        "name": "대한민국역사박물관",
+        "url": "https://www.much.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-11-27-now-3-v3",
+      "dateKey": "2026-11-27",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "gentle",
+      "prompt": "블루투스을 쓸 때는 모르는 연결 요청은 거절하고 사용 뒤 검색 허용을 끈다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "choices": [
+        "연결 기기 목록에 이어폰 이름이 표시된다",
+        "같은 페이지가 두 번째에는 더 빨리 열린다",
+        "참가자 영상 칸과 음소거 버튼이 보인다"
+      ],
+      "answerIndex": 0,
+      "explanation": "블루투스의 대표적인 화면 단서는 연결 기기 목록에 이어폰 이름이 표시된다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-11-27-life-3-v3",
+      "dateKey": "2026-11-27",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "steady",
+      "prompt": "식용유 화재에는 물을 부으면 뜨거운 기름이 튀며 불길이 번질 수 있다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "choices": [
+        "시험 버튼과 분전반 위치를 정기적으로 확인한다",
+        "조리 중 자리를 비우지 않고 주변 가연물을 치운다",
+        "무딘 칼도 안전하게 다루고 도마가 움직이지 않게 한다"
+      ],
+      "answerIndex": 1,
+      "explanation": "예방을 위해서는 조리 중 자리를 비우지 않고 주변 가연물을 치운다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-11-28-then-4-v3",
+      "dateKey": "2026-11-28",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "카세트테이프은 재생기 헤드가 테이프를 지나가도록 감아 재생했다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "choices": [
+        "디지털 음원 파일",
+        "가스레인지",
+        "트랙터"
+      ],
+      "answerIndex": 0,
+      "explanation": "카세트테이프이 하던 일은 오늘날 디지털 음원 파일이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "source": {
+        "name": "대한민국역사박물관",
+        "url": "https://www.much.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-11-28-now-4-v3",
+      "dateKey": "2026-11-28",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "NFC을 쓸 때는 결제나 태그를 쓸 때만 기능을 켜고 화면 안내를 확인한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "choices": [
+        "화살표가 아래를 향한 아이콘과 진행률이 보인다",
+        "기기를 단말기에 가까이 댈 때 반응한다",
+        "공유 중이라는 테두리나 표시가 나타난다"
+      ],
+      "answerIndex": 1,
+      "explanation": "NFC의 대표적인 화면 단서는 기기를 단말기에 가까이 댈 때 반응한다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-11-28-life-4-v3",
+      "dateKey": "2026-11-28",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "소화기 사용에는 약제가 불의 밑부분을 덮어 연소를 억제해야 한다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "choices": [
+        "먼지와 변색·헐거움이 있는지 살핀다",
+        "주전자 전선과 냄비 손잡이를 통로에서 치운다",
+        "압력 표시와 사용기한·설치 위치를 미리 확인한다"
+      ],
+      "answerIndex": 2,
+      "explanation": "예방을 위해서는 압력 표시와 사용기한·설치 위치를 미리 확인한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-11-29-then-5-v3",
+      "dateKey": "2026-11-29",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "레코드판은 회전하는 판의 홈을 바늘이 따라가며 진동을 읽었다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "choices": [
+        "전기냉장고",
+        "음원 스트리밍",
+        "수도 펌프"
+      ],
+      "answerIndex": 1,
+      "explanation": "레코드판이 하던 일은 오늘날 음원 스트리밍이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "source": {
+        "name": "대한민국역사박물관",
+        "url": "https://www.much.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-11-29-now-5-v3",
+      "dateKey": "2026-11-29",
+      "lens": "now",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "GPS을 쓸 때는 필요한 앱에만 위치 권한을 허용한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "choices": [
+        "화살표가 위를 향하거나 전송 진행률이 보인다",
+        "승인 화면에 판매자와 결제 금액이 함께 나온다",
+        "지도에서 현재 위치 점이 이동한다"
+      ],
+      "answerIndex": 2,
+      "explanation": "GPS의 대표적인 화면 단서는 지도에서 현재 위치 점이 이동한다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-11-29-life-5-v3",
+      "dateKey": "2026-11-29",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "gentle",
+      "prompt": "화재 대피에는 연기와 유독가스가 위쪽부터 차기 쉽다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "choices": [
+        "평소 두 방향의 비상구와 집결 장소를 알아 둔다",
+        "사용 전 표면 손상과 조절기 상태를 확인한다",
+        "인식표와 배변용품을 준비한다"
+      ],
+      "answerIndex": 0,
+      "explanation": "예방을 위해서는 평소 두 방향의 비상구와 집결 장소를 알아 둔다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-11-30-then-6-v3",
+      "dateKey": "2026-11-30",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "플로피디스크은 보호 덮개 안의 자성 원판에 자료를 기록했다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "choices": [
+        "보온도시락",
+        "전동 양수기",
+        "USB 저장장치"
+      ],
+      "answerIndex": 2,
+      "explanation": "플로피디스크이 하던 일은 오늘날 USB 저장장치이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "source": {
+        "name": "대한민국역사박물관",
+        "url": "https://www.much.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-11-30-now-6-v3",
+      "dateKey": "2026-11-30",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "gentle",
+      "prompt": "클라우드 저장소을 쓸 때는 공유 범위와 계정 보안을 먼저 확인한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "choices": [
+        "다른 기기에서도 같은 계정의 파일이 보인다",
+        "클립 모양 옆에 파일명과 용량이 표시된다",
+        "비밀번호나 생체 확인 뒤 등록 카드가 표시된다"
+      ],
+      "answerIndex": 0,
+      "explanation": "클라우드 저장소의 대표적인 화면 단서는 다른 기기에서도 같은 계정의 파일이 보인다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-11-30-life-6-v3",
+      "dateKey": "2026-11-30",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "steady",
+      "prompt": "완강기에는 잘못 고정하면 하강 중 추락 위험이 생긴다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "choices": [
+        "점검과 환기를 하고 임의로 구조를 바꾸지 않는다",
+        "설치 층과 위치, 사용 가능 여부를 평소 확인한다",
+        "물·보온옷·충전된 연락수단을 준비한다"
+      ],
+      "answerIndex": 1,
+      "explanation": "예방을 위해서는 설치 층과 위치, 사용 가능 여부를 평소 확인한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-01-then-7-v3",
+      "dateKey": "2026-12-01",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "필름카메라은 촬영 뒤 필름을 감고 현상 과정을 거쳤다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "choices": [
+        "디지털카메라",
+        "대형 조리용 볼",
+        "위성항법 지도"
+      ],
+      "answerIndex": 0,
+      "explanation": "필름카메라이 하던 일은 오늘날 디지털카메라이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "source": {
+        "name": "대한민국역사박물관",
+        "url": "https://www.much.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-01-now-7-v3",
+      "dateKey": "2026-12-01",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "백업을 쓸 때는 중요 자료는 다른 장치나 신뢰할 저장소에도 복사한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "choices": [
+        "파일 이름 끝에 zip 같은 확장자가 붙는다",
+        "복원할 수 있는 최근 사본 날짜가 표시된다",
+        "숫자 코드와 남은 시간이 함께 나타난다"
+      ],
+      "answerIndex": 1,
+      "explanation": "백업의 대표적인 화면 단서는 복원할 수 있는 최근 사본 날짜가 표시된다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-01-life-7-v3",
+      "dateKey": "2026-12-01",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "지진 발생에는 강한 흔들림 중 급히 이동하면 낙하물에 다칠 수 있다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "choices": [
+        "기온이 크게 내려가기 전 계량기함을 보온한다",
+        "안전요원이 있는 구역과 경고 깃발을 확인한다",
+        "가구를 고정하고 대피로에 물건을 두지 않는다"
+      ],
+      "answerIndex": 2,
+      "explanation": "예방을 위해서는 가구를 고정하고 대피로에 물건을 두지 않는다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-02-then-8-v3",
+      "dateKey": "2026-12-02",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "슬라이드영사기은 강한 빛을 슬라이드와 렌즈에 통과시켰다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "choices": [
+        "전동절구",
+        "디지털 프로젝터",
+        "디지털시계"
+      ],
+      "answerIndex": 1,
+      "explanation": "슬라이드영사기이 하던 일은 오늘날 디지털 프로젝터이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "source": {
+        "name": "대한민국역사박물관",
+        "url": "https://www.much.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-02-now-8-v3",
+      "dateKey": "2026-12-02",
+      "lens": "now",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "2단계 인증을 쓸 때는 복구 수단을 안전하게 보관하고 알 수 없는 승인을 거절한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "choices": [
+        "파일 이름 끝에 pdf가 표시된다",
+        "로그인 과정에서 키를 꽂거나 가까이 대라는 안내가 뜬다",
+        "로그인 뒤 추가 인증번호나 승인 요청이 뜬다"
+      ],
+      "answerIndex": 2,
+      "explanation": "2단계 인증의 대표적인 화면 단서는 로그인 뒤 추가 인증번호나 승인 요청이 뜬다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-02-life-8-v3",
+      "dateKey": "2026-12-02",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "gentle",
+      "prompt": "태풍 접근에는 강풍이 유리와 야외 물체를 날려 위험을 키운다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "choices": [
+        "기상특보와 가까운 대피 장소를 미리 확인한다",
+        "손잡이와 충분한 조명을 마련한다",
+        "미끄럼이 적은 신발과 손이 자유로운 가방을 쓴다"
+      ],
+      "answerIndex": 0,
+      "explanation": "예방을 위해서는 기상특보와 가까운 대피 장소를 미리 확인한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-03-then-9-v3",
+      "dateKey": "2026-12-03",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "등사기은 글씨를 낸 원지에 잉크를 밀어 종이에 찍었다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "choices": [
+        "곡물 선별기",
+        "자동 강수량계",
+        "복합기"
+      ],
+      "answerIndex": 2,
+      "explanation": "등사기이 하던 일은 오늘날 복합기이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "source": {
+        "name": "대한민국역사박물관",
+        "url": "https://www.much.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-03-now-9-v3",
+      "dateKey": "2026-12-03",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "gentle",
+      "prompt": "비밀번호 관리자을 쓸 때는 관리자용 주 비밀번호는 길고 고유하게 정한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "choices": [
+        "사이트마다 다른 비밀번호를 자동 완성한다",
+        "사진 앱에 화면 모양 그대로 이미지가 생긴다",
+        "비밀번호 없이 연결되거나 이용 동의 화면이 뜬다"
+      ],
+      "answerIndex": 0,
+      "explanation": "비밀번호 관리자의 대표적인 화면 단서는 사이트마다 다른 비밀번호를 자동 완성한다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-03-life-9-v3",
+      "dateKey": "2026-12-03",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "steady",
+      "prompt": "폭염에는 높은 온도에서는 몸이 열을 내보내기 어려워진다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "choices": [
+        "사용 전 발판과 잠금장치 손상을 확인한다",
+        "그늘과 냉방 가능한 쉼터 위치를 알아 둔다",
+        "탑승할 때 비상문과 신고 장치 위치를 살핀다"
+      ],
+      "answerIndex": 1,
+      "explanation": "예방을 위해서는 그늘과 냉방 가능한 쉼터 위치를 알아 둔다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-04-then-10-v3",
+      "dateKey": "2026-12-04",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "기계식타자기은 글쇠를 누르면 활자가 먹띠를 쳐 종이에 자국을 냈다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "choices": [
+        "문서작성 프로그램",
+        "탈곡기",
+        "재난 통신망"
+      ],
+      "answerIndex": 0,
+      "explanation": "기계식타자기이 하던 일은 오늘날 문서작성 프로그램이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "source": {
+        "name": "대한민국역사박물관",
+        "url": "https://www.much.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-04-now-10-v3",
+      "dateKey": "2026-12-04",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "생체 인증을 쓸 때는 기기 잠금번호도 함께 안전하게 관리한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "choices": [
+        "참가자 영상 칸과 음소거 버튼이 보인다",
+        "센서가 지문 또는 얼굴 확인을 요청한다",
+        "상태 표시줄에 VPN 글자나 열쇠 아이콘이 보인다"
+      ],
+      "answerIndex": 1,
+      "explanation": "생체 인증의 대표적인 화면 단서는 센서가 지문 또는 얼굴 확인을 요청한다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-04-life-10-v3",
+      "dateKey": "2026-12-04",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "한파에는 강한 추위는 동상과 시설 동결 위험을 높인다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "choices": [
+        "무딘 칼도 안전하게 다루고 도마가 움직이지 않게 한다",
+        "낯선 장소에서는 도로명이나 주변 표지를 확인한다",
+        "외출 전 체감온도와 한파특보를 살핀다"
+      ],
+      "answerIndex": 2,
+      "explanation": "예방을 위해서는 외출 전 체감온도와 한파특보를 살핀다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-05-then-11-v3",
+      "dateKey": "2026-12-05",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "버스토큰은 승차할 때 정해진 금속 표를 요금함에 넣었다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "choices": [
+        "트랙터",
+        "교통카드",
+        "고속 교통망"
+      ],
+      "answerIndex": 1,
+      "explanation": "버스토큰이 하던 일은 오늘날 교통카드이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "source": {
+        "name": "대한민국역사박물관",
+        "url": "https://www.much.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-05-now-11-v3",
+      "dateKey": "2026-12-05",
+      "lens": "now",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "스미싱을 쓸 때는 문자 링크를 누르지 말고 기관의 공식 경로로 확인한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "choices": [
+        "공유 중이라는 테두리나 표시가 나타난다",
+        "인증 뒤 서명 완료와 검증 정보가 표시된다",
+        "택배·과태료를 재촉하며 짧은 주소를 보낸다"
+      ],
+      "answerIndex": 2,
+      "explanation": "스미싱의 대표적인 화면 단서는 택배·과태료를 재촉하며 짧은 주소를 보낸다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-05-life-11-v3",
+      "dateKey": "2026-12-05",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "gentle",
+      "prompt": "낙뢰에는 높은 나무와 열린 공간은 번개 전류에 노출되기 쉽다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "choices": [
+        "천둥이 들리면 야외활동을 멈출 계획을 세운다",
+        "주전자 전선과 냄비 손잡이를 통로에서 치운다",
+        "집 주소와 공동현관 진입 방법을 가족과 공유한다"
+      ],
+      "answerIndex": 0,
+      "explanation": "예방을 위해서는 천둥이 들리면 야외활동을 멈출 계획을 세운다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-06-then-12-v3",
+      "dateKey": "2026-12-06",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "전화번호부은 가나다순으로 인쇄된 두꺼운 책의 항목을 찾아봤다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "choices": [
+        "수도 펌프",
+        "생활 신발",
+        "온라인 연락처 검색"
+      ],
+      "answerIndex": 2,
+      "explanation": "전화번호부이 하던 일은 오늘날 온라인 연락처 검색이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "source": {
+        "name": "대한민국역사박물관",
+        "url": "https://www.much.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-06-now-12-v3",
+      "dateKey": "2026-12-06",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "gentle",
+      "prompt": "피싱을 쓸 때는 발신 주소를 살피고 별도 공식 연락처로 사실을 확인한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "choices": [
+        "비밀번호 입력을 서두르게 하는 가짜 화면이 나온다",
+        "승인 화면에 판매자와 결제 금액이 함께 나온다",
+        "시설 표지와 같은 이름의 접속망이 목록에 보인다"
+      ],
+      "answerIndex": 0,
+      "explanation": "피싱의 대표적인 화면 단서는 비밀번호 입력을 서두르게 하는 가짜 화면이 나온다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-06-life-12-v3",
+      "dateKey": "2026-12-06",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "steady",
+      "prompt": "산불에는 바람을 탄 불길과 연기는 예상보다 빠르게 번질 수 있다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "choices": [
+        "인식표와 배변용품을 준비한다",
+        "산림 가까이에서 불씨와 담배를 사용하지 않는다",
+        "휴대전화의 재난 알림 설정과 소리를 미리 확인한다"
+      ],
+      "answerIndex": 1,
+      "explanation": "예방을 위해서는 산림 가까이에서 불씨와 담배를 사용하지 않는다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-07-then-13-v3",
+      "dateKey": "2026-12-07",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "전보은 전신망으로 보낸 문장을 우체국이 종이에 전달했다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "choices": [
+        "휴대전화 문자",
+        "전동 양수기",
+        "예식용 모자"
+      ],
+      "answerIndex": 0,
+      "explanation": "전보이 하던 일은 오늘날 휴대전화 문자이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "source": {
+        "name": "대한민국역사박물관",
+        "url": "https://www.much.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-07-now-13-v3",
+      "dateKey": "2026-12-07",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "랜섬웨어을 쓸 때는 운영체제를 갱신하고 중요한 파일을 분리 백업한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "choices": [
+        "비밀번호나 생체 확인 뒤 등록 카드가 표시된다",
+        "문서가 열리지 않고 금전을 요구하는 안내가 뜬다",
+        "큰 터치 화면에 단계별 선택 항목이 나온다"
+      ],
+      "answerIndex": 1,
+      "explanation": "랜섬웨어의 대표적인 화면 단서는 문서가 열리지 않고 금전을 요구하는 안내가 뜬다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-07-life-13-v3",
+      "dateKey": "2026-12-07",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "홍수에는 물의 깊이와 흐름, 도로 파손을 겉으로 판단하기 어렵다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "choices": [
+        "물·보온옷·충전된 연락수단을 준비한다",
+        "가스기기 연결부와 밸브를 정기적으로 점검한다",
+        "홍수특보와 지역 대피로를 미리 확인한다"
+      ],
+      "answerIndex": 2,
+      "explanation": "예방을 위해서는 홍수특보와 지역 대피로를 미리 확인한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-08-then-14-v3",
+      "dateKey": "2026-12-08",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "우편환은 우체국이 발행한 증서를 받는 사람이 현금으로 바꿨다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "choices": [
+        "위성항법 지도",
+        "계좌이체",
+        "양말"
+      ],
+      "answerIndex": 1,
+      "explanation": "우편환이 하던 일은 오늘날 계좌이체이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "source": {
+        "name": "대한민국역사박물관",
+        "url": "https://www.much.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-08-now-14-v3",
+      "dateKey": "2026-12-08",
+      "lens": "now",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "악성코드을 쓸 때는 공식 배포처에서만 앱과 파일을 받는다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "choices": [
+        "숫자 코드와 남은 시간이 함께 나타난다",
+        "본인 확인 뒤 문서 종류와 매수를 고르는 화면이 나온다",
+        "설명 없는 권한 요청과 이상한 광고가 늘어난다"
+      ],
+      "answerIndex": 2,
+      "explanation": "악성코드의 대표적인 화면 단서는 설명 없는 권한 요청과 이상한 광고가 늘어난다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-08-life-14-v3",
+      "dateKey": "2026-12-08",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "gentle",
+      "prompt": "미세먼지에는 아주 작은 입자가 공기 중에 오래 머물 수 있다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "choices": [
+        "공식 대기질 정보를 확인해 활동 시간을 조정한다",
+        "안전요원이 있는 구역과 경고 깃발을 확인한다",
+        "전선 손상과 과부하 여부를 평소 살핀다"
+      ],
+      "answerIndex": 0,
+      "explanation": "예방을 위해서는 공식 대기질 정보를 확인해 활동 시간을 조정한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-09-then-15-v3",
+      "dateKey": "2026-12-09",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "연탄은 구멍 난 원통형 연료를 아궁이에서 이어 갈아 넣었다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "choices": [
+        "디지털시계",
+        "바지 밑단 조임끈",
+        "가스보일러"
+      ],
+      "answerIndex": 2,
+      "explanation": "연탄이 하던 일은 오늘날 가스보일러이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "source": {
+        "name": "대한민국역사박물관",
+        "url": "https://www.much.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-09-now-15-v3",
+      "dateKey": "2026-12-09",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "gentle",
+      "prompt": "스팸 차단을 쓸 때는 정상 연락이 걸러지지 않았는지 차단 목록도 확인한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "choices": [
+        "의심 번호가 경고 문구와 함께 표시된다",
+        "로그인 과정에서 키를 꽂거나 가까이 대라는 안내가 뜬다",
+        "검증용 QR이나 필요한 정보만 선택하는 화면이 나온다"
+      ],
+      "answerIndex": 0,
+      "explanation": "스팸 차단의 대표적인 화면 단서는 의심 번호가 경고 문구와 함께 표시된다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-09-life-15-v3",
+      "dateKey": "2026-12-09",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "steady",
+      "prompt": "황사에는 바람에 실린 흙먼지가 실내와 호흡기로 들어올 수 있다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "choices": [
+        "미끄럼이 적은 신발과 손이 자유로운 가방을 쓴다",
+        "황사 예보가 있으면 실외 물품을 미리 덮는다",
+        "조리 중 자리를 비우지 않고 주변 가연물을 치운다"
+      ],
+      "answerIndex": 1,
+      "explanation": "예방을 위해서는 황사 예보가 있으면 실외 물품을 미리 덮는다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-10-then-16-v3",
+      "dateKey": "2026-12-10",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "장독은 숨 쉬는 옹기 뚜껑을 덮어 장독대에 두었다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "choices": [
+        "밀폐 저장용기",
+        "자동 강수량계",
+        "옷 단추"
+      ],
+      "answerIndex": 0,
+      "explanation": "장독이 하던 일은 오늘날 밀폐 저장용기이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-10-now-16-v3",
+      "dateKey": "2026-12-10",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "앱 권한을 쓸 때는 기능에 꼭 필요한 권한만 허용하고 정기적으로 점검한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "choices": [
+        "비밀번호 없이 연결되거나 이용 동의 화면이 뜬다",
+        "처음 기능을 쓸 때 접근 허용 창이 뜬다",
+        "단말기에서 승인음과 잔액이 나타난다"
+      ],
+      "answerIndex": 1,
+      "explanation": "앱 권한의 대표적인 화면 단서는 처음 기능을 쓸 때 접근 허용 창이 뜬다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-10-life-16-v3",
+      "dateKey": "2026-12-10",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "일산화탄소 의심에는 색과 냄새가 거의 없어 실내에서 알아차리기 어렵다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "choices": [
+        "탑승할 때 비상문과 신고 장치 위치를 살핀다",
+        "압력 표시와 사용기한·설치 위치를 미리 확인한다",
+        "연소기구 배기통과 환기 상태를 점검한다"
+      ],
+      "answerIndex": 2,
+      "explanation": "예방을 위해서는 연소기구 배기통과 환기 상태를 점검한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-11-then-17-v3",
+      "dateKey": "2026-12-11",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "다듬이돌은 천을 돌 위에 놓고 두 방망이로 고르게 두드렸다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "choices": [
+        "재난 통신망",
+        "전기다리미",
+        "보드게임 주사위"
+      ],
+      "answerIndex": 1,
+      "explanation": "다듬이돌이 하던 일은 오늘날 전기다리미이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-11-now-17-v3",
+      "dateKey": "2026-12-11",
+      "lens": "now",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "위치 권한을 쓸 때는 항상 허용보다 사용 중에만 허용을 우선 검토한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "choices": [
+        "상태 표시줄에 VPN 글자나 열쇠 아이콘이 보인다",
+        "지도 위 경로와 다음 회전 거리가 표시된다",
+        "설정에 허용 안 함·사용 중·항상 같은 선택지가 보인다"
+      ],
+      "answerIndex": 2,
+      "explanation": "위치 권한의 대표적인 화면 단서는 설정에 허용 안 함·사용 중·항상 같은 선택지가 보인다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-11-life-17-v3",
+      "dateKey": "2026-12-11",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "gentle",
+      "prompt": "젖은 손과 전기에는 물기는 피부를 통한 전류 흐름 위험을 높인다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "choices": [
+        "물 쓰는 곳과 전기기구의 거리를 충분히 둔다",
+        "낯선 장소에서는 도로명이나 주변 표지를 확인한다",
+        "평소 두 방향의 비상구와 집결 장소를 알아 둔다"
+      ],
+      "answerIndex": 0,
+      "explanation": "예방을 위해서는 물 쓰는 곳과 전기기구의 거리를 충분히 둔다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-12-then-18-v3",
+      "dateKey": "2026-12-12",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "맷돌은 위짝의 손잡이를 돌려 두 돌 사이에서 곡물을 갈았다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "choices": [
+        "고속 교통망",
+        "셔틀콕 놀이",
+        "전기분쇄기"
+      ],
+      "answerIndex": 2,
+      "explanation": "맷돌이 하던 일은 오늘날 전기분쇄기이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-12-now-18-v3",
+      "dateKey": "2026-12-12",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "gentle",
+      "prompt": "알림 설정을 쓸 때는 꼭 필요한 앱과 유형만 남겨 방해를 줄인다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "choices": [
+        "상단에 앱 이름과 새 내용 배너가 뜬다",
+        "인증 뒤 서명 완료와 검증 정보가 표시된다",
+        "원문 아래에 선택한 언어의 번역문이 나타난다"
+      ],
+      "answerIndex": 0,
+      "explanation": "알림 설정의 대표적인 화면 단서는 상단에 앱 이름과 새 내용 배너가 뜬다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-12-life-18-v3",
+      "dateKey": "2026-12-12",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "steady",
+      "prompt": "횡단보도에는 운전자가 보행자를 늦게 발견하거나 차량이 계속 올 수 있다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "choices": [
+        "집 주소와 공동현관 진입 방법을 가족과 공유한다",
+        "밝은 옷을 입고 휴대전화 화면을 보며 걷지 않는다",
+        "설치 층과 위치, 사용 가능 여부를 평소 확인한다"
+      ],
+      "answerIndex": 1,
+      "explanation": "예방을 위해서는 밝은 옷을 입고 휴대전화 화면을 보며 걷지 않는다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "source": {
+        "name": "한국도로교통공단",
+        "url": "https://www.koroad.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-13-then-19-v3",
+      "dateKey": "2026-12-13",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "풍로은 손잡이나 발판으로 바람을 일으켜 불씨에 보냈다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "choices": [
+        "송풍 기능 화로",
+        "생활 신발",
+        "회전 장난감"
+      ],
+      "answerIndex": 0,
+      "explanation": "풍로이 하던 일은 오늘날 송풍 기능 화로이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-13-now-19-v3",
+      "dateKey": "2026-12-13",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "비행기 모드을 쓸 때는 항공기 안내에 따라 켜고 필요한 와이파이는 별도 설정한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "choices": [
+        "시설 표지와 같은 이름의 접속망이 목록에 보인다",
+        "상태 표시줄에 비행기 모양이 나타난다",
+        "재생 막대가 움직이며 남은 내용은 계속 전송된다"
+      ],
+      "answerIndex": 1,
+      "explanation": "비행기 모드의 대표적인 화면 단서는 상태 표시줄에 비행기 모양이 나타난다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-13-life-19-v3",
+      "dateKey": "2026-12-13",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "야간 보행에는 어두우면 거리와 움직임을 알아보는 시간이 길어진다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "choices": [
+        "휴대전화의 재난 알림 설정과 소리를 미리 확인한다",
+        "가구를 고정하고 대피로에 물건을 두지 않는다",
+        "반사 소재나 밝은 색 소지품을 활용한다"
+      ],
+      "answerIndex": 2,
+      "explanation": "예방을 위해서는 반사 소재나 밝은 색 소지품을 활용한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "source": {
+        "name": "한국도로교통공단",
+        "url": "https://www.koroad.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-14-then-20-v3",
+      "dateKey": "2026-12-14",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "지게은 A자 나무틀을 등에 지고 작대기로 균형을 잡았다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "choices": [
+        "예식용 모자",
+        "손수레",
+        "표적 던지기 게임"
+      ],
+      "answerIndex": 1,
+      "explanation": "지게이 하던 일은 오늘날 손수레이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-14-now-20-v3",
+      "dateKey": "2026-12-14",
+      "lens": "now",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "방해 금지 모드을 쓸 때는 가족이나 긴급 연락 예외가 필요한지 설정한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "choices": [
+        "큰 터치 화면에 단계별 선택 항목이 나온다",
+        "프로그램 아래에 날짜별 에피소드 목록이 보인다",
+        "초승달 모양과 함께 알림 소리가 줄어든다"
+      ],
+      "answerIndex": 2,
+      "explanation": "방해 금지 모드의 대표적인 화면 단서는 초승달 모양과 함께 알림 소리가 줄어든다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-14-life-20-v3",
+      "dateKey": "2026-12-14",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "gentle",
+      "prompt": "대형차 사각지대에는 운전석에서 거울로도 보이지 않는 구역이 크다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "choices": [
+        "회전하는 대형차 주변에서는 먼저 보내고 이동한다",
+        "가스기기 연결부와 밸브를 정기적으로 점검한다",
+        "기상특보와 가까운 대피 장소를 미리 확인한다"
+      ],
+      "answerIndex": 0,
+      "explanation": "예방을 위해서는 회전하는 대형차 주변에서는 먼저 보내고 이동한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "source": {
+        "name": "한국도로교통공단",
+        "url": "https://www.koroad.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-15-then-21-v3",
+      "dateKey": "2026-12-15",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "물레은 바퀴를 돌리며 섬유를 길게 뽑아 꼬았다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "choices": [
+        "양말",
+        "스포츠 카이트",
+        "방적기"
+      ],
+      "answerIndex": 2,
+      "explanation": "물레이 하던 일은 오늘날 방적기이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-15-now-21-v3",
+      "dateKey": "2026-12-15",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "gentle",
+      "prompt": "글자 크기 설정을 쓸 때는 미리보기로 잘림 여부를 보며 단계적으로 조절한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "choices": [
+        "설정의 글꼴 크기 막대를 움직이면 문자가 커진다",
+        "본인 확인 뒤 문서 종류와 매수를 고르는 화면이 나온다",
+        "화면에 연결 주소 미리보기가 나타난다"
+      ],
+      "answerIndex": 0,
+      "explanation": "글자 크기 설정의 대표적인 화면 단서는 설정의 글꼴 크기 막대를 움직이면 문자가 커진다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-15-life-21-v3",
+      "dateKey": "2026-12-15",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "steady",
+      "prompt": "안전벨트에는 충돌 때 몸이 차량 내부나 밖으로 튕기는 것을 줄인다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "choices": [
+        "전선 손상과 과부하 여부를 평소 살핀다",
+        "모든 좌석에서 짧은 거리라도 착용한다",
+        "그늘과 냉방 가능한 쉼터 위치를 알아 둔다"
+      ],
+      "answerIndex": 1,
+      "explanation": "예방을 위해서는 모든 좌석에서 짧은 거리라도 착용한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "source": {
+        "name": "한국도로교통공단",
+        "url": "https://www.koroad.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-16-then-22-v3",
+      "dateKey": "2026-12-16",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "베틀은 발판과 북을 움직여 두 방향의 실을 교차시켰다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "choices": [
+        "자동직기",
+        "바지 밑단 조임끈",
+        "온라인 장기 게임"
+      ],
+      "answerIndex": 0,
+      "explanation": "베틀이 하던 일은 오늘날 자동직기이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-16-now-22-v3",
+      "dateKey": "2026-12-16",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "화면 확대을 쓸 때는 확대 동작과 원래 크기로 돌아오는 방법을 함께 익힌다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "choices": [
+        "검증용 QR이나 필요한 정보만 선택하는 화면이 나온다",
+        "지정한 동작 뒤 화면 일부가 확대 창에 보인다",
+        "부채꼴 전파 아이콘으로 연결 상태를 본다"
+      ],
+      "answerIndex": 1,
+      "explanation": "화면 확대의 대표적인 화면 단서는 지정한 동작 뒤 화면 일부가 확대 창에 보인다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-16-life-22-v3",
+      "dateKey": "2026-12-16",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "자전거 헬멧에는 넘어질 때 머리에 전달되는 충격을 줄여 준다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "choices": [
+        "조리 중 자리를 비우지 않고 주변 가연물을 치운다",
+        "외출 전 체감온도와 한파특보를 살핀다",
+        "금이 가거나 큰 충격을 받은 헬멧은 상태를 확인한다"
+      ],
+      "answerIndex": 2,
+      "explanation": "예방을 위해서는 금이 가거나 큰 충격을 받은 헬멧은 상태를 확인한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "source": {
+        "name": "한국도로교통공단",
+        "url": "https://www.koroad.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-17-then-23-v3",
+      "dateKey": "2026-12-17",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "호롱불은 기름에 심지를 담그고 끝에 불을 붙였다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "choices": [
+        "옷 단추",
+        "전기스탠드",
+        "공연용 금속 타악기"
+      ],
+      "answerIndex": 1,
+      "explanation": "호롱불이 하던 일은 오늘날 전기스탠드이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-17-now-23-v3",
+      "dateKey": "2026-12-17",
+      "lens": "now",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "음성 입력을 쓸 때는 변환 뒤 이름과 숫자를 눈으로 다시 확인한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "choices": [
+        "단말기에서 승인음과 잔액이 나타난다",
+        "연결 기기 목록에 이어폰 이름이 표시된다",
+        "마이크를 누르고 말하면 문장으로 입력된다"
+      ],
+      "answerIndex": 2,
+      "explanation": "음성 입력의 대표적인 화면 단서는 마이크를 누르고 말하면 문장으로 입력된다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-17-life-23-v3",
+      "dateKey": "2026-12-17",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "gentle",
+      "prompt": "엘리베이터 고장에는 층 사이에서 임의로 나오면 추락할 수 있다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "choices": [
+        "비상통화 버튼 위치를 탑승할 때 확인한다",
+        "압력 표시와 사용기한·설치 위치를 미리 확인한다",
+        "천둥이 들리면 야외활동을 멈출 계획을 세운다"
+      ],
+      "answerIndex": 0,
+      "explanation": "예방을 위해서는 비상통화 버튼 위치를 탑승할 때 확인한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "source": {
+        "name": "한국도로교통공단",
+        "url": "https://www.koroad.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-18-then-24-v3",
+      "dateKey": "2026-12-18",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "괘종시계은 추의 힘과 흔들리는 진자로 시간을 맞췄다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "choices": [
+        "보드게임 주사위",
+        "현대 타악기 세트",
+        "전자벽시계"
+      ],
+      "answerIndex": 2,
+      "explanation": "괘종시계이 하던 일은 오늘날 전자벽시계이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-18-now-24-v3",
+      "dateKey": "2026-12-18",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "gentle",
+      "prompt": "화면 읽기을 쓸 때는 터치 동작이 달라질 수 있어 사용법을 먼저 확인한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "choices": [
+        "선택한 항목 이름을 기기가 소리 내어 읽는다",
+        "지도 위 경로와 다음 회전 거리가 표시된다",
+        "기기를 단말기에 가까이 댈 때 반응한다"
+      ],
+      "answerIndex": 0,
+      "explanation": "화면 읽기의 대표적인 화면 단서는 선택한 항목 이름을 기기가 소리 내어 읽는다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-18-life-24-v3",
+      "dateKey": "2026-12-18",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "steady",
+      "prompt": "에스컬레이터에는 옷자락과 신발이 움직이는 틈에 끼일 수 있다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "choices": [
+        "평소 두 방향의 비상구와 집결 장소를 알아 둔다",
+        "유모차와 큰 짐은 엘리베이터를 이용한다",
+        "산림 가까이에서 불씨와 담배를 사용하지 않는다"
+      ],
+      "answerIndex": 1,
+      "explanation": "예방을 위해서는 유모차와 큰 짐은 엘리베이터를 이용한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "source": {
+        "name": "한국도로교통공단",
+        "url": "https://www.koroad.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-19-then-25-v3",
+      "dateKey": "2026-12-19",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "태엽자명종은 태엽을 감아 저장한 힘으로 종을 울렸다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "choices": [
+        "스마트폰 알람",
+        "셔틀콕 놀이",
+        "플라스틱 채반"
+      ],
+      "answerIndex": 0,
+      "explanation": "태엽자명종이 하던 일은 오늘날 스마트폰 알람이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-19-now-25-v3",
+      "dateKey": "2026-12-19",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "실시간 자막을 쓸 때는 고유명사나 숫자는 오인식 가능성을 고려해 확인한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "choices": [
+        "원문 아래에 선택한 언어의 번역문이 나타난다",
+        "영상 아래에 말한 내용이 즉시 글자로 나온다",
+        "지도에서 현재 위치 점이 이동한다"
+      ],
+      "answerIndex": 1,
+      "explanation": "실시간 자막의 대표적인 화면 단서는 영상 아래에 말한 내용이 즉시 글자로 나온다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-19-life-25-v3",
+      "dateKey": "2026-12-19",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "식중독 예방에는 손과 도구를 통해 미생물이 음식 사이로 옮겨갈 수 있다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "choices": [
+        "설치 층과 위치, 사용 가능 여부를 평소 확인한다",
+        "홍수특보와 지역 대피로를 미리 확인한다",
+        "냉장 온도와 음식 보관 시간을 확인한다"
+      ],
+      "answerIndex": 2,
+      "explanation": "예방을 위해서는 냉장 온도와 음식 보관 시간을 확인한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "source": {
+        "name": "한국도로교통공단",
+        "url": "https://www.koroad.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-20-then-26-v3",
+      "dateKey": "2026-12-20",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "축음기은 바늘의 진동을 나팔관으로 크게 울렸다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "choices": [
+        "회전 장난감",
+        "블루투스 스피커",
+        "전기난로"
+      ],
+      "answerIndex": 1,
+      "explanation": "축음기이 하던 일은 오늘날 블루투스 스피커이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-20-now-26-v3",
+      "dateKey": "2026-12-20",
+      "lens": "now",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "다크 모드을 쓸 때는 환경과 눈의 편안함에 맞춰 밝기와 함께 조절한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "choices": [
+        "재생 막대가 움직이며 남은 내용은 계속 전송된다",
+        "다른 기기에서도 같은 계정의 파일이 보인다",
+        "메뉴 배경이 검거나 짙은 회색으로 바뀐다"
+      ],
+      "answerIndex": 2,
+      "explanation": "다크 모드의 대표적인 화면 단서는 메뉴 배경이 검거나 짙은 회색으로 바뀐다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-20-life-26-v3",
+      "dateKey": "2026-12-20",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "gentle",
+      "prompt": "냉장 보관에는 낮은 온도는 많은 미생물의 증식을 늦춘다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "choices": [
+        "냉장고를 과도하게 채우지 않아 찬 공기가 돌게 한다",
+        "가구를 고정하고 대피로에 물건을 두지 않는다",
+        "공식 대기질 정보를 확인해 활동 시간을 조정한다"
+      ],
+      "answerIndex": 0,
+      "explanation": "예방을 위해서는 냉장고를 과도하게 채우지 않아 찬 공기가 돌게 한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "source": {
+        "name": "질병관리청",
+        "url": "https://www.kdca.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-21-then-27-v3",
+      "dateKey": "2026-12-21",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "흑백텔레비전은 명암만 표현하는 화면과 안테나로 방송을 받았다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "choices": [
+        "표적 던지기 게임",
+        "세탁기",
+        "컬러 스마트TV"
+      ],
+      "answerIndex": 2,
+      "explanation": "흑백텔레비전이 하던 일은 오늘날 컬러 스마트TV이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-21-now-27-v3",
+      "dateKey": "2026-12-21",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "gentle",
+      "prompt": "절전 모드을 쓸 때는 충전이 어려울 때 켜고 필요한 알림 제한을 확인한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "choices": [
+        "배터리 아이콘 색과 백그라운드 동작이 달라진다",
+        "프로그램 아래에 날짜별 에피소드 목록이 보인다",
+        "복원할 수 있는 최근 사본 날짜가 표시된다"
+      ],
+      "answerIndex": 0,
+      "explanation": "절전 모드의 대표적인 화면 단서는 배터리 아이콘 색과 백그라운드 동작이 달라진다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-21-life-27-v3",
+      "dateKey": "2026-12-21",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "steady",
+      "prompt": "교차오염에는 날재료의 미생물이 바로 먹는 음식으로 옮을 수 있다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "choices": [
+        "기상특보와 가까운 대피 장소를 미리 확인한다",
+        "사용한 칼과 도마를 세척·건조한 뒤 다시 쓴다",
+        "황사 예보가 있으면 실외 물품을 미리 덮는다"
+      ],
+      "answerIndex": 1,
+      "explanation": "예방을 위해서는 사용한 칼과 도마를 세척·건조한 뒤 다시 쓴다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "source": {
+        "name": "질병관리청",
+        "url": "https://www.kdca.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-22-then-28-v3",
+      "dateKey": "2026-12-22",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "진공관라디오은 진공관 회로가 약한 전파 신호를 증폭했다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "choices": [
+        "인터넷 라디오",
+        "스포츠 카이트",
+        "전동 재봉기"
+      ],
+      "answerIndex": 0,
+      "explanation": "진공관라디오이 하던 일은 오늘날 인터넷 라디오이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-22-now-28-v3",
+      "dateKey": "2026-12-22",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "소프트웨어 업데이트을 쓸 때는 충전과 저장 공간을 확인하고 공식 설정에서 진행한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "choices": [
+        "화면에 연결 주소 미리보기가 나타난다",
+        "설정에 새 버전 다운로드와 설치 안내가 뜬다",
+        "로그인 뒤 추가 인증번호나 승인 요청이 뜬다"
+      ],
+      "answerIndex": 1,
+      "explanation": "소프트웨어 업데이트의 대표적인 화면 단서는 설정에 새 버전 다운로드와 설치 안내가 뜬다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-22-life-28-v3",
+      "dateKey": "2026-12-22",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "손 씻기에는 마찰과 헹굼이 손의 오염 물질을 줄이는 데 도움이 된다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "choices": [
+        "그늘과 냉방 가능한 쉼터 위치를 알아 둔다",
+        "연소기구 배기통과 환기 상태를 점검한다",
+        "외출 후와 조리 전 손 씻을 시간을 정한다"
+      ],
+      "answerIndex": 2,
+      "explanation": "예방을 위해서는 외출 후와 조리 전 손 씻을 시간을 정한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "source": {
+        "name": "질병관리청",
+        "url": "https://www.kdca.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-23-then-29-v3",
+      "dateKey": "2026-12-23",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "비디오테이프은 자기테이프가 든 카세트를 비디오 기기에 넣었다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "choices": [
+        "온라인 장기 게임",
+        "영상 파일 저장",
+        "휴대전화 통화"
+      ],
+      "answerIndex": 1,
+      "explanation": "비디오테이프이 하던 일은 오늘날 영상 파일 저장이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-23-now-29-v3",
+      "dateKey": "2026-12-23",
+      "lens": "now",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "앱 스토어을 쓸 때는 개발자 이름과 권한, 이용자 평가를 살핀다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "choices": [
+        "부채꼴 전파 아이콘으로 연결 상태를 본다",
+        "사이트마다 다른 비밀번호를 자동 완성한다",
+        "설치 버튼과 개발자·버전 정보가 함께 보인다"
+      ],
+      "answerIndex": 2,
+      "explanation": "앱 스토어의 대표적인 화면 단서는 설치 버튼과 개발자·버전 정보가 함께 보인다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-23-life-29-v3",
+      "dateKey": "2026-12-23",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "gentle",
+      "prompt": "기침 예절에는 손바닥으로 가리면 손을 통해 주변 물건에 묻을 수 있다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "choices": [
+        "사용한 휴지는 버리고 손을 깨끗이 한다",
+        "외출 전 체감온도와 한파특보를 살핀다",
+        "물 쓰는 곳과 전기기구의 거리를 충분히 둔다"
+      ],
+      "answerIndex": 0,
+      "explanation": "예방을 위해서는 사용한 휴지는 버리고 손을 깨끗이 한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "source": {
+        "name": "질병관리청",
+        "url": "https://www.kdca.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-24-then-30-v3",
+      "dateKey": "2026-12-24",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "필름영사기은 필름을 빠르게 이동시키며 빛으로 한 장씩 투사했다는 도구였습니다. 같은 역할에 가까운 오늘날 수단은 무엇일까요?",
+      "choices": [
+        "공연용 금속 타악기",
+        "터치식 전화 앱",
+        "디지털 영화관 영사기"
+      ],
+      "answerIndex": 2,
+      "explanation": "필름영사기이 하던 일은 오늘날 디지털 영화관 영사기이 가장 가깝게 이어받았어요. 목적은 비슷하지만 작동 방식과 편의성은 달라졌습니다.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-24-now-30-v3",
+      "dateKey": "2026-12-24",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "gentle",
+      "prompt": "웹 브라우저을 쓸 때는 주소와 자물쇠 표시를 확인하고 수상한 다운로드를 피한다는 점이 중요합니다. 작동 여부를 알려 주는 단서는 무엇일까요?",
+      "choices": [
+        "상단 주소창과 앞뒤 이동 버튼이 있다",
+        "연결 기기 목록에 이어폰 이름이 표시된다",
+        "센서가 지문 또는 얼굴 확인을 요청한다"
+      ],
+      "answerIndex": 0,
+      "explanation": "웹 브라우저의 대표적인 화면 단서는 상단 주소창과 앞뒤 이동 버튼이 있다는 모습이에요. 표시를 읽으면 현재 상태를 스스로 확인하기 쉬워집니다.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-12-24-life-30-v3",
+      "dateKey": "2026-12-24",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "steady",
+      "prompt": "실내 환기에는 공기 길을 만들면 실내 오염 물질이 밖으로 빠져나가기 쉽다는 위험이 있습니다. 이를 줄이는 예방 습관은 무엇일까요?",
+      "choices": [
+        "천둥이 들리면 야외활동을 멈출 계획을 세운다",
+        "조리와 청소 뒤 환기 시간을 마련한다",
+        "밝은 옷을 입고 휴대전화 화면을 보며 걷지 않는다"
+      ],
+      "answerIndex": 1,
+      "explanation": "예방을 위해서는 조리와 청소 뒤 환기 시간을 마련한다는 습관이 도움이 됩니다. 평소의 작은 점검이 급한 순간의 부담을 줄여 줍니다.",
+      "source": {
+        "name": "질병관리청",
+        "url": "https://www.kdca.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    }
+  ]
+}
