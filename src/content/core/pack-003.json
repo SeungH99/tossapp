@@ -1,0 +1,2078 @@
+{
+  "id": "core-003",
+  "kind": "core",
+  "contentVersion": "2026.08.180d",
+  "reviewStatus": "reviewed",
+  "questions": [
+    {
+      "kind": "core",
+      "id": "2026-09-26-then-1-v2",
+      "dateKey": "2026-09-26",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "밖에서 동전을 넣어 전화를 거는 일에 쓰였던 공중전화, 실제 작동 방식으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "수화기를 들고 동전이나 전화카드를 넣어 번호를 눌렀다",
+        "손잡이나 발판으로 바람을 일으켜 불씨에 보냈다",
+        "바늘의 진동을 나팔관으로 크게 울렸다"
+      ],
+      "answerIndex": 0,
+      "explanation": "공중전화은 수화기를 들고 동전이나 전화카드를 넣어 번호를 눌렀다는 방식으로 사용했어요. 도구의 구조와 사람의 동작이 맞물려야 제 기능을 했습니다.",
+      "source": {
+        "name": "대한민국역사박물관",
+        "url": "https://www.much.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-26-now-1-v2",
+      "dateKey": "2026-09-26",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "네모 무늬에 주소나 정보를 담아 카메라로 여는 기능인 QR 코드, 이용할 때 지킬 원칙으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "미리보기로 잘림 여부를 보며 단계적으로 조절한다",
+        "출처를 확인한 뒤 기본 카메라로 읽는다",
+        "충전과 저장 공간을 확인하고 공식 설정에서 진행한다"
+      ],
+      "answerIndex": 1,
+      "explanation": "QR 코드을 이용할 때는 출처를 확인한 뒤 기본 카메라로 읽는다는 원칙이 알맞아요. 편리함과 함께 확인 습관을 갖는 것이 중요합니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-26-life-1-v2",
+      "dateKey": "2026-09-26",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "가스 냄새 때는 불꽃과 전기 스위치를 피하고 창문을 열어 환기한다는 대응이 권장됩니다. 그 까닭으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "손과 도구를 통해 미생물이 음식 사이로 옮겨갈 수 있다",
+        "진드기가 피부에 붙기 전 노출을 줄이는 것이 중요하다",
+        "작은 불꽃도 새어 나온 가스에 불을 붙일 수 있다"
+      ],
+      "answerIndex": 2,
+      "explanation": "그 이유는 작은 불꽃도 새어 나온 가스에 불을 붙일 수 있다는 점입니다. 위험이 생기는 원리를 알면 비슷한 상황에서도 판단하기 쉬워요.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-27-then-2-v2",
+      "dateKey": "2026-09-27",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "가정에서 전화번호를 연결하는 일에 쓰였던 다이얼전화, 실제 작동 방식으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "A자 나무틀을 등에 지고 작대기로 균형을 잡았다",
+        "손가락으로 숫자 원판을 끝까지 돌린 뒤 놓았다",
+        "명암만 표현하는 화면과 안테나로 방송을 받았다"
+      ],
+      "answerIndex": 1,
+      "explanation": "다이얼전화은 손가락으로 숫자 원판을 끝까지 돌린 뒤 놓았다는 방식으로 사용했어요. 도구의 구조와 사람의 동작이 맞물려야 제 기능을 했습니다.",
+      "source": {
+        "name": "대한민국역사박물관",
+        "url": "https://www.much.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-27-now-2-v2",
+      "dateKey": "2026-09-27",
+      "lens": "now",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "공유기와 기기를 무선으로 인터넷에 연결하는 기술인 와이파이, 이용할 때 지킬 원칙으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "확대 동작과 원래 크기로 돌아오는 방법을 함께 익힌다",
+        "개발자 이름과 권한, 이용자 평가를 살핀다",
+        "공용망에서는 민감한 입력을 피하고 망 이름을 확인한다"
+      ],
+      "answerIndex": 2,
+      "explanation": "와이파이을 이용할 때는 공용망에서는 민감한 입력을 피하고 망 이름을 확인한다는 원칙이 알맞아요. 편리함과 함께 확인 습관을 갖는 것이 중요합니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-27-life-2-v2",
+      "dateKey": "2026-09-27",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "gentle",
+      "prompt": "전기기기 화재 때는 전원을 안전하게 끊고 적합한 소화기로 대응하며 119에 알린다는 대응이 권장됩니다. 그 까닭으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "물을 바로 뿌리면 감전과 전기 확산 위험이 있다",
+        "낮은 온도는 많은 미생물의 증식을 늦춘다",
+        "자외선은 흐린 날에도 일부 지표에 도달한다"
+      ],
+      "answerIndex": 0,
+      "explanation": "그 이유는 물을 바로 뿌리면 감전과 전기 확산 위험이 있다는 점입니다. 위험이 생기는 원리를 알면 비슷한 상황에서도 판단하기 쉬워요.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-28-then-3-v2",
+      "dateKey": "2026-09-28",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "짧은 연락 번호를 휴대해 확인하는 일에 쓰였던 무선호출기, 실제 작동 방식으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "바퀴를 돌리며 섬유를 길게 뽑아 꼬았다",
+        "진공관 회로가 약한 전파 신호를 증폭했다",
+        "호출을 받으면 표시창의 숫자를 보고 전화로 답했다"
+      ],
+      "answerIndex": 2,
+      "explanation": "무선호출기은 호출을 받으면 표시창의 숫자를 보고 전화로 답했다는 방식으로 사용했어요. 도구의 구조와 사람의 동작이 맞물려야 제 기능을 했습니다.",
+      "source": {
+        "name": "대한민국역사박물관",
+        "url": "https://www.much.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-28-now-3-v2",
+      "dateKey": "2026-09-28",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "gentle",
+      "prompt": "가까운 기기끼리 저전력 무선 연결을 만드는 기술인 블루투스, 이용할 때 지킬 원칙으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "모르는 연결 요청은 거절하고 사용 뒤 검색 허용을 끈다",
+        "변환 뒤 이름과 숫자를 눈으로 다시 확인한다",
+        "주소와 자물쇠 표시를 확인하고 수상한 다운로드를 피한다"
+      ],
+      "answerIndex": 0,
+      "explanation": "블루투스을 이용할 때는 모르는 연결 요청은 거절하고 사용 뒤 검색 허용을 끈다는 원칙이 알맞아요. 편리함과 함께 확인 습관을 갖는 것이 중요합니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-28-life-3-v2",
+      "dateKey": "2026-09-28",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "steady",
+      "prompt": "식용유 화재 때는 불을 끄고 뚜껑이나 방화 덮개로 산소를 차단한다는 대응이 권장됩니다. 그 까닭으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "날재료의 미생물이 바로 먹는 음식으로 옮을 수 있다",
+        "물을 부으면 뜨거운 기름이 튀며 불길이 번질 수 있다",
+        "땀으로 잃은 수분을 제때 보충해야 체온 조절을 돕는다"
+      ],
+      "answerIndex": 1,
+      "explanation": "그 이유는 물을 부으면 뜨거운 기름이 튀며 불길이 번질 수 있다는 점입니다. 위험이 생기는 원리를 알면 비슷한 상황에서도 판단하기 쉬워요.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-29-then-4-v2",
+      "dateKey": "2026-09-29",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "음악이나 음성을 자성 띠에 기록하는 일에 쓰였던 카세트테이프, 실제 작동 방식으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "재생기 헤드가 테이프를 지나가도록 감아 재생했다",
+        "발판과 북을 움직여 두 방향의 실을 교차시켰다",
+        "자기테이프가 든 카세트를 비디오 기기에 넣었다"
+      ],
+      "answerIndex": 0,
+      "explanation": "카세트테이프은 재생기 헤드가 테이프를 지나가도록 감아 재생했다는 방식으로 사용했어요. 도구의 구조와 사람의 동작이 맞물려야 제 기능을 했습니다.",
+      "source": {
+        "name": "대한민국역사박물관",
+        "url": "https://www.much.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-29-now-4-v2",
+      "dateKey": "2026-09-29",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "아주 가까운 거리에서 태그나 결제 정보를 주고받는 기술인 NFC, 이용할 때 지킬 원칙으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "터치 동작이 달라질 수 있어 사용법을 먼저 확인한다",
+        "결제나 태그를 쓸 때만 기능을 켜고 화면 안내를 확인한다",
+        "도메인 철자와 https 연결 여부를 확인한다"
+      ],
+      "answerIndex": 1,
+      "explanation": "NFC을 이용할 때는 결제나 태그를 쓸 때만 기능을 켜고 화면 안내를 확인한다는 원칙이 알맞아요. 편리함과 함께 확인 습관을 갖는 것이 중요합니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-29-life-4-v2",
+      "dateKey": "2026-09-29",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "소화기 사용 때는 안전핀을 뽑고 노즐을 불 쪽에 향해 손잡이를 누른다는 대응이 권장됩니다. 그 까닭으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "마찰과 헹굼이 손의 오염 물질을 줄이는 데 도움이 된다",
+        "규칙적인 빛과 시간 단서가 몸의 수면 리듬을 돕는다",
+        "약제가 불의 밑부분을 덮어 연소를 억제해야 한다"
+      ],
+      "answerIndex": 2,
+      "explanation": "그 이유는 약제가 불의 밑부분을 덮어 연소를 억제해야 한다는 점입니다. 위험이 생기는 원리를 알면 비슷한 상황에서도 판단하기 쉬워요.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-30-then-5-v2",
+      "dateKey": "2026-09-30",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "홈에 담긴 음악을 재생하는 일에 쓰였던 레코드판, 실제 작동 방식으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "기름에 심지를 담그고 끝에 불을 붙였다",
+        "회전하는 판의 홈을 바늘이 따라가며 진동을 읽었다",
+        "필름을 빠르게 이동시키며 빛으로 한 장씩 투사했다"
+      ],
+      "answerIndex": 1,
+      "explanation": "레코드판은 회전하는 판의 홈을 바늘이 따라가며 진동을 읽었다는 방식으로 사용했어요. 도구의 구조와 사람의 동작이 맞물려야 제 기능을 했습니다.",
+      "source": {
+        "name": "대한민국역사박물관",
+        "url": "https://www.much.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-30-now-5-v2",
+      "dateKey": "2026-09-30",
+      "lens": "now",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "위성 신호로 기기의 위치를 계산하는 기술인 GPS, 이용할 때 지킬 원칙으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "고유명사나 숫자는 오인식 가능성을 고려해 확인한다",
+        "광고 표시와 공식 사이트 도메인을 구분한다",
+        "필요한 앱에만 위치 권한을 허용한다"
+      ],
+      "answerIndex": 2,
+      "explanation": "GPS을 이용할 때는 필요한 앱에만 위치 권한을 허용한다는 원칙이 알맞아요. 편리함과 함께 확인 습관을 갖는 것이 중요합니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-30-life-5-v2",
+      "dateKey": "2026-09-30",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "gentle",
+      "prompt": "화재 대피 때는 젖은 수건보다 낮은 자세와 빠른 계단 대피를 우선한다는 대응이 권장됩니다. 그 까닭으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "연기와 유독가스가 위쪽부터 차기 쉽다",
+        "손바닥으로 가리면 손을 통해 주변 물건에 묻을 수 있다",
+        "다른 병에 옮기면 내용물을 음료로 잘못 알 수 있다"
+      ],
+      "answerIndex": 0,
+      "explanation": "그 이유는 연기와 유독가스가 위쪽부터 차기 쉽다는 점입니다. 위험이 생기는 원리를 알면 비슷한 상황에서도 판단하기 쉬워요.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-01-then-6-v2",
+      "dateKey": "2026-10-01",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "컴퓨터 문서를 저장하고 옮기는 일에 쓰였던 플로피디스크, 실제 작동 방식으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "추의 힘과 흔들리는 진자로 시간을 맞췄다",
+        "자리값에 맞춰 막대의 알을 손가락으로 움직였다",
+        "보호 덮개 안의 자성 원판에 자료를 기록했다"
+      ],
+      "answerIndex": 2,
+      "explanation": "플로피디스크은 보호 덮개 안의 자성 원판에 자료를 기록했다는 방식으로 사용했어요. 도구의 구조와 사람의 동작이 맞물려야 제 기능을 했습니다.",
+      "source": {
+        "name": "대한민국역사박물관",
+        "url": "https://www.much.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-01-now-6-v2",
+      "dateKey": "2026-10-01",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "gentle",
+      "prompt": "인터넷 서버에 파일을 보관하고 여러 기기에서 여는 서비스인 클라우드 저장소, 이용할 때 지킬 원칙으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "공유 범위와 계정 보안을 먼저 확인한다",
+        "환경과 눈의 편안함에 맞춰 밝기와 함께 조절한다",
+        "이름과 폴더를 정리해 다시 찾기 쉽게 한다"
+      ],
+      "answerIndex": 0,
+      "explanation": "클라우드 저장소을 이용할 때는 공유 범위와 계정 보안을 먼저 확인한다는 원칙이 알맞아요. 편리함과 함께 확인 습관을 갖는 것이 중요합니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-01-life-6-v2",
+      "dateKey": "2026-10-01",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "steady",
+      "prompt": "완강기 때는 설명서를 확인하고 지지대 고정 뒤 벨트를 가슴에 맞춘다는 대응이 권장됩니다. 그 까닭으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "공기 길을 만들면 실내 오염 물질이 밖으로 빠져나가기 쉽다",
+        "잘못 고정하면 하강 중 추락 위험이 생긴다",
+        "성분 조합에 따라 자극성 기체나 열이 생길 수 있다"
+      ],
+      "answerIndex": 1,
+      "explanation": "그 이유는 잘못 고정하면 하강 중 추락 위험이 생긴다는 점입니다. 위험이 생기는 원리를 알면 비슷한 상황에서도 판단하기 쉬워요.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-02-then-7-v2",
+      "dateKey": "2026-10-02",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "빛을 필름에 기록해 사진을 남기는 일에 쓰였던 필름카메라, 실제 작동 방식으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "촬영 뒤 필름을 감고 현상 과정을 거쳤다",
+        "태엽을 감아 저장한 힘으로 종을 울렸다",
+        "색소 면을 두 종이 사이에 놓고 위에서 눌러 썼다"
+      ],
+      "answerIndex": 0,
+      "explanation": "필름카메라은 촬영 뒤 필름을 감고 현상 과정을 거쳤다는 방식으로 사용했어요. 도구의 구조와 사람의 동작이 맞물려야 제 기능을 했습니다.",
+      "source": {
+        "name": "대한민국역사박물관",
+        "url": "https://www.much.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-02-now-7-v2",
+      "dateKey": "2026-10-02",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "원본 손실에 대비해 별도 사본을 만드는 작업인 백업, 이용할 때 지킬 원칙으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "충전이 어려울 때 켜고 필요한 알림 제한을 확인한다",
+        "중요 자료는 다른 장치나 신뢰할 저장소에도 복사한다",
+        "민감한 작업을 마친 탭은 닫고 로그아웃한다"
+      ],
+      "answerIndex": 1,
+      "explanation": "백업을 이용할 때는 중요 자료는 다른 장치나 신뢰할 저장소에도 복사한다는 원칙이 알맞아요. 편리함과 함께 확인 습관을 갖는 것이 중요합니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-02-life-7-v2",
+      "dateKey": "2026-10-02",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "지진 발생 때는 떨어지는 물건을 피해 탁자 아래에서 머리를 보호한다는 대응이 권장됩니다. 그 까닭으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "모기는 적은 양의 고인 물에서도 번식할 수 있다",
+        "밀폐 공간에서는 자극성 증기가 쌓일 수 있다",
+        "강한 흔들림 중 급히 이동하면 낙하물에 다칠 수 있다"
+      ],
+      "answerIndex": 2,
+      "explanation": "그 이유는 강한 흔들림 중 급히 이동하면 낙하물에 다칠 수 있다는 점입니다. 위험이 생기는 원리를 알면 비슷한 상황에서도 판단하기 쉬워요.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-03-then-8-v2",
+      "dateKey": "2026-10-03",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "투명 필름 사진을 큰 화면에 비추는 일에 쓰였던 슬라이드영사기, 실제 작동 방식으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "바늘의 진동을 나팔관으로 크게 울렸다",
+        "강한 빛을 슬라이드와 렌즈에 통과시켰다",
+        "연료통의 석유를 심지에 올려 불꽃을 조절했다"
+      ],
+      "answerIndex": 1,
+      "explanation": "슬라이드영사기은 강한 빛을 슬라이드와 렌즈에 통과시켰다는 방식으로 사용했어요. 도구의 구조와 사람의 동작이 맞물려야 제 기능을 했습니다.",
+      "source": {
+        "name": "대한민국역사박물관",
+        "url": "https://www.much.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-03-now-8-v2",
+      "dateKey": "2026-10-03",
+      "lens": "now",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "비밀번호 외에 한 가지 확인 수단을 더 요구하는 보호 방식인 2단계 인증, 이용할 때 지킬 원칙으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "충전과 저장 공간을 확인하고 공식 설정에서 진행한다",
+        "공용 기기에서는 사용 뒤 로그아웃하고 데이터를 지운다",
+        "복구 수단을 안전하게 보관하고 알 수 없는 승인을 거절한다"
+      ],
+      "answerIndex": 2,
+      "explanation": "2단계 인증을 이용할 때는 복구 수단을 안전하게 보관하고 알 수 없는 승인을 거절한다는 원칙이 알맞아요. 편리함과 함께 확인 습관을 갖는 것이 중요합니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-03-life-8-v2",
+      "dateKey": "2026-10-03",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "gentle",
+      "prompt": "태풍 접근 때는 실내로 이동하고 창문과 날아갈 물건을 점검한다는 대응이 권장됩니다. 그 까닭으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "강풍이 유리와 야외 물체를 날려 위험을 키운다",
+        "진드기가 피부에 붙기 전 노출을 줄이는 것이 중요하다",
+        "수거하는 사람이 날카로운 조각에 베일 수 있다"
+      ],
+      "answerIndex": 0,
+      "explanation": "그 이유는 강풍이 유리와 야외 물체를 날려 위험을 키운다는 점입니다. 위험이 생기는 원리를 알면 비슷한 상황에서도 판단하기 쉬워요.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-04-then-9-v2",
+      "dateKey": "2026-10-04",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "같은 문서를 여러 장 복제하는 일에 쓰였던 등사기, 실제 작동 방식으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "명암만 표현하는 화면과 안테나로 방송을 받았다",
+        "윗칸의 큰 얼음이 녹으며 내부 열을 빼앗았다",
+        "글씨를 낸 원지에 잉크를 밀어 종이에 찍었다"
+      ],
+      "answerIndex": 2,
+      "explanation": "등사기은 글씨를 낸 원지에 잉크를 밀어 종이에 찍었다는 방식으로 사용했어요. 도구의 구조와 사람의 동작이 맞물려야 제 기능을 했습니다.",
+      "source": {
+        "name": "대한민국역사박물관",
+        "url": "https://www.much.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-04-now-9-v2",
+      "dateKey": "2026-10-04",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "gentle",
+      "prompt": "서로 다른 긴 비밀번호를 생성하고 보관하는 도구인 비밀번호 관리자, 이용할 때 지킬 원칙으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "관리자용 주 비밀번호는 길고 고유하게 정한다",
+        "개발자 이름과 권한, 이용자 평가를 살핀다",
+        "화면이 오래된 내용이면 새로고침하거나 캐시를 정리한다"
+      ],
+      "answerIndex": 0,
+      "explanation": "비밀번호 관리자을 이용할 때는 관리자용 주 비밀번호는 길고 고유하게 정한다는 원칙이 알맞아요. 편리함과 함께 확인 습관을 갖는 것이 중요합니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-04-life-9-v2",
+      "dateKey": "2026-10-04",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "steady",
+      "prompt": "폭염 때는 한낮 야외활동을 줄이고 물을 조금씩 자주 마신다는 대응이 권장됩니다. 그 까닭으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "자외선은 흐린 날에도 일부 지표에 도달한다",
+        "높은 온도에서는 몸이 열을 내보내기 어려워진다",
+        "오염과 다른 재질이 섞이면 선별과 재활용이 어려워진다"
+      ],
+      "answerIndex": 1,
+      "explanation": "그 이유는 높은 온도에서는 몸이 열을 내보내기 어려워진다는 점입니다. 위험이 생기는 원리를 알면 비슷한 상황에서도 판단하기 쉬워요.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-05-then-10-v2",
+      "dateKey": "2026-10-05",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "종이에 글자를 일정하게 찍는 일에 쓰였던 기계식타자기, 실제 작동 방식으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "글쇠를 누르면 활자가 먹띠를 쳐 종이에 자국을 냈다",
+        "진공관 회로가 약한 전파 신호를 증폭했다",
+        "얇은 알루미늄 용기를 난로 위에 올려 데우기도 했다"
+      ],
+      "answerIndex": 0,
+      "explanation": "기계식타자기은 글쇠를 누르면 활자가 먹띠를 쳐 종이에 자국을 냈다는 방식으로 사용했어요. 도구의 구조와 사람의 동작이 맞물려야 제 기능을 했습니다.",
+      "source": {
+        "name": "대한민국역사박물관",
+        "url": "https://www.much.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-05-now-10-v2",
+      "dateKey": "2026-10-05",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "지문이나 얼굴 특징으로 사용자를 확인하는 기능인 생체 인증, 이용할 때 지킬 원칙으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "주소와 자물쇠 표시를 확인하고 수상한 다운로드를 피한다",
+        "기기 잠금번호도 함께 안전하게 관리한다",
+        "확장자와 출처를 확인한 뒤 열고 저장 위치를 기억한다"
+      ],
+      "answerIndex": 1,
+      "explanation": "생체 인증을 이용할 때는 기기 잠금번호도 함께 안전하게 관리한다는 원칙이 알맞아요. 편리함과 함께 확인 습관을 갖는 것이 중요합니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-05-life-10-v2",
+      "dateKey": "2026-10-05",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "한파 때는 노출 부위를 보온하고 수도·난방 상태를 확인한다는 대응이 권장됩니다. 그 까닭으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "땀으로 잃은 수분을 제때 보충해야 체온 조절을 돕는다",
+        "비닐과 금속 같은 이물질은 처리 과정에 방해가 된다",
+        "강한 추위는 동상과 시설 동결 위험을 높인다"
+      ],
+      "answerIndex": 2,
+      "explanation": "그 이유는 강한 추위는 동상과 시설 동결 위험을 높인다는 점입니다. 위험이 생기는 원리를 알면 비슷한 상황에서도 판단하기 쉬워요.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-06-then-11-v2",
+      "dateKey": "2026-10-06",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "시내버스 요금을 현금 대신 내는 일에 쓰였던 버스토큰, 실제 작동 방식으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "자기테이프가 든 카세트를 비디오 기기에 넣었다",
+        "승차할 때 정해진 금속 표를 요금함에 넣었다",
+        "넓게 파낸 나무 그릇에 재료를 담아 손질했다"
+      ],
+      "answerIndex": 1,
+      "explanation": "버스토큰은 승차할 때 정해진 금속 표를 요금함에 넣었다는 방식으로 사용했어요. 도구의 구조와 사람의 동작이 맞물려야 제 기능을 했습니다.",
+      "source": {
+        "name": "대한민국역사박물관",
+        "url": "https://www.much.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-06-now-11-v2",
+      "dateKey": "2026-10-06",
+      "lens": "now",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "문자메시지의 링크나 앱 설치로 피해를 유도하는 사기인 스미싱, 이용할 때 지킬 원칙으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "도메인 철자와 https 연결 여부를 확인한다",
+        "개인정보가 든 파일인지와 공개 범위를 확인한다",
+        "문자 링크를 누르지 말고 기관의 공식 경로로 확인한다"
+      ],
+      "answerIndex": 2,
+      "explanation": "스미싱을 이용할 때는 문자 링크를 누르지 말고 기관의 공식 경로로 확인한다는 원칙이 알맞아요. 편리함과 함께 확인 습관을 갖는 것이 중요합니다.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-06-life-11-v2",
+      "dateKey": "2026-10-06",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "gentle",
+      "prompt": "낙뢰 때는 튼튼한 건물이나 닫힌 자동차 안으로 이동한다는 대응이 권장됩니다. 그 까닭으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "높은 나무와 열린 공간은 번개 전류에 노출되기 쉽다",
+        "규칙적인 빛과 시간 단서가 몸의 수면 리듬을 돕는다",
+        "내부 금속과 전해질을 따로 안전하게 처리할 필요가 있다"
+      ],
+      "answerIndex": 0,
+      "explanation": "그 이유는 높은 나무와 열린 공간은 번개 전류에 노출되기 쉽다는 점입니다. 위험이 생기는 원리를 알면 비슷한 상황에서도 판단하기 쉬워요.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-07-then-12-v2",
+      "dateKey": "2026-10-07",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "이름이나 업종으로 전화번호를 찾는 일에 쓰였던 전화번호부, 실제 작동 방식으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "필름을 빠르게 이동시키며 빛으로 한 장씩 투사했다",
+        "움푹한 통에 재료를 넣고 공이로 반복해 찧었다",
+        "가나다순으로 인쇄된 두꺼운 책의 항목을 찾아봤다"
+      ],
+      "answerIndex": 2,
+      "explanation": "전화번호부은 가나다순으로 인쇄된 두꺼운 책의 항목을 찾아봤다는 방식으로 사용했어요. 도구의 구조와 사람의 동작이 맞물려야 제 기능을 했습니다.",
+      "source": {
+        "name": "대한민국역사박물관",
+        "url": "https://www.much.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-07-now-12-v2",
+      "dateKey": "2026-10-07",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "gentle",
+      "prompt": "기관이나 지인을 사칭해 계정·금융 정보를 빼내는 사기인 피싱, 이용할 때 지킬 원칙으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "발신 주소를 살피고 별도 공식 연락처로 사실을 확인한다",
+        "광고 표시와 공식 사이트 도메인을 구분한다",
+        "예상한 발신자와 파일인지 확인한 뒤 연다"
+      ],
+      "answerIndex": 0,
+      "explanation": "피싱을 이용할 때는 발신 주소를 살피고 별도 공식 연락처로 사실을 확인한다는 원칙이 알맞아요. 편리함과 함께 확인 습관을 갖는 것이 중요합니다.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-07-life-12-v2",
+      "dateKey": "2026-10-07",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "steady",
+      "prompt": "산불 때는 산에서 멀어지는 방향으로 대피하고 119에 신고한다는 대응이 권장됩니다. 그 까닭으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "다른 병에 옮기면 내용물을 음료로 잘못 알 수 있다",
+        "바람을 탄 불길과 연기는 예상보다 빠르게 번질 수 있다",
+        "의도하지 않은 가스 누출 가능성을 줄인다"
+      ],
+      "answerIndex": 1,
+      "explanation": "그 이유는 바람을 탄 불길과 연기는 예상보다 빠르게 번질 수 있다는 점입니다. 위험이 생기는 원리를 알면 비슷한 상황에서도 판단하기 쉬워요.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-08-then-13-v2",
+      "dateKey": "2026-10-08",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "먼 곳에 짧고 급한 소식을 보내는 일에 쓰였던 전보, 실제 작동 방식으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "전신망으로 보낸 문장을 우체국이 종이에 전달했다",
+        "자리값에 맞춰 막대의 알을 손가락으로 움직였다",
+        "곡식을 까불어 바람에 가벼운 부분을 날렸다"
+      ],
+      "answerIndex": 0,
+      "explanation": "전보은 전신망으로 보낸 문장을 우체국이 종이에 전달했다는 방식으로 사용했어요. 도구의 구조와 사람의 동작이 맞물려야 제 기능을 했습니다.",
+      "source": {
+        "name": "대한민국역사박물관",
+        "url": "https://www.much.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-08-now-13-v2",
+      "dateKey": "2026-10-08",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "파일을 못 쓰게 만든 뒤 대가를 요구하는 악성 프로그램인 랜섬웨어, 이용할 때 지킬 원칙으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "이름과 폴더를 정리해 다시 찾기 쉽게 한다",
+        "운영체제를 갱신하고 중요한 파일을 분리 백업한다",
+        "출처를 확인하고 별도 폴더에 풀어 내용을 살핀다"
+      ],
+      "answerIndex": 1,
+      "explanation": "랜섬웨어을 이용할 때는 운영체제를 갱신하고 중요한 파일을 분리 백업한다는 원칙이 알맞아요. 편리함과 함께 확인 습관을 갖는 것이 중요합니다.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-08-life-13-v2",
+      "dateKey": "2026-10-08",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "홍수 때는 침수 도로에 들어가지 말고 높은 곳으로 이동한다는 대응이 권장됩니다. 그 까닭으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "성분 조합에 따라 자극성 기체나 열이 생길 수 있다",
+        "누전이나 과부하 신호일 수 있어 그대로 쓰면 위험하다",
+        "물의 깊이와 흐름, 도로 파손을 겉으로 판단하기 어렵다"
+      ],
+      "answerIndex": 2,
+      "explanation": "그 이유는 물의 깊이와 흐름, 도로 파손을 겉으로 판단하기 어렵다는 점입니다. 위험이 생기는 원리를 알면 비슷한 상황에서도 판단하기 쉬워요.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-09-then-14-v2",
+      "dateKey": "2026-10-09",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "현금을 직접 넣지 않고 돈을 우편으로 보내는 일에 쓰였던 우편환, 실제 작동 방식으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "색소 면을 두 종이 사이에 놓고 위에서 눌러 썼다",
+        "우체국이 발행한 증서를 받는 사람이 현금으로 바꿨다",
+        "긴 자루 끝의 회전 막대로 곡식단을 내리쳤다"
+      ],
+      "answerIndex": 1,
+      "explanation": "우편환은 우체국이 발행한 증서를 받는 사람이 현금으로 바꿨다는 방식으로 사용했어요. 도구의 구조와 사람의 동작이 맞물려야 제 기능을 했습니다.",
+      "source": {
+        "name": "대한민국역사박물관",
+        "url": "https://www.much.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-09-now-14-v2",
+      "dateKey": "2026-10-09",
+      "lens": "now",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "기기에 해로운 동작을 하도록 만든 프로그램인 악성코드, 이용할 때 지킬 원칙으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "민감한 작업을 마친 탭은 닫고 로그아웃한다",
+        "서명이나 입력 전 문서 출처와 전체 페이지를 확인한다",
+        "공식 배포처에서만 앱과 파일을 받는다"
+      ],
+      "answerIndex": 2,
+      "explanation": "악성코드을 이용할 때는 공식 배포처에서만 앱과 파일을 받는다는 원칙이 알맞아요. 편리함과 함께 확인 습관을 갖는 것이 중요합니다.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-09-life-14-v2",
+      "dateKey": "2026-10-09",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "gentle",
+      "prompt": "미세먼지 때는 농도가 높은 날에는 노출을 줄이고 귀가 뒤 씻는다는 대응이 권장됩니다. 그 까닭으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "아주 작은 입자가 공기 중에 오래 머물 수 있다",
+        "밀폐 공간에서는 자극성 증기가 쌓일 수 있다",
+        "허용 전류를 넘으면 전선과 접점이 과열될 수 있다"
+      ],
+      "answerIndex": 0,
+      "explanation": "그 이유는 아주 작은 입자가 공기 중에 오래 머물 수 있다는 점입니다. 위험이 생기는 원리를 알면 비슷한 상황에서도 판단하기 쉬워요.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-10-then-15-v2",
+      "dateKey": "2026-10-10",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "가정의 난방과 취사에 열을 내는 일에 쓰였던 연탄, 실제 작동 방식으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "연료통의 석유를 심지에 올려 불꽃을 조절했다",
+        "소가 끄는 날을 흙 속에 넣어 이랑을 만들었다",
+        "구멍 난 원통형 연료를 아궁이에서 이어 갈아 넣었다"
+      ],
+      "answerIndex": 2,
+      "explanation": "연탄은 구멍 난 원통형 연료를 아궁이에서 이어 갈아 넣었다는 방식으로 사용했어요. 도구의 구조와 사람의 동작이 맞물려야 제 기능을 했습니다.",
+      "source": {
+        "name": "대한민국역사박물관",
+        "url": "https://www.much.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-10-now-15-v2",
+      "dateKey": "2026-10-10",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "gentle",
+      "prompt": "원치 않는 전화나 메시지를 걸러내는 기능인 스팸 차단, 이용할 때 지킬 원칙으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "정상 연락이 걸러지지 않았는지 차단 목록도 확인한다",
+        "공용 기기에서는 사용 뒤 로그아웃하고 데이터를 지운다",
+        "개인정보가 보이면 가리거나 잘라낸 뒤 공유한다"
+      ],
+      "answerIndex": 0,
+      "explanation": "스팸 차단을 이용할 때는 정상 연락이 걸러지지 않았는지 차단 목록도 확인한다는 원칙이 알맞아요. 편리함과 함께 확인 습관을 갖는 것이 중요합니다.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-10-life-15-v2",
+      "dateKey": "2026-10-10",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "steady",
+      "prompt": "황사 때는 창문을 닫고 외출 뒤 옷과 손을 깨끗이 한다는 대응이 권장됩니다. 그 까닭으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "수거하는 사람이 날카로운 조각에 베일 수 있다",
+        "바람에 실린 흙먼지가 실내와 호흡기로 들어올 수 있다",
+        "열선이 꺾이거나 한곳에 열이 모이면 과열될 수 있다"
+      ],
+      "answerIndex": 1,
+      "explanation": "그 이유는 바람에 실린 흙먼지가 실내와 호흡기로 들어올 수 있다는 점입니다. 위험이 생기는 원리를 알면 비슷한 상황에서도 판단하기 쉬워요.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-11-then-16-v2",
+      "dateKey": "2026-10-11",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "된장과 간장 같은 장류를 숙성·보관하는 일에 쓰였던 장독, 실제 작동 방식으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "숨 쉬는 옹기 뚜껑을 덮어 장독대에 두었다",
+        "윗칸의 큰 얼음이 녹으며 내부 열을 빼앗았다",
+        "줄에 매단 통을 내려 물을 담고 손으로 끌어올렸다"
+      ],
+      "answerIndex": 0,
+      "explanation": "장독은 숨 쉬는 옹기 뚜껑을 덮어 장독대에 두었다는 방식으로 사용했어요. 도구의 구조와 사람의 동작이 맞물려야 제 기능을 했습니다.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-11-now-16-v2",
+      "dateKey": "2026-10-11",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "앱이 카메라·연락처 같은 기능에 접근하도록 주는 허용인 앱 권한, 이용할 때 지킬 원칙으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "화면이 오래된 내용이면 새로고침하거나 캐시를 정리한다",
+        "기능에 꼭 필요한 권한만 허용하고 정기적으로 점검한다",
+        "입장 전 마이크·카메라 상태와 표시 이름을 확인한다"
+      ],
+      "answerIndex": 1,
+      "explanation": "앱 권한을 이용할 때는 기능에 꼭 필요한 권한만 허용하고 정기적으로 점검한다는 원칙이 알맞아요. 편리함과 함께 확인 습관을 갖는 것이 중요합니다.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-11-life-16-v2",
+      "dateKey": "2026-10-11",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "일산화탄소 의심 때는 즉시 환기하며 밖으로 나가고 119에 도움을 요청한다는 대응이 권장됩니다. 그 까닭으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "오염과 다른 재질이 섞이면 선별과 재활용이 어려워진다",
+        "배기가 실내로 새면 일산화탄소가 쌓일 수 있다",
+        "색과 냄새가 거의 없어 실내에서 알아차리기 어렵다"
+      ],
+      "answerIndex": 2,
+      "explanation": "그 이유는 색과 냄새가 거의 없어 실내에서 알아차리기 어렵다는 점입니다. 위험이 생기는 원리를 알면 비슷한 상황에서도 판단하기 쉬워요.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-12-then-17-v2",
+      "dateKey": "2026-10-12",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "옷감의 구김을 펴고 윤기를 내는 일에 쓰였던 다듬이돌, 실제 작동 방식으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "얇은 알루미늄 용기를 난로 위에 올려 데우기도 했다",
+        "천을 돌 위에 놓고 두 방망이로 고르게 두드렸다",
+        "손잡이를 반복해 움직여 압력 차를 만들었다"
+      ],
+      "answerIndex": 1,
+      "explanation": "다듬이돌은 천을 돌 위에 놓고 두 방망이로 고르게 두드렸다는 방식으로 사용했어요. 도구의 구조와 사람의 동작이 맞물려야 제 기능을 했습니다.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-12-now-17-v2",
+      "dateKey": "2026-10-12",
+      "lens": "now",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "앱이 현재 위치 정보에 접근하도록 하는 설정인 위치 권한, 이용할 때 지킬 원칙으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "확장자와 출처를 확인한 뒤 열고 저장 위치를 기억한다",
+        "불필요한 창과 알림을 닫고 공유 범위를 선택한다",
+        "항상 허용보다 사용 중에만 허용을 우선 검토한다"
+      ],
+      "answerIndex": 2,
+      "explanation": "위치 권한을 이용할 때는 항상 허용보다 사용 중에만 허용을 우선 검토한다는 원칙이 알맞아요. 편리함과 함께 확인 습관을 갖는 것이 중요합니다.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-12-life-17-v2",
+      "dateKey": "2026-10-12",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "gentle",
+      "prompt": "젖은 손과 전기 때는 손을 완전히 말린 뒤 플러그와 스위치를 만진다는 대응이 권장됩니다. 그 까닭으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "물기는 피부를 통한 전류 흐름 위험을 높인다",
+        "비닐과 금속 같은 이물질은 처리 과정에 방해가 된다",
+        "배관 속 물이 얼며 부피가 늘어 파손될 수 있다"
+      ],
+      "answerIndex": 0,
+      "explanation": "그 이유는 물기는 피부를 통한 전류 흐름 위험을 높인다는 점입니다. 위험이 생기는 원리를 알면 비슷한 상황에서도 판단하기 쉬워요.",
+      "source": {
+        "name": "국민재난안전포털",
+        "url": "https://www.safekorea.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-13-then-18-v2",
+      "dateKey": "2026-10-13",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "곡식을 갈아 가루나 즙을 내는 일에 쓰였던 맷돌, 실제 작동 방식으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "넓게 파낸 나무 그릇에 재료를 담아 손질했다",
+        "자유롭게 도는 자침이 남북 방향을 가리키게 했다",
+        "위짝의 손잡이를 돌려 두 돌 사이에서 곡물을 갈았다"
+      ],
+      "answerIndex": 2,
+      "explanation": "맷돌은 위짝의 손잡이를 돌려 두 돌 사이에서 곡물을 갈았다는 방식으로 사용했어요. 도구의 구조와 사람의 동작이 맞물려야 제 기능을 했습니다.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-13-now-18-v2",
+      "dateKey": "2026-10-13",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "gentle",
+      "prompt": "앱이 새 소식을 화면이나 소리로 알려 주는 기능인 알림 설정, 이용할 때 지킬 원칙으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "꼭 필요한 앱과 유형만 남겨 방해를 줄인다",
+        "개인정보가 든 파일인지와 공개 범위를 확인한다",
+        "상호·금액·환불 조건을 최종 승인 전에 확인한다"
+      ],
+      "answerIndex": 0,
+      "explanation": "알림 설정을 이용할 때는 꼭 필요한 앱과 유형만 남겨 방해를 줄인다는 원칙이 알맞아요. 편리함과 함께 확인 습관을 갖는 것이 중요합니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-13-life-18-v2",
+      "dateKey": "2026-10-13",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "steady",
+      "prompt": "횡단보도 때는 신호와 좌우 차량 정지 여부를 확인한 뒤 건넌다는 대응이 권장됩니다. 그 까닭으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "내부 금속과 전해질을 따로 안전하게 처리할 필요가 있다",
+        "운전자가 보행자를 늦게 발견하거나 차량이 계속 올 수 있다",
+        "젖은 타일은 발과 바닥 사이 마찰을 줄인다"
+      ],
+      "answerIndex": 1,
+      "explanation": "그 이유는 운전자가 보행자를 늦게 발견하거나 차량이 계속 올 수 있다는 점입니다. 위험이 생기는 원리를 알면 비슷한 상황에서도 판단하기 쉬워요.",
+      "source": {
+        "name": "한국도로교통공단",
+        "url": "https://www.koroad.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-14-then-19-v2",
+      "dateKey": "2026-10-14",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "숯불에 바람을 보내 화력을 높이는 일에 쓰였던 풍로, 실제 작동 방식으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "손잡이나 발판으로 바람을 일으켜 불씨에 보냈다",
+        "움푹한 통에 재료를 넣고 공이로 반복해 찧었다",
+        "태양 위치에 따라 생기는 그림자의 방향을 읽었다"
+      ],
+      "answerIndex": 0,
+      "explanation": "풍로은 손잡이나 발판으로 바람을 일으켜 불씨에 보냈다는 방식으로 사용했어요. 도구의 구조와 사람의 동작이 맞물려야 제 기능을 했습니다.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-14-now-19-v2",
+      "dateKey": "2026-10-14",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "이동통신 등 무선 송수신을 한꺼번에 끄는 기능인 비행기 모드, 이용할 때 지킬 원칙으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "예상한 발신자와 파일인지 확인한 뒤 연다",
+        "항공기 안내에 따라 켜고 필요한 와이파이는 별도 설정한다",
+        "기기 잠금과 결제 알림을 켜고 분실 시 즉시 차단한다"
+      ],
+      "answerIndex": 1,
+      "explanation": "비행기 모드을 이용할 때는 항공기 안내에 따라 켜고 필요한 와이파이는 별도 설정한다는 원칙이 알맞아요. 편리함과 함께 확인 습관을 갖는 것이 중요합니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-14-life-19-v2",
+      "dateKey": "2026-10-14",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "야간 보행 때는 밝은 길을 택하고 운전자에게 잘 보이게 한다는 대응이 권장됩니다. 그 까닭으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "의도하지 않은 가스 누출 가능성을 줄인다",
+        "기울거나 접히면 중심을 잃고 추락하기 쉽다",
+        "어두우면 거리와 움직임을 알아보는 시간이 길어진다"
+      ],
+      "answerIndex": 2,
+      "explanation": "그 이유는 어두우면 거리와 움직임을 알아보는 시간이 길어진다는 점입니다. 위험이 생기는 원리를 알면 비슷한 상황에서도 판단하기 쉬워요.",
+      "source": {
+        "name": "한국도로교통공단",
+        "url": "https://www.koroad.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-15-then-20-v2",
+      "dateKey": "2026-10-15",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "사람의 등에 무거운 짐을 나르는 일에 쓰였던 지게, 실제 작동 방식으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "곡식을 까불어 바람에 가벼운 부분을 날렸다",
+        "A자 나무틀을 등에 지고 작대기로 균형을 잡았다",
+        "원통에 모인 빗물의 깊이를 자로 측정했다"
+      ],
+      "answerIndex": 1,
+      "explanation": "지게은 A자 나무틀을 등에 지고 작대기로 균형을 잡았다는 방식으로 사용했어요. 도구의 구조와 사람의 동작이 맞물려야 제 기능을 했습니다.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-15-now-20-v2",
+      "dateKey": "2026-10-15",
+      "lens": "now",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "정한 시간에 알림과 벨소리를 제한하는 기능인 방해 금지 모드, 이용할 때 지킬 원칙으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "출처를 확인하고 별도 폴더에 풀어 내용을 살핀다",
+        "누구에게도 전달하지 않고 내가 시작한 요청에만 입력한다",
+        "가족이나 긴급 연락 예외가 필요한지 설정한다"
+      ],
+      "answerIndex": 2,
+      "explanation": "방해 금지 모드을 이용할 때는 가족이나 긴급 연락 예외가 필요한지 설정한다는 원칙이 알맞아요. 편리함과 함께 확인 습관을 갖는 것이 중요합니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-15-life-20-v2",
+      "dateKey": "2026-10-15",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "gentle",
+      "prompt": "대형차 사각지대 때는 차량 앞뒤와 옆에 바짝 붙지 않고 거리를 둔다는 대응이 권장됩니다. 그 까닭으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "운전석에서 거울로도 보이지 않는 구역이 크다",
+        "누전이나 과부하 신호일 수 있어 그대로 쓰면 위험하다",
+        "떨어지거나 손이 스칠 때 베임 사고가 생길 수 있다"
+      ],
+      "answerIndex": 0,
+      "explanation": "그 이유는 운전석에서 거울로도 보이지 않는 구역이 크다는 점입니다. 위험이 생기는 원리를 알면 비슷한 상황에서도 판단하기 쉬워요.",
+      "source": {
+        "name": "한국도로교통공단",
+        "url": "https://www.koroad.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-16-then-21-v2",
+      "dateKey": "2026-10-16",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "솜이나 섬유를 꼬아 실을 만드는 일에 쓰였던 물레, 실제 작동 방식으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "긴 자루 끝의 회전 막대로 곡식단을 내리쳤다",
+        "낮에는 연기, 밤에는 불빛의 수로 신호를 보냈다",
+        "바퀴를 돌리며 섬유를 길게 뽑아 꼬았다"
+      ],
+      "answerIndex": 2,
+      "explanation": "물레은 바퀴를 돌리며 섬유를 길게 뽑아 꼬았다는 방식으로 사용했어요. 도구의 구조와 사람의 동작이 맞물려야 제 기능을 했습니다.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-16-now-21-v2",
+      "dateKey": "2026-10-16",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "gentle",
+      "prompt": "화면 글씨를 읽기 편한 크기로 바꾸는 기능인 글자 크기 설정, 이용할 때 지킬 원칙으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "미리보기로 잘림 여부를 보며 단계적으로 조절한다",
+        "서명이나 입력 전 문서 출처와 전체 페이지를 확인한다",
+        "분실에 대비한 예비 인증 수단을 안전하게 보관한다"
+      ],
+      "answerIndex": 0,
+      "explanation": "글자 크기 설정을 이용할 때는 미리보기로 잘림 여부를 보며 단계적으로 조절한다는 원칙이 알맞아요. 편리함과 함께 확인 습관을 갖는 것이 중요합니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-16-life-21-v2",
+      "dateKey": "2026-10-16",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "steady",
+      "prompt": "안전벨트 때는 출발 전에 몸에 꼬이지 않게 골반과 어깨에 맨다는 대응이 권장됩니다. 그 까닭으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "허용 전류를 넘으면 전선과 접점이 과열될 수 있다",
+        "충돌 때 몸이 차량 내부나 밖으로 튕기는 것을 줄인다",
+        "증기와 물은 짧은 접촉에도 화상을 일으킬 수 있다"
+      ],
+      "answerIndex": 1,
+      "explanation": "그 이유는 충돌 때 몸이 차량 내부나 밖으로 튕기는 것을 줄인다는 점입니다. 위험이 생기는 원리를 알면 비슷한 상황에서도 판단하기 쉬워요.",
+      "source": {
+        "name": "한국도로교통공단",
+        "url": "https://www.koroad.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-17-then-22-v2",
+      "dateKey": "2026-10-17",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "날실과 씨실을 엮어 천을 짜는 일에 쓰였던 베틀, 실제 작동 방식으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "발판과 북을 움직여 두 방향의 실을 교차시켰다",
+        "소가 끄는 날을 흙 속에 넣어 이랑을 만들었다",
+        "길목마다 말과 숙소를 마련해 다음 구간을 이었다"
+      ],
+      "answerIndex": 0,
+      "explanation": "베틀은 발판과 북을 움직여 두 방향의 실을 교차시켰다는 방식으로 사용했어요. 도구의 구조와 사람의 동작이 맞물려야 제 기능을 했습니다.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-17-now-22-v2",
+      "dateKey": "2026-10-17",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "화면 일부를 크게 보여 주는 접근성 기능인 화면 확대, 이용할 때 지킬 원칙으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "개인정보가 보이면 가리거나 잘라낸 뒤 공유한다",
+        "확대 동작과 원래 크기로 돌아오는 방법을 함께 익힌다",
+        "정확한 망 이름을 확인하고 중요한 거래는 피한다"
+      ],
+      "answerIndex": 1,
+      "explanation": "화면 확대을 이용할 때는 확대 동작과 원래 크기로 돌아오는 방법을 함께 익힌다는 원칙이 알맞아요. 편리함과 함께 확인 습관을 갖는 것이 중요합니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-17-life-22-v2",
+      "dateKey": "2026-10-17",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "자전거 헬멧 때는 수평으로 쓰고 턱끈이 헐겁지 않게 맞춘다는 대응이 권장됩니다. 그 까닭으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "열선이 꺾이거나 한곳에 열이 모이면 과열될 수 있다",
+        "갑작스러운 움직임이 충돌이나 물림 사고로 이어질 수 있다",
+        "넘어질 때 머리에 전달되는 충격을 줄여 준다"
+      ],
+      "answerIndex": 2,
+      "explanation": "그 이유는 넘어질 때 머리에 전달되는 충격을 줄여 준다는 점입니다. 위험이 생기는 원리를 알면 비슷한 상황에서도 판단하기 쉬워요.",
+      "source": {
+        "name": "한국도로교통공단",
+        "url": "https://www.koroad.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-18-then-23-v2",
+      "dateKey": "2026-10-18",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "전기 없이 실내를 밝히는 일에 쓰였던 호롱불, 실제 작동 방식으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "줄에 매단 통을 내려 물을 담고 손으로 끌어올렸다",
+        "기름에 심지를 담그고 끝에 불을 붙였다",
+        "새끼 꼰 짚을 발 모양으로 엮어 신었다"
+      ],
+      "answerIndex": 1,
+      "explanation": "호롱불은 기름에 심지를 담그고 끝에 불을 붙였다는 방식으로 사용했어요. 도구의 구조와 사람의 동작이 맞물려야 제 기능을 했습니다.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-18-now-23-v2",
+      "dateKey": "2026-10-18",
+      "lens": "now",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "말한 내용을 글자로 바꾸는 기능인 음성 입력, 이용할 때 지킬 원칙으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "입장 전 마이크·카메라 상태와 표시 이름을 확인한다",
+        "신뢰할 수 있는 제공자를 고르고 연결 상태를 확인한다",
+        "변환 뒤 이름과 숫자를 눈으로 다시 확인한다"
+      ],
+      "answerIndex": 2,
+      "explanation": "음성 입력을 이용할 때는 변환 뒤 이름과 숫자를 눈으로 다시 확인한다는 원칙이 알맞아요. 편리함과 함께 확인 습관을 갖는 것이 중요합니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-18-life-23-v2",
+      "dateKey": "2026-10-18",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "gentle",
+      "prompt": "엘리베이터 고장 때는 문을 억지로 열지 말고 비상통화로 구조를 요청한다는 대응이 권장됩니다. 그 까닭으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "층 사이에서 임의로 나오면 추락할 수 있다",
+        "배기가 실내로 새면 일산화탄소가 쌓일 수 있다",
+        "산에서는 기온과 날씨가 빠르게 바뀌고 길을 잃기 쉽다"
+      ],
+      "answerIndex": 0,
+      "explanation": "그 이유는 층 사이에서 임의로 나오면 추락할 수 있다는 점입니다. 위험이 생기는 원리를 알면 비슷한 상황에서도 판단하기 쉬워요.",
+      "source": {
+        "name": "한국도로교통공단",
+        "url": "https://www.koroad.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-19-then-24-v2",
+      "dateKey": "2026-10-19",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "벽에 걸어 시간과 시각 소리를 알리는 일에 쓰였던 괘종시계, 실제 작동 방식으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "손잡이를 반복해 움직여 압력 차를 만들었다",
+        "말총과 대나무를 엮은 관모를 끈으로 고정했다",
+        "추의 힘과 흔들리는 진자로 시간을 맞췄다"
+      ],
+      "answerIndex": 2,
+      "explanation": "괘종시계은 추의 힘과 흔들리는 진자로 시간을 맞췄다는 방식으로 사용했어요. 도구의 구조와 사람의 동작이 맞물려야 제 기능을 했습니다.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-19-now-24-v2",
+      "dateKey": "2026-10-19",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "gentle",
+      "prompt": "화면의 글자와 버튼을 음성으로 안내하는 기능인 화면 읽기, 이용할 때 지킬 원칙으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "터치 동작이 달라질 수 있어 사용법을 먼저 확인한다",
+        "불필요한 창과 알림을 닫고 공유 범위를 선택한다",
+        "서명 대상 문서와 요청 기관을 확인한 뒤 승인한다"
+      ],
+      "answerIndex": 0,
+      "explanation": "화면 읽기을 이용할 때는 터치 동작이 달라질 수 있어 사용법을 먼저 확인한다는 원칙이 알맞아요. 편리함과 함께 확인 습관을 갖는 것이 중요합니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-19-life-24-v2",
+      "dateKey": "2026-10-19",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "steady",
+      "prompt": "에스컬레이터 때는 손잡이를 잡고 발을 노란 선 안쪽에 둔다는 대응이 권장됩니다. 그 까닭으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "배관 속 물이 얼며 부피가 늘어 파손될 수 있다",
+        "옷자락과 신발이 움직이는 틈에 끼일 수 있다",
+        "해안에서 먼 쪽으로 흐르는 좁고 빠른 물길이라 정면 저항이 어렵다"
+      ],
+      "answerIndex": 1,
+      "explanation": "그 이유는 옷자락과 신발이 움직이는 틈에 끼일 수 있다는 점입니다. 위험이 생기는 원리를 알면 비슷한 상황에서도 판단하기 쉬워요.",
+      "source": {
+        "name": "한국도로교통공단",
+        "url": "https://www.koroad.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-20-then-25-v2",
+      "dateKey": "2026-10-20",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "정해 둔 시각에 소리로 깨우는 일에 쓰였던 태엽자명종, 실제 작동 방식으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "태엽을 감아 저장한 힘으로 종을 울렸다",
+        "자유롭게 도는 자침이 남북 방향을 가리키게 했다",
+        "천을 발 모양으로 재단해 꿰매 신었다"
+      ],
+      "answerIndex": 0,
+      "explanation": "태엽자명종은 태엽을 감아 저장한 힘으로 종을 울렸다는 방식으로 사용했어요. 도구의 구조와 사람의 동작이 맞물려야 제 기능을 했습니다.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-20-now-25-v2",
+      "dateKey": "2026-10-20",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "재생 중인 말소리를 화면 글자로 바꾸는 기능인 실시간 자막, 이용할 때 지킬 원칙으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "상호·금액·환불 조건을 최종 승인 전에 확인한다",
+        "고유명사나 숫자는 오인식 가능성을 고려해 확인한다",
+        "안내판의 공식 이름과 보안 유형을 대조한다"
+      ],
+      "answerIndex": 1,
+      "explanation": "실시간 자막을 이용할 때는 고유명사나 숫자는 오인식 가능성을 고려해 확인한다는 원칙이 알맞아요. 편리함과 함께 확인 습관을 갖는 것이 중요합니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-20-life-25-v2",
+      "dateKey": "2026-10-20",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "식중독 예방 때는 조리 전후 손을 씻고 익힌 음식과 날음식을 나눈다는 대응이 권장됩니다. 그 까닭으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "젖은 타일은 발과 바닥 사이 마찰을 줄인다",
+        "큰 걸음이나 급한 방향 전환은 균형을 잃기 쉽다",
+        "손과 도구를 통해 미생물이 음식 사이로 옮겨갈 수 있다"
+      ],
+      "answerIndex": 2,
+      "explanation": "그 이유는 손과 도구를 통해 미생물이 음식 사이로 옮겨갈 수 있다는 점입니다. 위험이 생기는 원리를 알면 비슷한 상황에서도 판단하기 쉬워요.",
+      "source": {
+        "name": "한국도로교통공단",
+        "url": "https://www.koroad.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-21-then-26-v2",
+      "dateKey": "2026-10-21",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "원통이나 음반에 기록된 소리를 들려주는 일에 쓰였던 축음기, 실제 작동 방식으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "태양 위치에 따라 생기는 그림자의 방향을 읽었다",
+        "바늘의 진동을 나팔관으로 크게 울렸다",
+        "발목 부분에 끈을 둘러 매어 바짓단을 고정했다"
+      ],
+      "answerIndex": 1,
+      "explanation": "축음기은 바늘의 진동을 나팔관으로 크게 울렸다는 방식으로 사용했어요. 도구의 구조와 사람의 동작이 맞물려야 제 기능을 했습니다.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-21-now-26-v2",
+      "dateKey": "2026-10-21",
+      "lens": "now",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "화면 배경을 어둡게 바꾸는 표시 방식인 다크 모드, 이용할 때 지킬 원칙으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "기기 잠금과 결제 알림을 켜고 분실 시 즉시 차단한다",
+        "처음 화면의 언어·접근성·도움 요청 버튼을 활용한다",
+        "환경과 눈의 편안함에 맞춰 밝기와 함께 조절한다"
+      ],
+      "answerIndex": 2,
+      "explanation": "다크 모드을 이용할 때는 환경과 눈의 편안함에 맞춰 밝기와 함께 조절한다는 원칙이 알맞아요. 편리함과 함께 확인 습관을 갖는 것이 중요합니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-21-life-26-v2",
+      "dateKey": "2026-10-21",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "gentle",
+      "prompt": "냉장 보관 때는 상하기 쉬운 음식은 오래 실온에 두지 않고 빨리 냉장한다는 대응이 권장됩니다. 그 까닭으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "낮은 온도는 많은 미생물의 증식을 늦춘다",
+        "기울거나 접히면 중심을 잃고 추락하기 쉽다",
+        "임의 행동은 다른 승객의 대피와 운행 안전을 방해할 수 있다"
+      ],
+      "answerIndex": 0,
+      "explanation": "그 이유는 낮은 온도는 많은 미생물의 증식을 늦춘다는 점입니다. 위험이 생기는 원리를 알면 비슷한 상황에서도 판단하기 쉬워요.",
+      "source": {
+        "name": "질병관리청",
+        "url": "https://www.kdca.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-22-then-27-v2",
+      "dateKey": "2026-10-22",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "방송 영상과 소리를 가정에서 보는 일에 쓰였던 흑백텔레비전, 실제 작동 방식으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "원통에 모인 빗물의 깊이를 자로 측정했다",
+        "두 가닥 끈을 고리와 매듭으로 묶었다",
+        "명암만 표현하는 화면과 안테나로 방송을 받았다"
+      ],
+      "answerIndex": 2,
+      "explanation": "흑백텔레비전은 명암만 표현하는 화면과 안테나로 방송을 받았다는 방식으로 사용했어요. 도구의 구조와 사람의 동작이 맞물려야 제 기능을 했습니다.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-22-now-27-v2",
+      "dateKey": "2026-10-22",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "gentle",
+      "prompt": "배터리 사용을 줄이도록 일부 동작을 제한하는 기능인 절전 모드, 이용할 때 지킬 원칙으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "충전이 어려울 때 켜고 필요한 알림 제한을 확인한다",
+        "누구에게도 전달하지 않고 내가 시작한 요청에만 입력한다",
+        "발급 문서와 수수료를 확인하고 출력물을 챙긴다"
+      ],
+      "answerIndex": 0,
+      "explanation": "절전 모드을 이용할 때는 충전이 어려울 때 켜고 필요한 알림 제한을 확인한다는 원칙이 알맞아요. 편리함과 함께 확인 습관을 갖는 것이 중요합니다.",
+      "source": {
+        "name": "디지털배움터",
+        "url": "https://www.xn--2z1bw8k1pjz5ccumkb.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-22-life-27-v2",
+      "dateKey": "2026-10-22",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "steady",
+      "prompt": "교차오염 때는 날고기용 도마와 익힌 음식용 도구를 구분한다는 대응이 권장됩니다. 그 까닭으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "떨어지거나 손이 스칠 때 베임 사고가 생길 수 있다",
+        "날재료의 미생물이 바로 먹는 음식으로 옮을 수 있다",
+        "정확한 위치 정보가 경찰의 빠른 출동을 돕는다"
+      ],
+      "answerIndex": 1,
+      "explanation": "그 이유는 날재료의 미생물이 바로 먹는 음식으로 옮을 수 있다는 점입니다. 위험이 생기는 원리를 알면 비슷한 상황에서도 판단하기 쉬워요.",
+      "source": {
+        "name": "질병관리청",
+        "url": "https://www.kdca.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-23-then-28-v2",
+      "dateKey": "2026-10-23",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "전파 방송을 소리로 듣는 일에 쓰였던 진공관라디오, 실제 작동 방식으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "진공관 회로가 약한 전파 신호를 증폭했다",
+        "낮에는 연기, 밤에는 불빛의 수로 신호를 보냈다",
+        "네 가락을 던져 엎어지고 젖혀진 모양을 셌다"
+      ],
+      "answerIndex": 0,
+      "explanation": "진공관라디오은 진공관 회로가 약한 전파 신호를 증폭했다는 방식으로 사용했어요. 도구의 구조와 사람의 동작이 맞물려야 제 기능을 했습니다.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-23-now-28-v2",
+      "dateKey": "2026-10-23",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "오류 수정과 보안 개선을 새 버전에 반영하는 작업인 소프트웨어 업데이트, 이용할 때 지킬 원칙으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "분실에 대비한 예비 인증 수단을 안전하게 보관한다",
+        "충전과 저장 공간을 확인하고 공식 설정에서 진행한다",
+        "공식 앱과 요청 정보 범위를 확인한 뒤 제시한다"
+      ],
+      "answerIndex": 1,
+      "explanation": "소프트웨어 업데이트을 이용할 때는 충전과 저장 공간을 확인하고 공식 설정에서 진행한다는 원칙이 알맞아요. 편리함과 함께 확인 습관을 갖는 것이 중요합니다.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-23-life-28-v2",
+      "dateKey": "2026-10-23",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "손 씻기 때는 흐르는 물과 비누로 손바닥·손등·손가락 사이를 씻는다는 대응이 권장됩니다. 그 까닭으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "증기와 물은 짧은 접촉에도 화상을 일으킬 수 있다",
+        "신고 내용이 출동 장비와 대응 준비를 정하는 데 쓰인다",
+        "마찰과 헹굼이 손의 오염 물질을 줄이는 데 도움이 된다"
+      ],
+      "answerIndex": 2,
+      "explanation": "그 이유는 마찰과 헹굼이 손의 오염 물질을 줄이는 데 도움이 된다는 점입니다. 위험이 생기는 원리를 알면 비슷한 상황에서도 판단하기 쉬워요.",
+      "source": {
+        "name": "질병관리청",
+        "url": "https://www.kdca.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-24-then-29-v2",
+      "dateKey": "2026-10-24",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "텔레비전 영상 프로그램을 녹화하는 일에 쓰였던 비디오테이프, 실제 작동 방식으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "길목마다 말과 숙소를 마련해 다음 구간을 이었다",
+        "자기테이프가 든 카세트를 비디오 기기에 넣었다",
+        "엽전 모양의 추와 술을 발 안쪽으로 계속 찼다"
+      ],
+      "answerIndex": 1,
+      "explanation": "비디오테이프은 자기테이프가 든 카세트를 비디오 기기에 넣었다는 방식으로 사용했어요. 도구의 구조와 사람의 동작이 맞물려야 제 기능을 했습니다.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-24-now-29-v2",
+      "dateKey": "2026-10-24",
+      "lens": "now",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "검토된 앱을 검색하고 설치·갱신하는 공식 배포 공간인 앱 스토어, 이용할 때 지킬 원칙으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "정확한 망 이름을 확인하고 중요한 거래는 피한다",
+        "승하차 때 단말기 반응과 잔액 표시를 확인한다",
+        "개발자 이름과 권한, 이용자 평가를 살핀다"
+      ],
+      "answerIndex": 2,
+      "explanation": "앱 스토어을 이용할 때는 개발자 이름과 권한, 이용자 평가를 살핀다는 원칙이 알맞아요. 편리함과 함께 확인 습관을 갖는 것이 중요합니다.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-24-life-29-v2",
+      "dateKey": "2026-10-24",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "gentle",
+      "prompt": "기침 예절 때는 휴지나 옷소매 안쪽으로 입과 코를 가린다는 대응이 권장됩니다. 그 까닭으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "손바닥으로 가리면 손을 통해 주변 물건에 묻을 수 있다",
+        "갑작스러운 움직임이 충돌이나 물림 사고로 이어질 수 있다",
+        "재난 종류와 위치에 따라 필요한 대응이 서로 다르다"
+      ],
+      "answerIndex": 0,
+      "explanation": "그 이유는 손바닥으로 가리면 손을 통해 주변 물건에 묻을 수 있다는 점입니다. 위험이 생기는 원리를 알면 비슷한 상황에서도 판단하기 쉬워요.",
+      "source": {
+        "name": "질병관리청",
+        "url": "https://www.kdca.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-25-then-30-v2",
+      "dateKey": "2026-10-25",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "영화 필름의 연속 장면을 스크린에 비추는 일에 쓰였던 필름영사기, 실제 작동 방식으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "새끼 꼰 짚을 발 모양으로 엮어 신었다",
+        "채로 몸통을 쳐 회전 속도를 유지했다",
+        "필름을 빠르게 이동시키며 빛으로 한 장씩 투사했다"
+      ],
+      "answerIndex": 2,
+      "explanation": "필름영사기은 필름을 빠르게 이동시키며 빛으로 한 장씩 투사했다는 방식으로 사용했어요. 도구의 구조와 사람의 동작이 맞물려야 제 기능을 했습니다.",
+      "source": {
+        "name": "국립민속박물관 한국민속대백과사전",
+        "url": "https://folkency.nfm.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-25-now-30-v2",
+      "dateKey": "2026-10-25",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "gentle",
+      "prompt": "인터넷 문서와 서비스를 찾아 보여 주는 프로그램인 웹 브라우저, 이용할 때 지킬 원칙으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "주소와 자물쇠 표시를 확인하고 수상한 다운로드를 피한다",
+        "신뢰할 수 있는 제공자를 고르고 연결 상태를 확인한다",
+        "출발 전에 목적지를 정하고 운전 중 조작을 피한다"
+      ],
+      "answerIndex": 0,
+      "explanation": "웹 브라우저을 이용할 때는 주소와 자물쇠 표시를 확인하고 수상한 다운로드를 피한다는 원칙이 알맞아요. 편리함과 함께 확인 습관을 갖는 것이 중요합니다.",
+      "source": {
+        "name": "한국인터넷진흥원",
+        "url": "https://www.kisa.or.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-10-25-life-30-v2",
+      "dateKey": "2026-10-25",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "steady",
+      "prompt": "실내 환기 때는 맞은편 창문을 열어 짧게라도 공기가 통하게 한다는 대응이 권장됩니다. 그 까닭으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "산에서는 기온과 날씨가 빠르게 바뀌고 길을 잃기 쉽다",
+        "공기 길을 만들면 실내 오염 물질이 밖으로 빠져나가기 쉽다",
+        "작은 불꽃도 새어 나온 가스에 불을 붙일 수 있다"
+      ],
+      "answerIndex": 1,
+      "explanation": "그 이유는 공기 길을 만들면 실내 오염 물질이 밖으로 빠져나가기 쉽다는 점입니다. 위험이 생기는 원리를 알면 비슷한 상황에서도 판단하기 쉬워요.",
+      "source": {
+        "name": "질병관리청",
+        "url": "https://www.kdca.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    }
+  ]
+}
