@@ -533,6 +533,7 @@ export default function QuizApp({
   const [bonusStartError, setBonusStartError] = useState<string | null>(null);
   const [bonusSet, setBonusSet] = useState<BonusQuestion[]>([]);
   const [bonusSession, setBonusSession] = useState<QuizSession | null>(null);
+  const [resultSession, setResultSession] = useState<QuizSession | null>(null);
   const [savedSessions, setSavedSessions] = useState<
     Record<string, QuizSession>
   >({});
@@ -646,7 +647,7 @@ export default function QuizApp({
 
   useEffect(() => {
     if (screen === "result") {
-      track("result_view", { score: scoreQuiz(session) });
+      track("result_view", { score: scoreQuiz(resultSession ?? session) });
     }
     if (screen === "bonus-topic") {
       track("bonus_offer_view");
@@ -654,7 +655,7 @@ export default function QuizApp({
         track("ad_offer_view");
       }
     }
-  }, [entitlement, screen, session, track]);
+  }, [entitlement, resultSession, screen, session, track]);
 
   useEffect(() => {
     if (rewardAd == null) {
@@ -784,6 +785,9 @@ export default function QuizApp({
           }
         } else if (restoredSession != null) {
           setSession(restoredSession);
+          setResultSession(
+            restoredSession.phase === "completed" ? restoredSession : null,
+          );
           setScreen(restoredSession.phase === "completed" ? "result" : "quiz");
         }
         setHydrated(true);
@@ -923,6 +927,7 @@ export default function QuizApp({
         score: scoreQuiz(next),
         streakDays: streak.days,
       });
+      setResultSession(next);
       setScreen("result");
     }
     persistSnapshot(
@@ -941,12 +946,13 @@ export default function QuizApp({
       return;
     }
 
-    track("share_attempt", { score: scoreQuiz(session) });
+    const resultScore = scoreQuiz(resultSession ?? session);
+    track("share_attempt", { score: resultScore });
     setShareStatus("sharing");
-    void shareGateway.shareScore(scoreQuiz(session)).then((shared) => {
+    void shareGateway.shareScore(resultScore).then((shared) => {
       setShareStatus(shared ? "shared" : "error");
       if (shared) {
-        track("share_complete", { score: scoreQuiz(session) });
+        track("share_complete", { score: resultScore });
       }
     });
   };
@@ -1155,6 +1161,7 @@ export default function QuizApp({
         topic: selectedTopic ?? "unknown",
         score: scoreQuiz(next),
       });
+      setResultSession(next);
       setScreen("result");
     }
 
@@ -1246,7 +1253,7 @@ export default function QuizApp({
     return (
       <ResultScreen
         entitlement={entitlement}
-        score={scoreQuiz(session)}
+        score={scoreQuiz(resultSession ?? session)}
         onBonus={() => {
           setBonusStartStatus("idle");
           setBonusStartError(null);
