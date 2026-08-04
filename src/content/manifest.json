@@ -6,7 +6,7 @@
     {
       "id": "core-001",
       "path": "src/content/core/pack-001.json",
-      "sha256": "9e0fd55dce63061fb4753b8ffccd8c58cf1f1f7c27b6997034ce2fbf33769394",
+      "sha256": "2da2c170e1a1b9cadf23443229e05e7210e6f129f0aef43b0631301b38485087",
       "questionCount": 90,
       "setCount": 30,
       "reviewStatus": "reviewed",
@@ -17,7 +17,7 @@
     {
       "id": "core-002",
       "path": "src/content/core/pack-002.json",
-      "sha256": "06b44558b5ae3d85eb0477187bd561a80c213da4da73fd6e0f03fd5ee156d51f",
+      "sha256": "8561e838c71bccf3ea3f0b979e44e863fce0f711759af0224d9bdba0c54706b4",
       "questionCount": 90,
       "setCount": 30,
       "reviewStatus": "reviewed",
@@ -28,7 +28,7 @@
     {
       "id": "core-003",
       "path": "src/content/core/pack-003.json",
-      "sha256": "f3b89df3851ff57b948118832eac7e20f3965ce651c31260dcd458c0b98cfe7b",
+      "sha256": "ba6d2d266e937b440626b14779e855d4a91b26396a6f6a50db4c5353346cc32f",
       "questionCount": 90,
       "setCount": 30,
       "reviewStatus": "reviewed",
@@ -39,7 +39,7 @@
     {
       "id": "core-004",
       "path": "src/content/core/pack-004.json",
-      "sha256": "aa26f7e27f856c629e9db1789e9ea81d4ac019ed2976233ad9d39b4e2eede75e",
+      "sha256": "e59bb37d2dfd363d52762007e6f741cf19a50dab21bc3b6418b636effee6f95e",
       "questionCount": 90,
       "setCount": 30,
       "reviewStatus": "reviewed",
