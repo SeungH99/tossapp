@@ -6,7 +6,7 @@
   "questions": [
     {
       "kind": "core",
-      "id": "2026-12-25-then-1-v3",
+      "id": "2026-12-25-then-31-v3",
       "dateKey": "2026-12-25",
       "lens": "then",
       "topic": "nostalgia",
@@ -29,7 +29,7 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-25-now-1-v3",
+      "id": "2026-12-25-now-31-v3",
       "dateKey": "2026-12-25",
       "lens": "now",
       "topic": "digital",
@@ -52,7 +52,7 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-25-life-1-v3",
+      "id": "2026-12-25-life-31-v3",
       "dateKey": "2026-12-25",
       "lens": "life",
       "topic": "nature-general",
@@ -75,7 +75,7 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-26-then-2-v3",
+      "id": "2026-12-26-then-32-v3",
       "dateKey": "2026-12-26",
       "lens": "then",
       "topic": "nostalgia",
@@ -98,7 +98,7 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-26-now-2-v3",
+      "id": "2026-12-26-now-32-v3",
       "dateKey": "2026-12-26",
       "lens": "now",
       "topic": "digital",
@@ -121,7 +121,7 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-26-life-2-v3",
+      "id": "2026-12-26-life-32-v3",
       "dateKey": "2026-12-26",
       "lens": "life",
       "topic": "nature-general",
@@ -144,7 +144,7 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-27-then-3-v3",
+      "id": "2026-12-27-then-33-v3",
       "dateKey": "2026-12-27",
       "lens": "then",
       "topic": "nostalgia",
@@ -167,7 +167,7 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-27-now-3-v3",
+      "id": "2026-12-27-now-33-v3",
       "dateKey": "2026-12-27",
       "lens": "now",
       "topic": "digital",
@@ -190,7 +190,7 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-27-life-3-v3",
+      "id": "2026-12-27-life-33-v3",
       "dateKey": "2026-12-27",
       "lens": "life",
       "topic": "nature-general",
@@ -213,7 +213,7 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-28-then-4-v3",
+      "id": "2026-12-28-then-34-v3",
       "dateKey": "2026-12-28",
       "lens": "then",
       "topic": "nostalgia",
@@ -236,7 +236,7 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-28-now-4-v3",
+      "id": "2026-12-28-now-34-v3",
       "dateKey": "2026-12-28",
       "lens": "now",
       "topic": "digital",
@@ -259,7 +259,7 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-28-life-4-v3",
+      "id": "2026-12-28-life-34-v3",
       "dateKey": "2026-12-28",
       "lens": "life",
       "topic": "nature-general",
@@ -282,7 +282,7 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-29-then-5-v3",
+      "id": "2026-12-29-then-35-v3",
       "dateKey": "2026-12-29",
       "lens": "then",
       "topic": "nostalgia",
@@ -305,7 +305,7 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-29-now-5-v3",
+      "id": "2026-12-29-now-35-v3",
       "dateKey": "2026-12-29",
       "lens": "now",
       "topic": "digital",
@@ -328,7 +328,7 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-29-life-5-v3",
+      "id": "2026-12-29-life-35-v3",
       "dateKey": "2026-12-29",
       "lens": "life",
       "topic": "nature-general",
@@ -351,7 +351,7 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-30-then-6-v3",
+      "id": "2026-12-30-then-36-v3",
       "dateKey": "2026-12-30",
       "lens": "then",
       "topic": "nostalgia",
@@ -374,7 +374,7 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-30-now-6-v3",
+      "id": "2026-12-30-now-36-v3",
       "dateKey": "2026-12-30",
       "lens": "now",
       "topic": "digital",
@@ -397,7 +397,7 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-30-life-6-v3",
+      "id": "2026-12-30-life-36-v3",
       "dateKey": "2026-12-30",
       "lens": "life",
       "topic": "nature-general",
@@ -420,7 +420,7 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-31-then-7-v3",
+      "id": "2026-12-31-then-37-v3",
       "dateKey": "2026-12-31",
       "lens": "then",
       "topic": "nostalgia",
@@ -443,7 +443,7 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-31-now-7-v3",
+      "id": "2026-12-31-now-37-v3",
       "dateKey": "2026-12-31",
       "lens": "now",
       "topic": "digital",
@@ -466,7 +466,7 @@
     },
     {
       "kind": "core",
-      "id": "2026-12-31-life-7-v3",
+      "id": "2026-12-31-life-37-v3",
       "dateKey": "2026-12-31",
       "lens": "life",
       "topic": "nature-general",
@@ -489,7 +489,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-01-then-8-v3",
+      "id": "2027-01-01-then-38-v3",
       "dateKey": "2027-01-01",
       "lens": "then",
       "topic": "nostalgia",
@@ -512,7 +512,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-01-now-8-v3",
+      "id": "2027-01-01-now-38-v3",
       "dateKey": "2027-01-01",
       "lens": "now",
       "topic": "digital",
@@ -535,7 +535,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-01-life-8-v3",
+      "id": "2027-01-01-life-38-v3",
       "dateKey": "2027-01-01",
       "lens": "life",
       "topic": "nature-general",
@@ -558,7 +558,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-02-then-9-v3",
+      "id": "2027-01-02-then-39-v3",
       "dateKey": "2027-01-02",
       "lens": "then",
       "topic": "nostalgia",
@@ -581,7 +581,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-02-now-9-v3",
+      "id": "2027-01-02-now-39-v3",
       "dateKey": "2027-01-02",
       "lens": "now",
       "topic": "digital",
@@ -604,7 +604,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-02-life-9-v3",
+      "id": "2027-01-02-life-39-v3",
       "dateKey": "2027-01-02",
       "lens": "life",
       "topic": "nature-general",
@@ -627,7 +627,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-03-then-10-v3",
+      "id": "2027-01-03-then-40-v3",
       "dateKey": "2027-01-03",
       "lens": "then",
       "topic": "nostalgia",
@@ -650,7 +650,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-03-now-10-v3",
+      "id": "2027-01-03-now-40-v3",
       "dateKey": "2027-01-03",
       "lens": "now",
       "topic": "digital",
@@ -673,7 +673,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-03-life-10-v3",
+      "id": "2027-01-03-life-40-v3",
       "dateKey": "2027-01-03",
       "lens": "life",
       "topic": "nature-general",
@@ -696,7 +696,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-04-then-11-v3",
+      "id": "2027-01-04-then-41-v3",
       "dateKey": "2027-01-04",
       "lens": "then",
       "topic": "nostalgia",
@@ -719,7 +719,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-04-now-11-v3",
+      "id": "2027-01-04-now-41-v3",
       "dateKey": "2027-01-04",
       "lens": "now",
       "topic": "digital",
@@ -742,7 +742,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-04-life-11-v3",
+      "id": "2027-01-04-life-41-v3",
       "dateKey": "2027-01-04",
       "lens": "life",
       "topic": "nature-general",
@@ -765,7 +765,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-05-then-12-v3",
+      "id": "2027-01-05-then-42-v3",
       "dateKey": "2027-01-05",
       "lens": "then",
       "topic": "nostalgia",
@@ -773,8 +773,8 @@
       "prompt": "제1차 세계대전 때 영국 배급표 뒷면에 아직 문도 열지 않은 전쟁박물관이 광고를 실은 목적은?",
       "choices": [
         "가족이 가진 사진과 기록을 보내 달라고",
-        "배급 식품을 박물관에 먼저 기부하라고",
-        "입장권을 배급표와 교환해 주겠다고"
+        "개관 전시에 내놓을 군복과 훈장을 빌려 달라고",
+        "전시 자료 구입 기금을 국민에게 모아 달라고"
       ],
       "answerIndex": 0,
       "explanation": "아직 건립 중이던 전쟁박물관은 배급표 뒷면에서 유가족에게 사진과 생애 기록을 보내 달라고 요청했습니다.",
@@ -788,7 +788,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-05-now-12-v3",
+      "id": "2027-01-05-now-42-v3",
       "dateKey": "2027-01-05",
       "lens": "now",
       "topic": "digital",
@@ -811,7 +811,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-05-life-12-v3",
+      "id": "2027-01-05-life-42-v3",
       "dateKey": "2027-01-05",
       "lens": "life",
       "topic": "nature-general",
@@ -834,7 +834,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-06-then-13-v3",
+      "id": "2027-01-06-then-43-v3",
       "dateKey": "2027-01-06",
       "lens": "then",
       "topic": "nostalgia",
@@ -857,7 +857,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-06-now-13-v3",
+      "id": "2027-01-06-now-43-v3",
       "dateKey": "2027-01-06",
       "lens": "now",
       "topic": "digital",
@@ -880,7 +880,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-06-life-13-v3",
+      "id": "2027-01-06-life-43-v3",
       "dateKey": "2027-01-06",
       "lens": "life",
       "topic": "nature-general",
@@ -903,7 +903,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-07-then-14-v3",
+      "id": "2027-01-07-then-44-v3",
       "dateKey": "2027-01-07",
       "lens": "then",
       "topic": "nostalgia",
@@ -926,7 +926,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-07-now-14-v3",
+      "id": "2027-01-07-now-44-v3",
       "dateKey": "2027-01-07",
       "lens": "now",
       "topic": "digital",
@@ -949,7 +949,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-07-life-14-v3",
+      "id": "2027-01-07-life-44-v3",
       "dateKey": "2027-01-07",
       "lens": "life",
       "topic": "nature-general",
@@ -972,7 +972,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-08-then-15-v3",
+      "id": "2027-01-08-then-45-v3",
       "dateKey": "2027-01-08",
       "lens": "then",
       "topic": "nostalgia",
@@ -995,7 +995,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-08-now-15-v3",
+      "id": "2027-01-08-now-45-v3",
       "dateKey": "2027-01-08",
       "lens": "now",
       "topic": "digital",
@@ -1018,7 +1018,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-08-life-15-v3",
+      "id": "2027-01-08-life-45-v3",
       "dateKey": "2027-01-08",
       "lens": "life",
       "topic": "nature-general",
@@ -1041,7 +1041,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-09-then-16-v3",
+      "id": "2027-01-09-then-46-v3",
       "dateKey": "2027-01-09",
       "lens": "then",
       "topic": "nostalgia",
@@ -1064,7 +1064,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-09-now-16-v3",
+      "id": "2027-01-09-now-46-v3",
       "dateKey": "2027-01-09",
       "lens": "now",
       "topic": "digital",
@@ -1087,7 +1087,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-09-life-16-v3",
+      "id": "2027-01-09-life-46-v3",
       "dateKey": "2027-01-09",
       "lens": "life",
       "topic": "nature-general",
@@ -1110,7 +1110,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-10-then-17-v3",
+      "id": "2027-01-10-then-47-v3",
       "dateKey": "2027-01-10",
       "lens": "then",
       "topic": "nostalgia",
@@ -1133,7 +1133,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-10-now-17-v3",
+      "id": "2027-01-10-now-47-v3",
       "dateKey": "2027-01-10",
       "lens": "now",
       "topic": "digital",
@@ -1156,7 +1156,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-10-life-17-v3",
+      "id": "2027-01-10-life-47-v3",
       "dateKey": "2027-01-10",
       "lens": "life",
       "topic": "nature-general",
@@ -1179,7 +1179,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-11-then-18-v3",
+      "id": "2027-01-11-then-48-v3",
       "dateKey": "2027-01-11",
       "lens": "then",
       "topic": "nostalgia",
@@ -1202,7 +1202,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-11-now-18-v3",
+      "id": "2027-01-11-now-48-v3",
       "dateKey": "2027-01-11",
       "lens": "now",
       "topic": "digital",
@@ -1225,7 +1225,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-11-life-18-v3",
+      "id": "2027-01-11-life-48-v3",
       "dateKey": "2027-01-11",
       "lens": "life",
       "topic": "nature-general",
@@ -1248,7 +1248,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-12-then-19-v3",
+      "id": "2027-01-12-then-49-v3",
       "dateKey": "2027-01-12",
       "lens": "then",
       "topic": "nostalgia",
@@ -1271,7 +1271,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-12-now-19-v3",
+      "id": "2027-01-12-now-49-v3",
       "dateKey": "2027-01-12",
       "lens": "now",
       "topic": "digital",
@@ -1294,7 +1294,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-12-life-19-v3",
+      "id": "2027-01-12-life-49-v3",
       "dateKey": "2027-01-12",
       "lens": "life",
       "topic": "nature-general",
@@ -1317,7 +1317,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-13-then-20-v3",
+      "id": "2027-01-13-then-50-v3",
       "dateKey": "2027-01-13",
       "lens": "then",
       "topic": "nostalgia",
@@ -1340,7 +1340,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-13-now-20-v3",
+      "id": "2027-01-13-now-50-v3",
       "dateKey": "2027-01-13",
       "lens": "now",
       "topic": "digital",
@@ -1363,7 +1363,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-13-life-20-v3",
+      "id": "2027-01-13-life-50-v3",
       "dateKey": "2027-01-13",
       "lens": "life",
       "topic": "nature-general",
@@ -1386,7 +1386,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-14-then-21-v3",
+      "id": "2027-01-14-then-51-v3",
       "dateKey": "2027-01-14",
       "lens": "then",
       "topic": "nostalgia",
@@ -1409,7 +1409,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-14-now-21-v3",
+      "id": "2027-01-14-now-51-v3",
       "dateKey": "2027-01-14",
       "lens": "now",
       "topic": "digital",
@@ -1432,7 +1432,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-14-life-21-v3",
+      "id": "2027-01-14-life-51-v3",
       "dateKey": "2027-01-14",
       "lens": "life",
       "topic": "nature-general",
@@ -1455,7 +1455,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-15-then-22-v3",
+      "id": "2027-01-15-then-52-v3",
       "dateKey": "2027-01-15",
       "lens": "then",
       "topic": "nostalgia",
@@ -1478,7 +1478,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-15-now-22-v3",
+      "id": "2027-01-15-now-52-v3",
       "dateKey": "2027-01-15",
       "lens": "now",
       "topic": "digital",
@@ -1501,7 +1501,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-15-life-22-v3",
+      "id": "2027-01-15-life-52-v3",
       "dateKey": "2027-01-15",
       "lens": "life",
       "topic": "nature-general",
@@ -1524,7 +1524,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-16-then-23-v3",
+      "id": "2027-01-16-then-53-v3",
       "dateKey": "2027-01-16",
       "lens": "then",
       "topic": "nostalgia",
@@ -1547,7 +1547,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-16-now-23-v3",
+      "id": "2027-01-16-now-53-v3",
       "dateKey": "2027-01-16",
       "lens": "now",
       "topic": "digital",
@@ -1570,7 +1570,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-16-life-23-v3",
+      "id": "2027-01-16-life-53-v3",
       "dateKey": "2027-01-16",
       "lens": "life",
       "topic": "nature-general",
@@ -1593,7 +1593,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-17-then-24-v3",
+      "id": "2027-01-17-then-54-v3",
       "dateKey": "2027-01-17",
       "lens": "then",
       "topic": "nostalgia",
@@ -1616,7 +1616,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-17-now-24-v3",
+      "id": "2027-01-17-now-54-v3",
       "dateKey": "2027-01-17",
       "lens": "now",
       "topic": "digital",
@@ -1639,7 +1639,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-17-life-24-v3",
+      "id": "2027-01-17-life-54-v3",
       "dateKey": "2027-01-17",
       "lens": "life",
       "topic": "nature-general",
@@ -1662,16 +1662,16 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-18-then-25-v3",
+      "id": "2027-01-18-then-55-v3",
       "dateKey": "2027-01-18",
       "lens": "then",
       "topic": "nostalgia",
       "internalDifficulty": "gentle",
       "prompt": "한국전쟁 뒤 구멍 뚫린 원통형 연탄은 어떤 사람들의 이동을 따라 전국으로 퍼졌나?",
       "choices": [
-        "항구마다 완제품을 내린 외국 선원",
+        "정부 연료 보급 사업에 참여한 기술자",
         "부산에서 고향으로 돌아간 피란민",
-        "과학 준비물을 나눠 준 학교 교사"
+        "도시 연탄 상인과 화물 운송 노동자"
       ],
       "answerIndex": 1,
       "explanation": "부산에서 연탄을 본 피란민들이 전쟁 뒤 고향으로 돌아가 직접 만들면서 원통형 연탄이 널리 퍼졌습니다.",
@@ -1685,7 +1685,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-18-now-25-v3",
+      "id": "2027-01-18-now-55-v3",
       "dateKey": "2027-01-18",
       "lens": "now",
       "topic": "digital",
@@ -1708,7 +1708,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-18-life-25-v3",
+      "id": "2027-01-18-life-55-v3",
       "dateKey": "2027-01-18",
       "lens": "life",
       "topic": "nature-general",
@@ -1731,7 +1731,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-19-then-26-v3",
+      "id": "2027-01-19-then-56-v3",
       "dateKey": "2027-01-19",
       "lens": "then",
       "topic": "nostalgia",
@@ -1754,7 +1754,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-19-now-26-v3",
+      "id": "2027-01-19-now-56-v3",
       "dateKey": "2027-01-19",
       "lens": "now",
       "topic": "digital",
@@ -1777,7 +1777,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-19-life-26-v3",
+      "id": "2027-01-19-life-56-v3",
       "dateKey": "2027-01-19",
       "lens": "life",
       "topic": "nature-general",
@@ -1800,7 +1800,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-20-then-27-v3",
+      "id": "2027-01-20-then-57-v3",
       "dateKey": "2027-01-20",
       "lens": "then",
       "topic": "nostalgia",
@@ -1823,7 +1823,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-20-now-27-v3",
+      "id": "2027-01-20-now-57-v3",
       "dateKey": "2027-01-20",
       "lens": "now",
       "topic": "digital",
@@ -1846,7 +1846,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-20-life-27-v3",
+      "id": "2027-01-20-life-57-v3",
       "dateKey": "2027-01-20",
       "lens": "life",
       "topic": "nature-general",
@@ -1869,7 +1869,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-21-then-28-v3",
+      "id": "2027-01-21-then-58-v3",
       "dateKey": "2027-01-21",
       "lens": "then",
       "topic": "nostalgia",
@@ -1892,7 +1892,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-21-now-28-v3",
+      "id": "2027-01-21-now-58-v3",
       "dateKey": "2027-01-21",
       "lens": "now",
       "topic": "digital",
@@ -1915,7 +1915,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-21-life-28-v3",
+      "id": "2027-01-21-life-58-v3",
       "dateKey": "2027-01-21",
       "lens": "life",
       "topic": "nature-general",
@@ -1938,7 +1938,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-22-then-29-v3",
+      "id": "2027-01-22-then-59-v3",
       "dateKey": "2027-01-22",
       "lens": "then",
       "topic": "nostalgia",
@@ -1961,7 +1961,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-22-now-29-v3",
+      "id": "2027-01-22-now-59-v3",
       "dateKey": "2027-01-22",
       "lens": "now",
       "topic": "digital",
@@ -1984,7 +1984,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-22-life-29-v3",
+      "id": "2027-01-22-life-59-v3",
       "dateKey": "2027-01-22",
       "lens": "life",
       "topic": "nature-general",
@@ -2007,7 +2007,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-23-then-30-v3",
+      "id": "2027-01-23-then-60-v3",
       "dateKey": "2027-01-23",
       "lens": "then",
       "topic": "nostalgia",
@@ -2030,7 +2030,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-23-now-30-v3",
+      "id": "2027-01-23-now-60-v3",
       "dateKey": "2027-01-23",
       "lens": "now",
       "topic": "digital",
@@ -2053,7 +2053,7 @@
     },
     {
       "kind": "core",
-      "id": "2027-01-23-life-30-v3",
+      "id": "2027-01-23-life-60-v3",
       "dateKey": "2027-01-23",
       "lens": "life",
       "topic": "nature-general",
