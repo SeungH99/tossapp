@@ -71,6 +71,18 @@ export interface BonusTopicProgress {
   lastCompletedDateKey?: string;
 }
 
+export function deriveNextSetIndex(
+  completedSetIndexes: readonly number[],
+): number | undefined {
+  const completed = new Set(completedSetIndexes);
+  for (let setIndex = 0; setIndex < 180; setIndex += 1) {
+    if (!completed.has(setIndex)) {
+      return setIndex;
+    }
+  }
+  return undefined;
+}
+
 export interface ProgressState extends Omit<ProgressStateV2, "version"> {
   version: 3;
   bonusTopicProgress: Record<BonusTopic, BonusTopicProgress>;
