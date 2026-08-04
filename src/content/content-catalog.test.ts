@@ -153,12 +153,29 @@ describe("content catalog", () => {
     });
   });
 
-  it("creates a Vite catalog with the empty manifest", async () => {
-    const catalog = createViteContentCatalog();
+  it("reports missing-set for an explicitly empty packed manifest", async () => {
+    const emptyManifest: ContentManifest = {
+      ...manifest,
+      corePacks: [],
+      bonusPacks: [],
+    };
+    const catalog = createPackedContentCatalog(emptyManifest, {});
 
     await expect(catalog.loadCoreSet("2026-07-28")).resolves.toEqual({
       ok: false,
       reason: "missing-set",
+    });
+  });
+
+  it("creates a Vite catalog from the production core manifest", async () => {
+    const catalog = createViteContentCatalog();
+
+    await expect(catalog.loadCoreSet("2026-07-28")).resolves.toMatchObject({
+      ok: true,
+      packId: "core-001",
+      value: expect.arrayContaining([
+        expect.objectContaining({ dateKey: "2026-07-28" }),
+      ]),
     });
   });
 });

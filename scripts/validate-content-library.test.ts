@@ -84,6 +84,20 @@ function createWorkspace(pack: CoreContentPack) {
   return { directory, manifest, manifestPath, packPath, untouchedDescriptor };
 }
 
+function createEmptyLibraryWorkspace() {
+  const directory = mkdtempSync(join(tmpdir(), "empty-content-library-"));
+  const manifestPath = join(directory, "manifest.json");
+  const manifest: ContentManifest = {
+    releaseStart: "2026-07-28",
+    releaseEnd: "2027-01-23",
+    contentVersion: metadata.contentVersion,
+    corePacks: [],
+    bonusPacks: [],
+  };
+  writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`, "utf8");
+  return { directory, manifestPath };
+}
+
 describe("validate-content-pack CLI", () => {
   it("rejects a raw file whose SHA-256 differs from the matching descriptor", async () => {
     const workspace = createWorkspace(validPack);
@@ -247,10 +261,13 @@ describe("validate-content-pack CLI", () => {
 });
 
 describe("validate-content-library CLI", () => {
-  it("fails the empty default manifest with the exact full-library count", () => {
+  it("fails an explicit empty manifest with the exact full-library count", () => {
     const lines: string[] = [];
+    const workspace = createEmptyLibraryWorkspace();
 
     const result = runLibraryValidation({
+      cwd: workspace.directory,
+      manifestPath: workspace.manifestPath,
       writeLine: (line) => lines.push(line),
     });
 
@@ -268,6 +285,7 @@ describe("validate-content-library CLI", () => {
 
   it("parses --scope core instead of treating it as a manifest path", () => {
     let output = "";
+    const workspace = createEmptyLibraryWorkspace();
 
     try {
       output = execFileSync(
@@ -276,6 +294,8 @@ describe("validate-content-library CLI", () => {
           "--import",
           "tsx",
           "scripts/validate-content-library.ts",
+          "--manifest",
+          workspace.manifestPath,
           "--scope",
           "core",
         ],
