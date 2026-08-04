@@ -77,6 +77,12 @@ const sources = {
   },
 } satisfies Record<string, Source>;
 
+const auditedLegacyReviewMetadata = {
+  contentVersion: "legacy",
+  reviewStatus: "reviewed" as const,
+  reviewedAt: "2026-08-04",
+};
+
 function bonusQuestion(
   id: string,
   lens: CoreLens,
@@ -96,6 +102,7 @@ function bonusQuestion(
     answerIndex,
     explanation,
     source,
+    ...auditedLegacyReviewMetadata,
   });
 }
 
@@ -485,7 +492,11 @@ export const expandedBonusQuestions: BonusQuestion[] = [
     "life",
     "safety",
     "집중호우 때 물이 차오르는 지하 공간에서 해야 할 일은 무엇일까요?",
-    ["즉시 높은 곳으로 대피", "물이 더 찰 때까지 기다리기", "엘리베이터로 내려가기"],
+    [
+      "즉시 높은 곳으로 대피",
+      "물이 더 찰 때까지 기다리기",
+      "엘리베이터로 내려가기",
+    ],
     0,
     "지하차도나 지하 공간에 물이 들어오면 지체하지 말고 높은 곳으로 대피해요.",
     sources.disaster,

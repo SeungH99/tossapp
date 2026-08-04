@@ -1,9 +1,13 @@
 import { describe, expect, it } from "vitest";
 
 import {
+  createBonusQuestion,
+  createCoreQuestion,
   validateQuestion,
   type BonusQuestion,
+  type BonusQuestionInput,
   type CoreQuestion,
+  type CoreQuestionInput,
 } from "./question";
 
 const source = {
@@ -32,6 +36,55 @@ describe("validateQuestion", () => {
 
   it("검수 메타데이터와 핵심 난이도를 요구한다", () => {
     expect(validateQuestion(validCoreQuestion)).toEqual([]);
+  });
+
+  it("omitted factory metadata is not promoted to reviewed content", () => {
+    const { contentVersion, reviewStatus, reviewedAt, ...coreWithoutMetadata } =
+      validCoreQuestion;
+    const bonusWithoutMetadata = {
+      ...coreWithoutMetadata,
+      kind: "bonus" as const,
+      conceptId: "public-phone",
+      variant: "base",
+      setIndex: 0,
+    };
+
+    expect(
+      validateQuestion(
+        createCoreQuestion(coreWithoutMetadata as unknown as CoreQuestionInput),
+      ),
+    ).toEqual(
+      expect.arrayContaining([
+        "question.contentVersion",
+        "question.reviewStatus",
+        "question.reviewedAt",
+      ]),
+    );
+    expect(
+      validateQuestion(
+        createBonusQuestion(
+          bonusWithoutMetadata as unknown as BonusQuestionInput,
+        ),
+      ),
+    ).toEqual(
+      expect.arrayContaining([
+        "question.contentVersion",
+        "question.reviewStatus",
+        "question.reviewedAt",
+      ]),
+    );
+  });
+
+  it("rejects impossible review dates and incomplete source URLs", () => {
+    expect(
+      validateQuestion({ ...validCoreQuestion, reviewedAt: "2026-02-30" }),
+    ).toContain("question.reviewedAt");
+    expect(
+      validateQuestion({
+        ...validCoreQuestion,
+        source: { name: "source", url: "https://" },
+      }),
+    ).toContain("question.source.url");
   });
 
   it("draft 상태와 잘못된 reviewedAt을 출시 문제로 거부한다", () => {

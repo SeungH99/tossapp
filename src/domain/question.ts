@@ -50,40 +50,18 @@ export type Question = CoreQuestion | BonusQuestion;
 
 export type CoreQuestionInput = Omit<
   CoreQuestion,
-  | "kind"
-  | "internalDifficulty"
-  | "contentVersion"
-  | "reviewStatus"
-  | "reviewedAt"
+  "kind" | "internalDifficulty"
 > &
-  Partial<
-    Pick<
-      CoreQuestion,
-      "internalDifficulty" | "contentVersion" | "reviewStatus" | "reviewedAt"
-    >
-  >;
+  Partial<Pick<CoreQuestion, "internalDifficulty">>;
 
 export type BonusQuestionInput = Omit<
   BonusQuestion,
-  | "kind"
-  | "conceptId"
-  | "variant"
-  | "internalDifficulty"
-  | "setIndex"
-  | "contentVersion"
-  | "reviewStatus"
-  | "reviewedAt"
+  "kind" | "conceptId" | "variant" | "internalDifficulty" | "setIndex"
 > &
   Partial<
     Pick<
       BonusQuestion,
-      | "conceptId"
-      | "variant"
-      | "internalDifficulty"
-      | "setIndex"
-      | "contentVersion"
-      | "reviewStatus"
-      | "reviewedAt"
+      "conceptId" | "variant" | "internalDifficulty" | "setIndex"
     >
   >;
 
@@ -92,9 +70,6 @@ export function createCoreQuestion(input: CoreQuestionInput): CoreQuestion {
     ...input,
     kind: "core",
     internalDifficulty: input.internalDifficulty ?? "steady",
-    contentVersion: input.contentVersion ?? "legacy",
-    reviewStatus: input.reviewStatus ?? "reviewed",
-    reviewedAt: input.reviewedAt ?? "2026-08-04",
   };
 }
 
@@ -106,9 +81,6 @@ export function createBonusQuestion(input: BonusQuestionInput): BonusQuestion {
     variant: input.variant ?? "base",
     internalDifficulty: input.internalDifficulty ?? "steady",
     setIndex: input.setIndex ?? 0,
-    contentVersion: input.contentVersion ?? "legacy",
-    reviewStatus: input.reviewStatus ?? "reviewed",
-    reviewedAt: input.reviewedAt ?? "2026-08-04",
   };
 }
 
@@ -118,6 +90,38 @@ function isRecord(value: unknown): value is Record<string, unknown> {
 
 function isNonEmptyString(value: unknown): value is string {
   return typeof value === "string" && value.trim().length > 0;
+}
+
+function isIsoCalendarDate(value: unknown): value is string {
+  if (typeof value !== "string") {
+    return false;
+  }
+
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value);
+  if (!match) {
+    return false;
+  }
+
+  const [, year, month, day] = match;
+  const date = new Date(Date.UTC(Number(year), Number(month) - 1, Number(day)));
+  return (
+    date.getUTCFullYear() === Number(year) &&
+    date.getUTCMonth() === Number(month) - 1 &&
+    date.getUTCDate() === Number(day)
+  );
+}
+
+function isHttpsUrl(value: unknown): value is string {
+  if (!isNonEmptyString(value)) {
+    return false;
+  }
+
+  try {
+    const url = new URL(value);
+    return url.protocol === "https:" && url.hostname.length > 0;
+  } catch {
+    return false;
+  }
 }
 
 function hasQuestionChoices(value: unknown): value is [string, string, string] {
@@ -175,16 +179,12 @@ export function validateQuestion(value: unknown): string[] {
   if (value.reviewStatus !== "reviewed") {
     errors.push("question.reviewStatus");
   }
-  if (
-    !isNonEmptyString(value.reviewedAt) ||
-    !/^\d{4}-\d{2}-\d{2}$/.test(value.reviewedAt)
-  ) {
+  if (!isIsoCalendarDate(value.reviewedAt)) {
     errors.push("question.reviewedAt");
   }
   if (
     value.validThrough !== undefined &&
-    (!isNonEmptyString(value.validThrough) ||
-      !/^\d{4}-\d{2}-\d{2}$/.test(value.validThrough))
+    !isIsoCalendarDate(value.validThrough)
   ) {
     errors.push("question.validThrough");
   }
@@ -195,10 +195,7 @@ export function validateQuestion(value: unknown): string[] {
     if (!isNonEmptyString(value.source.name)) {
       errors.push("question.source.name");
     }
-    if (
-      !isNonEmptyString(value.source.url) ||
-      !value.source.url.startsWith("https://")
-    ) {
+    if (!isHttpsUrl(value.source.url)) {
       errors.push("question.source.url");
     }
   }
