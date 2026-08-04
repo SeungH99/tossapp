@@ -39,7 +39,7 @@
     {
       "id": "core-004",
       "path": "src/content/core/pack-004.json",
-      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "sha256": "da02d1d5b262550245aa9d04b3a12813703a4fe58f1c467da08acd0f1a83698f",
       "questionCount": 90,
       "setCount": 30,
       "reviewStatus": "reviewed",
