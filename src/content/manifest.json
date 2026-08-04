@@ -70,5 +70,18 @@
       "dateEnd": "2027-01-23"
     }
   ],
-  "bonusPacks": []
+  "bonusPacks": [
+    {
+      "id": "bonus-nostalgia-001",
+      "path": "src/content/bonus/nostalgia/pack-001.json",
+      "sha256": "c330ea52ab7e20469c0aae8f2063c097fba605008005bf690bd3dbf48f35b990",
+      "questionCount": 90,
+      "setCount": 30,
+      "reviewStatus": "reviewed",
+      "kind": "bonus",
+      "topic": "nostalgia",
+      "setStart": 0,
+      "setEnd": 29
+    }
+  ]
 }
