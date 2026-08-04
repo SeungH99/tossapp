@@ -1,0 +1,65 @@
+{
+  "id": "fixture-invalid-short-prompt",
+  "kind": "core",
+  "contentVersion": "2026.08.180d",
+  "reviewStatus": "reviewed",
+  "questions": [
+    {
+      "kind": "core",
+      "id": "fixture-short-gentle",
+      "dateKey": "2026-07-28",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "너무 짧은 질문",
+      "choices": ["십 원짜리 동전", "종이 승차권", "우편 엽서"],
+      "answerIndex": 0,
+      "explanation": "공식 자료를 바탕으로 확인한 설명입니다.",
+      "source": {
+        "name": "National Archives",
+        "url": "https://www.archives.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "fixture-short-steady",
+      "dateKey": "2026-07-28",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "휴대전화 글자를 크게 보려면 어느 설정을 바꿀까요?",
+      "choices": ["화면 밝기", "글자 크기", "통화 음량"],
+      "answerIndex": 1,
+      "explanation": "공식 자료를 바탕으로 확인한 설명입니다.",
+      "source": {
+        "name": "National Archives",
+        "url": "https://www.archives.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "fixture-short-stretch",
+      "dateKey": "2026-07-28",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "낯선 송금 요청을 받으면 어떻게 사실을 확인할까요?",
+      "choices": ["바로 보내기", "문자 지우기", "직접 확인하기"],
+      "answerIndex": 2,
+      "explanation": "공식 자료를 바탕으로 확인한 설명입니다.",
+      "source": {
+        "name": "National Archives",
+        "url": "https://www.archives.go.kr/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    }
+  ]
+}

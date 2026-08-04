@@ -28,6 +28,7 @@ interface ContentPackDescriptorBase {
   path: string;
   sha256: string;
   questionCount: number;
+  setCount?: number;
   reviewStatus: ReviewStatus;
 }
 

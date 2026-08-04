@@ -14,6 +14,8 @@
     "test": "vitest --configLoader runner",
     "test:run": "vitest run --configLoader runner",
     "validate:content": "tsx scripts/validate-content.ts",
+    "validate:content:pack": "tsx scripts/validate-content-pack.ts",
+    "validate:content:library": "tsx scripts/validate-content-library.ts",
     "test:e2e:install": "playwright install chromium webkit",
     "test:e2e": "playwright test",
     "test:e2e:chromium": "playwright test --project=chromium-360 --project=chromium-390",
