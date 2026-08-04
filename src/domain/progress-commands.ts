@@ -1,4 +1,5 @@
 import { unlockBonus, type BonusUnlockSource } from "./bonus-entitlement";
+import { resolveBonusSetAvailability } from "./bonus-progress";
 import { selectShadowBonusQuestions } from "./personalization-engine";
 import type { BonusQuestion, BonusTopic, Question } from "./question";
 import type {
@@ -45,11 +46,31 @@ export type StartBonusSessionResult =
     }
   | {
       applied: false;
-      reason: "duplicate" | "no-questions" | "reward-ad-required";
+      reason:
+        | "duplicate"
+        | "no-questions"
+        | "reward-ad-required"
+        | "daily-limit"
+        | "exhausted"
+        | "active-session"
+        | "set-mismatch";
       state: ProgressState;
       source?: BonusUnlockSource;
       session?: QuizSession;
+      sessionKey?: string;
       questionIds?: string[];
+    };
+
+export type CompleteBonusSetResult =
+  | { applied: true; state: ProgressState }
+  | {
+      applied: false;
+      reason:
+        | "duplicate"
+        | "missing-session"
+        | "incomplete-session"
+        | "set-mismatch";
+      state: ProgressState;
     };
 
 function foldEvent(
@@ -188,7 +209,24 @@ export function startBonusSessionCommand(
   commandId: string,
   dateKey: string,
   topic: BonusTopic,
+  setIndex: number,
   bonusQuestions: BonusQuestion[],
+): StartBonusSessionResult;
+/** @deprecated The eager-content app path is removed by the catalog wiring task. */
+export function startBonusSessionCommand(
+  state: ProgressState,
+  commandId: string,
+  dateKey: string,
+  topic: BonusTopic,
+  bonusQuestions: BonusQuestion[],
+): StartBonusSessionResult;
+export function startBonusSessionCommand(
+  state: ProgressState,
+  commandId: string,
+  dateKey: string,
+  topic: BonusTopic,
+  setIndexOrQuestions: number | BonusQuestion[],
+  providedQuestions?: BonusQuestion[],
 ): StartBonusSessionResult {
   if (commandId.trim().length === 0) {
     throw new TypeError("commandId must not be empty");
@@ -208,6 +246,46 @@ export function startBonusSessionCommand(
     };
   }
 
+  const legacyQuestions = Array.isArray(setIndexOrQuestions);
+  const explicitSetIndex = legacyQuestions ? undefined : setIndexOrQuestions;
+  const bonusQuestions: BonusQuestion[] = legacyQuestions
+    ? setIndexOrQuestions
+    : providedQuestions ?? [];
+  if (explicitSetIndex != null) {
+    const availability = resolveBonusSetAvailability(state, topic, dateKey);
+    if (availability.kind !== "available") {
+      return {
+        applied: false,
+        reason: availability.kind,
+        state,
+        ...(availability.kind === "active-session"
+          ? { sessionKey: availability.sessionKey }
+          : {}),
+      };
+    }
+    if (availability.setIndex !== explicitSetIndex) {
+      return { applied: false, reason: "set-mismatch", state };
+    }
+
+    if (bonusQuestions.length !== 3) {
+      return { applied: false, reason: "no-questions", state };
+    }
+    if (
+      bonusQuestions.some(
+        (question) =>
+          question.topic !== topic || question.setIndex !== explicitSetIndex,
+      )
+    ) {
+      return { applied: false, reason: "set-mismatch", state };
+    }
+    if (
+      new Set(bonusQuestions.map((question) => question.internalDifficulty))
+        .size !== 3
+    ) {
+      return { applied: false, reason: "no-questions", state };
+    }
+  }
+
   const decision = selectShadowBonusQuestions({
     topic,
     questions: bonusQuestions,
@@ -215,10 +293,12 @@ export function startBonusSessionCommand(
     answerEvents: state.answerEvents,
     timeConfidence: state.timeObservation.confidence,
   });
-  if (decision.visibleSelection.questions.length === 0) {
+  if (
+    explicitSetIndex == null &&
+    decision.visibleSelection.questions.length === 0
+  ) {
     return { applied: false, reason: "no-questions", state };
   }
-
   const rewardAdTicketAvailable = state.rewardAdTicketCount > 0;
   const unlock = unlockBonus(
     state.bonus,
@@ -236,13 +316,16 @@ export function startBonusSessionCommand(
 
   const sessionKey = `${dateKey}:bonus:${topic}`;
   const session = createQuizSession(sessionKey);
-  const questionIds = decision.visibleSelection.questions.map(
-    (question) => question.id,
-  );
+  const selectedQuestions =
+    explicitSetIndex == null
+      ? decision.visibleSelection.questions
+      : bonusQuestions;
+  const questionIds = selectedQuestions.map((question) => question.id);
   const record = {
     commandId,
     dateKey,
     topic,
+    ...(explicitSetIndex == null ? {} : { setIndex: explicitSetIndex }),
     sessionKey,
     questionIds,
     source: unlock.source,
@@ -282,5 +365,58 @@ export function startBonusSessionCommand(
     source: unlock.source,
     session,
     questionIds,
+  };
+}
+
+export function completeBonusSetCommand(
+  state: ProgressState,
+  sessionKey: string,
+  topic: BonusTopic,
+  setIndex: number,
+  completedDateKey: string,
+): CompleteBonusSetResult {
+  const commandId = state.latestBonusStartCommandIds[sessionKey];
+  const start =
+    commandId == null ? undefined : state.bonusStartCommands[commandId];
+  if (
+    start == null ||
+    start.sessionKey !== sessionKey ||
+    start.topic !== topic ||
+    start.setIndex !== setIndex
+  ) {
+    return { applied: false, reason: "set-mismatch", state };
+  }
+
+  const session = state.sessions[sessionKey];
+  if (session == null) {
+    return { applied: false, reason: "missing-session", state };
+  }
+  if (session.phase !== "completed") {
+    return { applied: false, reason: "incomplete-session", state };
+  }
+
+  const topicProgress = state.bonusTopicProgress[topic];
+  if (topicProgress.completedSetIndexes.includes(setIndex)) {
+    return { applied: false, reason: "duplicate", state };
+  }
+
+  return {
+    applied: true,
+    state: {
+      ...state,
+      completedBonusIds: [
+        ...new Set([...state.completedBonusIds, ...start.questionIds]),
+      ],
+      bonusTopicProgress: {
+        ...state.bonusTopicProgress,
+        [topic]: {
+          completedSetIndexes: [
+            ...topicProgress.completedSetIndexes,
+            setIndex,
+          ].sort((left, right) => left - right),
+          lastCompletedDateKey: completedDateKey,
+        },
+      },
+    },
   };
 }

@@ -5,10 +5,12 @@ import {
 import legacyQuestionMap from "../content/legacy-map.json";
 import {
   applyAnswerCommand,
+  completeBonusSetCommand,
   grantBonusTicketCommand,
   startBonusSessionCommand,
   type AnswerCommand,
   type ApplyAnswerResult,
+  type CompleteBonusSetResult,
   type GrantBonusTicketResult,
   type StartBonusSessionResult,
 } from "../domain/progress-commands";
@@ -351,6 +353,10 @@ function isBonusStartCommandRecord(
       "safety",
       "nature-general",
     ].includes(String(value.topic)) &&
+    (value.setIndex === undefined ||
+      (Number.isInteger(value.setIndex) &&
+        Number(value.setIndex) >= 0 &&
+        Number(value.setIndex) < 180)) &&
     typeof value.sessionKey === "string" &&
     isStringArray(value.questionIds) &&
     ["first_free", "streak_ticket", "reward_ad"].includes(String(value.source))
@@ -977,7 +983,24 @@ export class ProgressRepository {
     commandId: string,
     dateKey: string,
     topic: BonusTopic,
+    setIndex: number,
     bonusQuestions: BonusQuestion[],
+    observedAt?: Date,
+  ): Promise<StartBonusSessionResult>;
+  /** @deprecated The eager-content app path is removed by the catalog wiring task. */
+  startBonusSession(
+    commandId: string,
+    dateKey: string,
+    topic: BonusTopic,
+    bonusQuestions: BonusQuestion[],
+    observedAt?: Date,
+  ): Promise<StartBonusSessionResult>;
+  startBonusSession(
+    commandId: string,
+    dateKey: string,
+    topic: BonusTopic,
+    setIndexOrQuestions: number | BonusQuestion[],
+    questionsOrObservedAt?: BonusQuestion[] | Date,
     observedAt?: Date,
   ): Promise<StartBonusSessionResult> {
     return this.enqueue(async () => {
@@ -986,13 +1009,69 @@ export class ProgressRepository {
         throw new ProgressWriteBlockedError();
       }
 
+      const legacyQuestions = Array.isArray(setIndexOrQuestions);
+      const explicitSetIndex = legacyQuestions
+        ? undefined
+        : setIndexOrQuestions;
+      const bonusQuestions: BonusQuestion[] = legacyQuestions
+        ? setIndexOrQuestions
+        : Array.isArray(questionsOrObservedAt)
+          ? questionsOrObservedAt
+          : [];
+      const effectiveObservedAt =
+        explicitSetIndex == null
+          ? questionsOrObservedAt instanceof Date
+            ? questionsOrObservedAt
+            : undefined
+          : observedAt;
+      const observed = observeProgressTime(
+        loaded.state,
+        effectiveObservedAt,
+      );
+      const result =
+        explicitSetIndex == null
+          ? startBonusSessionCommand(
+              observed.state,
+              commandId,
+              dateKey,
+              topic,
+              bonusQuestions,
+            )
+          : startBonusSessionCommand(
+              observed.state,
+              commandId,
+              dateKey,
+              topic,
+              explicitSetIndex,
+              bonusQuestions,
+            );
+      if (result.applied || observed.changed) {
+        await this.saveImmediately(result.state);
+      }
+      return result;
+    });
+  }
+
+  completeBonusSet(
+    sessionKey: string,
+    topic: BonusTopic,
+    setIndex: number,
+    completedDateKey: string,
+    observedAt?: Date,
+  ): Promise<CompleteBonusSetResult> {
+    return this.enqueue(async () => {
+      const loaded = await this.load();
+      if (loaded.kind === "unrecoverable") {
+        throw new ProgressWriteBlockedError();
+      }
+
       const observed = observeProgressTime(loaded.state, observedAt);
-      const result = startBonusSessionCommand(
+      const result = completeBonusSetCommand(
         observed.state,
-        commandId,
-        dateKey,
+        sessionKey,
         topic,
-        bonusQuestions,
+        setIndex,
+        completedDateKey,
       );
       if (result.applied || observed.changed) {
         await this.saveImmediately(result.state);

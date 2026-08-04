@@ -46,6 +46,7 @@ export interface BonusStartCommandRecord {
   commandId: string;
   dateKey: string;
   topic: BonusTopic;
+  setIndex?: number;
   sessionKey: string;
   questionIds: string[];
   source: BonusUnlockSource;

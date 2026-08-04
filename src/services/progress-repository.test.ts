@@ -70,7 +70,7 @@ const bonusQuestions: BonusQuestion[] = [
     id: "bonus-digital-1",
     conceptId: "digital-1",
     variant: "base",
-    internalDifficulty: "steady",
+    internalDifficulty: "gentle",
     setIndex: 0,
     ...contentMetadata,
     lens: "now",
@@ -80,6 +80,38 @@ const bonusQuestions: BonusQuestion[] = [
     answerIndex: 0,
     explanation: "설명 1",
     source: { name: "출처", url: "https://example.com/1" },
+  },
+  {
+    kind: "bonus",
+    id: "bonus-digital-2",
+    conceptId: "digital-2",
+    variant: "base",
+    internalDifficulty: "steady",
+    setIndex: 0,
+    ...contentMetadata,
+    lens: "now",
+    topic: "digital",
+    prompt: "디지털 문제 2",
+    choices: ["하나", "둘", "셋"],
+    answerIndex: 1,
+    explanation: "설명 2",
+    source: { name: "출처", url: "https://example.com/2" },
+  },
+  {
+    kind: "bonus",
+    id: "bonus-digital-3",
+    conceptId: "digital-3",
+    variant: "base",
+    internalDifficulty: "stretch",
+    setIndex: 0,
+    ...contentMetadata,
+    lens: "now",
+    topic: "digital",
+    prompt: "디지털 문제 3",
+    choices: ["하나", "둘", "셋"],
+    answerIndex: 2,
+    explanation: "설명 3",
+    source: { name: "출처", url: "https://example.com/3" },
   },
 ];
 
@@ -687,6 +719,7 @@ describe("ProgressRepository", () => {
       "bonus-command-1",
       "2026-07-28",
       "digital",
+      0,
       bonusQuestions,
     );
     const restored = await repository.load();
@@ -702,8 +735,16 @@ describe("ProgressRepository", () => {
     });
     expect(expectState(restored).shadowAudits).toEqual([
       {
-        legacyQuestionIds: ["bonus-digital-1"],
-        shadowQuestionIds: ["bonus-digital-1"],
+        legacyQuestionIds: [
+          "bonus-digital-1",
+          "bonus-digital-2",
+          "bonus-digital-3",
+        ],
+        shadowQuestionIds: [
+          "bonus-digital-2",
+          "bonus-digital-1",
+          "bonus-digital-3",
+        ],
         policyVersion: "personalization-v1",
         reasonCode: "insufficient-history",
       },
@@ -727,6 +768,7 @@ describe("ProgressRepository", () => {
       "2",
       "2026-07-28",
       "digital",
+      0,
       bonusQuestions,
     );
     const restored = expectState(await repository.load());
@@ -736,8 +778,9 @@ describe("ProgressRepository", () => {
       commandId: "2",
       dateKey: "2026-07-28",
       topic: "digital",
+      setIndex: 0,
       sessionKey: "2026-07-28:bonus:digital",
-      questionIds: ["bonus-digital-1"],
+      questionIds: ["bonus-digital-1", "bonus-digital-2", "bonus-digital-3"],
       source: "reward_ad",
     });
     expect(restored).toMatchObject({
@@ -760,12 +803,14 @@ describe("ProgressRepository", () => {
       "bonus-command-1",
       "2026-07-28",
       "digital",
+      0,
       bonusQuestions,
     );
     const duplicate = await repository.startBonusSession(
       "bonus-command-1",
       "2026-07-28",
       "digital",
+      0,
       bonusQuestions,
     );
     const restored = await repository.load();
@@ -795,6 +840,7 @@ describe("ProgressRepository", () => {
       "low-confidence-start",
       "2026-07-27",
       "digital",
+      0,
       bonusQuestions,
       new Date("2026-07-27T12:00:00.000Z"),
     );
@@ -815,6 +861,7 @@ describe("ProgressRepository", () => {
       "bonus-command-1",
       "2026-07-28",
       "digital",
+      0,
       [],
     );
     const restored = await repository.load();
@@ -846,6 +893,7 @@ describe("ProgressRepository", () => {
         "bonus-command-1",
         "2026-07-28",
         "digital",
+        0,
         bonusQuestions,
       ),
     ).rejects.toThrow("storage unavailable");
@@ -854,6 +902,107 @@ describe("ProgressRepository", () => {
     expect(expectState(restored).bonus.firstFreeUsed).toBe(false);
     expect(expectState(restored).sessions).toEqual({});
     expect(expectState(restored).shadowAudits).toEqual([]);
+  });
+
+  it("동시 완료 재시도는 세트와 세 문제를 한 revision에 한 번만 저장한다", async () => {
+    const repository = new ProgressRepository(
+      new BrowserKeyValueStorage(window.localStorage),
+    );
+    const started = await repository.startBonusSession(
+      "complete-once",
+      "2026-08-04",
+      "digital",
+      0,
+      bonusQuestions,
+    );
+    expect(started.applied).toBe(true);
+    if (!started.applied) {
+      return;
+    }
+    const loaded = expectState(await repository.load());
+    await repository.save({
+      ...loaded,
+      sessions: {
+        ...loaded.sessions,
+        [started.session.dateKey]: {
+          ...started.session,
+          currentIndex: 2,
+          phase: "completed",
+        },
+      },
+    });
+
+    const results = await Promise.all([
+      repository.completeBonusSet(
+        started.session.dateKey,
+        "digital",
+        0,
+        "2026-08-04",
+      ),
+      repository.completeBonusSet(
+        started.session.dateKey,
+        "digital",
+        0,
+        "2026-08-04",
+      ),
+    ]);
+    const restored = await repository.load();
+
+    expect(results).toEqual([
+      expect.objectContaining({ applied: true }),
+      expect.objectContaining({ applied: false, reason: "duplicate" }),
+    ]);
+    expect(restored).toMatchObject({ kind: "loaded", revision: 3 });
+    expect(expectState(restored).bonusTopicProgress.digital).toEqual({
+      completedSetIndexes: [0],
+      lastCompletedDateKey: "2026-08-04",
+    });
+    expect(expectState(restored).completedBonusIds).toEqual([
+      "bonus-digital-1",
+      "bonus-digital-2",
+      "bonus-digital-3",
+    ]);
+  });
+
+  it("동시 보너스 시작은 진행 중 세션을 복원하고 권리를 한 번만 소비한다", async () => {
+    const repository = new ProgressRepository(
+      new BrowserKeyValueStorage(window.localStorage),
+    );
+    await repository.save({
+      ...createEmptyProgress(),
+      bonus: {
+        ...createEmptyProgress().bonus,
+        firstFreeUsed: true,
+        ticketCount: 2,
+      },
+    });
+
+    const results = await Promise.all([
+      repository.startBonusSession(
+        "concurrent-1",
+        "2026-08-04",
+        "digital",
+        0,
+        bonusQuestions,
+      ),
+      repository.startBonusSession(
+        "concurrent-2",
+        "2026-08-04",
+        "digital",
+        0,
+        bonusQuestions,
+      ),
+    ]);
+    const restored = expectState(await repository.load());
+
+    expect(results[0]).toMatchObject({ applied: true });
+    expect(results[1]).toMatchObject({
+      applied: false,
+      reason: "active-session",
+      sessionKey: "2026-08-04:bonus:digital",
+    });
+    expect(restored.bonus.ticketCount).toBe(1);
+    expect(Object.keys(restored.bonusStartCommands)).toEqual(["concurrent-1"]);
   });
 
   it("새 필드가 없는 기존 v2 payload에 안전한 기본값을 채운다", async () => {
