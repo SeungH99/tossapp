@@ -7,6 +7,7 @@ import type {
   CoreContentPack,
   CoreContentPackDescriptor,
 } from "../content/types";
+import type { BonusTopic, InternalDifficulty } from "../domain/question";
 import {
   validateContentLibrary,
   validateContentPack,
@@ -107,6 +108,170 @@ const bonusDescriptor: BonusContentPackDescriptor = {
   setStart: 0,
   setEnd: 0,
 };
+
+const DAY_MS = 24 * 60 * 60 * 1000;
+const RELEASE_START = Date.UTC(2026, 6, 28);
+const DIFFICULTIES = [
+  "gentle",
+  "steady",
+  "stretch",
+] as const satisfies readonly InternalDifficulty[];
+const LENSES = ["then", "now", "life"] as const;
+const BONUS_TOPICS = [
+  "nostalgia",
+  "korean-life",
+  "language",
+  "digital",
+  "safety",
+  "nature-general",
+] as const satisfies readonly BonusTopic[];
+
+function releaseDate(offset: number): string {
+  return new Date(RELEASE_START + offset * DAY_MS).toISOString().slice(0, 10);
+}
+
+function uniquePrompt(seed: number): string {
+  let state = (seed + 1) * 2_654_435_761;
+  let result = "";
+  for (let index = 0; index < 32; index += 1) {
+    state = Math.imul(state ^ (state >>> 15), 2_246_822_519);
+    result += String.fromCharCode(97 + ((state >>> 0) % 26));
+  }
+  return result;
+}
+
+function checksum(index: number): string {
+  return index.toString(16).padStart(64, "0");
+}
+
+function buildCoreLibrary(startOffset = 0) {
+  const descriptors: CoreContentPackDescriptor[] = [];
+  const packs: Array<{ path: string; pack: CoreContentPack; sha256: string }> =
+    [];
+  for (let packIndex = 0; packIndex < 6; packIndex += 1) {
+    const firstOffset = startOffset + packIndex * 30;
+    const questions = Array.from({ length: 30 }, (_, dayIndex) =>
+      DIFFICULTIES.map((internalDifficulty, difficultyIndex) => ({
+        ...metadata,
+        kind: "core" as const,
+        id: `core-${packIndex}-${dayIndex}-${difficultyIndex}`,
+        dateKey: releaseDate(firstOffset + dayIndex),
+        lens: LENSES[difficultyIndex],
+        topic: "nostalgia" as const,
+        internalDifficulty,
+        prompt: uniquePrompt(
+          1 + packIndex * 90 + dayIndex * 3 + difficultyIndex,
+        ),
+        choices: ["alpha choice", "beta choice", "gamma choice"] as [
+          string,
+          string,
+          string,
+        ],
+        answerIndex: difficultyIndex as 0 | 1 | 2,
+        explanation: "Reviewed source explanation for this core question.",
+      })),
+    ).flat();
+    const pack: CoreContentPack = {
+      id: `core-${String(packIndex + 1).padStart(3, "0")}`,
+      kind: "core",
+      contentVersion: metadata.contentVersion,
+      reviewStatus: "reviewed",
+      questions,
+    };
+    const path = `src/content/core/pack-${String(packIndex + 1).padStart(3, "0")}.json`;
+    const sha256 = checksum(packIndex + 1);
+    descriptors.push({
+      id: pack.id,
+      kind: "core",
+      path,
+      sha256,
+      questionCount: 90,
+      setCount: 30,
+      reviewStatus: "reviewed",
+      dateStart: releaseDate(firstOffset),
+      dateEnd: releaseDate(firstOffset + 29),
+    });
+    packs.push({ path, pack, sha256 });
+  }
+  return { descriptors, packs };
+}
+
+function buildBonusTopicLibrary(topic: BonusTopic, startSet = 0) {
+  const topicIndex = BONUS_TOPICS.indexOf(topic);
+  const descriptors: BonusContentPackDescriptor[] = [];
+  const packs: Array<{ path: string; pack: BonusContentPack; sha256: string }> =
+    [];
+  for (let packIndex = 0; packIndex < 6; packIndex += 1) {
+    const firstSet = startSet + packIndex * 30;
+    const questions = Array.from({ length: 30 }, (_, setOffset) =>
+      DIFFICULTIES.map((internalDifficulty, difficultyIndex) => {
+        const setIndex = firstSet + setOffset;
+        return {
+          ...metadata,
+          kind: "bonus" as const,
+          id: `bonus-${topic}-${setIndex}-${difficultyIndex}`,
+          conceptId: `concept-${topic}-${setIndex}-${difficultyIndex}`,
+          variant: internalDifficulty,
+          setIndex,
+          lens: LENSES[difficultyIndex],
+          topic,
+          internalDifficulty,
+          prompt: uniquePrompt(
+            10_000 +
+              topicIndex * 1_000 +
+              packIndex * 90 +
+              setOffset * 3 +
+              difficultyIndex,
+          ),
+          choices: ["alpha choice", "beta choice", "gamma choice"] as [
+            string,
+            string,
+            string,
+          ],
+          answerIndex: difficultyIndex as 0 | 1 | 2,
+          explanation: "Reviewed source explanation for this bonus question.",
+        };
+      }),
+    ).flat();
+    const suffix = String(packIndex + 1).padStart(3, "0");
+    const pack: BonusContentPack = {
+      id: `bonus-${topic}-${suffix}`,
+      kind: "bonus",
+      contentVersion: metadata.contentVersion,
+      reviewStatus: "reviewed",
+      questions,
+    };
+    const path = `src/content/bonus/${topic}/pack-${suffix}.json`;
+    const sha256 = checksum(100 + topicIndex * 6 + packIndex);
+    descriptors.push({
+      id: pack.id,
+      kind: "bonus",
+      path,
+      sha256,
+      questionCount: 90,
+      setCount: 30,
+      reviewStatus: "reviewed",
+      topic,
+      setStart: firstSet,
+      setEnd: firstSet + 29,
+    });
+    packs.push({ path, pack, sha256 });
+  }
+  return { descriptors, packs };
+}
+
+function manifestWith(
+  corePacks: CoreContentPackDescriptor[],
+  bonusPacks: BonusContentPackDescriptor[],
+): ContentManifest {
+  return {
+    releaseStart: "2026-07-28",
+    releaseEnd: "2027-01-23",
+    contentVersion: metadata.contentVersion,
+    corePacks,
+    bonusPacks,
+  };
+}
 
 function issueCodes(
   pack: unknown,
@@ -222,6 +387,211 @@ describe("validateContentPack", () => {
 });
 
 describe("validateContentLibrary", () => {
+  it("rejects an empty default library with exact release totals", () => {
+    const report = validateContentLibrary(manifestWith([], []), []);
+
+    expect(report.issues).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          code: "count",
+          scope: "library:descriptors",
+          expected: 42,
+          actual: 0,
+        }),
+        expect.objectContaining({
+          code: "count",
+          scope: "library:questions",
+          expected: 3780,
+          actual: 0,
+        }),
+      ]),
+    );
+  });
+
+  it("accepts a complete core scope without requiring bonus packs", () => {
+    const core = buildCoreLibrary();
+
+    const report = validateContentLibrary(
+      manifestWith(core.descriptors, []),
+      core.packs,
+      "core",
+    );
+
+    expect(report).toMatchObject({
+      packCount: 6,
+      questionCount: 540,
+      setCount: 180,
+      issues: [],
+    });
+  });
+
+  it("accepts a complete bonus topic scope without requiring other topics", () => {
+    const digital = buildBonusTopicLibrary("digital");
+
+    const report = validateContentLibrary(
+      manifestWith([], digital.descriptors),
+      digital.packs,
+      "bonus:digital",
+    );
+
+    expect(report).toMatchObject({
+      packCount: 6,
+      questionCount: 540,
+      setCount: 180,
+      issues: [],
+    });
+  });
+
+  it("accepts exactly 42 packs and 3,780 globally covered questions", () => {
+    const core = buildCoreLibrary();
+    const bonus = BONUS_TOPICS.map((topic) => buildBonusTopicLibrary(topic));
+    const bonusDescriptors = bonus.flatMap(({ descriptors }) => descriptors);
+    const packs = [...core.packs, ...bonus.flatMap(({ packs }) => packs)];
+
+    const report = validateContentLibrary(
+      manifestWith(core.descriptors, bonusDescriptors),
+      packs,
+    );
+
+    expect(report).toMatchObject({
+      packCount: 42,
+      questionCount: 3780,
+      setCount: 1260,
+      issues: [],
+    });
+  });
+
+  it("rejects a 41-pack partial default library deterministically", () => {
+    const core = buildCoreLibrary();
+    const bonus = BONUS_TOPICS.map((topic) => buildBonusTopicLibrary(topic));
+    const bonusDescriptors = bonus.flatMap(({ descriptors }) => descriptors);
+    const packs = [...core.packs, ...bonus.flatMap(({ packs }) => packs)];
+    bonusDescriptors.pop();
+    packs.pop();
+
+    const report = validateContentLibrary(
+      manifestWith(core.descriptors, bonusDescriptors),
+      packs,
+    );
+
+    expect(report.issues).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          code: "count",
+          scope: "library:descriptors",
+          expected: 42,
+          actual: 41,
+        }),
+        expect.objectContaining({
+          code: "count",
+          scope: "library:questions",
+          expected: 3780,
+          actual: 3690,
+        }),
+      ]),
+    );
+  });
+
+  it("rejects locally complete core packs that shift outside global date coverage", () => {
+    const shifted = buildCoreLibrary(1);
+
+    const report = validateContentLibrary(
+      manifestWith(shifted.descriptors, []),
+      shifted.packs,
+      "core",
+    );
+
+    expect(report.issues).toContainEqual(
+      expect.objectContaining({ code: "date-range", scope: "core:coverage" }),
+    );
+  });
+
+  it("rejects overlapping core descriptor ranges", () => {
+    const core = buildCoreLibrary();
+    core.descriptors[1] = {
+      ...core.descriptors[1],
+      dateStart: core.descriptors[0].dateStart,
+      dateEnd: core.descriptors[0].dateEnd,
+    };
+
+    const report = validateContentLibrary(
+      manifestWith(core.descriptors, []),
+      core.packs,
+      "core",
+    );
+
+    expect(report.issues).toContainEqual(
+      expect.objectContaining({
+        code: "date-range",
+        scope: "descriptor:core-001~core-002",
+      }),
+    );
+  });
+
+  it("rejects locally complete bonus packs that omit set zero and add set 180", () => {
+    const shifted = buildBonusTopicLibrary("digital", 1);
+
+    const report = validateContentLibrary(
+      manifestWith([], shifted.descriptors),
+      shifted.packs,
+      "bonus:digital",
+    );
+
+    expect(report.issues).toContainEqual(
+      expect.objectContaining({
+        code: "set-range",
+        scope: "bonus:digital:coverage",
+      }),
+    );
+  });
+
+  it("rejects overlapping bonus descriptor ranges", () => {
+    const digital = buildBonusTopicLibrary("digital");
+    digital.descriptors[1] = {
+      ...digital.descriptors[1],
+      setStart: digital.descriptors[0].setStart,
+      setEnd: digital.descriptors[0].setEnd,
+    };
+
+    const report = validateContentLibrary(
+      manifestWith([], digital.descriptors),
+      digital.packs,
+      "bonus:digital",
+    );
+
+    expect(report.issues).toContainEqual(
+      expect.objectContaining({
+        code: "set-range",
+        scope: "descriptor:bonus-digital-001~bonus-digital-002",
+      }),
+    );
+  });
+
+  it("ties pack and question versions to the manifest version", () => {
+    const core = buildCoreLibrary();
+    core.packs[0].pack.contentVersion = "stale-version";
+    core.packs[0].pack.questions[0].contentVersion = "stale-version";
+
+    const report = validateContentLibrary(
+      manifestWith(core.descriptors, []),
+      core.packs,
+      "core",
+    );
+
+    expect(report.issues).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          code: "schema",
+          scope: "pack:core-001:contentVersion",
+        }),
+        expect.objectContaining({
+          code: "schema",
+          scope: "question:core-0-0-0:contentVersion",
+        }),
+      ]),
+    );
+  });
+
   it("checks raw checksums and duplicates across pack boundaries", () => {
     const secondPack = structuredClone(corePack);
     secondPack.id = "core-002";

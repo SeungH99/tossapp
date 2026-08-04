@@ -261,7 +261,11 @@ export async function runPackValidation(
         normalizePath(relative(cwd, packPath)),
         checksum,
       );
-  const report = validateContentPack(pack, descriptor);
+  const report = validateContentPack(
+    pack,
+    descriptor,
+    manifest?.contentVersion,
+  );
   if (
     matchingDescriptor != null &&
     !options.updateManifest &&

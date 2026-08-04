@@ -6,6 +6,7 @@ import { pathToFileURL } from "node:url";
 import type { ContentManifest } from "../src/content/types";
 import {
   type ContentLibraryPack,
+  type ContentLibraryValidationScope,
   type ContentPackValidationIssue,
   type ContentValidationReport,
   validateContentLibrary,
@@ -14,8 +15,20 @@ import {
 export interface LibraryValidationOptions {
   cwd?: string;
   manifestPath?: string;
+  scope?: ContentLibraryValidationScope;
   writeLine?: (line: string) => void;
 }
+
+const LIBRARY_SCOPES = new Set<ContentLibraryValidationScope>([
+  "full",
+  "core",
+  "bonus:nostalgia",
+  "bonus:korean-life",
+  "bonus:language",
+  "bonus:digital",
+  "bonus:safety",
+  "bonus:nature-general",
+]);
 
 function sha256(raw: Buffer): string {
   return createHash("sha256").update(raw).digest("hex");
@@ -59,9 +72,18 @@ export function runLibraryValidation(options: LibraryValidationOptions = {}): {
   const manifest = JSON.parse(
     readFileSync(manifestPath, "utf8"),
   ) as ContentManifest;
+  const scope = options.scope ?? "full";
+  const descriptors =
+    scope === "core"
+      ? manifest.corePacks
+      : scope.startsWith("bonus:")
+        ? manifest.bonusPacks.filter(
+            ({ topic }) => topic === scope.slice("bonus:".length),
+          )
+        : [...manifest.corePacks, ...manifest.bonusPacks];
   const packs: ContentLibraryPack[] = [];
   const unreadableIssues: ContentPackValidationIssue[] = [];
-  for (const descriptor of [...manifest.corePacks, ...manifest.bonusPacks]) {
+  for (const descriptor of descriptors) {
     try {
       const raw = readFileSync(resolve(cwd, descriptor.path));
       packs.push({
@@ -78,7 +100,7 @@ export function runLibraryValidation(options: LibraryValidationOptions = {}): {
       });
     }
   }
-  const report = validateContentLibrary(manifest, packs);
+  const report = validateContentLibrary(manifest, packs, scope);
   report.issues.unshift(...unreadableIssues);
   return {
     exitCode: printLibraryValidationReport(
@@ -89,9 +111,36 @@ export function runLibraryValidation(options: LibraryValidationOptions = {}): {
   };
 }
 
+function parseArgs(args: readonly string[]): {
+  manifestPath?: string;
+  scope?: ContentLibraryValidationScope;
+} {
+  let manifestPath: string | undefined;
+  let scope: ContentLibraryValidationScope | undefined;
+  for (let index = 0; index < args.length; index += 1) {
+    const value = args[index];
+    if (value === "--scope") {
+      const candidate = args[index + 1] as ContentLibraryValidationScope;
+      if (!LIBRARY_SCOPES.has(candidate)) {
+        throw new Error(`Invalid content-library scope: ${String(candidate)}`);
+      }
+      scope = candidate;
+      index += 1;
+    } else if (value === "--manifest") {
+      manifestPath = args[index + 1];
+      index += 1;
+    } else if (!value.startsWith("--") && manifestPath === undefined) {
+      manifestPath = value;
+    } else {
+      throw new Error(`Unknown argument: ${value}`);
+    }
+  }
+  return { manifestPath, scope };
+}
+
 export function main(args: readonly string[] = process.argv.slice(2)): 0 | 1 {
   try {
-    return runLibraryValidation({ manifestPath: args[0] }).exitCode;
+    return runLibraryValidation(parseArgs(args)).exitCode;
   } catch (error) {
     console.error(error instanceof Error ? error.message : String(error));
     return 1;

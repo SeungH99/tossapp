@@ -6,6 +6,7 @@ import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 
 import type { ContentManifest, CoreContentPack } from "../src/content/types";
+import { runLibraryValidation } from "./validate-content-library";
 import { runPackValidation } from "./validate-content-pack";
 
 const metadata = {
@@ -121,6 +122,34 @@ describe("validate-content-pack CLI", () => {
     expect(readFileSync(workspace.manifestPath)).toEqual(before);
   });
 
+  it("leaves the manifest byte-for-byte unchanged on content-version mismatch", async () => {
+    const stale = structuredClone(validPack);
+    stale.contentVersion = "stale-version";
+    stale.questions = stale.questions.map((question) => ({
+      ...question,
+      contentVersion: "stale-version",
+    }));
+    const workspace = createWorkspace(stale);
+    const before = readFileSync(workspace.manifestPath);
+
+    const result = await runPackValidation({
+      cwd: workspace.directory,
+      packPath: workspace.packPath,
+      manifestPath: workspace.manifestPath,
+      updateManifest: true,
+      writeLine: () => undefined,
+    });
+
+    expect(result.exitCode).toBe(1);
+    expect(result.report.issues).toContainEqual(
+      expect.objectContaining({
+        code: "schema",
+        scope: "pack:core-001:contentVersion",
+      }),
+    );
+    expect(readFileSync(workspace.manifestPath)).toEqual(before);
+  });
+
   it("atomically updates only the valid pack matching descriptor", async () => {
     const workspace = createWorkspace(validPack);
 
@@ -180,6 +209,60 @@ describe("validate-content-pack CLI", () => {
       expect(failure.status).toBe(1);
       expect(`${failure.stdout ?? output}${failure.stderr ?? ""}`).toContain(
         "[short-prompt]",
+      );
+    }
+  });
+});
+
+describe("validate-content-library CLI", () => {
+  it("fails the empty default manifest with the exact full-library count", () => {
+    const lines: string[] = [];
+
+    const result = runLibraryValidation({
+      writeLine: (line) => lines.push(line),
+    });
+
+    expect(result.exitCode).toBe(1);
+    expect(result.report.issues).toContainEqual(
+      expect.objectContaining({
+        code: "count",
+        scope: "library:descriptors",
+        expected: 42,
+        actual: 0,
+      }),
+    );
+    expect(lines.join("\n")).toContain("[count] library:descriptors");
+  });
+
+  it("parses --scope core instead of treating it as a manifest path", () => {
+    let output = "";
+
+    try {
+      output = execFileSync(
+        process.execPath,
+        [
+          "--import",
+          "tsx",
+          "scripts/validate-content-library.ts",
+          "--scope",
+          "core",
+        ],
+        {
+          cwd: process.cwd(),
+          encoding: "utf8",
+          stdio: ["ignore", "pipe", "pipe"],
+        },
+      );
+      throw new Error("CLI unexpectedly exited successfully");
+    } catch (error) {
+      const failure = error as {
+        status?: number;
+        stdout?: string;
+        stderr?: string;
+      };
+      expect(failure.status).toBe(1);
+      expect(`${failure.stdout ?? output}${failure.stderr ?? ""}`).toContain(
+        "[count] library:core:descriptors",
       );
     }
   });
