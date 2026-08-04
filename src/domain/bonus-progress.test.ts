@@ -60,4 +60,56 @@ describe("resolveBonusSetAvailability", () => {
     expect(resolveBonusSetAvailability(progress, "digital", "2026-08-05"))
       .toEqual({ kind: "exhausted" });
   });
+
+  it("legacy 완료 세션은 같은 날 같은 주제를 다시 열지 않는다", () => {
+    const progress = createEmptyProgress();
+    const sessionKey = "2026-08-04:bonus:digital";
+    progress.sessions[sessionKey] = {
+      ...createQuizSession(sessionKey),
+      phase: "completed",
+    };
+    progress.bonusStartCommands["legacy-complete"] = {
+      commandId: "legacy-complete",
+      dateKey: "2026-08-04",
+      topic: "digital",
+      setIndex: 0,
+      sessionKey,
+      questionIds: ["digital-0-g", "digital-0-s", "digital-0-x"],
+      source: "first_free",
+    };
+    progress.completedBonusIds = [
+      "digital-0-g",
+      "digital-0-s",
+      "digital-0-x",
+    ];
+
+    expect(resolveBonusSetAvailability(progress, "digital", "2026-08-04"))
+      .toEqual({ kind: "daily-limit" });
+  });
+
+  it("legacy 완료 세트도 다음 날 가장 작은 미완료 번호에서 이어 간다", () => {
+    const progress = createEmptyProgress();
+    const sessionKey = "2026-08-04:bonus:digital";
+    progress.sessions[sessionKey] = {
+      ...createQuizSession(sessionKey),
+      phase: "completed",
+    };
+    progress.bonusStartCommands["legacy-complete"] = {
+      commandId: "legacy-complete",
+      dateKey: "2026-08-04",
+      topic: "digital",
+      setIndex: 0,
+      sessionKey,
+      questionIds: ["digital-0-g", "digital-0-s", "digital-0-x"],
+      source: "first_free",
+    };
+    progress.completedBonusIds = [
+      "digital-0-g",
+      "digital-0-s",
+      "digital-0-x",
+    ];
+
+    expect(resolveBonusSetAvailability(progress, "digital", "2026-08-05"))
+      .toEqual({ kind: "available", setIndex: 1 });
+  });
 });

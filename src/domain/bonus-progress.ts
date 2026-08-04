@@ -24,7 +24,30 @@ export function resolveBonusSetAvailability(
     return { kind: "daily-limit" };
   }
 
-  const setIndex = deriveNextSetIndex(topicProgress.completedSetIndexes);
+  const completedQuestionIds = new Set(progress.completedBonusIds);
+  const completedSetIndexes = new Set(topicProgress.completedSetIndexes);
+  for (const command of Object.values(progress.bonusStartCommands)) {
+    const session = progress.sessions[command.sessionKey];
+    if (
+      command.topic !== topic ||
+      command.setIndex == null ||
+      session?.phase !== "completed" ||
+      command.questionIds.length !== 3 ||
+      new Set(command.questionIds).size !== 3 ||
+      !command.questionIds.every((questionId) =>
+        completedQuestionIds.has(questionId),
+      )
+    ) {
+      continue;
+    }
+
+    completedSetIndexes.add(command.setIndex);
+    if (command.dateKey === dateKey) {
+      return { kind: "daily-limit" };
+    }
+  }
+
+  const setIndex = deriveNextSetIndex([...completedSetIndexes]);
   return setIndex == null
     ? { kind: "exhausted" }
     : { kind: "available", setIndex };

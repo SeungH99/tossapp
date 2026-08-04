@@ -1414,7 +1414,7 @@ describe("QuizApp", () => {
     expect(screen.getByText("1 / 3")).toBeInTheDocument();
   });
 
-  it("같은 날짜와 주제로 다시 시작한 보너스는 가장 최근 저장 명령의 문제 순서로 복원한다", async () => {
+  it("같은 날짜와 주제로 완료한 legacy 보너스는 다시 시작하지 않는다", async () => {
     window.localStorage.clear();
     const repository = new ProgressRepository(
       new BrowserKeyValueStorage(window.localStorage),
@@ -1457,53 +1457,18 @@ describe("QuizApp", () => {
       "digital",
       bundledBonusQuestions,
     );
-    expect(secondStart.applied).toBe(true);
-    if (!secondStart.applied) {
+    const restored = await repository.load();
+
+    expect(secondStart).toMatchObject({
+      applied: false,
+      reason: "daily-limit",
+    });
+    expect(restored).toMatchObject({ kind: "loaded", revision: 2 });
+    if (restored.kind === "unrecoverable") {
       return;
     }
-    expect(secondStart.questionIds).toEqual([
-      "bonus-digital-4",
-      "bonus-digital-5",
-      "bonus-digital-6",
-    ]);
-    const restoredQuestions = secondStart.questionIds.map((questionId) => {
-      const question = bundledBonusQuestions.find(
-        (candidate) => candidate.id === questionId,
-      );
-      if (question == null) {
-        throw new Error(`Missing fixture question ${questionId}`);
-      }
-      return question;
-    });
-    const user = userEvent.setup();
-
-    render(
-      <QuizApp
-        now={new Date("2026-07-28T03:00:00.000Z")}
-        coreQuestions={coreQuestions}
-        bonusQuestions={bundledBonusQuestions}
-        repository={repository}
-      />,
-    );
-
-    for (const [index, question] of restoredQuestions.entries()) {
-      expect(
-        await screen.findByRole("heading", { name: question.prompt }),
-      ).toBeInTheDocument();
-      expect(screen.getByText(`${index + 1} / 3`)).toBeInTheDocument();
-      await user.click(
-        screen.getByRole("button", {
-          name: question.choices[question.answerIndex],
-        }),
-      );
-      await screen.findByText("저장됐어요.");
-      await user.click(
-        screen.getByRole("button", {
-          name:
-            index === restoredQuestions.length - 1 ? "결과 보기" : "다음 문제",
-        }),
-      );
-    }
+    expect(restored.state.bonus.ticketCount).toBe(1);
+    expect(Object.keys(restored.state.bonusStartCommands)).toEqual(["10"]);
   });
 
   it("결과 점수와 같은 문제 링크를 친구에게 공유한다", async () => {

@@ -41,4 +41,22 @@ describe("bundled question content", () => {
       issues: [],
     });
   });
+
+  it("legacy 보너스 번들도 주제별 세 문제와 세 난이도로 묶인다", () => {
+    for (const topic of RELEASE_BONUS_TOPICS) {
+      const topicQuestions = bonusQuestions.filter(
+        (question) => question.topic === topic,
+      );
+      expect(topicQuestions).toHaveLength(15);
+      for (const setIndex of [0, 1, 2, 3, 4]) {
+        const questions = topicQuestions.filter(
+          (question) => question.setIndex === setIndex,
+        );
+        expect(questions).toHaveLength(3);
+        expect(
+          questions.map((question) => question.internalDifficulty),
+        ).toEqual(["gentle", "steady", "stretch"]);
+      }
+    }
+  });
 });

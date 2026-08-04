@@ -794,6 +794,116 @@ describe("ProgressRepository", () => {
     );
   });
 
+  it("legacy repository 호출도 V3의 다음 세트 인덱스를 기록한다", async () => {
+    const repository = new ProgressRepository(
+      new BrowserKeyValueStorage(window.localStorage),
+    );
+    await repository.save({
+      ...createEmptyProgress(),
+      bonus: {
+        ...createEmptyProgress().bonus,
+        firstFreeUsed: true,
+        ticketCount: 1,
+      },
+    });
+
+    const result = await repository.startBonusSession(
+      "legacy-valid",
+      "2026-08-04",
+      "digital",
+      bonusQuestions,
+    );
+    const restored = expectState(await repository.load());
+
+    expect(result).toMatchObject({ applied: true, source: "streak_ticket" });
+    expect(restored.bonus.ticketCount).toBe(0);
+    expect(restored.bonusStartCommands["legacy-valid"]).toMatchObject({
+      topic: "digital",
+      setIndex: 0,
+      questionIds: [
+        "bonus-digital-1",
+        "bonus-digital-2",
+        "bonus-digital-3",
+      ],
+    });
+  });
+
+  it.each([
+    {
+      name: "same-topic replay",
+      prepare: () => {
+        const state = createEmptyProgress();
+        state.bonusTopicProgress.digital = {
+          completedSetIndexes: [0],
+          lastCompletedDateKey: "2026-08-04",
+        };
+        return state;
+      },
+      questions: bonusQuestions,
+      reason: "daily-limit",
+    },
+    {
+      name: "exhausted topic",
+      prepare: () => {
+        const state = createEmptyProgress();
+        state.bonusTopicProgress.digital = {
+          completedSetIndexes: Array.from(
+            { length: 180 },
+            (_, setIndex) => setIndex,
+          ),
+        };
+        return state;
+      },
+      questions: bonusQuestions,
+      reason: "exhausted",
+    },
+    {
+      name: "active session",
+      prepare: () => {
+        const state = createEmptyProgress();
+        const sessionKey = "2026-08-03:bonus:digital";
+        state.sessions[sessionKey] = createQuizSession(sessionKey);
+        return state;
+      },
+      questions: bonusQuestions,
+      reason: "active-session",
+    },
+    {
+      name: "malformed question array",
+      prepare: () => createEmptyProgress(),
+      questions: bonusQuestions.slice(0, 2),
+      reason: "no-questions",
+    },
+  ])("legacy repository $name은 저장된 이용권을 보존한다", async ({
+    prepare,
+    questions,
+    reason,
+  }) => {
+    const repository = new ProgressRepository(
+      new BrowserKeyValueStorage(window.localStorage),
+    );
+    const state = prepare();
+    state.bonus = {
+      ...state.bonus,
+      firstFreeUsed: true,
+      ticketCount: 1,
+    };
+    await repository.save(state);
+
+    const result = await repository.startBonusSession(
+      `legacy-blocked-${reason}`,
+      "2026-08-04",
+      "digital",
+      questions,
+    );
+    const restored = await repository.load();
+
+    expect(result).toMatchObject({ applied: false, reason });
+    expect(restored).toMatchObject({ kind: "loaded", revision: 1 });
+    expect(expectState(restored).bonus.ticketCount).toBe(1);
+    expect(expectState(restored).bonusStartCommands).toEqual({});
+  });
+
   it("같은 보너스 commandId 재시도는 revision과 세션을 늘리지 않는다", async () => {
     const repository = new ProgressRepository(
       new BrowserKeyValueStorage(window.localStorage),
@@ -928,6 +1038,11 @@ describe("ProgressRepository", () => {
           ...started.session,
           currentIndex: 2,
           phase: "completed",
+          answers: bonusQuestions.map((question) => ({
+            questionId: question.id,
+            selectedIndex: question.answerIndex,
+            isCorrect: true,
+          })),
         },
       },
     });

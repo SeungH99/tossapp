@@ -793,4 +793,31 @@ const bonusQuestionSeed: BonusQuestion[] = [
   ...expandedBonusQuestions,
 ];
 
-export const bonusQuestions = distributeAnswerPositions(bonusQuestionSeed);
+const legacyDifficultyOrder = ["gentle", "steady", "stretch"] as const;
+
+function indexLegacyBonusSets(
+  questions: BonusQuestion[],
+): BonusQuestion[] {
+  const nextPosition: Record<BonusTopic, number> = {
+    nostalgia: 0,
+    "korean-life": 0,
+    language: 0,
+    digital: 0,
+    safety: 0,
+    "nature-general": 0,
+  };
+
+  return questions.map((question) => {
+    const position = nextPosition[question.topic];
+    nextPosition[question.topic] += 1;
+    return {
+      ...question,
+      setIndex: Math.floor(position / 3),
+      internalDifficulty: legacyDifficultyOrder[position % 3],
+    };
+  });
+}
+
+export const bonusQuestions = distributeAnswerPositions(
+  indexLegacyBonusSets(bonusQuestionSeed),
+);

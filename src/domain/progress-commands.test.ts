@@ -568,6 +568,107 @@ describe("bonus progress commands", () => {
     expect(result.state.bonus.ticketCount).toBe(1);
   });
 
+  it.each([
+    {
+      name: "same-topic replay",
+      prepare: () => {
+        const state = createEmptyProgress();
+        state.bonusTopicProgress.digital = {
+          completedSetIndexes: [0],
+          lastCompletedDateKey: "2026-08-04",
+        };
+        return state;
+      },
+      questions: bonusQuestions,
+      reason: "daily-limit",
+    },
+    {
+      name: "exhausted topic",
+      prepare: () => {
+        const state = createEmptyProgress();
+        state.bonusTopicProgress.digital = {
+          completedSetIndexes: Array.from(
+            { length: 180 },
+            (_, setIndex) => setIndex,
+          ),
+        };
+        return state;
+      },
+      questions: bonusQuestions,
+      reason: "exhausted",
+    },
+    {
+      name: "malformed question array",
+      prepare: () => createEmptyProgress(),
+      questions: bonusQuestions.slice(0, 2),
+      reason: "no-questions",
+    },
+    {
+      name: "duplicate question IDs",
+      prepare: () => createEmptyProgress(),
+      questions: bonusQuestions.map((question, index) =>
+        index === 2 ? { ...question, id: "bonus-digital-2" } : question,
+      ),
+      reason: "no-questions",
+    },
+  ])("legacy $name도 정책 확인 전에 이용권을 소비하지 않는다", ({
+    prepare,
+    questions,
+    reason,
+  }) => {
+    const state = prepare();
+    state.bonus = {
+      ...state.bonus,
+      firstFreeUsed: true,
+      ticketCount: 1,
+    };
+
+    const result = progressCommands.startBonusSessionCommand(
+      state,
+      `legacy-${reason}`,
+      "2026-08-04",
+      "digital",
+      questions,
+    );
+
+    expect(result).toMatchObject({ applied: false, reason });
+    expect(result.state).toBe(state);
+    expect(result.state.bonus.ticketCount).toBe(1);
+    expect(result.state.sessions).toEqual(state.sessions);
+  });
+
+  it("legacy 호출도 진행 중 세션을 덮어쓰거나 이용권을 소비하지 않는다", () => {
+    const sessionKey = "2026-08-03:bonus:digital";
+    const state = {
+      ...createEmptyProgress(),
+      sessions: { [sessionKey]: createQuizSession(sessionKey) },
+      bonus: {
+        ...createEmptyProgress().bonus,
+        firstFreeUsed: true,
+        ticketCount: 1,
+      },
+    };
+
+    const result = progressCommands.startBonusSessionCommand(
+      state,
+      "legacy-active",
+      "2026-08-04",
+      "digital",
+      bonusQuestions,
+    );
+
+    expect(result).toMatchObject({
+      applied: false,
+      reason: "active-session",
+      sessionKey,
+    });
+    expect(result.state).toBe(state);
+    expect(result.state.bonus.ticketCount).toBe(1);
+    expect(result.state.sessions).toEqual({
+      [sessionKey]: createQuizSession(sessionKey),
+    });
+  });
+
   it("완료된 세션만 세트와 세 문제를 한 번 완료 처리한다", () => {
     const started = progressCommands.startBonusSessionCommand(
       createEmptyProgress(),
@@ -639,5 +740,77 @@ describe("bonus progress commands", () => {
     );
     expect(duplicate).toMatchObject({ applied: false, reason: "duplicate" });
     expect(duplicate.state).toBe(completed.state);
+  });
+
+  it.each([
+    { name: "zero", answerIds: [] },
+    {
+      name: "missing",
+      answerIds: ["bonus-digital-1", "bonus-digital-2"],
+    },
+    {
+      name: "duplicate",
+      answerIds: [
+        "bonus-digital-1",
+        "bonus-digital-1",
+        "bonus-digital-2",
+      ],
+    },
+    {
+      name: "unrelated",
+      answerIds: [
+        "bonus-digital-1",
+        "bonus-digital-2",
+        "bonus-language-1",
+      ],
+    },
+  ])("$name answers인 완료 세션은 세트 완료를 기록하지 않는다", ({
+    answerIds,
+  }) => {
+    const started = progressCommands.startBonusSessionCommand(
+      createEmptyProgress(),
+      `malformed-complete-${answerIds.length}`,
+      "2026-08-04",
+      "digital",
+      0,
+      bonusQuestions,
+    );
+    expect(started.applied).toBe(true);
+    if (!started.applied) {
+      return;
+    }
+    const malformedState = {
+      ...started.state,
+      sessions: {
+        ...started.state.sessions,
+        [started.session.dateKey]: {
+          ...started.session,
+          phase: "completed" as const,
+          answers: answerIds.map((questionId) => ({
+            questionId,
+            selectedIndex: 0,
+            isCorrect: true,
+          })),
+        },
+      },
+    };
+
+    const result = progressCommands.completeBonusSetCommand(
+      malformedState,
+      started.session.dateKey,
+      "digital",
+      0,
+      "2026-08-04",
+    );
+
+    expect(result).toMatchObject({
+      applied: false,
+      reason: "answer-mismatch",
+    });
+    expect(result.state).toBe(malformedState);
+    expect(result.state.completedBonusIds).toEqual([]);
+    expect(result.state.bonusTopicProgress.digital).toEqual({
+      completedSetIndexes: [],
+    });
   });
 });

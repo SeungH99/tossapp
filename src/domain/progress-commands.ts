@@ -69,6 +69,7 @@ export type CompleteBonusSetResult =
         | "duplicate"
         | "missing-session"
         | "incomplete-session"
+        | "answer-mismatch"
         | "set-mismatch";
       state: ProgressState;
     };
@@ -247,58 +248,57 @@ export function startBonusSessionCommand(
   }
 
   const legacyQuestions = Array.isArray(setIndexOrQuestions);
-  const explicitSetIndex = legacyQuestions ? undefined : setIndexOrQuestions;
-  const bonusQuestions: BonusQuestion[] = legacyQuestions
-    ? setIndexOrQuestions
-    : providedQuestions ?? [];
-  if (explicitSetIndex != null) {
-    const availability = resolveBonusSetAvailability(state, topic, dateKey);
-    if (availability.kind !== "available") {
-      return {
-        applied: false,
-        reason: availability.kind,
-        state,
-        ...(availability.kind === "active-session"
-          ? { sessionKey: availability.sessionKey }
-          : {}),
-      };
-    }
-    if (availability.setIndex !== explicitSetIndex) {
-      return { applied: false, reason: "set-mismatch", state };
-    }
+  const availability = resolveBonusSetAvailability(state, topic, dateKey);
+  if (availability.kind !== "available") {
+    return {
+      applied: false,
+      reason: availability.kind,
+      state,
+      ...(availability.kind === "active-session"
+        ? { sessionKey: availability.sessionKey }
+        : {}),
+    };
+  }
 
-    if (bonusQuestions.length !== 3) {
-      return { applied: false, reason: "no-questions", state };
-    }
-    if (
-      bonusQuestions.some(
+  const setIndex = legacyQuestions
+    ? availability.setIndex
+    : setIndexOrQuestions;
+  if (availability.setIndex !== setIndex) {
+    return { applied: false, reason: "set-mismatch", state };
+  }
+
+  const candidateQuestions: BonusQuestion[] = legacyQuestions
+    ? setIndexOrQuestions.filter(
         (question) =>
-          question.topic !== topic || question.setIndex !== explicitSetIndex,
+          question.topic === topic && question.setIndex === setIndex,
       )
-    ) {
-      return { applied: false, reason: "set-mismatch", state };
-    }
-    if (
-      new Set(bonusQuestions.map((question) => question.internalDifficulty))
-        .size !== 3
-    ) {
-      return { applied: false, reason: "no-questions", state };
-    }
+    : providedQuestions ?? [];
+  if (candidateQuestions.length !== 3) {
+    return { applied: false, reason: "no-questions", state };
+  }
+  if (
+    candidateQuestions.some(
+      (question) =>
+        question.topic !== topic || question.setIndex !== setIndex,
+    )
+  ) {
+    return { applied: false, reason: "set-mismatch", state };
+  }
+  if (
+    new Set(candidateQuestions.map((question) => question.id)).size !== 3 ||
+    new Set(candidateQuestions.map((question) => question.internalDifficulty))
+      .size !== 3
+  ) {
+    return { applied: false, reason: "no-questions", state };
   }
 
   const decision = selectShadowBonusQuestions({
     topic,
-    questions: bonusQuestions,
+    questions: candidateQuestions,
     completedBonusIds: state.completedBonusIds,
     answerEvents: state.answerEvents,
     timeConfidence: state.timeObservation.confidence,
   });
-  if (
-    explicitSetIndex == null &&
-    decision.visibleSelection.questions.length === 0
-  ) {
-    return { applied: false, reason: "no-questions", state };
-  }
   const rewardAdTicketAvailable = state.rewardAdTicketCount > 0;
   const unlock = unlockBonus(
     state.bonus,
@@ -316,16 +316,12 @@ export function startBonusSessionCommand(
 
   const sessionKey = `${dateKey}:bonus:${topic}`;
   const session = createQuizSession(sessionKey);
-  const selectedQuestions =
-    explicitSetIndex == null
-      ? decision.visibleSelection.questions
-      : bonusQuestions;
-  const questionIds = selectedQuestions.map((question) => question.id);
+  const questionIds = candidateQuestions.map((question) => question.id);
   const record = {
     commandId,
     dateKey,
     topic,
-    ...(explicitSetIndex == null ? {} : { setIndex: explicitSetIndex }),
+    setIndex,
     sessionKey,
     questionIds,
     source: unlock.source,
@@ -393,6 +389,22 @@ export function completeBonusSetCommand(
   }
   if (session.phase !== "completed") {
     return { applied: false, reason: "incomplete-session", state };
+  }
+
+  const expectedQuestionIds = new Set(start.questionIds);
+  const answeredQuestionIds = session.answers.map(
+    (answer) => answer.questionId,
+  );
+  if (
+    start.questionIds.length !== 3 ||
+    expectedQuestionIds.size !== 3 ||
+    answeredQuestionIds.length !== 3 ||
+    new Set(answeredQuestionIds).size !== 3 ||
+    answeredQuestionIds.some(
+      (questionId) => !expectedQuestionIds.has(questionId),
+    )
+  ) {
+    return { applied: false, reason: "answer-mismatch", state };
   }
 
   const topicProgress = state.bonusTopicProgress[topic];
