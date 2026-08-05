@@ -69,6 +69,7 @@ export interface ProgressStateV2 {
 
 export interface BonusTopicProgress {
   completedSetIndexes: number[];
+  skippedSetIndexes: number[];
   lastCompletedDateKey?: string;
 }
 
@@ -84,7 +85,20 @@ export function deriveNextSetIndex(
   return undefined;
 }
 
-export interface ProgressState extends Omit<ProgressStateV2, "version"> {
+export interface ProgressStateV3 extends Omit<ProgressStateV2, "version"> {
   version: 3;
+  bonusTopicProgress: Record<
+    BonusTopic,
+    Omit<BonusTopicProgress, "skippedSetIndexes">
+  >;
+}
+
+export interface ProgressState extends Omit<
+  ProgressStateV3,
+  "version" | "bonusTopicProgress"
+> {
+  version: 4;
+  seenQuestionIds: string[];
+  seenConceptIds: string[];
   bonusTopicProgress: Record<BonusTopic, BonusTopicProgress>;
 }

@@ -439,7 +439,7 @@ describe("QuizApp", () => {
     expect(requestedBonusSets).toEqual([{ topic: "nostalgia", setIndex: 0 }]);
   });
 
-  it("records the completed catalog bonus set in V3 topic progress", async () => {
+  it("records the completed catalog bonus set in V4 topic progress", async () => {
     const storage = new ControlledStorage();
     const repository = new ProgressRepository(storage);
     const analyticsEvents: Array<{
@@ -520,6 +520,7 @@ describe("QuizApp", () => {
       if (loaded.kind !== "unrecoverable") {
         expect(loaded.state.bonusTopicProgress.nostalgia).toEqual({
           completedSetIndexes: [0],
+          skippedSetIndexes: [],
           lastCompletedDateKey: "2026-07-28",
         });
       }
@@ -580,6 +581,7 @@ describe("QuizApp", () => {
     progress.sessions["2026-07-28"] = createCompletedSession("2026-07-28");
     progress.bonusTopicProgress.nostalgia = {
       completedSetIndexes: [0],
+      skippedSetIndexes: [],
       lastCompletedDateKey: "2026-07-28",
     };
     await repository.save(progress);

@@ -170,6 +170,12 @@ export function applyAnswerCommand(
     },
     answerEvents: events,
     answerCheckpoint,
+    seenQuestionIds: [
+      ...new Set([...state.seenQuestionIds, command.question.id]),
+    ],
+    seenConceptIds: [
+      ...new Set([...state.seenConceptIds, command.question.conceptId]),
+    ],
   };
 
   return {
@@ -422,6 +428,7 @@ export function completeBonusSetCommand(
       bonusTopicProgress: {
         ...state.bonusTopicProgress,
         [topic]: {
+          ...topicProgress,
           completedSetIndexes: [
             ...topicProgress.completedSetIndexes,
             setIndex,

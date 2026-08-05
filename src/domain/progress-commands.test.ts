@@ -80,6 +80,27 @@ const bonusQuestions: BonusQuestion[] = [
 ];
 
 describe("applyAnswerCommand", () => {
+  it("records an answered question and concept immediately", () => {
+    const state = createEmptyProgress();
+    const sessionKey = "2026-07-28:bonus:digital";
+    state.sessions[sessionKey] = createQuizSession(sessionKey);
+
+    const result = applyAnswerCommand(state, {
+      attemptId: "bonus:2026-07-28:bonus-digital-1:0",
+      sessionKey,
+      session: state.sessions[sessionKey],
+      question: {
+        ...bonusQuestions[0],
+        conceptId: "language-wenil-spelling",
+      },
+      selectedIndex: 0,
+      answeredAt: "2026-07-28T12:00:00.000Z",
+    });
+
+    expect(result.state.seenQuestionIds).toContain(bonusQuestions[0].id);
+    expect(result.state.seenConceptIds).toContain("language-wenil-spelling");
+  });
+
   it("세션 답변과 AnswerEvent를 하나의 새 상태로 계산한다", () => {
     const state = createEmptyProgress();
     state.sessions["2026-07-28"] = createQuizSession("2026-07-28");
@@ -432,6 +453,7 @@ describe("bonus progress commands", () => {
         const state = createEmptyProgress();
         state.bonusTopicProgress.digital = {
           completedSetIndexes: [0],
+          skippedSetIndexes: [],
           lastCompletedDateKey: "2026-08-04",
         };
         return state;
@@ -462,6 +484,7 @@ describe("bonus progress commands", () => {
             { length: 180 },
             (_, setIndex) => setIndex,
           ),
+          skippedSetIndexes: [],
         };
         return state;
       },
@@ -576,6 +599,7 @@ describe("bonus progress commands", () => {
         const state = createEmptyProgress();
         state.bonusTopicProgress.digital = {
           completedSetIndexes: [0],
+          skippedSetIndexes: [],
           lastCompletedDateKey: "2026-08-04",
         };
         return state;
@@ -592,6 +616,7 @@ describe("bonus progress commands", () => {
             { length: 180 },
             (_, setIndex) => setIndex,
           ),
+          skippedSetIndexes: [],
         };
         return state;
       },
@@ -724,6 +749,7 @@ describe("bonus progress commands", () => {
     expect(completed).toMatchObject({ applied: true });
     expect(completed.state.bonusTopicProgress.digital).toEqual({
       completedSetIndexes: [0],
+      skippedSetIndexes: [],
       lastCompletedDateKey: "2026-08-04",
     });
     expect(completed.state.completedBonusIds).toEqual([
@@ -812,6 +838,7 @@ describe("bonus progress commands", () => {
     expect(result.state.completedBonusIds).toEqual([]);
     expect(result.state.bonusTopicProgress.digital).toEqual({
       completedSetIndexes: [],
+      skippedSetIndexes: [],
     });
   });
 });

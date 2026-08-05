@@ -10,6 +10,7 @@
     "build": "vite build && ait build",
     "prebuild:web": "node scripts/clean-build.mjs",
     "build:web": "vite build --configLoader runner",
+    "build:concept-map": "tsx scripts/build-concept-map.ts",
     "typecheck": "tsc -b --pretty false",
     "test": "vitest --configLoader runner",
     "test:run": "vitest run --configLoader runner",

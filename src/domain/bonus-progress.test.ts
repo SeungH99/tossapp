@@ -13,6 +13,7 @@ function completedTopicProgress(
   const progress = createEmptyProgress();
   progress.bonusTopicProgress[topic] = {
     completedSetIndexes: [setIndex],
+    skippedSetIndexes: [],
     lastCompletedDateKey: dateKey,
   };
   return progress;
@@ -23,7 +24,10 @@ function progressWithCompletedSets(
   completedSetIndexes: number[],
 ) {
   const progress = createEmptyProgress();
-  progress.bonusTopicProgress[topic] = { completedSetIndexes };
+  progress.bonusTopicProgress[topic] = {
+    completedSetIndexes,
+    skippedSetIndexes: [],
+  };
   return progress;
 }
 
