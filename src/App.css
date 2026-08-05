@@ -372,9 +372,16 @@ a:focus-visible {
 
 .topic-button {
   position: relative;
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  grid-template-areas:
+    "icon label"
+    "icon status";
+  align-items: center;
+  column-gap: 10px;
   min-height: 116px;
   padding: 18px 14px;
-  border: 1px solid #d9dee5;
+  border: 2px solid #d9dee5;
   border-radius: 14px;
   color: #10233f;
   background: #fff;
@@ -384,13 +391,44 @@ a:focus-visible {
   cursor: pointer;
 }
 
+.topic-button:disabled {
+  cursor: not-allowed;
+}
+
 .topic-button.selected {
   border: 2px solid #0064ff;
   color: #0064ff;
   background: #f5f9ff;
 }
 
-.topic-button > span:last-child:not(:first-child) {
+.topic-button.exhausted {
+  border-color: #d9dee5;
+  color: #4e5968;
+  background: #f7f8fa;
+}
+
+.topic-icon {
+  grid-area: icon;
+  font-size: 30px;
+  line-height: 1;
+  text-align: center;
+}
+
+.topic-label {
+  grid-area: label;
+  text-align: left;
+}
+
+.topic-status {
+  grid-area: status;
+  margin-top: 4px;
+  color: #6b7684;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.topic-selected-mark {
   position: absolute;
   top: 10px;
   right: 10px;
