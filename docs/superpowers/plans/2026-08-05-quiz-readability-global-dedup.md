@@ -200,6 +200,7 @@ git commit -m "fix: improve quiz answer readability"
 - Modify: `src/content/parse-content.test.ts`
 - Modify: `src/data/content-pack-validation.ts`
 - Modify: `src/data/content-pack-validation.test.ts`
+- Modify: TypeScript test fixtures that instantiate `CoreQuestion` or `Question` directly and fail the Task 2 typecheck
 - Modify: `src/content/core/pack-001.json` through `pack-006.json`
 
 **Interfaces:**
@@ -461,11 +462,11 @@ export function resolveBonusSetAvailability(
   progress: ProgressState,
   topic: BonusTopic,
   dateKey: string,
-  releasedSetCount: number,
+  releasedSetCount: number = 180,
 ): BonusSetAvailability;
 ```
 
-Search indexes `0 <= index < releasedSetCount` and exclude both completed and skipped indexes. Preserve active-session and daily-limit precedence.
+Search indexes `0 <= index < releasedSetCount` and exclude both completed and skipped indexes. Preserve active-session and daily-limit precedence. The temporary default keeps existing application call sites buildable until Task 7 passes the catalog value explicitly.
 
 - [ ] **Step 4: Write failing duplicate-set and entitlement tests**
 
@@ -570,6 +571,8 @@ export interface BonusTopicMetadata {
 
 Reject empty labels, repeated orders, negative counts, and release counts that disagree with descriptors. Sort catalog metadata by `order`.
 
+For the production manifest in this task, add label and order only to the currently released `nostalgia` contract. Keep the compatibility `availableBonusTopics` projection until Task 7 switches the app to `bonusTopics`. Do not register `korean-life` or `language` before their pack files are added in Task 6.
+
 - [ ] **Step 4: Update in-memory catalogs and tests**
 
 Test fixtures must declare topic metadata explicitly so tests exercise the same availability contract as production.
@@ -654,6 +657,8 @@ npm.cmd run validate:content:library -- --scope bonus:korean-life
 
 Expected: 90 questions, 30 sets, no duplicate/similar concepts or prompt failures.
 
+At this step, add the `korean-life` descriptor and release-contract entry to the production manifest in the same validated change.
+
 - [ ] **Step 5: Author and validate `language/pack-001.json`**
 
 Use the same schema and set balance, then run:
@@ -662,6 +667,8 @@ Use the same schema and set balance, then run:
 npm.cmd run validate:content:pack -- src/content/bonus/language/pack-001.json --update-manifest
 npm.cmd run validate:content:library -- --scope bonus:language
 ```
+
+Add the `language` descriptor and release-contract entry in the same validated change. After this step, and not before it, the production release contract exposes exactly the three approved topics.
 
 - [ ] **Step 6: Run cross-library validation and regenerate the map**
 
