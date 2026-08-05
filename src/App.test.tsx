@@ -214,10 +214,9 @@ async function openCatalogBonusChooserWithExhaustedMiddle() {
 }
 
 describe("QuizApp", () => {
-  it("marks a 42-character question as long and renders a fixed SVG answer mark", async () => {
-    const longQuestion = {
+  it("renders a fixed SVG answer mark", async () => {
+    const question = {
       ...coreQuestions[0],
-      prompt: "123456789012345678901234567890123456789012",
       choices: ["First option", "Correct option", "Third option"],
       answerIndex: 1,
     } satisfies CoreQuestion;
@@ -226,21 +225,101 @@ describe("QuizApp", () => {
     render(
       <QuizApp
         now={new Date("2026-07-28T03:00:00.000Z")}
-        coreQuestions={[longQuestion, coreQuestions[1], coreQuestions[2]]}
+        coreQuestions={[question, coreQuestions[1], coreQuestions[2]]}
         bonusQuestions={[]}
       />,
     );
 
     await user.click(screen.getByRole("button", { name: "오늘의 3문제 시작" }));
-
-    const title = screen.getByRole("heading", { name: longQuestion.prompt });
-    expect(title).toHaveClass("question-title", "long");
-
-    await user.click(
-      screen.getByRole("button", { name: longQuestion.choices[1] }),
-    );
+    await user.click(screen.getByRole("button", { name: question.choices[1] }));
     const mark = document.querySelector(".answer-mark");
     expect(mark?.querySelector("svg")).not.toBeNull();
+  });
+
+  it.each([
+    ["41 ASCII graphemes", "a".repeat(41), false],
+    ["42 ASCII graphemes", "a".repeat(42), true],
+    ["41 decomposed graphemes", "e\u0301".repeat(41), false],
+    ["42 decomposed graphemes", "e\u0301".repeat(42), true],
+    ["41 ZWJ emoji graphemes", "👨‍👩‍👧‍👦".repeat(41), false],
+    ["42 ZWJ emoji graphemes", "👨‍👩‍👧‍👦".repeat(42), true],
+  ])(
+    "classifies %s at the visible title boundary",
+    async (_case, prompt, isLong) => {
+      const question = { ...coreQuestions[0], prompt } satisfies CoreQuestion;
+      const user = userEvent.setup();
+
+      render(
+        <QuizApp
+          now={new Date("2026-07-28T03:00:00.000Z")}
+          coreQuestions={[question, coreQuestions[1], coreQuestions[2]]}
+          bonusQuestions={[]}
+        />,
+      );
+
+      await user.click(
+        screen.getByRole("button", { name: "오늘의 3문제 시작" }),
+      );
+
+      const title = screen.getByRole("heading", { name: prompt });
+      expect(title).toHaveClass("question-title");
+      if (isLong) {
+        expect(title).toHaveClass("long");
+      } else {
+        expect(title).not.toHaveClass("long");
+      }
+    },
+  );
+
+  it("uses the same grapheme boundaries when Intl.Segmenter is unavailable", async () => {
+    const segmenterDescriptor = Object.getOwnPropertyDescriptor(
+      Intl,
+      "Segmenter",
+    );
+    Object.defineProperty(Intl, "Segmenter", {
+      configurable: true,
+      value: undefined,
+    });
+
+    try {
+      const cases = [
+        ["a".repeat(41), false],
+        ["a".repeat(42), true],
+        ["e\u0301".repeat(41), false],
+        ["e\u0301".repeat(42), true],
+        ["👨‍👩‍👧‍👦".repeat(41), false],
+        ["👨‍👩‍👧‍👦".repeat(42), true],
+      ] as const;
+
+      for (const [prompt, isLong] of cases) {
+        const question = { ...coreQuestions[0], prompt } satisfies CoreQuestion;
+        const user = userEvent.setup();
+        const view = render(
+          <QuizApp
+            now={new Date("2026-07-28T03:00:00.000Z")}
+            coreQuestions={[question, coreQuestions[1], coreQuestions[2]]}
+            bonusQuestions={[]}
+          />,
+        );
+
+        await user.click(
+          screen.getByRole("button", { name: "오늘의 3문제 시작" }),
+        );
+        const title = screen.getByRole("heading", { name: prompt });
+        if (isLong) {
+          expect(title).toHaveClass("long");
+        } else {
+          expect(title).not.toHaveClass("long");
+        }
+        view.unmount();
+      }
+    } finally {
+      if (segmenterDescriptor == null) {
+        delete (Intl as { Segmenter?: unknown }).Segmenter;
+      } else {
+        Object.defineProperty(Intl, "Segmenter", segmenterDescriptor);
+      }
+    }
   });
 
   it("loads today's core set before opening the quiz", async () => {
@@ -455,6 +534,7 @@ describe("QuizApp", () => {
       "2026-07-28",
       "nostalgia",
       0,
+      threeBonusTopics[0].setCount,
       bonusSet,
       new Date("2026-07-28T03:00:00.000Z"),
     );
@@ -1818,6 +1898,83 @@ describe("QuizApp", () => {
     expect(screen.getByText("2 / 3")).toBeInTheDocument();
   });
 
+  it("KST 날짜가 바뀌어도 미완료 핵심 세션을 원래 날짜로 복원해 마친다", async () => {
+    const storage = new ControlledStorage();
+    const repository = new ProgressRepository(storage);
+    const firstUser = userEvent.setup();
+    const firstMount = render(
+      <QuizApp
+        now={new Date("2026-07-28T03:00:00.000Z")}
+        coreQuestions={coreQuestions}
+        bonusQuestions={[]}
+        repository={repository}
+      />,
+    );
+
+    await firstUser.click(
+      await screen.findByRole("button", { name: "오늘의 3문제 시작" }),
+    );
+    await firstUser.click(screen.getByRole("button", { name: "동전" }));
+    await firstUser.click(
+      await screen.findByRole("button", { name: "다음 문제" }),
+    );
+    await waitFor(async () => {
+      const loaded = await repository.load();
+      expect(loaded.kind).not.toBe("unrecoverable");
+      if (loaded.kind !== "unrecoverable") {
+        expect(loaded.state.sessions["2026-07-28"]).toMatchObject({
+          currentIndex: 1,
+          phase: "question",
+        });
+      }
+    });
+    firstMount.unmount();
+
+    const secondUser = userEvent.setup();
+    render(
+      <QuizApp
+        now={new Date("2026-07-29T03:00:00.000Z")}
+        coreQuestions={coreQuestions}
+        bonusQuestions={[]}
+        repository={repository}
+      />,
+    );
+
+    expect(
+      await screen.findByRole("heading", {
+        name: coreQuestions[1].prompt,
+      }),
+    ).toBeInTheDocument();
+    expect(screen.getByText("2 / 3")).toBeInTheDocument();
+
+    await secondUser.click(
+      screen.getByRole("button", {
+        name: coreQuestions[1].choices[coreQuestions[1].answerIndex],
+      }),
+    );
+    await secondUser.click(
+      await screen.findByRole("button", { name: "다음 문제" }),
+    );
+    await secondUser.click(
+      screen.getByRole("button", {
+        name: coreQuestions[2].choices[coreQuestions[2].answerIndex],
+      }),
+    );
+    await secondUser.click(
+      await screen.findByRole("button", { name: "결과 보기" }),
+    );
+
+    expect(screen.getByLabelText("오늘 점수 3 / 3")).toBeInTheDocument();
+    await waitFor(async () => {
+      const loaded = await repository.load();
+      expect(loaded.kind).not.toBe("unrecoverable");
+      if (loaded.kind !== "unrecoverable") {
+        expect(loaded.state.sessions["2026-07-28"].phase).toBe("completed");
+        expect(loaded.state.sessions["2026-07-29"]).toBeUndefined();
+      }
+    });
+  });
+
   it("이전 유효 슬롯으로 복구하면 현재 화면 상단에 한 번 안내한다", async () => {
     window.localStorage.clear();
     const repository = new ProgressRepository(
@@ -2364,11 +2521,16 @@ describe("QuizApp", () => {
       new BrowserKeyValueStorage(window.localStorage),
     );
     window.localStorage.clear();
+    const digitalSet = bundledBonusQuestions.filter(
+      (question) => question.topic === "digital" && question.setIndex === 0,
+    );
     await repository.startBonusSession(
       "bonus-start-for-reload",
       "2026-07-28",
       "digital",
-      bundledBonusQuestions,
+      0,
+      5,
+      digitalSet,
     );
 
     render(
@@ -2388,16 +2550,177 @@ describe("QuizApp", () => {
     expect(screen.getByText("1 / 3")).toBeInTheDocument();
   });
 
+  it("KST 다음 날에도 보너스 결제 없이 저장된 문제 순서와 진행을 복원해 마친다", async () => {
+    const storage = new ControlledStorage();
+    const repository = new ProgressRepository(storage);
+    const restoredQuestions = bundledBonusQuestions.filter(
+      (question) => question.topic === "digital" && question.setIndex === 0,
+    );
+    await repository.save({
+      version: 1,
+      sessions: { "2026-07-28": createCompletedSession("2026-07-28") },
+      bonus: {
+        ...createBonusEntitlement(),
+        firstFreeUsed: true,
+        ticketCount: 1,
+      },
+      completedBonusIds: [],
+    });
+    let showCount = 0;
+    const rewardAd: RewardAdGateway = {
+      load: async () => true,
+      show: async () => {
+        showCount += 1;
+        return { rewardGrantId: "must-not-run-during-restore" };
+      },
+    };
+    const analyticsEvents: Array<{
+      name: string;
+      params?: Record<string, string | number | boolean>;
+    }> = [];
+    const analytics = {
+      track: (
+        name: string,
+        params?: Record<string, string | number | boolean>,
+      ) => analyticsEvents.push({ name, params }),
+    };
+    const firstUser = userEvent.setup();
+    const firstMount = render(
+      <QuizApp
+        now={new Date("2026-07-28T03:00:00.000Z")}
+        analytics={analytics}
+        coreQuestions={coreQuestions}
+        bonusQuestions={bundledBonusQuestions}
+        repository={repository}
+        rewardAd={rewardAd}
+      />,
+    );
+
+    await firstUser.click(
+      await screen.findByRole("button", {
+        name: "원하는 주제로 보너스 3문제",
+      }),
+    );
+    await firstUser.click(screen.getByRole("radio", { name: "디지털 생활" }));
+    await firstUser.click(
+      screen.getByRole("button", { name: "보너스권으로 시작" }),
+    );
+
+    const firstQuestion = await screen.findByRole("heading", {
+      name: restoredQuestions[0].prompt,
+    });
+    expect(firstQuestion).toBeInTheDocument();
+    await firstUser.click(
+      screen.getByRole("button", {
+        name: restoredQuestions[0].choices[restoredQuestions[0].answerIndex],
+      }),
+    );
+    await firstUser.click(
+      await screen.findByRole("button", { name: "다음 문제" }),
+    );
+
+    await waitFor(async () => {
+      const loaded = await repository.load();
+      expect(loaded.kind).not.toBe("unrecoverable");
+      if (loaded.kind !== "unrecoverable") {
+        expect(loaded.state.sessions["2026-07-28:bonus:digital"]).toMatchObject(
+          { currentIndex: 1, phase: "question" },
+        );
+      }
+    });
+    const beforeRemount = await repository.load();
+    if (beforeRemount.kind === "unrecoverable") {
+      throw new Error("Expected persisted bonus progress before remount");
+    }
+    firstMount.unmount();
+
+    const secondUser = userEvent.setup();
+    render(
+      <QuizApp
+        now={new Date("2026-07-29T03:00:00.000Z")}
+        analytics={analytics}
+        coreQuestions={coreQuestions}
+        bonusQuestions={[...bundledBonusQuestions].reverse()}
+        repository={repository}
+        rewardAd={rewardAd}
+      />,
+    );
+
+    expect(
+      await screen.findByRole("heading", {
+        name: "문자 속 주소를 눌러 개인정보를 빼내는 사기는 무엇일까요?",
+      }),
+    ).toBeInTheDocument();
+    expect(screen.getByText("2 / 3")).toBeInTheDocument();
+    expect(showCount).toBe(0);
+    expect(
+      analyticsEvents.filter((event) => event.name === "bonus_start"),
+    ).toHaveLength(1);
+
+    const afterRemount = await repository.load();
+    if (afterRemount.kind === "unrecoverable") {
+      throw new Error("Expected persisted bonus progress after remount");
+    }
+    expect(afterRemount.state.bonus).toEqual(beforeRemount.state.bonus);
+    expect(afterRemount.state.rewardGrantIds).toEqual(
+      beforeRemount.state.rewardGrantIds,
+    );
+    expect(afterRemount.state.rewardAdTicketCount).toBe(
+      beforeRemount.state.rewardAdTicketCount,
+    );
+    expect(afterRemount.state.bonusStartCommands).toEqual(
+      beforeRemount.state.bonusStartCommands,
+    );
+    expect(afterRemount.state.latestBonusStartCommandIds).toEqual(
+      beforeRemount.state.latestBonusStartCommandIds,
+    );
+
+    for (const [index, question] of restoredQuestions.slice(1).entries()) {
+      await secondUser.click(
+        screen.getByRole("button", {
+          name: question.choices[question.answerIndex],
+        }),
+      );
+      await secondUser.click(
+        await screen.findByRole("button", {
+          name: index === 0 ? "다음 문제" : "결과 보기",
+        }),
+      );
+    }
+
+    expect(screen.getByLabelText("오늘 점수 3 / 3")).toBeInTheDocument();
+    await waitFor(async () => {
+      const loaded = await repository.load();
+      expect(loaded.kind).not.toBe("unrecoverable");
+      if (loaded.kind !== "unrecoverable") {
+        expect(loaded.state.sessions["2026-07-28:bonus:digital"].phase).toBe(
+          "completed",
+        );
+        expect(
+          loaded.state.sessions["2026-07-29:bonus:digital"],
+        ).toBeUndefined();
+      }
+    });
+  });
+
   it("같은 날짜와 주제로 완료한 legacy 보너스는 다시 시작하지 않는다", async () => {
     window.localStorage.clear();
     const repository = new ProgressRepository(
       new BrowserKeyValueStorage(window.localStorage),
     );
+    const firstDigitalSet = bundledBonusQuestions.filter(
+      (question) => question.topic === "digital" && question.setIndex === 0,
+    );
+    const secondDigitalSet = bundledBonusQuestions.filter(
+      (question) => question.topic === "digital" && question.setIndex === 1,
+    );
     const firstStart = await repository.startBonusSession(
       "10",
       "2026-07-28",
       "digital",
-      bundledBonusQuestions,
+      0,
+      5,
+      firstDigitalSet,
     );
     expect(firstStart.applied).toBe(true);
     if (!firstStart.applied) {
@@ -2429,7 +2752,9 @@ describe("QuizApp", () => {
       "2",
       "2026-07-28",
       "digital",
-      bundledBonusQuestions,
+      1,
+      5,
+      secondDigitalSet,
     );
     const restored = await repository.load();
 

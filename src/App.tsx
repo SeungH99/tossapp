@@ -82,8 +82,80 @@ interface QuizAppProps {
   analytics?: AnalyticsGateway;
 }
 
+const unicodeMarkPattern = /\p{Mark}/u;
+
+function countGraphemesFallback(value: string): number {
+  let count = 0;
+  let joinNext = false;
+  let regionalIndicatorPending = false;
+  let previousWasCarriageReturn = false;
+
+  // Deterministic fallback for engines without Intl.Segmenter. It keeps
+  // combining marks, emoji modifiers/variation selectors, regional-indicator
+  // pairs, CRLF, and ZWJ emoji sequences in the same visible cluster.
+  for (const symbol of value) {
+    const codePoint = symbol.codePointAt(0) ?? 0;
+    const isJoiner = codePoint === 0x200d;
+    const isVariationSelector =
+      (codePoint >= 0xfe00 && codePoint <= 0xfe0f) ||
+      (codePoint >= 0xe0100 && codePoint <= 0xe01ef);
+    const isEmojiModifier = codePoint >= 0x1f3fb && codePoint <= 0x1f3ff;
+    const isRegionalIndicator = codePoint >= 0x1f1e6 && codePoint <= 0x1f1ff;
+
+    if (isJoiner) {
+      joinNext = true;
+      previousWasCarriageReturn = false;
+      regionalIndicatorPending = false;
+      continue;
+    }
+    if (
+      unicodeMarkPattern.test(symbol) ||
+      isVariationSelector ||
+      isEmojiModifier
+    ) {
+      if (count === 0) {
+        count = 1;
+      }
+      continue;
+    }
+    if (joinNext) {
+      joinNext = false;
+      previousWasCarriageReturn = false;
+      regionalIndicatorPending = false;
+      continue;
+    }
+    if (codePoint === 0x0a && previousWasCarriageReturn) {
+      previousWasCarriageReturn = false;
+      regionalIndicatorPending = false;
+      continue;
+    }
+    if (isRegionalIndicator) {
+      if (!regionalIndicatorPending) {
+        count += 1;
+      }
+      regionalIndicatorPending = !regionalIndicatorPending;
+    } else {
+      count += 1;
+      regionalIndicatorPending = false;
+    }
+    previousWasCarriageReturn = codePoint === 0x0d;
+  }
+
+  return count;
+}
+
+function countGraphemes(value: string): number {
+  const Segmenter = globalThis.Intl?.Segmenter;
+  if (typeof Segmenter === "function") {
+    return Array.from(
+      new Segmenter("ko", { granularity: "grapheme" }).segment(value),
+    ).length;
+  }
+  return countGraphemesFallback(value);
+}
+
 function isLongQuestion(prompt: string): boolean {
-  return Array.from(prompt.trim()).length >= 42;
+  return countGraphemes(prompt.trim()) >= 42;
 }
 
 const emptyCoreQuestions: CoreQuestion[] = [];
@@ -939,28 +1011,47 @@ export default function QuizApp({
           })
           .catch(() => undefined);
 
-        const activeBonusEntry = Object.entries(progress.sessions).find(
-          ([key, storedSession]) =>
-            key.startsWith(`${initialDateKey}:bonus:`) &&
-            storedSession.phase !== "completed",
-        );
-        const restoredSession = progress.sessions[initialDateKey];
+        const activeBonusEntry = Object.entries(progress.sessions)
+          .filter(
+            ([key, storedSession]) =>
+              key.includes(":bonus:") && storedSession.phase !== "completed",
+          )
+          .sort(([leftKey], [rightKey]) =>
+            leftKey < rightKey ? 1 : leftKey > rightKey ? -1 : 0,
+          )[0];
+        const activeCoreSession = Object.entries(progress.sessions)
+          .filter(
+            ([key, storedSession]) =>
+              !key.includes(":bonus:") &&
+              storedSession.dateKey === key &&
+              storedSession.phase !== "completed",
+          )
+          .sort(([leftKey], [rightKey]) =>
+            leftKey < rightKey ? 1 : leftKey > rightKey ? -1 : 0,
+          )[0]?.[1];
+        const restoredSession =
+          activeCoreSession ?? progress.sessions[initialDateKey];
 
         if (activeBonusEntry != null) {
           const [bonusKey, restoredBonusSession] = activeBonusEntry;
-          const topic = bonusKey.slice(
-            `${initialDateKey}:bonus:`.length,
-          ) as BonusTopic;
+          const storedStartId = progress.latestBonusStartCommandIds[bonusKey];
+          const candidateStoredStart =
+            storedStartId == null
+              ? undefined
+              : progress.bonusStartCommands[storedStartId];
+          const storedStart =
+            candidateStoredStart?.sessionKey === bonusKey
+              ? candidateStoredStart
+              : undefined;
+          const topic = (storedStart?.topic ??
+            bonusKey.slice(
+              bonusKey.indexOf(":bonus:") + ":bonus:".length,
+            )) as BonusTopic;
           const isKnownTopic = bonusTopicMetadata.some(
             (candidate) => candidate.id === topic,
           );
 
           if (isKnownTopic) {
-            const storedStartId = progress.latestBonusStartCommandIds[bonusKey];
-            const storedStart =
-              storedStartId == null
-                ? undefined
-                : progress.bonusStartCommands[storedStartId];
             let availableBonusQuestions = bonusQuestions;
             if (contentCatalog != null) {
               if (storedStart?.setIndex == null) {
@@ -1295,7 +1386,7 @@ export default function QuizApp({
     const topicMetadata = bonusTopicMetadata.find(
       (candidate) => candidate.id === topic,
     );
-    if (contentCatalog != null && topicMetadata == null) {
+    if (topicMetadata == null) {
       failBonusStart("준비된 보너스 문제가 없어요");
       return;
     }
@@ -1304,7 +1395,19 @@ export default function QuizApp({
       pendingBonusStartRef.current?.topic === topic
         ? pendingBonusStartRef.current
         : null;
-    if (pending == null && contentCatalog != null && topicMetadata != null) {
+    if (
+      pending == null &&
+      contentCatalog == null &&
+      selectBonusQuestions(
+        topic,
+        bonusQuestions,
+        new Set(progressRef.current.completedBonusIds),
+      ).questions.length === 0
+    ) {
+      failBonusStart("준비된 보너스 문제가 없어요");
+      return;
+    }
+    if (pending == null) {
       const availability = resolveBonusSetAvailability(
         progressRef.current,
         topic,
@@ -1330,23 +1433,6 @@ export default function QuizApp({
         dateKey: startedDateKey,
         topic,
         setIndex: availability.setIndex,
-      };
-    }
-    if (pending == null) {
-      if (
-        selectBonusQuestions(
-          topic,
-          bonusQuestions,
-          new Set(progressRef.current.completedBonusIds),
-        ).questions.length === 0
-      ) {
-        failBonusStart("준비된 보너스 문제가 없어요");
-        return;
-      }
-      pending = {
-        commandId: createBonusStartCommandId(startedDateKey, topic),
-        dateKey: startedDateKey,
-        topic,
       };
     }
     pendingBonusStartRef.current = pending;
@@ -1376,8 +1462,8 @@ export default function QuizApp({
       let shouldReloadRewardAd = false;
 
       try {
-        let availableQuestions = bonusQuestions;
-        if (contentCatalog != null && topicMetadata != null) {
+        let availableQuestions: BonusQuestion[];
+        if (contentCatalog != null) {
           setBonusStartStatus("loading-content");
           let acceptedQuestions: BonusQuestion[] | null = null;
           let candidateSetIndex = activePending.setIndex;
@@ -1470,6 +1556,16 @@ export default function QuizApp({
             return;
           }
           availableQuestions = acceptedQuestions;
+        } else {
+          availableQuestions = bonusQuestions.filter(
+            (question) =>
+              question.topic === topic &&
+              question.setIndex === activePending.setIndex,
+          );
+          if (availableQuestions.length !== 3) {
+            failBonusStart("준비된 보너스 문제가 없어요");
+            return;
+          }
         }
 
         let state = progressRef.current;
@@ -1509,39 +1605,30 @@ export default function QuizApp({
         setBonusStartStatus("saving");
         const startObservedAt = observeCurrentTime(false);
         state = progressRef.current;
+        const selectedSetIndex = activePending.setIndex;
+        if (selectedSetIndex == null) {
+          failBonusStart("준비된 보너스 문제가 없어요");
+          return;
+        }
         const result = useRepository
-          ? activePending.setIndex == null
-            ? await repository.startBonusSession(
-                activePending.commandId,
-                activePending.dateKey,
-                topic,
-                availableQuestions,
-                startObservedAt,
-              )
-            : await repository.startBonusSession(
-                activePending.commandId,
-                activePending.dateKey,
-                topic,
-                activePending.setIndex,
-                availableQuestions,
-                startObservedAt,
-              )
-          : activePending.setIndex == null
-            ? startBonusSessionCommand(
-                state,
-                activePending.commandId,
-                activePending.dateKey,
-                topic,
-                availableQuestions,
-              )
-            : startBonusSessionCommand(
-                state,
-                activePending.commandId,
-                activePending.dateKey,
-                topic,
-                activePending.setIndex,
-                availableQuestions,
-              );
+          ? await repository.startBonusSession(
+              activePending.commandId,
+              activePending.dateKey,
+              topic,
+              selectedSetIndex,
+              topicMetadata.setCount,
+              availableQuestions,
+              startObservedAt,
+            )
+          : startBonusSessionCommand(
+              state,
+              activePending.commandId,
+              activePending.dateKey,
+              topic,
+              selectedSetIndex,
+              topicMetadata.setCount,
+              availableQuestions,
+            );
         applyStartedBonus(topic, result, availableQuestions);
       } catch {
         failBonusStart("보너스를 시작하지 못했어요");
