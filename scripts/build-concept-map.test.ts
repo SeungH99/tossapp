@@ -20,6 +20,7 @@ function createLibrary(
   coreQuestions: unknown[],
   bonusQuestions: unknown[],
   bonusPath = "src/content/bonus.json",
+  historicalConcepts: Record<string, string> = {},
 ): string {
   const directory = mkdtempSync(join(tmpdir(), "concept-map-"));
   directories.push(directory);
@@ -37,6 +38,11 @@ function createLibrary(
     `${JSON.stringify({ questions: coreQuestions })}\n`,
     "utf8",
   );
+  writeFileSync(
+    join(directory, "src", "content", "legacy-concept-map.json"),
+    `${JSON.stringify(historicalConcepts, null, 2)}\n`,
+    "utf8",
+  );
   if (bonusPath === "src/content/bonus.json") {
     writeFileSync(
       join(directory, "src", "content", "bonus.json"),
@@ -47,8 +53,8 @@ function createLibrary(
   return directory;
 }
 
-function runGenerator(directory: string) {
-  return spawnSync(process.execPath, [tsxCli, scriptPath], {
+function runGenerator(directory: string, args: string[] = []) {
+  return spawnSync(process.execPath, [tsxCli, scriptPath, ...args], {
     cwd: directory,
     encoding: "utf8",
   });
@@ -90,6 +96,38 @@ describe("build-concept-map", () => {
     );
   });
 
+  it("merges the append-only historical input without mutating it", () => {
+    const directory = createLibrary(
+      [{ id: "current-z", conceptId: "concept-current-z" }],
+      [{ id: "current-a", conceptId: "concept-current-a" }],
+      "src/content/bonus.json",
+      {
+        "legacy-language-z": "language-legacy-z",
+        "bonus-language-2": "language-spelling-wenil-unexpected-event",
+      },
+    );
+    const historicalPath = join(
+      directory,
+      "src",
+      "content",
+      "legacy-concept-map.json",
+    );
+    const historicalBefore = readFileSync(historicalPath, "utf8");
+
+    const result = runGenerator(directory);
+
+    expect(result.status).toBe(0);
+    expect(
+      readFileSync(
+        join(directory, "src", "content", "concept-map.json"),
+        "utf8",
+      ),
+    ).toBe(
+      '{\n  "bonus-language-2": "language-spelling-wenil-unexpected-event",\n  "current-a": "concept-current-a",\n  "current-z": "concept-current-z",\n  "legacy-language-z": "language-legacy-z"\n}\n',
+    );
+    expect(readFileSync(historicalPath, "utf8")).toBe(historicalBefore);
+  });
+
   it("sorts question IDs by locale-independent ordinal code units", () => {
     const directory = createLibrary(
       [
@@ -126,6 +164,22 @@ describe("build-concept-map", () => {
     );
   });
 
+  it("fails when a current descriptor conflicts with a historical mapping", () => {
+    const directory = createLibrary(
+      [{ id: "reused-id", conceptId: "concept-current" }],
+      [],
+      "src/content/bonus.json",
+      { "reused-id": "concept-historical" },
+    );
+
+    const result = runGenerator(directory);
+
+    expect(result.status).not.toBe(0);
+    expect(`${result.stdout}${result.stderr}`).toContain(
+      "Conflicting concept mapping for question ID reused-id",
+    );
+  });
+
   it("fails when a question has an empty concept", () => {
     const directory = createLibrary(
       [{ id: "empty-concept", conceptId: "   " }],
@@ -153,5 +207,54 @@ describe("build-concept-map", () => {
     expect(`${result.stdout}${result.stderr}`).toContain(
       "Unable to read descriptor path: src/content/missing.json",
     );
+  });
+
+  it("checks a matching committed map without writing it", () => {
+    const directory = createLibrary(
+      [{ id: "current", conceptId: "concept-current" }],
+      [],
+      "src/content/bonus.json",
+      { legacy: "concept-legacy" },
+    );
+    const conceptMapPath = join(
+      directory,
+      "src",
+      "content",
+      "concept-map.json",
+    );
+    const committed =
+      '{\n  "current": "concept-current",\n  "legacy": "concept-legacy"\n}\n';
+    writeFileSync(conceptMapPath, committed, "utf8");
+
+    const result = runGenerator(directory, ["--check"]);
+
+    expect(result.status).toBe(0);
+    expect(result.stdout).toContain("Concept map is up to date");
+    expect(readFileSync(conceptMapPath, "utf8")).toBe(committed);
+  });
+
+  it("rejects a stale committed map without rewriting it", () => {
+    const directory = createLibrary(
+      [{ id: "current", conceptId: "concept-current" }],
+      [],
+      "src/content/bonus.json",
+      { legacy: "concept-legacy" },
+    );
+    const conceptMapPath = join(
+      directory,
+      "src",
+      "content",
+      "concept-map.json",
+    );
+    const stale = '{\n  "stale": "concept-stale"\n}\n';
+    writeFileSync(conceptMapPath, stale, "utf8");
+
+    const result = runGenerator(directory, ["--check"]);
+
+    expect(result.status).not.toBe(0);
+    expect(`${result.stdout}${result.stderr}`).toContain(
+      "Concept map is out of date",
+    );
+    expect(readFileSync(conceptMapPath, "utf8")).toBe(stale);
   });
 });

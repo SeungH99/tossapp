@@ -7,19 +7,19 @@
     {
       "kind": "core",
       "id": "2026-08-14-then-18-v1",
-      "conceptId": "korean-life-kimjang-summer-sea-salt-brine",
+      "conceptId": "korean-life-kimjang-community-winter-preparation",
       "dateKey": "2026-08-14",
       "lens": "then",
       "topic": "korean-life",
       "internalDifficulty": "gentle",
-      "prompt": "김장은 늦가을에만 준비한 일이 아니었습니다. 유네스코 설명에 따르면 여름에는 무엇을 미리 마련했을까요?",
+      "prompt": "늦가을이면 이웃들이 많은 채소를 한꺼번에 손질하고 나누었습니다. 겨울 먹거리를 준비하던 이 공동체 풍습은 무엇을 가리킬까요?",
       "choices": [
-        "봄에 쓸 씨앗과 농기구",
-        "소금물을 만들 바닷소금",
-        "겨울에 태울 장작과 숯"
+        "메주를 띄워 봄에 장을 가르는 장 담그기",
+        "김치를 함께 담가 집집마다 나누는 김장",
+        "햇곡식으로 술과 떡을 빚는 추수 의례"
       ],
       "answerIndex": 1,
-      "explanation": "김장 준비는 계절마다 이어졌습니다. 봄에는 해산물을 소금에 절여 발효하고, 여름에는 소금물을 만들 바닷소금을 마련했습니다.",
+      "explanation": "김장은 늦가을에 공동체가 많은 김치를 만들고 나누며 겨울 먹거리를 마련하는 풍습입니다. 집집마다 조리법을 전하고 이웃 간 협력도 다졌습니다.",
       "source": {
         "name": "유네스코 무형유산",
         "url": "https://ich.unesco.org/en/RL/kimjang-making-and-sharing-kimchi-in-the-republic-of-korea-00881"
@@ -2149,11 +2149,7 @@
       "topic": "safety",
       "internalDifficulty": "stretch",
       "prompt": "냉장실 온도계를 확인해 식품 보관 온도를 맞추려 합니다. 미국 농무부 지침상 어느 값 아래로 유지해야 할까요?",
-      "choices": [
-        "섭씨 약 4도 이하",
-        "섭씨 약 14도 이하",
-        "섭씨 약 24도 이하"
-      ],
+      "choices": ["섭씨 약 4도 이하", "섭씨 약 14도 이하", "섭씨 약 24도 이하"],
       "answerIndex": 0,
       "explanation": "냉장실은 화씨 40도 이하, 섭씨로 약 4.4도 이하를 유지하는 것이 기준입니다. 문을 오래 열지 말고 온도계를 두어 실제 보관 온도를 확인합니다.",
       "source": {
