@@ -21,6 +21,7 @@ import {
 } from "./services/progress-repository";
 import type { QuizShareGateway } from "./services/quiz-share";
 import type { RewardAdGateway } from "./services/reward-ad";
+import type { BannerAdGateway } from "./services/banner-ad";
 
 const coreQuestions: CoreQuestion[] = [
   {
@@ -1251,6 +1252,76 @@ describe("QuizApp", () => {
     expect(
       screen.getByRole("button", { name: "첫 보너스 무료로 시작" }),
     ).toBeEnabled();
+  });
+
+  it("결과 행동과 이용권 안내가 끝난 뒤에만 배너 광고를 붙인다", async () => {
+    const user = userEvent.setup();
+    const bannerAd: BannerAdGateway = {
+      attach() {
+        return () => undefined;
+      },
+    };
+    render(
+      <QuizApp
+        now={new Date("2026-07-28T03:00:00.000Z")}
+        coreQuestions={coreQuestions}
+        bonusQuestions={[]}
+        bannerAd={bannerAd}
+      />,
+    );
+
+    expect(
+      screen.queryByRole("region", { name: "광고" }),
+    ).not.toBeInTheDocument();
+
+    await user.click(screen.getByRole("button", { name: "오늘의 3문제 시작" }));
+    await user.click(screen.getByRole("button", { name: "동전" }));
+    await user.click(screen.getByRole("button", { name: "다음 문제" }));
+    await user.click(screen.getByRole("button", { name: "QR 코드" }));
+    await user.click(screen.getByRole("button", { name: "다음 문제" }));
+    await user.click(screen.getByRole("button", { name: "창문 열기" }));
+    await user.click(screen.getByRole("button", { name: "결과 보기" }));
+
+    const banner = screen.getByRole("region", { name: "광고" });
+    const ticketNote = screen
+      .getByText("첫 보너스 3문제는 무료예요")
+      .closest(".ticket-note");
+    expect(ticketNote).not.toBeNull();
+    expect(ticketNote?.compareDocumentPosition(banner) ?? 0).toBe(
+      Node.DOCUMENT_POSITION_FOLLOWING,
+    );
+  });
+
+  it("배너 광고를 사용할 수 없으면 결과 화면에 빈 슬롯을 남기지 않는다", async () => {
+    const user = userEvent.setup();
+    const bannerAd: BannerAdGateway = {
+      attach(_target, onEvent) {
+        onEvent("unavailable");
+        return () => undefined;
+      },
+    };
+    render(
+      <QuizApp
+        now={new Date("2026-07-28T03:00:00.000Z")}
+        coreQuestions={coreQuestions}
+        bonusQuestions={[]}
+        bannerAd={bannerAd}
+      />,
+    );
+
+    await user.click(screen.getByRole("button", { name: "오늘의 3문제 시작" }));
+    await user.click(screen.getByRole("button", { name: "동전" }));
+    await user.click(screen.getByRole("button", { name: "다음 문제" }));
+    await user.click(screen.getByRole("button", { name: "QR 코드" }));
+    await user.click(screen.getByRole("button", { name: "다음 문제" }));
+    await user.click(screen.getByRole("button", { name: "창문 열기" }));
+    await user.click(screen.getByRole("button", { name: "결과 보기" }));
+
+    await waitFor(() => {
+      expect(
+        screen.queryByRole("region", { name: "광고" }),
+      ).not.toBeInTheDocument();
+    });
   });
 
   it("보너스 퀴즈 결과에는 방금 푼 보너스 점수를 보여 준다", async () => {

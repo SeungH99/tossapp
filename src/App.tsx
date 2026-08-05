@@ -51,6 +51,7 @@ import {
 import type { QuizShareGateway } from "./services/quiz-share";
 import type { RewardAdGateway } from "./services/reward-ad";
 import type { AnalyticsGateway, AnalyticsParams } from "./services/analytics";
+import type { BannerAdGateway } from "./services/banner-ad";
 
 type AppScreen = "home" | "quiz" | "result" | "bonus-topic" | "bonus-quiz";
 
@@ -72,6 +73,7 @@ interface QuizAppProps {
   bonusQuestions?: BonusQuestion[];
   repository?: ProgressRepository;
   rewardAd?: RewardAdGateway;
+  bannerAd?: BannerAdGateway;
   shareGateway?: QuizShareGateway;
   analytics?: AnalyticsGateway;
 }
@@ -339,6 +341,7 @@ function QuizScreen({
 }
 
 function ResultScreen({
+  bannerAd,
   entitlement,
   score,
   onBonus,
@@ -346,6 +349,7 @@ function ResultScreen({
   persistenceNotice,
   shareStatus,
 }: {
+  bannerAd?: BannerAdGateway;
   entitlement: ReturnType<typeof createBonusEntitlement>;
   score: number;
   onBonus: () => void;
@@ -406,7 +410,42 @@ function ResultScreen({
               : "다음 보너스는 광고를 보고 열 수 있어요"}
         </strong>
       </div>
+
+      {bannerAd == null ? null : (
+        <ResultBannerAd gateway={bannerAd} />
+      )}
     </main>
+  );
+}
+
+function ResultBannerAd({ gateway }: { gateway: BannerAdGateway }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [unavailable, setUnavailable] = useState(false);
+
+  useEffect(() => {
+    const target = containerRef.current;
+    if (target == null) {
+      return;
+    }
+
+    return gateway.attach(target, (event) => {
+      if (event === "unavailable") {
+        setUnavailable(true);
+      }
+    });
+  }, [gateway]);
+
+  if (unavailable) {
+    return null;
+  }
+
+  return (
+    <div
+      aria-label="광고"
+      className="result-banner-ad"
+      ref={containerRef}
+      role="region"
+    />
   );
 }
 
@@ -519,6 +558,7 @@ export default function QuizApp({
   bonusQuestions = emptyBonusQuestions,
   repository,
   rewardAd,
+  bannerAd,
   shareGateway,
   analytics,
 }: QuizAppProps) {
@@ -1491,6 +1531,7 @@ export default function QuizApp({
   if (screen === "result") {
     return (
       <ResultScreen
+        bannerAd={bannerAd}
         entitlement={entitlement}
         score={scoreQuiz(resultSession ?? session)}
         onBonus={() => {

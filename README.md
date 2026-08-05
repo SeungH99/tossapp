@@ -49,9 +49,9 @@ iOS와 Android Apps in Toss 샌드박스 QR에서 완료해야 합니다. CI의 
 
 ## 출시 전 설정
 
-`.env.example`을 참고해 앱인토스 콘솔의 실제 보상형 광고 그룹 ID를
-`VITE_REWARDED_AD_GROUP_ID`로 설정해야 합니다. 값이 없으면 공식 테스트 광고
-ID가 사용되므로 실제 수익은 발생하지 않습니다.
+`.env.example`을 참고해 앱인토스 콘솔의 실제 보상형·배너 광고 그룹 ID를 각각
+`VITE_REWARDED_AD_GROUP_ID`, `VITE_BANNER_AD_GROUP_ID`로 설정해야 합니다. 값이
+없으면 공식 테스트 광고 ID가 사용되므로 실제 수익은 발생하지 않습니다.
 
 콘솔에 등록한 앱 이름이 다르면 아래 두 곳을 같은 값으로 바꿉니다.
 

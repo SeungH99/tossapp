@@ -13,6 +13,7 @@ import {
   BrowserQuizShareGateway,
 } from "./services/quiz-share";
 import { AppsInTossRewardAdGateway } from "./services/reward-ad";
+import { AppsInTossBannerAdGateway } from "./services/banner-ad";
 import {
   AppsInTossAnalyticsGateway,
   BrowserAnalyticsGateway,
@@ -37,6 +38,11 @@ const rewardAd = import.meta.env.DEV
       import.meta.env.VITE_REWARDED_AD_GROUP_ID ??
         "ait-ad-test-rewarded-id",
     );
+const bannerAd = import.meta.env.DEV
+  ? undefined
+  : new AppsInTossBannerAdGateway(
+      import.meta.env.VITE_BANNER_AD_GROUP_ID ?? "ait-ad-test-banner-id",
+    );
 const analytics = import.meta.env.DEV
   ? new BrowserAnalyticsGateway()
   : new AppsInTossAnalyticsGateway();
@@ -46,6 +52,7 @@ const contentCatalog = createViteContentCatalog();
 createRoot(rootElement).render(
   <StrictMode>
     <QuizApp
+      bannerAd={bannerAd}
       contentCatalog={contentCatalog}
       analytics={analytics}
       timeProvider={timeProvider}
