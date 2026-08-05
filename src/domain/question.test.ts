@@ -39,8 +39,12 @@ describe("validateQuestion", () => {
   });
 
   it("omitted factory metadata is not promoted to reviewed content", () => {
-    const { contentVersion, reviewStatus, reviewedAt, ...coreWithoutMetadata } =
-      validCoreQuestion;
+    const coreWithoutMetadata = Object.fromEntries(
+      Object.entries(validCoreQuestion).filter(
+        ([key]) =>
+          !["contentVersion", "reviewStatus", "reviewedAt"].includes(key),
+      ),
+    );
     const bonusWithoutMetadata = {
       ...coreWithoutMetadata,
       kind: "bonus" as const,

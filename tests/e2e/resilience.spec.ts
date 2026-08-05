@@ -58,9 +58,10 @@ test("corrupt progress is preserved while no-save recovery returns home", async 
   page,
 }) => {
   await openFreshApp(page);
+  await page.setContent("<!doctype html><title>storage setup</title>");
   await corruptAllProgressSlots(page);
   const preservedSlots = await readProgressSlots(page);
-  await page.reload();
+  await page.goto("/");
 
   await expect(
     page.getByRole("heading", { name: "기록을 안전하게 열지 못했어요" }),

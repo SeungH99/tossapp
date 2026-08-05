@@ -8,15 +8,18 @@ import {
 } from "react";
 
 import "./App.css";
+import type { ContentCatalog } from "./content/content-catalog";
 import {
   createBonusEntitlement,
   grantStreakTicket,
 } from "./domain/bonus-entitlement";
+import { resolveBonusSetAvailability } from "./domain/bonus-progress";
 import { selectBonusQuestions } from "./domain/bonus-selection";
 import { toKstDateKey } from "./domain/date-key";
 import { observeTime } from "./domain/time-confidence";
 import {
   applyAnswerCommand,
+  completeBonusSetCommand,
   grantBonusTicketCommand,
   startBonusSessionCommand,
   type AnswerCommand,
@@ -64,22 +67,33 @@ export class SystemTimeProvider implements TimeProvider {
 interface QuizAppProps {
   now?: Date;
   timeProvider?: TimeProvider;
-  coreQuestions: CoreQuestion[];
-  bonusQuestions: BonusQuestion[];
+  contentCatalog?: ContentCatalog;
+  coreQuestions?: CoreQuestion[];
+  bonusQuestions?: BonusQuestion[];
   repository?: ProgressRepository;
   rewardAd?: RewardAdGateway;
   shareGateway?: QuizShareGateway;
   analytics?: AnalyticsGateway;
 }
 
+const emptyCoreQuestions: CoreQuestion[] = [];
+const emptyBonusQuestions: BonusQuestion[] = [];
+
 type AdState = "loading" | "ready" | "unavailable";
 type AnswerSaveStatus = "idle" | "saving" | "saved" | "error";
-type BonusStartStatus = "idle" | "showing-ad" | "saving" | "error";
+type BonusStartStatus =
+  | "idle"
+  | "loading-content"
+  | "showing-ad"
+  | "saving"
+  | "error";
+type CoreContentStatus = "idle" | "loading" | "error";
 
 interface PendingBonusStart {
   commandId: string;
   dateKey: string;
   topic: BonusTopic;
+  setIndex?: number;
   rewardGrantId?: string;
 }
 
@@ -397,6 +411,7 @@ function ResultScreen({
 }
 
 function BonusTopicScreen({
+  topics,
   entitlement,
   adState,
   startStatus,
@@ -406,6 +421,7 @@ function BonusTopicScreen({
   onStart,
   persistenceNotice,
 }: {
+  topics: Array<{ id: BonusTopic; label: string }>;
   entitlement: ReturnType<typeof createBonusEntitlement>;
   adState: AdState;
   startStatus: BonusStartStatus;
@@ -417,7 +433,10 @@ function BonusTopicScreen({
 }) {
   const needsRewardAd =
     entitlement.firstFreeUsed && entitlement.ticketCount === 0;
-  const isStarting = startStatus === "showing-ad" || startStatus === "saving";
+  const isStarting =
+    startStatus === "loading-content" ||
+    startStatus === "showing-ad" ||
+    startStatus === "saving";
   const startLabel = !entitlement.firstFreeUsed
     ? "첫 보너스 무료로 시작"
     : entitlement.ticketCount > 0
@@ -447,7 +466,7 @@ function BonusTopicScreen({
       </header>
 
       <div className="topic-grid" role="group" aria-label="보너스 주제">
-        {bonusTopics.map((topic) => {
+        {topics.map((topic) => {
           const isSelected = topic.id === selectedTopic;
           return (
             <button
@@ -495,8 +514,9 @@ function BonusTopicScreen({
 export default function QuizApp({
   now,
   timeProvider,
-  coreQuestions,
-  bonusQuestions,
+  contentCatalog,
+  coreQuestions: bundledCoreQuestions = emptyCoreQuestions,
+  bonusQuestions = emptyBonusQuestions,
   repository,
   rewardAd,
   shareGateway,
@@ -510,12 +530,24 @@ export default function QuizApp({
   const [currentNow, setCurrentNow] = useState(initialNow);
   const currentNowRef = useRef(initialNow);
   const dateKey = toKstDateKey(currentNow);
+  const displayedBonusTopics =
+    contentCatalog?.availableBonusTopics == null
+      ? bonusTopics
+      : bonusTopics.filter((topic) =>
+          contentCatalog.availableBonusTopics?.includes(topic.id),
+        );
   const initialDateKeyRef = useRef(dateKey);
   const initialDateKey = initialDateKeyRef.current;
   const [screen, setScreen] = useState<AppScreen>("home");
   const [session, setSession] = useState(() => createQuizSession(dateKey));
+  const [coreQuestions, setCoreQuestions] = useState(bundledCoreQuestions);
+  const [coreContentStatus, setCoreContentStatus] =
+    useState<CoreContentStatus>("idle");
   const questions = useMemo(
-    () => selectDailyCoreSet(session.dateKey, coreQuestions),
+    () =>
+      coreQuestions.length === 0
+        ? []
+        : selectDailyCoreSet(session.dateKey, coreQuestions),
     [coreQuestions, session.dateKey],
   );
   const [entitlement, setEntitlement] = useState(createBonusEntitlement);
@@ -549,6 +581,7 @@ export default function QuizApp({
     command: AnswerCommand;
     target: "core" | "bonus";
   } | null>(null);
+  const pendingCoreDateRef = useRef<string | null>(null);
   const bonusStartInFlightRef = useRef(false);
   const pendingBonusStartRef = useRef<PendingBonusStart | null>(null);
 
@@ -685,7 +718,7 @@ export default function QuizApp({
 
     void repository
       .load()
-      .then((result) => {
+      .then(async (result) => {
         if (!active) {
           return;
         }
@@ -759,16 +792,35 @@ export default function QuizApp({
               storedStartId == null
                 ? undefined
                 : progress.bonusStartCommands[storedStartId];
+            let availableBonusQuestions = bonusQuestions;
+            if (contentCatalog != null) {
+              if (storedStart?.setIndex == null) {
+                setHydrated(true);
+                return;
+              }
+              const loaded = await contentCatalog.loadBonusSet(
+                topic,
+                storedStart.setIndex,
+              );
+              if (!active) {
+                return;
+              }
+              if (!loaded.ok) {
+                setHydrated(true);
+                return;
+              }
+              availableBonusQuestions = loaded.value;
+            }
             const restoredQuestions =
               storedStart == null
                 ? selectBonusQuestions(
                     topic,
-                    bonusQuestions,
+                    availableBonusQuestions,
                     new Set(progress.completedBonusIds),
                   ).questions
                 : findBonusQuestionsById(
                     storedStart.questionIds,
-                    bonusQuestions,
+                    availableBonusQuestions,
                   );
 
             if (restoredQuestions == null || restoredQuestions.length === 0) {
@@ -784,6 +836,20 @@ export default function QuizApp({
             setScreen("bonus-quiz");
           }
         } else if (restoredSession != null) {
+          if (contentCatalog != null) {
+            const loaded = await contentCatalog.loadCoreSet(
+              restoredSession.dateKey,
+            );
+            if (!active) {
+              return;
+            }
+            if (!loaded.ok) {
+              setCoreContentStatus("error");
+              setHydrated(true);
+              return;
+            }
+            setCoreQuestions(loaded.value);
+          }
           setSession(restoredSession);
           setResultSession(
             restoredSession.phase === "completed" ? restoredSession : null,
@@ -802,7 +868,14 @@ export default function QuizApp({
     return () => {
       active = false;
     };
-  }, [bonusQuestions, initialDateKey, initialNow, repository, storageRetry]);
+  }, [
+    bonusQuestions,
+    contentCatalog,
+    initialDateKey,
+    initialNow,
+    repository,
+    storageRetry,
+  ]);
 
   const persistSnapshot = (progress: ProgressState, observedAt?: Date) => {
     progressRef.current = progress;
@@ -865,13 +938,31 @@ export default function QuizApp({
     submitAnswer(pending.command, pending.target, observedAt);
   };
 
-  const handleStartCore = () => {
+  const handleStartCore = async () => {
     const startedAt = observeCurrentTime();
-    const startedDateKey = toKstDateKey(startedAt);
+    const startedDateKey =
+      pendingCoreDateRef.current ?? toKstDateKey(startedAt);
+    if (contentCatalog != null) {
+      pendingCoreDateRef.current = startedDateKey;
+      setCoreContentStatus("loading");
+      const loaded = await contentCatalog.loadCoreSet(startedDateKey);
+      if (!loaded.ok) {
+        track("content_pack_load_failed", {
+          packType: "core",
+          packId: loaded.packId ?? "unknown",
+          reasonCode: loaded.reason,
+        });
+        setCoreContentStatus("error");
+        return;
+      }
+      setCoreQuestions(loaded.value);
+      pendingCoreDateRef.current = null;
+    }
     setSession(createQuizSession(startedDateKey));
     setAnswerSaveStatus("idle");
     pendingAnswerRef.current = null;
     track("quiz_start");
+    setCoreContentStatus("idle");
     setScreen("quiz");
   };
 
@@ -966,6 +1057,7 @@ export default function QuizApp({
   const applyStartedBonus = (
     topic: BonusTopic,
     result: StartBonusSessionResult,
+    availableQuestions: BonusQuestion[],
   ) => {
     if (!result.applied && result.reason !== "duplicate") {
       failBonusStart(
@@ -983,7 +1075,7 @@ export default function QuizApp({
 
     const selectedQuestions = findBonusQuestionsById(
       result.questionIds,
-      bonusQuestions,
+      availableQuestions,
     );
     if (selectedQuestions == null || selectedQuestions.length === 0) {
       failBonusStart("준비된 보너스 문제를 불러오지 못했어요");
@@ -1015,25 +1107,54 @@ export default function QuizApp({
     const startedAt = observeCurrentTime();
     const startedDateKey = toKstDateKey(startedAt);
     const topic = selectedTopic;
-    if (
-      selectBonusQuestions(
-        topic,
-        bonusQuestions,
-        new Set(progressRef.current.completedBonusIds),
-      ).questions.length === 0
-    ) {
-      failBonusStart("준비된 보너스 문제가 없어요");
-      return;
-    }
-
-    const pending =
+    let pending =
       pendingBonusStartRef.current?.topic === topic
         ? pendingBonusStartRef.current
-        : {
-            commandId: createBonusStartCommandId(startedDateKey, topic),
-            dateKey: startedDateKey,
-            topic,
-          };
+        : null;
+    if (pending == null && contentCatalog != null) {
+      const availability = resolveBonusSetAvailability(
+        progressRef.current,
+        topic,
+        startedDateKey,
+      );
+      if (availability.kind !== "available") {
+        track("bonus_topic_daily_locked", {
+          topic,
+          reason: availability.kind,
+        });
+        failBonusStart(
+          availability.kind === "daily-limit"
+            ? "오늘은 이 주제를 이미 풀었어요"
+            : availability.kind === "exhausted"
+              ? "이 주제 문제를 모두 풀었어요"
+              : "진행 중인 보너스 퀴즈가 있어요",
+        );
+        return;
+      }
+      pending = {
+        commandId: createBonusStartCommandId(startedDateKey, topic),
+        dateKey: startedDateKey,
+        topic,
+        setIndex: availability.setIndex,
+      };
+    }
+    if (pending == null) {
+      if (
+        selectBonusQuestions(
+          topic,
+          bonusQuestions,
+          new Set(progressRef.current.completedBonusIds),
+        ).questions.length === 0
+      ) {
+        failBonusStart("준비된 보너스 문제가 없어요");
+        return;
+      }
+      pending = {
+        commandId: createBonusStartCommandId(startedDateKey, topic),
+        dateKey: startedDateKey,
+        topic,
+      };
+    }
     pendingBonusStartRef.current = pending;
     bonusStartInFlightRef.current = true;
     setBonusStartError(null);
@@ -1048,6 +1169,25 @@ export default function QuizApp({
       let shouldReloadRewardAd = false;
 
       try {
+        let availableQuestions = bonusQuestions;
+        if (contentCatalog != null && pending.setIndex != null) {
+          setBonusStartStatus("loading-content");
+          const loaded = await contentCatalog.loadBonusSet(
+            topic,
+            pending.setIndex,
+          );
+          if (!loaded.ok) {
+            track("content_pack_load_failed", {
+              packType: "bonus",
+              packId: loaded.packId ?? "unknown",
+              reasonCode: loaded.reason,
+            });
+            failBonusStart("준비된 보너스 문제를 불러오지 못했어요");
+            return;
+          }
+          availableQuestions = loaded.value;
+        }
+
         let state = progressRef.current;
         if (requiresRewardAd) {
           if (pending.rewardGrantId == null) {
@@ -1084,21 +1224,39 @@ export default function QuizApp({
         const startObservedAt = observeCurrentTime(false);
         state = progressRef.current;
         const result = useRepository
-          ? await repository.startBonusSession(
-              pending.commandId,
-              pending.dateKey,
-              topic,
-              bonusQuestions,
-              startObservedAt,
-            )
-          : startBonusSessionCommand(
-              state,
-              pending.commandId,
-              pending.dateKey,
-              topic,
-              bonusQuestions,
-            );
-        applyStartedBonus(topic, result);
+          ? pending.setIndex == null
+            ? await repository.startBonusSession(
+                pending.commandId,
+                pending.dateKey,
+                topic,
+                availableQuestions,
+                startObservedAt,
+              )
+            : await repository.startBonusSession(
+                pending.commandId,
+                pending.dateKey,
+                topic,
+                pending.setIndex,
+                availableQuestions,
+                startObservedAt,
+              )
+          : pending.setIndex == null
+            ? startBonusSessionCommand(
+                state,
+                pending.commandId,
+                pending.dateKey,
+                topic,
+                availableQuestions,
+              )
+            : startBonusSessionCommand(
+                state,
+                pending.commandId,
+                pending.dateKey,
+                topic,
+                pending.setIndex,
+                availableQuestions,
+              );
+        applyStartedBonus(topic, result, availableQuestions);
       } catch {
         failBonusStart("보너스를 시작하지 못했어요");
       } finally {
@@ -1149,36 +1307,117 @@ export default function QuizApp({
     setAnswerSaveStatus("idle");
     pendingAnswerRef.current = null;
     let nextCompletedBonusIds = completedBonusIds;
+    let completedAt: Date | undefined;
+    const completedSetIndex = bonusSet[0]?.setIndex;
+    const usesCatalogProgress =
+      contentCatalog != null &&
+      selectedTopic != null &&
+      completedSetIndex != null;
     if (next.phase === "completed") {
-      nextCompletedBonusIds = [
-        ...new Set([
-          ...completedBonusIds,
-          ...bonusSet.map((question) => question.id),
-        ]),
-      ];
-      setCompletedBonusIds(nextCompletedBonusIds);
+      completedAt = observeCurrentTime(false);
+      if (!usesCatalogProgress) {
+        nextCompletedBonusIds = [
+          ...new Set([
+            ...completedBonusIds,
+            ...bonusSet.map((question) => question.id),
+          ]),
+        ];
+        setCompletedBonusIds(nextCompletedBonusIds);
+      }
       track("bonus_complete", {
         topic: selectedTopic ?? "unknown",
         score: scoreQuiz(next),
       });
+      if (
+        usesCatalogProgress &&
+        selectedTopic != null &&
+        completedSetIndex != null
+      ) {
+        track("bonus_topic_daily_complete", {
+          topic: selectedTopic,
+          setIndex: completedSetIndex,
+          score: scoreQuiz(next),
+        });
+      }
       setResultSession(next);
       setScreen("result");
     }
 
-    persistSnapshot({
+    let nextProgress: ProgressState = {
       ...progressRef.current,
       sessions: {
         ...progressRef.current.sessions,
         [next.dateKey]: next,
       },
       completedBonusIds: nextCompletedBonusIds,
-    });
+    };
+
+    if (
+      next.phase === "completed" &&
+      usesCatalogProgress &&
+      completedAt != null &&
+      selectedTopic != null &&
+      completedSetIndex != null
+    ) {
+      const completedDateKey = toKstDateKey(completedAt);
+      if (repository == null || !persistenceWritable || noSaveMode) {
+        const completed = completeBonusSetCommand(
+          nextProgress,
+          next.dateKey,
+          selectedTopic,
+          completedSetIndex,
+          completedDateKey,
+        );
+        nextProgress = completed.state;
+        setCompletedBonusIds(completed.state.completedBonusIds);
+        persistSnapshot(nextProgress, completedAt);
+        return;
+      }
+
+      persistSnapshot(nextProgress, completedAt);
+      void repository
+        .completeBonusSet(
+          next.dateKey,
+          selectedTopic,
+          completedSetIndex,
+          completedDateKey,
+          completedAt,
+        )
+        .then((completed) => {
+          progressRef.current = completed.state;
+          setSavedSessions(completed.state.sessions);
+          setCompletedBonusIds(completed.state.completedBonusIds);
+        })
+        .catch(() => undefined);
+      return;
+    }
+
+    persistSnapshot(nextProgress, completedAt);
   };
 
   if (!hydrated) {
     return (
       <main className="app-shell loading-screen" aria-live="polite">
         오늘 퀴즈를 불러오고 있어요.
+      </main>
+    );
+  }
+
+  if (coreContentStatus === "loading") {
+    return (
+      <main className="app-shell loading-screen" role="status">
+        문제를 준비하고 있어요.
+      </main>
+    );
+  }
+
+  if (coreContentStatus === "error") {
+    return (
+      <main className="app-shell storage-error-screen">
+        <p role="alert">오늘 문제를 불러오지 못했어요.</p>
+        <button className="primary-button" type="button" onClick={handleStartCore}>
+          다시 불러오기
+        </button>
       </main>
     );
   }
@@ -1282,6 +1521,7 @@ export default function QuizApp({
 
   return (
     <BonusTopicScreen
+      topics={displayedBonusTopics}
       adState={adState}
       entitlement={entitlement}
       startError={bonusStartError}

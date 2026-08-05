@@ -41,12 +41,13 @@ function v2ProgressWithCompletedIds(
   completedBonusIds: string[],
 ): ProgressStateV2 {
   const current = createEmptyProgress();
-  const { bonusTopicProgress: _bonusTopicProgress, ...v2Fields } = current;
   return {
-    ...v2Fields,
+    ...Object.fromEntries(
+      Object.entries(current).filter(([key]) => key !== "bonusTopicProgress"),
+    ),
     version: 2,
     completedBonusIds,
-  };
+  } as ProgressStateV2;
 }
 
 const question: CoreQuestion = {

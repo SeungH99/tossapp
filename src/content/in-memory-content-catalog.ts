@@ -11,6 +11,7 @@ export function createInMemoryContentCatalog(
   bonusSets: InMemoryBonusSets,
 ): ContentCatalog {
   return {
+    availableBonusTopics: Object.keys(bonusSets) as BonusTopic[],
     async loadCoreSet(dateKey): Promise<ContentLoadResult<CoreQuestion[]>> {
       const questions = coreSets[dateKey];
       return questions && questions.length > 0

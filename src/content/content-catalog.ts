@@ -18,6 +18,7 @@ export type ContentLoadResult<T> =
   | { ok: false; reason: ContentLoadFailure; packId?: string };
 
 export interface ContentCatalog {
+  readonly availableBonusTopics?: readonly BonusTopic[];
   loadCoreSet(dateKey: string): Promise<ContentLoadResult<CoreQuestion[]>>;
   loadBonusSet(
     topic: BonusTopic,
@@ -100,6 +101,9 @@ export function createPackedContentCatalog(
   importers: PackModuleRegistry,
 ): ContentCatalog {
   return {
+    availableBonusTopics: [
+      ...new Set(manifest.bonusPacks.map((pack) => pack.topic)),
+    ],
     async loadCoreSet(dateKey) {
       const descriptor = selectCoreDescriptor(manifest, dateKey);
       if (!descriptor) {

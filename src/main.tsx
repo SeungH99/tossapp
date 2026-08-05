@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
 import QuizApp, { SystemTimeProvider } from "./App";
-import { bonusQuestions, coreQuestions } from "./data/questions";
+import { createViteContentCatalog } from "./content/vite-content-catalog";
 import { AppsInTossKeyValueStorage } from "./services/apps-in-toss-storage";
 import {
   BrowserKeyValueStorage,
@@ -41,12 +41,12 @@ const analytics = import.meta.env.DEV
   ? new BrowserAnalyticsGateway()
   : new AppsInTossAnalyticsGateway();
 const timeProvider = new SystemTimeProvider();
+const contentCatalog = createViteContentCatalog();
 
 createRoot(rootElement).render(
   <StrictMode>
     <QuizApp
-      bonusQuestions={bonusQuestions}
-      coreQuestions={coreQuestions}
+      contentCatalog={contentCatalog}
       analytics={analytics}
       timeProvider={timeProvider}
       repository={repository}
