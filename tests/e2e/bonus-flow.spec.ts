@@ -4,6 +4,7 @@ import koreanLifePack from "../../src/content/bonus/korean-life/pack-001.json" w
 import languagePack from "../../src/content/bonus/language/pack-001.json" with { type: "json" };
 
 import {
+  FIXED_NOW,
   completeCoreQuiz,
   finishQuiz,
   openFreshApp,
@@ -22,6 +23,7 @@ interface StoredBonusCommand {
   topic: string;
   setIndex: number;
   questionIds: string[];
+  source: string;
 }
 
 interface StoredProgress {
@@ -42,6 +44,7 @@ interface StoredProgress {
       skippedSetIndexes: number[];
     }
   >;
+  rewardGrantIds: string[];
   rewardAdTicketCount: number;
   bonusStartCommands: Record<string, StoredBonusCommand>;
 }
@@ -55,8 +58,22 @@ interface StoredProgressEnvelope {
 }
 
 interface AnalyticsEvent {
+  ordinal: number;
+  serialized: string;
   name: string;
   params: Record<string, unknown>;
+}
+
+interface AnalyticsCapture {
+  events: AnalyticsEvent[];
+  flush(): Promise<void>;
+}
+
+interface RewardHarnessState {
+  bonusSetResolutionPending: boolean;
+  loadCount: number;
+  rewardResolutionPending: boolean;
+  showCount: number;
 }
 
 const progressKeys = [
@@ -93,6 +110,8 @@ async function seedV4Progress(
   seed: {
     answeredCoreConceptId?: string;
     bonusTicketCount?: number;
+    firstFreeUsed?: boolean;
+    rewardGrantIds?: string[];
     exhaustedTopic?: "nostalgia" | "korean-life" | "language";
     exhaustedSetCount?: number;
   },
@@ -143,6 +162,12 @@ async function seedV4Progress(
         if (requestedSeed.bonusTicketCount != null) {
           envelope.payload.bonus.ticketCount = requestedSeed.bonusTicketCount;
         }
+        if (requestedSeed.firstFreeUsed != null) {
+          envelope.payload.bonus.firstFreeUsed = requestedSeed.firstFreeUsed;
+        }
+        if (requestedSeed.rewardGrantIds != null) {
+          envelope.payload.rewardGrantIds = requestedSeed.rewardGrantIds;
+        }
         envelope.checksum = checksum(
           JSON.stringify({
             schemaVersion: envelope.schemaVersion,
@@ -158,17 +183,32 @@ async function seedV4Progress(
   );
 }
 
-function collectBrowserAnalytics(page: Page): AnalyticsEvent[] {
+function collectBrowserAnalytics(page: Page): AnalyticsCapture {
   const events: AnalyticsEvent[] = [];
+  let nextOrdinal = 0;
+  let pending = Promise.resolve();
   page.on("console", (message) => {
     if (message.type() !== "info") {
       return;
     }
-    void Promise.all(
-      message.args().map((argument) => argument.jsonValue()),
-    ).then(([prefix, name, params]) => {
+    const ordinal = nextOrdinal;
+    nextOrdinal += 1;
+    const serialized = message.text();
+    pending = pending.then(async () => {
+      let values: unknown[];
+      try {
+        values = await Promise.all(
+          message.args().map((argument) => argument.jsonValue()),
+        );
+      } catch {
+        // A navigation can invalidate handles from the page being replaced.
+        return;
+      }
+      const [prefix, name, params] = values;
       if (prefix === "[analytics]" && typeof name === "string") {
         events.push({
+          ordinal,
+          serialized,
           name,
           params:
             params != null && typeof params === "object"
@@ -178,7 +218,71 @@ function collectBrowserAnalytics(page: Page): AnalyticsEvent[] {
       }
     });
   });
-  return events;
+  return {
+    events,
+    async flush() {
+      await pending;
+    },
+  };
+}
+
+function orderedAnalyticsEvents(
+  events: readonly AnalyticsEvent[],
+): AnalyticsEvent[] {
+  return [...events].sort((left, right) => left.ordinal - right.ordinal);
+}
+
+async function openFreshRewardHarness(page: Page): Promise<void> {
+  await page.clock.setFixedTime(FIXED_NOW);
+  await page.goto("/tests/e2e/fixtures/reward-ad-harness.html");
+  await page.evaluate(() => window.localStorage.clear());
+  await page.reload();
+  await expect(
+    page.getByRole("button", { name: "오늘의 3문제 시작" }),
+  ).toBeVisible();
+}
+
+async function readRewardHarnessState(page: Page): Promise<RewardHarnessState> {
+  return page.evaluate(() => {
+    const controller = (
+      window as typeof window & {
+        __E2E_REWARD_HARNESS__: RewardHarnessState;
+      }
+    ).__E2E_REWARD_HARNESS__;
+    return {
+      bonusSetResolutionPending: controller.bonusSetResolutionPending,
+      loadCount: controller.loadCount,
+      rewardResolutionPending: controller.rewardResolutionPending,
+      showCount: controller.showCount,
+    };
+  });
+}
+
+async function resolveDeferredBonusSet(page: Page): Promise<void> {
+  await page.evaluate(() => {
+    const controller = (
+      window as typeof window & {
+        __E2E_REWARD_HARNESS__: { resolveBonusSet(): void };
+      }
+    ).__E2E_REWARD_HARNESS__;
+    controller.resolveBonusSet();
+  });
+}
+
+async function resolveDeferredReward(
+  page: Page,
+  rewardGrantId: string,
+): Promise<void> {
+  await page.evaluate((grantId) => {
+    const controller = (
+      window as typeof window & {
+        __E2E_REWARD_HARNESS__: {
+          resolveReward(rewardGrantId: string): void;
+        };
+      }
+    ).__E2E_REWARD_HARNESS__;
+    controller.resolveReward(grantId);
+  }, rewardGrantId);
 }
 
 async function finishCatalogSetCorrectly(
@@ -303,51 +407,125 @@ test("three real catalog topics stay ordered and a completed Korean-life set nev
   ).toBe(false);
 });
 
-test("a concept answered in core skips and persists the next fixed bonus set before entitlement use", async ({
+test("a concept answered in core persists the skip before a deferred reward and starts the next fixed set", async ({
   page,
 }) => {
-  const analyticsEvents = collectBrowserAnalytics(page);
-  await openFreshApp(page);
+  const analytics = collectBrowserAnalytics(page);
+  await openFreshRewardHarness(page);
   await completeCoreQuiz(page);
   await seedV4Progress(page, {
     answeredCoreConceptId: languageSets[0][0].conceptId,
+    firstFreeUsed: true,
+    rewardGrantIds: ["preexisting-reward"],
   });
   await page.reload();
   await expect(page.getByRole("heading", { name: "오늘 결과" })).toBeVisible();
 
+  const beforeStart = await readLatestProgress(page);
+  expect(beforeStart.bonus).toMatchObject({
+    firstFreeUsed: true,
+    ticketCount: 0,
+  });
+  expect(beforeStart.rewardGrantIds).toEqual(["preexisting-reward"]);
+  expect(beforeStart.rewardAdTicketCount).toBe(0);
+  expect((await readRewardHarnessState(page)).loadCount).toBeGreaterThanOrEqual(
+    1,
+  );
+
   await openBonusOffer(page);
   await page.getByRole("radio", { name: "말·속담·맞춤법" }).click();
-  await page.getByRole("button", { name: "첫 보너스 무료로 시작" }).click();
-  await expect(
-    page.getByRole("heading", { name: languageSets[1][0].prompt }),
-  ).toBeVisible();
+  await page.getByRole("button", { name: "광고 보고 보너스 3문제" }).click();
+
+  await expect
+    .poll(
+      async () =>
+        (await readRewardHarnessState(page)).bonusSetResolutionPending,
+    )
+    .toBe(true);
+
+  const beforeSetOneResolution = await readLatestProgress(page);
+  expect(
+    beforeSetOneResolution.bonusTopicProgress.language.skippedSetIndexes,
+  ).toEqual([0]);
+  expect(beforeSetOneResolution.bonus).toEqual(beforeStart.bonus);
+  expect(beforeSetOneResolution.rewardGrantIds).toEqual(
+    beforeStart.rewardGrantIds,
+  );
+  expect(beforeSetOneResolution.rewardAdTicketCount).toBe(
+    beforeStart.rewardAdTicketCount,
+  );
+  expect((await readRewardHarnessState(page)).showCount).toBe(0);
 
   await expect
     .poll(() =>
-      analyticsEvents.find(
-        (event) => event.name === "bonus_set_skipped_seen_concept",
-      ),
+      orderedAnalyticsEvents(analytics.events)
+        .filter((event) => event.name === "bonus_set_skipped_seen_concept")
+        .map((event) => event.params),
     )
-    .toEqual({
-      name: "bonus_set_skipped_seen_concept",
-      params: { topic: "language", setIndex: 0 },
-    });
-  await expect
-    .poll(() => analyticsEvents.some((event) => event.name === "bonus_start"))
-    .toBe(true);
-  const skipEventIndex = analyticsEvents.findIndex(
+    .toEqual([{ topic: "language", setIndex: 0 }]);
+
+  const skipEvents = orderedAnalyticsEvents(analytics.events).filter(
     (event) => event.name === "bonus_set_skipped_seen_concept",
   );
-  const startEventIndex = analyticsEvents.findIndex(
+  expect(skipEvents).toHaveLength(1);
+
+  await resolveDeferredBonusSet(page);
+  await expect
+    .poll(async () => (await readRewardHarnessState(page)).showCount)
+    .toBe(1);
+  expect((await readRewardHarnessState(page)).rewardResolutionPending).toBe(
+    true,
+  );
+
+  const beforeRewardResolution = await readLatestProgress(page);
+  expect(beforeRewardResolution.bonus).toEqual(beforeStart.bonus);
+  expect(beforeRewardResolution.rewardGrantIds).toEqual(
+    beforeStart.rewardGrantIds,
+  );
+  expect(beforeRewardResolution.rewardAdTicketCount).toBe(
+    beforeStart.rewardAdTicketCount,
+  );
+
+  const rewardGrantId = "e2e-look-ahead-reward";
+  await resolveDeferredReward(page, rewardGrantId);
+  await expect(
+    page.getByRole("heading", { name: languageSets[1][0].prompt }),
+  ).toBeVisible();
+  await expect
+    .poll(() =>
+      orderedAnalyticsEvents(analytics.events).some(
+        (event) => event.name === "bonus_start",
+      ),
+    )
+    .toBe(true);
+
+  await analytics.flush();
+  const orderedEvents = orderedAnalyticsEvents(analytics.events);
+  const startEvent = orderedEvents.find(
     (event) => event.name === "bonus_start",
   );
-  expect(skipEventIndex).toBeGreaterThanOrEqual(0);
-  expect(startEventIndex).toBeGreaterThan(skipEventIndex);
-  expect(
-    analyticsEvents
-      .slice(0, startEventIndex)
-      .some((event) => event.name === "ad_offer_view"),
-  ).toBe(false);
+  expect(startEvent?.ordinal).toBeGreaterThan(skipEvents[0].ordinal);
+  expect((await readRewardHarnessState(page)).showCount).toBe(1);
+
+  const finalSkipEvents = orderedEvents.filter(
+    (event) => event.name === "bonus_set_skipped_seen_concept",
+  );
+  expect(finalSkipEvents.map((event) => event.params)).toEqual([
+    { topic: "language", setIndex: 0 },
+  ]);
+  for (const event of finalSkipEvents) {
+    const serializedEvent = `${event.serialized}\n${JSON.stringify(event.params)}`;
+    for (const sensitiveValue of [
+      ...languageSets[0].flatMap((question) => [
+        question.id,
+        question.conceptId,
+      ]),
+      "selectedIndex",
+      "isCorrect",
+    ]) {
+      expect(serializedEvent).not.toContain(sensitiveValue);
+    }
+  }
 
   const progress = await readLatestProgress(page);
   expect(progress.answerEvents[0]).toMatchObject({
@@ -356,38 +534,29 @@ test("a concept answered in core skips and persists the next fixed bonus set bef
   });
   expect(progress.bonusTopicProgress.language.skippedSetIndexes).toEqual([0]);
   expect(progress.bonus.firstFreeUsed).toBe(true);
+  expect(progress.bonus.ticketCount).toBe(0);
+  expect(progress.rewardGrantIds).toEqual([
+    ...beforeStart.rewardGrantIds,
+    rewardGrantId,
+  ]);
   expect(progress.rewardAdTicketCount).toBe(0);
   const startCommand = Object.values(progress.bonusStartCommands).find(
     (command) => command.topic === "language",
   );
-  expect(startCommand).toMatchObject({ setIndex: 1, topic: "language" });
+  expect(startCommand).toMatchObject({
+    setIndex: 1,
+    source: "reward_ad",
+    topic: "language",
+  });
   expect(startCommand?.questionIds).toEqual(
     languageSets[1].map((question) => question.id),
   );
-
-  const serializedSkipEvent = JSON.stringify(analyticsEvents[skipEventIndex]);
-  for (const sensitiveValue of [
-    ...languageSets[0].flatMap((question) => [question.id, question.conceptId]),
-    "selectedIndex",
-    "isCorrect",
-  ]) {
-    expect(serializedSkipEvent).not.toContain(sensitiveValue);
-  }
-
-  await page.reload();
-  await expect(
-    page.getByRole("heading", { name: languageSets[1][0].prompt }),
-  ).toBeVisible();
-  expect(
-    (await readLatestProgress(page)).bonusTopicProgress.language
-      .skippedSetIndexes,
-  ).toEqual([0]);
 });
 
 test("the real 30-set language inventory exhausts without spending a reward", async ({
   page,
 }) => {
-  const analyticsEvents = collectBrowserAnalytics(page);
+  const analytics = collectBrowserAnalytics(page);
   await openFreshApp(page);
   await completeCoreQuiz(page);
   await seedV4Progress(page, {
@@ -412,8 +581,9 @@ test("the real 30-set language inventory exhausts without spending a reward", as
   const after = await readLatestProgress(page);
   expect(after.bonus).toEqual(before.bonus);
   expect(after.rewardAdTicketCount).toBe(before.rewardAdTicketCount);
+  await analytics.flush();
   expect(
-    analyticsEvents.some(
+    analytics.events.some(
       (event) => event.name === "bonus_start" || event.name === "ad_offer_view",
     ),
   ).toBe(false);
