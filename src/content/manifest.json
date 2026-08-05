@@ -10,6 +10,8 @@
     "bonusTopics": [
       {
         "topic": "nostalgia",
+        "label": "추억·대중문화",
+        "order": 0,
         "packCount": 4,
         "setCount": 120,
         "questionCount": 360

@@ -55,9 +55,18 @@ export interface CoreReleaseContract {
 
 export interface BonusTopicReleaseContract {
   topic: BonusTopic;
+  label: string;
+  order: number;
   packCount: number;
   setCount: number;
   questionCount: number;
+}
+
+export interface BonusTopicMetadata {
+  id: BonusTopic;
+  label: string;
+  order: number;
+  setCount: number;
 }
 
 export interface ContentReleaseContract {

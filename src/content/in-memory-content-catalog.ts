@@ -1,5 +1,6 @@
 import type { BonusQuestion, BonusTopic, CoreQuestion } from "../domain/question";
 import type { ContentCatalog, ContentLoadResult } from "./content-catalog";
+import type { BonusTopicMetadata } from "./types";
 
 export type InMemoryCoreSets = Record<string, CoreQuestion[]>;
 export type InMemoryBonusSets = Partial<
@@ -9,9 +10,18 @@ export type InMemoryBonusSets = Partial<
 export function createInMemoryContentCatalog(
   coreSets: InMemoryCoreSets,
   bonusSets: InMemoryBonusSets,
+  bonusTopics?: readonly BonusTopicMetadata[],
 ): ContentCatalog {
+  const orderedBonusTopics = [...(bonusTopics ?? [])].sort(
+    (left, right) => left.order - right.order,
+  );
+  const availableBonusTopics = bonusTopics == null
+    ? (Object.keys(bonusSets) as BonusTopic[])
+    : orderedBonusTopics.map(({ id }) => id);
+
   return {
-    availableBonusTopics: Object.keys(bonusSets) as BonusTopic[],
+    bonusTopics: orderedBonusTopics,
+    availableBonusTopics,
     async loadCoreSet(dateKey): Promise<ContentLoadResult<CoreQuestion[]>> {
       const questions = coreSets[dateKey];
       return questions && questions.length > 0

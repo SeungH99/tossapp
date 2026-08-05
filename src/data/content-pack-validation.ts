@@ -112,10 +112,20 @@ const DAY_MS = 24 * 60 * 60 * 1000;
 const RELEASE_DATE_KEYS = Array.from({ length: 180 }, (_, index) =>
   new Date(RELEASE_START_UTC + index * DAY_MS).toISOString().slice(0, 10),
 );
+const LEGACY_BONUS_TOPIC_LABELS: Record<BonusTopic, string> = {
+  nostalgia: "추억·대중문화",
+  "korean-life": "한국 생활사",
+  language: "말·속담·맞춤법",
+  digital: "디지털 생활",
+  safety: "생활안전",
+  "nature-general": "자연·일반상식",
+};
 const LEGACY_RELEASE_CONTRACT: ContentReleaseContract = {
   core: { packCount: 6, questionCount: 540 },
-  bonusTopics: BONUS_TOPICS.map((topic) => ({
+  bonusTopics: BONUS_TOPICS.map((topic, order) => ({
     topic,
+    label: LEGACY_BONUS_TOPIC_LABELS[topic],
+    order,
     packCount: 6,
     setCount: 180,
     questionCount: 540,
@@ -1015,6 +1025,150 @@ function addSegmentCountIssues(
   }
 }
 
+function addReleaseContractIssues(
+  manifest: ContentManifest,
+  issues: ContentPackValidationIssue[],
+): void {
+  const contract = manifest.releaseContract;
+  if (contract == null) return;
+
+  const countFields = ["packCount", "questionCount"] as const;
+  for (const field of countFields) {
+    const count = contract.core[field];
+    if (!Number.isInteger(count) || count < 0) {
+      issue(
+        issues,
+        "count",
+        "error",
+        `release-contract:core:${field}`,
+        "Release counts must be non-negative integers.",
+        { expected: "non-negative integer", actual: count },
+      );
+    }
+  }
+  const coreDescriptorQuestionCount = manifest.corePacks.reduce(
+    (sum, descriptor) => sum + descriptor.questionCount,
+    0,
+  );
+  if (manifest.corePacks.length !== contract.core.packCount) {
+    issue(
+      issues,
+      "count",
+      "error",
+      "release-contract:core:descriptors",
+      "Core descriptor count must match the release contract.",
+      { expected: contract.core.packCount, actual: manifest.corePacks.length },
+    );
+  }
+  if (coreDescriptorQuestionCount !== contract.core.questionCount) {
+    issue(
+      issues,
+      "count",
+      "error",
+      "release-contract:core:descriptor-questions",
+      "Core descriptor question count must match the release contract.",
+      { expected: contract.core.questionCount, actual: coreDescriptorQuestionCount },
+    );
+  }
+
+  const orders = new Map<number, BonusTopic>();
+  for (const topicContract of contract.bonusTopics) {
+    const { topic, label, order } = topicContract;
+    const scope = `release-contract:bonus:${topic}`;
+    if (label.trim().length === 0) {
+      issue(
+        issues,
+        "schema",
+        "error",
+        `${scope}:label`,
+        "Bonus topic labels must be non-empty strings.",
+        { expected: "non-empty string", actual: label },
+      );
+    }
+    if (!Number.isInteger(order) || order < 0) {
+      issue(
+        issues,
+        "schema",
+        "error",
+        `${scope}:order`,
+        "Bonus topic order must be a non-negative integer.",
+        { expected: "non-negative integer", actual: order },
+      );
+    } else {
+      const priorTopic = orders.get(order);
+      if (priorTopic != null) {
+        issue(
+          issues,
+          "schema",
+          "error",
+          `${scope}:order`,
+          `Bonus topic order duplicates ${priorTopic}.`,
+          { expected: "unique order", actual: order },
+        );
+      } else {
+        orders.set(order, topic);
+      }
+    }
+
+    for (const field of ["packCount", "setCount", "questionCount"] as const) {
+      const count = topicContract[field];
+      if (!Number.isInteger(count) || count < 0) {
+        issue(
+          issues,
+          "count",
+          "error",
+          `${scope}:${field}`,
+          "Release counts must be non-negative integers.",
+          { expected: "non-negative integer", actual: count },
+        );
+      }
+    }
+
+    const descriptors = manifest.bonusPacks.filter(
+      (descriptor) => descriptor.topic === topic,
+    );
+    const descriptorQuestionCount = descriptors.reduce(
+      (sum, descriptor) => sum + descriptor.questionCount,
+      0,
+    );
+    const descriptorSetCount = descriptors.reduce(
+      (sum, descriptor) =>
+        sum + (descriptor.setCount ?? descriptor.setEnd - descriptor.setStart + 1),
+      0,
+    );
+    if (descriptors.length !== topicContract.packCount) {
+      issue(
+        issues,
+        "count",
+        "error",
+        `${scope}:descriptors`,
+        "Bonus descriptor count must match the release contract.",
+        { expected: topicContract.packCount, actual: descriptors.length },
+      );
+    }
+    if (descriptorSetCount !== topicContract.setCount) {
+      issue(
+        issues,
+        "count",
+        "error",
+        `${scope}:descriptor-sets`,
+        "Bonus descriptor set count must match the release contract.",
+        { expected: topicContract.setCount, actual: descriptorSetCount },
+      );
+    }
+    if (descriptorQuestionCount !== topicContract.questionCount) {
+      issue(
+        issues,
+        "count",
+        "error",
+        `${scope}:descriptor-questions`,
+        "Bonus descriptor question count must match the release contract.",
+        { expected: topicContract.questionCount, actual: descriptorQuestionCount },
+      );
+    }
+  }
+}
+
 export function validateContentLibrary(
   manifest: ContentManifest,
   packs: readonly ContentLibraryPack[],
@@ -1025,6 +1179,7 @@ export function validateContentLibrary(
     manifest.contentVersion,
   );
   issues.push(...manifestVersionIssues);
+  addReleaseContractIssues(manifest, issues);
   const manifestContentVersion =
     manifestVersionIssues.length === 0 ? manifest.contentVersion : undefined;
   const descriptors = descriptorsForScope(manifest, scope);

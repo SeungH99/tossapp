@@ -551,6 +551,8 @@ describe("validateContentLibrary", () => {
         bonusTopics: [
           {
             topic: "nostalgia",
+            label: "추억·대중문화",
+            order: 0,
             packCount: 4,
             setCount: 120,
             questionCount: 360,
@@ -567,6 +569,104 @@ describe("validateContentLibrary", () => {
       setCount: 300,
       issues: [],
     });
+  });
+
+  it.each([
+    {
+      label: "empty labels",
+      change: (topics: Array<Record<string, unknown>>) => {
+        topics[0].label = " ";
+      },
+      code: "schema",
+      scope: "release-contract:bonus:nostalgia:label",
+    },
+    {
+      label: "duplicate display orders",
+      change: (topics: Array<Record<string, unknown>>) => {
+        topics[1].order = 0;
+      },
+      code: "schema",
+      scope: "release-contract:bonus:korean-life:order",
+    },
+    {
+      label: "negative released counts",
+      change: (topics: Array<Record<string, unknown>>) => {
+        topics[0].setCount = -1;
+      },
+      code: "count",
+      scope: "release-contract:bonus:nostalgia:setCount",
+    },
+    {
+      label: "descriptor count disagreements",
+      change: (topics: Array<Record<string, unknown>>) => {
+        topics[0].packCount = 3;
+      },
+      code: "count",
+      scope: "release-contract:bonus:nostalgia:descriptors",
+    },
+  ])("rejects release contracts with $label", ({ change, code, scope }) => {
+    const core = buildCoreLibrary();
+    const nostalgia = buildBonusTopicLibrary("nostalgia");
+    const koreanLife = buildBonusTopicLibrary("korean-life");
+    const language = buildBonusTopicLibrary("language");
+    const manifest = {
+      ...manifestWith(
+        core.descriptors,
+        [
+          ...nostalgia.descriptors.slice(0, 4),
+          koreanLife.descriptors[0],
+          language.descriptors[0],
+        ],
+      ),
+      releaseContract: {
+        core: { packCount: 6, questionCount: 540 },
+        bonusTopics: [
+          {
+            topic: "nostalgia",
+            label: "추억·대중문화",
+            order: 0,
+            packCount: 4,
+            setCount: 120,
+            questionCount: 360,
+          },
+          {
+            topic: "korean-life",
+            label: "한국 생활사",
+            order: 1,
+            packCount: 1,
+            setCount: 30,
+            questionCount: 90,
+          },
+          {
+            topic: "language",
+            label: "말·속담·맞춤법",
+            order: 2,
+            packCount: 1,
+            setCount: 30,
+            questionCount: 90,
+          },
+        ],
+      },
+    } as unknown as ContentManifest;
+    change(
+      (manifest as unknown as {
+        releaseContract: { bonusTopics: Array<Record<string, unknown>> };
+      }).releaseContract.bonusTopics,
+    );
+
+    const report = validateContentLibrary(
+      manifest,
+      [
+        ...core.packs,
+        ...nostalgia.packs.slice(0, 4),
+        koreanLife.packs[0],
+        language.packs[0],
+      ],
+    );
+
+    expect(report.issues).toContainEqual(
+      expect.objectContaining({ code, scope }),
+    );
   });
 
   it("rejects a 41-pack partial default library deterministically", () => {
