@@ -23,6 +23,14 @@
         "packCount": 1,
         "setCount": 30,
         "questionCount": 90
+      },
+      {
+        "topic": "language",
+        "label": "말·속담·맞춤법",
+        "order": 2,
+        "packCount": 1,
+        "setCount": 30,
+        "questionCount": 90
       }
     ]
   },
@@ -152,6 +160,18 @@
       "reviewStatus": "reviewed",
       "kind": "bonus",
       "topic": "korean-life",
+      "setStart": 0,
+      "setEnd": 29
+    },
+    {
+      "id": "bonus-language-001",
+      "path": "src/content/bonus/language/pack-001.json",
+      "sha256": "984df9e13d71f7e0b83f2e0b3351aead335a7ffcf9dcf4f192bac501f7d72c0f",
+      "questionCount": 90,
+      "setCount": 30,
+      "reviewStatus": "reviewed",
+      "kind": "bonus",
+      "topic": "language",
       "setStart": 0,
       "setEnd": 29
     }
