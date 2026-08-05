@@ -15,6 +15,14 @@
         "packCount": 4,
         "setCount": 120,
         "questionCount": 360
+      },
+      {
+        "topic": "korean-life",
+        "label": "한국 생활사",
+        "order": 1,
+        "packCount": 1,
+        "setCount": 30,
+        "questionCount": 90
       }
     ]
   },
@@ -134,6 +142,18 @@
       "topic": "nostalgia",
       "setStart": 90,
       "setEnd": 119
+    },
+    {
+      "id": "bonus-korean-life-001",
+      "path": "src/content/bonus/korean-life/pack-001.json",
+      "sha256": "3fa9508ec8c523ac5d2e9b3de4225506aaabb8d4ba72e673a9c9674a8d19aa6e",
+      "questionCount": 90,
+      "setCount": 30,
+      "reviewStatus": "reviewed",
+      "kind": "bonus",
+      "topic": "korean-life",
+      "setStart": 0,
+      "setEnd": 29
     }
   ]
 }
