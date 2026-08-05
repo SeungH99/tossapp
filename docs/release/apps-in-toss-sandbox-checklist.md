@@ -19,8 +19,13 @@
 - [x] PR #9 run `30998763833`의 `e2e-webkit` 성공
 - [x] PR #9 run `30998763833`의 `release-build` 성공
 - [x] runner-produced snapshot 승인 commit `fddfc95`, provenance report commit `04d3495` 확인
+- [x] final fix wave 로컬 재검증: lint(`.gstack`만 제외), typecheck, 29 files·282 Vitest, 콘텐츠 12/1,080/360, concept map 1,260, Playwright 84/84, production build 성공
 - [ ] artifact의 `geuttae-yojeum.ait` 다운로드와 파일 열기 성공
 - [ ] CI artifact는 테스트 광고 ID 검증용이며 운영 업로드 artifact와 구분됨
+
+로컬 final fix wave 테스트 artifact: `geuttae-yojeum.ait`, 417,718 bytes,
+SHA-256 `F3C474C8A1A7CD6335B2236A8E93084BB4743B3EFBD7A717B4B62D88A1E8AE78`,
+deployment ID `019fd1dc-658a-74e1-b7a5-f2dab3c79e55`. 운영 업로드 승인을 뜻하지 않는다.
 
 ## 출시 콘텐츠·진행도 계약
 
@@ -29,7 +34,15 @@
 - [x] 보너스 카탈로그는 `nostalgia`(120세트·360문제), `korean-life`(30세트·90문제), `language`(30세트·90문제)만 순서대로 노출
 - [x] 모든 출시 core/bonus 행은 전역적으로 고유한 semantic `conceptId`를 가짐
 - [x] V1/V2/V3 진행도를 V4로 보존 마이그레이션하고, 답 제출 즉시 question ID·concept ID를 기록
+- [x] `2026-08-14-then-18-v1`은 최초 공개된 김장 문항·`korean-life-kimjang-community-winter-preparation` 의미를 정확히 유지하며 활성 V3 세션도 같은 payload로 복원
+- [x] 181-entry append-only 역사 매핑은 모든 기존 production ID(`bonus-language-2`의 `웬일` 포함)를 덮고, 현재 문항과 병합한 1,260-entry `concept-map.json`은 `check:concept-map`이 비변이·바이트 단위로 확인
+- [x] 알 수 없는 역사 ID는 question ID 이력만 보존하고 임의의 concept ID를 만들지 않음
 - [x] 로컬 프로필 단위 중복 방지: 반복 세트는 이용권 소비 전에 건너뛰며 활성 세션 복원은 유지
+- [x] KST 날짜가 바뀌어도 미완료 core와 bonus를 원래 날짜·저장된 문제 순서로 복원하며 새 이용권·광고 보상·`bonus_start`를 만들지 않고 3/3 완료 가능
+- [x] 보너스 시작의 `releasedSetCount`는 manifest/catalog 실제 수량을 domain·repository에 명시적으로 전달하며, 30-set 주제의 set 30은 권리 변경 없이 `exhausted`로 거부
+- [x] 180일·1,260 seen question IDs·1,243 seen concept IDs·UUID 보상/명령을 포함한 V4 최댓값 fixture는 499,798 bytes/slot, 999,596 bytes/dual-slot로 512 KiB/slot·1 MiB total 예산 안에서 round-trip
+- [x] 저장 압축은 완료된 과거 세션 답안만 제거하고 활성 core/bonus 답안, 최신 core 결과, 완료 대기 bonus 답안, 180일 streak, 중복 방지·보상·명령 ledger를 보존
+- [x] 문제 제목 42자 경계는 grapheme cluster 기준이며 ASCII·분해 문자·ZWJ emoji의 41/42 경계를 `Intl.Segmenter`와 deterministic fallback에서 모두 검증
 - [x] 공개 세트가 소진되면 `새 문제 준비 중`을 표시하고 콘텐츠를 재순환하지 않음
 
 ## 콘솔·환경 설정
