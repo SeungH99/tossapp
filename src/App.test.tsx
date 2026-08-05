@@ -777,6 +777,100 @@ describe("QuizApp", () => {
     expect(showCount).toBe(1);
   });
 
+  it("moves the radio tab stop when look-ahead exhausts the selected topic", async () => {
+    const storage = new ControlledStorage();
+    const repository = new ProgressRepository(storage);
+    const duplicateSet = bundledBonusSet("nostalgia", 0);
+    const progress = createEmptyProgress();
+    progress.sessions["2026-07-28"] = createCompletedSession("2026-07-28");
+    progress.bonus = {
+      ...progress.bonus,
+      firstFreeUsed: true,
+    };
+    progress.seenConceptIds = [duplicateSet[0].conceptId];
+    await repository.save(progress);
+
+    const requestedSets: Array<{ topic: string; setIndex: number }> = [];
+    let showCount = 0;
+    const contentCatalog: ContentCatalog = {
+      bonusTopics: [
+        { ...threeBonusTopics[0], setCount: 1 },
+        threeBonusTopics[1],
+      ],
+      async loadCoreSet() {
+        return { ok: true, value: coreQuestions, packId: "core-001" };
+      },
+      async loadBonusSet(topic, setIndex) {
+        requestedSets.push({ topic, setIndex });
+        return {
+          ok: true,
+          value: duplicateSet,
+          packId: "bonus-nostalgia-001",
+        };
+      },
+    };
+    const rewardAd: RewardAdGateway = {
+      load: async () => true,
+      show: async () => {
+        showCount += 1;
+        return { rewardGrantId: "must-not-be-granted" };
+      },
+    };
+    const user = userEvent.setup();
+
+    render(
+      <QuizApp
+        now={new Date("2026-07-28T03:00:00.000Z")}
+        contentCatalog={contentCatalog}
+        repository={repository}
+        rewardAd={rewardAd}
+      />,
+    );
+
+    await user.click(
+      await screen.findByRole("button", {
+        name: "원하는 주제로 보너스 3문제",
+      }),
+    );
+    await user.click(
+      await screen.findByRole("button", { name: "광고 보고 보너스 3문제" }),
+    );
+
+    expect(await screen.findByRole("alert")).toHaveTextContent(
+      "새 문제 준비 중",
+    );
+    const nostalgia = screen.getByRole("radio", {
+      name: /추억·대중문화/,
+    });
+    const koreanLife = screen.getByRole("radio", { name: "한국 생활사" });
+    expect(nostalgia).toBeDisabled();
+    expect(nostalgia).toHaveAttribute("aria-checked", "false");
+    expect(nostalgia).toHaveAttribute("tabindex", "-1");
+    expect(koreanLife).toBeEnabled();
+    expect(koreanLife).toHaveAttribute("aria-checked", "true");
+    expect(koreanLife).toHaveAttribute("tabindex", "0");
+    expect(
+      screen
+        .getAllByRole("radio")
+        .filter(
+          (radio) =>
+            !(radio as HTMLButtonElement).disabled && radio.tabIndex === 0,
+        ),
+    ).toEqual([koreanLife]);
+    expect(requestedSets).toEqual([{ topic: "nostalgia", setIndex: 0 }]);
+    expect(showCount).toBe(0);
+
+    const loaded = await repository.load();
+    expect(loaded.kind).not.toBe("unrecoverable");
+    if (loaded.kind !== "unrecoverable") {
+      expect(loaded.state.bonus.firstFreeUsed).toBe(true);
+      expect(loaded.state.rewardGrantIds).toEqual([]);
+      expect(
+        loaded.state.bonusTopicProgress.nostalgia.skippedSetIndexes,
+      ).toEqual([0]);
+    }
+  });
+
   it.each([
     {
       ledgerName: "question ID",

@@ -76,3 +76,21 @@ The raw `npm.cmd run lint` command could not scan the protected, pre-existing de
 - `npm.cmd run validate:content:library` — passed: 12 packs, 1,080 questions, 360 sets.
 
 The protected pre-existing `.gitignore` modification and `.gstack/design.json` deletion remained untouched and unstaged throughout this fix round.
+
+## Final narrow radio fallback fix
+
+- Added a regression that exhausts the currently selected nostalgia topic during seen-concept look-ahead. RED showed the disabled topic remained checked and every remaining enabled radio had `tabindex="-1"`.
+- After exhaustion, selection now moves deterministically to the first non-exhausted topic in catalog order. If no non-exhausted topic remains, the prior selection is preserved.
+- The regression verifies the exhausted topic is disabled, unchecked, and removed from the tab order; Korean life becomes the sole checked and tabbable enabled radio; only nostalgia set 0 is loaded; no reward ad is shown; and entitlement/reward state is unchanged.
+
+Verification for the final narrow fix:
+
+- Focused RED: 1 expected failure (`aria-checked` remained `true` on the exhausted topic).
+- Focused GREEN: 1 passed.
+- Full `src/App.test.tsx`: 45 passed.
+- Chromium radio flow at 360px and 390px: 2 passed.
+- Full Vitest: 26 files, 257 tests passed.
+- Typecheck and lint excluding only protected `.gstack`: passed.
+- Content validation: 12 packs, 1,080 questions, 360 sets.
+
+The protected pre-existing `.gitignore` modification and `.gstack/design.json` deletion remained untouched and unstaged.

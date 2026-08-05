@@ -1356,6 +1356,21 @@ export default function QuizApp({
     const useRepository =
       repository != null && persistenceWritable && !noSaveMode;
     const activePending = pending;
+    const selectFirstRemainingTopic = () => {
+      const fallbackTopic = bonusTopicMetadata.find(
+        (candidate) =>
+          candidate.id !== topic &&
+          resolveBonusSetAvailability(
+            progressRef.current,
+            candidate.id,
+            activePending.dateKey,
+            candidate.setCount,
+          ).kind !== "exhausted",
+      );
+      if (fallbackTopic != null) {
+        setSelectedTopic(fallbackTopic.id);
+      }
+    };
 
     void (async () => {
       let shouldReloadRewardAd = false;
@@ -1385,6 +1400,9 @@ export default function QuizApp({
                   reason: availability.kind,
                 });
                 pendingBonusStartRef.current = null;
+                if (availability.kind === "exhausted") {
+                  selectFirstRemainingTopic();
+                }
                 failBonusStart(
                   availability.kind === "daily-limit"
                     ? "오늘은 이 주제를 이미 풀었어요"
@@ -1447,6 +1465,7 @@ export default function QuizApp({
               reason: "exhausted",
             });
             pendingBonusStartRef.current = null;
+            selectFirstRemainingTopic();
             failBonusStart("새 문제 준비 중");
             return;
           }
