@@ -134,21 +134,11 @@ const LEGACY_RELEASE_CONTRACT: ContentReleaseContract = {
   })),
 };
 
-function isUnsupportedStdictSearchListing(value: string): boolean {
+function isStdictSearchListing(value: string): boolean {
   try {
     const url = new URL(value);
-    if (
-      url.hostname !== STDICT_SEARCH_HOST ||
-      url.pathname !== STDICT_SEARCH_PATH
-    ) {
-      return false;
-    }
-
-    const keyword = url.searchParams.get("searchKeyword")?.normalize("NFKC");
     return (
-      keyword === "통째로" ||
-      keyword?.startsWith("-") === true ||
-      /\s/u.test(keyword ?? "")
+      url.hostname === STDICT_SEARCH_HOST && url.pathname === STDICT_SEARCH_PATH
     );
   } catch {
     return false;
@@ -311,7 +301,7 @@ function addPackSchemaIssues(
       value.source.name.trim().length === 0 ||
       typeof value.source.url !== "string" ||
       !value.source.url.startsWith("https://") ||
-      isUnsupportedStdictSearchListing(value.source.url)
+      isStdictSearchListing(value.source.url)
     ) {
       issue(
         issues,

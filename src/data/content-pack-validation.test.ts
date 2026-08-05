@@ -354,8 +354,13 @@ describe("validateContentPack", () => {
     );
   });
 
-  it("rejects standard-dictionary search listings that do not identify a source record", () => {
-    const unsupportedKeywords = ["가는 날이 장날", "-든지", "통째로"];
+  it("rejects every standard-dictionary search listing, including arbitrary single-token queries", () => {
+    const unsupportedKeywords = [
+      "가는 날이 장날",
+      "-든지",
+      "통째로",
+      "codexzerohit20260805",
+    ];
 
     for (const searchKeyword of unsupportedKeywords) {
       const invalid = structuredClone(corePack);

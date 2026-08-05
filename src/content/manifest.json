@@ -154,7 +154,7 @@
     {
       "id": "bonus-korean-life-001",
       "path": "src/content/bonus/korean-life/pack-001.json",
-      "sha256": "7c868f1e21672222fcc941929a7844f357d2a5250fbad73002782fd3bbb2ebca",
+      "sha256": "814b888d9463c67a921ea785c49ca5834929c60fd2ac93666f7025023708d62e",
       "questionCount": 90,
       "setCount": 30,
       "reviewStatus": "reviewed",
@@ -166,7 +166,7 @@
     {
       "id": "bonus-language-001",
       "path": "src/content/bonus/language/pack-001.json",
-      "sha256": "28ae8e939adf7d0ca8bc99ee6373a8216c937a95cb28f0fe40d54330e630bc98",
+      "sha256": "0b6c6d0d5abd3c23655974400fdf9ffc8cb55023ace5cce12e71f9ee83de74f0",
       "questionCount": 90,
       "setCount": 30,
       "reviewStatus": "reviewed",
