@@ -124,7 +124,7 @@ const bonusQuestions: BonusQuestion[] = [
   },
 ];
 
-function progressEnvelope(schemaVersion: 2 | 3, payload: unknown): string {
+function progressEnvelope(schemaVersion: 2 | 3 | 4, payload: unknown): string {
   const unsigned = {
     schemaVersion,
     revision: 1,
@@ -149,6 +149,10 @@ function v2Envelope(payload: unknown): string {
 
 function v3Envelope(payload: unknown): string {
   return progressEnvelope(3, payload);
+}
+
+function v4Envelope(payload: unknown): string {
+  return progressEnvelope(4, payload);
 }
 
 function v3ProgressWithAnswers(): ProgressStateV3 {
@@ -199,9 +203,7 @@ describe("ProgressRepository", () => {
       completedSetIndexes: [2],
       skippedSetIndexes: [],
     });
-    expect(migrated.answerEvents).toEqual(
-      v3ProgressWithAnswers().answerEvents,
-    );
+    expect(migrated.answerEvents).toEqual(v3ProgressWithAnswers().answerEvents);
     expect(migrated.rewardGrantIds).toEqual(["preserved-reward-grant"]);
   });
 
@@ -703,6 +705,28 @@ describe("ProgressRepository", () => {
     expect(restored.shadowAudits).toEqual(shadowAudits);
   });
 
+  it("loads a valid V4 shadow audit payload from active slots", async () => {
+    const shadowAudits = [
+      createShadowAudit({
+        legacyQuestionIds: ["legacy-1"],
+        shadowQuestionIds: ["shadow-1"],
+        policyVersion: "personalization-v1",
+        reasonCode: "high-accuracy",
+      }),
+    ];
+    const envelope = v4Envelope({ ...createEmptyProgress(), shadowAudits });
+    window.localStorage.setItem(progressStorageKeys.slotA, envelope);
+    window.localStorage.setItem(progressStorageKeys.slotB, envelope);
+    const repository = new ProgressRepository(
+      new BrowserKeyValueStorage(window.localStorage),
+    );
+
+    await expect(repository.load()).resolves.toMatchObject({
+      kind: "loaded",
+      state: { shadowAudits },
+    });
+  });
+
   it("rejects noncanonical and over-limit persisted shadow audits", async () => {
     const noncanonicalReasonPayload: Record<string, unknown> = {
       ...createEmptyProgress(),
@@ -726,11 +750,11 @@ describe("ProgressRepository", () => {
     };
     window.localStorage.setItem(
       progressStorageKeys.slotA,
-      v3Envelope(noncanonicalReasonPayload),
+      v4Envelope(noncanonicalReasonPayload),
     );
     window.localStorage.setItem(
       progressStorageKeys.slotB,
-      v3Envelope(overLimitPayload),
+      v4Envelope(overLimitPayload),
     );
     const repository = new ProgressRepository(
       new BrowserKeyValueStorage(window.localStorage),
@@ -754,7 +778,7 @@ describe("ProgressRepository", () => {
         },
       ],
     };
-    const envelope = v3Envelope(payload);
+    const envelope = v4Envelope(payload);
     window.localStorage.setItem(progressStorageKeys.slotA, envelope);
     window.localStorage.setItem(progressStorageKeys.slotB, envelope);
     const repository = new ProgressRepository(
@@ -958,11 +982,7 @@ describe("ProgressRepository", () => {
     expect(restored.bonusStartCommands["legacy-valid"]).toMatchObject({
       topic: "digital",
       setIndex: 0,
-      questionIds: [
-        "bonus-digital-1",
-        "bonus-digital-2",
-        "bonus-digital-3",
-      ],
+      questionIds: ["bonus-digital-1", "bonus-digital-2", "bonus-digital-3"],
     });
   });
 
@@ -1014,35 +1034,34 @@ describe("ProgressRepository", () => {
       questions: bonusQuestions.slice(0, 2),
       reason: "no-questions",
     },
-  ])("legacy repository $name은 저장된 이용권을 보존한다", async ({
-    prepare,
-    questions,
-    reason,
-  }) => {
-    const repository = new ProgressRepository(
-      new BrowserKeyValueStorage(window.localStorage),
-    );
-    const state = prepare();
-    state.bonus = {
-      ...state.bonus,
-      firstFreeUsed: true,
-      ticketCount: 1,
-    };
-    await repository.save(state);
+  ])(
+    "legacy repository $name은 저장된 이용권을 보존한다",
+    async ({ prepare, questions, reason }) => {
+      const repository = new ProgressRepository(
+        new BrowserKeyValueStorage(window.localStorage),
+      );
+      const state = prepare();
+      state.bonus = {
+        ...state.bonus,
+        firstFreeUsed: true,
+        ticketCount: 1,
+      };
+      await repository.save(state);
 
-    const result = await repository.startBonusSession(
-      `legacy-blocked-${reason}`,
-      "2026-08-04",
-      "digital",
-      questions,
-    );
-    const restored = await repository.load();
+      const result = await repository.startBonusSession(
+        `legacy-blocked-${reason}`,
+        "2026-08-04",
+        "digital",
+        questions,
+      );
+      const restored = await repository.load();
 
-    expect(result).toMatchObject({ applied: false, reason });
-    expect(restored).toMatchObject({ kind: "loaded", revision: 1 });
-    expect(expectState(restored).bonus.ticketCount).toBe(1);
-    expect(expectState(restored).bonusStartCommands).toEqual({});
-  });
+      expect(result).toMatchObject({ applied: false, reason });
+      expect(restored).toMatchObject({ kind: "loaded", revision: 1 });
+      expect(expectState(restored).bonus.ticketCount).toBe(1);
+      expect(expectState(restored).bonusStartCommands).toEqual({});
+    },
+  );
 
   it("같은 보너스 commandId 재시도는 revision과 세션을 늘리지 않는다", async () => {
     const repository = new ProgressRepository(

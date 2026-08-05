@@ -14,12 +14,23 @@
 
 ## 자동 게이트
 
-- [ ] `quality` 성공
-- [ ] `e2e-chromium` 성공
-- [ ] `e2e-webkit` 성공
-- [ ] `release-build` 성공
+- [x] PR #9 run `30998763833`의 `quality` 성공
+- [x] PR #9 run `30998763833`의 `e2e-chromium` 성공
+- [x] PR #9 run `30998763833`의 `e2e-webkit` 성공
+- [x] PR #9 run `30998763833`의 `release-build` 성공
+- [x] runner-produced snapshot 승인 commit `fddfc95`, provenance report commit `04d3495` 확인
 - [ ] artifact의 `geuttae-yojeum.ait` 다운로드와 파일 열기 성공
 - [ ] CI artifact는 테스트 광고 ID 검증용이며 운영 업로드 artifact와 구분됨
+
+## 출시 콘텐츠·진행도 계약
+
+- [x] 출시 인벤토리: 총 12팩·1,080문제·360세트
+- [x] 기본 퀴즈: 6팩·540문제·180세트
+- [x] 보너스 카탈로그는 `nostalgia`(120세트·360문제), `korean-life`(30세트·90문제), `language`(30세트·90문제)만 순서대로 노출
+- [x] 모든 출시 core/bonus 행은 전역적으로 고유한 semantic `conceptId`를 가짐
+- [x] V1/V2/V3 진행도를 V4로 보존 마이그레이션하고, 답 제출 즉시 question ID·concept ID를 기록
+- [x] 로컬 프로필 단위 중복 방지: 반복 세트는 이용권 소비 전에 건너뛰며 활성 세션 복원은 유지
+- [x] 공개 세트가 소진되면 `새 문제 준비 중`을 표시하고 콘텐츠를 재순환하지 않음
 
 ## 콘솔·환경 설정
 

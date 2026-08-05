@@ -90,6 +90,28 @@ describe("build-concept-map", () => {
     );
   });
 
+  it("sorts question IDs by locale-independent ordinal code units", () => {
+    const directory = createLibrary(
+      [
+        { id: "concept-z", conceptId: "concept-z" },
+        { id: "concept-ä", conceptId: "concept-a-umlaut" },
+      ],
+      [{ id: "concept-a", conceptId: "concept-a" }],
+    );
+
+    const result = runGenerator(directory);
+
+    expect(result.status).toBe(0);
+    expect(
+      readFileSync(
+        join(directory, "src", "content", "concept-map.json"),
+        "utf8",
+      ),
+    ).toBe(
+      '{\n  "concept-a": "concept-a",\n  "concept-z": "concept-z",\n  "concept-ä": "concept-a-umlaut"\n}\n',
+    );
+  });
+
   it("fails when descriptors contain duplicate question IDs", () => {
     const directory = createLibrary(
       [{ id: "duplicate", conceptId: "concept-a" }],

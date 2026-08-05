@@ -16,6 +16,16 @@ interface ConceptQuestion {
   conceptId?: unknown;
 }
 
+function compareQuestionIdsOrdinal(left: string, right: string): number {
+  if (left < right) {
+    return -1;
+  }
+  if (left > right) {
+    return 1;
+  }
+  return 0;
+}
+
 function readDescriptorQuestions(
   cwd: string,
   descriptor: ContentDescriptor,
@@ -56,7 +66,7 @@ export function buildConceptMap(cwd = process.cwd()): Record<string, string> {
 
   return Object.fromEntries(
     [...conceptEntries.entries()].sort(([left], [right]) =>
-      left.localeCompare(right),
+      compareQuestionIdsOrdinal(left, right),
     ),
   );
 }
