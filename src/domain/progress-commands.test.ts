@@ -186,6 +186,169 @@ describe("applyAnswerCommand", () => {
 });
 
 describe("bonus progress commands", () => {
+  it("skips a set containing an answered concept without consuming entitlement", () => {
+    const state = createEmptyProgress();
+    state.seenConceptIds = ["language-wenil-spelling"];
+    state.bonus = {
+      ...state.bonus,
+      firstFreeUsed: true,
+      ticketCount: 2,
+    };
+    state.rewardGrantIds = ["reward-1"];
+    state.rewardAdTicketCount = 1;
+    state.bonusTopicProgress.language = {
+      completedSetIndexes: [],
+      skippedSetIndexes: [2],
+      lastCompletedDateKey: "2026-08-04",
+    };
+    const questions = bonusQuestions.map((question, index) => ({
+      ...question,
+      id: `bonus-language-${index + 1}`,
+      conceptId:
+        index === 1 ? "language-wenil-spelling" : `language-${index + 1}`,
+      topic: "language" as const,
+    }));
+
+    const match = progressCommands.findSeenQuestion(state, questions);
+    const skipped = progressCommands.skipBonusSetCommand(
+      state,
+      "language",
+      0,
+    );
+    const skippedAgain = progressCommands.skipBonusSetCommand(
+      skipped,
+      "language",
+      0,
+    );
+
+    expect(match).toEqual({
+      kind: "concept-id",
+      value: "language-wenil-spelling",
+    });
+    expect(skipped.bonusTopicProgress.language).toEqual({
+      completedSetIndexes: [],
+      skippedSetIndexes: [0, 2],
+      lastCompletedDateKey: "2026-08-04",
+    });
+    expect(skippedAgain.bonusTopicProgress.language.skippedSetIndexes).toEqual([
+      0, 2,
+    ]);
+    expect(skipped.bonus).toBe(state.bonus);
+    expect(skipped.rewardGrantIds).toBe(state.rewardGrantIds);
+    expect(skipped.rewardAdTicketCount).toBe(state.rewardAdTicketCount);
+    expect(skipped.sessions).toBe(state.sessions);
+    expect(skipped.bonusStartCommands).toBe(state.bonusStartCommands);
+    expect(skipped.latestBonusStartCommandIds).toBe(
+      state.latestBonusStartCommandIds,
+    );
+  });
+
+  it("finds an answered question ID before an answered concept ID", () => {
+    const state = createEmptyProgress();
+    state.seenQuestionIds = [bonusQuestions[1].id];
+    state.seenConceptIds = [bonusQuestions[0].conceptId];
+
+    expect(progressCommands.findSeenQuestion(state, bonusQuestions)).toEqual({
+      kind: "question-id",
+      value: bonusQuestions[1].id,
+    });
+  });
+
+  it.each([
+    {
+      name: "question ID",
+      seenQuestionIds: [bonusQuestions[1].id],
+      seenConceptIds: [] as string[],
+      reason: "seen-question",
+    },
+    {
+      name: "concept ID",
+      seenQuestionIds: [] as string[],
+      seenConceptIds: [bonusQuestions[1].conceptId],
+      reason: "seen-concept",
+    },
+  ])(
+    "rejects a seen $name before changing entitlement or reward state",
+    ({ seenQuestionIds, seenConceptIds, reason }) => {
+      const state = createEmptyProgress();
+      state.seenQuestionIds = seenQuestionIds;
+      state.seenConceptIds = seenConceptIds;
+      state.bonus = {
+        ...state.bonus,
+        firstFreeUsed: true,
+        ticketCount: 2,
+      };
+      state.rewardGrantIds = ["reward-1"];
+      state.rewardAdTicketCount = 1;
+
+      const result = progressCommands.startBonusSessionCommand(
+        state,
+        `blocked-${reason}`,
+        "2026-08-05",
+        "digital",
+        0,
+        bonusQuestions,
+      );
+
+      expect(result).toMatchObject({ applied: false, reason });
+      expect(result.state).toBe(state);
+      expect(result.state.bonus).toEqual({
+        firstFreeUsed: true,
+        ticketCount: 2,
+        grantedMilestones: [],
+        unlockAttempts: [],
+      });
+      expect(result.state.rewardGrantIds).toEqual(["reward-1"]);
+      expect(result.state.rewardAdTicketCount).toBe(1);
+      expect(result.state.sessions).toEqual({});
+      expect(result.state.bonusStartCommands).toEqual({});
+      expect(result.state.latestBonusStartCommandIds).toEqual({});
+      expect(result.state.bonusTopicProgress.digital.lastCompletedDateKey).toBe(
+        undefined,
+      );
+    },
+  );
+
+  it.each([
+    {
+      name: "active session",
+      prepare: () => {
+        const state = createEmptyProgress();
+        const sessionKey = "2026-08-04:bonus:language";
+        state.sessions[sessionKey] = createQuizSession(sessionKey);
+        return state;
+      },
+      reason: "active-session",
+    },
+    {
+      name: "daily limit",
+      prepare: () => {
+        const state = createEmptyProgress();
+        state.bonusTopicProgress.digital.lastCompletedDateKey = "2026-08-05";
+        return state;
+      },
+      reason: "daily-limit",
+    },
+  ])("keeps $name precedence over seen-question rejection", ({
+    prepare,
+    reason,
+  }) => {
+    const state = prepare();
+    state.seenQuestionIds = [bonusQuestions[0].id];
+
+    const result = progressCommands.startBonusSessionCommand(
+      state,
+      `precedence-${reason}`,
+      "2026-08-05",
+      "digital",
+      0,
+      bonusQuestions,
+    );
+
+    expect(result).toMatchObject({ applied: false, reason });
+    expect(result.state).toBe(state);
+  });
+
   it("keeps the legacy bonus question order while recording the pilot shadow decision", () => {
     const result = progressCommands.startBonusSessionCommand(
       createEmptyProgress(),

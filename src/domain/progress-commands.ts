@@ -53,7 +53,9 @@ export type StartBonusSessionResult =
         | "daily-limit"
         | "exhausted"
         | "active-session"
-        | "set-mismatch";
+        | "set-mismatch"
+        | "seen-question"
+        | "seen-concept";
       state: ProgressState;
       source?: BonusUnlockSource;
       session?: QuizSession;
@@ -211,6 +213,51 @@ export function grantBonusTicketCommand(
   };
 }
 
+export function findSeenQuestion(
+  state: ProgressState,
+  questions: readonly Question[],
+): { kind: "question-id" | "concept-id"; value: string } | undefined {
+  const seenQuestionIds = new Set(state.seenQuestionIds);
+  const seenQuestion = questions.find((question) =>
+    seenQuestionIds.has(question.id),
+  );
+  if (seenQuestion != null) {
+    return { kind: "question-id", value: seenQuestion.id };
+  }
+
+  const seenConceptIds = new Set(state.seenConceptIds);
+  const seenConcept = questions.find((question) =>
+    seenConceptIds.has(question.conceptId),
+  );
+  return seenConcept == null
+    ? undefined
+    : { kind: "concept-id", value: seenConcept.conceptId };
+}
+
+export function skipBonusSetCommand(
+  state: ProgressState,
+  topic: BonusTopic,
+  setIndex: number,
+): ProgressState {
+  const topicProgress = state.bonusTopicProgress[topic];
+  if (topicProgress.skippedSetIndexes.includes(setIndex)) {
+    return state;
+  }
+
+  return {
+    ...state,
+    bonusTopicProgress: {
+      ...state.bonusTopicProgress,
+      [topic]: {
+        ...topicProgress,
+        skippedSetIndexes: [...topicProgress.skippedSetIndexes, setIndex].sort(
+          (left, right) => left - right,
+        ),
+      },
+    },
+  };
+}
+
 export function startBonusSessionCommand(
   state: ProgressState,
   commandId: string,
@@ -296,6 +343,18 @@ export function startBonusSessionCommand(
       .size !== 3
   ) {
     return { applied: false, reason: "no-questions", state };
+  }
+
+  const seenQuestion = findSeenQuestion(state, candidateQuestions);
+  if (seenQuestion != null) {
+    return {
+      applied: false,
+      reason:
+        seenQuestion.kind === "question-id"
+          ? "seen-question"
+          : "seen-concept",
+      state,
+    };
   }
 
   const decision = selectShadowBonusQuestions({

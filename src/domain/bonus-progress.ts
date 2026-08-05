@@ -1,5 +1,4 @@
 import type { ProgressState } from "./progress-state";
-import { deriveNextSetIndex } from "./progress-state";
 import type { BonusTopic } from "./question";
 
 export type BonusSetAvailability =
@@ -12,6 +11,7 @@ export function resolveBonusSetAvailability(
   progress: ProgressState,
   topic: BonusTopic,
   dateKey: string,
+  releasedSetCount: number = 180,
 ): BonusSetAvailability {
   for (const [sessionKey, session] of Object.entries(progress.sessions)) {
     if (sessionKey.includes(":bonus:") && session.phase !== "completed") {
@@ -47,8 +47,15 @@ export function resolveBonusSetAvailability(
     }
   }
 
-  const setIndex = deriveNextSetIndex([...completedSetIndexes]);
-  return setIndex == null
-    ? { kind: "exhausted" }
-    : { kind: "available", setIndex };
+  const unavailableSetIndexes = new Set([
+    ...completedSetIndexes,
+    ...topicProgress.skippedSetIndexes,
+  ]);
+  for (let setIndex = 0; setIndex < releasedSetCount; setIndex += 1) {
+    if (!unavailableSetIndexes.has(setIndex)) {
+      return { kind: "available", setIndex };
+    }
+  }
+
+  return { kind: "exhausted" };
 }

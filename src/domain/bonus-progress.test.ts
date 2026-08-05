@@ -65,6 +65,18 @@ describe("resolveBonusSetAvailability", () => {
       .toEqual({ kind: "exhausted" });
   });
 
+  it("returns exhausted after all released sets are completed or skipped", () => {
+    const progress = createEmptyProgress();
+    progress.bonusTopicProgress.language = {
+      completedSetIndexes: [0],
+      skippedSetIndexes: [1],
+    };
+
+    expect(
+      resolveBonusSetAvailability(progress, "language", "2026-08-05", 2),
+    ).toEqual({ kind: "exhausted" });
+  });
+
   it("legacy 완료 세션은 같은 날 같은 주제를 다시 열지 않는다", () => {
     const progress = createEmptyProgress();
     const sessionKey = "2026-08-04:bonus:digital";
