@@ -93,6 +93,13 @@ function isNonEmptyString(value: unknown): value is string {
   return typeof value === "string" && value.trim().length > 0;
 }
 
+function isCanonicalConceptId(value: unknown): value is string {
+  return (
+    typeof value === "string" &&
+    /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value)
+  );
+}
+
 function isIsoCalendarDate(value: unknown): value is string {
   if (typeof value !== "string") {
     return false;
@@ -144,7 +151,7 @@ export function validateQuestion(value: unknown): string[] {
   if (!isNonEmptyString(value.id)) {
     errors.push("question.id");
   }
-  if (!isNonEmptyString(value.conceptId)) {
+  if (!isCanonicalConceptId(value.conceptId)) {
     errors.push("question.conceptId");
   }
   if (!["then", "now", "life"].includes(String(value.lens))) {

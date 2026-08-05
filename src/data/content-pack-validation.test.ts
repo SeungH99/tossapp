@@ -409,6 +409,25 @@ describe("validateContentLibrary", () => {
     );
   });
 
+  it("rejects case and whitespace variants of a repeated concept", () => {
+    const core = buildCoreLibrary();
+    const nostalgia = buildBonusTopicLibrary("nostalgia");
+    core.packs[0].pack.questions[0].conceptId = " shared-kimjang ";
+    nostalgia.packs[0].pack.questions[0].conceptId = "SHARED-KIMJANG";
+
+    const report = validateContentLibrary(
+      manifestWith(core.descriptors, nostalgia.descriptors),
+      [...core.packs, ...nostalgia.packs],
+    );
+
+    expect(report.issues).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ code: "schema" }),
+        expect.objectContaining({ code: "duplicate-concept" }),
+      ]),
+    );
+  });
+
   it.each([
     { label: "missing full", value: undefined, scope: "full" as const },
     { label: "empty core", value: "", scope: "core" as const },

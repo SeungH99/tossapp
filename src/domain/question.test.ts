@@ -53,6 +53,19 @@ describe("validateQuestion", () => {
     );
   });
 
+  it("requires conceptId to use canonical lowercase kebab-case", () => {
+    for (const conceptId of [
+      " Shared-Kimjang ",
+      "shared_kimjang",
+      "shared--kimjang",
+      "shared kimjang",
+    ]) {
+      expect(validateQuestion({ ...validCoreQuestion, conceptId })).toContain(
+        "question.conceptId",
+      );
+    }
+  });
+
   it("검수 메타데이터와 핵심 난이도를 요구한다", () => {
     expect(validateQuestion(validCoreQuestion)).toEqual([]);
   });

@@ -576,8 +576,9 @@ function addQuestionQualityIssues(
     if (typeof question.conceptId !== "string") {
       continue;
     }
+    const normalizedConceptId = question.conceptId.trim().toLowerCase();
     const scope = questionScope(question, index);
-    const firstScope = concepts.get(question.conceptId);
+    const firstScope = concepts.get(normalizedConceptId);
     if (firstScope !== undefined) {
       issue(
         issues,
@@ -587,7 +588,7 @@ function addQuestionQualityIssues(
         `Concept ${question.conceptId} repeats ${firstScope}.`,
       );
     } else {
-      concepts.set(question.conceptId, scope);
+      concepts.set(normalizedConceptId, scope);
     }
   }
 }
@@ -707,7 +708,8 @@ function addCrossPackQualityIssues(
     if (typeof entry.question.conceptId !== "string") {
       continue;
     }
-    const first = concepts.get(entry.question.conceptId);
+    const normalizedConceptId = entry.question.conceptId.trim().toLowerCase();
+    const first = concepts.get(normalizedConceptId);
     if (first !== undefined && first.path !== entry.path) {
       issue(
         issues,
@@ -717,7 +719,7 @@ function addCrossPackQualityIssues(
         `Concept ${entry.question.conceptId} repeats ${first.scope} in ${first.path}.`,
       );
     } else if (first === undefined) {
-      concepts.set(entry.question.conceptId, {
+      concepts.set(normalizedConceptId, {
         path: entry.path,
         scope: entry.scope,
       });
