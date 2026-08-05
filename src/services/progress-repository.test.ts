@@ -882,6 +882,7 @@ describe("ProgressRepository", () => {
       "2026-07-28",
       "digital",
       0,
+      180,
       bonusQuestions,
     );
     const restored = await repository.load();
@@ -931,6 +932,7 @@ describe("ProgressRepository", () => {
       "2026-07-28",
       "digital",
       0,
+      180,
       bonusQuestions,
     );
     const restored = expectState(await repository.load());
@@ -973,6 +975,8 @@ describe("ProgressRepository", () => {
       "legacy-valid",
       "2026-08-04",
       "digital",
+      0,
+      180,
       bonusQuestions,
     );
     const restored = expectState(await repository.load());
@@ -1052,6 +1056,8 @@ describe("ProgressRepository", () => {
         `legacy-blocked-${reason}`,
         "2026-08-04",
         "digital",
+        0,
+        180,
         questions,
       );
       const restored = await repository.load();
@@ -1073,6 +1079,7 @@ describe("ProgressRepository", () => {
       "2026-07-28",
       "digital",
       0,
+      180,
       bonusQuestions,
     );
     const duplicate = await repository.startBonusSession(
@@ -1080,6 +1087,7 @@ describe("ProgressRepository", () => {
       "2026-07-28",
       "digital",
       0,
+      180,
       bonusQuestions,
     );
     const restored = await repository.load();
@@ -1110,6 +1118,7 @@ describe("ProgressRepository", () => {
       "2026-07-27",
       "digital",
       0,
+      180,
       bonusQuestions,
       new Date("2026-07-27T12:00:00.000Z"),
     );
@@ -1131,6 +1140,7 @@ describe("ProgressRepository", () => {
       "2026-07-28",
       "digital",
       0,
+      180,
       [],
     );
     const restored = await repository.load();
@@ -1163,6 +1173,7 @@ describe("ProgressRepository", () => {
         "2026-07-28",
         "digital",
         0,
+        180,
         bonusQuestions,
       ),
     ).rejects.toThrow("storage unavailable");
@@ -1182,6 +1193,7 @@ describe("ProgressRepository", () => {
       "2026-08-04",
       "digital",
       0,
+      180,
       bonusQuestions,
     );
     expect(started.applied).toBe(true);
@@ -1258,6 +1270,7 @@ describe("ProgressRepository", () => {
         "2026-08-04",
         "digital",
         0,
+        180,
         bonusQuestions,
       ),
       repository.startBonusSession(
@@ -1265,6 +1278,7 @@ describe("ProgressRepository", () => {
         "2026-08-04",
         "digital",
         0,
+        180,
         bonusQuestions,
       ),
     ]);

@@ -11,7 +11,7 @@ export function resolveBonusSetAvailability(
   progress: ProgressState,
   topic: BonusTopic,
   dateKey: string,
-  releasedSetCount: number = 180,
+  releasedSetCount: number,
 ): BonusSetAvailability {
   for (const [sessionKey, session] of Object.entries(progress.sessions)) {
     if (sessionKey.includes(":bonus:") && session.phase !== "completed") {

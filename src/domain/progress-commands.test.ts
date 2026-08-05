@@ -210,11 +210,7 @@ describe("bonus progress commands", () => {
     }));
 
     const match = progressCommands.findSeenQuestion(state, questions);
-    const skipped = progressCommands.skipBonusSetCommand(
-      state,
-      "language",
-      0,
-    );
+    const skipped = progressCommands.skipBonusSetCommand(state, "language", 0);
     const skippedAgain = progressCommands.skipBonusSetCommand(
       skipped,
       "language",
@@ -287,6 +283,7 @@ describe("bonus progress commands", () => {
         "2026-08-05",
         "digital",
         0,
+        180,
         bonusQuestions,
       );
 
@@ -329,25 +326,26 @@ describe("bonus progress commands", () => {
       },
       reason: "daily-limit",
     },
-  ])("keeps $name precedence over seen-question rejection", ({
-    prepare,
-    reason,
-  }) => {
-    const state = prepare();
-    state.seenQuestionIds = [bonusQuestions[0].id];
+  ])(
+    "keeps $name precedence over seen-question rejection",
+    ({ prepare, reason }) => {
+      const state = prepare();
+      state.seenQuestionIds = [bonusQuestions[0].id];
 
-    const result = progressCommands.startBonusSessionCommand(
-      state,
-      `precedence-${reason}`,
-      "2026-08-05",
-      "digital",
-      0,
-      bonusQuestions,
-    );
+      const result = progressCommands.startBonusSessionCommand(
+        state,
+        `precedence-${reason}`,
+        "2026-08-05",
+        "digital",
+        0,
+        180,
+        bonusQuestions,
+      );
 
-    expect(result).toMatchObject({ applied: false, reason });
-    expect(result.state).toBe(state);
-  });
+      expect(result).toMatchObject({ applied: false, reason });
+      expect(result.state).toBe(state);
+    },
+  );
 
   it("keeps the legacy bonus question order while recording the pilot shadow decision", () => {
     const result = progressCommands.startBonusSessionCommand(
@@ -356,6 +354,7 @@ describe("bonus progress commands", () => {
       "2026-07-28",
       "digital",
       0,
+      180,
       bonusQuestions,
     );
 
@@ -400,6 +399,7 @@ describe("bonus progress commands", () => {
       "2026-07-28",
       "safety",
       0,
+      180,
       safetyQuestions,
     );
 
@@ -413,16 +413,8 @@ describe("bonus progress commands", () => {
       questionIds: ["bonus-safety-1", "bonus-safety-2", "bonus-safety-3"],
     });
     expect(result.state.shadowAudits[0]).toMatchObject({
-      legacyQuestionIds: [
-        "bonus-safety-1",
-        "bonus-safety-2",
-        "bonus-safety-3",
-      ],
-      shadowQuestionIds: [
-        "bonus-safety-2",
-        "bonus-safety-1",
-        "bonus-safety-3",
-      ],
+      legacyQuestionIds: ["bonus-safety-1", "bonus-safety-2", "bonus-safety-3"],
+      shadowQuestionIds: ["bonus-safety-2", "bonus-safety-1", "bonus-safety-3"],
       reasonCode: "insufficient-history",
     });
   });
@@ -441,6 +433,7 @@ describe("bonus progress commands", () => {
       "2026-07-28",
       "nostalgia",
       0,
+      180,
       nostalgiaQuestions,
     );
 
@@ -503,6 +496,7 @@ describe("bonus progress commands", () => {
       "2026-07-28",
       "digital",
       0,
+      180,
       bonusQuestions,
     );
 
@@ -536,6 +530,7 @@ describe("bonus progress commands", () => {
       "2026-07-28",
       "digital",
       0,
+      180,
       bonusQuestions,
     );
 
@@ -568,6 +563,7 @@ describe("bonus progress commands", () => {
       "2026-07-28",
       "digital",
       0,
+      180,
       [],
     );
 
@@ -588,6 +584,7 @@ describe("bonus progress commands", () => {
       "2026-07-28",
       "digital",
       0,
+      180,
       bonusQuestions,
     );
 
@@ -603,6 +600,7 @@ describe("bonus progress commands", () => {
       "2026-07-28",
       "digital",
       0,
+      180,
       bonusQuestions,
     );
 
@@ -690,27 +688,26 @@ describe("bonus progress commands", () => {
       })),
       reason: "no-questions",
     },
-  ])("$name은 보너스 권리를 소비하기 전에 반환한다", ({
-    prepare,
-    setIndex,
-    questions,
-    reason,
-  }) => {
-    const state = prepare();
+  ])(
+    "$name은 보너스 권리를 소비하기 전에 반환한다",
+    ({ prepare, setIndex, questions, reason }) => {
+      const state = prepare();
 
-    const result = progressCommands.startBonusSessionCommand(
-      state,
-      `blocked-${reason}`,
-      "2026-08-04",
-      "digital",
-      setIndex,
-      questions,
-    );
+      const result = progressCommands.startBonusSessionCommand(
+        state,
+        `blocked-${reason}`,
+        "2026-08-04",
+        "digital",
+        setIndex,
+        180,
+        questions,
+      );
 
-    expect(result).toMatchObject({ applied: false, reason });
-    expect(result.state).toBe(state);
-    expect(result.state.bonus.firstFreeUsed).toBe(false);
-  });
+      expect(result).toMatchObject({ applied: false, reason });
+      expect(result.state).toBe(state);
+      expect(result.state.bonus.firstFreeUsed).toBe(false);
+    },
+  );
 
   it("진행 중인 보너스 세션은 새 이용권 소비를 막고 복원 키를 반환한다", () => {
     const initial = {
@@ -727,6 +724,7 @@ describe("bonus progress commands", () => {
       "2026-08-03",
       "digital",
       0,
+      180,
       bonusQuestions,
     );
     expect(started.applied).toBe(true);
@@ -738,6 +736,7 @@ describe("bonus progress commands", () => {
       "2026-08-04",
       "language",
       0,
+      180,
       bonusQuestions.map((question) => ({
         ...question,
         id: question.id.replace("digital", "language"),
@@ -800,31 +799,32 @@ describe("bonus progress commands", () => {
       ),
       reason: "no-questions",
     },
-  ])("legacy $name도 정책 확인 전에 이용권을 소비하지 않는다", ({
-    prepare,
-    questions,
-    reason,
-  }) => {
-    const state = prepare();
-    state.bonus = {
-      ...state.bonus,
-      firstFreeUsed: true,
-      ticketCount: 1,
-    };
+  ])(
+    "legacy $name도 정책 확인 전에 이용권을 소비하지 않는다",
+    ({ prepare, questions, reason }) => {
+      const state = prepare();
+      state.bonus = {
+        ...state.bonus,
+        firstFreeUsed: true,
+        ticketCount: 1,
+      };
 
-    const result = progressCommands.startBonusSessionCommand(
-      state,
-      `legacy-${reason}`,
-      "2026-08-04",
-      "digital",
-      questions,
-    );
+      const result = progressCommands.startBonusSessionCommand(
+        state,
+        `legacy-${reason}`,
+        "2026-08-04",
+        "digital",
+        0,
+        180,
+        questions,
+      );
 
-    expect(result).toMatchObject({ applied: false, reason });
-    expect(result.state).toBe(state);
-    expect(result.state.bonus.ticketCount).toBe(1);
-    expect(result.state.sessions).toEqual(state.sessions);
-  });
+      expect(result).toMatchObject({ applied: false, reason });
+      expect(result.state).toBe(state);
+      expect(result.state.bonus.ticketCount).toBe(1);
+      expect(result.state.sessions).toEqual(state.sessions);
+    },
+  );
 
   it("legacy 호출도 진행 중 세션을 덮어쓰거나 이용권을 소비하지 않는다", () => {
     const sessionKey = "2026-08-03:bonus:digital";
@@ -843,6 +843,8 @@ describe("bonus progress commands", () => {
       "legacy-active",
       "2026-08-04",
       "digital",
+      0,
+      180,
       bonusQuestions,
     );
 
@@ -865,6 +867,7 @@ describe("bonus progress commands", () => {
       "2026-08-04",
       "digital",
       0,
+      180,
       bonusQuestions,
     );
     expect(started.applied).toBe(true);
@@ -940,68 +943,62 @@ describe("bonus progress commands", () => {
     },
     {
       name: "duplicate",
-      answerIds: [
-        "bonus-digital-1",
-        "bonus-digital-1",
-        "bonus-digital-2",
-      ],
+      answerIds: ["bonus-digital-1", "bonus-digital-1", "bonus-digital-2"],
     },
     {
       name: "unrelated",
-      answerIds: [
-        "bonus-digital-1",
-        "bonus-digital-2",
-        "bonus-language-1",
-      ],
+      answerIds: ["bonus-digital-1", "bonus-digital-2", "bonus-language-1"],
     },
-  ])("$name answers인 완료 세션은 세트 완료를 기록하지 않는다", ({
-    answerIds,
-  }) => {
-    const started = progressCommands.startBonusSessionCommand(
-      createEmptyProgress(),
-      `malformed-complete-${answerIds.length}`,
-      "2026-08-04",
-      "digital",
-      0,
-      bonusQuestions,
-    );
-    expect(started.applied).toBe(true);
-    if (!started.applied) {
-      return;
-    }
-    const malformedState = {
-      ...started.state,
-      sessions: {
-        ...started.state.sessions,
-        [started.session.dateKey]: {
-          ...started.session,
-          phase: "completed" as const,
-          answers: answerIds.map((questionId) => ({
-            questionId,
-            selectedIndex: 0,
-            isCorrect: true,
-          })),
+  ])(
+    "$name answers인 완료 세션은 세트 완료를 기록하지 않는다",
+    ({ answerIds }) => {
+      const started = progressCommands.startBonusSessionCommand(
+        createEmptyProgress(),
+        `malformed-complete-${answerIds.length}`,
+        "2026-08-04",
+        "digital",
+        0,
+        180,
+        bonusQuestions,
+      );
+      expect(started.applied).toBe(true);
+      if (!started.applied) {
+        return;
+      }
+      const malformedState = {
+        ...started.state,
+        sessions: {
+          ...started.state.sessions,
+          [started.session.dateKey]: {
+            ...started.session,
+            phase: "completed" as const,
+            answers: answerIds.map((questionId) => ({
+              questionId,
+              selectedIndex: 0,
+              isCorrect: true,
+            })),
+          },
         },
-      },
-    };
+      };
 
-    const result = progressCommands.completeBonusSetCommand(
-      malformedState,
-      started.session.dateKey,
-      "digital",
-      0,
-      "2026-08-04",
-    );
+      const result = progressCommands.completeBonusSetCommand(
+        malformedState,
+        started.session.dateKey,
+        "digital",
+        0,
+        "2026-08-04",
+      );
 
-    expect(result).toMatchObject({
-      applied: false,
-      reason: "answer-mismatch",
-    });
-    expect(result.state).toBe(malformedState);
-    expect(result.state.completedBonusIds).toEqual([]);
-    expect(result.state.bonusTopicProgress.digital).toEqual({
-      completedSetIndexes: [],
-      skippedSetIndexes: [],
-    });
-  });
+      expect(result).toMatchObject({
+        applied: false,
+        reason: "answer-mismatch",
+      });
+      expect(result.state).toBe(malformedState);
+      expect(result.state.completedBonusIds).toEqual([]);
+      expect(result.state.bonusTopicProgress.digital).toEqual({
+        completedSetIndexes: [],
+        skippedSetIndexes: [],
+      });
+    },
+  );
 });

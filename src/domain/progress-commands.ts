@@ -87,8 +87,7 @@ function foldEvent(
 
   return {
     totalAnswers: checkpoint.totalAnswers + 1,
-    correctAnswers:
-      checkpoint.correctAnswers + (event.isCorrect ? 1 : 0),
+    correctAnswers: checkpoint.correctAnswers + (event.isCorrect ? 1 : 0),
     byQuestion: {
       ...checkpoint.byQuestion,
       [event.questionId]: {
@@ -264,23 +263,8 @@ export function startBonusSessionCommand(
   dateKey: string,
   topic: BonusTopic,
   setIndex: number,
+  releasedSetCount: number,
   bonusQuestions: BonusQuestion[],
-): StartBonusSessionResult;
-/** @deprecated The eager-content app path is removed by the catalog wiring task. */
-export function startBonusSessionCommand(
-  state: ProgressState,
-  commandId: string,
-  dateKey: string,
-  topic: BonusTopic,
-  bonusQuestions: BonusQuestion[],
-): StartBonusSessionResult;
-export function startBonusSessionCommand(
-  state: ProgressState,
-  commandId: string,
-  dateKey: string,
-  topic: BonusTopic,
-  setIndexOrQuestions: number | BonusQuestion[],
-  providedQuestions?: BonusQuestion[],
 ): StartBonusSessionResult {
   if (commandId.trim().length === 0) {
     throw new TypeError("commandId must not be empty");
@@ -300,8 +284,12 @@ export function startBonusSessionCommand(
     };
   }
 
-  const legacyQuestions = Array.isArray(setIndexOrQuestions);
-  const availability = resolveBonusSetAvailability(state, topic, dateKey);
+  const availability = resolveBonusSetAvailability(
+    state,
+    topic,
+    dateKey,
+    releasedSetCount,
+  );
   if (availability.kind !== "available") {
     return {
       applied: false,
@@ -313,26 +301,17 @@ export function startBonusSessionCommand(
     };
   }
 
-  const setIndex = legacyQuestions
-    ? availability.setIndex
-    : setIndexOrQuestions;
   if (availability.setIndex !== setIndex) {
     return { applied: false, reason: "set-mismatch", state };
   }
 
-  const candidateQuestions: BonusQuestion[] = legacyQuestions
-    ? setIndexOrQuestions.filter(
-        (question) =>
-          question.topic === topic && question.setIndex === setIndex,
-      )
-    : providedQuestions ?? [];
+  const candidateQuestions = bonusQuestions;
   if (candidateQuestions.length !== 3) {
     return { applied: false, reason: "no-questions", state };
   }
   if (
     candidateQuestions.some(
-      (question) =>
-        question.topic !== topic || question.setIndex !== setIndex,
+      (question) => question.topic !== topic || question.setIndex !== setIndex,
     )
   ) {
     return { applied: false, reason: "set-mismatch", state };
@@ -350,9 +329,7 @@ export function startBonusSessionCommand(
     return {
       applied: false,
       reason:
-        seenQuestion.kind === "question-id"
-          ? "seen-question"
-          : "seen-concept",
+        seenQuestion.kind === "question-id" ? "seen-question" : "seen-concept",
       state,
     };
   }
@@ -448,6 +425,11 @@ export function completeBonusSetCommand(
     return { applied: false, reason: "set-mismatch", state };
   }
 
+  const topicProgress = state.bonusTopicProgress[topic];
+  if (topicProgress.completedSetIndexes.includes(setIndex)) {
+    return { applied: false, reason: "duplicate", state };
+  }
+
   const session = state.sessions[sessionKey];
   if (session == null) {
     return { applied: false, reason: "missing-session", state };
@@ -470,11 +452,6 @@ export function completeBonusSetCommand(
     )
   ) {
     return { applied: false, reason: "answer-mismatch", state };
-  }
-
-  const topicProgress = state.bonusTopicProgress[topic];
-  if (topicProgress.completedSetIndexes.includes(setIndex)) {
-    return { applied: false, reason: "duplicate", state };
   }
 
   return {

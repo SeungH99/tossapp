@@ -185,6 +185,7 @@ export const progressStorageKeys = {
   slotB: "geuttae-yojeum:progress:v4:b",
 } as const;
 export const MAX_PROGRESS_ENVELOPE_BYTES = 512 * 1024;
+export const MAX_PROGRESS_DUAL_SLOT_BYTES = MAX_PROGRESS_ENVELOPE_BYTES * 2;
 
 type SlotName = "A" | "B";
 
@@ -749,17 +750,64 @@ function createEnvelope(
   revision: number,
   writtenAt: string,
 ): ProgressEnvelopeV4 {
+  const persistedProgress = compactProgressForPersistence(progress);
   const unsigned = {
     schemaVersion: 4 as const,
     revision,
     writtenAt,
-    payload: progress,
+    payload: persistedProgress,
   };
 
   return {
     ...unsigned,
     checksum: checksum(checksumInput(unsigned)),
   };
+}
+
+function compactProgressForPersistence(progress: ProgressState): ProgressState {
+  const completedCoreSessionKeys = Object.entries(progress.sessions)
+    .filter(
+      ([sessionKey, session]) =>
+        /^\d{4}-\d{2}-\d{2}$/.test(sessionKey) &&
+        session.dateKey === sessionKey &&
+        session.phase === "completed",
+    )
+    .map(([sessionKey]) => sessionKey)
+    .sort();
+  const latestCompletedCoreSessionKey = completedCoreSessionKeys.at(-1);
+
+  let changed = false;
+  const sessions = Object.fromEntries(
+    Object.entries(progress.sessions).map(([sessionKey, session]) => {
+      const latestStartCommandId =
+        progress.latestBonusStartCommandIds[sessionKey];
+      const bonusStart =
+        latestStartCommandId == null
+          ? undefined
+          : progress.bonusStartCommands[latestStartCommandId];
+      const isRecordedCompletedBonus =
+        bonusStart?.setIndex != null &&
+        progress.bonusTopicProgress[
+          bonusStart.topic
+        ].completedSetIndexes.includes(bonusStart.setIndex);
+      const isHistoricalCompletedCore =
+        /^\d{4}-\d{2}-\d{2}$/.test(sessionKey) &&
+        sessionKey !== latestCompletedCoreSessionKey;
+
+      if (
+        session.phase !== "completed" ||
+        (!isHistoricalCompletedCore && !isRecordedCompletedBonus) ||
+        session.answers.length === 0
+      ) {
+        return [sessionKey, session];
+      }
+
+      changed = true;
+      return [sessionKey, { ...session, answers: [] }];
+    }),
+  );
+
+  return changed ? { ...progress, sessions } : progress;
 }
 
 function serializeEnvelope(envelope: ProgressEnvelopeV4): string {
@@ -1171,23 +1219,8 @@ export class ProgressRepository {
     dateKey: string,
     topic: BonusTopic,
     setIndex: number,
+    releasedSetCount: number,
     bonusQuestions: BonusQuestion[],
-    observedAt?: Date,
-  ): Promise<StartBonusSessionResult>;
-  /** @deprecated The eager-content app path is removed by the catalog wiring task. */
-  startBonusSession(
-    commandId: string,
-    dateKey: string,
-    topic: BonusTopic,
-    bonusQuestions: BonusQuestion[],
-    observedAt?: Date,
-  ): Promise<StartBonusSessionResult>;
-  startBonusSession(
-    commandId: string,
-    dateKey: string,
-    topic: BonusTopic,
-    setIndexOrQuestions: number | BonusQuestion[],
-    questionsOrObservedAt?: BonusQuestion[] | Date,
     observedAt?: Date,
   ): Promise<StartBonusSessionResult> {
     return this.enqueue(async () => {
@@ -1196,42 +1229,16 @@ export class ProgressRepository {
         throw new ProgressWriteBlockedError();
       }
 
-      const legacyQuestions = Array.isArray(setIndexOrQuestions);
-      const explicitSetIndex = legacyQuestions
-        ? undefined
-        : setIndexOrQuestions;
-      const bonusQuestions: BonusQuestion[] = legacyQuestions
-        ? setIndexOrQuestions
-        : Array.isArray(questionsOrObservedAt)
-          ? questionsOrObservedAt
-          : [];
-      const effectiveObservedAt =
-        explicitSetIndex == null
-          ? questionsOrObservedAt instanceof Date
-            ? questionsOrObservedAt
-            : undefined
-          : observedAt;
-      const observed = observeProgressTime(
-        loaded.state,
-        effectiveObservedAt,
+      const observed = observeProgressTime(loaded.state, observedAt);
+      const result = startBonusSessionCommand(
+        observed.state,
+        commandId,
+        dateKey,
+        topic,
+        setIndex,
+        releasedSetCount,
+        bonusQuestions,
       );
-      const result =
-        explicitSetIndex == null
-          ? startBonusSessionCommand(
-              observed.state,
-              commandId,
-              dateKey,
-              topic,
-              bonusQuestions,
-            )
-          : startBonusSessionCommand(
-              observed.state,
-              commandId,
-              dateKey,
-              topic,
-              explicitSetIndex,
-              bonusQuestions,
-            );
       if (result.applied || observed.changed) {
         await this.saveImmediately(result.state);
       }
