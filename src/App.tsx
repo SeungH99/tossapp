@@ -78,6 +78,10 @@ interface QuizAppProps {
   analytics?: AnalyticsGateway;
 }
 
+export function isLongQuestion(prompt: string): boolean {
+  return Array.from(prompt.trim()).length >= 42;
+}
+
 const emptyCoreQuestions: CoreQuestion[] = [];
 const emptyBonusQuestions: BonusQuestion[] = [];
 
@@ -254,7 +258,11 @@ function QuizScreen({
       </div>
 
       <section className="question-section">
-        <h1>{question.prompt}</h1>
+        <h1
+          className={`question-title${isLongQuestion(question.prompt) ? " long" : ""}`}
+        >
+          {question.prompt}
+        </h1>
         <div className="answer-list">
           {question.choices.map((choice, index) => {
             const isSelected = answer?.selectedIndex === index;
@@ -276,10 +284,12 @@ function QuizScreen({
                 onClick={() => onAnswer(index)}
                 type="button"
               >
-                <span>{choice}</span>
+                <span className="answer-text">{choice}</span>
                 {isSelected ? (
                   <span className="answer-mark" aria-hidden="true">
-                    ✓
+                    <svg viewBox="0 0 24 24" focusable="false">
+                      <path d="m6.5 12.5 3.4 3.4 7.6-8" />
+                    </svg>
                   </span>
                 ) : null}
               </button>

@@ -161,6 +161,33 @@ function requiredButton(selector: string): HTMLButtonElement {
 }
 
 describe("QuizApp", () => {
+  it("marks a 42-character question as long and renders a fixed SVG answer mark", async () => {
+    const longQuestion = {
+      ...coreQuestions[0],
+      prompt: "123456789012345678901234567890123456789012",
+      choices: ["First option", "Correct option", "Third option"],
+      answerIndex: 1,
+    } satisfies CoreQuestion;
+    const user = userEvent.setup();
+
+    render(
+      <QuizApp
+        now={new Date("2026-07-28T03:00:00.000Z")}
+        coreQuestions={[longQuestion, coreQuestions[1], coreQuestions[2]]}
+        bonusQuestions={[]}
+      />,
+    );
+
+    await user.click(screen.getByRole("button", { name: "오늘의 3문제 시작" }));
+
+    const title = screen.getByRole("heading", { name: longQuestion.prompt });
+    expect(title).toHaveClass("question-title", "long");
+
+    await user.click(screen.getByRole("button", { name: longQuestion.choices[1] }));
+    const mark = document.querySelector(".answer-mark");
+    expect(mark?.querySelector("svg")).not.toBeNull();
+  });
+
   it("loads today's core set before opening the quiz", async () => {
     const user = userEvent.setup();
     let requestedDateKey: string | null = null;

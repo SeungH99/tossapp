@@ -170,11 +170,17 @@ a:focus-visible {
   margin-top: 58px;
 }
 
-.question-section h1 {
+.question-title {
   margin: 0;
-  font-size: clamp(27px, 7.4vw, 34px);
-  line-height: 1.45;
-  letter-spacing: -0.045em;
+  font-size: clamp(24px, 6.4vw, 28px);
+  line-height: 1.38;
+  letter-spacing: -0.025em;
+}
+
+.question-title.long {
+  font-size: clamp(21px, 5.7vw, 24px);
+  line-height: 1.42;
+  letter-spacing: -0.018em;
 }
 
 .answer-list {
@@ -184,16 +190,19 @@ a:focus-visible {
 }
 
 .answer-button {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 28px;
+  gap: 14px;
   min-height: 70px;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 24px;
-  border: 1px solid #d9dee5;
+  align-items: start;
+  padding: 18px 20px;
+  border: 2px solid #d9dee5;
   border-radius: 14px;
   color: #10233f;
   background: #fff;
-  font-size: 20px;
+  text-align: left;
+  font-size: 18px;
+  line-height: 1.45;
   font-weight: 700;
   cursor: pointer;
 }
@@ -212,12 +221,24 @@ a:focus-visible {
 
 .answer-mark {
   display: grid;
-  width: 34px;
-  height: 34px;
+  width: 28px;
+  min-width: 28px;
+  height: 28px;
+  min-height: 28px;
+  aspect-ratio: 1;
   place-items: center;
   border-radius: 50%;
-  color: #fff;
   background: #0064ff;
+}
+
+.answer-mark svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: #fff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.5;
 }
 
 .explanation-card {
