@@ -1,5 +1,10 @@
 import { validateQuestion } from "../domain/question";
-import type { ContentManifest, ContentPackDescriptor } from "../content/types";
+import type {
+  BonusTopicReleaseContract,
+  ContentManifest,
+  ContentPackDescriptor,
+  ContentReleaseContract,
+} from "../content/types";
 import type { BonusTopic } from "../domain/question";
 
 export type ContentPackValidationCode =
@@ -107,6 +112,15 @@ const DAY_MS = 24 * 60 * 60 * 1000;
 const RELEASE_DATE_KEYS = Array.from({ length: 180 }, (_, index) =>
   new Date(RELEASE_START_UTC + index * DAY_MS).toISOString().slice(0, 10),
 );
+const LEGACY_RELEASE_CONTRACT: ContentReleaseContract = {
+  core: { packCount: 6, questionCount: 540 },
+  bonusTopics: BONUS_TOPICS.map((topic) => ({
+    topic,
+    packCount: 6,
+    setCount: 180,
+    questionCount: 540,
+  })),
+};
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -922,13 +936,13 @@ function addCoreCoverageIssues(
 
 function addBonusCoverageIssues(
   files: readonly ContentLibraryPack[],
-  topics: readonly BonusTopic[],
+  contracts: readonly BonusTopicReleaseContract[],
   issues: ContentPackValidationIssue[],
 ): void {
   const questions = files
     .flatMap(({ pack }) => questionsFrom(pack))
     .filter((question) => question.kind === "bonus");
-  for (const topic of topics) {
+  for (const { topic, setCount } of contracts) {
     const bySet = new Map<number, QuestionCandidate[]>();
     for (const question of questions) {
       if (question.topic !== topic || !Number.isInteger(question.setIndex))
@@ -940,7 +954,7 @@ function addBonusCoverageIssues(
     }
     const missing: string[] = [];
     const invalid: string[] = [];
-    for (let setIndex = 0; setIndex < 180; setIndex += 1) {
+    for (let setIndex = 0; setIndex < setCount; setIndex += 1) {
       const group = bySet.get(setIndex) ?? [];
       if (group.length === 0) {
         missing.push(String(setIndex));
@@ -957,7 +971,7 @@ function addBonusCoverageIssues(
       }
     }
     const extra = [...bySet.keys()]
-      .filter((setIndex) => setIndex < 0 || setIndex > 179)
+      .filter((setIndex) => setIndex < 0 || setIndex >= setCount)
       .sort((left, right) => left - right)
       .map(String);
     if (missing.length > 0 || invalid.length > 0 || extra.length > 0) {
@@ -968,7 +982,7 @@ function addBonusCoverageIssues(
         `bonus:${topic}:coverage`,
         "Bonus coverage must contain exactly three unique questions per set index.",
         {
-          expected: "0..179 x3",
+          expected: `0..${setCount - 1} x3`,
           actual: summarizeCoverage(missing, invalid, extra),
         },
       );
@@ -980,6 +994,7 @@ function addSegmentCountIssues(
   manifest: ContentManifest,
   files: readonly ContentLibraryPack[],
   scope: ContentLibraryValidationScope,
+  contract: ContentReleaseContract,
   issues: ContentPackValidationIssue[],
 ): void {
   if (scope !== "full") return;
@@ -993,19 +1008,20 @@ function addSegmentCountIssues(
     addCountIssue(
       issues,
       "library:core:descriptors",
-      6,
+      contract.core.packCount,
       manifest.corePacks.length,
-      "Core release requires exactly six descriptors.",
+      "Core descriptor count must match the release contract.",
     );
     addCountIssue(
       issues,
       "library:core:questions",
-      540,
+      contract.core.questionCount,
       coreQuestions,
-      "Core release requires exactly 540 questions.",
+      "Core question count must match the release contract.",
     );
   }
-  for (const topic of BONUS_TOPICS) {
+  for (const topicContract of contract.bonusTopics) {
+    const { topic } = topicContract;
     const descriptors = manifest.bonusPacks.filter(
       (descriptor) => descriptor.topic === topic,
     );
@@ -1018,16 +1034,16 @@ function addSegmentCountIssues(
     addCountIssue(
       issues,
       `library:bonus:${topic}:descriptors`,
-      6,
+      topicContract.packCount,
       descriptors.length,
-      `Bonus topic ${topic} requires exactly six descriptors.`,
+      `Bonus topic ${topic} descriptor count must match the release contract.`,
     );
     addCountIssue(
       issues,
       `library:bonus:${topic}:questions`,
-      540,
+      topicContract.questionCount,
       questionCount,
-      `Bonus topic ${topic} requires exactly 540 questions.`,
+      `Bonus topic ${topic} question count must match the release contract.`,
     );
   }
 }
@@ -1057,8 +1073,26 @@ export function validateContentLibrary(
   let questionCount = 0;
   let setCount = 0;
 
-  const expectedDescriptorCount = scope === "full" ? 42 : 6;
-  const expectedQuestionCount = scope === "full" ? 3780 : 540;
+  const contract = manifest.releaseContract ?? LEGACY_RELEASE_CONTRACT;
+  const scopedBonusContract = scope.startsWith("bonus:")
+    ? contract.bonusTopics.find(
+        ({ topic }) => topic === scope.slice("bonus:".length),
+      )
+    : undefined;
+  const expectedDescriptorCount =
+    scope === "full"
+      ? contract.core.packCount +
+        contract.bonusTopics.reduce((sum, item) => sum + item.packCount, 0)
+      : scope === "core"
+        ? contract.core.packCount
+        : (scopedBonusContract?.packCount ?? 0);
+  const expectedQuestionCount =
+    scope === "full"
+      ? contract.core.questionCount +
+        contract.bonusTopics.reduce((sum, item) => sum + item.questionCount, 0)
+      : scope === "core"
+        ? contract.core.questionCount
+        : (scopedBonusContract?.questionCount ?? 0);
   const label = scopeLabel(scope);
   addCountIssue(
     issues,
@@ -1090,7 +1124,7 @@ export function validateContentLibrary(
       },
     );
   }
-  addSegmentCountIssues(manifest, selectedPacks, scope, issues);
+  addSegmentCountIssues(manifest, selectedPacks, scope, contract, issues);
   addDescriptorOverlapIssues(descriptors, issues);
 
   for (const descriptor of descriptors) {
@@ -1145,13 +1179,15 @@ export function validateContentLibrary(
       issues,
     );
   }
-  const topics =
+  const bonusContracts =
     scope === "full"
-      ? BONUS_TOPICS
+      ? contract.bonusTopics
       : scope.startsWith("bonus:")
-        ? [scope.slice("bonus:".length) as BonusTopic]
+        ? scopedBonusContract == null
+          ? []
+          : [scopedBonusContract]
         : [];
-  addBonusCoverageIssues(selectedPacks, topics, issues);
+  addBonusCoverageIssues(selectedPacks, bonusContracts, issues);
   addCrossPackQualityIssues(selectedPacks, issues);
   return { packCount: descriptors.length, questionCount, setCount, issues };
 }

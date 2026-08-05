@@ -2,6 +2,20 @@
   "releaseStart": "2026-07-28",
   "releaseEnd": "2027-01-23",
   "contentVersion": "2026.08.180d",
+  "releaseContract": {
+    "core": {
+      "packCount": 6,
+      "questionCount": 540
+    },
+    "bonusTopics": [
+      {
+        "topic": "nostalgia",
+        "packCount": 4,
+        "setCount": 120,
+        "questionCount": 360
+      }
+    ]
+  },
   "corePacks": [
     {
       "id": "core-001",

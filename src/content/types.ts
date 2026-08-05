@@ -48,10 +48,28 @@ export interface BonusContentPackDescriptor extends ContentPackDescriptorBase {
 export type ContentPackDescriptor =
   CoreContentPackDescriptor | BonusContentPackDescriptor;
 
+export interface CoreReleaseContract {
+  packCount: number;
+  questionCount: number;
+}
+
+export interface BonusTopicReleaseContract {
+  topic: BonusTopic;
+  packCount: number;
+  setCount: number;
+  questionCount: number;
+}
+
+export interface ContentReleaseContract {
+  core: CoreReleaseContract;
+  bonusTopics: BonusTopicReleaseContract[];
+}
+
 export interface ContentManifest {
   releaseStart: string;
   releaseEnd: string;
   contentVersion: ContentVersion;
+  releaseContract?: ContentReleaseContract;
   corePacks: CoreContentPackDescriptor[];
   bonusPacks: BonusContentPackDescriptor[];
 }

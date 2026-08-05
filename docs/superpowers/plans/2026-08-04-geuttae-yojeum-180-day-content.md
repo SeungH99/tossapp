@@ -8,6 +8,14 @@
 
 **Tech Stack:** React 18, TypeScript 5.7, Vite 6, Vitest, Testing Library, Playwright, Apps in Toss Web Framework 3.0.1, JSON content packs, Node.js validation scripts
 
+## 2026-08-05 MVP Scope Decision
+
+- 출시 콘텐츠는 기본 6팩·540문항과 추억 4팩·360문항, 총 10팩·900문항으로 동결한다.
+- 추억 pack-005~006과 Task 8~12의 추가 보너스 주제는 출시 후 콘텐츠 업데이트 백로그로 이동한다.
+- 아래 Task 13~16의 `42팩·3,780문항` 문구는 `manifest.releaseContract`가 선언한 10팩·900문항 출시 재고로 대체해 해석한다.
+- 앱은 매니페스트에 실제로 존재하는 보너스 주제만 노출하며, 이번 출시에서는 `nostalgia`만 제공한다.
+- 추가 팩을 배포할 때는 파일·descriptor·`releaseContract`를 같은 변경에서 늘리고 전체 검증을 다시 통과시킨다.
+
 ## Global Constraints
 
 - 기본 퀴즈는 2026-07-28부터 2027-01-23까지 정확히 180일, 540문제다.

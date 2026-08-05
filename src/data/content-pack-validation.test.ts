@@ -498,6 +498,36 @@ describe("validateContentLibrary", () => {
     });
   });
 
+  it("accepts the manifest-declared MVP release inventory", () => {
+    const core = buildCoreLibrary();
+    const nostalgia = buildBonusTopicLibrary("nostalgia");
+    const bonusDescriptors = nostalgia.descriptors.slice(0, 4);
+    const packs = [...core.packs, ...nostalgia.packs.slice(0, 4)];
+    const manifest = {
+      ...manifestWith(core.descriptors, bonusDescriptors),
+      releaseContract: {
+        core: { packCount: 6, questionCount: 540 },
+        bonusTopics: [
+          {
+            topic: "nostalgia",
+            packCount: 4,
+            setCount: 120,
+            questionCount: 360,
+          },
+        ],
+      },
+    } as unknown as ContentManifest;
+
+    const report = validateContentLibrary(manifest, packs);
+
+    expect(report).toMatchObject({
+      packCount: 10,
+      questionCount: 900,
+      setCount: 300,
+      issues: [],
+    });
+  });
+
   it("rejects a 41-pack partial default library deterministically", () => {
     const core = buildCoreLibrary();
     const bonus = BONUS_TOPICS.map((topic) => buildBonusTopicLibrary(topic));
