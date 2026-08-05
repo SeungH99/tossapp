@@ -323,6 +323,13 @@ a:focus-visible {
   background: #fff9e8;
 }
 
+.result-banner-ad {
+  width: calc(100% + 48px);
+  min-height: 96px;
+  flex: 0 0 96px;
+  margin: 24px -24px 0;
+}
+
 .bonus-heading h1 {
   margin: 0;
   font-size: 34px;
@@ -528,6 +535,11 @@ a:focus-visible {
   .topic-button {
     min-height: 104px;
     font-size: 17px;
+  }
+
+  .result-banner-ad {
+    width: calc(100% + 36px);
+    margin-inline: -18px;
   }
 }
 

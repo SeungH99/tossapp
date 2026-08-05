@@ -3,12 +3,20 @@ import { describe, expect, it } from "vitest";
 import type { BonusQuestion } from "./question";
 import { selectBonusQuestions } from "./bonus-selection";
 
+const contentMetadata = {
+  contentVersion: "test",
+  reviewStatus: "reviewed" as const,
+  reviewedAt: "2026-08-04",
+  setIndex: 0,
+};
+
 const bonusQuestions: BonusQuestion[] = [
   {
     kind: "bonus",
     conceptId: "digital-completed",
     variant: "base",
     internalDifficulty: "steady",
+    ...contentMetadata,
     id: "digital-completed",
     lens: "now",
     topic: "digital",
@@ -23,6 +31,7 @@ const bonusQuestions: BonusQuestion[] = [
     conceptId: "digital-1",
     variant: "base",
     internalDifficulty: "steady",
+    ...contentMetadata,
     id: "digital-1",
     lens: "now",
     topic: "digital",
@@ -37,6 +46,7 @@ const bonusQuestions: BonusQuestion[] = [
     conceptId: "digital-2",
     variant: "base",
     internalDifficulty: "steady",
+    ...contentMetadata,
     id: "digital-2",
     lens: "now",
     topic: "digital",
@@ -51,6 +61,7 @@ const bonusQuestions: BonusQuestion[] = [
     conceptId: "safety-1",
     variant: "base",
     internalDifficulty: "steady",
+    ...contentMetadata,
     id: "safety-1",
     lens: "life",
     topic: "safety",

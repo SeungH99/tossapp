@@ -1,7 +1,4 @@
-import type {
-  BonusEntitlement,
-  BonusUnlockSource,
-} from "./bonus-entitlement";
+import type { BonusEntitlement, BonusUnlockSource } from "./bonus-entitlement";
 import type {
   BonusTopic,
   CoreLens,
@@ -49,12 +46,13 @@ export interface BonusStartCommandRecord {
   commandId: string;
   dateKey: string;
   topic: BonusTopic;
+  setIndex?: number;
   sessionKey: string;
   questionIds: string[];
   source: BonusUnlockSource;
 }
 
-export interface ProgressState {
+export interface ProgressStateV2 {
   version: 2;
   sessions: Record<string, QuizSession>;
   bonus: BonusEntitlement;
@@ -67,4 +65,26 @@ export interface ProgressState {
   latestBonusStartCommandIds: Record<string, string>;
   timeObservation: TimeObservation;
   shadowAudits: ShadowAudit[];
+}
+
+export interface BonusTopicProgress {
+  completedSetIndexes: number[];
+  lastCompletedDateKey?: string;
+}
+
+export function deriveNextSetIndex(
+  completedSetIndexes: readonly number[],
+): number | undefined {
+  const completed = new Set(completedSetIndexes);
+  for (let setIndex = 0; setIndex < 180; setIndex += 1) {
+    if (!completed.has(setIndex)) {
+      return setIndex;
+    }
+  }
+  return undefined;
+}
+
+export interface ProgressState extends Omit<ProgressStateV2, "version"> {
+  version: 3;
+  bonusTopicProgress: Record<BonusTopic, BonusTopicProgress>;
 }

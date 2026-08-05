@@ -1,0 +1,137 @@
+{
+  "releaseStart": "2026-07-28",
+  "releaseEnd": "2027-01-23",
+  "contentVersion": "2026.08.180d",
+  "releaseContract": {
+    "core": {
+      "packCount": 6,
+      "questionCount": 540
+    },
+    "bonusTopics": [
+      {
+        "topic": "nostalgia",
+        "packCount": 4,
+        "setCount": 120,
+        "questionCount": 360
+      }
+    ]
+  },
+  "corePacks": [
+    {
+      "id": "core-001",
+      "path": "src/content/core/pack-001.json",
+      "sha256": "2da2c170e1a1b9cadf23443229e05e7210e6f129f0aef43b0631301b38485087",
+      "questionCount": 90,
+      "setCount": 30,
+      "reviewStatus": "reviewed",
+      "kind": "core",
+      "dateStart": "2026-07-28",
+      "dateEnd": "2026-08-26"
+    },
+    {
+      "id": "core-002",
+      "path": "src/content/core/pack-002.json",
+      "sha256": "8561e838c71bccf3ea3f0b979e44e863fce0f711759af0224d9bdba0c54706b4",
+      "questionCount": 90,
+      "setCount": 30,
+      "reviewStatus": "reviewed",
+      "kind": "core",
+      "dateStart": "2026-08-27",
+      "dateEnd": "2026-09-25"
+    },
+    {
+      "id": "core-003",
+      "path": "src/content/core/pack-003.json",
+      "sha256": "ba6d2d266e937b440626b14779e855d4a91b26396a6f6a50db4c5353346cc32f",
+      "questionCount": 90,
+      "setCount": 30,
+      "reviewStatus": "reviewed",
+      "kind": "core",
+      "dateStart": "2026-09-26",
+      "dateEnd": "2026-10-25"
+    },
+    {
+      "id": "core-004",
+      "path": "src/content/core/pack-004.json",
+      "sha256": "e59bb37d2dfd363d52762007e6f741cf19a50dab21bc3b6418b636effee6f95e",
+      "questionCount": 90,
+      "setCount": 30,
+      "reviewStatus": "reviewed",
+      "kind": "core",
+      "dateStart": "2026-10-26",
+      "dateEnd": "2026-11-24"
+    },
+    {
+      "id": "core-005",
+      "path": "src/content/core/pack-005.json",
+      "sha256": "941020f19bb9e9e7d81834e79700fc6703b8a6b0222ccf1a9d54bf0f1080c08e",
+      "questionCount": 90,
+      "setCount": 30,
+      "reviewStatus": "reviewed",
+      "kind": "core",
+      "dateStart": "2026-11-25",
+      "dateEnd": "2026-12-24"
+    },
+    {
+      "id": "core-006",
+      "path": "src/content/core/pack-006.json",
+      "sha256": "e5d6fa49c1e7a068a33485902231144f3877757e1ef9833fffa74d85babf0aae",
+      "questionCount": 90,
+      "setCount": 30,
+      "reviewStatus": "reviewed",
+      "kind": "core",
+      "dateStart": "2026-12-25",
+      "dateEnd": "2027-01-23"
+    }
+  ],
+  "bonusPacks": [
+    {
+      "id": "bonus-nostalgia-001",
+      "path": "src/content/bonus/nostalgia/pack-001.json",
+      "sha256": "a9e652d5444b4dfacb23b36b3b64fa804fa53c3d53028720b9211caa222c09fe",
+      "questionCount": 90,
+      "setCount": 30,
+      "reviewStatus": "reviewed",
+      "kind": "bonus",
+      "topic": "nostalgia",
+      "setStart": 0,
+      "setEnd": 29
+    },
+    {
+      "id": "bonus-nostalgia-002",
+      "path": "src/content/bonus/nostalgia/pack-002.json",
+      "sha256": "74203691d23e3d3d69fbdb9690d882d2216c293da7b53ffef9b314c1b1c01ca1",
+      "questionCount": 90,
+      "setCount": 30,
+      "reviewStatus": "reviewed",
+      "kind": "bonus",
+      "topic": "nostalgia",
+      "setStart": 30,
+      "setEnd": 59
+    },
+    {
+      "id": "bonus-nostalgia-003",
+      "path": "src/content/bonus/nostalgia/pack-003.json",
+      "sha256": "9a2dfe41d4a5ead399e8e4c7e7d7af321cf880099229b234021b335ab096621e",
+      "questionCount": 90,
+      "setCount": 30,
+      "reviewStatus": "reviewed",
+      "kind": "bonus",
+      "topic": "nostalgia",
+      "setStart": 60,
+      "setEnd": 89
+    },
+    {
+      "id": "bonus-nostalgia-004",
+      "path": "src/content/bonus/nostalgia/pack-004.json",
+      "sha256": "dfd2d1fbfbf301f586c4bbde2ac026122937cb5df3e5ff90e3b5cfdf1bcdc525",
+      "questionCount": 90,
+      "setCount": 30,
+      "reviewStatus": "reviewed",
+      "kind": "bonus",
+      "topic": "nostalgia",
+      "setStart": 90,
+      "setEnd": 119
+    }
+  ]
+}

@@ -6,6 +6,13 @@ import { selectShadowBonusQuestions } from "./personalization-engine";
 import type { AnswerEvent } from "./progress-state";
 import type { BonusQuestion } from "./question";
 
+const contentMetadata = {
+  contentVersion: "test",
+  reviewStatus: "reviewed" as const,
+  reviewedAt: "2026-08-04",
+  setIndex: 0,
+};
+
 function question(
   id: string,
   difficulty: BonusQuestion["internalDifficulty"],
@@ -17,6 +24,7 @@ function question(
     conceptId: id,
     variant: "base",
     internalDifficulty: difficulty,
+    ...contentMetadata,
     lens: "now",
     topic,
     prompt: id,
@@ -137,7 +145,9 @@ describe("selectShadowBonusQuestions", () => {
       answer("old-one", false),
       answer("old-two", false),
       answer("old-three", false),
-      ...Array.from({ length: 8 }, (_, index) => answer(`recent-${index}`, true)),
+      ...Array.from({ length: 8 }, (_, index) =>
+        answer(`recent-${index}`, true),
+      ),
     ]);
 
     expect(result.targetDifficulty).toBe("stretch");
@@ -155,7 +165,9 @@ describe("selectShadowBonusQuestions", () => {
     const serializedBefore = JSON.stringify(input);
 
     const first = selectShadowBonusQuestions(input);
-    const second = selectShadowBonusQuestions(JSON.parse(JSON.stringify(input)));
+    const second = selectShadowBonusQuestions(
+      JSON.parse(JSON.stringify(input)),
+    );
 
     expect(second).toEqual(first);
     expect(JSON.stringify(input)).toBe(serializedBefore);
@@ -212,7 +224,10 @@ describe("selectShadowBonusQuestions", () => {
       topic: "nostalgia",
       questions: [...catalog, question("nostalgia-1", "stretch", "nostalgia")],
       completedBonusIds: [],
-      answerEvents: [answer("one", true, "nostalgia"), answer("two", true, "nostalgia")],
+      answerEvents: [
+        answer("one", true, "nostalgia"),
+        answer("two", true, "nostalgia"),
+      ],
       timeConfidence: "normal",
       policy: PERSONALIZATION_POLICY_V1,
     });

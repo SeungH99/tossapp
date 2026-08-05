@@ -10,7 +10,18 @@ import {
 import { expandedBonusQuestions } from "./bonus-questions-expanded";
 import { augustCoreQuestions } from "./core-questions-august";
 
-const coreQuestionSeed: CoreQuestionInput[] = [
+type LegacyCoreQuestionInput = Omit<
+  CoreQuestionInput,
+  "contentVersion" | "reviewStatus" | "reviewedAt"
+>;
+
+const auditedLegacyReviewMetadata = {
+  contentVersion: "legacy",
+  reviewStatus: "reviewed" as const,
+  reviewedAt: "2026-08-04",
+};
+
+const coreQuestionSeed: LegacyCoreQuestionInput[] = [
   {
     id: "2026-07-28-then-public-phone",
     dateKey: "2026-07-28",
@@ -159,7 +170,8 @@ const coreQuestionSeed: CoreQuestionInput[] = [
     prompt: "수상한 문자 속 주소를 눌러 정보를 빼내는 사기는 무엇일까요?",
     choices: ["스미싱", "스트리밍", "블루투스"],
     answerIndex: 0,
-    explanation: "문자메시지의 악성 주소로 피해를 유도하는 수법을 스미싱이라고 해요.",
+    explanation:
+      "문자메시지의 악성 주소로 피해를 유도하는 수법을 스미싱이라고 해요.",
     source: {
       name: "경찰청",
       url: "https://www.police.go.kr/",
@@ -243,7 +255,8 @@ const coreQuestionSeed: CoreQuestionInput[] = [
     prompt: "앱이 '위치 권한'을 요청한다는 것은 무엇을 쓰겠다는 뜻일까요?",
     choices: ["현재 위치 정보", "통화 음량", "배터리 색상"],
     answerIndex: 0,
-    explanation: "위치 권한을 허용하면 앱이 기기의 현재 위치 정보를 쓸 수 있어요.",
+    explanation:
+      "위치 권한을 허용하면 앱이 기기의 현재 위치 정보를 쓸 수 있어요.",
     source: {
       name: "개인정보보호위원회",
       url: "https://www.pipc.go.kr/",
@@ -271,7 +284,8 @@ const coreQuestionSeed: CoreQuestionInput[] = [
     prompt: "우리나라를 상징하는 나라꽃은 무엇일까요?",
     choices: ["무궁화", "장미", "해바라기"],
     answerIndex: 0,
-    explanation: "무궁화는 오랫동안 우리 민족과 함께해 온 우리나라의 나라꽃이에요.",
+    explanation:
+      "무궁화는 오랫동안 우리 민족과 함께해 온 우리나라의 나라꽃이에요.",
     source: {
       name: "산림청",
       url: "https://www.forest.go.kr/",
@@ -299,7 +313,8 @@ const coreQuestionSeed: CoreQuestionInput[] = [
     prompt: "식품을 안전하게 먹을 수 있는 기한을 나타내는 표시는 무엇일까요?",
     choices: ["소비기한", "제조번호", "상품 바코드"],
     answerIndex: 0,
-    explanation: "소비기한은 표시된 보관 방법을 지켰을 때 안전하게 먹을 수 있는 기한이에요.",
+    explanation:
+      "소비기한은 표시된 보관 방법을 지켰을 때 안전하게 먹을 수 있는 기한이에요.",
     source: {
       name: "식품의약품안전처",
       url: "https://www.mfds.go.kr/",
@@ -330,7 +345,9 @@ function distributeAnswerPositions<TQuestion extends Question>(
 }
 
 export const coreQuestions = distributeAnswerPositions(
-  coreQuestionSeed.map(createCoreQuestion),
+  coreQuestionSeed.map((question) =>
+    createCoreQuestion({ ...question, ...auditedLegacyReviewMetadata }),
+  ),
 );
 
 interface LegacyBonusQuestionInput {
@@ -358,6 +375,7 @@ function bonus(input: LegacyBonusQuestionInput): BonusQuestion {
       name: input.sourceName,
       url: input.sourceUrl,
     },
+    ...auditedLegacyReviewMetadata,
   });
 }
 
@@ -433,7 +451,11 @@ const bonusQuestionSeed: BonusQuestion[] = [
     lens: "life",
     topic: "language",
     prompt: "'가는 말이 고와야' 다음에 이어지는 말은 무엇일까요?",
-    choices: ["오는 말이 곱다", "발 없는 말이 간다", "말 한마디로 천 냥 빚을 갚는다"],
+    choices: [
+      "오는 말이 곱다",
+      "발 없는 말이 간다",
+      "말 한마디로 천 냥 빚을 갚는다",
+    ],
     answerIndex: 0,
     explanation: "상대에게 좋게 말해야 상대도 좋게 답한다는 뜻이에요.",
     sourceName: "국립국어원",
@@ -468,7 +490,8 @@ const bonusQuestionSeed: BonusQuestion[] = [
     prompt: "와이파이 표시가 뜻하는 것은 무엇일까요?",
     choices: ["무선 인터넷 연결", "배터리 충전", "화면 밝기"],
     answerIndex: 0,
-    explanation: "와이파이는 가까운 공유기를 통해 무선 인터넷에 연결하는 기능이에요.",
+    explanation:
+      "와이파이는 가까운 공유기를 통해 무선 인터넷에 연결하는 기능이에요.",
     sourceName: "디지털배움터",
     sourceUrl: "https://www.xn--2z1bw8k1pjz5ccumkb.kr/",
   }),
@@ -479,7 +502,8 @@ const bonusQuestionSeed: BonusQuestion[] = [
     prompt: "문자 속 주소를 눌러 개인정보를 빼내는 사기는 무엇일까요?",
     choices: ["스미싱", "스트리밍", "로밍"],
     answerIndex: 0,
-    explanation: "스미싱은 문자메시지의 악성 주소로 개인정보나 금전을 노리는 사기예요.",
+    explanation:
+      "스미싱은 문자메시지의 악성 주소로 개인정보나 금전을 노리는 사기예요.",
     sourceName: "경찰청",
     sourceUrl: "https://www.police.go.kr/",
   }),
@@ -490,7 +514,8 @@ const bonusQuestionSeed: BonusQuestion[] = [
     prompt: "스마트폰 화면을 사진처럼 저장하는 기능은 무엇일까요?",
     choices: ["화면 캡처", "비행기 모드", "자동 회전"],
     answerIndex: 0,
-    explanation: "화면 캡처를 사용하면 현재 보이는 화면을 이미지로 저장할 수 있어요.",
+    explanation:
+      "화면 캡처를 사용하면 현재 보이는 화면을 이미지로 저장할 수 있어요.",
     sourceName: "디지털배움터",
     sourceUrl: "https://www.xn--2z1bw8k1pjz5ccumkb.kr/",
   }),
@@ -589,7 +614,8 @@ const bonusQuestionSeed: BonusQuestion[] = [
     prompt: "필름 카메라로 사진을 찍은 뒤 사진을 보려면 무엇이 필요했을까요?",
     choices: ["필름 현상", "화면 캡처", "와이파이 연결"],
     answerIndex: 0,
-    explanation: "필름 카메라는 촬영한 필름을 현상하고 인화해야 사진을 볼 수 있었어요.",
+    explanation:
+      "필름 카메라는 촬영한 필름을 현상하고 인화해야 사진을 볼 수 있었어요.",
     sourceName: "대한민국역사박물관",
     sourceUrl: "https://www.much.go.kr/",
   }),
@@ -622,7 +648,8 @@ const bonusQuestionSeed: BonusQuestion[] = [
     prompt: "김치를 많이 담가 겨울을 준비하는 풍습은 무엇일까요?",
     choices: ["김장", "모내기", "단오"],
     answerIndex: 0,
-    explanation: "김장은 겨울 동안 먹을 김치를 이웃과 함께 담그는 생활 풍습이에요.",
+    explanation:
+      "김장은 겨울 동안 먹을 김치를 이웃과 함께 담그는 생활 풍습이에요.",
     sourceName: "국립민속박물관",
     sourceUrl: "https://www.nfm.go.kr/",
   }),
@@ -688,7 +715,8 @@ const bonusQuestionSeed: BonusQuestion[] = [
     prompt: "중요한 사진을 휴대전화 밖에도 복사해 두는 일을 무엇이라고 할까요?",
     choices: ["백업", "삭제", "차단"],
     answerIndex: 0,
-    explanation: "백업은 기기를 잃거나 고장 나도 자료를 되찾을 수 있게 사본을 보관하는 일이에요.",
+    explanation:
+      "백업은 기기를 잃거나 고장 나도 자료를 되찾을 수 있게 사본을 보관하는 일이에요.",
     sourceName: "한국인터넷진흥원",
     sourceUrl: "https://www.kisa.or.kr/",
   }),
@@ -699,7 +727,8 @@ const bonusQuestionSeed: BonusQuestion[] = [
     prompt: "심장이 멈춘 사람에게 전기 충격을 줄 수 있는 기기는 무엇일까요?",
     choices: ["자동심장충격기", "체온계", "혈압계"],
     answerIndex: 0,
-    explanation: "자동심장충격기(AED)는 음성 안내에 따라 누구나 사용할 수 있어요.",
+    explanation:
+      "자동심장충격기(AED)는 음성 안내에 따라 누구나 사용할 수 있어요.",
     sourceName: "질병관리청",
     sourceUrl: "https://www.kdca.go.kr/",
   }),
@@ -710,7 +739,8 @@ const bonusQuestionSeed: BonusQuestion[] = [
     prompt: "불이 나서 연기가 찼을 때 이동하는 자세는 무엇일까요?",
     choices: ["몸을 낮추기", "두 팔을 높이 들기", "제자리에서 뛰기"],
     answerIndex: 0,
-    explanation: "연기는 위로 올라가므로 젖은 수건 등으로 코와 입을 가리고 몸을 낮춰 이동해요.",
+    explanation:
+      "연기는 위로 올라가므로 젖은 수건 등으로 코와 입을 가리고 몸을 낮춰 이동해요.",
     sourceName: "소방청",
     sourceUrl: "https://www.nfa.go.kr/",
   }),
@@ -721,7 +751,8 @@ const bonusQuestionSeed: BonusQuestion[] = [
     prompt: "건물에 불이 났을 때 피해야 하는 이동 수단은 무엇일까요?",
     choices: ["엘리베이터", "피난 계단", "비상구"],
     answerIndex: 0,
-    explanation: "화재 때는 엘리베이터가 멈출 수 있으므로 피난 계단을 이용해요.",
+    explanation:
+      "화재 때는 엘리베이터가 멈출 수 있으므로 피난 계단을 이용해요.",
     sourceName: "소방청",
     sourceUrl: "https://www.nfa.go.kr/",
   }),
@@ -754,13 +785,39 @@ const bonusQuestionSeed: BonusQuestion[] = [
     prompt: "낮과 밤이 생기는 가장 큰 까닭은 무엇일까요?",
     choices: ["지구의 자전", "달의 공전", "바람의 이동"],
     answerIndex: 0,
-    explanation: "지구가 스스로 돌면서 태양을 향한 쪽과 반대쪽에 낮과 밤이 생겨요.",
+    explanation:
+      "지구가 스스로 돌면서 태양을 향한 쪽과 반대쪽에 낮과 밤이 생겨요.",
     sourceName: "한국천문연구원",
     sourceUrl: "https://www.kasi.re.kr/",
   }),
   ...expandedBonusQuestions,
 ];
 
+const legacyDifficultyOrder = ["gentle", "steady", "stretch"] as const;
+
+function indexLegacyBonusSets(
+  questions: BonusQuestion[],
+): BonusQuestion[] {
+  const nextPosition: Record<BonusTopic, number> = {
+    nostalgia: 0,
+    "korean-life": 0,
+    language: 0,
+    digital: 0,
+    safety: 0,
+    "nature-general": 0,
+  };
+
+  return questions.map((question) => {
+    const position = nextPosition[question.topic];
+    nextPosition[question.topic] += 1;
+    return {
+      ...question,
+      setIndex: Math.floor(position / 3),
+      internalDifficulty: legacyDifficultyOrder[position % 3],
+    };
+  });
+}
+
 export const bonusQuestions = distributeAnswerPositions(
-  bonusQuestionSeed,
+  indexLegacyBonusSets(bonusQuestionSeed),
 );

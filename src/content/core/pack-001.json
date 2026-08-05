@@ -1,0 +1,2078 @@
+{
+  "id": "core-001",
+  "kind": "core",
+  "contentVersion": "2026.08.180d",
+  "reviewStatus": "reviewed",
+  "questions": [
+    {
+      "kind": "core",
+      "id": "2026-08-14-then-18-v1",
+      "dateKey": "2026-08-14",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "늦가을이면 이웃들이 많은 채소를 한꺼번에 손질하고 나누었습니다. 겨울 먹거리를 준비하던 이 공동체 풍습은 무엇을 가리킬까요?",
+      "choices": [
+        "메주를 띄워 봄에 장을 가르는 장 담그기",
+        "김치를 함께 담가 집집마다 나누는 김장",
+        "햇곡식으로 술과 떡을 빚는 추수 의례"
+      ],
+      "answerIndex": 1,
+      "explanation": "김장은 늦가을에 공동체가 많은 김치를 만들고 나누며 겨울 먹거리를 마련하는 풍습입니다. 집집마다 조리법을 전하고 이웃 간 협력도 다졌습니다.",
+      "source": {
+        "name": "유네스코 무형유산",
+        "url": "https://ich.unesco.org/en/RL/kimjang-making-and-sharing-kimchi-in-the-republic-of-korea-00881"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-19-now-23-v1",
+      "dateKey": "2026-08-19",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "공용 컴퓨터에서 시크릿 창을 모두 닫으면 방문 기록이 브라우저에 남지 않습니다. 그래도 방문 사실을 볼 수 있는 곳은 어디일까요?",
+      "choices": [
+        "시크릿 창을 닫은 뒤의 브라우저 방문 기록",
+        "같은 기기의 자동 완성 검색어 목록",
+        "접속한 웹사이트·학교나 회사의 네트워크·통신사"
+      ],
+      "answerIndex": 2,
+      "explanation": "시크릿 모드는 창을 모두 닫은 뒤 브라우저에 방문 기록과 사이트 데이터를 남기지 않는 데 초점이 있습니다. 웹사이트, 학교·회사 네트워크, 통신사까지 활동이 숨겨지는 것은 아닙니다.",
+      "source": {
+        "name": "Google Chrome 고객센터",
+        "url": "https://support.google.com/chrome/answer/95464?hl=en"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-19-life-23-v1",
+      "dateKey": "2026-08-19",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "실내에 있는데 지진으로 바닥이 흔들리고 물건이 떨어지기 시작했습니다. 튼튼한 탁자가 가까울 때 어떤 자세를 취해야 할까요?",
+      "choices": [
+        "낮게 엎드려 탁자 아래로 들어가 붙잡고 버티기",
+        "흔들리는 동안 계단으로 달려 건물 밖에 나가기",
+        "출입문 문틀에 서서 양손으로 벽을 밀기"
+      ],
+      "answerIndex": 0,
+      "explanation": "실내에서 흔들림을 느끼면 낮게 엎드리고 튼튼한 탁자 아래에서 머리와 목을 가린 채 탁자를 붙잡습니다. 밖으로 뛰어가면 깨진 유리나 외벽에서 떨어지는 물체에 노출될 수 있습니다.",
+      "source": {
+        "name": "미국 연방재난관리청(FEMA)",
+        "url": "https://www.ready.gov/earthquakes"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-11-then-15-v1",
+      "dateKey": "2026-08-11",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "모래판에서 두 사람이 허리와 허벅지에 맨 천 띠를 맞잡고 상대를 넘어뜨립니다. 어느 겨루기를 떠올리면 될까요?",
+      "choices": [
+        "샅바를 잡고 힘과 기술을 겨루는 씨름",
+        "긴 줄 위에서 재담과 곡예를 펼치는 줄타기",
+        "부드러운 발놀림으로 차고 거는 택견"
+      ],
+      "answerIndex": 0,
+      "explanation": "씨름에서는 두 선수가 허리와 다리에 두른 샅바를 잡고 여러 기술로 상대를 땅에 넘어뜨립니다. 힘만이 아니라 균형과 순간적인 기술이 중요합니다.",
+      "source": {
+        "name": "유네스코 무형유산",
+        "url": "https://ich.unesco.org/en/RL/traditional-korean-wrestling-ssirum-ssireum-01533"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-04-now-8-v1",
+      "dateKey": "2026-08-04",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "시크릿 창에서 문서를 내려받고 즐겨찾기도 추가했습니다. 창을 모두 닫은 뒤에도 남는 항목을 고르세요.",
+      "choices": [
+        "내려받은 파일과 직접 만든 북마크",
+        "그 창에서 열어 본 페이지의 방문 기록",
+        "해당 창에서 만들어진 로그인 쿠키와 사이트 데이터"
+      ],
+      "answerIndex": 0,
+      "explanation": "시크릿 탐색 중 내려받은 파일과 만든 북마크는 창을 닫아도 기기에 남습니다. 방문 기록이나 해당 세션의 사이트 데이터가 정리된다는 설명과 구분해야 합니다.",
+      "source": {
+        "name": "Google Chrome 고객센터",
+        "url": "https://support.google.com/chrome/answer/95464?hl=en"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-04-life-8-v1",
+      "dateKey": "2026-08-04",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "공원에서 지진을 느꼈는데 가까이에 건물 외벽과 가로등, 전선이 있습니다. 어느 쪽으로 움직여야 할까요?",
+      "choices": [
+        "유리창이 많은 건물 출입구 바로 아래",
+        "전봇대와 전선이 가까운 보도 위",
+        "건물·가로등·전선에서 떨어진 열린 장소"
+      ],
+      "answerIndex": 2,
+      "explanation": "야외에서는 건물, 가로등, 전선처럼 떨어지거나 넘어질 수 있는 것에서 벗어나 탁 트인 곳에 머뭅니다. 흔들림이 멎을 때까지 주변 낙하물을 살피는 것이 중요합니다.",
+      "source": {
+        "name": "미국 연방재난관리청(FEMA)",
+        "url": "https://www.ready.gov/earthquakes"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-25-then-29-v1",
+      "dateKey": "2026-08-25",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "마을 잔치에서 꽹과리와 장구 소리에 맞춰 행렬, 춤, 연희와 곡예가 한데 이어졌습니다. 이 장면에 해당하는 공연을 골라 보세요.",
+      "choices": [
+        "남녀 창자가 관현악 반주로 부르는 가곡",
+        "한 명의 소리꾼이 긴 이야기를 엮는 판소리",
+        "풍물 가락과 춤·연희가 어우러지는 농악"
+      ],
+      "answerIndex": 2,
+      "explanation": "농악은 타악 중심의 합주에 행렬, 춤, 연극적 놀이와 곡예를 결합합니다. 공동체의 일과 의례, 축제에서 흥을 모으는 역할을 해 왔습니다.",
+      "source": {
+        "name": "유네스코 무형유산",
+        "url": "https://ich.unesco.org/en/RL/nongak-community-band-music-dance-and-rituals-in-the-republic-of-korea-00717"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-09-now-13-v1",
+      "dateKey": "2026-08-09",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "쇼핑몰을 다시 열었더니 로그인 상태와 장바구니 내용이 기억돼 있었습니다. 웹사이트가 어떤 저장 정보를 사용한 걸까요?",
+      "choices": [
+        "브라우저가 저장해 둔 자동 완성 주소",
+        "사이트가 브라우저에 저장하는 쿠키",
+        "웹사이트 접속을 숨겨 주는 시크릿 모드"
+      ],
+      "answerIndex": 1,
+      "explanation": "쿠키는 웹사이트가 브라우저에 만드는 작은 데이터로 로그인 상태나 환경설정을 기억하는 데 쓰입니다. 이용자가 같은 사이트를 다시 찾았을 때 이전 상태를 이어 주기도 합니다.",
+      "source": {
+        "name": "Google Chrome 고객센터",
+        "url": "https://support.google.com/chrome/answer/95647?hl=en"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-12-life-16-v1",
+      "dateKey": "2026-08-12",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "해안에서 강한 지진 뒤 바닷물이 갑자기 멀리 빠져나가는 모습이 보입니다. 가장 먼저 향할 곳은 어디일까요?",
+      "choices": [
+        "파도의 높이를 볼 수 있는 방파제 끝",
+        "해변에서 벗어난 내륙의 높은 지대",
+        "빠진 바닷물에 드러난 해저 가까이"
+      ],
+      "answerIndex": 1,
+      "explanation": "해안의 물이 눈에 띄게 물러나는 현상은 지진해일의 자연 경고일 수 있습니다. 파도를 보러 가지 말고 즉시 바다에서 멀어져 내륙이나 높은 곳으로 이동합니다.",
+      "source": {
+        "name": "미국 연방재난관리청(FEMA)",
+        "url": "https://www.ready.gov/kids/disaster-facts/tsunamis"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-07-31-then-4-v1",
+      "dateKey": "2026-07-31",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "가면을 쓴 연희자들이 음악과 대사, 익살을 섞어 양반의 허세나 사회의 모순을 꼬집습니다. 어떤 공연을 설명한 걸까요?",
+      "choices": [
+        "등불을 들고 부처의 탄생을 기리는 연등회",
+        "웃음과 풍자로 세태를 비추는 탈춤",
+        "궁중에서 다섯 방위를 나타내는 처용무"
+      ],
+      "answerIndex": 1,
+      "explanation": "탈춤은 가면무용에 음악과 연극, 대화를 결합해 사회적 위계와 문제를 유머러스하게 다룹니다. 관객도 추임새와 반응으로 공연에 참여할 수 있습니다.",
+      "source": {
+        "name": "유네스코 무형유산",
+        "url": "https://ich.unesco.org/en/RL/talchum-mask-dance-drama-in-the-republic-of-korea-01742"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-24-now-28-v1",
+      "dateKey": "2026-08-24",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "브라우저에서 모든 쿠키와 사이트 데이터를 지웠습니다. 바로 뒤에 나타날 가능성이 가장 큰 변화는 어느 것인가요?",
+      "choices": [
+        "내려받은 파일과 북마크까지 함께 없어짐",
+        "브라우저 방문 기록만 남고 로그인은 그대로 유지됨",
+        "일부 사이트에서 로그아웃되고 설정이 사라짐"
+      ],
+      "answerIndex": 2,
+      "explanation": "쿠키를 지우면 사이트가 기억하던 로그인 정보와 환경설정도 함께 없어질 수 있습니다. 그래서 다시 로그인하거나 언어·표시 설정을 새로 선택해야 할 때가 있습니다.",
+      "source": {
+        "name": "Google Chrome 고객센터",
+        "url": "https://support.google.com/chrome/answer/95647?hl=en"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-23-life-27-v1",
+      "dateKey": "2026-08-23",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "집으로 가는 도로가 흙탕물에 잠겼고 차단봉이 세워져 있습니다. 자동차 운전자는 어떻게 움직여야 할까요?",
+      "choices": [
+        "앞차 바퀴 자국을 따라 천천히 물길을 건너기",
+        "차단봉을 넘지 말고 물 없는 길로 되돌아가기",
+        "차가 무거우니 낮은 기어로 물속을 통과하기"
+      ],
+      "answerIndex": 1,
+      "explanation": "침수 도로에서는 물의 깊이와 흐름, 파손된 노면을 알기 어렵습니다. 차단봉을 넘지 말고 돌아서 물이 없는 안전한 우회로를 찾습니다.",
+      "source": {
+        "name": "미국 연방재난관리청(FEMA)",
+        "url": "https://www.ready.gov/floods"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-03-then-7-v1",
+      "dateKey": "2026-08-03",
+      "lens": "then",
+      "topic": "language",
+      "internalDifficulty": "gentle",
+      "prompt": "같은 후렴을 공유하면서도 앞뒤 사설은 고장과 부르는 사람에 따라 달라지고 새로 지어지기도 했습니다. 어떤 민요의 특징일까요?",
+      "choices": [
+        "여럿이 메기고 받으며 농사일에 맞추는 농요",
+        "배를 저으며 일정한 후렴을 주고받는 뱃노래",
+        "지역마다 가사와 선율이 변주되는 아리랑"
+      ],
+      "answerIndex": 2,
+      "explanation": "아리랑은 널리 알려진 후렴을 중심에 두되 두 줄씩 이어지는 사설을 지역과 상황에 맞게 바꾸어 불렀습니다. 그래서 공동의 노래이면서도 다양한 판본을 품습니다.",
+      "source": {
+        "name": "유네스코 무형유산",
+        "url": "https://ich.unesco.org/en/RL/arirang-lyrical-folk-song-in-the-republic-of-korea-00445"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-22-now-26-v1",
+      "dateKey": "2026-08-22",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "여러 사이트에 같은 짧은 암호를 돌려 쓰는 습관을 바꾸려 합니다. 비밀번호 관리자를 어떤 방식으로 활용하면 좋을까요?",
+      "choices": [
+        "모든 사이트에 하나의 긴 암호를 만들어 함께 쓰기",
+        "사이트마다 길고 서로 다른 암호를 생성해 저장하기",
+        "사이트 이름에 같은 숫자를 붙여 비슷한 암호를 쓰기"
+      ],
+      "answerIndex": 1,
+      "explanation": "비밀번호 관리자는 안전하고 서로 다른 암호를 만들어 계정별로 보관하고 자동 입력할 수 있습니다. 한 암호가 노출돼도 다른 계정까지 잇달아 침해될 위험을 줄여 줍니다.",
+      "source": {
+        "name": "Google 계정 고객센터",
+        "url": "https://support.google.com/accounts/answer/6208650?hl=en"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-08-life-12-v1",
+      "dateKey": "2026-08-08",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "홍수 경보 중 빠르게 흐르는 물 위의 다리를 건너려 합니다. 어떤 선택이 더 안전할까요?",
+      "choices": [
+        "다리를 피하고 안내에 따라 더 높은 곳으로 이동",
+        "난간을 잡고 다리 한가운데에서 수위를 관찰",
+        "물살이 약해 보이면 차량 한 대씩 건너기"
+      ],
+      "answerIndex": 0,
+      "explanation": "빠른 물살은 예고 없이 다리를 휩쓸 수 있으므로 그 위나 주변을 피해야 합니다. 대피 안내를 듣고 상황에 따라 높은 지대나 건물의 높은 층으로 이동합니다.",
+      "source": {
+        "name": "미국 연방재난관리청(FEMA)",
+        "url": "https://www.ready.gov/floods"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-02-then-6-v1",
+      "dateKey": "2026-08-02",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "한 사람은 북으로 장단을 짚고, 다른 한 사람은 노래·말·몸짓을 오가며 긴 이야기를 들려줍니다. 어떤 예술을 설명한 것인가요?",
+      "choices": [
+        "소리꾼과 고수가 이야기를 엮는 판소리",
+        "여러 광대가 여섯 종목을 돌며 보이는 남사당놀이",
+        "합창과 관현악으로 왕실 조상을 기리는 종묘 의례"
+      ],
+      "answerIndex": 0,
+      "explanation": "판소리는 소리꾼 한 명과 북을 치는 고수 한 명이 펼치는 음악적 이야기입니다. 창, 아니리, 몸짓을 넘나들며 인물과 장면을 표현합니다.",
+      "source": {
+        "name": "유네스코 무형유산",
+        "url": "https://ich.unesco.org/en/RL/pansori-epic-chant-00070"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-07-now-11-v1",
+      "dateKey": "2026-08-07",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "저장해 둔 암호 하나가 유출된 목록에서 발견됐다는 경고가 떴습니다. 우선 조치로 알맞은 것은?",
+      "choices": [
+        "해당 서비스의 암호를 새롭고 고유하게 변경하기",
+        "오탐인지 보려고 같은 암호로 다시 로그인하기",
+        "암호는 둔 채 해당 계정에서 모든 기기만 로그아웃하기"
+      ],
+      "answerIndex": 0,
+      "explanation": "Google 비밀번호 관리자는 저장된 암호가 노출됐을 가능성을 점검해 알릴 수 있습니다. 경고받은 계정부터 중복되지 않는 새 암호로 바꾸는 것이 핵심입니다.",
+      "source": {
+        "name": "Google 계정 고객센터",
+        "url": "https://support.google.com/accounts/answer/6208650?hl=en"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-05-life-9-v1",
+      "dateKey": "2026-08-05",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "산책 중 천둥이 들리고 번개가 보이는데 가까이에 정자와 지붕이 있는 자동차가 있습니다. 대피 장소로 더 알맞은 곳은 어디일까요?",
+      "choices": [
+        "사방이 열린 나무 정자 한가운데",
+        "주변에서 가장 높이 솟은 나무 아래",
+        "문을 닫을 수 있는 금속 지붕 자동차 안"
+      ],
+      "answerIndex": 2,
+      "explanation": "천둥이 들리면 튼튼한 건물이나 금속 지붕과 차체가 있는 밀폐된 자동차 안으로 들어갑니다. 개방형 정자나 외딴 큰 나무는 번개를 피할 안전한 공간이 아닙니다.",
+      "source": {
+        "name": "미국 연방재난관리청(FEMA)",
+        "url": "https://www.ready.gov/thunderstorms-lightning"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-23-then-27-v1",
+      "dateKey": "2026-08-23",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "조선 왕과 왕비의 신위를 모신 공간에서 노래, 기악, 춤을 함께 올려 왕실 조상을 기렸습니다. 어떤 의례를 설명한 것일까요?",
+      "choices": [
+        "서원에서 유학자의 학문과 덕행을 기리는 향사",
+        "산사에서 법화경 설법을 재현하는 불교 의식",
+        "종묘에서 거행하는 왕실 조상 제례와 제례악"
+      ],
+      "answerIndex": 2,
+      "explanation": "종묘 제례는 조선 왕실의 선왕과 왕비를 위한 유교 의식이며, 노래·기악·춤이 함께합니다. 왕실의 계보와 예법을 드러내는 행사였습니다.",
+      "source": {
+        "name": "유네스코 무형유산",
+        "url": "https://ich.unesco.org/en/RL/royal-ancestral-ritual-in-the-jongmyo-shrine-and-its-music-00016"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-20-now-24-v1",
+      "dateKey": "2026-08-20",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "누군가 내 암호를 알아내 로그인하려 했지만, 내 휴대전화에 온 확인 요청을 통과하지 못했습니다. 어떤 보호 기능이 작동한 걸까요?",
+      "choices": [
+        "암호 외 확인을 한 번 더 거치는 2단계 인증",
+        "같은 암호를 두 번 연속 입력하는 이중 확인",
+        "암호 힌트와 보안 질문만 차례로 입력하는 방식"
+      ],
+      "answerIndex": 0,
+      "explanation": "2단계 인증은 암호를 입력한 뒤 휴대전화 알림이나 코드 같은 추가 확인을 요구합니다. 암호 하나가 노출돼도 다른 사람이 바로 계정에 들어가기 어렵습니다.",
+      "source": {
+        "name": "Google 계정 고객센터",
+        "url": "https://support.google.com/accounts/answer/10956730?hl=en"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-20-life-24-v1",
+      "dateKey": "2026-08-20",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "집 안으로 대피했지만 천둥번개가 계속됩니다. 낙뢰가 가까울 때 미뤄야 할 일은 어느 것일까요?",
+      "choices": [
+        "기상 경보와 지자체 안내를 확인하는 일",
+        "창문에서 떨어진 실내에 머무르는 일",
+        "물을 쓰거나 콘센트에 연결된 기기를 사용하는 일"
+      ],
+      "answerIndex": 2,
+      "explanation": "번개의 전류는 배관이나 전선으로 전달될 수 있습니다. 폭풍이 지나는 동안 흐르는 물과 콘센트에 연결된 전자기기 사용을 피하고 실내 안전한 곳에 머뭅니다.",
+      "source": {
+        "name": "미국 연방재난관리청(FEMA)",
+        "url": "https://www.ready.gov/thunderstorms-lightning"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-07-30-then-3-v1",
+      "dateKey": "2026-07-30",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "충남 한산에서는 모시풀을 거두어 삶고 표백한 뒤 가는 실을 만들고 베를 짰습니다. 완성된 옷감이 특히 알맞은 계절은 언제일까요?",
+      "choices": [
+        "두꺼운 보온층이 필요한 한겨울",
+        "가볍고 통풍이 필요한 무더운 여름",
+        "비바람을 막는 방수포가 필요한 장마철"
+      ],
+      "answerIndex": 1,
+      "explanation": "한산모시는 모시풀을 수확하고 삶아 표백한 다음 실을 잇고 베를 짜는 오랜 공정을 거칩니다. 섬세하고 가벼워 더운 여름에 편안한 직물로 쓰였습니다.",
+      "source": {
+        "name": "유네스코 무형유산",
+        "url": "https://ich.unesco.org/en/RL/weaving-of-mosi-fine-ramie-in-the-hansan-region-00453"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-11-now-15-v1",
+      "dateKey": "2026-08-11",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "계정 로그인에 다중 인증을 추가하려 합니다. 서로 다른 두 요소를 조합한 예는 어느 것일까요?",
+      "choices": [
+        "같은 암호를 첫 화면과 다음 화면에 두 번 입력",
+        "어머니 이름과 출신 학교처럼 지식 질문만 두 개 입력",
+        "기억한 암호와 소지한 보안 키를 함께 사용"
+      ],
+      "answerIndex": 2,
+      "explanation": "다중 인증은 아는 것, 가진 것, 생체 정보처럼 서로 다른 종류의 확인 수단을 둘 이상 사용합니다. 보안 키는 피싱에 강한 수단으로 권장되며 암호 반복 입력과는 다릅니다.",
+      "source": {
+        "name": "미국 사이버보안·인프라보안국(CISA)",
+        "url": "https://www.cisa.gov/audiences/small-and-medium-businesses/secure-your-business/require-multifactor-authentication"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-07-29-life-2-v1",
+      "dateKey": "2026-07-29",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "폭염이 이어지는데 집의 선풍기만으로 더위를 견디기 어렵습니다. 우선해야 할 대응을 고르세요.",
+      "choices": [
+        "선풍기를 강하게 틀고 더운 실내에 계속 머물기",
+        "냉방되는 공공장소로 가고 물을 충분히 마시기",
+        "갈증이 날 때만 조금씩 마시며 평소 활동 이어가기"
+      ],
+      "answerIndex": 1,
+      "explanation": "극심한 더위에는 선풍기에만 의지하지 말고 냉방 가능한 장소를 찾습니다. 물을 자주 마시고 가볍고 밝은 옷을 입으며 한낮 활동을 줄이는 것도 도움이 됩니다.",
+      "source": {
+        "name": "미국 연방재난관리청(FEMA)",
+        "url": "https://www.ready.gov/heat"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-20-then-24-v1",
+      "dateKey": "2026-08-20",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "한가위 무렵 보름달 아래에서 여성들이 손을 맞잡고 둥근 대열을 이루며 선창을 따라 노래하고 춤췄습니다. 이 놀이의 이름을 골라 보세요.",
+      "choices": [
+        "원을 그리며 노래하는 강강술래",
+        "마을 줄을 당겨 풍년을 비는 줄다리기",
+        "상모를 돌리며 악기를 연주하는 농악"
+      ],
+      "answerIndex": 0,
+      "explanation": "강강술래는 여성들이 손을 잡고 원을 이루어 노래와 춤을 이어 가는 놀이입니다. 특히 음력 팔월 보름 무렵 공동체가 함께 즐겼습니다.",
+      "source": {
+        "name": "유네스코 무형유산",
+        "url": "https://ich.unesco.org/en/RL/ganggangsullae-00188"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-02-now-6-v1",
+      "dateKey": "2026-08-02",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "패스키로 로그인할 때 긴 문자열을 외워 입력하는 대신 휴대전화에서 어떤 확인을 거치나요?",
+      "choices": [
+        "계정 암호와 문자로 받은 인증 코드를 함께 입력하기",
+        "기기 잠금용 지문·얼굴·PIN으로 승인하기",
+        "서비스에 등록해 둔 보안 질문의 답을 입력하기"
+      ],
+      "answerIndex": 1,
+      "explanation": "패스키의 비밀 키는 사용자의 기기에 보관되고, 지문·얼굴 인식이나 기기 PIN으로 사용을 승인합니다. 서비스에 긴 비밀번호를 직접 전송하는 방식이 아닙니다.",
+      "source": {
+        "name": "FIDO Alliance",
+        "url": "https://fidoalliance.org/passkeys/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-13-life-17-v1",
+      "dateKey": "2026-08-13",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "따뜻한 날 잠깐 물건을 사는 동안 동행한 사람과 반려동물을 차 안에 기다리게 하려 합니다. 어떤 판단이 안전할까요?",
+      "choices": [
+        "짧은 시간이라도 닫힌 차 안에 남겨 두지 않기",
+        "그늘에 주차하고 창문을 조금 열어 10분만 기다리게 하기",
+        "물병을 두고 그늘진 차 안에서 20분만 기다리게 하기"
+      ],
+      "answerIndex": 0,
+      "explanation": "따뜻한 날의 닫힌 차량 내부는 빠르게 위험하게 뜨거워질 수 있습니다. 사람이나 반려동물을 차 안에 남겨 두지 말고 함께 내리는 선택이 안전합니다.",
+      "source": {
+        "name": "미국 연방재난관리청(FEMA)",
+        "url": "https://www.ready.gov/heat"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-15-then-19-v1",
+      "dateKey": "2026-08-15",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "떠돌이 광대패가 풍물, 가면극, 줄타기, 인형극, 곡예, 버나돌리기를 차례로 펼쳤습니다. 어느 놀이판의 구성일까요?",
+      "choices": [
+        "여섯 마당으로 구성된 남사당놀이",
+        "다섯 색 옷으로 방위를 나타내는 처용무",
+        "부처의 설법을 의식으로 재현하는 영산재"
+      ],
+      "answerIndex": 0,
+      "explanation": "남사당놀이는 전문 유랑 예인들이 선보인 종합 민속공연입니다. 풍물놀이부터 버나돌리기까지 여섯 종목이 음악과 재담 속에서 이어집니다.",
+      "source": {
+        "name": "유네스코 무형유산",
+        "url": "https://ich.unesco.org/en/RL/namsadang-nori-00184"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-17-now-21-v1",
+      "dateKey": "2026-08-17",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "진짜 은행과 아주 비슷한 가짜 주소가 로그인 정보를 노립니다. 패스키가 이런 속임수에 강한 이유를 고르세요.",
+      "choices": [
+        "사용자가 기억한 비밀번호를 어느 주소에서나 반복 입력함",
+        "등록한 서비스 도메인에 묶여 다른 사이트에서 쓸 수 없음",
+        "문자로 받은 일회용 코드를 사이트 주소와 상관없이 입력함"
+      ],
+      "answerIndex": 1,
+      "explanation": "패스키는 서비스별 공개키 암호 방식으로 동작하고 등록한 사이트와 연결됩니다. 가짜 도메인에서는 진짜 서비스용 인증이 동작하지 않아 피싱에 강합니다.",
+      "source": {
+        "name": "FIDO Alliance",
+        "url": "https://fidoalliance.org/passkeys/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-14-life-18-v1",
+      "dateKey": "2026-08-14",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "산불 위험 지역에서 대피 명령이 내려졌고 연기가 아직 멀리 보입니다. 무엇을 기준으로 움직여야 할까요?",
+      "choices": [
+        "연기가 아직 멀므로 자가용에 짐을 더 싣고 대기",
+        "연기가 가까워지길 기다리지 말고 지정 경로로 즉시 출발",
+        "익숙한 한 경로만 확인한 뒤 출발 시점을 늦추기"
+      ],
+      "answerIndex": 1,
+      "explanation": "산불 때는 당국이 대피하라고 하면 곧바로 떠나야 합니다. 평소 여러 대피 경로와 대피 장소를 알아 두면 한 방향이 막혔을 때 더 안전하게 움직일 수 있습니다.",
+      "source": {
+        "name": "미국 연방재난관리청(FEMA)",
+        "url": "https://www.ready.gov/sites/default/files/2024-08/ready-gov_wildfire_info-sheet.pdf"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-07-then-11-v1",
+      "dateKey": "2026-08-07",
+      "lens": "then",
+      "topic": "language",
+      "internalDifficulty": "gentle",
+      "prompt": "남녀가 시조 형식의 시를 번갈아 노래하고, 거문고·대금 같은 소규모 관현악 편성이 이를 받쳐 줍니다. 이에 해당하는 성악 장르는?",
+      "choices": [
+        "북 하나로 극적인 이야기를 풀어내는 판소리",
+        "타악기와 행렬이 마을을 도는 농악",
+        "관현악 반주에 맞춰 이어 부르는 가곡"
+      ],
+      "answerIndex": 2,
+      "explanation": "한국의 가곡은 남성과 여성 창자가 관현악 반주에 맞춰 서정적인 노래를 연속된 곡으로 부르는 전통 성악입니다. 절제된 발성과 긴 호흡이 특징입니다.",
+      "source": {
+        "name": "유네스코 무형유산",
+        "url": "https://ich.unesco.org/en/RL/gagok-lyric-song-cycles-accompanied-by-an-orchestra-00444"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-15-now-19-v1",
+      "dateKey": "2026-08-15",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "휴대전화가 보안 업데이트를 설치하라고 알렸지만 계속 미뤘습니다. 제때 적용해야 하는 이유로 알맞은 것은?",
+      "choices": [
+        "알려진 소프트웨어 취약점을 고친 보호 기능을 받기 위해",
+        "새 기능이 필요할 때만 원하는 업데이트를 골라 받기 위해",
+        "보안 앱만 최신이면 운영체제 업데이트를 계속 미뤄도 되기 때문에"
+      ],
+      "answerIndex": 0,
+      "explanation": "소프트웨어의 결함은 계정이나 파일을 노리는 통로가 될 수 있습니다. 제작사가 제공한 업데이트를 설치하면 알려진 취약점의 수정 사항을 적용할 수 있습니다.",
+      "source": {
+        "name": "미국 사이버보안·인프라보안국(CISA)",
+        "url": "https://www.cisa.gov/news-events/news/understanding-patches-and-software-updates"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-11-life-15-v1",
+      "dateKey": "2026-08-11",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "정전이 시작된 뒤 냉장고 안 음식의 온도를 가능한 오래 낮게 유지하려 합니다. 어떤 행동이 냉기를 지키는 데 도움이 될까요?",
+      "choices": [
+        "한 시간마다 문을 열어 온도계와 식품 상태 확인하기",
+        "냉기가 고르게 퍼지도록 선반의 식품 위치를 자주 바꾸기",
+        "냉장고와 냉동고 문을 꼭 닫아 두기"
+      ],
+      "answerIndex": 2,
+      "explanation": "정전 중에는 냉장고와 냉동고를 닫아 냉기가 빠져나가지 않게 합니다. 문을 열지 않으면 냉장고는 약 4시간, 가득 찬 냉동고는 약 48시간 낮은 온도를 유지할 수 있습니다.",
+      "source": {
+        "name": "미국 연방재난관리청(FEMA)",
+        "url": "https://www.ready.gov/sites/default/files/2024-03/ready.gov_power-outage_hazard-info-sheet.pdf"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-04-then-8-v1",
+      "dateKey": "2026-08-04",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "품밟기라는 리듬 있는 발놀림을 바탕으로 부드럽게 돌며 차거나 걸어 상대의 균형을 무너뜨립니다. 어떤 무예일까요?",
+      "choices": [
+        "샅바를 맞잡고 모래판에서 겨루는 씨름",
+        "춤처럼 유연한 동작을 이어 가는 택견",
+        "호구를 쓰고 죽도로 타격하는 검도"
+      ],
+      "answerIndex": 1,
+      "explanation": "택견은 흐르는 듯한 원형 동작과 리듬 있는 발놀림으로 상대를 차거나 걸어 넘어뜨리는 무예입니다. 강한 충돌보다는 유연한 움직임과 균형 감각을 살립니다.",
+      "source": {
+        "name": "유네스코 무형유산",
+        "url": "https://ich.unesco.org/en/RL/taekkyeon-a-traditional-korean-martial-art-00452"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-25-now-29-v1",
+      "dateKey": "2026-08-25",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "‘결제가 중지됐다’는 갑작스러운 메일이 링크를 누르라고 재촉합니다. 어떻게 확인하는 편이 안전할까요?",
+      "choices": [
+        "발신 주소와 로고가 익숙한지만 확인한 뒤 링크 사용",
+        "링크에 표시된 주소가 그럴듯하면 그곳에서 로그인",
+        "메일을 닫고 평소 쓰던 공식 앱이나 주소로 직접 접속"
+      ],
+      "answerIndex": 2,
+      "explanation": "뜻밖의 메일이 급박함을 내세우며 링크나 첨부파일을 요구하면 피싱을 의심해야 합니다. 메시지 속 연락처가 아니라 알고 있던 공식 앱·웹주소·전화번호로 사실을 확인합니다.",
+      "source": {
+        "name": "미국 연방거래위원회(FTC)",
+        "url": "https://consumer.ftc.gov/articles/how-recognize-avoid-phishing-scams"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-26-life-30-v1",
+      "dateKey": "2026-08-26",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "전기가 곧 복구될 것이라는 안내를 받았습니다. 과전압으로 인한 전자제품 손상을 줄이려면 어떤 준비를 해 둘까요?",
+      "choices": [
+        "필요하지 않은 가전과 전자기기의 플러그 빼기",
+        "복구 여부를 보려고 주요 가전의 전원을 켜 둔 채 기다리기",
+        "전자제품을 대기 모드로 두고 플러그는 콘센트에 연결한 채 기다리기"
+      ],
+      "answerIndex": 0,
+      "explanation": "정전 뒤 전력이 돌아올 때 생길 수 있는 과전압은 기기를 손상시킬 수 있습니다. 쓰지 않는 전자제품은 미리 분리하고 적절한 서지 보호 장치를 활용합니다.",
+      "source": {
+        "name": "미국 연방재난관리청(FEMA)",
+        "url": "https://www.ready.gov/sites/default/files/2024-03/ready.gov_power-outage_hazard-info-sheet.pdf"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-05-then-9-v1",
+      "dateKey": "2026-08-05",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "줄 위의 곡예만 보는 공연이 아닙니다. 어릿광대와 줄꾼이 악사들의 반주 사이로 익살스러운 말을 주고받습니다. 어떤 전통 공연을 말하나요?",
+      "choices": [
+        "관객이 둥글게 손잡고 노래하는 강강술래",
+        "재담과 음악이 곡예에 곁들여지는 줄타기",
+        "가면 쓴 배우들이 세태를 풍자하는 탈춤"
+      ],
+      "answerIndex": 1,
+      "explanation": "한국의 줄타기는 줄 위 기술에 음악과 재담을 함께 엮습니다. 줄꾼과 땅 위 어릿광대의 익살스러운 대화가 관객의 호응을 끌어냅니다.",
+      "source": {
+        "name": "유네스코 무형유산",
+        "url": "https://ich.unesco.org/en/RL/jultagi-tightrope-walking-00448"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-10-now-14-v1",
+      "dateKey": "2026-08-10",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "알고 있는 기관 명의로 온 뜻밖의 첨부파일이 ‘오늘 안에 열라’고 합니다. 어느 단서가 특히 수상한가요?",
+      "choices": [
+        "내가 먼저 요청한 파일이 예상한 시간에 도착함",
+        "예상하지 못한 파일과 행동을 재촉하는 문구",
+        "평소 거래 내역과 맞는 일반 안내가 공식 앱에도 보임"
+      ],
+      "answerIndex": 1,
+      "explanation": "피싱 메시지는 예상하지 못한 링크·첨부파일과 급한 행동 요구를 자주 이용합니다. 이름이나 로고만 믿지 말고 별도의 공식 경로로 발신 사실을 확인해야 합니다.",
+      "source": {
+        "name": "미국 연방거래위원회(FTC)",
+        "url": "https://consumer.ftc.gov/articles/how-recognize-avoid-phishing-scams"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-10-life-14-v1",
+      "dateKey": "2026-08-10",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "집에 불이 나 대피하던 중 닫힌 방문이 뜨겁게 느껴지고 문틈으로 연기가 들어옵니다. 어떻게 빠져나가야 할까요?",
+      "choices": [
+        "문을 열지 않고 미리 정한 두 번째 출구 이용",
+        "손잡이가 식을 때까지 문 앞에서 기다린 뒤 그 문으로 나가기",
+        "옷소매로 손잡이를 감싸고 문을 조금 열어 연기 확인하기"
+      ],
+      "answerIndex": 0,
+      "explanation": "문이나 손잡이가 뜨겁거나 틈으로 연기가 보이면 반대편에 불이 있을 수 있습니다. 그 문은 닫아 둔 채 계획해 둔 다른 탈출 경로를 사용합니다.",
+      "source": {
+        "name": "미국 연방재난관리청(FEMA)",
+        "url": "https://www.ready.gov/home-fire-escape-plan"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-06-then-10-v1",
+      "dateKey": "2026-08-06",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "제주 바다에서 산소통 없이 숨을 참은 채 물질하고, 경험 많은 상군이 다른 이들의 작업을 이끌었습니다. 누구를 가리킬까요?",
+      "choices": [
+        "해산물을 채취하며 지식을 잇는 제주 해녀",
+        "그물을 손질해 먼바다 조업을 맡는 선원",
+        "갯벌 둑과 염전을 관리하는 소금 장인"
+      ],
+      "answerIndex": 0,
+      "explanation": "제주 해녀는 별도의 산소 장비 없이 잠수해 해산물을 채취합니다. 숙련도에 따라 역할을 나누고, 상군 해녀가 물질 기술과 바다 지식을 전해 왔습니다.",
+      "source": {
+        "name": "유네스코 무형유산",
+        "url": "https://ich.unesco.org/en/RL/culture-of-jeju-haenyeo-women-divers-01068"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-21-now-25-v1",
+      "dateKey": "2026-08-21",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "모르는 번호가 배송 문제라며 문자 속 주소를 누르라고 합니다. 어떻게 대응해야 할까요?",
+      "choices": [
+        "문자에 적힌 배송 번호를 링크 화면에 입력해 조회",
+        "주소 철자가 업체 이름과 비슷하면 링크를 열어 확인",
+        "링크를 누르지 말고 차단·신고한 뒤 공식 경로로 확인"
+      ],
+      "answerIndex": 2,
+      "explanation": "스팸 문자의 링크는 개인정보 탈취나 악성 프로그램으로 이어질 수 있습니다. 링크와 답장을 피하고 메시지를 신고·차단한 뒤, 필요하면 업체의 알려진 연락처로 문의합니다.",
+      "source": {
+        "name": "미국 연방거래위원회(FTC)",
+        "url": "https://consumer.ftc.gov/articles/how-recognize-and-report-spam-text-messages"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-25-life-29-v1",
+      "dateKey": "2026-08-25",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "화재 연기가 천장 쪽에 차고 아래로 내려오고 있습니다. 출구까지의 이동과 탈출 뒤 행동이 모두 올바른 조합을 고르세요.",
+      "choices": [
+        "연기가 옅어 보이는 높이로 걸어 나간 뒤 현관 근처에서 대기하기",
+        "몸을 낮춰 기어 나가고 다시 건물 안으로 들어가지 않기",
+        "몸은 낮추되 필요한 물건을 챙기려고 방으로 한 번 되돌아가기"
+      ],
+      "answerIndex": 1,
+      "explanation": "연기 아래의 비교적 맑은 공기를 이용하도록 몸을 낮추고 출구로 기어갑니다. 안전한 곳으로 나온 뒤에는 물건이나 반려동물을 찾으러 불타는 건물에 다시 들어가지 않습니다.",
+      "source": {
+        "name": "미국 연방재난관리청(FEMA)",
+        "url": "https://www.ready.gov/home-fire-escape-plan"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-13-then-17-v1",
+      "dateKey": "2026-08-13",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "사월 초파일 무렵 사람들이 손수 만든 등을 들고 행렬에 나섭니다. 여기서 등불의 상징과 맞는 답은 어느 것인가요?",
+      "choices": [
+        "한 해의 액운을 태워 없애는 정화의 불",
+        "조상의 혼이 돌아오는 길을 비추는 제례의 불",
+        "어둠을 밝히는 지혜와 깨달음"
+      ],
+      "answerIndex": 2,
+      "explanation": "연등회는 부처의 탄생을 기리는 때에 등불을 밝히고 행렬과 공동체 행사를 여는 전통입니다. 불빛은 세상의 어둠을 걷어 내는 지혜와 깨달음을 나타냅니다.",
+      "source": {
+        "name": "유네스코 무형유산",
+        "url": "https://ich.unesco.org/en/RL/yeondeunghoe-lantern-lighting-festival-in-the-republic-of-korea-00882"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-14-now-18-v1",
+      "dateKey": "2026-08-14",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "주차요금 안내판의 QR 스티커가 덧붙여진 듯 보여 휴대전화로 읽었습니다. 결제 전에 어느 부분을 먼저 살펴야 할까요?",
+      "choices": [
+        "열릴 주소의 철자와 공식 도메인이 맞는지 확인",
+        "QR 무늬 안의 로고가 선명한지만 확인",
+        "결제 화면 색상이 안내판과 같은지만 비교"
+      ],
+      "answerIndex": 0,
+      "explanation": "사기범은 진짜 안내물 위에 악성 QR 코드를 붙일 수 있습니다. 연결 전후에 주소의 철자와 도메인을 살피고, 급한 결제나 개인정보 입력을 요구하면 멈춥니다.",
+      "source": {
+        "name": "미국 연방거래위원회(FTC)",
+        "url": "https://consumer.ftc.gov/consumer-alerts/2023/12/scammers-hide-harmful-links-qr-codes-steal-your-information"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-07-31-life-4-v1",
+      "dateKey": "2026-07-31",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "지하층과 위층이 있고 침실도 여러 개인 집입니다. 연기경보기는 어디마다 설치해야 할까요?",
+      "choices": [
+        "잠자는 공간 밖 복도와 거실에만 설치",
+        "각 침실 안에만 두고 지하층과 다른 층은 제외",
+        "각 침실 안과 잠자는 공간 밖, 집의 모든 층에 설치"
+      ],
+      "answerIndex": 2,
+      "explanation": "연기경보기는 각 침실 안, 각 수면 공간의 바깥, 지하층을 포함한 모든 층에 둡니다. 서로 연동하면 한 대가 울릴 때 집 전체 경보가 함께 울립니다.",
+      "source": {
+        "name": "미국 소방청(USFA)",
+        "url": "https://www.usfa.fema.gov/prevention/home-fires/prepare-for-fire/smoke-alarms/index.html"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-21-then-25-v1",
+      "dateKey": "2026-08-21",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "논농사 지역에서 마을 사람들이 굵은 줄을 맞잡았습니다. 승부보다 풍년과 공동체의 안녕을 빌었던 어떤 행사를 가리킬까요?",
+      "choices": [
+        "협동하며 복을 기원하는 줄다리기 의례",
+        "힘센 개인을 가리는 씨름 대회",
+        "활쏘기 순위를 정하는 무과 시험"
+      ],
+      "answerIndex": 0,
+      "explanation": "전통 줄다리기는 벼농사 공동체가 풍작과 번영을 기원하며 힘을 모으는 의례이자 놀이였습니다. 승패보다 공동체의 참여와 협력이 중심에 놓입니다.",
+      "source": {
+        "name": "유네스코 무형유산",
+        "url": "https://ich.unesco.org/en/RL/tugging-rituals-and-games-01080"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-08-now-12-v1",
+      "dateKey": "2026-08-08",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "휴대전화 화면에 은행 대표번호가 떴지만 상대가 보안카드 번호를 요구합니다. 표시만으로 발신자를 확인할 수 없는 이유는?",
+      "choices": [
+        "저장된 연락처 이름이 뜨면 발신자가 확인된 것이어서",
+        "은행 업무 시간에 온 전화는 조작할 수 없어서",
+        "발신번호 표시는 사기범이 다른 번호처럼 꾸밀 수 있어서"
+      ],
+      "answerIndex": 2,
+      "explanation": "발신번호 정보는 조작될 수 있어 화면에 공식 번호가 보인다는 사실만으로 상대를 확인할 수 없습니다. 통화를 끊고 카드나 공식 웹사이트에 적힌 번호로 직접 다시 연락합니다.",
+      "source": {
+        "name": "미국 연방거래위원회(FTC)",
+        "url": "https://consumer.ftc.gov/consumer-alerts/2016/05/scammers-can-fake-caller-id-info"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-15-life-19-v1",
+      "dateKey": "2026-08-15",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "오래된 연기경보기가 겉보기에는 멀쩡합니다. 일반적으로 어떤 점검과 교체가 필요할까요?",
+      "choices": [
+        "배터리 경고음이 들릴 때만 시험하고 경보기 본체는 계속 사용",
+        "해마다 시험하고 10년이 지나도 배터리만 새것으로 교체",
+        "매달 시험하고 제조 후 10년이면 경보기 전체 교체"
+      ],
+      "answerIndex": 2,
+      "explanation": "연기경보기는 시험 버튼으로 매달 작동을 확인하고 보통 제조일로부터 10년이 지나면 전체를 바꿉니다. 요리 연기 때문에 울려도 배터리를 제거해 무력화하면 안 됩니다.",
+      "source": {
+        "name": "미국 소방청(USFA)",
+        "url": "https://www.usfa.fema.gov/prevention/home-fires/prepare-for-fire/smoke-alarms/index.html"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-08-then-12-v1",
+      "dateKey": "2026-08-08",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "대관령 산신에게 제사를 올리고 굿, 관노가면극, 민요와 큰 난장을 함께 벌였습니다. 강원도의 어느 축제일까요?",
+      "choices": [
+        "등불 행렬이 중심인 서울 연등회",
+        "여러 신앙과 놀이가 만나는 강릉단오제",
+        "얼음 위 낚시를 즐기는 산천어 축제"
+      ],
+      "answerIndex": 1,
+      "explanation": "강릉단오제에는 대관령 관련 제의와 무속 의례, 관노가면극, 민요, 시장이 함께 펼쳐집니다. 유교·무속·불교 전통이 한 축제 안에서 공존합니다.",
+      "source": {
+        "name": "유네스코 무형유산",
+        "url": "https://ich.unesco.org/en/RL/gangneung-danoje-festival-00114"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-07-31-now-4-v1",
+      "dateKey": "2026-07-31",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "카페 와이파이에서 주소창에 자물쇠 표시가 있는 사이트를 열었습니다. 이 표시로 확실히 알 수 있는 범위는 어디까지일까요?",
+      "choices": [
+        "브라우저와 해당 사이트 사이 전송 내용이 암호화됨",
+        "사이트 운영자가 정직하고 판매 상품도 진품임",
+        "공용 와이파이 이름이 가게에서 만든 것이 확실함"
+      ],
+      "answerIndex": 0,
+      "explanation": "HTTPS 자물쇠는 기기와 웹사이트 사이 통신이 암호화됐음을 뜻합니다. 사기 사이트도 암호화를 사용할 수 있으므로 주소와 운영 주체의 신뢰성은 따로 확인해야 합니다.",
+      "source": {
+        "name": "미국 연방거래위원회(FTC)",
+        "url": "https://consumer.ftc.gov/articles/are-public-wi-fi-networks-safe-what-you-need-know"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-01-life-5-v1",
+      "dateKey": "2026-08-01",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "프라이팬의 기름에 작은 불이 붙었고 크기가 맞는 뚜껑이 바로 옆에 있습니다. 안전한 진압 순서를 골라 보세요.",
+      "choices": [
+        "뚜껑을 밀어 덮고 화구를 끈 뒤 식을 때까지 그대로 두기",
+        "팬을 싱크대로 옮겨 찬물을 부어 식히기",
+        "화구만 끄고 불붙은 팬을 뚜껑 없이 그대로 두기"
+      ],
+      "answerIndex": 0,
+      "explanation": "작은 팬 기름불은 뚜껑이나 넓은 금속판을 옆에서 밀어 덮고 화구를 끕니다. 팬을 옮기거나 뚜껑을 일찍 열지 말고 충분히 식을 때까지 둡니다.",
+      "source": {
+        "name": "미국 소방청(USFA)",
+        "url": "https://www.usfa.fema.gov/gallery/pictographs/pictograph34.html"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-07-28-then-1-v1",
+      "dateKey": "2026-07-28",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "전통 목조건축의 우두머리 장인은 설계부터 공사까지 총괄하고, 나무 부재를 정교하게 맞물려 건물을 세웠습니다. 이 장인을 무엇이라 할까요?",
+      "choices": [
+        "기와를 구워 지붕 무늬를 완성하는 제와장",
+        "돌을 다듬어 성벽을 쌓는 석장",
+        "못 없이 짜 맞추는 일을 이끄는 대목장"
+      ],
+      "answerIndex": 2,
+      "explanation": "대목장은 전통 목조건축의 계획, 설계, 시공을 책임지는 숙련 장인입니다. 목재의 성질을 읽고 부재를 서로 맞물리는 결구법을 활용합니다.",
+      "source": {
+        "name": "유네스코 무형유산",
+        "url": "https://ich.unesco.org/en/RL/daemokjang-traditional-wooden-architecture-00461"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-16-now-20-v1",
+      "dateKey": "2026-08-16",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "기존 안드로이드 휴대전화를 잃어 새 기기로 바꿨습니다. 미리 계정 백업을 해 두었다면 무엇을 복원할 수 있을까요?",
+      "choices": [
+        "백업에 포함되지 않은 사진까지 자동으로 찾아 복원",
+        "지원되는 데이터와 설정을 새 기기에 복원",
+        "제조사가 다른 앱의 계정 암호까지 모두 되살림"
+      ],
+      "answerIndex": 1,
+      "explanation": "Android 백업은 지원되는 앱 데이터와 기기 설정 등을 Google 계정에 보관해 원래 기기나 다른 기기로 복원하도록 돕습니다. 앱마다 백업되는 항목에는 차이가 있을 수 있습니다.",
+      "source": {
+        "name": "Android 고객센터",
+        "url": "https://support.google.com/android/answer/2819582?hl=en"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-03-life-7-v1",
+      "dateKey": "2026-08-03",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "센 불로 팬 요리를 하다가 택배를 받으러 주방을 비우게 됐습니다. 화재 예방을 위해 무엇부터 해야 할까요?",
+      "choices": [
+        "불을 약하게 줄이고 타이머를 맞춘 뒤 현관에 다녀오기",
+        "자리를 떠나기 전에 화구를 끄기",
+        "팬에 뚜껑을 덮고 불은 켠 채 잠깐 자리를 비우기"
+      ],
+      "answerIndex": 1,
+      "explanation": "팬을 쓰는 조리는 가까이에서 계속 지켜봐야 합니다. 주방을 떠날 때는 화구를 끄고, 손잡이는 부딪히거나 잡아당기지 않도록 안쪽으로 돌려 둡니다.",
+      "source": {
+        "name": "미국 소방청(USFA)",
+        "url": "https://www.usfa.fema.gov/prevention/home-fires/prevent-fires/cooking/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-01-then-5-v1",
+      "dateKey": "2026-08-01",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "흰색·파란색·검은색·빨간색·노란색 옷을 입은 다섯 무용수가 사방과 가운데를 나타냈습니다. 어떤 궁중무용일까요?",
+      "choices": [
+        "부채를 펼쳐 꽃과 파도를 만드는 부채춤",
+        "칼을 든 무용수가 대형을 바꾸는 검무",
+        "오방색으로 평온을 기원한 처용무"
+      ],
+      "answerIndex": 2,
+      "explanation": "처용무의 다섯 무용수는 오방색 옷으로 동서남북과 중앙을 상징합니다. 궁중에서 나쁜 기운을 물리치고 평안을 기원하는 춤으로 전승됐습니다.",
+      "source": {
+        "name": "유네스코 무형유산",
+        "url": "https://ich.unesco.org/en/RL/cheoyongmu-00189"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-01-now-5-v1",
+      "dateKey": "2026-08-01",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "안드로이드의 일부 백업 데이터는 휴대전화 화면 잠금으로도 보호됩니다. 어떤 정보가 화면 잠금의 예에 해당할까요?",
+      "choices": [
+        "기기에서 쓰는 PIN·패턴·비밀번호",
+        "Google 계정의 이메일 주소만 입력",
+        "휴대전화 모델명과 제품 일련번호를 조합"
+      ],
+      "answerIndex": 0,
+      "explanation": "Android는 일부 백업 데이터를 기기의 화면 잠금 PIN, 패턴 또는 비밀번호를 이용해 추가로 암호화합니다. 복원 과정에서 해당 잠금 정보를 요구할 수 있습니다.",
+      "source": {
+        "name": "Android 고객센터",
+        "url": "https://support.google.com/android/answer/2819582?hl=en"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-02-life-6-v1",
+      "dateKey": "2026-08-02",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "냉장고를 벽 콘센트에서 멀리 두면서 가느다란 연장선에 연결하려 합니다. 화재 예방에는 어느 방법이 맞을까요?",
+      "choices": [
+        "연장선을 여러 개 이어 냉장고까지 연결",
+        "배치를 바꿔 냉장고를 벽 콘센트에 직접 연결",
+        "연장선을 말아 둔 채 두꺼운 카펫으로 덮기"
+      ],
+      "answerIndex": 1,
+      "explanation": "냉장고·세탁기·건조기 같은 대형 가전은 벽 콘센트에 바로 꽂아야 합니다. 연장선은 과열돼 불이 날 수 있으므로 대형 가전 전원용으로 쓰지 않습니다.",
+      "source": {
+        "name": "미국 소방청(USFA)",
+        "url": "https://www.usfa.fema.gov/prevention/home-fires/prevent-fires/appliance-and-electrical/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-16-then-20-v1",
+      "dateKey": "2026-08-16",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "불교 의식에서 법화경을 설한 장면을 되살리며 범패와 바라춤 같은 음악·춤을 이어 갑니다. 어떤 의식인지 고르세요.",
+      "choices": [
+        "부처의 설법을 재현하는 영산재",
+        "왕실 조상에게 음악을 올리는 종묘 제례",
+        "정월 대보름에 달집을 태우는 마을굿"
+      ],
+      "answerIndex": 0,
+      "explanation": "영산재는 부처가 영취산에서 법화경을 설한 모습을 상징적으로 재현하는 한국 불교 의식입니다. 노래와 기악, 의식무가 복합적으로 구성됩니다.",
+      "source": {
+        "name": "유네스코 무형유산",
+        "url": "https://ich.unesco.org/en/RL/yeongsanjae-00186"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-26-now-30-v1",
+      "dateKey": "2026-08-26",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "새 무선 이어폰을 휴대전화와 처음 연결한 뒤에는 전원을 켤 때 자동으로 연결되곤 합니다. 처음 서로 등록하는 절차를 무엇이라 할까요?",
+      "choices": [
+        "주변 기기를 연결 후보 목록에 띄우는 검색 과정",
+        "두 블루투스 기기를 서로 등록하는 페어링",
+        "등록했던 기기를 저장 목록에서 지우는 연결 해제"
+      ],
+      "answerIndex": 1,
+      "explanation": "블루투스 기기는 처음 서로 페어링해 등록하면 이후 자동으로 연결될 수 있습니다. 등록 정보는 사용자가 페어링을 해제할 때까지 남습니다.",
+      "source": {
+        "name": "Android 고객센터",
+        "url": "https://support.google.com/android/answer/9417604?hl=en"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-17-life-21-v1",
+      "dateKey": "2026-08-17",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "거실의 전선이 낡았고 사람들이 밟지 않게 카펫 밑으로 숨기려 합니다. 어떻게 바꾸는 편이 안전할까요?",
+      "choices": [
+        "갈라진 부분을 테이프로 감고 전열기까지 연결",
+        "전원선을 카펫 아래에 넣어 밟히지 않게 숨기기",
+        "손상된 전선을 교체하고 눌리거나 덮이지 않게 배치"
+      ],
+      "answerIndex": 2,
+      "explanation": "닳거나 갈라진 전선은 바로 교체하고, 카펫 아래나 문틈처럼 눌리고 손상될 곳에 두지 않습니다. 콘센트와 멀티탭의 허용 용량을 넘겨 연결하는 일도 피합니다.",
+      "source": {
+        "name": "미국 소방청(USFA)",
+        "url": "https://www.usfa.fema.gov/prevention/home-fires/prevent-fires/appliance-and-electrical/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-17-then-21-v1",
+      "dateKey": "2026-08-17",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "삶은 콩을 발효시켜 된장과 간장을 만들고, 고춧가루 등을 더해 고추장도 담갔습니다. 이 설명의 공통 핵심은 무엇인가요?",
+      "choices": [
+        "곡물을 기름에 튀겨 오래 보관하는 제과법",
+        "장을 만들고 저장하며 맛을 잇는 발효 문화",
+        "생선을 햇볕에 말려 수분을 없애는 건조법"
+      ],
+      "answerIndex": 1,
+      "explanation": "한국의 장 문화는 콩 등을 발효해 된장·간장·고추장 같은 양념을 만들고 보관하며 먹는 전 과정을 아우릅니다. 집집마다 이어 온 지식이 음식의 바탕이 됐습니다.",
+      "source": {
+        "name": "유네스코 무형유산",
+        "url": "https://ich.unesco.org/en/RL/knowledge-beliefs-and-practices-related-to-jang-making-in-the-republic-of-korea-01975"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-07-29-now-2-v1",
+      "dateKey": "2026-07-29",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "휴대전화와 자동차를 블루투스로 연결하는 중 양쪽 화면에 여섯 자리 숫자가 나타났습니다. 어떻게 확인하고 진행해야 할까요?",
+      "choices": [
+        "휴대전화 쪽 숫자만 맞으면 즉시 승인",
+        "번호가 달라도 기기 이름만 같으면 승인",
+        "두 화면의 PIN이 같은지 대조한 뒤 승인"
+      ],
+      "answerIndex": 2,
+      "explanation": "차량과 휴대전화가 각각 PIN을 표시하면 두 숫자가 일치하는지 확인한 뒤 페어링을 승인합니다. 엉뚱한 주변 기기와 연결되는 일을 막는 확인 단계입니다.",
+      "source": {
+        "name": "Android 고객센터",
+        "url": "https://support.google.com/android/answer/9769184?hl=en"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-06-life-10-v1",
+      "dateKey": "2026-08-06",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "서로 다른 가정용 세정제를 한 통에 섞어 보관하면 공간을 아낄 것 같습니다. 실제로는 어떻게 보관해야 할까요?",
+      "choices": [
+        "제품을 섞지 말고 라벨이 붙은 원래 용기에 보관",
+        "성분이 비슷해 보이는 제품끼리 남은 원래 용기 하나에 합쳐 보관",
+        "제품 이름을 적은 빈 음료수병에 각각 옮겨 보관"
+      ],
+      "answerIndex": 0,
+      "explanation": "가정용 화학제품은 섞을 때 유독가스나 화재 위험이 생길 수 있습니다. 라벨 지침을 따르고 원래 용기에 둔 채 어린이와 반려동물 손이 닿지 않게 보관합니다.",
+      "source": {
+        "name": "미국 소방청(USFA)",
+        "url": "https://www.usfa.fema.gov/prevention/home-fires/prevent-fires/home-hazardous-materials/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-07-29-then-2-v1",
+      "dateKey": "2026-07-29",
+      "lens": "then",
+      "topic": "language",
+      "internalDifficulty": "gentle",
+      "prompt": "1377년 청주 흥덕사에서 금속활자로 인쇄된 불교 문헌의 현존 하권이 프랑스국립도서관에 보관돼 있습니다. 책 이름을 고르면?",
+      "choices": [
+        "훈민정음 창제 원리를 적은 해례본",
+        "조선 왕실 행사를 그림으로 남긴 의궤",
+        "현존하는 가장 오래된 금속활자본 직지"
+      ],
+      "answerIndex": 2,
+      "explanation": "직지는 1377년 청주 흥덕사에서 금속활자로 찍은 불교 문헌입니다. 세계에서 가장 오래된 현존 금속활자 인쇄본으로 평가되며 하권이 남아 있습니다.",
+      "source": {
+        "name": "유네스코 세계기록유산",
+        "url": "https://media.unesco.org/sites/default/files/webform/mow001/korea_buljo_jikj_simch_yo_jeol.pdf"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-03-now-7-v1",
+      "dateKey": "2026-08-03",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "날씨 앱에는 동네 정도만 알려 주고 정확한 집 위치는 주고 싶지 않습니다. 어떤 위치 권한을 선택하면 될까요?",
+      "choices": [
+        "앱을 사용하는 동안 정확한 위치를 허용",
+        "앱을 닫은 뒤에도 정확한 위치를 계속 허용",
+        "정확한 위치 대신 대략적인 위치만 허용"
+      ],
+      "answerIndex": 2,
+      "explanation": "Android에서는 앱별 위치 권한을 관리하면서 지원되는 기기에서 대략적인 위치만 제공할 수 있습니다. 서비스에 꼭 필요한 정도로 권한 범위를 줄이는 선택입니다.",
+      "source": {
+        "name": "Android 고객센터",
+        "url": "https://support.google.com/android/answer/15157297?hl=en&ref_topic=7340598"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-18-life-22-v1",
+      "dateKey": "2026-08-18",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "정전으로 휴대용 발전기를 쓰려는데 차고 안이 편해 보입니다. 안전거리를 고려하면 어디에서 가동해야 할까요?",
+      "choices": [
+        "실외에서 창문·문·환기구로부터 약 6m(20피트)보다 멀리 떨어진 곳",
+        "문을 모두 연 차고에서 창문과 약 6m 떨어진 곳",
+        "실외에서 창문·문·환기구로부터 약 2m 떨어진 곳"
+      ],
+      "answerIndex": 0,
+      "explanation": "발전기 배기가스의 일산화탄소는 색과 냄새가 없어 알아채기 어렵습니다. CDC는 문을 연 차고에서도 발전기를 쓰지 말고, 실외에서 창문·문·환기구로부터 20피트(약 6m)보다 멀리 떨어져 가동하라고 안내합니다.",
+      "source": {
+        "name": "미국 질병통제예방센터(CDC) - 일산화탄소 중독 예방",
+        "url": "https://www.cdc.gov/carbon-monoxide/about/index.html"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-26-then-30-v1",
+      "dateKey": "2026-08-26",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "13세기에 새긴 약 8만 장의 대장경 목판은 공기가 자연스럽게 흐르도록 설계한 건물 안에서 오랫동안 보존됐습니다. 어디에 있을까요?",
+      "choices": [
+        "팔만대장경판을 품은 해인사 장경판전",
+        "조선왕조실록을 나눠 두었던 오대산 사고",
+        "왕실 의례용 책을 만든 규장각 서고"
+      ],
+      "answerIndex": 0,
+      "explanation": "해인사 장경판전은 1237년부터 1248년 사이 새긴 팔만대장경 목판을 보관합니다. 건물의 배치와 통풍·습도 조절 방식이 목판 보존에 알맞게 작동했습니다.",
+      "source": {
+        "name": "유네스코 세계유산센터",
+        "url": "https://whc.unesco.org/en/list/737/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-18-now-22-v1",
+      "dateKey": "2026-08-18",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "건물 사이에서 지도 속 현재 위치가 자꾸 흔들립니다. 정확도를 높일 때 어떤 신호들이 도움을 줄까요?",
+      "choices": [
+        "지도에 저장한 즐겨찾기 주소만",
+        "GPS와 와이파이·이동통신망·기기 센서 정보",
+        "화면에 보이는 도로 이름과 확대 배율만"
+      ],
+      "answerIndex": 1,
+      "explanation": "위치 서비스는 GPS뿐 아니라 주변 와이파이, 이동통신 기지국, 가속도계 같은 센서 정보를 조합할 수 있습니다. 여러 신호가 약한 환경에서는 정확도도 달라집니다.",
+      "source": {
+        "name": "Android 고객센터",
+        "url": "https://support.google.com/android/answer/15157297?hl=en&ref_topic=7340598"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-21-life-25-v1",
+      "dateKey": "2026-08-21",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "난방기처럼 연료를 태우는 기기가 있는 집에서 일산화탄소를 일찍 알아차리려면 어디에 어떤 준비가 필요할까요?",
+      "choices": [
+        "냄새로 이상 여부를 살피고 경보기는 주방에만 설치",
+        "난방기 바로 옆 한 곳에만 경보기를 두고 확인",
+        "집의 각 층과 잠자는 공간 가까이에 경보기 설치"
+      ],
+      "answerIndex": 2,
+      "explanation": "일산화탄소는 무색·무취의 유독가스라 사람의 감각만으로 감지하기 어렵습니다. 각 층과 수면 공간 가까이에 경보기를 설치하고 정기적으로 시험합니다.",
+      "source": {
+        "name": "미국 소비자제품안전위원회(CPSC)",
+        "url": "https://www.cpsc.gov/safety-education/neighborhood-safety-network/toolkits/carbon-monoxide-invisible-killer"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-24-then-28-v1",
+      "dateKey": "2026-08-24",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "통일신라 때 조성된 인공 석굴 안에는 화강암으로 만든 본존불과 여러 조각이 배치돼 있습니다. 함께 세계유산이 된 사찰은 어디일까요?",
+      "choices": [
+        "팔만대장경 목판을 보관하는 해인사",
+        "석굴암과 한 묶음으로 등재된 불국사",
+        "무량수전의 목조건축으로 알려진 부석사"
+      ],
+      "answerIndex": 1,
+      "explanation": "석굴암은 화강암으로 조성한 인공 석굴 사원이고, 불국사는 목조건물과 석조 단·다리가 어우러진 사찰입니다. 두 유산은 8세기 신라 불교예술을 보여 줍니다.",
+      "source": {
+        "name": "유네스코 세계유산센터",
+        "url": "https://whc.unesco.org/en/list/736"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-23-now-27-v1",
+      "dateKey": "2026-08-23",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "최근 어느 앱이 카메라나 위치 권한을 사용했는지 시간 순서로 살펴보려 합니다. 안드로이드에서 찾아볼 곳은 어디일까요?",
+      "choices": [
+        "개인정보 보호 대시보드의 권한 사용 기록",
+        "권한 관리자에 정리된 현재 허용 권한 목록",
+        "앱 정보 화면에 적힌 설치 당시 권한 요청 목록"
+      ],
+      "answerIndex": 0,
+      "explanation": "개인정보 보호 대시보드는 일정 기간 앱이 위치·카메라·마이크 같은 권한에 접근한 시점과 빈도를 보여 줍니다. 그 화면에서 앱별 권한도 조정할 수 있습니다.",
+      "source": {
+        "name": "Android 고객센터",
+        "url": "https://support.google.com/android/answer/13530434?hl=en"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-24-life-28-v1",
+      "dateKey": "2026-08-24",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "냉동 고기를 해동한 뒤 바로 조리하려 합니다. 미국 농무부가 안내한 안전한 방법만 묶인 답을 고르세요.",
+      "choices": [
+        "냉장실, 밀봉한 채 미지근한 물, 실온 조리대 중 한 방법",
+        "냉장실, 밀봉해 물을 갈아 주는 찬물, 전자레인지 중 한 방법",
+        "냉장실, 뜨거운 물, 전자레인지 해동 뒤 상온 대기 중 한 방법"
+      ],
+      "answerIndex": 1,
+      "explanation": "냉장실 해동이 기본이며, 찬물에서는 새지 않는 봉투에 넣고 30분마다 물을 갈아 줍니다. 찬물이나 전자레인지로 완전히 해동했다면 미루지 말고 즉시 조리해야 합니다.",
+      "source": {
+        "name": "미국 농무부 식품안전검사국(FSIS)",
+        "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/big-thaw-safe-defrosting-methods"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-10-then-14-v1",
+      "dateKey": "2026-08-10",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "궁궐을 반듯한 축에 억지로 맞추기보다 언덕과 골짜기의 굴곡을 살려 건물을 배치했습니다. 자연과의 조화로 평가받는 곳은 어디일까요?",
+      "choices": [
+        "넓은 직선 축으로 재건된 경복궁",
+        "성벽 안에 행궁을 둔 남한산성",
+        "지형을 따라 자리 잡은 창덕궁"
+      ],
+      "answerIndex": 2,
+      "explanation": "창덕궁은 자연 지형의 높낮이와 숲을 존중해 건물과 후원을 배치했습니다. 주변 경관에 순응하는 궁궐 설계가 두드러진 세계유산입니다.",
+      "source": {
+        "name": "유네스코 세계유산센터",
+        "url": "https://whc.unesco.org/en/list/816/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-07-30-now-3-v1",
+      "dateKey": "2026-07-30",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "출처가 낯선 앱이 ‘보호 기능을 끄지 않으면 실행할 수 없다’며 제한된 설정 허용을 강요합니다. 어떻게 판단해야 할까요?",
+      "choices": [
+        "앱 설명에 필요하다고 쓰였으면 제한 설정을 바로 허용",
+        "출처는 확인하지 않고 백신 경고가 없으면 제한 설정 허용",
+        "해로운 앱일 수 있으므로 출처와 요구 권한부터 재검토"
+      ],
+      "answerIndex": 2,
+      "explanation": "Android의 제한된 설정은 민감한 기능을 악용할 수 있는 앱으로부터 사용자를 보호합니다. 예상 밖의 앱이 해제를 재촉하면 설치 출처와 필요성을 확인하고 허용하지 않는 편이 안전합니다.",
+      "source": {
+        "name": "Android 고객센터",
+        "url": "https://support.google.com/android/answer/12623953?hl=en"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-09-life-13-v1",
+      "dateKey": "2026-08-09",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "찬물이나 전자레인지로 냉동 고기를 빠르게 녹였습니다. 냉장 해동과 달리 곧바로 무엇을 해야 할까요?",
+      "choices": [
+        "밀봉해 냉장실에 넣고 다음 날까지 조리를 미루기",
+        "표면이 차가우면 조리하지 않은 채 다시 냉동하기",
+        "해동을 마치자마자 바로 조리하기"
+      ],
+      "answerIndex": 2,
+      "explanation": "찬물 해동과 전자레인지 해동은 식품 일부가 따뜻해질 수 있어 끝난 뒤 바로 조리해야 합니다. 냉장실에서 천천히 녹인 경우와 보관 조건이 같지 않습니다.",
+      "source": {
+        "name": "미국 농무부 식품안전검사국(FSIS)",
+        "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/big-thaw-safe-defrosting-methods"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-12-then-16-v1",
+      "dateKey": "2026-08-12",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "정조가 18세기 말 아버지의 묘 가까이에 새 도시를 세우며 돌과 벽돌을 함께 써 방어 시설을 둘렀습니다. 어느 성곽일까요?",
+      "choices": [
+        "비상 수도 역할을 한 남한산성",
+        "수원 도심을 감싸는 화성",
+        "한양의 경계를 표시한 서울 한양도성"
+      ],
+      "answerIndex": 1,
+      "explanation": "수원 화성은 정조가 사도세자의 묘를 옮기고 새로운 정치·경제 기반을 마련하는 계획 속에서 축조됐습니다. 전통 성곽 기술과 새로운 방어 구상이 함께 반영됐습니다.",
+      "source": {
+        "name": "유네스코 세계유산센터",
+        "url": "https://whc.unesco.org/en/list/817"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-13-now-17-v1",
+      "dateKey": "2026-08-13",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "아이폰 화면 위쪽에 주황색 점이 갑자기 나타났습니다. 무엇을 뜻하는 표시인가요?",
+      "choices": [
+        "어떤 앱이 현재 마이크를 사용하고 있음",
+        "어떤 앱이 정확한 위치 정보를 읽고 있음",
+        "배터리 잔량이 20퍼센트 아래로 내려감"
+      ],
+      "answerIndex": 0,
+      "explanation": "아이폰의 주황색 표시는 앱이 마이크를 사용 중이라는 뜻입니다. 초록색은 카메라만, 또는 카메라와 마이크를 함께 쓰는 경우에 나타납니다.",
+      "source": {
+        "name": "Apple 지원",
+        "url": "https://support.apple.com/en-us/108331"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-16-life-20-v1",
+      "dateKey": "2026-08-16",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "생닭을 손질한 도마와 칼로 바로 샐러드 채소를 손질하려 합니다. 교차오염을 막으려면 먼저 무엇을 해야 할까요?",
+      "choices": [
+        "닭즙이 마를 때까지 기다린 뒤 같은 도구 사용",
+        "도마·칼·조리대를 뜨거운 비눗물로 씻은 뒤 채소 손질",
+        "도마를 마른 행주로 한 번 닦고 채소부터 올리기"
+      ],
+      "answerIndex": 1,
+      "explanation": "날고기와 그 육즙은 바로 먹을 식품에서 분리합니다. 날고기를 다룬 도마, 칼, 조리대는 뜨거운 비눗물로 씻어 교차오염 가능성을 줄입니다.",
+      "source": {
+        "name": "미국 농무부 식품안전검사국(FSIS)",
+        "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/steps-keep-food-safe"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-22-then-26-v1",
+      "dateKey": "2026-08-22",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "조선 시대 지방의 학자들은 산과 물이 어우러진 곳에서 공부하고, 앞선 유학자의 위패를 모셔 제향했습니다. 어느 교육 공간을 말하나요?",
+      "choices": [
+        "배움과 선현 제향을 함께한 서원",
+        "국가 최고 교육기관으로 한양에 둔 성균관",
+        "국가가 지방마다 설치한 공립 교육기관 향교"
+      ],
+      "answerIndex": 0,
+      "explanation": "한국의 서원은 성리학 교육, 학자 교류, 선현 제향을 함께 수행한 사립 교육기관입니다. 자연 속 배치도 수양과 학문 활동의 일부로 여겨졌습니다.",
+      "source": {
+        "name": "유네스코 세계유산센터",
+        "url": "https://whc.unesco.org/en/list/1498"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-06-now-10-v1",
+      "dateKey": "2026-08-06",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "한 앱이 다른 회사의 앱과 웹사이트를 넘나들며 활동을 추적하려고 요청합니다. 사용자는 어떤 결정을 할 수 있나요?",
+      "choices": [
+        "앱을 설치하면 추적 요청도 자동으로 승인",
+        "앱별 추적 요청을 허용하거나 거부",
+        "앱을 삭제하기 전에는 추적 요청을 거부할 수 없음"
+      ],
+      "answerIndex": 1,
+      "explanation": "iPhone에서는 앱이 다른 회사의 앱과 웹사이트에 걸쳐 사용자를 추적하려면 허가를 요청해야 합니다. 설정에서 앱별 요청을 거부하거나 전체 요청을 제한할 수 있습니다.",
+      "source": {
+        "name": "Apple 지원",
+        "url": "https://support.apple.com/en-us/102420"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-07-30-life-3-v1",
+      "dateKey": "2026-07-30",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "식료품 저장장을 정리하다가 심하게 부풀고 액체가 새는 통조림을 찾았습니다. 안전한 행동은 무엇인가요?",
+      "choices": [
+        "개봉하거나 냄새 맡거나 맛보지 말고 버리기",
+        "겉면을 씻은 뒤 개봉해 냄새로 안전 여부 판단",
+        "조금 맛본 뒤 이상이 없으면 충분히 끓여 먹기"
+      ],
+      "answerIndex": 0,
+      "explanation": "미국 농무부 식품안전검사국은 새거나 부푼 통조림을 버리라고 안내합니다. 안전한지 확인하려고 개봉하거나 냄새를 맡거나 맛보지 않습니다.",
+      "source": {
+        "name": "미국 농무부 식품안전검사국(FSIS)",
+        "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/shelf-stable-food"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-09-then-13-v1",
+      "dateKey": "2026-08-09",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "고창·화순·강화에는 거대한 돌판을 받치거나 덮어 만든 선사시대 무덤이 밀집해 있습니다. 유적의 이름을 고르세요.",
+      "choices": [
+        "신라 왕족의 금관이 나온 돌무지덧널무덤",
+        "백제 왕실의 벽돌 구조를 지닌 무령왕릉",
+        "청동기 사회의 장례를 보여 주는 고인돌"
+      ],
+      "answerIndex": 2,
+      "explanation": "고창·화순·강화의 고인돌은 큰 돌을 이용한 기원전 제1천년기의 무덤입니다. 밀집된 분포와 다양한 형태가 선사시대 장례와 사회를 이해하게 합니다.",
+      "source": {
+        "name": "유네스코 세계유산센터",
+        "url": "https://whc.unesco.org/en/list/977"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-07-28-now-1-v1",
+      "dateKey": "2026-07-28",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "아이폰 글자뿐 아니라 버튼과 아이콘을 포함한 화면 요소 전체를 더 크게 보고 싶습니다. 어느 기능이 목적에 맞을까요?",
+      "choices": [
+        "텍스트만 굵게 표시하는 볼드체 텍스트",
+        "버튼과 아이콘까지 키우는 디스플레이 확대",
+        "브라우저 안의 웹페이지만 손가락으로 확대"
+      ],
+      "answerIndex": 1,
+      "explanation": "텍스트 크기 조절은 지원되는 글자의 크기를 바꾸고, 디스플레이 확대는 화면 요소 전반을 크게 보여 줍니다. 원하는 확대 범위에 맞춰 기능을 골라야 합니다.",
+      "source": {
+        "name": "Apple 지원",
+        "url": "https://support.apple.com/en-us/guide/iphone/iphd6804774e/ios"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-22-life-26-v1",
+      "dateKey": "2026-08-22",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "남은 음식을 며칠 안에 먹으려고 냉장 보관합니다. 포장과 기간이 모두 알맞은 보관법을 고르세요.",
+      "choices": [
+        "식힌 뒤 큰 냄비째 냉장하고 일주일 안에 나눠 먹기",
+        "밀폐해 곧바로 냉장하고 일주일 안에 냄새로 판단하기",
+        "밀폐해 곧바로 넣고 냉장실에서 3~4일 안에 먹기"
+      ],
+      "answerIndex": 2,
+      "explanation": "남은 음식은 덮거나 밀폐 용기에 담아 즉시 냉장 또는 냉동합니다. 냉장한 음식은 일반적으로 3~4일 안에 먹고 더 오래 둘 때는 냉동합니다.",
+      "source": {
+        "name": "미국 농무부 식품안전검사국(FSIS)",
+        "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-18-then-22-v1",
+      "dateKey": "2026-08-18",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "서울 남동쪽 산악 지대에 자리하며 유사시 조선의 임금과 조정이 머물 비상 수도로 정비됐습니다. 승군도 방어에 참여한 이곳은 어디일까요?",
+      "choices": [
+        "험한 지형을 활용한 남한산성",
+        "정조의 계획도시를 둘러싼 수원 화성",
+        "바닷길을 지키도록 쌓은 강화산성"
+      ],
+      "answerIndex": 0,
+      "explanation": "남한산성은 조선 왕조가 위기에 대비한 임시 수도로 구축한 산성입니다. 행정시설과 방어시설을 갖췄고 승군이 축성과 수비에 힘을 보탰습니다.",
+      "source": {
+        "name": "유네스코 세계유산센터",
+        "url": "https://whc.unesco.org/en/list/1439"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-12-now-16-v1",
+      "dateKey": "2026-08-12",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "비행 중 항공사의 안내에 따라 비행기 모드를 켰지만 무선 이어폰은 쓰고 싶습니다. 어떤 설명이 맞을까요?",
+      "choices": [
+        "비행기 모드에서는 어떤 무선 기능도 다시 켤 수 없음",
+        "블루투스를 쓰려면 비행기 모드를 먼저 완전히 꺼야 함",
+        "항공사가 허용하면 와이파이나 블루투스를 다시 켤 수 있음"
+      ],
+      "answerIndex": 2,
+      "explanation": "비행기 모드는 이동통신 등 무선 기능을 제한하지만 기기와 항공사 조건에 따라 와이파이와 블루투스를 다시 켤 수 있습니다. 기내 안내를 우선 따라야 합니다.",
+      "source": {
+        "name": "Apple 지원",
+        "url": "https://support.apple.com/en-us/108785"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-07-life-11-v1",
+      "dateKey": "2026-08-07",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "전자레인지로 남은 음식을 다시 데울 때 가운데만 차갑다면, 어떻게 확인하는 편이 안전할까요?",
+      "choices": [
+        "뚜껑을 완전히 밀봉한 채 한쪽만 짧게 가열",
+        "덮고 돌리거나 저어 데운 뒤 식품 온도계로 여러 곳이 약 74도인지 확인",
+        "겉면이 따뜻하면 속은 확인하지 않고 바로 먹기"
+      ],
+      "answerIndex": 1,
+      "explanation": "남은 음식은 덮고 돌리거나 저어 고르게 데운 뒤, 식품 온도계로 여러 곳이 약 74도(화씨 165도)에 이르렀는지 확인합니다. 뚜껑이나 랩에는 증기가 빠져나갈 틈을 둡니다.",
+      "source": {
+        "name": "미국 농무부 식품안전검사국(FSIS)",
+        "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-19-then-23-v1",
+      "dateKey": "2026-08-19",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "조선의 역대 왕과 왕비의 신위를 모신 국가 사당으로, 오늘날에도 제례와 음악 전통이 이어지는 곳은 어디일까요?",
+      "choices": [
+        "유학 교육과 제향을 맡은 도산서원",
+        "왕실의 정통성을 상징한 종묘",
+        "왕이 정사를 보고 후원을 거닌 창덕궁"
+      ],
+      "answerIndex": 1,
+      "explanation": "종묘는 조선 왕과 왕비의 신위를 봉안한 유교 사당입니다. 건축 공간과 왕실 제례가 결합해 왕조의 계보와 정통성을 상징했습니다.",
+      "source": {
+        "name": "유네스코 세계유산센터",
+        "url": "https://whc.unesco.org/en/list/738/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-05-now-9-v1",
+      "dateKey": "2026-08-05",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "아이폰 제어 센터에서 와이파이 버튼을 눌러 회색으로 만들었습니다. 와이파이를 완전히 끄려면 다음에 어디로 가야 할까요?",
+      "choices": [
+        "설정 앱의 와이파이 항목에서 끄기",
+        "설정 앱의 모바일 데이터 항목에서 끄기",
+        "제어 센터에서 같은 버튼을 빠르게 두 번 누르기"
+      ],
+      "answerIndex": 0,
+      "explanation": "제어 센터의 와이파이 버튼은 현재 네트워크 연결을 끊지만 기능 자체는 계속 이용 가능한 상태로 남을 수 있습니다. 완전히 비활성화하려면 설정의 와이파이 스위치를 끕니다.",
+      "source": {
+        "name": "Apple 지원",
+        "url": "https://support.apple.com/en-us/102412"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-07-28-life-1-v1",
+      "dateKey": "2026-07-28",
+      "lens": "life",
+      "topic": "safety",
+      "internalDifficulty": "stretch",
+      "prompt": "냉장실 온도계를 확인해 식품 보관 온도를 맞추려 합니다. 미국 농무부 지침상 어느 값 아래로 유지해야 할까요?",
+      "choices": [
+        "섭씨 약 4도 이하",
+        "섭씨 약 14도 이하",
+        "섭씨 약 24도 이하"
+      ],
+      "answerIndex": 0,
+      "explanation": "냉장실은 화씨 40도 이하, 섭씨로 약 4.4도 이하를 유지하는 것이 기준입니다. 문을 오래 열지 말고 온도계를 두어 실제 보관 온도를 확인합니다.",
+      "source": {
+        "name": "미국 농무부 식품안전검사국(FSIS)",
+        "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/refrigeration"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    }
+  ]
+}

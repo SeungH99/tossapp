@@ -1,0 +1,2258 @@
+{
+  "id": "bonus-nostalgia-001",
+  "kind": "bonus",
+  "contentVersion": "2026.08.180d",
+  "reviewStatus": "reviewed",
+  "questions": [
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s00-gentle-family-plan-start",
+      "conceptId": "nostalgia-family-plan-start-1962",
+      "variant": "timeline-recognition",
+      "setIndex": 0,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "정부가 가족계획사업을 경제개발계획의 한 부분으로 본격 추진하기 시작한 때는 언제였을까요?",
+      "choices": [
+        "1957년, 전후 복구 정책이 자리 잡을 무렵",
+        "1972년, 새마을운동이 전국으로 퍼질 무렵",
+        "1962년, 경제개발 5개년계획이 시작될 무렵"
+      ],
+      "answerIndex": 2,
+      "explanation": "정부는 1962년부터 가족계획사업을 경제개발 5개년계획의 하나로 본격 추진했습니다. 당시에는 인구 증가 문제를 경제성장 과제와 함께 다뤘습니다.",
+      "source": {
+        "name": "국가기록원 「가족계획」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/family.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s01-gentle-neighborhood-first-day",
+      "conceptId": "nostalgia-neighborhood-meeting-first-1976",
+      "variant": "date-recognition",
+      "setIndex": 1,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "전국의 이웃들이 같은 날 오후 6시에 처음 모인 반상회는 어느 날짜에 열렸을까요?",
+      "choices": [
+        "1972년 4월 22일",
+        "1976년 5월 31일",
+        "1981년 1월 1일"
+      ],
+      "answerIndex": 1,
+      "explanation": "전국에서 동시에 열린 첫 반상회는 1976년 5월 31일 오후 6시에 시작됐습니다. 주민들은 푯말이 걸린 집이나 마을 공터, 골목 보안등 아래 등에 모였습니다.",
+      "source": {
+        "name": "국가기록원 「반상회」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/Neighborhood.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s02-gentle-bus-guide-first-place",
+      "conceptId": "nostalgia-bus-conductress-seoul-bus",
+      "variant": "place-recognition",
+      "setIndex": 2,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "1920년대 후반 우리나라에서 버스안내양이 처음 등장한 교통수단은 무엇이었을까요?",
+      "choices": [
+        "경인선의 통근 열차",
+        "서울부영의 시내버스",
+        "한강을 건너는 연락선"
+      ],
+      "answerIndex": 1,
+      "explanation": "버스안내양은 1920년대 후반 서울부영버스에 처음 등장했습니다. 당시에는 여차장뿐 아니라 ‘버스걸’이라는 이름으로도 불렸습니다.",
+      "source": {
+        "name": "국가기록원 「버스안내양」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/guideGirl.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s03-gentle-saemaeul-morning-action",
+      "conceptId": "nostalgia-saemaeul-song-morning-cleaning",
+      "variant": "scene-recognition",
+      "setIndex": 3,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "1970~80년대 아침 6시 확성기에서 새마을노래가 흘러나오면 주민들은 주로 무엇을 했을까요?",
+      "choices": [
+        "삽과 빗자루를 들고 마을을 청소했다",
+        "가정마다 라디오 체조 기록을 제출했다",
+        "마을회관에 모여 공동 아침을 먹었다"
+      ],
+      "answerIndex": 0,
+      "explanation": "새마을노래가 나오면 주민들은 삽이나 빗자루를 들고 앞마당과 동네를 청소하며 하루를 시작했습니다. 이 노래와 아침 청소는 당시 새마을운동의 익숙한 풍경이었습니다.",
+      "source": {
+        "name": "국가기록원 「새마을운동」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/saemaeul.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s04-gentle-daylight-saving-clock",
+      "conceptId": "nostalgia-daylight-saving-one-hour",
+      "variant": "definition-recognition",
+      "setIndex": 4,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "여름철에 시행했던 서머타임제에서는 평소 쓰던 시계를 어떻게 맞췄을까요?",
+      "choices": [
+        "표준시보다 한 시간 앞당겼다",
+        "표준시보다 한 시간 늦추었다",
+        "표준시보다 삼십 분 앞당겼다"
+      ],
+      "answerIndex": 0,
+      "explanation": "서머타임은 여름철 시계를 표준시보다 한 시간 앞당기는 제도입니다. 해가 떠 있는 시간을 생활과 업무에 더 활용하려는 취지였습니다.",
+      "source": {
+        "name": "국가기록원 「서머타임제」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/summerTime.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s05-gentle-long-hair-film",
+      "conceptId": "nostalgia-long-hair-crackdown-film-1975",
+      "variant": "title-recognition",
+      "setIndex": 5,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "1970년대 장발 단속 장면을 담아 당시 청년 문화를 보여 준 1975년 개봉 영화는 무엇일까요?",
+      "choices": [
+        "별들의 고향",
+        "미워도 다시 한번",
+        "바보들의 행진"
+      ],
+      "answerIndex": 2,
+      "explanation": "1975년 개봉한 영화 「바보들의 행진」에는 장발 단속 장면이 등장합니다. 작품은 당시 대학생과 청년 세대의 분위기를 보여 주는 대표 영화로 꼽힙니다.",
+      "source": {
+        "name": "국가기록원 「장발단속」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/Long-term.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s06-gentle-id-number-digits",
+      "conceptId": "nostalgia-first-resident-number-twelve-digits",
+      "variant": "number-recognition",
+      "setIndex": 6,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "1968년 주민등록증을 처음 발급했을 때 주민등록번호는 모두 몇 자리였을까요?",
+      "choices": [
+        "열 자리",
+        "열세 자리",
+        "열두 자리"
+      ],
+      "answerIndex": 2,
+      "explanation": "최초 발급 당시 주민등록번호는 지금보다 한 자리 적은 열두 자리였습니다. 오늘날 익숙한 열세 자리 체계와는 구성이 달랐습니다.",
+      "source": {
+        "name": "국가기록원 「주민등록제도」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/identityCard.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s07-gentle-rat-campaign-start",
+      "conceptId": "nostalgia-national-rat-campaign-1970",
+      "variant": "event-date-recognition",
+      "setIndex": 7,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "전국의 가정과 학교, 직장이 같은 시각에 참여한 첫 대규모 쥐잡기 운동은 언제 시작됐을까요?",
+      "choices": [
+        "1970년 1월 26일 오전 6시",
+        "1965년 3월 1일 낮 12시",
+        "1975년 8월 15일 오후 6시"
+      ],
+      "answerIndex": 0,
+      "explanation": "전 국민 규모의 쥐잡기 운동은 1970년 1월 26일 오전 6시에 일제히 시작됐습니다. 가정과 학교, 직장뿐 아니라 군대와 농촌·도시에서도 함께 참여했습니다.",
+      "source": {
+        "name": "국가기록원 「쥐잡기 운동」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/grapMouse.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s08-gentle-bus-token-launch",
+      "conceptId": "nostalgia-bus-token-launch-1977",
+      "variant": "date-recognition",
+      "setIndex": 8,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "현금 승차의 지연과 수입금 관리 문제를 줄이려고 서울에서 버스 토큰을 도입한 날은 언제였을까요?",
+      "choices": [
+        "1974년 8월 15일",
+        "1977년 12월 1일",
+        "1983년 4월 1일"
+      ],
+      "answerIndex": 1,
+      "explanation": "서울의 버스 토큰은 1977년 12월 1일 도입됐습니다. 현금을 주고받느라 승차가 늦어지는 불편과 현금 수입금 관리 문제를 줄이려는 목적이었습니다.",
+      "source": {
+        "name": "국가기록원 「대중교통」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/publicTransport.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s09-gentle-korea-news-cinema-order",
+      "conceptId": "nostalgia-korea-news-before-feature-film",
+      "variant": "cinema-scene-recognition",
+      "setIndex": 9,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "1994년까지 극장에서 본영화가 시작되기 전 관객이 거치던 장면과 맞는 것은 무엇일까요?",
+      "choices": [
+        "상업광고와 예고편만 연달아 보았다",
+        "극장 이용 안내방송만 조용히 들었다",
+        "국민의례를 하고 대한뉴스를 관람했다"
+      ],
+      "answerIndex": 2,
+      "explanation": "당시 극장 관객은 본영화에 앞서 국민의례를 하고 대한뉴스를 관람했습니다. 이 관행은 대한뉴스 상영이 끝난 1994년까지 이어졌습니다.",
+      "source": {
+        "name": "국가기록원 「대한뉴스」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/koreaNews.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s10-gentle-radio-public-shows",
+      "conceptId": "nostalgia-namsan-radio-audience-shows",
+      "variant": "program-recognition",
+      "setIndex": 10,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "남산 방송국 시절 청취자가 직접 참여해 인기를 끈 라디오 공개방송의 짝은 어느 것일까요?",
+      "choices": [
+        "아침종합뉴스와 기상통보",
+        "누가누가 잘하나와 스타 탄생",
+        "무성영화 해설과 악단 연주"
+      ],
+      "answerIndex": 1,
+      "explanation": "「누가누가 잘하나」와 「스타 탄생」 같은 공개 참여방송은 남산 방송국 시대의 인기 프로그램이었습니다. 청취자가 현장에 참여하며 라디오의 친근함을 키웠습니다.",
+      "source": {
+        "name": "국가기록원 「라디오 방송」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/radio.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s11-gentle-first-korean-ramen",
+      "conceptId": "nostalgia-first-korean-instant-noodle-1963",
+      "variant": "year-recognition",
+      "setIndex": 11,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "쌀이 귀하던 시절 대체 먹거리로 주목받은 국내 최초 라면이 나온 해는 언제였을까요?",
+      "choices": [
+        "1963년",
+        "1958년",
+        "1971년"
+      ],
+      "answerIndex": 0,
+      "explanation": "우리나라 최초의 라면은 1963년에 등장했습니다. 처음에는 낯선 음식이었지만 간편하게 끓여 먹을 수 있어 점차 대중적인 식품이 됐습니다.",
+      "source": {
+        "name": "국가기록원 「라면」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/noodle.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s12-gentle-traditional-rice-liquor-path",
+      "conceptId": "nostalgia-makgeolli-cheongju-soju-process",
+      "variant": "one-step-recognition",
+      "setIndex": 12,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "곡주를 거른 뒤 위에 맑게 뜨는 술은 무엇일까요?",
+      "choices": [
+        "막걸리",
+        "청주",
+        "소주"
+      ],
+      "answerIndex": 1,
+      "explanation": "곡주를 거르면 아래에는 탁한 막걸리가 남고 위에는 맑은 청주가 뜹니다. 이 청주를 다시 증류하면 전통 증류식 소주가 됩니다.",
+      "source": {
+        "name": "국가기록원 「소주와 막걸리」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/sojunMakgeolli.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s13-gentle-uniform-autonomy-order",
+      "conceptId": "nostalgia-1982-hair-1983-uniform-autonomy",
+      "variant": "familiar-change-recognition",
+      "setIndex": 13,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "1983년 중·고등학생의 교복 자율화로 달라진 모습은 무엇이었을까요?",
+      "choices": [
+        "학교 지정 교복 대신 자유로운 옷차림을 선택할 수 있었습니다",
+        "전국 모든 학교가 같은 색과 모양의 교복을 입게 됐습니다",
+        "대학생만 교복을 입고 중·고등학생은 교모만 쓰게 됐습니다"
+      ],
+      "answerIndex": 0,
+      "explanation": "1983년 3월부터 중·고등학생은 학교가 정한 교복 대신 자유로운 옷차림을 선택할 수 있었습니다. 머리 모양 자율화는 그보다 앞선 1982년에 시행됐습니다.",
+      "source": {
+        "name": "국가기록원 「교복」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/schoolUniform.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s14-gentle-school-picnic-old-name",
+      "conceptId": "nostalgia-school-picnic-wonjok-name",
+      "variant": "term-recognition",
+      "setIndex": 14,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "근대 학교에서 학생들이 먼 곳까지 걸어가 자연과 풍물을 살피던 소풍의 초기 이름은 무엇이었을까요?",
+      "choices": [
+        "야유회",
+        "수련회",
+        "원족"
+      ],
+      "answerIndex": 2,
+      "explanation": "근대 학교의 초기 소풍은 멀리까지 걸어간다는 뜻의 ‘원족’으로 불렸습니다. 학생들은 교실 밖에서 자연과 지역의 풍물을 직접 관찰했습니다.",
+      "source": {
+        "name": "국가기록원 「소풍」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/picnic.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s15-gentle-family-plan-3335",
+      "conceptId": "nostalgia-family-plan-3335-slogan",
+      "variant": "slogan-interpretation",
+      "setIndex": 15,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "1970년대 가족계획 구호 ‘3·3·35’에 담긴 뜻은 무엇이었을까요?",
+      "choices": [
+        "두 살 터울로 두 자녀를 서른 살 전에 낳자는 뜻",
+        "세 살 터울로 세 자녀를 서른다섯 살 전에 낳자는 뜻",
+        "다섯 살 터울로 두 자녀를 마흔 살 전에 낳자는 뜻"
+      ],
+      "answerIndex": 1,
+      "explanation": "‘3·3·35’는 세 살 터울로 세 자녀를 35세 이전에 낳자는 뜻의 구호였습니다. 이후 가족계획 목표가 두 자녀, 한 자녀로 바뀌며 표어도 달라졌습니다.",
+      "source": {
+        "name": "국가기록원 「가족계획」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/family.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s16-gentle-neighborhood-regular-day",
+      "conceptId": "nostalgia-neighborhood-meeting-monthly-25th",
+      "variant": "calendar-recognition",
+      "setIndex": 16,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "전국 동시 반상회가 자리 잡은 뒤 정례 반상회 날짜로 정해진 날은 언제였을까요?",
+      "choices": [
+        "매월 1일",
+        "매월 25일",
+        "매월 15일"
+      ],
+      "answerIndex": 1,
+      "explanation": "정례 반상회는 매월 25일에 열리도록 정해졌습니다. 주민들은 공지사항을 듣고 동네 문제와 민원을 함께 논의했습니다.",
+      "source": {
+        "name": "국가기록원 「반상회」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/Neighborhood.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s17-gentle-bus-guide-tools",
+      "conceptId": "nostalgia-early-bus-girl-ticket-bag",
+      "variant": "work-scene-recognition",
+      "setIndex": 17,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "초기 ‘버스걸’의 옷차림과 승객에게 하던 일을 함께 떠올리면 어느 모습이 맞을까요?",
+      "choices": [
+        "노선표 판을 들고 정류장 이름만 알리는 모습",
+        "종점 사무실에서 수입금만 계산하는 모습",
+        "양장 유니폼에 차표 가방을 매고 표를 끊는 모습"
+      ],
+      "answerIndex": 2,
+      "explanation": "초기 버스걸은 양장 유니폼을 입고 앞에 차표 가방을 맨 채 승객에게 표를 끊어 줬습니다. 신식 교육을 받은 여성의 새 직업으로 큰 관심을 받았습니다.",
+      "source": {
+        "name": "국가기록원 「버스안내양」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/guideGirl.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s18-gentle-saemaeul-cement-support",
+      "conceptId": "nostalgia-saemaeul-cement-336-bags",
+      "variant": "quantity-recognition",
+      "setIndex": 18,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "1970년 ‘새마을가꾸기’ 사업에서 전국 마을에 처음 나눠 준 시멘트 규모는 어느 것이었을까요?",
+      "choices": [
+        "전국 3만여 마을에 시멘트 100포씩",
+        "전국 33,267개 마을에 336포씩",
+        "우수 마을 1만 곳에 시멘트 500포씩"
+      ],
+      "answerIndex": 1,
+      "explanation": "정부는 전국 33,267개 마을에 시멘트 336포씩을 공급했습니다. 다음 해에는 성과가 우수한 마을을 골라 시멘트와 철근을 더 지원했습니다.",
+      "source": {
+        "name": "국가기록원 「새마을운동」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/saemaeul.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s19-gentle-standard-time-sun-delay",
+      "conceptId": "nostalgia-standard-meridian-solar-noon-delay",
+      "variant": "time-comparison",
+      "setIndex": 19,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "일본 아카시와 비교하면 한국에서 태양이 가장 높이 뜨는 시각은 어떻게 달랐을까요?",
+      "choices": [
+        "아카시보다 약 삼십 분 늦었다",
+        "두 지역이 거의 같은 시각이었다",
+        "아카시보다 약 두 시간 빨랐다"
+      ],
+      "answerIndex": 0,
+      "explanation": "표준시 기준 경선은 일본 아카시 부근을 지나고 한국은 그보다 서쪽에 있습니다. 그래서 한국에서 태양이 가장 높이 뜨는 시각은 아카시보다 약 30분 늦습니다.",
+      "source": {
+        "name": "국가기록원 「서머타임제」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/summerTime.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s20-gentle-youth-culture-symbols",
+      "conceptId": "nostalgia-1970s-youth-culture-three-symbols",
+      "variant": "symbol-set-recognition",
+      "setIndex": 20,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "국가기록원이 1970년대 청년문화를 설명하며 함께 묶은 세 가지 표지는 어느 것일까요?",
+      "choices": [
+        "스포츠머리·한복·창",
+        "중절모·양복·판소리",
+        "장발·청바지·포크송"
+      ],
+      "answerIndex": 2,
+      "explanation": "장발과 청바지, 포크송은 1970년대 청년문화를 상징하는 요소로 함께 언급됩니다. 장발 단속은 그 시대의 청년 취향과 국가 규율이 부딪친 장면이기도 했습니다.",
+      "source": {
+        "name": "국가기록원 「장발단속」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/Long-term.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s21-gentle-first-id-card-count",
+      "conceptId": "nostalgia-first-resident-card-issued-count",
+      "variant": "scale-recognition",
+      "setIndex": 21,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "주민등록증을 처음 발급한 1968년 말까지 증을 받은 사람은 대략 몇 명이었을까요?",
+      "choices": [
+        "약 1,500만 명",
+        "약 150만 명",
+        "약 3,000만 명"
+      ],
+      "answerIndex": 0,
+      "explanation": "1968년 말까지 약 1,500만 명에게 주민등록증이 발급됐습니다. 짧은 기간에 전국적인 신분증 발급이 대규모로 진행됐습니다.",
+      "source": {
+        "name": "국가기록원 「주민등록제도」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/identityCard.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s22-gentle-rat-campaign-participation",
+      "conceptId": "nostalgia-rat-campaign-national-participation",
+      "variant": "scope-recognition",
+      "setIndex": 22,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "당시 전국 쥐잡기 운동이 진행된 범위와 참여를 독려한 방식으로 맞는 것은 무엇일까요?",
+      "choices": [
+        "농촌 지역 초등학교만 참여하고 반별로 쥐잡기 성적을 매겼다",
+        "가정·학교·직장·군대가 함께하고 많이 잡으면 포상했다",
+        "전문 방역업체만 맡아 대도시의 야간 통행금지 시간에 진행했다"
+      ],
+      "answerIndex": 1,
+      "explanation": "쥐잡기 운동은 가정과 학교, 직장, 군대는 물론 도시와 농촌에서 동시에 벌어졌습니다. 많이 잡은 사람에게 포상하며 참여를 독려하기도 했습니다.",
+      "source": {
+        "name": "국가기록원 「쥐잡기 운동」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/grapMouse.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s23-gentle-bus-ticket-categories",
+      "conceptId": "nostalgia-paper-bus-ticket-passenger-types",
+      "variant": "classification-recognition",
+      "setIndex": 23,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "종이 버스 회수권은 이용자를 어떤 기준으로 나눠 서로 다른 종류를 만들었을까요?",
+      "choices": [
+        "학생·일반·경로 같은 승객 유형별",
+        "이동한 정류장 수와 운행 거리별",
+        "운수회사 이름과 차량 번호별"
+      ],
+      "answerIndex": 0,
+      "explanation": "종이 회수권은 초·중·고·대학생, 일반, 경로 등 승객 유형에 따라 구분됐습니다. 현금 대신 미리 산 회수권을 내며 버스를 타던 방식이었습니다.",
+      "source": {
+        "name": "국가기록원 「대중교통」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/publicTransport.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s24-gentle-korea-news-total-origin",
+      "conceptId": "nostalgia-korea-news-2040-joseon-sibo",
+      "variant": "title-recognition",
+      "setIndex": 24,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "대한뉴스의 뿌리로 꼽히는 1945년 해방 직후의 영상 소식은 무엇이었을까요?",
+      "choices": [
+        "대한전진보",
+        "정부소식",
+        "조선시보"
+      ],
+      "answerIndex": 2,
+      "explanation": "대한뉴스의 뿌리는 1945년 10월 미군정이 만든 영상 소식 「조선시보」입니다. 이 계보는 훗날 극장에서 상영된 대한뉴스로 이어졌습니다.",
+      "source": {
+        "name": "국가기록원 「대한뉴스」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/koreaNews.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s25-gentle-car-radio-revival",
+      "conceptId": "nostalgia-car-radio-traffic-information",
+      "variant": "cause-recognition",
+      "setIndex": 25,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "1980년대 자가용 보급이 늘면서 라디오에 새로운 활력을 준 기능은 무엇이었을까요?",
+      "choices": [
+        "교통정보를 빠르게 전하는 카라디오",
+        "컬러 화면을 붙인 가정용 텔레비전",
+        "극장마다 내보낸 무성 뉴스영화"
+      ],
+      "answerIndex": 0,
+      "explanation": "자가용이 늘자 운전 중 듣는 카라디오와 신속한 교통정보가 중요해졌습니다. 텔레비전 시대에도 이동 중 바로 들을 수 있다는 라디오의 장점이 다시 주목받았습니다.",
+      "source": {
+        "name": "국가기록원 「라디오 방송」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/radio.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s26-gentle-first-ramen-reception",
+      "conceptId": "nostalgia-first-korean-ramen-unfamiliarity",
+      "variant": "cause-recognition",
+      "setIndex": 26,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "1963년 처음 나온 라면이 초기에 소비자의 관심을 끌지 못한 주된 까닭은 무엇이었을까요?",
+      "choices": [
+        "쌀국수와 비슷해 조리 시간이 밥보다 더 길다고 여겼기 때문입니다",
+        "국물 없이 차갑게 먹는 계절 음식으로 받아들였기 때문입니다",
+        "밥과 국 중심 식사에 익숙해 꼬불꼬불한 즉석 면이 낯설었기 때문입니다"
+      ],
+      "answerIndex": 2,
+      "explanation": "당시에는 밥과 국, 반찬을 먹어야 한 끼라고 여기는 인식이 강했습니다. 꼬불꼬불한 면발과 ‘라면’이라는 이름도 낯설어 처음에는 관심을 얻기 어려웠습니다.",
+      "source": {
+        "name": "국가기록원 「라면」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/noodle.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s27-gentle-diluted-soju-rise",
+      "conceptId": "nostalgia-1965-diluted-soju-mainstream",
+      "variant": "change-recognition",
+      "setIndex": 27,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "1965년 양곡관리법 시행 뒤 소주 시장에 나타난 큰 변화는 무엇이었을까요?",
+      "choices": [
+        "곡물 증류를 늘리기 위해 전통 소주 양조장을 대규모로 확충했다",
+        "과실 원액을 발효한 과실주가 소주의 주원료로 자리 잡았다",
+        "주정에 물을 섞은 희석식 소주가 널리 퍼지게 됐다"
+      ],
+      "answerIndex": 2,
+      "explanation": "쌀 등 곡물 사용이 제한되면서 전통 증류식 소주는 쇠퇴하고 주정에 물을 섞은 희석식 소주가 대세가 됐습니다. 오늘날 익숙한 소주 형태가 이 시기에 널리 자리 잡았습니다.",
+      "source": {
+        "name": "국가기록원 「소주와 막걸리」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/sojunMakgeolli.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s28-gentle-uniform-return-rate",
+      "conceptId": "nostalgia-1993-school-uniform-return-rate",
+      "variant": "trend-recognition",
+      "setIndex": 28,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "교복 자율화 뒤 다시 교복을 선택하는 학교가 늘어 1993년에는 어느 정도가 교복을 입었을까요?",
+      "choices": [
+        "전국 학교의 약 13%",
+        "전국 학교의 약 83%",
+        "전국 학교의 약 33%"
+      ],
+      "answerIndex": 1,
+      "explanation": "1986년부터 학교장이 교복 착용 여부를 정할 수 있게 되자 교복으로 돌아가는 학교가 늘었습니다. 1993년에는 전국 학교의 약 83%가 교복을 선택했습니다.",
+      "source": {
+        "name": "국가기록원 「교복」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/schoolUniform.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s29-gentle-picnic-treasure-hunt",
+      "conceptId": "nostalgia-1970s-school-picnic-treasure-hunt",
+      "variant": "activity-recognition",
+      "setIndex": 29,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "1970년대 말까지 학교 소풍에서 학생들이 특히 기다리던 대표 활동은 무엇이었을까요?",
+      "choices": [
+        "숨겨 둔 쪽지를 찾는 보물찾기",
+        "조별로 노래를 겨루는 장기자랑",
+        "풍경을 그려 내는 야외 사생대회"
+      ],
+      "answerIndex": 0,
+      "explanation": "보물찾기는 1970년대 말까지 소풍의 꽃으로 꼽힌 활동이었습니다. 학생들은 곳곳에 숨긴 쪽지나 물건을 찾으며 야외에서 함께 뛰어놀았습니다.",
+      "source": {
+        "name": "국가기록원 「소풍」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/picnic.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s00-steady-advertising-shift",
+      "conceptId": "nostalgia-1970s-advertising-lifestyle-shift",
+      "variant": "change-comparison",
+      "setIndex": 0,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "1970년대 우리나라 광고는 앞선 시기와 비교해 어떤 모습으로 달라졌을까요?",
+      "choices": [
+        "의약품 광고만 남고 식품과 화장품 광고는 줄었습니다",
+        "상품 설명이 사라지고 정부 공고가 대부분을 차지했습니다",
+        "식품·화장품·가전 등 생활을 보여 주는 광고가 늘었습니다"
+      ],
+      "answerIndex": 2,
+      "explanation": "1970년대에는 식품과 화장품, 가전제품처럼 일상생활과 소비 변화를 보여 주는 광고가 크게 늘었습니다. 광고 품목의 변화는 당시 사람들의 생활수준과 관심사가 넓어진 흐름을 드러냅니다.",
+      "source": {
+        "name": "대한민국역사박물관 웹진 「시대를 비춘 광고」",
+        "url": "https://www.much.go.kr/webzine/vol39/sub/sub2.html"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s01-steady-three-white-industries",
+      "conceptId": "nostalgia-1950s-three-white-industries",
+      "variant": "group-comparison",
+      "setIndex": 1,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "1950년대 산업 성장을 이끈 이른바 ‘삼백 산업’을 이루는 세 업종은 무엇이었을까요?",
+      "choices": [
+        "방직·제분·제당",
+        "제철·조선·정유",
+        "시멘트·비료·자동차"
+      ],
+      "answerIndex": 0,
+      "explanation": "삼백 산업은 흰색 제품을 만들던 방직, 제분, 제당 산업을 가리킵니다. 전쟁 뒤 생활필수품 수요가 커지면서 이 세 산업이 1950년대 제조업 성장을 이끌었습니다.",
+      "source": {
+        "name": "대한민국역사박물관 웹진 「1960~80년대 직업 변천」",
+        "url": "https://www.much.go.kr/webzine/vol41/sub/sub2.html"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s02-steady-pop-music-pillars",
+      "conceptId": "nostalgia-1960s-popular-music-two-pillars",
+      "variant": "influence-comparison",
+      "setIndex": 2,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "1960년대 한국 대중가요의 양대 흐름과 문화적 영향을 올바르게 연결한 조합은 어느 것일까요?",
+      "choices": [
+        "민요-미국 영향, 창극-프랑스 영향",
+        "포크-일본 영향, 국악가요-영국 영향",
+        "트로트-일본 영향, 스탠더드 팝-미국 영향"
+      ],
+      "answerIndex": 2,
+      "explanation": "1960년대 대중가요에는 일본의 영향을 받은 트로트와 미국의 영향을 받은 스탠더드 팝이라는 두 흐름이 자리 잡았습니다. 이후 청년문화가 등장하며 장르가 더 다양해졌습니다.",
+      "source": {
+        "name": "대한민국역사박물관 웹진 「한국 대중문화의 역사」",
+        "url": "https://www.much.go.kr/webzine/vol47/sub/sub2.html"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s03-steady-imported-culture-hubs",
+      "conceptId": "nostalgia-1950s-1970s-us-base-afkn-culture-hubs",
+      "variant": "channel-comparison",
+      "setIndex": 3,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "1950~70년대 해외 음반과 영상문화가 국내에 퍼지는 통로 역할을 한 곳은 어디였을까요?",
+      "choices": [
+        "전국 농협 창고와 면사무소 방송실",
+        "고속도로 휴게소와 지방 공설운동장",
+        "미군 기지 주변과 AFKN 방송망"
+      ],
+      "answerIndex": 2,
+      "explanation": "미군 기지 주변과 AFKN은 해외 음반, 음악, 영상문화를 접하는 주요 통로였습니다. 그곳에서 소개된 대중문화는 국내 음악인과 젊은 층의 취향에도 영향을 주었습니다.",
+      "source": {
+        "name": "대한민국역사박물관 웹진 「한류와 대중문화 특별전」",
+        "url": "https://www.much.go.kr/webzine/vol47/sub/sub3.html"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s04-steady-citizen-apartment-layout",
+      "conceptId": "nostalgia-1969-citizen-apartment-layout",
+      "variant": "floor-plan-comparison",
+      "setIndex": 4,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "1969년 서울 시민아파트의 평균적인 실내 구성과 가장 가까운 것은 어느 것일까요?",
+      "choices": [
+        "방 네 칸과 독립 식당, 세대별 욕실을 갖춘 30평형",
+        "거실 겸 안방, 작은 방, 부엌 겸 세면실을 둔 약 11평형",
+        "한 개의 큰 방과 공동 취사장만 둔 약 5평형"
+      ],
+      "answerIndex": 1,
+      "explanation": "당시 시민아파트는 평균 약 11평으로 거실 겸 안방, 작은 방, 부엌 겸 세면실을 두는 구성이 일반적이었습니다. 좁은 공간을 활용하려고 미닫이문도 많이 썼습니다.",
+      "source": {
+        "name": "대한민국역사박물관 웹진 「’69년은 마이홈의 해」",
+        "url": "https://www.much.go.kr/webzine/vol56/s06.html"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s05-steady-housing-census-method",
+      "conceptId": "nostalgia-1960-housing-census-combined-surveys",
+      "variant": "method-comparison",
+      "setIndex": 5,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "1960년 주택조사가 전국 기본현황과 세부 생활상을 함께 파악하려 했다면 어떤 설계가 알맞았을까요?",
+      "choices": [
+        "도시 가구는 전수로, 농촌 가구는 일부만 표본으로 조사했습니다",
+        "모든 가구에 같은 세부문항만 묻고 별도 표본은 두지 않았습니다",
+        "모든 가구의 기본항목과 일부 가구의 세부항목을 나누어 조사했습니다"
+      ],
+      "answerIndex": 2,
+      "explanation": "1960년 조사에서는 전체 가구를 살피는 전수조사와 일부 가구를 자세히 보는 표본조사를 함께 실시했습니다. 기본 현황과 세부 생활상을 동시에 파악하려는 방식이었습니다.",
+      "source": {
+        "name": "대한민국역사박물관 웹진 「인구총조사 조사항목의 변화」",
+        "url": "https://www.much.go.kr/webzine/vol36/sub/sub10.html"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s06-steady-sewoon-construction-timeline",
+      "conceptId": "nostalgia-sewoon-construction-1966-1967",
+      "variant": "timeline-comparison",
+      "setIndex": 6,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "국내 첫 주상복합단지로 소개되는 세운상가의 착공과 완공 시기를 바르게 이은 것은 무엇일까요?",
+      "choices": [
+        "1958년 착공해 1962년 완공",
+        "1970년 착공해 1974년 완공",
+        "1966년 착공해 1967년 완공"
+      ],
+      "answerIndex": 2,
+      "explanation": "세운상가는 1966년 6월 공사를 시작해 1967년 7월 완공됐습니다. 상가와 주거 기능을 한 건물군에 결합한 당시의 대형 주상복합단지였습니다.",
+      "source": {
+        "name": "대한민국역사박물관 근현대사아카이브 「세운상가」",
+        "url": "https://archive.much.go.kr/data/01/folderView.do?idnbr=2016036757&jobdirSeq=571"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s07-steady-first-mobile-nickname",
+      "conceptId": "nostalgia-sh100-brick-nickname",
+      "variant": "technology-change-comparison",
+      "setIndex": 7,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "국산 첫 휴대전화 SH-100의 별명이 ‘벽돌’이었다는 사실은 기술 변화의 어떤 순서를 보여 줄까요?",
+      "choices": [
+        "이동 중 통화가 가능해진 뒤 기기가 점차 작고 가벼워졌습니다",
+        "기기가 먼저 손목시계 크기로 줄어든 뒤 이동통신망이 생겼습니다",
+        "초기에는 카메라가 중심이었고 나중에 음성통화가 추가됐습니다"
+      ],
+      "answerIndex": 0,
+      "explanation": "SH-100은 이동 중 통화를 가능하게 한 국산 첫 휴대전화였지만 크고 무거워 ‘벽돌’이라 불렸습니다. 이동통신 기능이 먼저 등장하고 소형화가 뒤따른 흐름을 보여 줍니다.",
+      "source": {
+        "name": "대한민국역사박물관 상설전시 역사관",
+        "url": "https://www.much.go.kr/MUCH/contents/M02020100000.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s08-steady-childhood-photo-period",
+      "conceptId": "nostalgia-childrens-museum-1950s-1980s-photos",
+      "variant": "period-context-comparison",
+      "setIndex": 8,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "1950~1980년대 학교 사진을 함께 살피면 어떤 변화를 비교하기에 가장 알맞을까요?",
+      "choices": [
+        "개항기 서당이 근대학교로 바뀌는 과정",
+        "전쟁 뒤 복구기에서 산업화 시기까지의 학교생활",
+        "일제강점기 보통학교에서 광복 직후까지의 교실"
+      ],
+      "answerIndex": 1,
+      "explanation": "1950년대부터 1980년대까지의 사진은 전쟁 뒤 복구기에서 산업화 시기로 이어지는 학교생활의 변화를 보여 줍니다. 전시는 이 사진과 시민 기증 자료를 함께 활용했습니다.",
+      "source": {
+        "name": "대한민국역사박물관 웹진 「역사와 친구가 되는 곳, 1층 어린이박물관」",
+        "url": "https://www.much.go.kr/webzine/vol31/sub/sub9.html"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s09-steady-first-radio-local-parts",
+      "conceptId": "nostalgia-goldstar-a501-launch-local-parts",
+      "variant": "specification-pair",
+      "setIndex": 9,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "국산 진공관 라디오 금성 A-501의 출시 시기와 국산 부품 비율을 정확히 고르면 어느 것일까요?",
+      "choices": [
+        "1959년 1월·60% 이상",
+        "1965년 8월·30% 안팎",
+        "1970년 12월·90% 이상"
+      ],
+      "answerIndex": 0,
+      "explanation": "금성 A-501은 1959년 1월 15일 출시됐고 부품의 60% 이상을 국내에서 조달했습니다. 국산 가전산업이 본격적으로 출발하던 시기를 보여 주는 제품입니다.",
+      "source": {
+        "name": "대한민국역사박물관 근현대사아카이브 「소리와 영상」",
+        "url": "https://archive.much.go.kr/data/05/folderView.do?idnbr=2016008059&jobdirSeq=188"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s10-steady-jamsil-construction-purpose",
+      "conceptId": "nostalgia-jamsil-stadium-1976-1984-games",
+      "variant": "timeline-purpose-pair",
+      "setIndex": 10,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "잠실종합운동장의 건설 시기와 주요 건립 목적을 함께 맞힌 설명은 어느 것일까요?",
+      "choices": [
+        "1968~1972년에 전국체전과 프로야구만을 위해 지었습니다",
+        "1976~1984년에 아시안게임과 서울올림픽을 위해 지었습니다",
+        "1988~1992년에 프로축구와 전국체전만을 위해 지었습니다"
+      ],
+      "answerIndex": 1,
+      "explanation": "잠실종합운동장은 1976년 11월 착공해 1984년 9월 완공됐습니다. 1986년 아시안게임과 1988년 서울올림픽을 치르기 위한 핵심 경기장으로 건립됐습니다.",
+      "source": {
+        "name": "대한민국역사박물관 근현대사아카이브 「잠실종합운동장」",
+        "url": "https://archive.much.go.kr/data/01/folderView.do?jobdirSeq=587"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s11-steady-1966-growth-milestone",
+      "conceptId": "nostalgia-1966-first-double-digit-growth",
+      "variant": "milestone-context-interpretation",
+      "setIndex": 11,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "1966년의 첫 두 자릿수 경제성장 기록을 당시 산업화 맥락에서 해석하면 어느 설명이 맞을까요?",
+      "choices": [
+        "이미 1인당 국민소득 1만 달러를 넘어 소비사회가 완성됐다는 뜻입니다",
+        "생산이 빠르게 늘었지만 소득과 무역의 다른 이정표와는 구분해야 합니다",
+        "수입이 중단돼 첫 무역흑자를 냈다는 사실과 같은 의미입니다"
+      ],
+      "answerIndex": 1,
+      "explanation": "1966년의 첫 두 자릿수 성장률은 산업 생산이 빠르게 확대되던 흐름을 보여 줍니다. 그러나 이 기록이 곧 1인당 소득 1만 달러나 첫 무역흑자를 뜻하는 것은 아닙니다.",
+      "source": {
+        "name": "대한민국역사박물관 근현대사아카이브 「일하는 해 1966」",
+        "url": "https://archive.much.go.kr/data/05/folderView.do?idnbr=2018001459&jobdirSeq=875"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s12-steady-first-color-broadcast",
+      "conceptId": "nostalgia-first-domestic-color-broadcast-1980",
+      "variant": "broadcast-event-pair",
+      "setIndex": 12,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "국내 첫 컬러 텔레비전 방송의 날짜와 첫 중계 행사를 올바르게 연결한 조합을 골라보세요.",
+      "choices": [
+        "1978년 5월 5일·어린이날 기념식",
+        "1981년 8월 15일·광복절 경축식",
+        "1980년 12월 1일·수출의 날 기념식"
+      ],
+      "answerIndex": 2,
+      "explanation": "국내 첫 컬러방송은 1980년 12월 1일 오전에 중계된 수출의 날 기념식이었습니다. 흑백 화면에 익숙했던 시청자에게 방송 환경이 크게 바뀌는 순간이었습니다.",
+      "source": {
+        "name": "대한민국역사박물관 웹진 「대한민국이 ‘색’을 입은 그날」",
+        "url": "https://www.much.go.kr/webzine/vol35/sub/sub1.html"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s13-steady-gobau-run-timeline",
+      "conceptId": "nostalgia-gobau-editorial-cartoon-run",
+      "variant": "publication-timeline",
+      "setIndex": 13,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "4컷 시사만화 「고바우 영감」의 첫 등장과 연재 종료 시기를 바르게 이은 것은 무엇일까요?",
+      "choices": [
+        "1955년 동아일보에서 시작해 2000년에 끝났습니다",
+        "1961년 조선일보에서 시작해 1988년에 끝났습니다",
+        "1972년 문화일보에서 시작해 1997년에 끝났습니다"
+      ],
+      "answerIndex": 0,
+      "explanation": "「고바우 영감」은 1955년 2월 1일 동아일보에 처음 실렸고 여러 신문을 거쳐 2000년 9월 28일까지 연재됐습니다. 한국 현대사를 오랫동안 기록한 대표적인 시사만화입니다.",
+      "source": {
+        "name": "대한민국역사박물관 웹진 「고바우 영감에 담긴 한국 현대사」",
+        "url": "https://www.much.go.kr/webzine/vol32/sub/sub9.html"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s14-steady-seoul-ten-million",
+      "conceptId": "nostalgia-seoul-population-ten-million-1988",
+      "variant": "urbanization-context",
+      "setIndex": 14,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "서울 인구가 1988년 무렵 천만 명을 넘었다는 사실은 어떤 도시화 흐름을 보여 줄까요?",
+      "choices": [
+        "일자리와 인구가 농촌으로 분산돼 서울의 주택 수요가 줄었습니다",
+        "산업화로 인구가 집중돼 주택과 교통 기반의 수요가 커졌습니다",
+        "행정구역이 줄어 실거주 인구는 감소했지만 통계 인구만 늘었습니다"
+      ],
+      "answerIndex": 1,
+      "explanation": "서울 인구가 천만 명을 넘은 것은 산업화로 일자리와 인구가 수도권에 집중된 결과입니다. 주택과 교통 기반에 대한 수요도 함께 빠르게 커졌습니다.",
+      "source": {
+        "name": "대한민국역사박물관 웹진 「현대 한국의 도시화」",
+        "url": "https://www.much.go.kr/webzine/vol41/sub/sub6.html"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s15-steady-electronics-ad-slogans",
+      "conceptId": "nostalgia-1980s-electronics-ad-campaigns",
+      "variant": "campaign-comparison",
+      "setIndex": 15,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "1980년대 전자업계 광고 경쟁에서 회사와 대표 구호의 연결이 맞는 조합은 어느 것일까요?",
+      "choices": [
+        "금성사-테크노피아, 삼성전자-휴먼테크",
+        "금성사-휴먼테크, 삼성전자-테크노피아",
+        "금성사-마이카 시대, 삼성전자-잘살아 보세"
+      ],
+      "answerIndex": 0,
+      "explanation": "1980년대 금성사는 ‘테크노피아’, 삼성전자는 ‘휴먼테크’를 내세워 전자제품의 기술과 미래상을 강조했습니다. 기업 광고가 제품 소개를 넘어 브랜드 이미지를 만드는 방향으로 넓어진 사례입니다.",
+      "source": {
+        "name": "대한민국역사박물관 웹진 「시대를 비춘 광고」",
+        "url": "https://www.much.go.kr/webzine/vol39/sub/sub2.html"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s16-steady-seoul-tram-end",
+      "conceptId": "nostalgia-seoul-tram-ended-1968",
+      "variant": "cause-timeline",
+      "setIndex": 16,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "서울 전차가 1968년 운행을 멈추는 데 당시의 어떤 교통 변화가 함께 작용했을까요?",
+      "choices": [
+        "전차 속도가 너무 빨라 보행자 통행이 불가능해졌기 때문입니다",
+        "전차 노선을 모두 지하화해 같은 차량을 지하철로 썼기 때문입니다",
+        "자동차와 버스가 늘고 전차의 느린 속도가 도로 흐름을 막았기 때문입니다"
+      ],
+      "answerIndex": 2,
+      "explanation": "서울 전차는 시속 약 7킬로미터로 느렸고 자동차와 버스가 늘면서 도로 교통에 부담이 됐습니다. 이런 변화 속에서 전차는 1968년 운행을 마쳤습니다.",
+      "source": {
+        "name": "대한민국역사박물관 웹진 「1960~80년대 직업 변천」",
+        "url": "https://www.much.go.kr/webzine/vol41/sub/sub2.html"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s17-steady-color-tv-teen-culture",
+      "conceptId": "nostalgia-1980s-color-tv-teen-consumers",
+      "variant": "media-effect-comparison",
+      "setIndex": 17,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "1980년대 컬러 텔레비전 보급이 대중문화 소비에 가져온 변화로 가장 알맞은 것은 무엇일까요?",
+      "choices": [
+        "가수 팬 집단과 청소년 소비층의 존재감이 커졌습니다",
+        "가족극과 뉴스 시청이 늘어 청소년의 스타 팬 활동은 줄었습니다",
+        "화면보다 음향이 주목받아 청소년 취향이 다시 라디오로 옮겨갔습니다"
+      ],
+      "answerIndex": 0,
+      "explanation": "컬러 텔레비전은 스타의 모습과 무대를 생생하게 전달하며 ‘오빠부대’ 같은 팬 집단의 성장을 도왔습니다. 청소년도 중요한 대중문화 소비층으로 떠올랐습니다.",
+      "source": {
+        "name": "대한민국역사박물관 웹진 「한국 대중문화의 역사」",
+        "url": "https://www.much.go.kr/webzine/vol47/sub/sub2.html"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s18-steady-hong-kong-video-route",
+      "conceptId": "nostalgia-hong-kong-films-vcr-videotape",
+      "variant": "distribution-channel",
+      "setIndex": 18,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "1970년대 이후 홍콩 액션영화와 강시물이 국내 가정까지 널리 퍼진 주요 매체는 무엇이었을까요?",
+      "choices": [
+        "라디오 연속극 녹음테이프와 만화 대본집",
+        "비디오테이프와 가정용 비디오 기기",
+        "재개봉관 영화필름과 영화잡지 부록 사진"
+      ],
+      "answerIndex": 1,
+      "explanation": "가정용 비디오 기기와 대여 비디오테이프가 보급되면서 홍콩 액션영화와 강시물이 안방까지 퍼졌습니다. 극장 중심이던 영화 감상 방식도 점차 다양해졌습니다.",
+      "source": {
+        "name": "대한민국역사박물관 웹진 「한류와 대중문화 특별전」",
+        "url": "https://www.much.go.kr/webzine/vol47/sub/sub3.html"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s19-steady-wau-policy-change",
+      "conceptId": "nostalgia-wau-collapse-housing-policy-shift",
+      "variant": "event-consequence",
+      "setIndex": 19,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "1970년 와우아파트 붕괴 뒤 서울의 아파트 정책이 바뀐 방향은 무엇이었을까요?",
+      "choices": [
+        "시민아파트를 같은 방식으로 더 빠르게 확대했습니다",
+        "시민아파트 계획을 멈추고 시범아파트 중심으로 전환했습니다",
+        "모든 공동주택을 중단하고 단독주택만 허용했습니다"
+      ],
+      "answerIndex": 1,
+      "explanation": "와우아파트 붕괴는 부실시공 문제를 드러냈고 시민아파트 건립 계획은 중단됐습니다. 이후 주거정책은 중산층을 대상으로 한 시범아파트 건설 쪽으로 방향을 바꾸었습니다.",
+      "source": {
+        "name": "대한민국역사박물관 웹진 「’69년은 마이홈의 해」",
+        "url": "https://www.much.go.kr/webzine/vol56/s06.html"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s20-steady-1960-housing-items",
+      "conceptId": "nostalgia-1960-census-housing-items",
+      "variant": "survey-evidence-comparison",
+      "setIndex": 20,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "1960년 주택조사 항목을 보면 당시 살림 환경을 알아보기 위해 무엇을 물었을까요?",
+      "choices": [
+        "마루 바닥·식수·변소·아궁이·굴뚝의 상태",
+        "지붕 재료·우물 깊이·장독 수·온돌방의 넓이",
+        "벽체 재료·마당 크기·부엌문·외양간의 위치"
+      ],
+      "answerIndex": 0,
+      "explanation": "1960년 조사에는 대청 바닥, 마시는 물, 변소, 아궁이와 굴뚝 같은 항목이 포함됐습니다. 질문 자체가 당시 주거의 위생과 난방 환경을 보여 주는 생활사 자료입니다.",
+      "source": {
+        "name": "대한민국역사박물관 웹진 「인구총조사 조사항목의 변화」",
+        "url": "https://www.much.go.kr/webzine/vol36/sub/sub10.html"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s21-steady-sewoon-electronics-rise-decline",
+      "conceptId": "nostalgia-sewoon-electronics-yongsan-shift",
+      "variant": "rise-decline-sequence",
+      "setIndex": 21,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "세운상가의 전자상가 기능은 어떤 순서로 성장하고 약해졌을까요?",
+      "choices": [
+        "1950년대 자동차시장으로 성장한 뒤 남대문시장 때문에 쇠퇴했습니다",
+        "1970~80년대 전자시장으로 성장한 뒤 용산전자상가 등장 후 약해졌습니다",
+        "1990년대 서점가로 성장한 뒤 온라인 강의 때문에 쇠퇴했습니다"
+      ],
+      "answerIndex": 1,
+      "explanation": "세운상가는 1970년대 전자업종이 모이기 시작해 1980년대 서울의 종합 전자시장으로 이름을 알렸습니다. 1987년 용산전자상가가 들어선 뒤 중심 기능이 점차 약해졌습니다.",
+      "source": {
+        "name": "대한민국역사박물관 근현대사아카이브 「세운상가」",
+        "url": "https://archive.much.go.kr/data/01/folderView.do?idnbr=2016036757&jobdirSeq=571"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s22-steady-64m-dram-capacity",
+      "conceptId": "nostalgia-1992-64m-dram-hangul-capacity",
+      "variant": "communication-choice-interpretation",
+      "setIndex": 22,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "64메가 디램의 용량을 ‘한글 약 400만 자’라고 소개한 까닭은 무엇일까요?",
+      "choices": [
+        "낯선 반도체 용량을 익숙한 글자 수로 쉽게 가늠하게 하려는 설명입니다",
+        "이 반도체에는 한글만 저장되고 숫자나 사진은 담지 못한다는 뜻입니다",
+        "저장할 글자 수가 제품의 개발 연도를 결정했다는 뜻입니다"
+      ],
+      "answerIndex": 0,
+      "explanation": "‘한글 약 400만 자’라는 표현은 추상적인 반도체 용량을 일상적인 글자 수로 바꿔 설명한 것입니다. 특정 문자만 저장할 수 있다는 뜻은 아닙니다.",
+      "source": {
+        "name": "대한민국역사박물관 상설전시 역사관",
+        "url": "https://www.much.go.kr/MUCH/contents/M02020100000.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s23-steady-school-memory-objects",
+      "conceptId": "nostalgia-school-lunchbox-maruchi-videotape",
+      "variant": "object-pair-recognition",
+      "setIndex": 23,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "옛 학교생활 전시에서 서로 다른 세대의 추억을 함께 보여 준 물건 조합은 무엇이었을까요?",
+      "choices": [
+        "양은도시락과 「태권동자 마루치 아라치」 비디오테이프",
+        "책보와 주산, 어린이 라디오 공개방송 녹음테이프",
+        "교복 배지와 종이딱지, 프로야구 개막식 비디오테이프"
+      ],
+      "answerIndex": 0,
+      "explanation": "전시는 양은도시락 같은 학교 물건과 「태권동자 마루치 아라치」 비디오테이프를 함께 소개했습니다. 서로 다른 시기의 어린 시절 기억을 물건으로 연결한 구성입니다.",
+      "source": {
+        "name": "대한민국역사박물관 웹진 「역사와 친구가 되는 곳, 1층 어린이박물관」",
+        "url": "https://www.much.go.kr/webzine/vol31/sub/sub9.html"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s24-steady-first-appliance-export",
+      "conceptId": "nostalgia-1962-radio-first-appliance-export",
+      "variant": "export-milestone",
+      "setIndex": 24,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "금성 라디오가 우리나라 가전제품 수출사에서 세운 기록은 무엇이었을까요?",
+      "choices": [
+        "1970년 일본에 냉장고를 처음 수출한 기록",
+        "1965년 독일에 텔레비전을 처음 수출한 기록",
+        "1962년 미국에 라디오를 보내 첫 가전 수출을 이룬 기록"
+      ],
+      "answerIndex": 2,
+      "explanation": "1962년 11월 금성사는 라디오 62대를 미국 아이젠버그사에 수출했습니다. 이는 한국산 가전제품의 첫 수출 사례로 기록됩니다.",
+      "source": {
+        "name": "대한민국역사박물관 근현대사아카이브 「소리와 영상」",
+        "url": "https://archive.much.go.kr/data/05/folderView.do?idnbr=2016008059&jobdirSeq=188"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s25-steady-main-stadium-events",
+      "conceptId": "nostalgia-jamsil-main-stadium-events",
+      "variant": "venue-use-comparison",
+      "setIndex": 25,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "잠실 주경기장은 두 국제대회에서 어떤 행사와 경기를 맡았을까요?",
+      "choices": [
+        "수영과 야구 경기만 치른 보조경기장이었습니다",
+        "개·폐회식과 함께 육상·축구 경기를 치렀습니다",
+        "양궁과 승마 경기만 치른 외곽경기장이었습니다"
+      ],
+      "answerIndex": 1,
+      "explanation": "잠실 주경기장은 1986년 아시안게임과 1988년 서울올림픽의 개·폐회식 무대였습니다. 육상과 축구 경기도 이곳에서 열렸습니다.",
+      "source": {
+        "name": "대한민국역사박물관 근현대사아카이브 「잠실종합운동장」",
+        "url": "https://archive.much.go.kr/data/01/folderView.do?jobdirSeq=587"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s26-steady-kim-ki-soo-champion",
+      "conceptId": "nostalgia-1966-kim-kisoo-world-champion",
+      "variant": "sports-milestone-context",
+      "setIndex": 26,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "1966년 김기수의 장충체육관 판정승이 한국 복싱사에서 갖는 의미는 무엇일까요?",
+      "choices": [
+        "한국 선수가 국내에서 처음 세계챔피언에 오른 출발점이었습니다",
+        "한국 복싱이 처음 올림픽 단체 종목으로 채택된 계기였습니다",
+        "한국 선수가 처음 해외 원정에서 타이틀을 방어한 경기였습니다"
+      ],
+      "answerIndex": 0,
+      "explanation": "김기수는 장충체육관에서 니노 벤베누티에게 판정승을 거두며 한국 복싱 첫 세계챔피언이 됐습니다. 국내 경기장에서 이룬 첫 세계 정상 기록이라는 의미가 있습니다.",
+      "source": {
+        "name": "대한민국역사박물관 근현대사아카이브 「일하는 해 1966」",
+        "url": "https://archive.much.go.kr/data/05/folderView.do?idnbr=2018001459&jobdirSeq=875"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s27-steady-color-tv-production-gap",
+      "conceptId": "nostalgia-color-tv-export-before-domestic-sales",
+      "variant": "production-policy-sequence",
+      "setIndex": 27,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "컬러 텔레비전은 국내 생산과 국내 판매 사이에 어떤 시간차가 있었을까요?",
+      "choices": [
+        "1980년에 생산을 시작해 국내 판매만 허용했고 1981년까지 수출을 금지했습니다",
+        "1974년에 생산을 시작해 1978년 대량 수출했지만 내수 판매는 허용되지 않았습니다",
+        "1966년에 완제품 수입을 시작했고 국내 조립과 판매는 1990년대에야 허용됐습니다"
+      ],
+      "answerIndex": 1,
+      "explanation": "국내 컬러 텔레비전 생산은 1974년 시작됐고 1978년에는 약 50만 대를 수출했습니다. 그러나 당시 국내 판매는 허용되지 않아 생산과 시청 환경 사이에 시차가 있었습니다.",
+      "source": {
+        "name": "대한민국역사박물관 웹진 「대한민국이 ‘색’을 입은 그날」",
+        "url": "https://www.much.go.kr/webzine/vol35/sub/sub1.html"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s28-steady-gobau-cultural-record",
+      "conceptId": "nostalgia-gobau-14139-cultural-registration",
+      "variant": "record-significance",
+      "setIndex": 28,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "「고바우 영감」의 문화재 등록을 뒷받침하는 연재 기록은 어느 것일까요?",
+      "choices": [
+        "1955년부터 한 신문에만 5천 회 실린 스포츠 전문 시사만화 기록",
+        "1970년부터 세 신문에 1만 회 실린 어린이 생활만화 기록",
+        "총 1만 4,139회에 걸쳐 현대사를 담은 최장수 시사만화 기록"
+      ],
+      "answerIndex": 2,
+      "explanation": "「고바우 영감」은 총 1만 4,139회 연재되며 한국 현대사의 여러 장면을 풍자와 기록으로 남겼습니다. 최장수 시사만화로서의 가치를 인정받아 2013년 문화재로 등록됐습니다.",
+      "source": {
+        "name": "대한민국역사박물관 웹진 「고바우 영감에 담긴 한국 현대사」",
+        "url": "https://www.much.go.kr/webzine/vol32/sub/sub9.html"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s29-steady-first-subway-crowding",
+      "conceptId": "nostalgia-1974-seoul-subway-crowding",
+      "variant": "urban-scene-timeline",
+      "setIndex": 29,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "steady",
+      "prompt": "1974년 처음 개통한 서울 지하철의 초기 모습은 도시화의 어떤 면을 드러낼까요?",
+      "choices": [
+        "출퇴근 승객이 버스에 머물러 객차에는 빈자리가 많았습니다",
+        "주말 관광객만 늘고 평일의 통근 수요는 거의 없었습니다",
+        "빠르게 늘어난 도시 인구로 객차가 사람들로 가득 찼습니다"
+      ],
+      "answerIndex": 2,
+      "explanation": "1974년 개통한 서울 지하철은 급증한 도시 인구와 이동 수요를 실어 나르며 곧 만원 상태가 됐습니다. 지하철의 혼잡은 당시 서울의 빠른 팽창을 보여 주는 장면이었습니다.",
+      "source": {
+        "name": "대한민국역사박물관 웹진 「현대 한국의 도시화」",
+        "url": "https://www.much.go.kr/webzine/vol41/sub/sub6.html"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s00-stretch-slinky-origin-observation",
+      "conceptId": "nostalgia-slinky-fallen-spring-observation",
+      "variant": "invention-evidence",
+      "setIndex": 0,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "슬링키의 발명 아이디어는 어떤 우연한 관찰에서 시작됐을까요?",
+      "choices": [
+        "배의 밧줄이 감기는 모습을 보고 탄성 있는 고무줄 장난감으로 바꾸었습니다",
+        "장비용 용수철이 떨어져 움직이는 모습을 보고 걷는 장난감으로 발전시켰습니다",
+        "시계 태엽이 탁자 아래로 풀리는 모습을 보고 소리 나는 팽이로 발전시켰습니다"
+      ],
+      "answerIndex": 1,
+      "explanation": "리처드 제임스는 1943년 선박 장비를 안정시키는 용수철이 떨어져 연속해서 움직이는 모습을 보았습니다. 그는 이 우연한 움직임을 계단을 ‘걷는’ 장난감의 원리로 발전시켰습니다.",
+      "source": {
+        "name": "The Strong National Museum of Play, Slinky",
+        "url": "https://www.museumofplay.org/toys/slinky/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s01-stretch-etch-a-sketch-principle",
+      "conceptId": "nostalgia-etch-a-sketch-electrostatic-principle",
+      "variant": "mechanism-inference",
+      "setIndex": 1,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "에치 어 스케치 화면에는 어떤 원리로 선이 나타날까요?",
+      "choices": [
+        "열에 녹는 잉크층을 안쪽 펜촉이 긁어 선을 드러내는 방식입니다",
+        "자성가루를 자석 펜촉이 끌어당겨 화면에 선을 만드는 방식입니다",
+        "정전기로 붙은 알루미늄 가루를 펜촉이 밀어내는 방식입니다"
+      ],
+      "answerIndex": 2,
+      "explanation": "에치 어 스케치는 정전기 때문에 화면 안쪽에 붙어 있는 알루미늄 가루를 펜촉이 밀어내며 선을 만듭니다. 전기를 쓰지 않고도 물성과 정전기 현상을 이용한 장치입니다.",
+      "source": {
+        "name": "The Strong National Museum of Play, Etch A Sketch",
+        "url": "https://www.museumofplay.org/toys/etch-a-sketch/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s02-stretch-rubiks-name-timeline",
+      "conceptId": "nostalgia-rubik-magic-cube-renaming",
+      "variant": "brand-strategy-interpretation",
+      "setIndex": 2,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "‘매직 큐브’가 1980년 ‘루빅 큐브’로 바뀐 일은 어떤 국제 판매 전략으로 볼 수 있을까요?",
+      "choices": [
+        "학교 교구라는 용도만 강조해 일반 소비자의 구매를 제한하는 전략입니다",
+        "전자 기능을 더했다는 인상을 주어 기존 퍼즐과 단절하는 전략입니다",
+        "발명자의 이름을 브랜드로 내세워 세계 시장에서 기억시키는 전략입니다"
+      ],
+      "answerIndex": 2,
+      "explanation": "에르뇌 루빅이 1974년 만든 ‘매직 큐브’는 1980년 국제 판매 때 ‘루빅 큐브’로 이름이 바뀌었습니다. 발명자의 이름을 제품 정체성과 연결한 세계 시장용 브랜드 전략으로 볼 수 있습니다.",
+      "source": {
+        "name": "The Strong National Museum of Play, Rubik’s Cube",
+        "url": "https://www.museumofplay.org/toys/rubiks-cube/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s03-stretch-frisbee-pie-plate-origin",
+      "conceptId": "nostalgia-frisbee-pie-plate-origin",
+      "variant": "observed-play-innovation",
+      "setIndex": 3,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "학생들이 파이 접시를 던지던 놀이가 프리스비로 발전한 사례에서 제품 개발 원리를 추론하면 무엇일까요?",
+      "choices": [
+        "사람들이 스스로 만든 놀이를 관찰해 더 일정하게 나는 전용 도구로 다듬었습니다",
+        "새 합성수지를 먼저 만든 뒤 그 재료의 특성에 맞는 놀이 행동을 새로 정했습니다",
+        "운송용 원반을 작게 축소해 장식품으로 판매한 뒤 나중에 경기 규칙을 붙였습니다"
+      ],
+      "answerIndex": 0,
+      "explanation": "학생들이 파이 접시를 던져 놀던 자발적 행동을 관찰하고, 더 안정적으로 날아가는 전용 원반으로 다듬었습니다. 익숙한 놀이를 제품 설계로 발전시킨 사례입니다.",
+      "source": {
+        "name": "The Strong National Museum of Play, Frisbee",
+        "url": "https://www.museumofplay.org/toys/frisbee/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s04-stretch-hula-hoop-material-change",
+      "conceptId": "nostalgia-hula-hoop-wood-to-marlex",
+      "variant": "material-adoption-cause",
+      "setIndex": 4,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "나무 고리를 속이 빈 플라스틱으로 바꾼 선택이 훌라후프 확산에 유리했던 까닭은 무엇일까요?",
+      "choices": [
+        "금속심을 넣어 충격을 키우고 숙련자용 경기 도구로 만들 수 있었습니다",
+        "가볍고 규격이 일정한 고리를 빠르게 대량생산할 수 있었습니다",
+        "천을 씌워 마찰을 늘리고 야외에 고정하는 시설물로 만들 수 있었습니다"
+      ],
+      "answerIndex": 1,
+      "explanation": "속이 빈 플라스틱 고리는 나무보다 가볍고 같은 규격으로 빠르게 만들기 쉬웠습니다. 다루기 쉬운 소재와 대량생산성이 놀이의 확산을 도왔습니다.",
+      "source": {
+        "name": "The Strong National Museum of Play, Hula Hoop",
+        "url": "https://www.museumofplay.org/toys/hula-hoop/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s05-stretch-lego-stud-tube-system",
+      "conceptId": "nostalgia-lego-1958-stud-tube-patent",
+      "variant": "design-function",
+      "setIndex": 5,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "1958년 특허를 받은 레고 블록의 돌기와 내부 튜브 구조가 놀이에 준 핵심 효과는 무엇일까요?",
+      "choices": [
+        "블록을 단단히 연결하면서도 여러 방향으로 다시 조립하게 했습니다",
+        "윗면 돌기로 위치만 맞추고 아랫면은 비워 느슨하게 쌓도록 했습니다",
+        "내부 튜브로 한 방향만 고정해 정해진 모형을 오래 보관하게 했습니다"
+      ],
+      "answerIndex": 0,
+      "explanation": "돌기와 내부 튜브는 블록을 안정적으로 맞물리게 하면서도 쉽게 분리해 다시 조립할 수 있게 했습니다. 이 구조가 자유로운 조합과 반복 놀이를 가능하게 했습니다.",
+      "source": {
+        "name": "The Strong National Museum of Play, LEGO",
+        "url": "https://www.museumofplay.org/toys/lego/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s06-stretch-monopoly-original-purpose",
+      "conceptId": "nostalgia-landlords-game-inequality-lesson",
+      "variant": "purpose-reversal",
+      "setIndex": 6,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "모노폴리의 뿌리인 1904년 ‘랜드로드 게임’이 처음 전달하려던 메시지는 무엇이었을까요?",
+      "choices": [
+        "토지와 부의 독점이 불평등을 만드는 과정을 게임으로 드러내려 했습니다",
+        "철도와 공공시설을 협동조합이 운영할 때의 효율을 서로 비교하려 했습니다",
+        "임대료 변화가 여러 계층의 도시 이동에 미치는 영향을 계산하게 하려 했습니다"
+      ],
+      "answerIndex": 0,
+      "explanation": "엘리자베스 매기는 토지와 부가 한 사람에게 집중될 때 생기는 폐해를 설명하려고 랜드로드 게임을 만들었습니다. 훗날 상업화된 모노폴리의 경쟁적 인상과는 다른 교육적 출발이었습니다.",
+      "source": {
+        "name": "The Strong National Museum of Play, Monopoly",
+        "url": "https://www.museumofplay.org/toys/monopoly/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s07-stretch-crayola-classroom-problem",
+      "conceptId": "nostalgia-crayola-teacher-chalk-complaints",
+      "variant": "problem-solution",
+      "setIndex": 7,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "크레욜라 크레용이 교실의 불편을 해결한 과정은 어떻게 이해하는 것이 알맞을까요?",
+      "choices": [
+        "교사들이 잉크 얼룩을 지적하자 쉽게 지워지는 여러 색 펜을 만들었습니다",
+        "교사들이 종이 손상을 지적하자 부드러운 여러 색 흑연 막대를 만들었습니다",
+        "교사들이 분필 품질을 지적하자 안전한 여러 색의 밀랍 막대를 만들었습니다"
+      ],
+      "answerIndex": 2,
+      "explanation": "교사들은 당시 분필의 품질이 낮고 쓸 색도 부족하다고 지적했습니다. 제조사는 기름표시용 연필 기술을 응용해 어린이가 쓰기 안전한 여러 색의 밀랍 크레용을 개발했습니다.",
+      "source": {
+        "name": "The Strong National Museum of Play, Crayola Crayons",
+        "url": "https://www.museumofplay.org/toys/crayola-crayons/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s08-stretch-school-donations-evidence",
+      "conceptId": "nostalgia-seoul-school-citizen-donations",
+      "variant": "evidence-provenance",
+      "setIndex": 8,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "서울역사박물관이 옛 학교생활을 개인의 기억에만 기대지 않고 재구성한 방법은 무엇이었을까요?",
+      "choices": [
+        "시민 약 40명에게 학교 기록과 물건을 기증받아 사진자료와 함께 살폈습니다",
+        "여러 작가의 학교소설과 신문 삽화만 모아 실제 교실 모습을 재현했습니다",
+        "현재 학생과 교사의 설문과 구술 기억만으로 과거 교실 규칙을 추정했습니다"
+      ],
+      "answerIndex": 0,
+      "explanation": "박물관은 약 40명의 서울 시민이 기증한 학교 기록과 물건을 시대별 사진자료와 함께 활용했습니다. 여러 사람의 실제 자료를 모아 개인 기억의 한계를 보완한 것입니다.",
+      "source": {
+        "name": "서울역사박물관 「서울 학교 100년」",
+        "url": "https://museum.seoul.go.kr/eng/board/NR_boardView.do?bbsCd=1042&q_exhCd=all&seq=20201201182524802"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s09-stretch-poster-workshop-recreation",
+      "conceptId": "nostalgia-film-poster-designer-workshop",
+      "variant": "evidence-chain-interpretation",
+      "setIndex": 9,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "작업실 재현과 원화 스케치·완성 포스터를 함께 보여 주면 어떤 제작 과정을 가장 잘 읽을 수 있을까요?",
+      "choices": [
+        "극장 영화표와 좌석 배치가 관객 수에 따라 달라지는 흥행 관리 과정입니다",
+        "초기 구상과 글자·색채가 다듬어져 홍보 이미지가 완성되는 과정입니다",
+        "대사와 음악 악보가 결합해 영화의 음향 장면이 완성되는 과정입니다"
+      ],
+      "answerIndex": 1,
+      "explanation": "작업실과 원화 스케치, 완성 포스터를 함께 보면 초기 구상이 글자와 색채를 거쳐 홍보 이미지로 다듬어지는 과정을 비교할 수 있습니다.",
+      "source": {
+        "name": "한국영상자료원 한국영화박물관 「영화 포스터 디자이너」",
+        "url": "https://eng.koreafilm.or.kr/museum/exhibition/EI_00030"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s10-stretch-postliberation-history-books",
+      "conceptId": "nostalgia-postliberation-history-textbook-restoration",
+      "variant": "cultural-restoration-evidence",
+      "setIndex": 10,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "광복 직후 새 역사 교과서와 금서의 재간행이 중요했던 까닭은 무엇이었을까요?",
+      "choices": [
+        "식민지기에 억눌렸던 우리 역사 인식을 다시 세우는 데 도움이 됐습니다",
+        "식민지기의 역사 교재를 표지만 바꾸어 그대로 이어 가려는 조치였습니다",
+        "직업교육용 기술서를 우선 보급하고 역사교육은 미루려는 조치였습니다"
+      ],
+      "answerIndex": 0,
+      "explanation": "광복 뒤에는 새 교과서를 만들고 식민지기에 금지됐던 책을 다시 펴내며 우리 역사를 주체적으로 이해하려는 노력이 이어졌습니다. 책은 역사 인식을 회복하는 중요한 매체였습니다.",
+      "source": {
+        "name": "National Museum of Korean Contemporary History, Reconnecting Ourselves with History",
+        "url": "https://www.much.go.kr/ENG/contents/E02020000000.do?exhCode=EXH_0000000255&schExhCategory=&schM=view"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s11-stretch-seoul-cafe-social-scale",
+      "conceptId": "nostalgia-1969-seoul-cafe-urban-social-space",
+      "variant": "scale-evidence-interpretation",
+      "setIndex": 11,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "1969년 서울에 다방 205곳, 종업원 약 1만 5천 명, 하루 방문자 100만 명이라는 기록에서 어떤 모습을 짐작할 수 있을까요?",
+      "choices": [
+        "다방은 여행객과 숙박객만 드나드는 호텔 부속 휴게실에 머물렀습니다",
+        "다방은 소수 예술가와 대학생만 찾는 작은 음악감상실에 가까웠습니다",
+        "다방은 많은 시민이 이용하는 대규모 도시 사교공간으로 성장했습니다"
+      ],
+      "answerIndex": 2,
+      "explanation": "하루 방문자 100만 명과 수백 석 규모의 기업형 다방 기록은 다방이 소수의 취향 공간을 넘어섰음을 보여 줍니다. 도시의 만남과 휴식, 상거래가 이어지는 대중적 사교공간이었습니다.",
+      "source": {
+        "name": "서울역사박물관 「커피와 다방이야기」",
+        "url": "https://museum.seoul.go.kr/www/board/NR_boardView.do?bbsCd=1026&seq=20180115141550352&sso=ok"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s12-stretch-short-honeymoon-social-context",
+      "conceptId": "nostalgia-1960s-short-honeymoon-private-time",
+      "variant": "life-pattern-causal-interpretation",
+      "setIndex": 12,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "시댁에서 신혼살림을 시작하던 1960년대에 서울 한 바퀴나 근교 1박 신혼여행이 특별했던 까닭은 무엇일까요?",
+      "choices": [
+        "양가 가족이 함께 이동하며 새 살림 준비를 의논하는 관례였기 때문입니다",
+        "결혼식 하객과 당일치기 관광을 마쳐야 직장에 복귀할 수 있었기 때문입니다",
+        "부부만의 시간을 갖기 어려운 생활에서 둘만 떠나는 드문 기회였기 때문입니다"
+      ],
+      "answerIndex": 2,
+      "explanation": "결혼 뒤 시댁에서 가족과 함께 사는 경우가 많아 신혼여행은 부부만의 시간을 갖는 드문 기회였습니다. 긴 여행이 쉽지 않아 결혼식 당일 서울을 돌거나 근교에서 1박하는 형태도 나타났습니다.",
+      "source": {
+        "name": "서울생활사박물관 「워커힐 신혼여행 기념사진」",
+        "url": "https://museum.seoul.go.kr/sulm/board/NR_boardView.do?bbsCd=1176&seq=20241223103308759"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s13-stretch-school-sports-day-festival-role",
+      "conceptId": "nostalgia-school-sports-day-community-festival",
+      "variant": "community-evidence-interpretation",
+      "setIndex": 13,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "학생들이 몇 달간 단체종목을 연습하고 가족과 마을 주민이 경기·공연을 함께 응원한 모습은 운동회의 어떤 성격을 보여 줄까요?",
+      "choices": [
+        "선발 선수의 기록만 재는 학교 대표 체육대회였습니다",
+        "학교와 가족, 지역이 함께 어울리는 마을 축제였습니다",
+        "학부모가 관람하고 학생은 수업을 계속하는 공개행사였습니다"
+      ],
+      "answerIndex": 1,
+      "explanation": "운동회는 학생의 체육 기록만 재는 행사가 아니었습니다. 단체무용과 매스게임을 준비하고 가족과 주민이 모여 응원하면서 학교와 마을이 함께하는 축제 역할을 했습니다.",
+      "source": {
+        "name": "국가기록원 「운동회」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/sportDay.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s14-stretch-childrens-park-integrated-design",
+      "conceptId": "nostalgia-1973-childrens-park-integrated-family-space",
+      "variant": "space-design-interpretation",
+      "setIndex": 14,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "1973년 어린이대공원이 자연환경을 살리며 동물원·식물원·놀이시설·수영장·음악당을 함께 둔 이유는 무엇일까요?",
+      "choices": [
+        "놀이기구 이용객과 동식물 관람객의 동선을 완전히 나누려는 구성이었습니다",
+        "야외시설을 줄이고 영화관과 오락실 중심의 대규모 실내공간을 만들려는 구성이었습니다",
+        "자연 관찰과 놀이·문화 활동을 한곳에서 누리는 가족공원을 만들려는 구성이었습니다"
+      ],
+      "answerIndex": 2,
+      "explanation": "동식물 관찰시설과 놀이기구, 수영장과 음악당을 함께 둔 구성은 어린이와 가족이 자연·놀이·문화를 한 공간에서 경험하도록 한 종합공원의 성격을 보여 줍니다.",
+      "source": {
+        "name": "국가기록원 「어린이대공원」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/childrensPark.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s15-stretch-slinky-name-origin",
+      "conceptId": "nostalgia-slinky-name-dictionary",
+      "variant": "name-fit-interpretation",
+      "setIndex": 15,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "베티 제임스가 사전에서 고른 ‘슬링키’가 이 용수철 장난감에 잘 맞았던 이유는 무엇일까요?",
+      "choices": [
+        "발명가의 고향을 뜻해 장난감이 만들어진 장소를 바로 알려 주었기 때문입니다",
+        "매끄럽고 유연하게 움직인다는 뜻이 장난감의 움직임을 잘 나타냈기 때문입니다",
+        "금속을 뜻해 장난감의 용수철 재료와 제조 공정을 자세히 설명했기 때문입니다"
+      ],
+      "answerIndex": 1,
+      "explanation": "베티 제임스는 사전에서 매끄럽고 유연하게 움직인다는 뜻을 지닌 ‘슬링키’를 골랐습니다. 계단을 연속해서 움직이는 제품의 특징을 이름이 바로 떠올리게 했습니다.",
+      "source": {
+        "name": "The Strong National Museum of Play, Slinky",
+        "url": "https://www.museumofplay.org/toys/slinky/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s16-stretch-etch-a-sketch-controls",
+      "conceptId": "nostalgia-etch-a-sketch-rods-shake-erase",
+      "variant": "interface-design-interpretation",
+      "setIndex": 16,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "두 손잡이로 펜촉을 움직이고 흔들어 화면을 지우는 구조에서 읽을 수 있는 설계 원리는 무엇일까요?",
+      "choices": [
+        "색 필터와 확대 렌즈를 손잡이로 조절하는 광학식 그림판입니다",
+        "단순한 기계 조작으로 그리고 재료를 다시 퍼뜨려 지우는 반복형 그림판입니다",
+        "감긴 코팅 종이를 손잡이로 계속 넘겨 새 화면을 꺼내 쓰는 두루마리식 그림판입니다"
+      ],
+      "answerIndex": 1,
+      "explanation": "손잡이는 가로·세로 막대를 움직여 선을 그리고, 흔들면 가루가 다시 퍼져 선이 사라집니다. 종이나 잉크를 보충하지 않고 반복해서 쓰는 기계식 설계입니다.",
+      "source": {
+        "name": "The Strong National Museum of Play, Etch A Sketch",
+        "url": "https://www.museumofplay.org/toys/etch-a-sketch/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s17-stretch-rubiks-rounded-core",
+      "conceptId": "nostalgia-rubik-rounded-core-rotation",
+      "variant": "structural-mechanism",
+      "setIndex": 17,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "루빅 큐브가 흩어지지 않으면서 각 면을 돌릴 수 있게 하는 구조적 핵심은 무엇일까요?",
+      "choices": [
+        "모든 작은 조각을 겉면의 탄성 고무줄로 단단히 묶어 놓은 구조입니다",
+        "각 조각을 서로 다른 극의 자석으로 중심에서 공중에 띄운 구조입니다",
+        "둥근 중심부 주위에서 조각이 미끄러지고 회전하는 구조입니다"
+      ],
+      "answerIndex": 2,
+      "explanation": "둥글게 설계된 중심 구조가 작은 조각들을 붙잡으면서도 줄을 따라 미끄러지고 회전하게 합니다. 덕분에 전체 형태를 유지한 채 각 면을 자유롭게 돌릴 수 있습니다.",
+      "source": {
+        "name": "The Strong National Museum of Play, Rubik’s Cube",
+        "url": "https://www.museumofplay.org/toys/rubiks-cube/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s18-stretch-frisbee-lift-design",
+      "conceptId": "nostalgia-frisbee-sloped-disc-lift",
+      "variant": "aerodynamic-design",
+      "setIndex": 18,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "플라스틱 프리스비가 평평한 접시보다 오래 날도록 설계된 핵심 이유는 무엇일까요?",
+      "choices": [
+        "넓고 평평한 면이 낙하산처럼 저항만 키워 천천히 떨어지기 때문입니다",
+        "무거운 가장자리가 관성을 키워 아래로 끌리면서도 직진하기 때문입니다",
+        "경사진 원반 형태가 회전하며 양력을 만들기 때문입니다"
+      ],
+      "answerIndex": 2,
+      "explanation": "월터 모리슨이 다듬은 경사진 원반 형태는 회전할 때 공기의 흐름으로 양력을 만듭니다. 이 설계 덕분에 원반이 안정적으로 미끄러지듯 날아갈 수 있습니다.",
+      "source": {
+        "name": "The Strong National Museum of Play, Frisbee",
+        "url": "https://www.museumofplay.org/toys/frisbee/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s19-stretch-hula-hoop-craze-evidence",
+      "conceptId": "nostalgia-hula-hoop-twenty-five-million",
+      "variant": "scale-evidence",
+      "setIndex": 19,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "훌라후프가 출시 직후 대중적인 열풍이 됐다는 점을 가장 직접적으로 보여 주는 기록은 무엇일까요?",
+      "choices": [
+        "속이 빈 플라스틱 후프가 두 달 만에 약 2,500만 개 팔렸습니다",
+        "나무 후프 약 250만 개가 십 년 동안 학교 체육용으로 보급됐습니다",
+        "스물다섯 도시가 오 년 동안 지역 체육행사에 후프를 채택했습니다"
+      ],
+      "answerIndex": 0,
+      "explanation": "속이 빈 플라스틱 훌라후프는 두 달 만에 약 2,500만 개가 팔릴 만큼 빠르게 퍼졌습니다. 짧은 기간의 판매 규모가 당시 유행의 폭발성을 보여 줍니다.",
+      "source": {
+        "name": "The Strong National Museum of Play, Hula Hoop",
+        "url": "https://www.museumofplay.org/toys/hula-hoop/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s20-stretch-lego-combination-scale",
+      "conceptId": "nostalgia-lego-two-bricks-twenty-four-ways",
+      "variant": "combinatorial-evidence",
+      "setIndex": 20,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "같은 여덟 돌기 레고 블록 두 개만으로도 창의적 조합이 가능하다는 근거는 무엇일까요?",
+      "choices": [
+        "두 블록은 설명서의 한 방향으로만 결합할 수 있습니다",
+        "두 블록은 색이 다를 때만 세 방향으로 결합할 수 있습니다",
+        "두 블록을 서로 스물네 가지 방식으로 결합할 수 있습니다"
+      ],
+      "answerIndex": 2,
+      "explanation": "같은 여덟 돌기 블록 두 개도 스물네 가지 방식으로 맞물릴 수 있습니다. 적은 수의 표준 부품으로 많은 형태를 만들 수 있다는 점이 레고 놀이의 확장성을 보여 줍니다.",
+      "source": {
+        "name": "The Strong National Museum of Play, LEGO",
+        "url": "https://www.museumofplay.org/toys/lego/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s21-stretch-monopoly-commercialization",
+      "conceptId": "nostalgia-monopoly-darrow-parker-commercialization",
+      "variant": "market-validation-inference",
+      "setIndex": 21,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "찰스 대로가 직접 약 5천 세트를 판 다음 해 완구회사가 권리를 얻은 흐름은 어떤 시장 검증 과정을 나타낼까요?",
+      "choices": [
+        "소규모 직접 판매로 수요를 확인한 뒤 권리 계약과 대량생산으로 확장했습니다",
+        "학교의 대량 구매로 교육시장부터 확보한 뒤 일반 소비자 판매를 시작했습니다",
+        "라디오 경품으로 인지도를 만든 뒤 개인 제작으로 규모를 줄였습니다"
+      ],
+      "answerIndex": 0,
+      "explanation": "찰스 대로의 직접 판매는 실제 수요를 먼저 보여 주었고, 파커 브라더스의 권리 확보는 대량생산으로 이어졌습니다. 시장 검증 뒤 확장한 상업화 과정입니다.",
+      "source": {
+        "name": "The Strong National Museum of Play, Monopoly",
+        "url": "https://www.museumofplay.org/toys/monopoly/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s22-stretch-crayola-name-parts",
+      "conceptId": "nostalgia-crayola-french-name-combination",
+      "variant": "word-formation",
+      "setIndex": 22,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "분필을 뜻하는 ‘craie’와 기름을 가리키는 ‘olea’를 합친 이름은 제품의 어떤 특징을 함께 담았을까요?",
+      "choices": [
+        "분필의 흰색과 보관 상자의 단단한 재질을 함께 나타냈습니다",
+        "분필처럼 그리는 기능과 기름 성분의 밀랍 재료를 함께 나타냈습니다",
+        "그림을 지우는 기능과 물에 녹여 수채화처럼 쓰는 성질을 함께 나타냈습니다"
+      ],
+      "answerIndex": 1,
+      "explanation": "‘craie’는 분필처럼 그리는 기능을, ‘olea’는 기름 성분을 바탕으로 한 밀랍 재료를 떠올리게 합니다. 두 말을 결합한 이름에 사용 방식과 재료의 특징을 함께 담았습니다.",
+      "source": {
+        "name": "The Strong National Museum of Play, Crayola Crayons",
+        "url": "https://www.museumofplay.org/toys/crayola-crayons/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s23-stretch-school-artifact-combination",
+      "conceptId": "nostalgia-seoul-school-textbook-lunchbox-reportcard-photo",
+      "variant": "multi-source-evidence",
+      "setIndex": 23,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "옛 학교생활의 공부·급식·평가·행사를 두루 확인하기에 가장 알맞은 자료 묶음은 무엇일까요?",
+      "choices": [
+        "교복 배지·졸업장·입학식 단체사진·교가 악보·학생수첩",
+        "손때 묻은 교과서·찌그러진 도시락·성적표·소풍 사진",
+        "학급일지·수업 시간표·운동회 상장·교문 사진·조회 기록"
+      ],
+      "answerIndex": 1,
+      "explanation": "교과서는 공부, 도시락은 점심시간, 성적표는 평가, 소풍 사진은 학교행사를 각각 보여 줍니다. 서로 다른 성격의 자료를 함께 보면 학교생활을 더 입체적으로 재구성할 수 있습니다.",
+      "source": {
+        "name": "서울역사박물관 「서울 학교 100년」",
+        "url": "https://museum.seoul.go.kr/eng/board/NR_boardView.do?bbsCd=1042&q_exhCd=all&seq=20201201182524802"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s24-stretch-film-poster-archive-range",
+      "conceptId": "nostalgia-film-poster-sketch-leaflet-export-archive",
+      "variant": "production-record-evidence",
+      "setIndex": 24,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "옛 영화의 홍보가 기획되고 완성된 과정을 연구하기에 가장 유용한 자료 구성은 무엇일까요?",
+      "choices": [
+        "완성 포스터와 원화 스케치, 전단·카드·수출용 포스터를 함께 모은 구성",
+        "완성 포스터와 개봉일 목록, 관객 설문·흥행 통계를 함께 모은 구성",
+        "영화 스틸사진과 배우 인터뷰, 촬영지 기록·상영관 명단을 함께 모은 구성"
+      ],
+      "answerIndex": 0,
+      "explanation": "전시에는 완성 포스터 약 120점과 원화 스케치 약 200점, 전단과 카드, 수출용 포스터 등이 포함됐습니다. 초안부터 매체별 완성물까지 비교해 홍보물 제작 과정을 살필 수 있습니다.",
+      "source": {
+        "name": "한국영상자료원 한국영화박물관 「영화 포스터 디자이너」",
+        "url": "https://eng.koreafilm.or.kr/museum/exhibition/EI_00030"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s25-stretch-history-awareness-examples",
+      "conceptId": "nostalgia-jindan-history-geography-textbooks",
+      "variant": "exhibit-evidence-pair",
+      "setIndex": 25,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "광복 직후 우리 역사와 국토를 새롭게 가르치려는 움직임을 함께 보여 주는 자료 조합은 무엇일까요?",
+      "choices": [
+        "총독부가 펴낸 식민지 국사교과서와 일본 중심의 지리교과서",
+        "진단학회의 『국사교본』과 광복 뒤 중학교 지리교과서",
+        "광복 뒤 새 국어 맞춤법 안내서와 중학교 영어회화 교과서"
+      ],
+      "answerIndex": 1,
+      "explanation": "진단학회의 『국사교본』과 광복 뒤 중학교 지리교과서는 우리 역사와 국토를 새 시각으로 가르치려 한 자료입니다. 두 책을 함께 보면 역사 인식과 지리교육의 회복을 연결해 볼 수 있습니다.",
+      "source": {
+        "name": "National Museum of Korean Contemporary History, Reconnecting Ourselves with History",
+        "url": "https://www.much.go.kr/ENG/contents/E02020000000.do?exhCode=EXH_0000000255&schExhCategory=&schM=view"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s26-stretch-cafe-shared-telephone-role",
+      "conceptId": "nostalgia-cafe-telephone-business-contact-hub",
+      "variant": "scarcity-function-causal-inference",
+      "setIndex": 26,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "전화가 귀하던 시절 다방에서 ‘김 사장님 전화 왔습니다’라는 말에 여러 사람이 일어선 장면은 어떤 기능을 보여 줄까요?",
+      "choices": [
+        "신청곡을 접수해 음악감상실에 전달하는 공동 방송 창구였습니다",
+        "귀한 전화를 함께 쓰며 상거래 연락을 잇는 도시 연락 거점이었습니다",
+        "가정전화가 흔해진 뒤 좌석 예약만 자동 처리하는 전용 창구였습니다"
+      ],
+      "answerIndex": 1,
+      "explanation": "개인 전화가 드물던 시절 전화기가 있는 다방은 사업 약속과 연락을 이어 주는 거점이었습니다. 같은 성을 가진 여러 손님이 동시에 반응한 일화는 공동 연락망으로서의 역할을 보여 줍니다.",
+      "source": {
+        "name": "서울역사박물관 「커피와 다방이야기」",
+        "url": "https://museum.seoul.go.kr/www/board/NR_boardView.do?bbsCd=1026&seq=20180115141550352&sso=ok"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s27-stretch-honeymoon-destination-change",
+      "conceptId": "nostalgia-1970s-1990s-honeymoon-destination-expansion",
+      "variant": "timeline-evidence-interpretation",
+      "setIndex": 27,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "1960년대 서울과 근교, 1970년대 국내 명승지, 1980년대 제주도, 1990년대 중후반 해외라는 기록에서 직접 확인할 수 있는 변화는 무엇일까요?",
+      "choices": [
+        "가까운 곳 중심이던 신혼여행지가 제주도와 해외까지 단계적으로 넓어졌습니다",
+        "해외 신혼여행이 먼저 자리 잡은 뒤 국내 명승지와 서울 근교로 범위가 좁아졌습니다",
+        "제주도는 1960년대부터 중심이었고 1990년대에도 해외 신혼여행은 드물었습니다"
+      ],
+      "answerIndex": 0,
+      "explanation": "자료는 서울과 근교, 국내 명승지, 제주도, 해외 순서로 신혼여행지를 소개합니다. 가까운 곳에서 제주도와 해외까지 행선지 범위가 단계적으로 넓어진 흐름을 직접 보여 줍니다.",
+      "source": {
+        "name": "서울생활사박물관 「워커힐 신혼여행 기념사진」",
+        "url": "https://museum.seoul.go.kr/sulm/board/NR_boardView.do?bbsCd=1176&seq=20241223103308759"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s28-stretch-school-sports-day-return",
+      "conceptId": "nostalgia-1975-sports-day-stop-1976-return",
+      "variant": "policy-response-causal-sequence",
+      "setIndex": 28,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "찬조금 폐단으로 1975년 초등학교 운동회가 중단됐다가 이듬해 학교 재량으로 부활한 배경은 무엇일까요?",
+      "choices": [
+        "찬조금 문제로 중단했지만 공동체 행사를 바라는 여론에 따라 학교 자율로 돌아왔습니다",
+        "운동장과 교사 부족으로 영구 폐지하고 선발 선수만 참가하는 지역대회로 바꿨습니다",
+        "봄·가을 두 차례를 의무화했다가 날씨 문제로 이듬해 모두 취소했습니다"
+      ],
+      "answerIndex": 0,
+      "explanation": "찬조금 문제를 해결하려 행사를 중단했지만 운동회를 되살리라는 반대 여론이 컸습니다. 이듬해 학교 재량으로 부활한 것은 부작용을 줄이면서 공동체 행사의 가치를 살리려 한 조정입니다.",
+      "source": {
+        "name": "국가기록원 「운동회」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/sportDay.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-nostalgia-001-s29-stretch-childrens-park-popularity-evidence",
+      "conceptId": "nostalgia-childrens-park-opening-crowd-evidence",
+      "variant": "quantitative-popularity-evidence",
+      "setIndex": 29,
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "stretch",
+      "prompt": "개장 6일 만에 30만 명이 찾아 입장을 제한했고 1977년 어린이날 하루 73만 5천 명이 찾았다는 기록은 무엇을 입증할까요?",
+      "choices": [
+        "개장 초기 수요는 적었고 시간이 지나며 천천히 알려졌다는 점입니다",
+        "73만 5천 명은 여러 해의 누적치여서 특정한 기념일과 무관하다는 점입니다",
+        "개장 때부터 수용 범위를 넘는 가족 여가 명소로 자리 잡았다는 점입니다"
+      ],
+      "answerIndex": 2,
+      "explanation": "개장 직후 입장을 제한할 만큼 사람이 몰렸고 어린이날 하루 방문객도 매우 많았습니다. 두 기록은 어린이대공원이 처음부터 대표적인 가족 여가 명소였음을 직접 보여 줍니다.",
+      "source": {
+        "name": "국가기록원 「어린이대공원」",
+        "url": "https://theme.archives.go.kr/next/koreaOfRecord/childrensPark.do"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    }
+  ]
+}

@@ -73,6 +73,12 @@ const sources = {
   },
 } satisfies Record<string, Source>;
 
+const auditedLegacyReviewMetadata = {
+  contentVersion: "legacy",
+  reviewStatus: "reviewed" as const,
+  reviewedAt: "2026-08-04",
+};
+
 function coreQuestion(
   dateKey: string,
   lens: CoreLens,
@@ -94,6 +100,7 @@ function coreQuestion(
     answerIndex,
     explanation,
     source,
+    ...auditedLegacyReviewMetadata,
   });
 }
 
@@ -786,7 +793,11 @@ export const augustCoreQuestions: CoreQuestion[] = [
     "safety",
     "cutting-board",
     "생고기와 바로 먹는 채소를 손질할 때 안전한 방법은 무엇일까요?",
-    ["도마와 칼을 구분", "같은 도구를 씻지 않고 사용", "고기 육즙을 채소에 묻히기"],
+    [
+      "도마와 칼을 구분",
+      "같은 도구를 씻지 않고 사용",
+      "고기 육즙을 채소에 묻히기",
+    ],
     0,
     "생고기의 균이 다른 음식에 옮지 않도록 도마와 칼을 구분하거나 깨끗이 씻어 사용해요.",
     sources.foodSafety,

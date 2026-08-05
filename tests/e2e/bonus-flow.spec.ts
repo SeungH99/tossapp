@@ -17,6 +17,7 @@ interface StoredBonusSession {
 interface StoredBonusCommand {
   sessionKey: string;
   topic: string;
+  setIndex: number;
   questionIds: string[];
 }
 
@@ -31,16 +32,16 @@ test("first free bonus lets the user choose a topic and finish three questions",
   await openFreshApp(page);
   await completeCoreQuiz(page);
   await openBonusOffer(page);
-  const digitalTopic = page.getByRole("button", { name: "디지털 생활" });
-  await digitalTopic.click();
-  await expect(digitalTopic).toHaveAttribute("aria-pressed", "true");
+  const nostalgiaTopic = page.getByRole("button", { name: "추억·대중문화" });
+  await nostalgiaTopic.click();
+  await expect(nostalgiaTopic).toHaveAttribute("aria-pressed", "true");
   await page.getByRole("button", { name: "첫 보너스 무료로 시작" }).click();
   await expect(page.locator(".quiz-screen")).toBeVisible();
 
   const progress: StoredProgress | null = await page.evaluate(() => {
     const slots = [
-      localStorage.getItem("geuttae-yojeum:progress:v2:a"),
-      localStorage.getItem("geuttae-yojeum:progress:v2:b"),
+      localStorage.getItem("geuttae-yojeum:progress:v3:a"),
+      localStorage.getItem("geuttae-yojeum:progress:v3:b"),
     ];
     const latest = slots
       .filter((raw): raw is string => raw != null)
@@ -53,7 +54,7 @@ test("first free bonus lets the user choose a topic and finish three questions",
     throw new Error("Expected persisted bonus progress");
   }
 
-  const sessionKey = "2026-07-29:bonus:digital";
+  const sessionKey = "2026-07-29:bonus:nostalgia";
   expect(progress.sessions[sessionKey]).toEqual({
     dateKey: sessionKey,
     currentIndex: 0,
@@ -63,11 +64,15 @@ test("first free bonus lets the user choose a topic and finish three questions",
   const startCommand = Object.values(progress.bonusStartCommands).find(
     (command) => command.sessionKey === sessionKey,
   );
-  expect(startCommand).toMatchObject({ sessionKey, topic: "digital" });
+  expect(startCommand).toMatchObject({
+    sessionKey,
+    topic: "nostalgia",
+    setIndex: 0,
+  });
   expect(startCommand?.questionIds).toHaveLength(3);
   expect(
     startCommand?.questionIds.every((questionId) =>
-      questionId.startsWith("bonus-digital-"),
+      questionId.startsWith("bonus-nostalgia-001-s00-"),
     ),
   ).toBe(true);
 

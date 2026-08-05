@@ -1,0 +1,2078 @@
+{
+  "id": "core-002",
+  "kind": "core",
+  "contentVersion": "2026.08.180d",
+  "reviewStatus": "reviewed",
+  "questions": [
+    {
+      "kind": "core",
+      "id": "2026-09-17-then-52-v1",
+      "dateKey": "2026-09-17",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "1876년 보스턴과 세일럼 사이에서 시연한 벨의 대형 상자형 전화기는 말소리를 어떻게 전했나요?",
+      "choices": [
+        "진동판이 회로를 일정하게 켰다 껐다 하며 같은 세기의 신호만 보냈다",
+        "철제 진동판의 움직임을 변동 전류로 바꾸어 다른 기기의 진동판을 울렸다",
+        "말소리가 말굽자석을 회전시키고 그 회전 속도를 선로 전압으로 보냈다"
+      ],
+      "answerIndex": 1,
+      "explanation": "입구의 소리 진동이 철제 진동판을 움직이면 전자석에 변동 전류가 생겼습니다. 다른 전화기의 전자석과 진동판이 그 전류를 다시 소리로 만들었습니다.",
+      "source": {
+        "name": "스미스소니언 미국사박물관 - 벨의 대형 상자형 전화기",
+        "url": "https://americanhistory.si.edu/collections/object/nmah_704159"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-10-now-45-v1",
+      "dateKey": "2026-09-10",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "Gmail에서 읽은 메일을 삭제하지 않고 받은편지함 목록에서만 치우려면 어떤 기능을 쓰면 되나요?",
+      "choices": [
+        "스팸 신고",
+        "완전 삭제",
+        "보관처리"
+      ],
+      "answerIndex": 2,
+      "explanation": "보관처리한 메일은 받은편지함에서는 사라지지만 '전체보관함'과 검색에서 다시 찾을 수 있습니다.",
+      "source": {
+        "name": "Google Gmail 고객센터 - 메일 보관처리",
+        "url": "https://support.google.com/mail/answer/6576?hl=en"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-30-life-34-v1",
+      "dateKey": "2026-08-30",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "달의 모양이 초승달에서 상현달 쪽으로 바뀔 때, 밝은 부분이 날마다 넓어져 보이는 까닭은 무엇인가요?",
+      "choices": [
+        "달의 공전으로 태양빛을 받은 절반 중 지구에서 보이는 몫이 늘어서",
+        "지구 그림자가 달 표면에서 날마다 조금씩 물러나서",
+        "달이 보름에 가까워질수록 스스로 내는 빛이 강해져서"
+      ],
+      "answerIndex": 0,
+      "explanation": "태양은 늘 달의 절반을 비추며, 달이 공전하면 그 밝은 절반을 지구에서 바라보는 각도가 달라집니다. 초승달 이후에는 보이는 밝은 면의 비율이 커집니다.",
+      "source": {
+        "name": "NASA Science - 달의 위상",
+        "url": "https://science.nasa.gov/moon/moon-phases/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-02-then-37-v1",
+      "dateKey": "2026-09-02",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "벨의 상자형 전화기를 송화기로 쓸 때, 입구로 들어온 소리가 가장 먼저 직접 움직인 부품은 무엇이었나요?",
+      "choices": [
+        "검은 원형의 철제 진동판",
+        "수평으로 놓인 말굽형 영구자석",
+        "흰색으로 보이는 두 전자석의 철심"
+      ],
+      "answerIndex": 0,
+      "explanation": "사람의 말소리는 입구 바로 안쪽의 철제 진동판을 떨게 했습니다. 그 움직임이 전자석에서 변하는 전류를 유도했습니다.",
+      "source": {
+        "name": "스미스소니언 미국사박물관 - 벨의 대형 상자형 전화기",
+        "url": "https://americanhistory.si.edu/collections/object/nmah_704159"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-25-now-60-v1",
+      "dateKey": "2026-09-25",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "Gmail에서 보관처리한 메일에 새 답장이 도착하면 일반적으로 어떻게 되나요?",
+      "choices": [
+        "새 답장이 와도 대화는 보관함에만 남아 받은편지함에는 표시되지 않는다",
+        "대화가 다시 받은편지함에 나타난다",
+        "새 답장만 별도 대화로 나타나고 기존 보관 대화는 계속 분리되어 남는다"
+      ],
+      "answerIndex": 1,
+      "explanation": "보관된 대화에 새 메시지가 오면 대화 전체가 받은편지함으로 돌아와 놓치지 않고 확인할 수 있습니다.",
+      "source": {
+        "name": "Google Gmail 고객센터 - 메일 보관처리",
+        "url": "https://support.google.com/mail/answer/6576?hl=en"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-14-life-49-v1",
+      "dateKey": "2026-09-14",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "동쪽 지평선 가까이에서 보름달이 막 떠오를 때, 태양은 대체로 어디에 있을까요?",
+      "choices": [
+        "동쪽 지평선에서 함께 떠오르는 무렵이다",
+        "하늘 가장 높은 곳에 있는 한낮 무렵이다",
+        "서쪽 지평선으로 지는 무렵이다"
+      ],
+      "answerIndex": 2,
+      "explanation": "보름달은 지구에서 보아 태양의 반대편에 놓입니다. 그래서 해가 서쪽으로 질 즈음 동쪽 지평선에 모습을 드러냅니다.",
+      "source": {
+        "name": "NASA Science - 달의 위상",
+        "url": "https://science.nasa.gov/moon/moon-phases/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-19-then-54-v1",
+      "dateKey": "2026-09-19",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "빅터 색인 타자기는 오늘날 익숙한 자판 대신 글자판과 지시침을 썼습니다. 글자를 찍는 올바른 순서는 무엇이었나요?",
+      "choices": [
+        "지시침으로 글자를 고른 뒤 맨 왼쪽 스페이스 키를 눌러 인쇄했다",
+        "지시침으로 글자를 고른 채 원통 손잡이를 돌려 활자를 종이에 눌렀다",
+        "지시침으로 글자를 고른 뒤 인쇄 레버를 눌렀다"
+      ],
+      "answerIndex": 2,
+      "explanation": "색인 타자기는 평면 글자판에서 문자를 가리킨 다음 별도의 동작으로 종이에 인쇄하는 장치였습니다.",
+      "source": {
+        "name": "스미스소니언 미국사박물관 - 빅터 색인 타자기",
+        "url": "https://americanhistory.si.edu/collections/object/nmah_849969"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-17-now-52-v1",
+      "dateKey": "2026-09-17",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "Google Drive 문서를 함께 고치게 하되 다른 사람에게 다시 공유하지는 못하게 하려면 어떤 권한이 핵심인가요?",
+      "choices": [
+        "편집자는 허용하되 공유 설정 변경은 제한한다",
+        "편집 권한 대신 댓글 작성자 권한을 주면 내용 수정과 재공유 제한이 함께 된다",
+        "편집 권한을 주고 일반 액세스만 '제한됨'으로 두면 편집자의 재공유도 자동 차단된다"
+      ],
+      "answerIndex": 0,
+      "explanation": "편집 권한과 재공유 권한은 따로 통제할 수 있습니다. 소유자는 편집자가 권한을 바꾸거나 공유하지 못하게 제한할 수 있습니다.",
+      "source": {
+        "name": "Google Drive 고객센터 - 파일 공유",
+        "url": "https://support.google.com/drive/answer/2494822?hl=en"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-16-life-51-v1",
+      "dateKey": "2026-09-16",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "매달 삭이 돌아오는데도 일식이 달마다 생기지 않는 주된 까닭은 무엇인가요?",
+      "choices": [
+        "달의 공전 주기가 계절마다 크게 늘었다 줄었다 해서",
+        "달의 공전 궤도면이 지구가 태양을 도는 궤도면에 대해 기울어져 있어서",
+        "일식 때마다 지구 그림자가 달보다 훨씬 작아져서"
+      ],
+      "answerIndex": 1,
+      "explanation": "대부분의 삭에는 달이 지구와 태양을 잇는 선의 위나 아래를 지나갑니다. 기울어진 달 궤도 때문에 세 천체가 매달 직선 정렬을 이루지 않습니다.",
+      "source": {
+        "name": "NASA Science - 일식과 월식",
+        "url": "https://science.nasa.gov/moon/eclipses/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-04-then-39-v1",
+      "dateKey": "2026-09-04",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "빅터 색인 타자기 왼쪽의 두 키 가운데, 맨 왼쪽 키가 맡은 기능은 무엇이었나요?",
+      "choices": [
+        "선택한 문자를 때리는 인쇄용 망치",
+        "종이를 한 칸 띄우는 스페이스바",
+        "글자판을 대문자 배열로 뒤집는 전환 장치"
+      ],
+      "answerIndex": 1,
+      "explanation": "문자 선택기 가까운 안쪽 키는 망치를 움직여 활자를 찍었고, 그보다 더 왼쪽의 키는 한 칸을 띄우는 데 썼습니다.",
+      "source": {
+        "name": "스미스소니언 미국사박물관 - 빅터 색인 타자기",
+        "url": "https://americanhistory.si.edu/collections/object/nmah_849969"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-02-now-37-v1",
+      "dateKey": "2026-09-02",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "Drive 공유 창에서 접근 범위를 '제한됨'으로 두면 누가 파일을 열 수 있나요?",
+      "choices": [
+        "개별 공유나 그룹·상위 폴더를 통해 접근 권한을 받은 사람",
+        "링크 주소를 전달받은 모든 인터넷 사용자",
+        "같은 조직 계정을 쓰는 모든 사용자"
+      ],
+      "answerIndex": 0,
+      "explanation": "'제한됨'은 링크 자체를 입장권으로 삼지 않습니다. 개별 공유, 그룹, 상위 폴더 등의 경로로 파일 접근 권한이 있는 사람만 열 수 있습니다.",
+      "source": {
+        "name": "Google Drive 고객센터 - 파일 공유",
+        "url": "https://support.google.com/drive/answer/2494822?hl=en"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-01-life-36-v1",
+      "dateKey": "2026-09-01",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "달 전체가 지구의 본그림자에 들어가는 개기월식을 설명하는 배열은 어느 것인가요?",
+      "choices": [
+        "삭 무렵 태양·달·지구 순으로 거의 일직선에 놓인다",
+        "상현달 무렵 태양과 지구를 잇는 선에 달이 직각으로 놓인다",
+        "보름달 무렵 태양·지구·달 순으로 거의 일직선에 놓인다"
+      ],
+      "answerIndex": 2,
+      "explanation": "월식은 보름달 때 지구가 태양과 달 사이에 정확히 들어설 때 일어납니다. 이때 지구의 그림자가 달을 가립니다.",
+      "source": {
+        "name": "NASA Science - 일식과 월식",
+        "url": "https://science.nasa.gov/moon/eclipses/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-10-then-45-v1",
+      "dateKey": "2026-09-10",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "미국 우편물에서 다섯 자리 ZIP Code가 도입된 주된 목적은 무엇이었나요?",
+      "choices": [
+        "우편요금 구역을 다섯 단계로 나누어 우표 금액을 자동 결정하려고",
+        "배달 순서에 맞춰 집집마다 고유 번호를 한 개씩 부여하려고",
+        "늘어난 우편물을 지역별로 더 빠르게 분류하려고"
+      ],
+      "answerIndex": 2,
+      "explanation": "ZIP Code는 우편 처리 지역을 숫자로 표시해 대량의 우편물을 효율적으로 분류하도록 마련되었습니다.",
+      "source": {
+        "name": "스미스소니언 국립우편박물관 - 미스터 ZIP",
+        "url": "https://postalmuseum.si.edu/exhibition/about-postal-operations-popular-culture-seals-symbols/mr-zip"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-31-now-35-v1",
+      "dateKey": "2026-08-31",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "Google Docs에서 어제 지운 문단을 확인하면서 현재 문서는 그대로 두고 싶습니다. 먼저 열어 볼 곳은 어디인가요?",
+      "choices": [
+        "실행 취소 내역",
+        "활동 대시보드",
+        "버전 기록"
+      ],
+      "answerIndex": 2,
+      "explanation": "버전 기록은 시간대별 변경 내용과 편집자를 보여 줍니다. 과거 내용을 살핀 뒤 필요할 때만 복원할 수 있습니다.",
+      "source": {
+        "name": "Google Docs 고객센터 - 변경사항 확인",
+        "url": "https://support.google.com/docs/answer/190843?hl=en"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-18-life-53-v1",
+      "dateKey": "2026-09-18",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "6월 무렵 북반구는 여름인데 남반구는 겨울인 이유로 가장 알맞은 것은 무엇인가요?",
+      "choices": [
+        "지구가 공전하며 한 반구만 해마다 태양에 훨씬 가까워져서",
+        "자전축이 기울어 한 반구가 더 직접적인 햇빛을 받을 때 다른 반구는 비스듬히 받아서",
+        "두 반구에서 낮과 밤을 만드는 자전 방향이 계절마다 서로 바뀌어서"
+      ],
+      "answerIndex": 1,
+      "explanation": "자전축이 기울어진 채 지구가 공전하므로 같은 시기에 한 반구는 더 직접적인 햇빛을 받고 다른 반구는 비스듬한 햇빛을 받습니다. 그래서 두 반구의 계절이 엇갈립니다.",
+      "source": {
+        "name": "NASA Space Place - 계절이 생기는 까닭",
+        "url": "https://spaceplace.nasa.gov/seasons/en/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-25-then-60-v1",
+      "dateKey": "2026-09-25",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "우편 홍보 캐릭터 '미스터 ZIP'은 봉투에서 사람들에게 주로 어떤 행동을 권했나요?",
+      "choices": [
+        "주소에 ZIP Code를 빠뜨리지 말라고 알렸다",
+        "ZIP Code는 사업용 우편에만 쓰고 개인 편지에는 생략하라고 알렸다",
+        "주소 끝에는 다섯 자리 번호 대신 관할 우체국 이름만 적으라고 권했다"
+      ],
+      "answerIndex": 0,
+      "explanation": "미스터 ZIP은 새 우편번호 제도를 친숙하게 알리고 주소에 번호를 쓰도록 독려한 캐릭터였습니다.",
+      "source": {
+        "name": "스미스소니언 국립우편박물관 - 미스터 ZIP",
+        "url": "https://postalmuseum.si.edu/exhibition/about-postal-operations-popular-culture-seals-symbols/mr-zip"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-15-now-50-v1",
+      "dateKey": "2026-09-15",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "Google Docs 버전 기록에서 특정 과거 버전을 '복원'하면 문서 내용은 어떻게 되나요?",
+      "choices": [
+        "선택한 버전 이후의 문서가 모두 영구 삭제된다",
+        "선택한 과거 버전의 내용이 현재 문서로 돌아온다",
+        "문서 전체가 읽기 전용 PDF 파일로 바뀐다"
+      ],
+      "answerIndex": 1,
+      "explanation": "버전 기록에서 복원을 선택하면 해당 시점의 내용이 현재 문서에 다시 적용됩니다. 단순히 과거 화면을 미리 보는 것과는 다릅니다.",
+      "source": {
+        "name": "Google Docs 고객센터 - 변경사항 확인",
+        "url": "https://support.google.com/docs/answer/190843?hl=en"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-03-life-38-v1",
+      "dateKey": "2026-09-03",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "지구가 태양에 가장 가까운 때가 1월인데 북반구는 겨울입니다. 이 사실에서 이끌어낼 결론은 무엇인가요?",
+      "choices": [
+        "계절은 태양과의 거리보다 자전축 기울기와 햇빛 입사각의 영향을 크게 받는다",
+        "근일점 부근에는 공전 속도가 빨라져 북반구에 햇빛이 닿는 시간이 크게 줄어든다",
+        "타원 궤도 때문에 1월에는 북반구만 태양에서 크게 멀어지고 남반구는 가까워진다"
+      ],
+      "answerIndex": 0,
+      "explanation": "북반구의 1월은 지구가 태양에 가까운 시기와 겹치지만 겨울입니다. 따라서 작은 거리 변화만으로 계절을 설명할 수 없습니다.",
+      "source": {
+        "name": "NASA Space Place - 계절이 생기는 까닭",
+        "url": "https://spaceplace.nasa.gov/seasons/en/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-31-then-35-v1",
+      "dateKey": "2026-08-31",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "아폴로 11호에서 달 표면에 내려간 우주인은 닐 암스트롱과 누구였나요?",
+      "choices": [
+        "버즈 올드린",
+        "마이클 콜린스",
+        "존 글렌"
+      ],
+      "answerIndex": 0,
+      "explanation": "암스트롱과 올드린이 달 착륙선으로 내려갔고, 콜린스는 사령선을 타고 달 궤도에 남았습니다.",
+      "source": {
+        "name": "NASA - 아폴로 11호 임무 개요",
+        "url": "https://www.nasa.gov/history/apollo-11-mission-overview/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-21-now-56-v1",
+      "dateKey": "2026-09-21",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "여행 전에 Google 지도에서 한 지역을 오프라인으로 내려받았습니다. 통신이 끊겼을 때 기대할 수 있는 기능은 무엇인가요?",
+      "choices": [
+        "실시간 교통량을 반영한 우회로 갱신",
+        "저장한 구역 안의 운전 경로 안내",
+        "대중교통의 당일 지연 알림"
+      ],
+      "answerIndex": 1,
+      "explanation": "오프라인 지도는 저장 범위의 길 찾기와 장소 정보를 일부 제공하지만 실시간 교통이나 대중교통·도보 안내에는 제한이 있습니다.",
+      "source": {
+        "name": "Google 지도 고객센터 - 오프라인 지도",
+        "url": "https://support.google.com/maps/answer/6291838?hl=en"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-21-life-56-v1",
+      "dateKey": "2026-09-21",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "극지방 밤하늘에서 오로라가 빛나는 과정을 바르게 이은 것은 어느 것인가요?",
+      "choices": [
+        "달빛이 극지방의 얼음 결정에 굴절되어 높은 구름을 물들인다",
+        "번개에서 나온 전류가 성층권 구름에 반사되어 오래 머문다",
+        "태양의 하전 입자가 자기장선을 따라 내려와 상층 대기 기체와 충돌한다"
+      ],
+      "answerIndex": 2,
+      "explanation": "자기권에 붙잡힌 하전 입자는 주로 극지방 부근의 대기로 들어가 기체 원자와 분자에 에너지를 줍니다. 그 에너지가 방출될 때 오로라의 빛으로 나타납니다.",
+      "source": {
+        "name": "NASA Science - 오로라",
+        "url": "https://science.nasa.gov/sun/the-atmosphere-after-dark/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-15-then-50-v1",
+      "dateKey": "2026-09-15",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "아폴로 11호의 마이클 콜린스가 달 착륙 동안 맡은 임무는 어느 것이었나요?",
+      "choices": [
+        "달 표면에서 암석 표본을 수집했다",
+        "지상 관제실에서 귀환 궤도를 계산했다",
+        "사령선을 운항하며 달 궤도를 돌았다"
+      ],
+      "answerIndex": 2,
+      "explanation": "콜린스는 사령선 컬럼비아를 운항했습니다. 두 동료가 달에 머무는 동안 궤도에서 합류를 준비했습니다.",
+      "source": {
+        "name": "NASA - 아폴로 11호 임무 개요",
+        "url": "https://www.nasa.gov/history/apollo-11-mission-overview/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-06-now-41-v1",
+      "dateKey": "2026-09-06",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "Google 지도의 오프라인 지도를 오래 두었더니 만료 안내가 떴습니다. 자료를 계속 쓰려면 무엇을 해야 하나요?",
+      "choices": [
+        "인터넷에 연결해 해당 지도를 업데이트한다",
+        "오프라인 지도 파일을 복제해 새 이름으로 저장하면 최신 정보가 적용된다",
+        "저장 구역의 캐시만 지우면 네트워크 없이 최신 도로 정보가 반영된다"
+      ],
+      "answerIndex": 0,
+      "explanation": "도로와 장소 정보가 낡지 않도록 오프라인 지도는 주기적으로 갱신해야 합니다. Wi-Fi 자동 업데이트도 설정할 수 있습니다.",
+      "source": {
+        "name": "Google 지도 고객센터 - 오프라인 지도",
+        "url": "https://support.google.com/maps/answer/6291838?hl=en"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-06-life-41-v1",
+      "dateKey": "2026-09-06",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "오로라의 고도와 색을 함께 조사한 결과를 올바르게 해석한 것은 무엇인가요?",
+      "choices": [
+        "높은 곳의 산소는 주로 빨강·초록, 더 낮은 곳의 질소는 파랑·분홍빛에 관여한다",
+        "높은 곳의 질소는 붉은빛만, 낮은 곳의 산소는 푸른빛만 만든다",
+        "오로라 색은 기체와 고도에 무관하며 입자의 수만으로 정해진다"
+      ],
+      "answerIndex": 0,
+      "explanation": "하전 입자가 도달하는 깊이와 그곳의 대기 조성이 달라지면 빛의 색도 달라집니다. 높은 고도의 산소와 낮은 고도의 질소가 서로 다른 색대에 관여합니다.",
+      "source": {
+        "name": "NASA Science - 오로라",
+        "url": "https://science.nasa.gov/sun/the-atmosphere-after-dark/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-21-then-56-v1",
+      "dateKey": "2026-09-21",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "보이저 탐사선의 골든 레코드에 여러 언어의 인사와 지구 소리를 담은 까닭은 무엇이었나요?",
+      "choices": [
+        "탐사선 고장음을 지상에 실시간 전송하려고",
+        "지구 생명과 문화를 먼 우주에 소개하려고",
+        "목성 자기장을 소리로 바꾸어 측정하려고"
+      ],
+      "answerIndex": 1,
+      "explanation": "골든 레코드는 혹시 만날지 모를 외계의 발견자에게 지구의 다양성을 전하는 일종의 시간 캡슐입니다.",
+      "source": {
+        "name": "NASA Science - 보이저 골든 레코드",
+        "url": "https://science.nasa.gov/mission/voyager/voyager-golden-record-overview/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-16-now-51-v1",
+      "dateKey": "2026-09-16",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "넓은 주차장에서 Google 지도에 현재 차 위치를 공식 주차 표식으로 남기는 방법은 무엇인가요?",
+      "choices": [
+        "지도를 길게 눌러 일반 핀을 놓고 라벨을 추가한다",
+        "주변 주차장을 검색해 가장 가까운 결과를 저장한다",
+        "현재 위치의 파란 점을 누르고 '주차 위치 저장'을 고른다"
+      ],
+      "answerIndex": 2,
+      "explanation": "현재 위치의 파란 점 메뉴에서 주차 위치를 저장하면 지도에 표식이 생겨 돌아올 때 찾기 쉽습니다.",
+      "source": {
+        "name": "Google 지도 고객센터 - 주차 위치 저장",
+        "url": "https://support.google.com/maps/answer/7257797?co=GENIE.Platform%3DAndroid&hl=en"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-22-life-57-v1",
+      "dateKey": "2026-09-22",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "한 달 중 만조와 간조의 높이 차이가 특히 커지는 천체 배치는 어느 것인가요?",
+      "choices": [
+        "태양과 달이 지구에서 보아 직각을 이루는 상현 또는 하현",
+        "태양·지구·달이 거의 한 줄에 놓이는 삭 또는 보름",
+        "달이 지구에서 가장 멀면서 태양과도 직각을 이루는 시기"
+      ],
+      "answerIndex": 1,
+      "explanation": "삭과 보름에는 태양의 조석력이 달의 조석력에 보태집니다. 만조는 더 높고 간조는 더 낮아져 대조의 조차가 커집니다.",
+      "source": {
+        "name": "NOAA 해양청 - 조석의 변화",
+        "url": "https://oceanservice.noaa.gov/education/tutorial_tides/tides06_variations.html"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-06-then-41-v1",
+      "dateKey": "2026-09-06",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "골든 레코드 겉면의 도식은 발견자가 무엇을 알아내도록 돕기 위한 것이었나요?",
+      "choices": [
+        "레코드에 담긴 음악의 장르와 재생 순서를 그림으로 분류한 표",
+        "탐사선이 지나온 행성의 온도와 대기 조성을 정리한 관측표",
+        "레코드를 재생하는 방법과 지구의 위치"
+      ],
+      "answerIndex": 2,
+      "explanation": "덮개에는 재생 속도와 바늘 위치, 태양계 위치 등을 그림 언어로 설명한 안내가 새겨졌습니다.",
+      "source": {
+        "name": "NASA Science - 보이저 골든 레코드",
+        "url": "https://science.nasa.gov/mission/voyager/voyager-golden-record-overview/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-01-now-36-v1",
+      "dateKey": "2026-09-01",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "Android용 Google 지도에서 저장한 주차 위치에 층수나 남은 주차 시간을 함께 남기려면 어떻게 하나요?",
+      "choices": [
+        "주차 위치 카드에 사진만 추가하면 층수와 시간이 사진 정보에서 자동 입력된다",
+        "주차 위치 카드의 메모와 남은 시간 정보를 편집한다",
+        "주차 위치를 공유 링크로 만든 뒤 링크 제목에 층수와 시간을 적는다"
+      ],
+      "answerIndex": 1,
+      "explanation": "Android용 Google 지도에서는 주차 위치 카드에 메모, 사진, 남은 시간을 더할 수 있어 복잡한 주차장에서 유용합니다.",
+      "source": {
+        "name": "Google 지도 고객센터 - 주차 위치 저장",
+        "url": "https://support.google.com/maps/answer/7257797?co=GENIE.Platform%3DAndroid&hl=en"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-07-life-42-v1",
+      "dateKey": "2026-09-07",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "상현이나 하현 무렵 조차가 작아지는 소조가 나타날 때 벌어지는 현상은 무엇인가요?",
+      "choices": [
+        "태양과 달의 조석력이 같은 방향으로 더해져 높이 차이가 커진다",
+        "태양의 조석력이 달의 조석력을 일부 상쇄해 높이 차이가 줄어든다",
+        "달이 지구에서 멀어져서만 생기며 태양과 달의 방향은 관계가 없다"
+      ],
+      "answerIndex": 1,
+      "explanation": "태양과 달이 지구에서 보아 직각을 이루면 두 조석력이 서로 일부 어긋납니다. 그 결과 만조와 간조 사이의 조차가 작아집니다.",
+      "source": {
+        "name": "NOAA 해양청 - 조석의 변화",
+        "url": "https://oceanservice.noaa.gov/education/tutorial_tides/tides06_variations.html"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-18-then-53-v1",
+      "dateKey": "2026-09-18",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "에드윈 랜드의 즉석사진 방식 시연과 폴라로이드 모델 95의 일반 판매 시점을 바르게 짝지은 것은 무엇인가요?",
+      "choices": [
+        "1947년 시연, 1948년 일반 판매",
+        "1937년 시연, 1938년 일반 판매",
+        "1957년 시연, 1958년 일반 판매"
+      ],
+      "answerIndex": 0,
+      "explanation": "에드윈 랜드는 1947년에 즉석사진 방식을 처음 시연했습니다. 연구 개발을 거쳐 모델 95가 1948년 일반 소비자에게 판매됐습니다.",
+      "source": {
+        "name": "Big Swinger 3000",
+        "url": "https://americanhistory.si.edu/collections/object/nmah_881141"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-23-now-58-v1",
+      "dateKey": "2026-09-23",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "Google 포토에서 영수증 사진을 기본 사진 보기에서는 숨기되 앨범과 검색에서는 찾고 싶습니다. 어느 기능이 맞나요?",
+      "choices": [
+        "사진을 휴지통으로 이동한다",
+        "기기에서 사진을 영구 삭제한다",
+        "사진을 보관처리한다"
+      ],
+      "answerIndex": 2,
+      "explanation": "보관처리는 사진을 기본 사진 보기에서 치우지만 앨범, 검색 결과, 보관함에는 남겨 둡니다.",
+      "source": {
+        "name": "Google 포토 고객센터 - 사진 보관처리",
+        "url": "https://support.google.com/photos/answer/7362432?hl=en"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-20-life-55-v1",
+      "dateKey": "2026-09-20",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "높은 하늘에 얇은 흰 층으로 넓게 퍼져 해나 달이 비쳐 보이는 구름은 무엇인가요?",
+      "choices": [
+        "높은 하늘에 퍼지는 권층운",
+        "중간 높이를 푸르게 덮는 고층운",
+        "작은 물결 조각처럼 모인 권적운"
+      ],
+      "answerIndex": 0,
+      "explanation": "권층운은 높은 곳에 얇고 희거나 옅은 회색의 층으로 형성됩니다. 하늘 대부분을 가려도 해나 달이 비쳐 보일 수 있습니다.",
+      "source": {
+        "name": "NASA JPL 교육 - 구름의 유형과 의미",
+        "url": "https://www.jpl.nasa.gov/edu/resources/project/the-types-of-clouds-and-what-they-mean-2/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-03-then-38-v1",
+      "dateKey": "2026-09-03",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "1948년 일반 판매된 폴라로이드 모델 95의 사진 처리 순서와 맞는 설명은 무엇인가요?",
+      "choices": [
+        "필름을 꺼내 암실의 현상액 세 통에 차례로 담가야 완성됐다",
+        "카메라 안에서 처리가 시작되고 사진을 꺼낸 뒤 60초 안팎에 완성됐다",
+        "유리 원판을 햇빛에 한 시간 세워 둔 뒤 종이에 밀착 인화했다"
+      ],
+      "answerIndex": 1,
+      "explanation": "모델 95의 사진은 카메라 안에서 처리가 시작되어 밖으로 꺼낸 뒤 현상이 마무리됐습니다. 사용자는 약 60초 만에 인화물을 볼 수 있었습니다.",
+      "source": {
+        "name": "Big Swinger 3000",
+        "url": "https://americanhistory.si.edu/collections/object/nmah_881141"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-08-now-43-v1",
+      "dateKey": "2026-09-08",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "Google 포토에서 보관처리한 사진을 다시 기본 사진 보기에 나오게 하려면 어떻게 하나요?",
+      "choices": [
+        "보관함에서 사진을 골라 보관처리를 해제한다",
+        "휴지통에서 사진을 복원한 뒤 다시 보관처리한다",
+        "사진을 기존 앨범에서 뺀 뒤 같은 앨범에 다시 추가한다"
+      ],
+      "answerIndex": 0,
+      "explanation": "보관함에서 '보관 취소'를 선택하면 사진이 촬영 날짜에 맞춰 기본 사진 보기로 돌아옵니다.",
+      "source": {
+        "name": "Google 포토 고객센터 - 사진 보관처리",
+        "url": "https://support.google.com/photos/answer/7362432?hl=en"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-05-life-40-v1",
+      "dateKey": "2026-09-05",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "낮거나 중간 높이에 짙은 회색 구름이 나타나고 그 아래로 비나 눈이 내린다면 가능성이 큰 구름은 무엇인가요?",
+      "choices": [
+        "높이 솟아 천둥과 강한 소나기를 만드는 적란운",
+        "낮은 곳에서 하얀 솜 덩어리처럼 보이는 적운",
+        "낮거나 중간 높이에 나타나며 강수가 내리는 짙은 회색 난층운"
+      ],
+      "answerIndex": 2,
+      "explanation": "난층운은 낮은 곳과 중간 높이에 나타나는 짙은 회색 구름으로, 강수가 내릴 때 밑면이 흐려져 경계를 알아보기 어렵습니다.",
+      "source": {
+        "name": "NASA JPL 교육 - 구름의 유형과 의미",
+        "url": "https://www.jpl.nasa.gov/edu/resources/project/the-types-of-clouds-and-what-they-mean-2/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-16-then-51-v1",
+      "dateKey": "2026-09-16",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "미 육군이 제2차 세계대전 중 ENIAC 제작을 추진한 직접 목적은 무엇이었나요?",
+      "choices": [
+        "전국 인구조사 자료를 가구별로 집계하려고",
+        "포병 조준에 쓰는 탄도표를 계산하려고",
+        "대서양 함대의 무선 통화를 음성으로 녹음하려고"
+      ],
+      "answerIndex": 1,
+      "explanation": "ENIAC은 미 육군 포병의 탄도표를 계산하기 위한 고속 전자식 계산기로 개발됐습니다. 여러 방정식을 자동으로 풀 수 있었습니다.",
+      "source": {
+        "name": "스미스소니언 미국사박물관 - ENIAC",
+        "url": "https://americanhistory.si.edu/collections/object/nmah_334262"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-18-now-53-v1",
+      "dateKey": "2026-09-18",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "Google Meet 회의 소리가 잘 들리지 않아 화면에 말의 내용을 바로 띄우려 합니다. 어떤 기능을 켜야 하나요?",
+      "choices": [
+        "채팅창을 열어 발화 자동 전사를 기다린다",
+        "회의 녹화를 켜 자막이 함께 표시되게 한다",
+        "실시간 자막"
+      ],
+      "answerIndex": 2,
+      "explanation": "자막을 켜면 회의 중 인식된 발화가 텍스트로 표시됩니다. 녹화나 회의록 저장과는 다른 기능입니다.",
+      "source": {
+        "name": "Google Meet 고객센터 - 실시간 자막",
+        "url": "https://support.google.com/meet/answer/15077804?hl=en"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-19-life-54-v1",
+      "dateKey": "2026-09-19",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "바닷물에 녹아 있는 염류의 가장 큰 육상 공급 경로는 무엇인가요?",
+      "choices": [
+        "빗물이 육지 암석을 풍화해 이온을 녹이고 강물이 바다로 운반한다",
+        "증발한 바닷물의 소금이 수증기와 함께 비가 되어 강으로 돌아온다",
+        "해안의 소금 결정이 바람에 실려 들어오는 양이 육상 공급의 대부분이다"
+      ],
+      "answerIndex": 0,
+      "explanation": "약산성인 빗물은 암석을 조금씩 깎아 용해된 이온을 내놓게 합니다. 하천이 이를 바다로 옮기고, 제거되지 않은 일부 이온은 농도를 높여 갑니다.",
+      "source": {
+        "name": "NOAA 해양청 - 바닷물이 짠 까닭",
+        "url": "https://oceanservice.noaa.gov/facts/whysalty.html"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-01-then-36-v1",
+      "dateKey": "2026-09-01",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "완성된 ENIAC의 규모를 바르게 묶은 설명은 어느 것인가요?",
+      "choices": [
+        "약 30×50피트 방을 채우고 30톤에 이르며 진공관 약 1만 8천 개를 썼다",
+        "약 10×20피트 공간을 쓰고 3톤에 이르며 진공관 약 1,800개를 썼다",
+        "약 50×100피트 공간을 쓰고 60톤에 이르며 진공관 약 3만 6천 개를 썼다"
+      ],
+      "answerIndex": 0,
+      "explanation": "ENIAC은 30×50피트 규모의 방을 채우고 무게가 30톤에 달했습니다. 내부에는 종류가 다른 진공관 약 1만 8천 개가 들어갔습니다.",
+      "source": {
+        "name": "스미스소니언 미국사박물관 - ENIAC",
+        "url": "https://americanhistory.si.edu/collections/object/nmah_334262"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-24-now-59-v1",
+      "dateKey": "2026-09-24",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "Google Meet의 번역 자막을 사용할 수 있는 환경이라면 기본 자막과 다른 점은 무엇인가요?",
+      "choices": [
+        "말한 언어를 선택한 다른 언어의 글로 표시한다",
+        "말하는 사람의 목소리를 다른 음색으로 바꾼다",
+        "채팅 메시지를 모든 참가자 대신 읽어 준다"
+      ],
+      "answerIndex": 0,
+      "explanation": "번역 자막은 음성을 그대로 받아쓰는 데서 더 나아가 선택한 언어로 번역된 문장을 화면에 보여 줍니다.",
+      "source": {
+        "name": "Google Meet 고객센터 - 번역 자막",
+        "url": "https://support.google.com/meet/answer/10964115?hl=en"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-04-life-39-v1",
+      "dateKey": "2026-09-04",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "해저 열수 분출구가 바닷물의 화학 성분에 영향을 주는 과정을 바르게 설명한 것은 무엇인가요?",
+      "choices": [
+        "스며든 바닷물이 암석과 반응하지 않은 채 같은 성분으로 차갑게 되돌아 나온다",
+        "바닷물이 해저 균열로 스며들어 가열되고 암석과 반응한 뒤 금속 이온을 싣고 나온다",
+        "육지의 강물이 해저 균열까지 흘러가 바닷물과 만나지 않고 금속을 운반한다"
+      ],
+      "answerIndex": 1,
+      "explanation": "해저 틈으로 들어간 물은 지하 열원에 데워지며 주변 암석과 여러 화학 반응을 합니다. 이후 철·아연·구리 같은 성분을 품고 나오는 흐름도 또 다른 염류 공급 통로입니다.",
+      "source": {
+        "name": "NOAA 해양청 - 바닷물이 짠 까닭",
+        "url": "https://oceanservice.noaa.gov/facts/whysalty.html"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-20-then-55-v1",
+      "dateKey": "2026-09-20",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "초기 소니 휴대용 카세트 재생기에서 두 사람이 헤드셋을 벗지 않고 대화하게 한 장치는 무엇이었나요?",
+      "choices": [
+        "두 헤드폰 단자를 인터콤 회로로 이어 주는 연결선",
+        "헤드셋 한쪽을 외부 소리 수음용으로 바꾸는 전환 스위치",
+        "본체에 마련된 작은 마이크"
+      ],
+      "answerIndex": 2,
+      "explanation": "이 모델은 두 사람이 동시에 음악을 들을 수 있었고, 작은 마이크로 헤드셋을 벗지 않은 채 서로 말할 수 있었습니다.",
+      "source": {
+        "name": "스미스소니언 미국사박물관 - 소니 워크맨",
+        "url": "https://americanhistory.si.edu/collections/object/nmah_714276"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-03-now-38-v1",
+      "dateKey": "2026-09-03",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "iPhone 메모 앱으로 종이 문서를 스캔할 때 자동 촬영은 무엇을 감지해 이루어지나요?",
+      "choices": [
+        "문서 안의 글자 블록만 찾아 줄마다 따로 촬영한다",
+        "문서 페이지의 경계",
+        "카메라 중앙의 초점 영역만 문서로 보고 그 부분을 촬영한다"
+      ],
+      "answerIndex": 1,
+      "explanation": "자동 촬영에서는 iPhone이 문서 페이지의 경계를 감지하면 사진을 찍습니다. 필요하면 수동 촬영으로 바꾸거나 모서리를 직접 조절할 수 있습니다.",
+      "source": {
+        "name": "Apple iPhone 사용 설명서 - 메모에서 문서 스캔",
+        "url": "https://support.apple.com/guide/iphone/iph653f28965/ios"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-17-life-52-v1",
+      "dateKey": "2026-09-17",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "강이 바다와 만나는 하구에서 흔히 말하는 '기수' 상태를 가리키는 것은 무엇인가요?",
+      "choices": [
+        "빙하가 녹은 물과 깊은 바닷물이 층을 이룬 물",
+        "지하수와 빗물이 바닷물 없이 고여 있는 물",
+        "육지에서 내려온 민물과 바닷물이 섞인 물"
+      ],
+      "answerIndex": 2,
+      "explanation": "전형적인 하구에서는 강의 민물과 조수로 들어온 바닷물이 만납니다. 염분이 중간인 이 환경에 맞춘 독특한 생물 군집이 적응해 삽니다.",
+      "source": {
+        "name": "NOAA 해양청 - 하구",
+        "url": "https://oceanservice.noaa.gov/facts/estuary.html"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-05-then-40-v1",
+      "dateKey": "2026-09-05",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "초기 소니 워크맨을 이동 중에 작동시키는 전원 방식으로 자료에 나온 것은 무엇인가요?",
+      "choices": [
+        "AA 건전지 두 개 또는 별도 충전식 배터리 팩",
+        "가정용 콘센트에 연결한 전원선만 사용",
+        "손잡이를 계속 돌려 전기를 만드는 수동 발전기"
+      ],
+      "answerIndex": 0,
+      "explanation": "이 휴대용 카세트 재생기는 AA 건전지 두 개로 작동했고, 선택 사양인 충전식 배터리 팩도 이용할 수 있었습니다.",
+      "source": {
+        "name": "스미스소니언 미국사박물관 - 소니 워크맨",
+        "url": "https://americanhistory.si.edu/collections/object/nmah_714276"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-09-now-44-v1",
+      "dateKey": "2026-09-09",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "메모 앱에서 스캔한 계약서에 자신의 서명을 넣으려면 스캔 화면의 어떤 도구를 활용하나요?",
+      "choices": [
+        "마크업에서 서명을 추가한다",
+        "텍스트 인식으로 이름을 골라 서명란에 붙인다",
+        "문서 자르기에서 서명 부분의 여백만 넓힌다"
+      ],
+      "answerIndex": 0,
+      "explanation": "스캔 문서를 연 뒤 마크업에서 저장된 서명을 고르거나 새 서명을 그려 원하는 위치에 놓을 수 있습니다.",
+      "source": {
+        "name": "Apple 지원 - 메모 앱으로 문서 스캔",
+        "url": "https://support.apple.com/en-us/108963"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-02-life-37-v1",
+      "dateKey": "2026-09-02",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "하구와 주변 습지가 제공하는 두 역할을 함께 짚은 것은 어느 것인가요?",
+      "choices": [
+        "파랑 에너지를 모아 해안 침식을 늘리고 깊은 바다 생물의 산란장을 만든다",
+        "육지 영양분을 그대로 외해로 보내고 성체 어류만 머무는 수역을 만든다",
+        "육지 유출수를 자연스럽게 거르고 어린 물고기와 새의 성장 터전을 제공한다"
+      ],
+      "answerIndex": 2,
+      "explanation": "하구 습지는 육지에서 흘러온 물을 거르는 자연 필터로 작용합니다. 동시에 많은 어류와 조류의 보육장 역할을 해 생태적 완충지대가 됩니다.",
+      "source": {
+        "name": "NOAA 해양청 - 하구",
+        "url": "https://oceanservice.noaa.gov/facts/estuary.html"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-29-then-33-v1",
+      "dateKey": "2026-08-29",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "전쟁 뒤 레이시온의 퍼시 스펜서가 음식 가열에 활용하자고 제안한 레이더 부품은 무엇이었나요?",
+      "choices": [
+        "화면에 파형을 그리는 음극선관",
+        "음성 신호를 키우는 저주파 증폭기",
+        "마이크로파를 만드는 마그네트론"
+      ],
+      "answerIndex": 2,
+      "explanation": "마그네트론은 레이더에 쓰는 마이크로파를 만드는 핵심 부품이었습니다. 퍼시 스펜서는 이 장치를 음식 가열에 활용하자고 제안했습니다.",
+      "source": {
+        "name": "스미스소니언 미국사박물관 - 전자레인지",
+        "url": "https://americanhistory.si.edu/collections/object/nmah_1088040"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-11-now-46-v1",
+      "dateKey": "2026-09-11",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "iPhone에서 사진 속 안내문의 전화번호를 다시 입력하지 않고 바로 전화하게 해 주는 기능은 무엇인가요?",
+      "choices": [
+        "라이브 포토",
+        "라이브 텍스트",
+        "시각 자료 찾아보기"
+      ],
+      "answerIndex": 1,
+      "explanation": "라이브 텍스트는 사진과 카메라 화면의 문자를 인식해 전화 걸기, 복사, 번역 같은 동작으로 연결합니다.",
+      "source": {
+        "name": "Apple 지원 - 사진 속 텍스트 사용",
+        "url": "https://support.apple.com/en-us/120004"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-24-life-59-v1",
+      "dateKey": "2026-09-24",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "겉에 물기가 없는 화분 식물의 잎 일부를 투명 비닐봉지로 감쌌더니 봉지 안쪽에 물방울이 맺혔습니다. 이를 가장 잘 설명하는 과정은 무엇인가요?",
+      "choices": [
+        "뿌리에서 흡수한 물 일부가 잎의 기공을 통해 수증기로 나왔다",
+        "봉지 안에 처음 있던 공기 중 수분만 응결해 식물은 전혀 관여하지 않았다",
+        "뿌리가 밀어 올린 액체 물이 잎 가장자리에서만 맺히는 일액현상이다"
+      ],
+      "answerIndex": 0,
+      "explanation": "식물은 토양의 물을 흡수한 뒤 잎의 기공을 통해 수증기로 내보냅니다. 봉지 안의 수증기가 식어 물방울로 응결한 모습으로 증산을 확인한 셈입니다.",
+      "source": {
+        "name": "미국 지질조사국 - 증발산과 물의 순환",
+        "url": "https://www.usgs.gov/water-science-school/science/evapotranspiration-and-water-cycle"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-13-then-48-v1",
+      "dateKey": "2026-09-13",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "전자레인지가 재래식 오븐과 다르게 음식을 데우는 설명으로 알맞은 것은 무엇인가요?",
+      "choices": [
+        "적외선이 접시 바닥만 달군 뒤 열을 위로 보낸다",
+        "마이크로파에 반응한 음식 속 분자들이 진동하며 열을 낸다",
+        "뜨거운 공기가 팬 없이 아래에서만 순환한다"
+      ],
+      "answerIndex": 1,
+      "explanation": "마이크로파에 반응한 음식 속 분자들이 빠르게 진동하면 조리에 필요한 열이 생깁니다. 이 원리가 레이더용 마그네트론의 상업적 활용으로 이어졌습니다.",
+      "source": {
+        "name": "스미스소니언 미국사박물관 - 전자레인지",
+        "url": "https://americanhistory.si.edu/collections/object/nmah_1088040"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-27-now-31-v1",
+      "dateKey": "2026-08-27",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "사진 속 외국어 문장을 라이브 텍스트로 번역하려는 순서로 가장 알맞은 것은 무엇인가요?",
+      "choices": [
+        "사진 속 문장을 선택해 복사한 뒤 언어 설정 화면에서 번역 언어를 바꾼다",
+        "사진 전체를 길게 눌러 피사체를 분리한 뒤 '찾아보기'를 누른다",
+        "문자를 길게 눌러 선택한 뒤 번역을 누른다"
+      ],
+      "answerIndex": 2,
+      "explanation": "인식된 텍스트를 선택하면 복사나 찾아보기와 함께 번역 명령을 사용할 수 있습니다.",
+      "source": {
+        "name": "Apple 지원 - 사진 속 텍스트 사용",
+        "url": "https://support.apple.com/en-us/120004"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-09-life-44-v1",
+      "dateKey": "2026-09-09",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "'증발산'은 육지의 물이 대기로 이동하는 어떤 두 과정을 합친 말인가요?",
+      "choices": [
+        "구름의 강수와 지표면을 흐르는 유출",
+        "토양·수면의 증발과 식물 잎의 증산",
+        "땅속 침투와 대수층의 지하수 이동"
+      ],
+      "answerIndex": 1,
+      "explanation": "증발산은 지표와 수면에서 일어나는 증발에 식물이 내보내는 수증기인 증산을 더한 개념입니다. 두 경로를 합산한 육지에서 대기로의 물 이동량입니다.",
+      "source": {
+        "name": "미국 지질조사국 - 증발산과 물의 순환",
+        "url": "https://www.usgs.gov/water-science-school/science/evapotranspiration-and-water-cycle"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-12-then-47-v1",
+      "dateKey": "2026-09-12",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "에디슨의 초기 축음기에서 소리를 기록하고 다시 들려준 원통 표면의 재료는 무엇이었나요?",
+      "choices": [
+        "빛에 민감한 유리판",
+        "자성을 띤 철제 테이프",
+        "얇은 주석박"
+      ],
+      "answerIndex": 2,
+      "explanation": "1877년 시연된 에디슨 축음기는 주석박을 감은 원통에 소리 진동의 자국을 남기고 그 홈을 다시 따라갔습니다.",
+      "source": {
+        "name": "스미스소니언 미국사박물관 - 에디슨의 말하는 기계",
+        "url": "https://americanhistory.si.edu/explore/exhibitions/americas-listening/online/edisons-talking-machine"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-19-now-54-v1",
+      "dateKey": "2026-09-19",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "Word에서 여러 사람이 원문을 유지한 채 수정 제안을 눈에 보이게 남기려면 무엇을 켜야 하나요?",
+      "choices": [
+        "변경 내용 추적",
+        "집중 모드",
+        "자동 저장 해제"
+      ],
+      "answerIndex": 0,
+      "explanation": "변경 내용 추적을 켜면 삽입과 삭제가 표시되고, 검토자가 각 변경을 수락하거나 거절할 수 있습니다.",
+      "source": {
+        "name": "Microsoft 지원 - Word 변경 내용 추적",
+        "url": "https://support.microsoft.com/en-us/word/training/track-changes-in-word"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-28-life-32-v1",
+      "dateKey": "2026-08-28",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "지하의 물을 우물이나 샘으로 비교적 잘 공급하는 대수층이 되려면, 물을 저장하는 것과 함께 가장 중요한 조건은 무엇인가요?",
+      "choices": [
+        "틈의 수는 많지만 서로 이어지지 않는 낮은 투수성",
+        "틈이 서로 연결되어 물이 이동할 수 있는 충분한 투수성",
+        "암석의 깊이만 깊어지면 저절로 생기는 높은 수압"
+      ],
+      "answerIndex": 1,
+      "explanation": "암석에 빈틈이 많아도 그 틈들이 이어지지 않으면 물은 매우 느리게 움직입니다. 물을 우물과 샘까지 전달할 수 있는 연결성과 투수성이 대수층의 핵심 조건입니다.",
+      "source": {
+        "name": "미국 지질조사국 - 대수층과 지하수",
+        "url": "https://www.usgs.gov/water-science-school/science/aquifers-and-groundwater"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-28-then-32-v1",
+      "dateKey": "2026-08-28",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "초기 축음기에서 사람이 말하면 바늘이 원통에 홈을 만들 수 있었던 연결 순서는 어느 것인가요?",
+      "choices": [
+        "소리 진동이 원통 회전 속도만 바꾸고 바늘은 일정한 깊이의 홈을 그었다",
+        "소리 진동이 막을 떨게 하고 그 움직임이 바늘에 전해졌다",
+        "소리 진동이 말굽자석을 회전시키고 자석이 바늘을 위아래로 움직였다"
+      ],
+      "answerIndex": 1,
+      "explanation": "나팔로 모인 음파가 얇은 진동판을 움직였고, 연결된 바늘이 회전하는 표면에 그 움직임을 새겼습니다.",
+      "source": {
+        "name": "스미스소니언 미국사박물관 - 에디슨의 말하는 기계",
+        "url": "https://americanhistory.si.edu/explore/exhibitions/americas-listening/online/edisons-talking-machine"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-04-now-39-v1",
+      "dateKey": "2026-09-04",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "Word의 변경 내용 추적에서 '모든 변경 내용' 대신 '간단한 변경 내용' 표시를 고르면 무엇이 달라지나요?",
+      "choices": [
+        "추적된 수정이 모두 수락되어 원문에서 사라진다",
+        "문서가 암호화되어 작성자 외에는 열 수 없다",
+        "본문은 깔끔하게 보이고 여백 표식으로 변경 위치를 알린다"
+      ],
+      "answerIndex": 2,
+      "explanation": "간단한 표시는 수정 세부를 접어 본문을 읽기 쉽게 하면서, 바깥쪽 표식으로 변경이 있음을 알려 줍니다.",
+      "source": {
+        "name": "Microsoft 지원 - Word 변경 내용 추적",
+        "url": "https://support.microsoft.com/en-us/word/training/track-changes-in-word"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-12-life-47-v1",
+      "dateKey": "2026-09-12",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "대수층이 다시 채워지는 속도보다 빠르게 한 우물에서 물을 퍼 올리면 예상되는 변화는 무엇인가요?",
+      "choices": [
+        "취수 압력 때문에 우물 주변 지하수면이 오히려 솟아올라 이웃 우물이 넘친다",
+        "깊은 곳의 물이 언제나 같은 속도로 즉시 보충되어 지하수면은 변하지 않는다",
+        "우물 주변 수위가 깔때기처럼 낮아지고 영향 범위의 이웃 우물도 수위가 낮아질 수 있다"
+      ],
+      "answerIndex": 2,
+      "explanation": "보충량보다 취수량이 크면 우물 주변 지하수면이 낮아져 '강하 원뿔'이 생깁니다. 영향 범위가 겹치면 같은 대수층을 쓰는 가까운 우물도 영향을 받을 수 있습니다.",
+      "source": {
+        "name": "미국 지질조사국 - 대수층과 지하수",
+        "url": "https://www.usgs.gov/water-science-school/science/aquifers-and-groundwater"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-23-then-58-v1",
+      "dateKey": "2026-09-23",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "모스 전신이 먼 거리에 말을 그대로 보내지 않고 사용한 것은 무엇이었나요?",
+      "choices": [
+        "짧고 긴 전기 신호에 대응한 부호",
+        "음성을 높낮이별로 나눈 금속 원판",
+        "문장을 촬영한 뒤 보내는 빛의 점"
+      ],
+      "answerIndex": 0,
+      "explanation": "전신은 회선을 켰다 끄는 신호 조합을 문자로 약속했습니다. 수신자는 그 부호를 글자로 풀었습니다.",
+      "source": {
+        "name": "미국 의회도서관 - 전신의 발명",
+        "url": "https://www.loc.gov/collections/samuel-morse-papers/articles-and-essays/invention-of-the-telegraph/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-29-now-33-v1",
+      "dateKey": "2026-08-29",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "Excel에서 긴 명단을 아래로 내려도 맨 위 제목 행을 계속 보이게 하려면 어느 기능이 적합한가요?",
+      "choices": [
+        "중복된 항목 제거",
+        "첫 행 고정",
+        "시트 보호"
+      ],
+      "answerIndex": 1,
+      "explanation": "보기 메뉴의 틀 고정에서 첫 행을 고정하면 스크롤해도 열 제목이 화면 상단에 남습니다.",
+      "source": {
+        "name": "Microsoft 지원 - Excel 틀 고정",
+        "url": "https://support.microsoft.com/en-US/Excel/get-started/freeze-panes-to-lock-rows-and-columns"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-25-life-60-v1",
+      "dateKey": "2026-09-25",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "지진이 얕은 깊이에서 거의 직선 띠를 이루고 두 판이 옆으로 스치는 곳이라면 어떤 경계 설명이 맞을까요?",
+      "choices": [
+        "판들이 서로 평행하게 미끄러져 지나가는 변환 단층 경계이다",
+        "판들이 벌어지며 마그마가 올라와 새 해양 지각을 만드는 발산 경계이다",
+        "한 판이 다른 판 아래 맨틀 쪽으로 내려가는 섭입 경계이다"
+      ],
+      "answerIndex": 0,
+      "explanation": "변환 단층에서는 두 판이 서로를 지나 수평으로 움직입니다. 이 경계의 지진은 대체로 얕고 지도에서 비교적 곧은 띠를 이룹니다.",
+      "source": {
+        "name": "미국 지질조사국 - 지진이 일어나는 곳",
+        "url": "https://pubs.usgs.gov/gip/earthq1/where.html"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-08-then-43-v1",
+      "dateKey": "2026-09-08",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "1844년 모스가 보낸 첫 공식 전신 메시지의 출발지와 도착지를 바르게 짝지은 것은 무엇인가요?",
+      "choices": [
+        "보스턴의 연구실에서 세일럼의 알렉산더 벨까지",
+        "워싱턴의 연방의회 의사당에서 볼티모어의 앨프리드 베일까지",
+        "뉴욕의 항구에서 필라델피아의 에디슨까지"
+      ],
+      "answerIndex": 1,
+      "explanation": "모스는 워싱턴 연방의회 의사당 대법원실에서 '신이 행하신 일이 어찌 그리 크냐'라는 메시지를 보냈고, 볼티모어의 조수 앨프리드 베일이 받았습니다.",
+      "source": {
+        "name": "미국 의회도서관 - 전신의 발명",
+        "url": "https://www.loc.gov/collections/samuel-morse-papers/articles-and-essays/invention-of-the-telegraph/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-13-now-48-v1",
+      "dateKey": "2026-09-13",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "Excel에서 첫 두 열과 윗부분 세 행을 동시에 고정하려 합니다. 고정 전에 선택할 셀은 어디인가요?",
+      "choices": [
+        "데이터가 입력된 범위의 마지막 오른쪽 아래 셀",
+        "시트 이름이 적힌 아래쪽 탭",
+        "고정할 행의 바로 아래이면서 열의 바로 오른쪽인 셀"
+      ],
+      "answerIndex": 2,
+      "explanation": "사용자 지정 틀 고정은 선택 셀의 위쪽 행과 왼쪽 열을 고정합니다. 경계가 만나는 셀을 먼저 고르는 것이 핵심입니다.",
+      "source": {
+        "name": "Microsoft 지원 - Excel 틀 고정",
+        "url": "https://support.microsoft.com/en-US/Excel/get-started/freeze-panes-to-lock-rows-and-columns"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-10-life-45-v1",
+      "dateKey": "2026-09-10",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "깊은 해구, 얕은 곳부터 깊은 곳까지 이어지는 지진, 활화산 산맥을 한꺼번에 가장 잘 설명하는 경계는 무엇인가요?",
+      "choices": [
+        "한 판이 다른 판 아래로 내려가는 섭입대",
+        "두 판이 벌어져 새 지각을 만드는 해령의 발산대",
+        "두 판이 수평으로 스치기만 하는 변환 단층대"
+      ],
+      "answerIndex": 0,
+      "explanation": "섭입대에서는 한 판이 다른 판 밑으로 휘어 내려가며 해구를 만듭니다. 내려가는 판을 따라 여러 깊이의 지진이 생기고 위쪽 판에는 화산 산맥이 형성될 수 있습니다.",
+      "source": {
+        "name": "미국 지질조사국 - 지진이 일어나는 곳",
+        "url": "https://pubs.usgs.gov/gip/earthq1/where.html"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-27-then-31-v1",
+      "dateKey": "2026-08-27",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "유네스코 설명에 따르면 조선왕조 의궤는 왕실의 주요 의례를 어떤 방식으로 전했나요?",
+      "choices": [
+        "왕실 의례가 끝난 뒤 참석자의 감상문만 글로 모았다",
+        "왕실 건물의 보수 비용만 숫자 장부로 집계했다",
+        "글과 그림으로 의례를 기록하는 동시에 그 절차를 규정했다"
+      ],
+      "answerIndex": 2,
+      "explanation": "유네스코는 의궤가 조선 왕실의 주요 의식과 의례를 글과 그림으로 기록하고, 그 시행 절차도 제시한 기록유산이라고 설명합니다.",
+      "source": {
+        "name": "유네스코 세계기록유산 - 조선왕조 의궤",
+        "url": "https://www.unesco.org/en/memory-world/uigwe-royal-protocols-joseon-dynasty"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-12-now-47-v1",
+      "dateKey": "2026-09-12",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "Excel 자동 필터에서 '부산'만 골라 표시했을 때 나머지 행은 어떻게 되나요?",
+      "choices": [
+        "조건에서 빠진 행의 값이 즉시 삭제된다",
+        "조건에서 빠진 행이 숨겨질 뿐 데이터는 남는다",
+        "숨은 행이 별도 통합문서로 자동 이동한다"
+      ],
+      "answerIndex": 1,
+      "explanation": "필터는 조건과 맞지 않는 행을 일시적으로 감춥니다. 필터를 지우면 원래 행이 다시 나타납니다.",
+      "source": {
+        "name": "Microsoft 지원 - Excel 자동 필터",
+        "url": "https://support.microsoft.com/en-US/Excel/quick-start-filter-data-by-using-an-autofilter"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-08-life-43-v1",
+      "dateKey": "2026-09-08",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "유동성 큰 용암이 분출구에서 사방으로 멀리 퍼져 얇은 층을 거듭 쌓을 때 만들어지는 화산 형태는 무엇인가요?",
+      "choices": [
+        "화산재와 용암층이 번갈아 쌓인 높고 가파른 성층화산",
+        "점성이 큰 용암이 분출구 위에 뭉친 가파른 용암돔",
+        "넓고 경사가 완만한 방패 모양의 순상화산"
+      ],
+      "answerIndex": 2,
+      "explanation": "잘 흐르는 용암류는 먼 거리까지 얇게 퍼지고, 수많은 흐름이 오랜 시간 겹쳐집니다. 이 축적 과정이 넓고 완만한 방패 모양 지형을 빚습니다.",
+      "source": {
+        "name": "미국 지질조사국 화산재해프로그램 - 화산",
+        "url": "https://www.usgs.gov/programs/VHP/about-volcanoes"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-11-then-46-v1",
+      "dateKey": "2026-09-11",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "유네스코가 설명한 조선왕조 의궤의 기록 범위를 바르게 나타낸 것은 무엇인가요?",
+      "choices": [
+        "1392년부터 1910년까지 500년 넘게 이어진 조선 왕실의 주요 의례",
+        "918년부터 1392년까지 고려 지방 관아의 토지 장부",
+        "1897년부터 1910년까지 대한제국 외교 문서만의 모음"
+      ],
+      "answerIndex": 0,
+      "explanation": "의궤는 1392년부터 1910년까지 이어진 조선왕조 500여 년의 왕실 주요 행사와 의례를 글과 그림으로 기록한 자료입니다.",
+      "source": {
+        "name": "유네스코 세계기록유산 - 조선왕조 의궤",
+        "url": "https://www.unesco.org/en/memory-world/uigwe-royal-protocols-joseon-dynasty"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-28-now-32-v1",
+      "dateKey": "2026-08-28",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "Excel 숫자 열에서 100 이상 200 이하인 행만 보려면 어떤 필터가 가장 알맞은가요?",
+      "choices": [
+        "숫자 필터에서 두 경계를 '그리고'로 연결한다",
+        "텍스트 필터에서 '다음으로 시작'을 두 번 적용한다",
+        "색 기준 정렬에서 글꼴 색을 하나 고른다"
+      ],
+      "answerIndex": 0,
+      "explanation": "범위 안에 동시에 들어와야 하므로 '100 이상'과 '200 이하' 조건을 AND, 즉 '그리고'로 결합합니다.",
+      "source": {
+        "name": "Microsoft 지원 - Excel 자동 필터",
+        "url": "https://support.microsoft.com/en-US/Excel/quick-start-filter-data-by-using-an-autofilter"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-23-life-58-v1",
+      "dateKey": "2026-09-23",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "분출구에서 날아온 작은 화산 쇄설물이 둘레에 쌓여 비교적 작은 산체를 이룰 때 나타나는 특징을 묶은 것은 무엇인가요?",
+      "choices": [
+        "유동성 용암이 수천 겹 퍼지고 정상에는 넓고 평평한 칼데라만 남는다",
+        "쇄설물이 원뿔을 이루고 정상에는 분출구 자리인 사발 모양 분화구가 남는다",
+        "점성 용암이 층리 없이 솟아오르고 산체 전체가 하나의 거대한 암주가 된다"
+      ],
+      "answerIndex": 1,
+      "explanation": "분석구는 공중에서 식은 작은 화산 쇄설물이 한 분출구 주변에 떨어져 쌓이면서 자랍니다. 정상에는 사발 모양 분화구를 남깁니다.",
+      "source": {
+        "name": "미국 지질조사국 화산재해프로그램 - 화산",
+        "url": "https://www.usgs.gov/programs/VHP/about-volcanoes"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-30-then-34-v1",
+      "dateKey": "2026-08-30",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "유네스코가 소개한 KBS '이산가족을 찾습니다' 아카이브의 구성으로 맞는 것은 무엇인가요?",
+      "choices": [
+        "재회 장면을 다시 만든 극영화와 배우 인터뷰만 모은 자료",
+        "방송 뒤 작성된 신문 사설과 시청자 감상문만 모은 자료",
+        "463개 방송 비디오테이프와 제작일지·참가신청서·사진 등"
+      ],
+      "answerIndex": 2,
+      "explanation": "유네스코에 따르면 이 아카이브에는 453시간 45분 분량의 비디오테이프 463개와 제작일지, 참가신청서, 음성자료, 사진 등이 포함됩니다.",
+      "source": {
+        "name": "유네스코 세계기록유산 - KBS 이산가족 찾기",
+        "url": "https://www.unesco.org/en/memory-world/archives-kbs-special-live-broadcast-finding-dispersed-families"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-14-now-49-v1",
+      "dateKey": "2026-09-14",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "OneDrive 주문형 파일에서 파란 구름 아이콘이 붙은 파일은 어떤 상태인가요?",
+      "choices": [
+        "이 장치에 항상 보관하도록 내려받은 상태",
+        "온라인에만 있어 열 때 내려받는 상태",
+        "동기화 오류로 복구할 수 없는 상태"
+      ],
+      "answerIndex": 1,
+      "explanation": "파란 구름은 온라인 전용 파일을 뜻합니다. 목록에는 보이지만 실제 내용을 열 때 네트워크로 다운로드합니다.",
+      "source": {
+        "name": "Microsoft 지원 - OneDrive 주문형 파일",
+        "url": "https://support.microsoft.com/en-us/office/save-disk-space-with-onedrive-files-on-demand-for-windows-0e6860d3-d9f3-4971-b321-7092438fb38e"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-29-life-33-v1",
+      "dateKey": "2026-08-29",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "같은 나무의 나이테에서 유난히 넓은 고리와 검게 그을린 흉터가 발견됐다면 어떻게 읽는 편이 타당할까요?",
+      "choices": [
+        "넓은 고리는 극심한 가뭄의 해, 검은 흉터는 유난히 빠른 생장의 흔적이다",
+        "넓은 고리와 검은 흉터는 모두 나무 나이만 나타내며 환경과는 무관하다",
+        "넓은 고리는 수분이 충분해 잘 자란 해, 검은 흉터는 산불의 흔적일 수 있다"
+      ],
+      "answerIndex": 2,
+      "explanation": "수분 조건이 좋은 해에는 나무가 더 자라 넓은 고리가 생길 수 있습니다. 검게 손상된 자국은 과거 산불 같은 환경 사건의 흔적으로 해석할 수 있습니다.",
+      "source": {
+        "name": "미국 국립공원관리청 - 나이테",
+        "url": "https://www.nps.gov/articles/000/tree-rings.htm"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-14-then-49-v1",
+      "dateKey": "2026-09-14",
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "KBS 이산가족 찾기 생방송 기록이 유네스코 세계기록유산에 오른 의미와 가장 가까운 것은 무엇인가요?",
+      "choices": [
+        "냉전이 개인에게 남긴 깊은 상처를 국내외에 널리 인식시켰다",
+        "재회 내용보다 1980년대 방송 장비의 성능 변화만을 보여 준다",
+        "개인의 경험보다 남북 정부의 공식 협상 절차만을 기록한다"
+      ],
+      "answerIndex": 0,
+      "explanation": "유네스코는 이 생방송이 냉전이 개인에게 남긴 깊은 상처를 한국과 세계에 널리 인식시켰다고 설명합니다.",
+      "source": {
+        "name": "유네스코 세계기록유산 - KBS 이산가족 찾기",
+        "url": "https://www.unesco.org/en/memory-world/archives-kbs-special-live-broadcast-finding-dispersed-families"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-30-now-34-v1",
+      "dateKey": "2026-08-30",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "OneDrive 파일을 인터넷이 없는 곳에서도 확실히 열고 싶습니다. 메뉴에서 무엇을 선택해야 하나요?",
+      "choices": [
+        "이 디바이스에서 항상 유지",
+        "공간 확보",
+        "온라인 전용으로 전환"
+      ],
+      "answerIndex": 0,
+      "explanation": "'이 디바이스에서 항상 유지'를 선택하면 파일을 내려받아 로컬에 보관하며 녹색 원 아이콘으로 상태를 알립니다.",
+      "source": {
+        "name": "Microsoft 지원 - OneDrive 주문형 파일",
+        "url": "https://support.microsoft.com/en-us/office/save-disk-space-with-onedrive-files-on-demand-for-windows-0e6860d3-d9f3-4971-b321-7092438fb38e"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-13-life-48-v1",
+      "dateKey": "2026-09-13",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "서로 다른 시대에 살았던 나무 두 그루의 좁고 넓은 나이테 배열을 겹쳐 맞추는 작업은 왜 할까요?",
+      "choices": [
+        "나이테 색만으로 두 나무가 같은 종인지 즉시 판별하기 위해",
+        "공통 시기의 무늬를 연결해 한 나무보다 긴 연대 기록을 만들기 위해",
+        "최근 고리의 폭만 보고 다음 해 강수량을 확정적으로 예측하기 위해"
+      ],
+      "answerIndex": 1,
+      "explanation": "두 나무가 함께 살았던 기간의 고리 무늬가 맞으면 오래된 목재와 더 최근 나무의 시간을 연결할 수 있습니다. 겹치는 무늬가 짧은 기록들을 더 오래된 연표로 잇습니다.",
+      "source": {
+        "name": "미국 국립공원관리청 - 나이테",
+        "url": "https://www.nps.gov/articles/000/tree-rings.htm"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-24-then-59-v1",
+      "dateKey": "2026-09-24",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "우주왕복선이 앞선 일회용 우주선과 달리 반복 사용을 목표로 한 부분은 무엇이었나요?",
+      "choices": [
+        "발사 때 떨어져 바다에 잠기는 외부 연료탱크",
+        "활주로로 귀환하는 궤도선",
+        "한 번 점화하면 사라지는 고체연료 자체"
+      ],
+      "answerIndex": 1,
+      "explanation": "비행기처럼 날개가 있는 궤도선은 임무 뒤 지구로 돌아와 정비 후 다시 비행하도록 설계됐습니다.",
+      "source": {
+        "name": "NASA - 우주왕복선",
+        "url": "https://www.nasa.gov/reference/the-space-shuttle/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-20-now-55-v1",
+      "dateKey": "2026-09-20",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "Windows에서 창 하나를 화면 가장자리로 끌었더니 절반 크기로 맞춰졌습니다. 이 기능의 이름은 무엇인가요?",
+      "choices": [
+        "작업 보기 기록",
+        "야간 조명",
+        "창 맞춤"
+      ],
+      "answerIndex": 2,
+      "explanation": "창 맞춤은 창을 가장자리나 레이아웃 영역에 배치해 화면을 여러 작업 공간으로 빠르게 나눕니다.",
+      "source": {
+        "name": "Microsoft 지원 - Windows 창 맞춤",
+        "url": "https://support.microsoft.com/en-us/windows/experience/snap-your-windows"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-31-life-35-v1",
+      "dateKey": "2026-08-31",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "꽃가루받이가 이루어질 때 정상적인 꽃가루 이동 경로는 어느 것인가요?",
+      "choices": [
+        "꽃의 수술에서 같은 꽃이나 다른 꽃의 암술머리로",
+        "한 꽃의 암술머리에서 다른 꽃의 수술로",
+        "수술에서 꽃잎 표면으로 옮겨져 그곳에서 수정이 일어나도록"
+      ],
+      "answerIndex": 0,
+      "explanation": "꽃가루 매개자는 꽃의 수컷 기관인 수술에서 꽃가루를 묻혀 암컷 기관의 암술머리로 옮깁니다. 이 전달이 뒤이은 수정으로 이어질 수 있습니다.",
+      "source": {
+        "name": "미국 농무부 국립농업도서관 - 꽃가루받이 동물",
+        "url": "https://www.nal.usda.gov/animal-health-and-welfare/insects-and-pollinators"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-09-then-44-v1",
+      "dateKey": "2026-09-09",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "우주왕복선 발사 때 큰 주황색 외부 연료탱크가 공급한 것은 무엇이었나요?",
+      "choices": [
+        "승무원이 궤도에서 마실 물과 호흡용 질소",
+        "귀환 활공 때 바퀴를 돌릴 압축공기",
+        "궤도선 주엔진에 쓸 액체수소와 액체산소"
+      ],
+      "answerIndex": 2,
+      "explanation": "외부 탱크에는 주엔진용 극저온 추진제가 담겼습니다. 연료를 다 쓰면 분리되어 재사용되지 않았습니다.",
+      "source": {
+        "name": "NASA - 우주왕복선",
+        "url": "https://www.nasa.gov/reference/the-space-shuttle/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-05-now-40-v1",
+      "dateKey": "2026-09-05",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "Windows 11 등 지원되는 환경에서 창 맞춤 레이아웃을 마우스로 바로 띄우려면 어떻게 하나요?",
+      "choices": [
+        "창의 제목 표시줄을 두 번 눌러 최대화한다",
+        "창의 최대화 단추 위에 포인터를 올린다",
+        "작업 표시줄의 창 미리 보기 위에 포인터를 올린다"
+      ],
+      "answerIndex": 1,
+      "explanation": "최대화 단추에 마우스를 올리면 가능한 맞춤 배열이 나타나 원하는 칸을 고를 수 있습니다.",
+      "source": {
+        "name": "Microsoft 지원 - Windows 창 맞춤",
+        "url": "https://support.microsoft.com/en-us/windows/experience/snap-your-windows"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-15-life-50-v1",
+      "dateKey": "2026-09-15",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "꽃가루 매개자에 관한 설명 가운데 옳은 것은 무엇인가요?",
+      "choices": [
+        "곤충 중 벌과 나비만 꽃가루를 옮기며 새와 박쥐는 꿀만 먹는다",
+        "벌뿐 아니라 나비·나방·파리·새·박쥐 등도 꽃가루를 옮기며 전 세계 많은 꽃식물의 번식을 돕는다",
+        "새와 박쥐는 꽃가루를 옮기지만 파리와 나방은 매개자로 보지 않는다"
+      ],
+      "answerIndex": 1,
+      "explanation": "꽃가루 매개자는 벌에만 한정되지 않습니다. 여러 곤충과 새, 박쥐까지 꽃가루를 옮겨 전 세계 꽃식물의 번식에 크게 기여합니다.",
+      "source": {
+        "name": "미국 농무부 국립농업도서관 - 꽃가루받이 동물",
+        "url": "https://www.nal.usda.gov/animal-health-and-welfare/insects-and-pollinators"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-22-then-57-v1",
+      "dateKey": "2026-09-22",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "1954년 리젠시 TR-1 같은 상업용 라디오에 트랜지스터가 잘 맞았던 특성을 묶은 것은 무엇인가요?",
+      "choices": [
+        "진공관보다 출력은 컸지만 크기와 전력 소모는 거의 같았다",
+        "크기가 작고 에너지 효율이 높으며 충격에도 비교적 튼튼했다",
+        "크기는 줄었지만 충격에 약해 휴대용보다 고정식 수신기에 알맞았다"
+      ],
+      "answerIndex": 1,
+      "explanation": "트랜지스터의 작은 크기와 에너지 효율, 견고함은 들고 다니는 라디오에 유리했습니다. 리젠시 TR-1은 1954년 말 매장에 등장했습니다.",
+      "source": {
+        "name": "스미스소니언 미국사박물관 - 리젠시 TR-1 라디오",
+        "url": "https://americanhistory.si.edu/collections/object/nmah_713528"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-22-now-57-v1",
+      "dateKey": "2026-09-22",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "PowerPoint 발표자 보기를 쓰면 발표자의 화면에만 나타나고 청중 화면에는 보이지 않는 것은 무엇인가요?",
+      "choices": [
+        "현재 슬라이드와 함께 표시되는 발표자 노트",
+        "청중에게 보여 줄 전체 화면 슬라이드",
+        "슬라이드에 삽입한 공개 자막"
+      ],
+      "answerIndex": 0,
+      "explanation": "발표자 보기는 노트, 다음 슬라이드, 경과 시간을 발표자에게 제공하면서 청중에게는 슬라이드 쇼만 보냅니다.",
+      "source": {
+        "name": "Microsoft 지원 - PowerPoint 발표자 보기",
+        "url": "https://support.microsoft.com/en-US/PowerPoint/training/start-the-presentation-and-see-your-notes-in-presenter-view"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-11-life-46-v1",
+      "dateKey": "2026-09-11",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "작은 우주 암석이 지구 대기로 들어와 빛을 내고 일부가 땅까지 도달했습니다. 위치에 따른 이름의 순서는 무엇인가요?",
+      "choices": [
+        "우주에서는 운석 → 대기에서 빛나면 유성체 → 지면 도달 시 유성",
+        "우주에서는 유성 → 대기에서 빛나면 운석 → 지면 도달 시 유성체",
+        "우주에서는 유성체 → 대기에서 빛나면 유성 → 지면 도달 시 운석"
+      ],
+      "answerIndex": 2,
+      "explanation": "같은 물질도 머무는 곳에 따라 명칭이 달라집니다. 우주 공간에서는 유성체, 대기권의 밝은 현상은 유성, 살아남아 지면에 떨어진 조각은 운석입니다.",
+      "source": {
+        "name": "NASA Science - 유성체·유성·운석",
+        "url": "https://science.nasa.gov/solar-system/meteors-meteorites/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-07-then-42-v1",
+      "dateKey": "2026-09-07",
+      "lens": "then",
+      "topic": "nostalgia",
+      "internalDifficulty": "gentle",
+      "prompt": "스미스소니언 자료가 설명하는 리젠시 TR-1의 내부 구성과 수신 방송은 어느 조합인가요?",
+      "choices": [
+        "트랜지스터 네 개와 AM 방송 수신",
+        "진공관 여덟 개와 단파 방송 전용 수신",
+        "트랜지스터 한 개와 FM 방송 전용 수신"
+      ],
+      "answerIndex": 0,
+      "explanation": "리젠시 TR-1에는 트랜지스터 네 개가 들어갔고 AM 방송을 들을 수 있었습니다. 당시 작은 상업용 제품의 가능성을 보여 준 구성이었습니다.",
+      "source": {
+        "name": "스미스소니언 미국사박물관 - 리젠시 TR-1 라디오",
+        "url": "https://americanhistory.si.edu/collections/object/nmah_713528"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-09-07-now-42-v1",
+      "dateKey": "2026-09-07",
+      "lens": "now",
+      "topic": "digital",
+      "internalDifficulty": "steady",
+      "prompt": "프로젝터를 연결했는데 PowerPoint 발표자 보기가 청중 화면에 나타났습니다. 우선 시도할 조치는 무엇인가요?",
+      "choices": [
+        "슬라이드 쇼의 모니터 선택을 자동으로 둔 채 다시 시작한다",
+        "슬라이드 쇼 해상도만 낮춰 두 화면의 비율을 맞춘다",
+        "디스플레이 설정에서 발표자 보기와 슬라이드 쇼를 맞바꾼다"
+      ],
+      "answerIndex": 2,
+      "explanation": "발표자 보기의 디스플레이 설정에는 두 화면에 배정된 발표자 보기와 슬라이드 쇼를 서로 바꾸는 명령이 있습니다.",
+      "source": {
+        "name": "Microsoft 지원 - PowerPoint 발표자 보기",
+        "url": "https://support.microsoft.com/en-US/PowerPoint/training/start-the-presentation-and-see-your-notes-in-presenter-view"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    },
+    {
+      "kind": "core",
+      "id": "2026-08-27-life-31-v1",
+      "dateKey": "2026-08-27",
+      "lens": "life",
+      "topic": "nature-general",
+      "internalDifficulty": "stretch",
+      "prompt": "혜성이 남긴 잔해에서 생기는 유성우가 해마다 비슷한 시기에 되풀이되는 주된 이유는 무엇인가요?",
+      "choices": [
+        "지구가 공전하면서 혜성이 남긴 먼지와 파편의 궤도 띠를 다시 지나기 때문에",
+        "유성체 무리가 지구 주위를 위성처럼 정확히 1년마다 한 바퀴 돌기 때문에",
+        "같은 날짜마다 달의 중력이 소행성 조각을 지구 대기 쪽으로 모으기 때문에"
+      ],
+      "answerIndex": 0,
+      "explanation": "혜성은 궤도를 따라 먼지와 작은 파편을 남깁니다. 지구가 그 잔해 띠를 통과하면 많은 유성체가 대기에 들어와 정기적으로 유성우를 만듭니다.",
+      "source": {
+        "name": "NASA Science - 유성체·유성·운석",
+        "url": "https://science.nasa.gov/solar-system/meteors-meteorites/"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-04"
+    }
+  ]
+}

@@ -52,7 +52,7 @@ export async function openBonusOffer(page: Page): Promise<void> {
 
 export async function startFirstFreeBonus(
   page: Page,
-  topicLabel = "한국 생활사",
+  topicLabel = "추억·대중문화",
 ): Promise<void> {
   await openBonusOffer(page);
   await page.getByRole("button", { name: topicLabel }).click();
@@ -80,6 +80,8 @@ export async function installClipboardFallback(page: Page): Promise<void> {
 export interface CorruptedProgressSlots {
   slotA: string | null;
   slotB: string | null;
+  v2SlotA: string | null;
+  v2SlotB: string | null;
   legacy: string | null;
 }
 
@@ -87,16 +89,20 @@ export async function readProgressSlots(
   page: Page,
 ): Promise<CorruptedProgressSlots> {
   return page.evaluate(() => ({
-    slotA: localStorage.getItem("geuttae-yojeum:progress:v2:a"),
-    slotB: localStorage.getItem("geuttae-yojeum:progress:v2:b"),
+    slotA: localStorage.getItem("geuttae-yojeum:progress:v3:a"),
+    slotB: localStorage.getItem("geuttae-yojeum:progress:v3:b"),
+    v2SlotA: localStorage.getItem("geuttae-yojeum:progress:v2:a"),
+    v2SlotB: localStorage.getItem("geuttae-yojeum:progress:v2:b"),
     legacy: localStorage.getItem("geuttae-yojeum:progress"),
   }));
 }
 
 export async function corruptAllProgressSlots(page: Page): Promise<void> {
   await page.evaluate(() => {
-    localStorage.setItem("geuttae-yojeum:progress:v2:a", "{broken-a");
-    localStorage.setItem("geuttae-yojeum:progress:v2:b", "{broken-b");
+    localStorage.setItem("geuttae-yojeum:progress:v3:a", "{broken-v3-a");
+    localStorage.setItem("geuttae-yojeum:progress:v3:b", "{broken-v3-b");
+    localStorage.setItem("geuttae-yojeum:progress:v2:a", "{broken-v2-a");
+    localStorage.setItem("geuttae-yojeum:progress:v2:b", "{broken-v2-b");
     localStorage.setItem("geuttae-yojeum:progress", "{broken-legacy");
   });
 }
