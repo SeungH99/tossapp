@@ -354,6 +354,20 @@ describe("validateContentPack", () => {
     );
   });
 
+  it("rejects standard-dictionary search listings that do not identify a source record", () => {
+    const unsupportedKeywords = ["가는 날이 장날", "-든지", "통째로"];
+
+    for (const searchKeyword of unsupportedKeywords) {
+      const invalid = structuredClone(corePack);
+      invalid.questions[0].source = {
+        name: "국립국어원 표준국어대사전",
+        url: `https://stdict.korean.go.kr/search/searchResult.do?pageSize=10&searchKeyword=${encodeURIComponent(searchKeyword)}`,
+      };
+
+      expect(issueCodes(invalid, coreDescriptor)).toContain("source-review");
+    }
+  });
+
   it("detects duplicate IDs, prompts, choices, answer leaks, and stacked negatives", () => {
     const invalid = structuredClone(corePack);
     invalid.questions[1].id = invalid.questions[0].id;

@@ -107,6 +107,8 @@ const BONUS_TOPICS = [
 ] as const satisfies readonly BonusTopic[];
 const SHA256_PATTERN = /^[a-f0-9]{64}$/;
 const ISO_DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/;
+const STDICT_SEARCH_HOST = "stdict.korean.go.kr";
+const STDICT_SEARCH_PATH = "/search/searchResult.do";
 const RELEASE_START_UTC = Date.UTC(2026, 6, 28);
 const DAY_MS = 24 * 60 * 60 * 1000;
 const RELEASE_DATE_KEYS = Array.from({ length: 180 }, (_, index) =>
@@ -131,6 +133,27 @@ const LEGACY_RELEASE_CONTRACT: ContentReleaseContract = {
     questionCount: 540,
   })),
 };
+
+function isUnsupportedStdictSearchListing(value: string): boolean {
+  try {
+    const url = new URL(value);
+    if (
+      url.hostname !== STDICT_SEARCH_HOST ||
+      url.pathname !== STDICT_SEARCH_PATH
+    ) {
+      return false;
+    }
+
+    const keyword = url.searchParams.get("searchKeyword")?.normalize("NFKC");
+    return (
+      keyword === "통째로" ||
+      keyword?.startsWith("-") === true ||
+      /\s/u.test(keyword ?? "")
+    );
+  } catch {
+    return false;
+  }
+}
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -287,14 +310,15 @@ function addPackSchemaIssues(
       typeof value.source.name !== "string" ||
       value.source.name.trim().length === 0 ||
       typeof value.source.url !== "string" ||
-      !value.source.url.startsWith("https://")
+      !value.source.url.startsWith("https://") ||
+      isUnsupportedStdictSearchListing(value.source.url)
     ) {
       issue(
         issues,
         "source-review",
         "error",
         questionScope(value, index),
-        "Question requires reviewed metadata and an HTTPS source.",
+        "Question requires reviewed metadata and a direct, supported HTTPS source.",
       );
     }
     const expectedQuestionVersion =

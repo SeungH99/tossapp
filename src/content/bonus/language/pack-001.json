@@ -88,11 +88,11 @@
       "lens": "life",
       "topic": "language",
       "internalDifficulty": "gentle",
-      "prompt": "회의에서 각자 맡을 일을 정했습니다. 빈칸에 들어갈 표준 표기는 무엇일까요? ‘각자의 ___을 정하다.’",
+      "prompt": "‘역할’과 ‘역활’의 표준 표기를 설명한 말로 알맞은 것은 무엇일까요?",
       "choices": [
-        "역활",
-        "역할",
-        "역할르"
+        "‘역활’은 본말이고 ‘역할’은 준말이다.",
+        "‘역할’만 표준 표기이고 ‘역활’은 잘못이다.",
+        "두 표기는 맡은 일의 종류에 따라 나누어 쓴다."
       ],
       "answerIndex": 1,
       "explanation": "맡은 소임을 뜻하는 표준어는 ‘역할’입니다. ‘역활’로 적지 않습니다.",
@@ -163,11 +163,11 @@
       "lens": "life",
       "topic": "language",
       "internalDifficulty": "gentle",
-      "prompt": "식사를 마친 뒤 그릇을 씻는 일을 가리키는 바른 표기는 무엇일까요?",
+      "prompt": "식사를 마친 뒤 그릇을 씻는 일을 문장에 바르게 적은 것은 무엇일까요?",
       "choices": [
-        "설겆이",
-        "설거쥐",
-        "설거지"
+        "저녁 설겆이를 마쳤다.",
+        "저녁 설거치를 마쳤다.",
+        "저녁 설거지를 마쳤다."
       ],
       "answerIndex": 2,
       "explanation": "먹고 난 그릇을 씻어 정리하는 일은 ‘설거지’로 적습니다. ‘설겆이’는 표준어가 아닙니다.",
@@ -242,7 +242,7 @@
       "choices": [
         "곰곰이 생각했다.",
         "곰곰히 생각했다.",
-        "곰곰이이 생각했다."
+        "곰곰하게 생각했다."
       ],
       "answerIndex": 0,
       "explanation": "여러모로 깊이 생각하는 모양을 나타내는 부사는 ‘곰곰이’입니다. ‘곰곰히’로 적지 않습니다.",
@@ -297,8 +297,8 @@
       "answerIndex": 2,
       "explanation": "나누거나 덜지 않은 온전한 덩어리 그대로라는 뜻의 부사는 ‘통째로’입니다. ‘통채로’나 ‘통체로’로 적지 않습니다.",
       "source": {
-        "name": "국립국어원 표준국어대사전 「통째로」 검색",
-        "url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=10&searchKeyword=%ED%86%B5%EC%A7%B8%EB%A1%9C"
+        "name": "국립국어원 온라인가나다 「통째/통째로」",
+        "url": "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=216&pageIndex=1&qna_seq=306498"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -772,8 +772,8 @@
       "answerIndex": 1,
       "explanation": "무언가 하려는 때에 공교롭게 뜻밖의 일이 생긴 상황이므로 ‘가는 날이 장날’이 어울립니다.",
       "source": {
-        "name": "국립국어원 표준국어대사전 「가는 날이 장날」 검색",
-        "url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=10&searchKeyword=%EA%B0%80%EB%8A%94%20%EB%82%A0%EC%9D%B4%20%EC%9E%A5%EB%82%A0"
+        "name": "국립국어원 한국어기초사전 「가는 날이 장날」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=27500"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -797,8 +797,8 @@
       "answerIndex": 2,
       "explanation": "가까이에 있는 것을 오히려 알아보지 못한다는 뜻의 ‘등잔 밑이 어둡다’가 맞습니다.",
       "source": {
-        "name": "국립국어원 표준국어대사전 「등잔 밑이 어둡다」 검색",
-        "url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=10&searchKeyword=%EB%93%B1%EC%9E%94%20%EB%B0%91%EC%9D%B4%20%EC%96%B4%EB%91%A1%EB%8B%A4"
+        "name": "국립국어원 한국어기초사전 「등잔 밑이 어둡다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=49114"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -822,8 +822,8 @@
       "answerIndex": 0,
       "explanation": "좋은 재료를 갖추는 데서 그치지 않고 엮어 쓸모 있는 결과물로 만들어야 한다는 뜻입니다. ‘부뚜막의 소금도 집어넣어야 짜다’는 실행 일반을, ‘백지장도 맞들면 낫다’는 협력을 강조합니다.",
       "source": {
-        "name": "국립국어원 표준국어대사전 「구슬이 서 말이라도 꿰어야 보배」 검색",
-        "url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=10&searchKeyword=%EA%B5%AC%EC%8A%AC%EC%9D%B4%20%EC%84%9C%20%EB%A7%90%EC%9D%B4%EB%9D%BC%EB%8F%84%20%EA%BF%B0%EC%96%B4%EC%95%BC%20%EB%B3%B4%EB%B0%B0"
+        "name": "국립국어원 한국어기초사전 「구슬이 서 말이라도 꿰어야 보배」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=36375"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -847,8 +847,8 @@
       "answerIndex": 2,
       "explanation": "강한 이들끼리 싸우는 사이에 약한 이가 피해를 본다는 뜻의 속담입니다.",
       "source": {
-        "name": "국립국어원 표준국어대사전 「고래 싸움에 새우 등 터진다」 검색",
-        "url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=10&searchKeyword=%EA%B3%A0%EB%9E%98%20%EC%8B%B8%EC%9B%80%EC%97%90%20%EC%83%88%EC%9A%B0%20%EB%93%B1%20%ED%84%B0%EC%A7%84%EB%8B%A4"
+        "name": "국립국어원 한국어기초사전 「고래 싸움에 새우 등 터진다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=23423"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -872,8 +872,8 @@
       "answerIndex": 0,
       "explanation": "믿고 있던 사람에게 배신이나 해를 당했을 때 ‘믿는 도끼에 발등 찍힌다’고 합니다.",
       "source": {
-        "name": "국립국어원 표준국어대사전 「믿는 도끼에 발등 찍힌다」 검색",
-        "url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=10&searchKeyword=%EB%AF%BF%EB%8A%94%20%EB%8F%84%EB%81%BC%EC%97%90%20%EB%B0%9C%EB%93%B1%20%EC%B0%8D%ED%9E%8C%EB%8B%A4"
+        "name": "국립국어원 한국어기초사전 「믿는 도끼에 발등 찍힌다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=69478"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -897,8 +897,8 @@
       "answerIndex": 1,
       "explanation": "실속이나 지식이 부족한 사람이 오히려 더 떠들어 댄다는 뜻입니다. 다른 두 속담은 각각 성숙한 겸손과 신중한 확인을 강조합니다.",
       "source": {
-        "name": "국립국어원 표준국어대사전 「빈 수레가 요란하다」 검색",
-        "url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=10&searchKeyword=%EB%B9%88%20%EC%88%98%EB%A0%88%EA%B0%80%20%EC%9A%94%EB%9E%80%ED%95%98%EB%8B%A4"
+        "name": "국립국어원 한국어기초사전 「빈 수레가 더 요란하다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=15680"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -922,8 +922,8 @@
       "answerIndex": 0,
       "explanation": "이미 손해를 본 뒤에야 뒤늦게 대비한다는 뜻의 ‘소 잃고 외양간 고친다’가 맞습니다.",
       "source": {
-        "name": "국립국어원 표준국어대사전 「소 잃고 외양간 고친다」 검색",
-        "url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=10&searchKeyword=%EC%86%8C%20%EC%9E%83%EA%B3%A0%20%EC%99%B8%EC%96%91%EA%B0%84%20%EA%B3%A0%EC%B9%9C%EB%8B%A4"
+        "name": "국립국어원 한국어기초사전 「소 잃고 외양간 고친다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=64289"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -947,8 +947,8 @@
       "answerIndex": 1,
       "explanation": "아무리 익숙하고 능숙한 사람도 때로 실수할 수 있다는 뜻입니다.",
       "source": {
-        "name": "국립국어원 표준국어대사전 「원숭이도 나무에서 떨어진다」 검색",
-        "url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=10&searchKeyword=%EC%9B%90%EC%88%AD%EC%9D%B4%EB%8F%84%20%EB%82%98%EB%AC%B4%EC%97%90%EC%84%9C%20%EB%96%A8%EC%96%B4%EC%A7%84%EB%8B%A4"
+        "name": "국립국어원 한국어기초사전 「원숭이도 나무에서 떨어진다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=69959"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -963,7 +963,7 @@
       "lens": "life",
       "topic": "language",
       "internalDifficulty": "stretch",
-      "prompt": "한 지역의 작은 매장에서만 일해 본 사람이 다른 시장을 배울 필요가 없다며 자기 방식이 세계 어디서나 통한다고 단정합니다. 가장 정확한 속담은?",
+      "prompt": "자료의 한 부분을 잘못 본 상황은 아닙니다. 평생 좁은 환경 안에서만 지내 더 넓은 세상이 있다는 사실조차 모르면서 자기 경험이 전부라고 뽐냅니다. 가장 정확한 속담은?",
       "choices": [
         "장님 코끼리 만지는 격",
         "아는 것이 병이다",
@@ -972,8 +972,8 @@
       "answerIndex": 2,
       "explanation": "좁은 범위의 경험만으로 넓은 세상을 모르는 사람을 ‘우물 안 개구리’에 빗댑니다. ‘장님 코끼리 만지는 격’은 일부만 보고 전체를 판단하는 데, ‘아는 것이 병이다’는 어설픈 지식이 도리어 해가 되는 데 초점이 있습니다.",
       "source": {
-        "name": "국립국어원 표준국어대사전 「우물 안 개구리」 검색",
-        "url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=10&searchKeyword=%EC%9A%B0%EB%AC%BC%20%EC%95%88%20%EA%B0%9C%EA%B5%AC%EB%A6%AC"
+        "name": "국립국어원 한국어기초사전 「우물 안 개구리」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=70763"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -997,8 +997,8 @@
       "answerIndex": 1,
       "explanation": "아주 작은 것도 꾸준히 모으면 큰 것이 된다는 뜻의 ‘티끌 모아 태산’입니다.",
       "source": {
-        "name": "국립국어원 표준국어대사전 「티끌 모아 태산」 검색",
-        "url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=10&searchKeyword=%ED%8B%B0%EB%81%8C%20%EB%AA%A8%EC%95%84%20%ED%83%9C%EC%82%B0"
+        "name": "국립국어원 한국어기초사전 「티끌 모아 태산」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=82672"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1022,8 +1022,8 @@
       "answerIndex": 2,
       "explanation": "말을 잘하면 큰 어려움이나 빚진 관계도 풀 수 있다는 뜻입니다.",
       "source": {
-        "name": "국립국어원 표준국어대사전 「말 한마디에 천 냥 빚도 갚는다」 검색",
-        "url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=10&searchKeyword=%EB%A7%90%20%ED%95%9C%EB%A7%88%EB%94%94%EC%97%90%20%EC%B2%9C%20%EB%83%A5%20%EB%B9%9A%EB%8F%84%20%EA%B0%9A%EB%8A%94%EB%8B%A4"
+        "name": "국립국어원 한국어기초사전 「말 한마디에 천 냥 빚도 갚는다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=27260"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1047,8 +1047,8 @@
       "answerIndex": 0,
       "explanation": "듣는 이가 없다고 여겨도 말은 새어 나갈 수 있으니 늘 조심하라는 뜻입니다. ‘발 없는 말이 천 리 간다’는 말이 퍼지는 속도를, ‘말이 씨가 된다’는 말이 현실이 될 수 있음을 강조합니다.",
       "source": {
-        "name": "국립국어원 표준국어대사전 「낮말은 새가 듣고 밤말은 쥐가 듣는다」 검색",
-        "url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=10&searchKeyword=%EB%82%AE%EB%A7%90%EC%9D%80%20%EC%83%88%EA%B0%80%20%EB%93%A3%EA%B3%A0%20%EB%B0%A4%EB%A7%90%EC%9D%80%20%EC%A5%90%EA%B0%80%20%EB%93%A3%EB%8A%94%EB%8B%A4"
+        "name": "국립국어원 한국어기초사전 「낮말은 새가 듣고 밤말은 쥐가 듣는다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=41281"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1072,8 +1072,8 @@
       "answerIndex": 2,
       "explanation": "작은 나쁜 버릇을 고치지 않으면 큰 잘못으로 커진다는 경계의 속담입니다.",
       "source": {
-        "name": "국립국어원 표준국어대사전 「바늘 도둑이 소도둑 된다」 검색",
-        "url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=10&searchKeyword=%EB%B0%94%EB%8A%98%20%EB%8F%84%EB%91%91%EC%9D%B4%20%EC%86%8C%EB%8F%84%EB%91%91%20%EB%90%9C%EB%8B%A4"
+        "name": "국립국어원 한국어기초사전 「바늘 도둑이 소도둑 된다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=56388"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1097,8 +1097,8 @@
       "answerIndex": 0,
       "explanation": "형편이 나아진 뒤 과거의 어렵고 미숙했던 때를 잊는 모습을 이르는 속담입니다.",
       "source": {
-        "name": "국립국어원 표준국어대사전 「개구리 올챙이 적 생각 못 한다」 검색",
-        "url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=10&searchKeyword=%EA%B0%9C%EA%B5%AC%EB%A6%AC%20%EC%98%AC%EC%B1%99%EC%9D%B4%20%EC%A0%81%20%EC%83%9D%EA%B0%81%20%EB%AA%BB%20%ED%95%9C%EB%8B%A4"
+        "name": "국립국어원 한국어기초사전 「개구리 올챙이 적 생각 못 한다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=64364"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1122,8 +1122,8 @@
       "answerIndex": 1,
       "explanation": "어떤 사람을 이야기하는 바로 그때 공교롭게 그 사람이 나타나거나 연락해 왔을 때 쓰는 속담입니다. 다른 두 속담은 말의 누설이나 확산을 경계합니다.",
       "source": {
-        "name": "국립국어원 표준국어대사전 「호랑이도 제 말 하면 온다」 검색",
-        "url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=10&searchKeyword=%ED%98%B8%EB%9E%91%EC%9D%B4%EB%8F%84%20%EC%A0%9C%20%EB%A7%90%20%ED%95%98%EB%A9%B4%20%EC%98%A8%EB%8B%A4"
+        "name": "국립국어원 한국어기초사전 「호랑이도 제 말 하면 온다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=74128"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1147,8 +1147,8 @@
       "answerIndex": 0,
       "explanation": "남의 말을 쉽게 받아들이고 영향을 잘 받는 성향을 ‘귀가 얇다’고 합니다.",
       "source": {
-        "name": "국립국어원 표준국어대사전 「귀가 얇다」 검색",
-        "url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=10&searchKeyword=%EA%B7%80%EA%B0%80%20%EC%96%87%EB%8B%A4"
+        "name": "국립국어원 한국어기초사전 「귀가 얇다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=60201"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1172,8 +1172,8 @@
       "answerIndex": 1,
       "explanation": "사귀어 아는 사람이 많고 활동 범위가 넓은 사람을 ‘발이 넓다’고 합니다.",
       "source": {
-        "name": "국립국어원 표준국어대사전 「발이 넓다」 검색",
-        "url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=10&searchKeyword=%EB%B0%9C%EC%9D%B4%20%EB%84%93%EB%8B%A4"
+        "name": "국립국어원 한국어기초사전 「발이 넓다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=67886"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1197,8 +1197,8 @@
       "answerIndex": 2,
       "explanation": "평소 말수와 관계없이 남의 비밀을 함부로 옮기지 않는 성품을 ‘입이 무겁다’고 합니다. ‘말을 아끼다’는 말을 삼가는 태도, ‘입을 다물다’는 말하지 않는 행동에 가깝습니다.",
       "source": {
-        "name": "국립국어원 표준국어대사전 「입이 무겁다」 검색",
-        "url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=10&searchKeyword=%EC%9E%85%EC%9D%B4%20%EB%AC%B4%EA%B2%81%EB%8B%A4"
+        "name": "국립국어원 한국어기초사전 「입이 무겁다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=62276"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1222,8 +1222,8 @@
       "answerIndex": 1,
       "explanation": "씀씀이가 크거나 음식을 넉넉하게 많이 마련하는 사람을 ‘손이 크다’고 합니다.",
       "source": {
-        "name": "국립국어원 표준국어대사전 「손이 크다」 검색",
-        "url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=10&searchKeyword=%EC%86%90%EC%9D%B4%20%ED%81%AC%EB%8B%A4"
+        "name": "국립국어원 한국어기초사전 「손이 크다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=17608"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1247,8 +1247,8 @@
       "answerIndex": 2,
       "explanation": "걱정되거나 안쓰러운 대상이 자꾸 떠올라 잊히지 않는 것을 ‘눈에 밟히다’라고 합니다.",
       "source": {
-        "name": "국립국어원 표준국어대사전 「눈에 밟히다」 검색",
-        "url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=10&searchKeyword=%EB%88%88%EC%97%90%20%EB%B0%9F%ED%9E%88%EB%8B%A4"
+        "name": "국립국어원 한국어기초사전 「눈에 밟히다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=72704"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1272,8 +1272,8 @@
       "answerIndex": 0,
       "explanation": "갑작스러운 위험에 크게 놀랐다가 무사함을 확인하고 안도하는 모습을 ‘가슴을 쓸어내리다’라고 합니다. 다른 두 표현은 걱정이나 부담이 풀리는 일반적인 안도에 더 가깝습니다.",
       "source": {
-        "name": "국립국어원 표준국어대사전 「가슴을 쓸어내리다」 검색",
-        "url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=10&searchKeyword=%EA%B0%80%EC%8A%B4%EC%9D%84%20%EC%93%B8%EC%96%B4%EB%82%B4%EB%A6%AC%EB%8B%A4"
+        "name": "국립국어원 한국어기초사전 「가슴을 쓸어내리다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=62908"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1297,8 +1297,8 @@
       "answerIndex": 2,
       "explanation": "어떤 일을 돕기 위해 적극적으로 나서는 것을 ‘발 벗고 나서다’라고 합니다.",
       "source": {
-        "name": "국립국어원 표준국어대사전 「발 벗고 나서다」 검색",
-        "url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=10&searchKeyword=%EB%B0%9C%20%EB%B2%97%EA%B3%A0%20%EB%82%98%EC%84%9C%EB%8B%A4"
+        "name": "국립국어원 한국어기초사전 「발 벗고 나서다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=67886"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1322,8 +1322,8 @@
       "answerIndex": 0,
       "explanation": "맡은 책임이나 부담이 크다는 뜻으로 ‘어깨가 무겁다’고 합니다.",
       "source": {
-        "name": "국립국어원 표준국어대사전 「어깨가 무겁다」 검색",
-        "url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=10&searchKeyword=%EC%96%B4%EA%B9%A8%EA%B0%80%20%EB%AC%B4%EA%B2%81%EB%8B%A4"
+        "name": "국립국어원 한국어기초사전 「어깨가 무겁다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=29970"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1347,8 +1347,8 @@
       "answerIndex": 1,
       "explanation": "해결하기 어려운 문제 때문에 오래 몹시 애쓰며 고민하는 상태를 ‘골머리를 앓다’라고 합니다. ‘머리를 맞대다’는 함께 의논하는 행동, ‘머리를 굴리다’는 해결책을 생각해 내는 행동에 초점이 있습니다.",
       "source": {
-        "name": "국립국어원 표준국어대사전 「골머리를 앓다」 검색",
-        "url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=10&searchKeyword=%EA%B3%A8%EB%A8%B8%EB%A6%AC%EB%A5%BC%20%EC%95%93%EB%8B%A4"
+        "name": "국립국어원 한국어기초사전 「골머리를 앓다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=18337"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1372,8 +1372,8 @@
       "answerIndex": 0,
       "explanation": "몹시 바빠 잠시도 쉴 겨를이 없는 상태를 ‘눈코 뜰 새 없다’고 합니다.",
       "source": {
-        "name": "국립국어원 표준국어대사전 「눈코 뜰 새 없다」 검색",
-        "url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=10&searchKeyword=%EB%88%88%EC%BD%94%20%EB%9C%B0%20%EC%83%88%20%EC%97%86%EB%8B%A4"
+        "name": "국립국어원 자주 묻는 질문 「눈코 뜰 새 없다」",
+        "url": "https://www.korean.go.kr/front/mcfaq/mcfaqView.do?mcfaq_seq=8774"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1397,8 +1397,8 @@
       "answerIndex": 1,
       "explanation": "매우 긴장되어 조마조마한 상황을 ‘손에 땀을 쥐다’라고 합니다.",
       "source": {
-        "name": "국립국어원 표준국어대사전 「손에 땀을 쥐다」 검색",
-        "url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=10&searchKeyword=%EC%86%90%EC%97%90%20%EB%95%80%EC%9D%84%20%EC%A5%90%EB%8B%A4"
+        "name": "국립국어원 한국어기초사전 「손에 땀을 쥐다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=17608"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1413,17 +1413,17 @@
       "lens": "life",
       "topic": "language",
       "internalDifficulty": "stretch",
-      "prompt": "꾸짖는 말은 아니지만 같은 안전 안내를 너무 여러 번 들어, 이제는 지겨울 만큼 문장 전체를 외웁니다. 가장 정확한 관용구는?",
+      "prompt": "같은 이야기를 셀 수 없이 되풀이해 들어 단순히 익숙한 정도를 넘어 이제는 그 말을 또 듣는 것 자체가 지겹습니다. 가장 정확한 관용구는?",
       "choices": [
         "귀에 익다",
-        "귀가 따갑다",
+        "귀가 솔깃하다",
         "귀에 못이 박히다"
       ],
       "answerIndex": 2,
-      "explanation": "같은 말을 지나치게 여러 번 들어 싫증이 날 정도임을 ‘귀에 못이 박히다’라고 합니다. ‘귀에 익다’는 단순한 익숙함, ‘귀가 따갑다’는 시끄러운 소리나 거듭된 꾸지람으로 인한 불편함에 가깝습니다.",
+      "explanation": "같은 말을 지나치게 여러 번 들어 싫증이 날 정도임을 ‘귀에 못이 박히다’라고 합니다. ‘귀에 익다’는 단순한 익숙함, ‘귀가 솔깃하다’는 관심이 생겨 귀를 기울이는 상태입니다.",
       "source": {
-        "name": "국립국어원 표준국어대사전 「귀에 못이 박히다」 검색",
-        "url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=10&searchKeyword=%EA%B7%80%EC%97%90%20%EB%AA%BB%EC%9D%B4%20%EB%B0%95%ED%9E%88%EB%8B%A4"
+        "name": "국립국어원 한국어기초사전 「귀에 못이 박히다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=60201"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1447,8 +1447,8 @@
       "answerIndex": 1,
       "explanation": "겁이 없고 매우 대담한 사람을 두고 ‘간이 크다’고 합니다.",
       "source": {
-        "name": "국립국어원 표준국어대사전 「간이 크다」 검색",
-        "url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=10&searchKeyword=%EA%B0%84%EC%9D%B4%20%ED%81%AC%EB%8B%A4"
+        "name": "국립국어원 한국어기초사전 「간이 크다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=16269"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1472,8 +1472,8 @@
       "answerIndex": 2,
       "explanation": "잘난 체하며 뽐내거나 거만한 태도를 ‘코가 높다’고 합니다.",
       "source": {
-        "name": "국립국어원 표준국어대사전 「코가 높다」 검색",
-        "url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=10&searchKeyword=%EC%BD%94%EA%B0%80%20%EB%86%92%EB%8B%A4"
+        "name": "국립국어원 한국어기초사전 「코가 높다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=46814"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1497,8 +1497,8 @@
       "answerIndex": 0,
       "explanation": "시험이나 선발에서 떨어지는 일을 구체적으로 ‘미역국을 먹다’라고 합니다. ‘고배를 마시다’와 ‘쓴맛을 보다’는 패배나 실패를 더 넓게 이르는 표현입니다.",
       "source": {
-        "name": "국립국어원 표준국어대사전 「미역국을 먹다」 검색",
-        "url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=10&searchKeyword=%EB%AF%B8%EC%97%AD%EA%B5%AD%EC%9D%84%20%EB%A8%B9%EB%8B%A4"
+        "name": "국립국어원 한국어기초사전 「미역국을 먹다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=56271"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -1865,12 +1865,12 @@
       "internalDifficulty": "stretch",
       "prompt": "‘로서’와 ‘로써’를 구별해 바르게 쓴 문장은 어느 것일까요?",
       "choices": [
-        "이 칼은 빵을 자르는 도구로서 쓴다.",
-        "그는 대표로써 책임을 다했다.",
-        "그는 대표로서 책임을 다했다."
+        "이 열쇠로서 잠긴 문을 열었다.",
+        "그는 반장으로써 회의에 참석했다.",
+        "그는 반장으로서 회의에 참석했다."
       ],
       "answerIndex": 2,
-      "explanation": "지위나 자격을 나타낼 때는 ‘대표로서’처럼 ‘로서’를 씁니다. 칼 같은 수단이나 도구를 나타낼 때는 ‘로써’를 씁니다.",
+      "explanation": "지위나 자격을 나타낼 때는 ‘반장으로서’처럼 ‘로서’를 씁니다. 열쇠 같은 수단이나 도구를 나타낼 때는 ‘로써’를 씁니다.",
       "source": {
         "name": "국립국어원 표준국어대사전 「로서」 검색",
         "url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=10&searchKeyword=%EB%A1%9C%EC%84%9C"
@@ -1947,8 +1947,8 @@
       "answerIndex": 0,
       "explanation": "여러 선택 가운데 어느 것이든 가능함을 나타내는 연결 어미는 ‘-든지’입니다. 과거를 떠올리는 ‘-던지’와 구별합니다.",
       "source": {
-        "name": "국립국어원 표준국어대사전 「-든지」 검색",
-        "url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=10&searchKeyword=-%EB%93%A0%EC%A7%80"
+        "name": "국립국어원 자주 묻는 질문 「-든지/-던지」",
+        "url": "https://www.korean.go.kr/front/mcfaq/mcfaqView.do?mcfaq_seq=9075&mn_id=217&pageIndex=5"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
@@ -2022,8 +2022,8 @@
       "answerIndex": 1,
       "explanation": "‘-대’는 ‘-다고 해’가 줄어든 말로 남에게 들은 내용을 전합니다. ‘-데’는 화자가 직접 겪은 일을 떠올려 말할 때 쓰입니다.",
       "source": {
-        "name": "국립국어원 표준국어대사전 「-대」 검색",
-        "url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=10&searchKeyword=-%EB%8C%80"
+        "name": "국립국어원 자주 묻는 질문 「-대/-데」",
+        "url": "https://www.korean.go.kr/front/mcfaq/mcfaqView.do?mcfaq_seq=5845&mn_id=217&pageIndex=225"
       },
       "contentVersion": "2026.08.180d",
       "reviewStatus": "reviewed",
