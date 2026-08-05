@@ -80,6 +80,8 @@ export async function installClipboardFallback(page: Page): Promise<void> {
 export interface CorruptedProgressSlots {
   slotA: string | null;
   slotB: string | null;
+  v3SlotA: string | null;
+  v3SlotB: string | null;
   v2SlotA: string | null;
   v2SlotB: string | null;
   legacy: string | null;
@@ -89,8 +91,10 @@ export async function readProgressSlots(
   page: Page,
 ): Promise<CorruptedProgressSlots> {
   return page.evaluate(() => ({
-    slotA: localStorage.getItem("geuttae-yojeum:progress:v3:a"),
-    slotB: localStorage.getItem("geuttae-yojeum:progress:v3:b"),
+    slotA: localStorage.getItem("geuttae-yojeum:progress:v4:a"),
+    slotB: localStorage.getItem("geuttae-yojeum:progress:v4:b"),
+    v3SlotA: localStorage.getItem("geuttae-yojeum:progress:v3:a"),
+    v3SlotB: localStorage.getItem("geuttae-yojeum:progress:v3:b"),
     v2SlotA: localStorage.getItem("geuttae-yojeum:progress:v2:a"),
     v2SlotB: localStorage.getItem("geuttae-yojeum:progress:v2:b"),
     legacy: localStorage.getItem("geuttae-yojeum:progress"),
@@ -99,6 +103,8 @@ export async function readProgressSlots(
 
 export async function corruptAllProgressSlots(page: Page): Promise<void> {
   await page.evaluate(() => {
+    localStorage.setItem("geuttae-yojeum:progress:v4:a", "{broken-v4-a");
+    localStorage.setItem("geuttae-yojeum:progress:v4:b", "{broken-v4-b");
     localStorage.setItem("geuttae-yojeum:progress:v3:a", "{broken-v3-a");
     localStorage.setItem("geuttae-yojeum:progress:v3:b", "{broken-v3-b");
     localStorage.setItem("geuttae-yojeum:progress:v2:a", "{broken-v2-a");

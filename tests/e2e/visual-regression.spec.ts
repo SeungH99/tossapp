@@ -19,6 +19,41 @@ async function openResultScreen(page: Page): Promise<void> {
   await finishQuiz(page, 2);
 }
 
+async function expectStableAnswerGeometry(page: Page): Promise<void> {
+  const measurements = await page
+    .locator(".answer-button")
+    .evaluateAll((buttons) =>
+      buttons.map((button) => {
+        const text = button.querySelector<HTMLElement>(".answer-text");
+        const buttonBox = button.getBoundingClientRect();
+        const textBox = text?.getBoundingClientRect();
+        const style = getComputedStyle(button);
+        const borderTop = Number.parseFloat(style.borderTopWidth);
+        const paddingTop = Number.parseFloat(style.paddingTop);
+        return {
+          expectedTextY: buttonBox.y + borderTop + paddingTop,
+          paddingTop,
+          textY: textBox?.y ?? null,
+        };
+      }),
+    );
+
+  expect(measurements).toHaveLength(3);
+  for (const measurement of measurements) {
+    expect(measurement.paddingTop).toBe(18);
+    expect(measurement.textY).not.toBeNull();
+    expect(
+      Math.abs((measurement.textY as number) - measurement.expectedTextY),
+    ).toBeLessThanOrEqual(1);
+  }
+
+  const markBox = await page.locator(".answer-mark").boundingBox();
+  expect(markBox).not.toBeNull();
+  expect(
+    Math.abs((markBox?.width ?? 0) - (markBox?.height ?? 0)),
+  ).toBeLessThanOrEqual(1);
+}
+
 test("home matches the approved snapshot", async ({ page }) => {
   await openFreshApp(page);
   await expect(page.locator("main")).toHaveScreenshot("home.png");
@@ -26,6 +61,7 @@ test("home matches the approved snapshot", async ({ page }) => {
 
 test("answer explanation matches the approved snapshot", async ({ page }) => {
   await openExplanationScreen(page);
+  await expectStableAnswerGeometry(page);
   await expect(page.locator("main")).toHaveScreenshot("explanation.png");
 });
 
