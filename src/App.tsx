@@ -4,6 +4,7 @@ import {
   useMemo,
   useRef,
   useState,
+  type KeyboardEvent as ReactKeyboardEvent,
   type ReactNode,
 } from "react";
 
@@ -535,6 +536,36 @@ function BonusTopicScreen({
     startStatus === "loading-content" ||
     startStatus === "showing-ad" ||
     startStatus === "saving";
+  const topicButtonRefs = useRef(new Map<BonusTopic, HTMLButtonElement>());
+  const handleTopicKeyDown = (
+    event: ReactKeyboardEvent<HTMLButtonElement>,
+    currentTopic: BonusTopic,
+  ) => {
+    const direction =
+      event.key === "ArrowRight" || event.key === "ArrowDown"
+        ? 1
+        : event.key === "ArrowLeft" || event.key === "ArrowUp"
+          ? -1
+          : 0;
+    if (direction === 0) {
+      return;
+    }
+
+    event.preventDefault();
+    const enabledTopics = topics.filter((topic) => !topic.exhausted);
+    const currentIndex = enabledTopics.findIndex(
+      (topic) => topic.id === currentTopic,
+    );
+    if (currentIndex < 0 || enabledTopics.length === 0) {
+      return;
+    }
+
+    const nextIndex =
+      (currentIndex + direction + enabledTopics.length) % enabledTopics.length;
+    const nextTopic = enabledTopics[nextIndex];
+    onSelectTopic(nextTopic.id);
+    topicButtonRefs.current.get(nextTopic.id)?.focus();
+  };
   const startLabel = !entitlement.firstFreeUsed
     ? "첫 보너스 무료로 시작"
     : entitlement.ticketCount > 0
@@ -581,7 +612,16 @@ function BonusTopicScreen({
               disabled={isStarting || topic.exhausted}
               key={topic.id}
               onClick={() => onSelectTopic(topic.id)}
+              onKeyDown={(event) => handleTopicKeyDown(event, topic.id)}
+              ref={(element) => {
+                if (element == null) {
+                  topicButtonRefs.current.delete(topic.id);
+                } else {
+                  topicButtonRefs.current.set(topic.id, element);
+                }
+              }}
               role="radio"
+              tabIndex={isSelected && !topic.exhausted ? 0 : -1}
               type="button"
             >
               <span className="topic-icon" aria-hidden="true">
@@ -1744,6 +1784,9 @@ export default function QuizApp({
         onBonus={() => {
           setBonusStartStatus("idle");
           setBonusStartError(null);
+          setSelectedTopic(
+            displayedBonusTopics.find((topic) => !topic.exhausted)?.id ?? null,
+          );
           setScreen("bonus-topic");
         }}
         onShare={handleShare}

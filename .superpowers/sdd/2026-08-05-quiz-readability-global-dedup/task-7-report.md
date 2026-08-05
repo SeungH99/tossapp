@@ -48,3 +48,31 @@ After the look-ahead implementation, an additional tightened analytics assertion
 The plan's literal `npm.cmd run validate:content:library -- --scope all` invocation was rejected because the validator has no `all` scope. Running the unscoped script is the full-library validation and produced the inventory totals above.
 
 The raw `npm.cmd run lint` command could not scan the protected, pre-existing deleted `.gstack` path (`EPERM`). Re-running the same full lint while excluding only `.gstack` passed. The unrelated pre-existing `.gitignore` modification and `.gstack/design.json` deletion were left untouched and unstaged.
+
+## Reviewer fix round 1
+
+### Changes
+
+- Replaced the fixed `42px` topic-icon column with a content-sized track, allowed long labels to wrap, and reflowed the topic grid to one column at widths up to 420px. This covers both 360px and 390px viewports at 200% text scale.
+- Added roving radio behavior for all four arrow keys with wraparound and disabled-topic skipping. The first enabled topic is selected when the chooser opens, and only the checked enabled topic has `tabindex="0"`.
+- Updated bonus E2E selectors from button/`aria-pressed` to radio/`aria-checked`, and updated the same flow's persisted-progress lookup to the current V4 slots.
+- Hardened the overflow diagnostic to describe SVG elements through their class attribute instead of assuming `className` is a string.
+
+### RED/GREEN evidence
+
+- RED component run: 2 failed as expected because no topic was initially selected/tabbable and arrow keys did not move focus or selection.
+- RED responsive run: Chromium 360 and 390 both failed because adjacent cards remained 169px and 178px apart horizontally at 200% text scale.
+- RED bonus-flow run: timed out on the stale `getByRole("button", { name: "추억·대중문화" })` selector.
+- GREEN component run: 2 focused radio tests passed; full `src/App.test.tsx` passed 44/44.
+- GREEN focused Chromium run: bonus keyboard/selector flows and 200% reflow passed at both 360px and 390px.
+
+### Fix-round verification
+
+- `npm.cmd test -- --run src/App.test.tsx src/domain` — passed: 14 files, 143 tests.
+- `npx.cmd playwright test tests/e2e/bonus-flow.spec.ts tests/e2e/responsive.spec.ts --project=chromium-360 --project=chromium-390` — passed: 12 tests.
+- `npm.cmd test -- --run` — passed: 26 files, 256 tests.
+- `npm.cmd run typecheck` — passed.
+- `npm.cmd run lint -- --ignore-pattern .gstack` — passed with zero warnings/errors.
+- `npm.cmd run validate:content:library` — passed: 12 packs, 1,080 questions, 360 sets.
+
+The protected pre-existing `.gitignore` modification and `.gstack/design.json` deletion remained untouched and unstaged throughout this fix round.

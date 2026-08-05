@@ -26,26 +26,55 @@ interface StoredProgress {
   bonusStartCommands: Record<string, StoredBonusCommand>;
 }
 
+test("bonus topic radios support arrow-key focus and selection", async ({
+  page,
+}) => {
+  await openFreshApp(page);
+  await completeCoreQuiz(page);
+  await openBonusOffer(page);
+
+  const topics = page.getByRole("radio");
+  const firstTopic = topics.nth(0);
+  const secondTopic = topics.nth(1);
+  await expect(firstTopic).toHaveAttribute("aria-checked", "true");
+  await expect(firstTopic).toHaveAttribute("tabindex", "0");
+  await expect(secondTopic).toHaveAttribute("tabindex", "-1");
+
+  await firstTopic.focus();
+  await page.keyboard.press("ArrowRight");
+  await expect(secondTopic).toBeFocused();
+  await expect(secondTopic).toHaveAttribute("aria-checked", "true");
+  await expect(secondTopic).toHaveAttribute("tabindex", "0");
+  await expect(firstTopic).toHaveAttribute("tabindex", "-1");
+
+  await page.keyboard.press("ArrowLeft");
+  await expect(firstTopic).toBeFocused();
+  await expect(firstTopic).toHaveAttribute("aria-checked", "true");
+});
+
 test("first free bonus lets the user choose a topic and finish three questions", async ({
   page,
 }) => {
   await openFreshApp(page);
   await completeCoreQuiz(page);
   await openBonusOffer(page);
-  const nostalgiaTopic = page.getByRole("button", { name: "추억·대중문화" });
+  const nostalgiaTopic = page.getByRole("radio", { name: "추억·대중문화" });
   await nostalgiaTopic.click();
-  await expect(nostalgiaTopic).toHaveAttribute("aria-pressed", "true");
+  await expect(nostalgiaTopic).toHaveAttribute("aria-checked", "true");
   await page.getByRole("button", { name: "첫 보너스 무료로 시작" }).click();
   await expect(page.locator(".quiz-screen")).toBeVisible();
 
   const progress: StoredProgress | null = await page.evaluate(() => {
     const slots = [
-      localStorage.getItem("geuttae-yojeum:progress:v3:a"),
-      localStorage.getItem("geuttae-yojeum:progress:v3:b"),
+      localStorage.getItem("geuttae-yojeum:progress:v4:a"),
+      localStorage.getItem("geuttae-yojeum:progress:v4:b"),
     ];
     const latest = slots
       .filter((raw): raw is string => raw != null)
-      .map((raw) => JSON.parse(raw) as { revision: number; payload: StoredProgress })
+      .map(
+        (raw) =>
+          JSON.parse(raw) as { revision: number; payload: StoredProgress },
+      )
       .sort((left, right) => right.revision - left.revision)[0];
     return latest?.payload ?? null;
   });

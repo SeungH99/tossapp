@@ -373,7 +373,7 @@ a:focus-visible {
 .topic-button {
   position: relative;
   display: grid;
-  grid-template-columns: 42px minmax(0, 1fr);
+  grid-template-columns: max-content minmax(0, 1fr);
   grid-template-areas:
     "icon label"
     "icon status";
@@ -416,6 +416,8 @@ a:focus-visible {
 
 .topic-label {
   grid-area: label;
+  min-width: 0;
+  overflow-wrap: anywhere;
   text-align: left;
 }
 
@@ -580,6 +582,12 @@ a:focus-visible {
 
 .storage-error-screen .outline-button {
   margin-top: 12px;
+}
+
+@media (max-width: 420px) {
+  .topic-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 @media (max-width: 360px) {

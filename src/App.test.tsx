@@ -179,6 +179,40 @@ function bundledBonusSet(topic: "nostalgia", setIndex: number) {
   return questions;
 }
 
+async function openCatalogBonusChooserWithExhaustedMiddle() {
+  const storage = new ControlledStorage();
+  const repository = new ProgressRepository(storage);
+  const progress = createEmptyProgress();
+  progress.sessions["2026-07-28"] = createCompletedSession("2026-07-28");
+  progress.bonusTopicProgress["korean-life"].skippedSetIndexes = [0];
+  await repository.save(progress);
+  const contentCatalog: ContentCatalog = {
+    bonusTopics: threeBonusTopics,
+    async loadCoreSet() {
+      return { ok: true, value: coreQuestions, packId: "core-001" };
+    },
+    async loadBonusSet() {
+      return { ok: false, reason: "missing-set" };
+    },
+  };
+  const user = userEvent.setup();
+
+  render(
+    <QuizApp
+      now={new Date("2026-07-28T03:00:00.000Z")}
+      contentCatalog={contentCatalog}
+      repository={repository}
+    />,
+  );
+
+  await waitFor(() => {
+    expect(document.querySelector(".result-screen")).not.toBeNull();
+  });
+  await user.click(requiredButton(".result-screen .outline-button"));
+
+  return { radios: screen.getAllByRole("radio"), user };
+}
+
 describe("QuizApp", () => {
   it("marks a 42-character question as long and renders a fixed SVG answer mark", async () => {
     const longQuestion = {
@@ -597,6 +631,39 @@ describe("QuizApp", () => {
     ).toBeDisabled();
     expect(screen.getByText("새 문제 준비 중")).toBeInTheDocument();
     expect(screen.queryByText("디지털 생활")).not.toBeInTheDocument();
+  });
+
+  it("keeps only the selected enabled topic in the radio tab order", async () => {
+    const { radios } = await openCatalogBonusChooserWithExhaustedMiddle();
+
+    expect(radios[0]).toHaveAttribute("aria-checked", "true");
+    expect(radios[0]).toHaveAttribute("tabindex", "0");
+    expect(radios[1]).toBeDisabled();
+    expect(radios[1]).toHaveAttribute("tabindex", "-1");
+    expect(radios[2]).toHaveAttribute("aria-checked", "false");
+    expect(radios[2]).toHaveAttribute("tabindex", "-1");
+  });
+
+  it("moves radio selection with every arrow direction and skips disabled topics", async () => {
+    const { radios, user } = await openCatalogBonusChooserWithExhaustedMiddle();
+
+    radios[0].focus();
+    await user.keyboard("{ArrowRight}");
+    expect(radios[2]).toHaveFocus();
+    expect(radios[2]).toHaveAttribute("aria-checked", "true");
+
+    await user.keyboard("{ArrowDown}");
+    expect(radios[0]).toHaveFocus();
+    expect(radios[0]).toHaveAttribute("aria-checked", "true");
+
+    await user.keyboard("{ArrowLeft}");
+    expect(radios[2]).toHaveFocus();
+    expect(radios[2]).toHaveAttribute("aria-checked", "true");
+
+    await user.keyboard("{ArrowUp}");
+    expect(radios[0]).toHaveFocus();
+    expect(radios[0]).toHaveAttribute("aria-checked", "true");
+    expect(radios[1]).toHaveAttribute("aria-checked", "false");
   });
 
   it("look-ahead skips a seen concept before showing a reward ad", async () => {
@@ -1480,7 +1547,12 @@ describe("QuizApp", () => {
     ).toBeInTheDocument();
     expect(
       screen.getByRole("button", { name: "첫 보너스 무료로 시작" }),
-    ).toBeDisabled();
+    ).toBeEnabled();
+    expect(screen.getAllByRole("radio")[0]).toHaveAttribute(
+      "aria-checked",
+      "true",
+    );
+    expect(screen.getAllByRole("radio")[0]).toHaveAttribute("tabindex", "0");
 
     await user.click(screen.getByRole("radio", { name: "디지털 생활" }));
 

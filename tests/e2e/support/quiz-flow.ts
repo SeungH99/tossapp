@@ -55,7 +55,7 @@ export async function startFirstFreeBonus(
   topicLabel = "추억·대중문화",
 ): Promise<void> {
   await openBonusOffer(page);
-  await page.getByRole("button", { name: topicLabel }).click();
+  await page.getByRole("radio", { name: topicLabel }).click();
   await page.getByRole("button", { name: "첫 보너스 무료로 시작" }).click();
   await expect(page.locator(".quiz-screen")).toBeVisible();
 }

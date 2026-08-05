@@ -103,8 +103,9 @@ export async function expectNoHorizontalOverflow(page: Page): Promise<void> {
         if (element.id !== "") {
           return `#${element.id}`;
         }
-        if (element.className !== "") {
-          return `${element.tagName.toLocaleLowerCase("en-US")}.${element.className
+        const className = element.getAttribute("class") ?? "";
+        if (className !== "") {
+          return `${element.tagName.toLocaleLowerCase("en-US")}.${className
             .trim()
             .split(/\s+/)
             .join(".")}`;
