@@ -51,7 +51,25 @@ Only these locally generated and visually approved `win32` baselines changed:
 - `bonus-offer-webkit-360.png`
 - `bonus-offer-webkit-390.png`
 
-The four locally copied `windows-ci/bonus-offer-*` files did not have valid Windows CI provenance and were restored byte-for-byte to their pre-Task-8 versions from `95dd389`. No `windows-ci` visual pass is claimed from this machine. A real `windows-latest` CI run must regenerate those four baselines and they must receive visual review before any CI baseline update is accepted.
+The four locally copied `windows-ci/bonus-offer-*` files did not have valid Windows CI provenance and were restored byte-for-byte to their pre-Task-8 versions from `95dd389` before the first review-fix commit.
+
+GitHub Actions Release Gate run `30998050274` then executed on `windows-latest` for PR #9 at head `fbc660ab6fb4c46a1b23b2d2653ce1dfc753a681`. Its quality and release-build jobs passed; the Chromium and WebKit jobs failed only on the eight visual baselines below. The accepted files came directly from the run's failure artifacts, not from a local regeneration:
+
+- Chromium artifact `playwright-chromium-failure-ec7563054cadf66753f686bcb57fbf93773838f6` (artifact ID `8927057373`, archive digest `sha256:bf45597e79900dd4051ed622b242da6f3482c9821897a78ddb2c082997ebfc44`).
+- WebKit artifact `playwright-webkit-failure-ec7563054cadf66753f686bcb57fbf93773838f6` (artifact ID `8927057643`, archive digest `sha256:01173be790e1c3068f9fd4d4b573cf31beaada1cb6cef0a2d2eea8dbddd8aef8`).
+
+For every accepted file, the non-retry actual was byte-identical to its retry actual and to the new `windows-ci` expected baseline. All eight actuals were visually inspected at their named viewport; the bonus-offer and explanation screens have no clipping or overlap.
+
+| `windows-ci` baseline          | SHA-256                                                            |
+| ------------------------------ | ------------------------------------------------------------------ |
+| `bonus-offer-chromium-360.png` | `513647a9073c522f7433cd97bb6fae86ede39d42e6984f854dc9c934c7b5a519` |
+| `bonus-offer-chromium-390.png` | `ebaad3d0e8093291494ac80e7fb7f0a35808765baf264aa9b8ff8357dec7da0f` |
+| `bonus-offer-webkit-360.png`   | `a6cf924d3f2fa3e0d30441a2a7c22baa483502c793b69c1726a40e7dcad0c157` |
+| `bonus-offer-webkit-390.png`   | `7c164e66e309d27636bb27401ea83fe4626951400cb64bafadba5ea565091a55` |
+| `explanation-chromium-360.png` | `7d213e5715ab35c1fba96dc59bf6b91b7ee44a5cc2ea384ffd1bcd12ac9c8cff` |
+| `explanation-chromium-390.png` | `9c58f3a541e690d0cbcd65eca80aa74cbf49b7c09a115ba919ce3a3d548808da` |
+| `explanation-webkit-360.png`   | `f4275e35a20f14c8f098280b77d591388aac3756756a937f314be8d423617f91` |
+| `explanation-webkit-390.png`   | `9e3f16d2beb370879f8cb0f07445c3c0efc900186fc473736e70ec153cbf5a49` |
 
 ## Files changed
 
@@ -63,7 +81,7 @@ The four locally copied `windows-ci/bonus-offer-*` files did not have valid Wind
 - `tests/e2e/fixtures/reward-ad-harness.html`
 - `tests/e2e/fixtures/reward-ad-harness.tsx`
 - four locally approved `bonus-offer-*.png` snapshots under `win32`
-- the four `windows-ci/bonus-offer-*.png` files restored to `95dd389` in the review-fix commit
+- eight runner-produced `windows-ci/bonus-offer-*.png` and `windows-ci/explanation-*.png` baselines accepted from run `30998050274`
 - `.superpowers/sdd/2026-08-05-quiz-readability-global-dedup/task-8-report.md`
 
 ## Final verification
@@ -78,6 +96,6 @@ The four locally copied `windows-ci/bonus-offer-*` files did not have valid Wind
 - `npx.cmd prettier --check tests/e2e/bonus-flow.spec.ts tests/e2e/core-flow.spec.ts tests/e2e/visual-regression.spec.ts tests/e2e/accessibility.spec.ts tests/e2e/support/quiz-flow.ts` — passed.
 - `git diff --check -- tests/e2e` — passed.
 
-The full Playwright command above used the local `win32` snapshot environment only. The four `windows-ci/bonus-offer-*` regenerations and visual approvals remain explicitly pending on a real `windows-latest` runner.
+The full Playwright command above used the local `win32` snapshot environment only. No `windows-ci` snapshot was regenerated locally. A follow-up `windows-latest` run remains required to verify that the eight newly accepted runner baselines now pass.
 
 The protected pre-existing `.gitignore` modification and `.gstack/design.json` deletion were left untouched and unstaged.
