@@ -30,6 +30,7 @@ const corePack: CoreContentPack = {
       ...metadata,
       kind: "core",
       id: "core-gentle",
+      conceptId: "nostalgia-public-phone-coin-call",
       dateKey: "2026-07-28",
       lens: "then",
       topic: "nostalgia",
@@ -43,6 +44,7 @@ const corePack: CoreContentPack = {
       ...metadata,
       kind: "core",
       id: "core-steady",
+      conceptId: "digital-mobile-text-size-setting",
       dateKey: "2026-07-28",
       lens: "now",
       topic: "digital",
@@ -56,6 +58,7 @@ const corePack: CoreContentPack = {
       ...metadata,
       kind: "core",
       id: "core-stretch",
+      conceptId: "safety-suspicious-transfer-direct-verification",
       dateKey: "2026-07-28",
       lens: "life",
       topic: "safety",
@@ -155,6 +158,7 @@ function buildCoreLibrary(startOffset = 0) {
         ...metadata,
         kind: "core" as const,
         id: `core-${packIndex}-${dayIndex}-${difficultyIndex}`,
+        conceptId: `core-concept-${packIndex}-${dayIndex}-${difficultyIndex}`,
         dateKey: releaseDate(firstOffset + dayIndex),
         lens: LENSES[difficultyIndex],
         topic: "nostalgia" as const,
@@ -369,7 +373,7 @@ describe("validateContentPack", () => {
     );
   });
 
-  it("flags bonus set range and concepts repeated less than 30 sets apart", () => {
+  it("flags bonus set range and duplicate concepts", () => {
     const invalid = bonusPack();
     invalid.questions.push(
       ...invalid.questions.map((question) => ({
@@ -381,12 +385,30 @@ describe("validateContentPack", () => {
     );
 
     expect(issueCodes(invalid, { ...bonusDescriptor, setEnd: 30 })).toEqual(
-      expect.arrayContaining(["set-range", "concept-spacing"]),
+      expect.arrayContaining(["set-range", "duplicate-concept"]),
     );
   });
 });
 
 describe("validateContentLibrary", () => {
+  it("rejects a concept repeated anywhere in the released library", () => {
+    const core = buildCoreLibrary();
+    const nostalgia = buildBonusTopicLibrary("nostalgia");
+    core.packs[0].pack.questions[0].conceptId = "shared-kimjang";
+    nostalgia.packs[0].pack.questions[0].conceptId = "shared-kimjang";
+
+    const report = validateContentLibrary(
+      manifestWith(core.descriptors, nostalgia.descriptors),
+      [...core.packs, ...nostalgia.packs],
+    );
+
+    expect(report.issues).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ code: "duplicate-concept" }),
+      ]),
+    );
+  });
+
   it.each([
     { label: "missing full", value: undefined, scope: "full" as const },
     { label: "empty core", value: "", scope: "core" as const },
@@ -695,7 +717,7 @@ describe("validateContentLibrary", () => {
     );
   });
 
-  it("detects similar prompts and concept spacing across pack boundaries", () => {
+  it("detects similar prompts and duplicate concepts across pack boundaries", () => {
     const first = bonusPack();
     const second = bonusPack();
     second.id = "bonus-digital-002";
@@ -738,7 +760,7 @@ describe("validateContentLibrary", () => {
     ]);
 
     expect(report.issues.map(({ code }) => code)).toEqual(
-      expect.arrayContaining(["similar-prompt", "concept-spacing"]),
+      expect.arrayContaining(["similar-prompt", "duplicate-concept"]),
     );
   });
 });

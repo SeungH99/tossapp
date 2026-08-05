@@ -20,7 +20,7 @@
     {
       "id": "core-001",
       "path": "src/content/core/pack-001.json",
-      "sha256": "2da2c170e1a1b9cadf23443229e05e7210e6f129f0aef43b0631301b38485087",
+      "sha256": "264ebac2c279283407ff13b8c0d28ec0244273d65c8a873ab6cf74987ff12b3e",
       "questionCount": 90,
       "setCount": 30,
       "reviewStatus": "reviewed",
@@ -31,7 +31,7 @@
     {
       "id": "core-002",
       "path": "src/content/core/pack-002.json",
-      "sha256": "8561e838c71bccf3ea3f0b979e44e863fce0f711759af0224d9bdba0c54706b4",
+      "sha256": "4a3bdc682c8cffdb9478108be5349418d797e23f9bd403c06b868416999ba06f",
       "questionCount": 90,
       "setCount": 30,
       "reviewStatus": "reviewed",
@@ -42,7 +42,7 @@
     {
       "id": "core-003",
       "path": "src/content/core/pack-003.json",
-      "sha256": "ba6d2d266e937b440626b14779e855d4a91b26396a6f6a50db4c5353346cc32f",
+      "sha256": "a374a163ce5770033cffbb88288095a67aeb14e71c70e2671e100ca618064868",
       "questionCount": 90,
       "setCount": 30,
       "reviewStatus": "reviewed",
@@ -53,7 +53,7 @@
     {
       "id": "core-004",
       "path": "src/content/core/pack-004.json",
-      "sha256": "e59bb37d2dfd363d52762007e6f741cf19a50dab21bc3b6418b636effee6f95e",
+      "sha256": "c05650ce95b888b2dd43fff92415cc62431b260f6b70a91ffa36e07a4f834a75",
       "questionCount": 90,
       "setCount": 30,
       "reviewStatus": "reviewed",
@@ -64,7 +64,7 @@
     {
       "id": "core-005",
       "path": "src/content/core/pack-005.json",
-      "sha256": "941020f19bb9e9e7d81834e79700fc6703b8a6b0222ccf1a9d54bf0f1080c08e",
+      "sha256": "23beab1eaf938ba3e5f32927c3fc15d4b249a060387faba55ee6a3f31852c2e1",
       "questionCount": 90,
       "setCount": 30,
       "reviewStatus": "reviewed",
@@ -75,7 +75,7 @@
     {
       "id": "core-006",
       "path": "src/content/core/pack-006.json",
-      "sha256": "e5d6fa49c1e7a068a33485902231144f3877757e1ef9833fffa74d85babf0aae",
+      "sha256": "14a8c453c1ddad9accd75d55085dc9c74b63d39c878ae0271a2e90502bf3ac9d",
       "questionCount": 90,
       "setCount": 30,
       "reviewStatus": "reviewed",

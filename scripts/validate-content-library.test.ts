@@ -26,6 +26,7 @@ const validPack: CoreContentPack = {
       ...metadata,
       kind: "core" as const,
       id: `core-${index}`,
+      conceptId: `core-concept-${index}`,
       dateKey: "2026-07-28",
       lens: (["then", "now", "life"] as const)[index],
       topic: "nostalgia" as const,

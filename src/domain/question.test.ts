@@ -19,6 +19,7 @@ describe("validateQuestion", () => {
   const validCoreQuestion = {
     kind: "core",
     id: "2026-07-28-then-public-phone",
+    conceptId: "nostalgia-public-phone-coin-call",
     dateKey: "2026-07-28",
     lens: "then",
     topic: "nostalgia",
@@ -33,6 +34,24 @@ describe("validateQuestion", () => {
     reviewStatus: "reviewed",
     reviewedAt: "2026-08-04",
   };
+
+  it("requires a conceptId on core and bonus questions", () => {
+    const coreWithoutConcept = { ...validCoreQuestion, conceptId: undefined };
+    const bonusWithoutConcept = {
+      ...validCoreQuestion,
+      kind: "bonus",
+      conceptId: undefined,
+      variant: "base",
+      setIndex: 0,
+    };
+
+    expect(validateQuestion(coreWithoutConcept)).toContain(
+      "question.conceptId",
+    );
+    expect(validateQuestion(bonusWithoutConcept)).toContain(
+      "question.conceptId",
+    );
+  });
 
   it("검수 메타데이터와 핵심 난이도를 요구한다", () => {
     expect(validateQuestion(validCoreQuestion)).toEqual([]);
@@ -104,6 +123,7 @@ describe("validateQuestion", () => {
     const question: CoreQuestion = {
       kind: "core",
       id: "2026-07-28-then-phone",
+      conceptId: "nostalgia-public-phone-coin-call",
       dateKey: "2026-07-28",
       internalDifficulty: "gentle",
       lens: "then",
@@ -171,7 +191,7 @@ describe("validateQuestion", () => {
     expect(validateQuestion(invalidCore)).toContain("core.dateKey");
     expect(validateQuestion(invalidBonus)).toEqual(
       expect.arrayContaining([
-        "bonus.conceptId",
+        "question.conceptId",
         "bonus.variant",
         "bonus.internalDifficulty",
       ]),

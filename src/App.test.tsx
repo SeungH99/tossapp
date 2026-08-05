@@ -27,6 +27,7 @@ const coreQuestions: CoreQuestion[] = [
   {
     kind: "core",
     id: "then-phone",
+    conceptId: "nostalgia-public-phone-extra-coin",
     dateKey: "2026-07-28",
     lens: "then",
     topic: "nostalgia",
@@ -46,6 +47,7 @@ const coreQuestions: CoreQuestion[] = [
   {
     kind: "core",
     id: "now-qr",
+    conceptId: "digital-qr-camera-scan",
     dateKey: "2026-07-28",
     lens: "now",
     topic: "digital",
@@ -65,6 +67,7 @@ const coreQuestions: CoreQuestion[] = [
   {
     kind: "core",
     id: "life-safety",
+    conceptId: "safety-gas-smell-ventilation",
     dateKey: "2026-07-28",
     lens: "life",
     topic: "safety",

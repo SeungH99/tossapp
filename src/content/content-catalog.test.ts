@@ -22,6 +22,7 @@ const corePack001: CoreContentPack = {
       ...metadata,
       kind: "core",
       id: "2026-07-28-phone",
+      conceptId: "nostalgia-public-phone-coin-call",
       dateKey: "2026-07-28",
       lens: "then",
       topic: "nostalgia",
@@ -37,7 +38,12 @@ const corePack001: CoreContentPack = {
 const corePack002: CoreContentPack = {
   ...corePack001,
   id: "core-002",
-  questions: [{ ...corePack001.questions[0], id: "2026-07-29-phone", dateKey: "2026-07-29" }],
+  questions: [{
+    ...corePack001.questions[0],
+    id: "2026-07-29-phone",
+    conceptId: "nostalgia-public-phone-extra-coin",
+    dateKey: "2026-07-29",
+  }],
 };
 
 const bonusPack001: BonusContentPack = {

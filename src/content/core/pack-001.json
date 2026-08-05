@@ -7,6 +7,7 @@
     {
       "kind": "core",
       "id": "2026-08-14-then-18-v1",
+      "conceptId": "korean-life-kimjang-community-winter-preparation",
       "dateKey": "2026-08-14",
       "lens": "then",
       "topic": "korean-life",
@@ -30,6 +31,7 @@
     {
       "kind": "core",
       "id": "2026-08-19-now-23-v1",
+      "conceptId": "digital-incognito-network-visibility",
       "dateKey": "2026-08-19",
       "lens": "now",
       "topic": "digital",
@@ -53,6 +55,7 @@
     {
       "kind": "core",
       "id": "2026-08-19-life-23-v1",
+      "conceptId": "safety-natge-eopdeuryeo-takja-araero-deuleoga-butjapgo-beotigi",
       "dateKey": "2026-08-19",
       "lens": "life",
       "topic": "safety",
@@ -76,6 +79,7 @@
     {
       "kind": "core",
       "id": "2026-08-11-then-15-v1",
+      "conceptId": "nostalgia-satbareul-japgo-himgwa-gisuleul-gyeoruneun-ssireum",
       "dateKey": "2026-08-11",
       "lens": "then",
       "topic": "nostalgia",
@@ -99,6 +103,7 @@
     {
       "kind": "core",
       "id": "2026-08-04-now-8-v1",
+      "conceptId": "digital-naeryeobateun-pailgwa-jikjeop-mandeun-bukmakeu",
       "dateKey": "2026-08-04",
       "lens": "now",
       "topic": "digital",
@@ -122,6 +127,7 @@
     {
       "kind": "core",
       "id": "2026-08-04-life-8-v1",
+      "conceptId": "safety-geonmul-garodeung-jeonseoneseo-tteoleojin-yeolrin-jangso",
       "dateKey": "2026-08-04",
       "lens": "life",
       "topic": "safety",
@@ -145,6 +151,7 @@
     {
       "kind": "core",
       "id": "2026-08-25-then-29-v1",
+      "conceptId": "korean-life-pungmul-garakgwa-chum-yeonhuiga-eoureojineun-nongak",
       "dateKey": "2026-08-25",
       "lens": "then",
       "topic": "korean-life",
@@ -168,6 +175,7 @@
     {
       "kind": "core",
       "id": "2026-08-09-now-13-v1",
+      "conceptId": "digital-saiteuga-beuraujeoe-jeojanghaneun-kuki",
       "dateKey": "2026-08-09",
       "lens": "now",
       "topic": "digital",
@@ -191,6 +199,7 @@
     {
       "kind": "core",
       "id": "2026-08-12-life-16-v1",
+      "conceptId": "safety-haebyeoneseo-beoteonan-naeryukui-nopeun-jidae",
       "dateKey": "2026-08-12",
       "lens": "life",
       "topic": "safety",
@@ -214,6 +223,7 @@
     {
       "kind": "core",
       "id": "2026-07-31-then-4-v1",
+      "conceptId": "nostalgia-uteumgwa-pungjaro-setaereul-bichuneun-talchum",
       "dateKey": "2026-07-31",
       "lens": "then",
       "topic": "nostalgia",
@@ -237,6 +247,7 @@
     {
       "kind": "core",
       "id": "2026-08-24-now-28-v1",
+      "conceptId": "digital-ilbu-saiteueseo-rogeuautdoego-seoljeongi-sarajim",
       "dateKey": "2026-08-24",
       "lens": "now",
       "topic": "digital",
@@ -260,6 +271,7 @@
     {
       "kind": "core",
       "id": "2026-08-23-life-27-v1",
+      "conceptId": "safety-chadanbongeul-neomji-malgo-mul-eopsneun-gilro-doedolagagi",
       "dateKey": "2026-08-23",
       "lens": "life",
       "topic": "safety",
@@ -283,6 +295,7 @@
     {
       "kind": "core",
       "id": "2026-08-03-then-7-v1",
+      "conceptId": "language-jiyeokmada-gasawa-seonyuli-byeonjudoeneun-arirang",
       "dateKey": "2026-08-03",
       "lens": "then",
       "topic": "language",
@@ -306,6 +319,7 @@
     {
       "kind": "core",
       "id": "2026-08-22-now-26-v1",
+      "conceptId": "digital-saiteumada-gilgo-seoro-dareun-amhoreul-saengseonghae-jeojanghagi",
       "dateKey": "2026-08-22",
       "lens": "now",
       "topic": "digital",
@@ -329,6 +343,7 @@
     {
       "kind": "core",
       "id": "2026-08-08-life-12-v1",
+      "conceptId": "safety-darireul-pihago-annaee-ttara-deo-nopeun-goteuro-idong",
       "dateKey": "2026-08-08",
       "lens": "life",
       "topic": "safety",
@@ -352,6 +367,7 @@
     {
       "kind": "core",
       "id": "2026-08-02-then-6-v1",
+      "conceptId": "nostalgia-sorikkungwa-gosuga-iyagireul-yeokneun-pansori",
       "dateKey": "2026-08-02",
       "lens": "then",
       "topic": "nostalgia",
@@ -375,6 +391,7 @@
     {
       "kind": "core",
       "id": "2026-08-07-now-11-v1",
+      "conceptId": "digital-haedang-seobiseuui-amhoreul-saeropgo-goyuhage-byeongyeonghagi",
       "dateKey": "2026-08-07",
       "lens": "now",
       "topic": "digital",
@@ -398,6 +415,7 @@
     {
       "kind": "core",
       "id": "2026-08-05-life-9-v1",
+      "conceptId": "safety-muneul-dateul-su-itneun-geumsok-jibung-jadongcha-an",
       "dateKey": "2026-08-05",
       "lens": "life",
       "topic": "safety",
@@ -421,6 +439,7 @@
     {
       "kind": "core",
       "id": "2026-08-23-then-27-v1",
+      "conceptId": "korean-life-jongmyoeseo-geohaenghaneun-wangsil-josang-jeryewa-jeryeak",
       "dateKey": "2026-08-23",
       "lens": "then",
       "topic": "korean-life",
@@ -444,6 +463,7 @@
     {
       "kind": "core",
       "id": "2026-08-20-now-24-v1",
+      "conceptId": "digital-amho-oe-hwakineul-han-beon-deo-geochineun-2dangye-injeung",
       "dateKey": "2026-08-20",
       "lens": "now",
       "topic": "digital",
@@ -467,6 +487,7 @@
     {
       "kind": "core",
       "id": "2026-08-20-life-24-v1",
+      "conceptId": "safety-muleul-sseugeona-konsenteue-yeongyeoldoen-gigireul-sayonghaneun-il",
       "dateKey": "2026-08-20",
       "lens": "life",
       "topic": "safety",
@@ -490,6 +511,7 @@
     {
       "kind": "core",
       "id": "2026-07-30-then-3-v1",
+      "conceptId": "korean-life-gabyeopgo-tongpungi-pilyohan-mudeoun-yeoreum",
       "dateKey": "2026-07-30",
       "lens": "then",
       "topic": "korean-life",
@@ -513,6 +535,7 @@
     {
       "kind": "core",
       "id": "2026-08-11-now-15-v1",
+      "conceptId": "digital-gieokhan-amhowa-sojihan-boan-kireul-hamkke-sayong",
       "dateKey": "2026-08-11",
       "lens": "now",
       "topic": "digital",
@@ -536,6 +559,7 @@
     {
       "kind": "core",
       "id": "2026-07-29-life-2-v1",
+      "conceptId": "safety-naengbangdoeneun-gonggongjangsoro-gago-muleul-chungbunhi-masigi",
       "dateKey": "2026-07-29",
       "lens": "life",
       "topic": "safety",
@@ -559,6 +583,7 @@
     {
       "kind": "core",
       "id": "2026-08-20-then-24-v1",
+      "conceptId": "nostalgia-woneul-geurimyeo-noraehaneun-ganggangsulrae",
       "dateKey": "2026-08-20",
       "lens": "then",
       "topic": "nostalgia",
@@ -582,6 +607,7 @@
     {
       "kind": "core",
       "id": "2026-08-02-now-6-v1",
+      "conceptId": "digital-gigi-jamgeumyong-jimun-eolgul-pineuro-seunginhagi",
       "dateKey": "2026-08-02",
       "lens": "now",
       "topic": "digital",
@@ -605,6 +631,7 @@
     {
       "kind": "core",
       "id": "2026-08-13-life-17-v1",
+      "conceptId": "safety-jjalbeun-siganirado-dathin-cha-ane-namgyeo-duji-anhgi",
       "dateKey": "2026-08-13",
       "lens": "life",
       "topic": "safety",
@@ -628,6 +655,7 @@
     {
       "kind": "core",
       "id": "2026-08-15-then-19-v1",
+      "conceptId": "nostalgia-yeoseot-madangeuro-guseongdoen-namsadangnoli",
       "dateKey": "2026-08-15",
       "lens": "then",
       "topic": "nostalgia",
@@ -651,6 +679,7 @@
     {
       "kind": "core",
       "id": "2026-08-17-now-21-v1",
+      "conceptId": "digital-deungrokhan-seobiseu-domeine-mukyeo-dareun-saiteueseo-sseul-su-eopseum",
       "dateKey": "2026-08-17",
       "lens": "now",
       "topic": "digital",
@@ -674,6 +703,7 @@
     {
       "kind": "core",
       "id": "2026-08-14-life-18-v1",
+      "conceptId": "nature-general-yeongiga-gakkawojigil-gidariji-malgo-jijeong-gyeongroro-jeuksi-chulbal",
       "dateKey": "2026-08-14",
       "lens": "life",
       "topic": "nature-general",
@@ -697,6 +727,7 @@
     {
       "kind": "core",
       "id": "2026-08-07-then-11-v1",
+      "conceptId": "language-gwanhyeonak-banjue-matchwo-ieo-bureuneun-gagok",
       "dateKey": "2026-08-07",
       "lens": "then",
       "topic": "language",
@@ -720,6 +751,7 @@
     {
       "kind": "core",
       "id": "2026-08-15-now-19-v1",
+      "conceptId": "digital-alryeojin-sopeuteuweeo-chwiyakjeomeul-gochin-boho-gineungeul-batgi-wihae",
       "dateKey": "2026-08-15",
       "lens": "now",
       "topic": "digital",
@@ -743,6 +775,7 @@
     {
       "kind": "core",
       "id": "2026-08-11-life-15-v1",
+      "conceptId": "safety-naengjanggowa-naengdonggo-muneul-kkok-data-dugi",
       "dateKey": "2026-08-11",
       "lens": "life",
       "topic": "safety",
@@ -766,6 +799,7 @@
     {
       "kind": "core",
       "id": "2026-08-04-then-8-v1",
+      "conceptId": "nostalgia-chumcheoreom-yuyeonhan-dongjakeul-ieo-ganeun-taekgyeon",
       "dateKey": "2026-08-04",
       "lens": "then",
       "topic": "nostalgia",
@@ -789,6 +823,7 @@
     {
       "kind": "core",
       "id": "2026-08-25-now-29-v1",
+      "conceptId": "digital-meileul-datgo-pyeongso-sseudeon-gongsik-aepina-jusoro-jikjeop-jeopsok",
       "dateKey": "2026-08-25",
       "lens": "now",
       "topic": "digital",
@@ -812,6 +847,7 @@
     {
       "kind": "core",
       "id": "2026-08-26-life-30-v1",
+      "conceptId": "safety-pilyohaji-anheun-gajeongwa-jeonjagigiui-peulreogeu-ppaegi",
       "dateKey": "2026-08-26",
       "lens": "life",
       "topic": "safety",
@@ -835,6 +871,7 @@
     {
       "kind": "core",
       "id": "2026-08-05-then-9-v1",
+      "conceptId": "nostalgia-jaedamgwa-eumaki-gokyee-gyeotdeulyeojineun-jultagi",
       "dateKey": "2026-08-05",
       "lens": "then",
       "topic": "nostalgia",
@@ -858,6 +895,7 @@
     {
       "kind": "core",
       "id": "2026-08-10-now-14-v1",
+      "conceptId": "digital-yesanghaji-mothan-pailgwa-haengdongeul-jaechokhaneun-mungu",
       "dateKey": "2026-08-10",
       "lens": "now",
       "topic": "digital",
@@ -881,6 +919,7 @@
     {
       "kind": "core",
       "id": "2026-08-10-life-14-v1",
+      "conceptId": "safety-muneul-yeolji-anhgo-miri-jeonghan-du-beonjjae-chulgu-iyong",
       "dateKey": "2026-08-10",
       "lens": "life",
       "topic": "safety",
@@ -904,6 +943,7 @@
     {
       "kind": "core",
       "id": "2026-08-06-then-10-v1",
+      "conceptId": "korean-life-haesanmuleul-chaechwihamyeo-jisikeul-itneun-jeju-haenyeo",
       "dateKey": "2026-08-06",
       "lens": "then",
       "topic": "korean-life",
@@ -927,6 +967,7 @@
     {
       "kind": "core",
       "id": "2026-08-21-now-25-v1",
+      "conceptId": "digital-ringkeureul-nureuji-malgo-chadan-singohan-dwi-gongsik-gyeongroro-hwakin",
       "dateKey": "2026-08-21",
       "lens": "now",
       "topic": "digital",
@@ -950,6 +991,7 @@
     {
       "kind": "core",
       "id": "2026-08-25-life-29-v1",
+      "conceptId": "safety-momeul-natchwo-gieo-nagago-dasi-geonmul-aneuro-deuleogaji-anhgi",
       "dateKey": "2026-08-25",
       "lens": "life",
       "topic": "safety",
@@ -973,6 +1015,7 @@
     {
       "kind": "core",
       "id": "2026-08-13-then-17-v1",
+      "conceptId": "korean-life-eodumeul-balkhineun-jihyewa-kkaedaleum",
       "dateKey": "2026-08-13",
       "lens": "then",
       "topic": "korean-life",
@@ -996,6 +1039,7 @@
     {
       "kind": "core",
       "id": "2026-08-14-now-18-v1",
+      "conceptId": "digital-yeolril-jusoui-cheoljawa-gongsik-domeini-matneunji-hwakin",
       "dateKey": "2026-08-14",
       "lens": "now",
       "topic": "digital",
@@ -1019,6 +1063,7 @@
     {
       "kind": "core",
       "id": "2026-07-31-life-4-v1",
+      "conceptId": "safety-gak-chimsil-angwa-jamjaneun-gonggan-bak-jipui-modeun-cheunge-seolchi",
       "dateKey": "2026-07-31",
       "lens": "life",
       "topic": "safety",
@@ -1042,6 +1087,7 @@
     {
       "kind": "core",
       "id": "2026-08-21-then-25-v1",
+      "conceptId": "korean-life-hyeopdonghamyeo-bokeul-giwonhaneun-juldarigi-uirye",
       "dateKey": "2026-08-21",
       "lens": "then",
       "topic": "korean-life",
@@ -1065,6 +1111,7 @@
     {
       "kind": "core",
       "id": "2026-08-08-now-12-v1",
+      "conceptId": "digital-balsinbeonho-pyosineun-sagibeomi-dareun-beonhocheoreom-kkumil-su-iteoseo",
       "dateKey": "2026-08-08",
       "lens": "now",
       "topic": "digital",
@@ -1088,6 +1135,7 @@
     {
       "kind": "core",
       "id": "2026-08-15-life-19-v1",
+      "conceptId": "safety-maedal-siheomhago-jejo-hu-10nyeonimyeon-gyeongbogi-jeonche-gyoche",
       "dateKey": "2026-08-15",
       "lens": "life",
       "topic": "safety",
@@ -1111,6 +1159,7 @@
     {
       "kind": "core",
       "id": "2026-08-08-then-12-v1",
+      "conceptId": "korean-life-yeoreo-sinanggwa-noliga-mannaneun-gangreungdanoje",
       "dateKey": "2026-08-08",
       "lens": "then",
       "topic": "korean-life",
@@ -1134,6 +1183,7 @@
     {
       "kind": "core",
       "id": "2026-07-31-now-4-v1",
+      "conceptId": "digital-beuraujeowa-haedang-saiteu-sai-jeonsong-naeyongi-amhohwadoem",
       "dateKey": "2026-07-31",
       "lens": "now",
       "topic": "digital",
@@ -1157,6 +1207,7 @@
     {
       "kind": "core",
       "id": "2026-08-01-life-5-v1",
+      "conceptId": "safety-ttukkeongeul-mileo-deopgo-hwagureul-kkeun-dwi-sikeul-ttaekkaji-geudaero-dugi",
       "dateKey": "2026-08-01",
       "lens": "life",
       "topic": "safety",
@@ -1180,6 +1231,7 @@
     {
       "kind": "core",
       "id": "2026-07-28-then-1-v1",
+      "conceptId": "korean-life-mot-eopsi-jja-matchuneun-ileul-ikkeuneun-daemokjang",
       "dateKey": "2026-07-28",
       "lens": "then",
       "topic": "korean-life",
@@ -1203,6 +1255,7 @@
     {
       "kind": "core",
       "id": "2026-08-16-now-20-v1",
+      "conceptId": "digital-jiwondoeneun-deiteowa-seoljeongeul-sae-gigie-bokwon",
       "dateKey": "2026-08-16",
       "lens": "now",
       "topic": "digital",
@@ -1226,6 +1279,7 @@
     {
       "kind": "core",
       "id": "2026-08-03-life-7-v1",
+      "conceptId": "safety-jarireul-tteonagi-jeone-hwagureul-kkeugi",
       "dateKey": "2026-08-03",
       "lens": "life",
       "topic": "safety",
@@ -1249,6 +1303,7 @@
     {
       "kind": "core",
       "id": "2026-08-01-then-5-v1",
+      "conceptId": "nostalgia-obangsaekeuro-pyeongoneul-giwonhan-cheoyongmu",
       "dateKey": "2026-08-01",
       "lens": "then",
       "topic": "nostalgia",
@@ -1272,6 +1327,7 @@
     {
       "kind": "core",
       "id": "2026-08-01-now-5-v1",
+      "conceptId": "digital-gigieseo-sseuneun-pin-paeteon-bimilbeonho",
       "dateKey": "2026-08-01",
       "lens": "now",
       "topic": "digital",
@@ -1295,6 +1351,7 @@
     {
       "kind": "core",
       "id": "2026-08-02-life-6-v1",
+      "conceptId": "safety-baechireul-bakkwo-naengjanggoreul-byeok-konsenteue-jikjeop-yeongyeol",
       "dateKey": "2026-08-02",
       "lens": "life",
       "topic": "safety",
@@ -1318,6 +1375,7 @@
     {
       "kind": "core",
       "id": "2026-08-16-then-20-v1",
+      "conceptId": "korean-life-bucheoui-seolbeopeul-jaehyeonhaneun-yeongsanjae",
       "dateKey": "2026-08-16",
       "lens": "then",
       "topic": "korean-life",
@@ -1341,6 +1399,7 @@
     {
       "kind": "core",
       "id": "2026-08-26-now-30-v1",
+      "conceptId": "digital-du-beulrutuseu-gigireul-seoro-deungrokhaneun-peeoring",
       "dateKey": "2026-08-26",
       "lens": "now",
       "topic": "digital",
@@ -1364,6 +1423,7 @@
     {
       "kind": "core",
       "id": "2026-08-17-life-21-v1",
+      "conceptId": "safety-sonsangdoen-jeonseoneul-gyochehago-nulrigeona-deopiji-anhge-baechi",
       "dateKey": "2026-08-17",
       "lens": "life",
       "topic": "safety",
@@ -1387,6 +1447,7 @@
     {
       "kind": "core",
       "id": "2026-08-17-then-21-v1",
+      "conceptId": "korean-life-jangeul-mandeulgo-jeojanghamyeo-mateul-itneun-balhyo-munhwa",
       "dateKey": "2026-08-17",
       "lens": "then",
       "topic": "korean-life",
@@ -1410,6 +1471,7 @@
     {
       "kind": "core",
       "id": "2026-07-29-now-2-v1",
+      "conceptId": "digital-du-hwamyeonui-pini-gateunji-daejohan-dwi-seungin",
       "dateKey": "2026-07-29",
       "lens": "now",
       "topic": "digital",
@@ -1433,6 +1495,7 @@
     {
       "kind": "core",
       "id": "2026-08-06-life-10-v1",
+      "conceptId": "safety-jepumeul-seokji-malgo-rabeli-buteun-wonrae-yonggie-bogwan",
       "dateKey": "2026-08-06",
       "lens": "life",
       "topic": "safety",
@@ -1456,6 +1519,7 @@
     {
       "kind": "core",
       "id": "2026-07-29-then-2-v1",
+      "conceptId": "language-hyeonjonhaneun-gajang-oraedoen-geumsokhwaljabon-jikji",
       "dateKey": "2026-07-29",
       "lens": "then",
       "topic": "language",
@@ -1479,6 +1543,7 @@
     {
       "kind": "core",
       "id": "2026-08-03-now-7-v1",
+      "conceptId": "digital-jeonghwakhan-wichi-daesin-daeryakjeokin-wichiman-heoyong",
       "dateKey": "2026-08-03",
       "lens": "now",
       "topic": "digital",
@@ -1502,6 +1567,7 @@
     {
       "kind": "core",
       "id": "2026-08-18-life-22-v1",
+      "conceptId": "safety-siloeeseo-changmun-mun-hwangigurobuteo-yak-6m-20piteu-boda-meolri-tteoleojin-got",
       "dateKey": "2026-08-18",
       "lens": "life",
       "topic": "safety",
@@ -1525,6 +1591,7 @@
     {
       "kind": "core",
       "id": "2026-08-26-then-30-v1",
+      "conceptId": "korean-life-palmandaejanggyeongpaneul-pumeun-haeinsa-janggyeongpanjeon",
       "dateKey": "2026-08-26",
       "lens": "then",
       "topic": "korean-life",
@@ -1548,6 +1615,7 @@
     {
       "kind": "core",
       "id": "2026-08-18-now-22-v1",
+      "conceptId": "digital-gpswa-waipai-idongtongsinmang-gigi-senseo-jeongbo",
       "dateKey": "2026-08-18",
       "lens": "now",
       "topic": "digital",
@@ -1571,6 +1639,7 @@
     {
       "kind": "core",
       "id": "2026-08-21-life-25-v1",
+      "conceptId": "safety-jipui-gak-cheunggwa-jamjaneun-gonggan-gakkaie-gyeongbogi-seolchi",
       "dateKey": "2026-08-21",
       "lens": "life",
       "topic": "safety",
@@ -1594,6 +1663,7 @@
     {
       "kind": "core",
       "id": "2026-08-24-then-28-v1",
+      "conceptId": "nostalgia-seokgulamgwa-han-mukeumeuro-deungjaedoen-bulguksa",
       "dateKey": "2026-08-24",
       "lens": "then",
       "topic": "nostalgia",
@@ -1617,6 +1687,7 @@
     {
       "kind": "core",
       "id": "2026-08-23-now-27-v1",
+      "conceptId": "digital-gaeinjeongbo-boho-daesibodeuui-gwonhan-sayong-girok",
       "dateKey": "2026-08-23",
       "lens": "now",
       "topic": "digital",
@@ -1640,6 +1711,7 @@
     {
       "kind": "core",
       "id": "2026-08-24-life-28-v1",
+      "conceptId": "safety-naengjangsil-milbonghae-muleul-gala-juneun-chanmul-jeonjareinji-jung-han-bangbeop",
       "dateKey": "2026-08-24",
       "lens": "life",
       "topic": "safety",
@@ -1663,6 +1735,7 @@
     {
       "kind": "core",
       "id": "2026-08-10-then-14-v1",
+      "conceptId": "korean-life-jihyeongeul-ttara-jari-japeun-changdeokgung",
       "dateKey": "2026-08-10",
       "lens": "then",
       "topic": "korean-life",
@@ -1686,6 +1759,7 @@
     {
       "kind": "core",
       "id": "2026-07-30-now-3-v1",
+      "conceptId": "digital-haeroun-aepil-su-iteumeuro-chulcheowa-yogu-gwonhanbuteo-jaegeomto",
       "dateKey": "2026-07-30",
       "lens": "now",
       "topic": "digital",
@@ -1709,6 +1783,7 @@
     {
       "kind": "core",
       "id": "2026-08-09-life-13-v1",
+      "conceptId": "safety-haedongeul-machijamaja-baro-jorihagi",
       "dateKey": "2026-08-09",
       "lens": "life",
       "topic": "safety",
@@ -1732,6 +1807,7 @@
     {
       "kind": "core",
       "id": "2026-08-12-then-16-v1",
+      "conceptId": "korean-life-suwon-dosimeul-gamssaneun-hwaseong",
       "dateKey": "2026-08-12",
       "lens": "then",
       "topic": "korean-life",
@@ -1755,6 +1831,7 @@
     {
       "kind": "core",
       "id": "2026-08-13-now-17-v1",
+      "conceptId": "digital-eotteon-aepi-hyeonjae-maikeureul-sayonghago-iteum",
       "dateKey": "2026-08-13",
       "lens": "now",
       "topic": "digital",
@@ -1778,6 +1855,7 @@
     {
       "kind": "core",
       "id": "2026-08-16-life-20-v1",
+      "conceptId": "safety-doma-kal-joridaereul-tteugeoun-binutmulro-ssiteun-dwi-chaeso-sonjil",
       "dateKey": "2026-08-16",
       "lens": "life",
       "topic": "safety",
@@ -1801,6 +1879,7 @@
     {
       "kind": "core",
       "id": "2026-08-22-then-26-v1",
+      "conceptId": "korean-life-baeumgwa-seonhyeon-jehyangeul-hamkkehan-seowon",
       "dateKey": "2026-08-22",
       "lens": "then",
       "topic": "korean-life",
@@ -1824,6 +1903,7 @@
     {
       "kind": "core",
       "id": "2026-08-06-now-10-v1",
+      "conceptId": "digital-aepbyeol-chujeok-yocheongeul-heoyonghageona-geobu",
       "dateKey": "2026-08-06",
       "lens": "now",
       "topic": "digital",
@@ -1847,6 +1927,7 @@
     {
       "kind": "core",
       "id": "2026-07-30-life-3-v1",
+      "conceptId": "safety-gaebonghageona-naemsae-matgeona-matboji-malgo-beorigi",
       "dateKey": "2026-07-30",
       "lens": "life",
       "topic": "safety",
@@ -1870,6 +1951,7 @@
     {
       "kind": "core",
       "id": "2026-08-09-then-13-v1",
+      "conceptId": "nostalgia-cheongdonggi-sahoeui-jangryereul-boyeo-juneun-goindol",
       "dateKey": "2026-08-09",
       "lens": "then",
       "topic": "nostalgia",
@@ -1893,6 +1975,7 @@
     {
       "kind": "core",
       "id": "2026-07-28-now-1-v1",
+      "conceptId": "digital-beoteungwa-aikonkkaji-kiuneun-diseupeulrei-hwakdae",
       "dateKey": "2026-07-28",
       "lens": "now",
       "topic": "digital",
@@ -1916,6 +1999,7 @@
     {
       "kind": "core",
       "id": "2026-08-22-life-26-v1",
+      "conceptId": "safety-milpyehae-gotbaro-neohgo-naengjangsileseo-3-4il-ane-meokgi",
       "dateKey": "2026-08-22",
       "lens": "life",
       "topic": "safety",
@@ -1939,6 +2023,7 @@
     {
       "kind": "core",
       "id": "2026-08-18-then-22-v1",
+      "conceptId": "korean-life-heomhan-jihyeongeul-hwalyonghan-namhansanseong",
       "dateKey": "2026-08-18",
       "lens": "then",
       "topic": "korean-life",
@@ -1962,6 +2047,7 @@
     {
       "kind": "core",
       "id": "2026-08-12-now-16-v1",
+      "conceptId": "digital-hanggongsaga-heoyonghamyeon-waipaina-beulrutuseureul-dasi-kyeol-su-iteum",
       "dateKey": "2026-08-12",
       "lens": "now",
       "topic": "digital",
@@ -1985,6 +2071,7 @@
     {
       "kind": "core",
       "id": "2026-08-07-life-11-v1",
+      "conceptId": "safety-deopgo-dolrigeona-jeoeo-deun-dwi-sikpum-ondogyero-yeoreo-goti-yak-74doinji-hwakin",
       "dateKey": "2026-08-07",
       "lens": "life",
       "topic": "safety",
@@ -2008,6 +2095,7 @@
     {
       "kind": "core",
       "id": "2026-08-19-then-23-v1",
+      "conceptId": "korean-life-wangsilui-jeongtongseongeul-sangjinghan-jongmyo",
       "dateKey": "2026-08-19",
       "lens": "then",
       "topic": "korean-life",
@@ -2031,6 +2119,7 @@
     {
       "kind": "core",
       "id": "2026-08-05-now-9-v1",
+      "conceptId": "digital-seoljeong-aepui-waipai-hangmokeseo-kkeugi",
       "dateKey": "2026-08-05",
       "lens": "now",
       "topic": "digital",
@@ -2054,6 +2143,7 @@
     {
       "kind": "core",
       "id": "2026-07-28-life-1-v1",
+      "conceptId": "safety-seopssi-yak-4do-iha",
       "dateKey": "2026-07-28",
       "lens": "life",
       "topic": "safety",

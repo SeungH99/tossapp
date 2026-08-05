@@ -7,6 +7,7 @@
     {
       "kind": "core",
       "id": "2026-12-25-then-31-v3",
+      "conceptId": "nostalgia-meoritgireumi-cheone-seumineun-geol-makeuryeogo",
       "dateKey": "2026-12-25",
       "lens": "then",
       "topic": "nostalgia",
@@ -30,6 +31,7 @@
     {
       "kind": "core",
       "id": "2026-12-25-now-31-v3",
+      "conceptId": "digital-tongsin-georiga-botong-2cm-anpakeuro-jjalbaseo",
       "dateKey": "2026-12-25",
       "lens": "now",
       "topic": "digital",
@@ -53,6 +55,7 @@
     {
       "kind": "core",
       "id": "2026-12-25-life-31-v3",
+      "conceptId": "nature-general-sansogye-pyobaekman-ganeunghago-yeomsogyeneun-pihanda",
       "dateKey": "2026-12-25",
       "lens": "life",
       "topic": "nature-general",
@@ -76,6 +79,7 @@
     {
       "kind": "core",
       "id": "2026-12-26-then-32-v3",
+      "conceptId": "nostalgia-daegakseoneuro-dulro-jareugo-tedurireul-bonghaetda",
       "dateKey": "2026-12-26",
       "lens": "then",
       "topic": "nostalgia",
@@ -99,6 +103,7 @@
     {
       "kind": "core",
       "id": "2026-12-26-now-32-v3",
+      "conceptId": "digital-jiwonhaneun-deiteo-sokdowa-chungjeon-jeonryeok",
       "dateKey": "2026-12-26",
       "lens": "now",
       "topic": "digital",
@@ -122,6 +127,7 @@
     {
       "kind": "core",
       "id": "2026-12-26-life-32-v3",
+      "conceptId": "nature-general-hyosomada-jal-bunhaehaneun-bunja-jongryuga-jeonghaejyeo-iteoseo",
       "dateKey": "2026-12-26",
       "lens": "life",
       "topic": "nature-general",
@@ -145,6 +151,7 @@
     {
       "kind": "core",
       "id": "2026-12-27-then-33-v3",
+      "conceptId": "nostalgia-jeongi-peompeuga-jip-ane-sudotmuleul-bonaetda",
       "dateKey": "2026-12-27",
       "lens": "then",
       "topic": "nostalgia",
@@ -168,6 +175,7 @@
     {
       "kind": "core",
       "id": "2026-12-27-now-33-v3",
+      "conceptId": "digital-songsin-koilgwa-susin-koil",
       "dateKey": "2026-12-27",
       "lens": "now",
       "topic": "digital",
@@ -191,6 +199,7 @@
     {
       "kind": "core",
       "id": "2026-12-27-life-33-v3",
+      "conceptId": "nature-general-jeoteun-otui-mugero-hyeongtaega-neuleonaneun-ileul-juligi-wihae",
       "dateKey": "2026-12-27",
       "lens": "life",
       "topic": "nature-general",
@@ -214,6 +223,7 @@
     {
       "kind": "core",
       "id": "2026-12-28-then-34-v3",
+      "conceptId": "nostalgia-jip-yangkkeute-dugo-gaunde-tongroreul-hamkke-sseotda",
       "dateKey": "2026-12-28",
       "lens": "then",
       "topic": "nostalgia",
@@ -237,6 +247,7 @@
     {
       "kind": "core",
       "id": "2026-12-28-now-34-v3",
+      "conceptId": "digital-jogeone-matchun-choeso-yeonsok-sseugi-sokdo",
       "dateKey": "2026-12-28",
       "lens": "now",
       "topic": "digital",
@@ -260,6 +271,7 @@
     {
       "kind": "core",
       "id": "2026-12-28-life-34-v3",
+      "conceptId": "nature-general-misaengmuli-chaesoui-dangeul-meokgo-jeotsaneul-mandeunda",
       "dateKey": "2026-12-28",
       "lens": "life",
       "topic": "nature-general",
@@ -283,6 +295,7 @@
     {
       "kind": "core",
       "id": "2026-12-29-then-35-v3",
+      "conceptId": "nostalgia-naeyongmuli-saego-eumsiki-sanghagi-swiun-jeom",
       "dateKey": "2026-12-29",
       "lens": "then",
       "topic": "nostalgia",
@@ -306,6 +319,7 @@
     {
       "kind": "core",
       "id": "2026-12-29-now-35-v3",
+      "conceptId": "digital-jeongijangeuro-daejeondoen-geomjeong-huinsaek-ipjareul-umjikinda",
       "dateKey": "2026-12-29",
       "lens": "now",
       "topic": "digital",
@@ -329,6 +343,7 @@
     {
       "kind": "core",
       "id": "2026-12-29-life-35-v3",
+      "conceptId": "nature-general-du-aekche-gyeonggyee-buteo-jakeun-jibang-banguleul-anjeongsikinda",
       "dateKey": "2026-12-29",
       "lens": "life",
       "topic": "nature-general",
@@ -352,6 +367,7 @@
     {
       "kind": "core",
       "id": "2026-12-30-then-36-v3",
+      "conceptId": "nostalgia-keun-tongeseo-tteoseo-sonnimi-naemin-jujeonjae-damatda",
       "dateKey": "2026-12-30",
       "lens": "then",
       "topic": "nostalgia",
@@ -375,6 +391,7 @@
     {
       "kind": "core",
       "id": "2026-12-30-now-36-v3",
+      "conceptId": "digital-yeoreo-yeongugigwanui-gwahakjadeuli-jeongboreul-swipge-gongyuhage-haryeogo",
       "dateKey": "2026-12-30",
       "lens": "now",
       "topic": "digital",
@@ -398,6 +415,7 @@
     {
       "kind": "core",
       "id": "2026-12-30-life-36-v3",
+      "conceptId": "nature-general-hwanwondanggwa-danbaekjilui-amino-seongbun",
       "dateKey": "2026-12-30",
       "lens": "life",
       "topic": "nature-general",
@@ -421,6 +439,7 @@
     {
       "kind": "core",
       "id": "2026-12-31-then-37-v3",
+      "conceptId": "nostalgia-baegi-gonggiro-mandeun-badak-wiui-gonggicheung",
       "dateKey": "2026-12-31",
       "lens": "then",
       "topic": "nostalgia",
@@ -444,6 +463,7 @@
     {
       "kind": "core",
       "id": "2026-12-31-now-37-v3",
+      "conceptId": "digital-rigeulri-kkeom-han-mukeum",
       "dateKey": "2026-12-31",
       "lens": "now",
       "topic": "digital",
@@ -467,6 +487,7 @@
     {
       "kind": "core",
       "id": "2026-12-31-life-37-v3",
+      "conceptId": "nature-general-jeonbun-algaengiga-muleul-heupsuhae-bupuldaga-gujoga-pulrinda",
       "dateKey": "2026-12-31",
       "lens": "life",
       "topic": "nature-general",
@@ -490,6 +511,7 @@
     {
       "kind": "core",
       "id": "2027-01-01-then-38-v3",
+      "conceptId": "nostalgia-goreuji-anheun-badakedo-anjeongjeokeuro-nohyeoseo",
       "dateKey": "2027-01-01",
       "lens": "then",
       "topic": "nostalgia",
@@ -513,6 +535,7 @@
     {
       "kind": "core",
       "id": "2027-01-01-now-38-v3",
+      "conceptId": "digital-mpeg-1-audio-layer-3",
       "dateKey": "2027-01-01",
       "lens": "now",
       "topic": "digital",
@@ -536,6 +559,7 @@
     {
       "kind": "core",
       "id": "2027-01-01-life-38-v3",
+      "conceptId": "nature-general-kalsyumgwa-mageunesyum",
       "dateKey": "2027-01-01",
       "lens": "life",
       "topic": "nature-general",
@@ -559,6 +583,7 @@
     {
       "kind": "core",
       "id": "2027-01-02-then-39-v3",
+      "conceptId": "nostalgia-otgwa-saenghwalyongpumeul-dameun-namu-sangja",
       "dateKey": "2027-01-02",
       "lens": "then",
       "topic": "nostalgia",
@@ -582,6 +607,7 @@
     {
       "kind": "core",
       "id": "2027-01-02-now-39-v3",
+      "conceptId": "digital-geulkkol-deung-pyosi-yosoreul-pail-ane-pohamhanda",
       "dateKey": "2027-01-02",
       "lens": "now",
       "topic": "digital",
@@ -605,6 +631,7 @@
     {
       "kind": "core",
       "id": "2027-01-02-life-39-v3",
+      "conceptId": "nature-general-hasu-gaseuga-silnaero-olraoneun-gileul-mulro-makgi-wihae",
       "dateKey": "2027-01-02",
       "lens": "life",
       "topic": "nature-general",
@@ -628,6 +655,7 @@
     {
       "kind": "core",
       "id": "2027-01-03-then-40-v3",
+      "conceptId": "nostalgia-1961nyeon-jeongbu-pyojunhwa-ttae",
       "dateKey": "2027-01-03",
       "lens": "then",
       "topic": "nostalgia",
@@ -651,6 +679,7 @@
     {
       "kind": "core",
       "id": "2027-01-03-now-40-v3",
+      "conceptId": "digital-jeonhareul-ttin-rityum-ion",
       "dateKey": "2027-01-03",
       "lens": "now",
       "topic": "digital",
@@ -674,6 +703,7 @@
     {
       "kind": "core",
       "id": "2027-01-03-life-40-v3",
+      "conceptId": "nature-general-ppareuge-dathin-baelbeuga-apryeok-chunggyeokeul-mandeulgo-baegwaneul-umjikinda",
       "dateKey": "2027-01-03",
       "lens": "life",
       "topic": "nature-general",
@@ -697,6 +727,7 @@
     {
       "kind": "core",
       "id": "2027-01-04-then-41-v3",
+      "conceptId": "nostalgia-danchuwa-pyeonjireul-moeuneun-bogwanham",
       "dateKey": "2027-01-04",
       "lens": "then",
       "topic": "nostalgia",
@@ -720,6 +751,7 @@
     {
       "kind": "core",
       "id": "2027-01-04-now-41-v3",
+      "conceptId": "digital-gigireul-idongtongsinmange-anjeonhage-injeunghaneun-il",
       "dateKey": "2027-01-04",
       "lens": "now",
       "topic": "digital",
@@ -743,6 +775,7 @@
     {
       "kind": "core",
       "id": "2027-01-04-life-41-v3",
+      "conceptId": "nature-general-chadanbaelbeuga-deol-yeolryeotgeona-jip-ane-nusuga-itneun-sangtae",
       "dateKey": "2027-01-04",
       "lens": "life",
       "topic": "nature-general",
@@ -766,6 +799,7 @@
     {
       "kind": "core",
       "id": "2027-01-05-then-42-v3",
+      "conceptId": "nostalgia-gajoki-gajin-sajingwa-girokeul-bonae-dalrago",
       "dateKey": "2027-01-05",
       "lens": "then",
       "topic": "nostalgia",
@@ -789,6 +823,7 @@
     {
       "kind": "core",
       "id": "2027-01-05-now-42-v3",
+      "conceptId": "digital-seoljeongeun-ble-tongsineun-wi-fi-thread-ethernet",
       "dateKey": "2027-01-05",
       "lens": "now",
       "topic": "digital",
@@ -812,6 +847,7 @@
     {
       "kind": "core",
       "id": "2027-01-05-life-42-v3",
+      "conceptId": "nature-general-gateun-eumireumui-han-oktabeu-nopeun-eumi-doenda",
       "dateKey": "2027-01-05",
       "lens": "life",
       "topic": "nature-general",
@@ -835,6 +871,7 @@
     {
       "kind": "core",
       "id": "2027-01-06-then-43-v3",
+      "conceptId": "nostalgia-yak-1cho",
       "dateKey": "2027-01-06",
       "lens": "then",
       "topic": "nostalgia",
@@ -858,6 +895,7 @@
     {
       "kind": "core",
       "id": "2027-01-06-now-43-v3",
+      "conceptId": "digital-jingong-yonggi-dulreui-ganghan-jagijang",
       "dateKey": "2027-01-06",
       "lens": "now",
       "topic": "digital",
@@ -881,6 +919,7 @@
     {
       "kind": "core",
       "id": "2027-01-06-life-43-v3",
+      "conceptId": "nature-general-gateun-db-chaineun-cheukjeonghan-mulriryangui-gateun-baeyul-byeonhwareul-natanaenda",
       "dateKey": "2027-01-06",
       "lens": "life",
       "topic": "nature-general",
@@ -904,6 +943,7 @@
     {
       "kind": "core",
       "id": "2027-01-07-then-44-v3",
+      "conceptId": "nostalgia-guni-sseugo-namgin-jebokgwa-uiryu",
       "dateKey": "2027-01-07",
       "lens": "then",
       "topic": "nostalgia",
@@ -927,6 +967,7 @@
     {
       "kind": "core",
       "id": "2027-01-07-now-44-v3",
+      "conceptId": "digital-junggukgwa-bukmicheoreom-seoro-dareun-jiyeoki-gateun-yakeoreul-sseugi-ttaemun",
       "dateKey": "2027-01-07",
       "lens": "now",
       "topic": "digital",
@@ -950,6 +991,7 @@
     {
       "kind": "core",
       "id": "2027-01-07-life-44-v3",
+      "conceptId": "nature-general-pyomyeonui-yeoreo-banghyangeseo-biti-nanbansadoeeo-nune-deuleoonda",
       "dateKey": "2027-01-07",
       "lens": "life",
       "topic": "nature-general",
@@ -973,6 +1015,7 @@
     {
       "kind": "core",
       "id": "2027-01-08-then-45-v3",
+      "conceptId": "nostalgia-jeomtowa-heukyeonui-seokneun-biyuleul-bakkunda",
       "dateKey": "2027-01-08",
       "lens": "then",
       "topic": "nostalgia",
@@ -996,6 +1039,7 @@
     {
       "kind": "core",
       "id": "2027-01-08-now-45-v3",
+      "conceptId": "digital-tv-sorireul-ttaro-bonaedeon-odio-keibeul",
       "dateKey": "2027-01-08",
       "lens": "now",
       "topic": "digital",
@@ -1019,6 +1063,7 @@
     {
       "kind": "core",
       "id": "2027-01-08-life-45-v3",
+      "conceptId": "nature-general-eolgulgwa-geoul-sai-georimankeum-dwie-itneun-deut-boinda",
       "dateKey": "2027-01-08",
       "lens": "life",
       "topic": "nature-general",
@@ -1042,6 +1087,7 @@
     {
       "kind": "core",
       "id": "2027-01-09-then-46-v3",
+      "conceptId": "nostalgia-meorie-bareuneun-maekeoseo-oil",
       "dateKey": "2027-01-09",
       "lens": "then",
       "topic": "nostalgia",
@@ -1065,6 +1111,7 @@
     {
       "kind": "core",
       "id": "2027-01-09-now-46-v3",
+      "conceptId": "digital-ilkneun-gigiui-jagijangeseo-yudohan-jeonryeok",
       "dateKey": "2027-01-09",
       "lens": "now",
       "topic": "digital",
@@ -1088,6 +1135,7 @@
     {
       "kind": "core",
       "id": "2027-01-09-life-46-v3",
+      "conceptId": "nature-general-nateun-ondoro-hoejeonsik-geonjohal-su-itda",
       "dateKey": "2027-01-09",
       "lens": "life",
       "topic": "nature-general",
@@ -1111,6 +1159,7 @@
     {
       "kind": "core",
       "id": "2027-01-10-then-47-v3",
+      "conceptId": "nostalgia-bul-wiui-jaepeul-aieongwa-jeongi-wapeulgi",
       "dateKey": "2027-01-10",
       "lens": "then",
       "topic": "nostalgia",
@@ -1134,6 +1183,7 @@
     {
       "kind": "core",
       "id": "2027-01-10-now-47-v3",
+      "conceptId": "digital-yeongyeoldoedeorado-usb-2-0-sokdoro-dongjakhanda",
       "dateKey": "2027-01-10",
       "lens": "now",
       "topic": "digital",
@@ -1157,6 +1207,7 @@
     {
       "kind": "core",
       "id": "2027-01-10-life-47-v3",
+      "conceptId": "nature-general-peuroteaje-danbaekjil-ripaaje-jibang",
       "dateKey": "2027-01-10",
       "lens": "life",
       "topic": "nature-general",
@@ -1180,6 +1231,7 @@
     {
       "kind": "core",
       "id": "2027-01-11-then-48-v3",
+      "conceptId": "nostalgia-singkeudaee-geupsu-baesu-hoseureul-itneun-il",
       "dateKey": "2027-01-11",
       "lens": "then",
       "topic": "nostalgia",
@@ -1203,6 +1255,7 @@
     {
       "kind": "core",
       "id": "2027-01-11-now-48-v3",
+      "conceptId": "digital-du-koilui-georiwa-gyeopchimi-gyeolhap-segireul-bakkwoseo",
       "dateKey": "2027-01-11",
       "lens": "now",
       "topic": "digital",
@@ -1226,6 +1279,7 @@
     {
       "kind": "core",
       "id": "2027-01-11-life-48-v3",
+      "conceptId": "nature-general-subuneul-meogeumeun-otui-mugega-jopeun-jijeome-geolryeotgi-ttaemun",
       "dateKey": "2027-01-11",
       "lens": "life",
       "topic": "nature-general",
@@ -1249,6 +1303,7 @@
     {
       "kind": "core",
       "id": "2027-01-12-then-49-v3",
+      "conceptId": "nostalgia-oteumileul-nareuneun-batchim",
       "dateKey": "2027-01-12",
       "lens": "then",
       "topic": "nostalgia",
@@ -1272,6 +1327,7 @@
     {
       "kind": "core",
       "id": "2027-01-12-now-49-v3",
+      "conceptId": "digital-kadeue-jeojanghan-aepui-silhaenggwa-deiteo-jeopgeun",
       "dateKey": "2027-01-12",
       "lens": "now",
       "topic": "digital",
@@ -1295,6 +1351,7 @@
     {
       "kind": "core",
       "id": "2027-01-12-life-49-v3",
+      "conceptId": "nature-general-dangeul-balhyohae-saenggin-isanhwatansoga-banjuke-butjaphinda",
       "dateKey": "2027-01-12",
       "lens": "life",
       "topic": "nature-general",
@@ -1318,6 +1375,7 @@
     {
       "kind": "core",
       "id": "2027-01-13-then-50-v3",
+      "conceptId": "nostalgia-jipe-sonnimeul-moa-jepumeul-boyeo-jugo-panmaehaetda",
       "dateKey": "2027-01-13",
       "lens": "then",
       "topic": "nostalgia",
@@ -1341,6 +1399,7 @@
     {
       "kind": "core",
       "id": "2027-01-13-now-50-v3",
+      "conceptId": "digital-hwamyeoneul-bakkul-ttaeman-ipja-wichireul-dasi-gudonghanda",
       "dateKey": "2027-01-13",
       "lens": "now",
       "topic": "digital",
@@ -1364,6 +1423,7 @@
     {
       "kind": "core",
       "id": "2027-01-13-life-50-v3",
+      "conceptId": "nature-general-nokin-beoteo-banguli-mul-seongbun-soke-heuteojyeo-itda",
       "dateKey": "2027-01-13",
       "lens": "life",
       "topic": "nature-general",
@@ -1387,6 +1447,7 @@
     {
       "kind": "core",
       "id": "2027-01-14-then-51-v3",
+      "conceptId": "nostalgia-sonnimi-naemin-jujeonjana-yonggi",
       "dateKey": "2027-01-14",
       "lens": "then",
       "topic": "nostalgia",
@@ -1410,6 +1471,7 @@
     {
       "kind": "core",
       "id": "2027-01-14-now-51-v3",
+      "conceptId": "digital-wep-sopeuteuweeoreul-peobeulrik-domeineuro-gonggaehan-il",
       "dateKey": "2027-01-14",
       "lens": "now",
       "topic": "digital",
@@ -1433,6 +1495,7 @@
     {
       "kind": "core",
       "id": "2027-01-14-life-51-v3",
+      "conceptId": "nature-general-danbaekjil-eopsi-dang-jachega-bunhae-jaegyeolhaphaneun-kaereomelhwada",
       "dateKey": "2027-01-14",
       "lens": "life",
       "topic": "nature-general",
@@ -1456,6 +1519,7 @@
     {
       "kind": "core",
       "id": "2027-01-15-then-52-v3",
+      "conceptId": "nostalgia-wonjaryeokgwa-ujugaebalui-miraegam",
       "dateKey": "2027-01-15",
       "lens": "then",
       "topic": "nostalgia",
@@ -1479,6 +1543,7 @@
     {
       "kind": "core",
       "id": "2027-01-15-now-52-v3",
+      "conceptId": "digital-kodeu-sok-sikbyeolbeonhoro-gwanryeon-sangpum-jeongboreul-johoehanda",
       "dateKey": "2027-01-15",
       "lens": "now",
       "topic": "digital",
@@ -1502,6 +1567,7 @@
     {
       "kind": "core",
       "id": "2027-01-15-life-52-v3",
+      "conceptId": "nature-general-gayeol-jung-pulryeonan-jeonbuni-aekchereul-geoljjukhage-hago-sikeumyeonseo-deo-guteo-jeli-doegi-ttaemun",
       "dateKey": "2027-01-15",
       "lens": "life",
       "topic": "nature-general",
@@ -1525,6 +1591,7 @@
     {
       "kind": "core",
       "id": "2027-01-16-then-53-v3",
+      "conceptId": "nostalgia-nateneun-uija-bameneun-chimdae",
       "dateKey": "2027-01-16",
       "lens": "then",
       "topic": "nostalgia",
@@ -1548,6 +1615,7 @@
     {
       "kind": "core",
       "id": "2027-01-16-now-53-v3",
+      "conceptId": "digital-jal-deulriji-anhneun-seongbuneun-deol-jeongmilhage-jeojanghaedo-doenda",
       "dateKey": "2027-01-16",
       "lens": "now",
       "topic": "digital",
@@ -1571,6 +1639,7 @@
     {
       "kind": "core",
       "id": "2027-01-16-life-53-v3",
+      "conceptId": "nature-general-noka-itdeon-kalsyum-mageunesyumi-gayeolgwa-binue-baneunghaeseo",
       "dateKey": "2027-01-16",
       "lens": "life",
       "topic": "nature-general",
@@ -1594,6 +1663,7 @@
     {
       "kind": "core",
       "id": "2027-01-17-then-54-v3",
+      "conceptId": "nostalgia-namu-teumeneun-bindaega-sumgi-swiwotda",
       "dateKey": "2027-01-17",
       "lens": "then",
       "topic": "nostalgia",
@@ -1617,6 +1687,7 @@
     {
       "kind": "core",
       "id": "2027-01-17-now-54-v3",
+      "conceptId": "digital-bandocheeseo-jeonjawa-jeonggongi-gyeolhaphae-biteul-naenda",
       "dateKey": "2027-01-17",
       "lens": "now",
       "topic": "digital",
@@ -1640,6 +1711,7 @@
     {
       "kind": "core",
       "id": "2027-01-17-life-54-v3",
+      "conceptId": "nature-general-baesugwaneul-ttara-haechungi-deuleooneun-geoteul-makneunda",
       "dateKey": "2027-01-17",
       "lens": "life",
       "topic": "nature-general",
@@ -1663,6 +1735,7 @@
     {
       "kind": "core",
       "id": "2027-01-18-then-55-v3",
+      "conceptId": "nostalgia-busaneseo-gohyangeuro-dolagan-piranmin",
       "dateKey": "2027-01-18",
       "lens": "then",
       "topic": "nostalgia",
@@ -1686,6 +1759,7 @@
     {
       "kind": "core",
       "id": "2027-01-18-now-55-v3",
+      "conceptId": "digital-geumsok-dolgiga-jara-danrakdoeneun-wiheomeul-natchwotda",
       "dateKey": "2027-01-18",
       "lens": "now",
       "topic": "digital",
@@ -1709,6 +1783,7 @@
     {
       "kind": "core",
       "id": "2027-01-18-life-55-v3",
+      "conceptId": "nature-general-nopeun-suapgwa-neuseunhan-baegwan-gojeong",
       "dateKey": "2027-01-18",
       "lens": "life",
       "topic": "nature-general",
@@ -1732,6 +1807,7 @@
     {
       "kind": "core",
       "id": "2027-01-19-then-56-v3",
+      "conceptId": "nostalgia-gagero-dolryeobonae-dasi-sayonghaetda",
       "dateKey": "2027-01-19",
       "lens": "then",
       "topic": "nostalgia",
@@ -1755,6 +1831,7 @@
     {
       "kind": "core",
       "id": "2027-01-19-now-56-v3",
+      "conceptId": "digital-gaipja-peuropileul-naejang-boan-yosoe-anjeonhage-naeryeobatneunda",
       "dateKey": "2027-01-19",
       "lens": "now",
       "topic": "digital",
@@ -1778,6 +1855,7 @@
     {
       "kind": "core",
       "id": "2027-01-19-life-56-v3",
+      "conceptId": "nature-general-gonggeup-jijeomgwa-jip-anui-apryeok-yuryangeul-nanwo-cheukjeonghanda",
       "dateKey": "2027-01-19",
       "lens": "life",
       "topic": "nature-general",
@@ -1801,6 +1879,7 @@
     {
       "kind": "core",
       "id": "2027-01-20-then-57-v3",
+      "conceptId": "nostalgia-gajokdeuli-pyeonji-sajin-girokeul-bonaewaseo",
       "dateKey": "2027-01-20",
       "lens": "then",
       "topic": "nostalgia",
@@ -1824,6 +1903,7 @@
     {
       "kind": "core",
       "id": "2027-01-20-now-57-v3",
+      "conceptId": "digital-matterga-peulraetpomeul-eopsaeji-anhgo-hamkke-jakdonghanda",
       "dateKey": "2027-01-20",
       "lens": "now",
       "topic": "digital",
@@ -1847,6 +1927,7 @@
     {
       "kind": "core",
       "id": "2027-01-20-life-57-v3",
+      "conceptId": "nature-general-jigakhan-eumnopineun-baeeum-guseonggwa-eumryangui-yeonghyangdo-batgi-ttaemun",
       "dateKey": "2027-01-20",
       "lens": "life",
       "topic": "nature-general",
@@ -1870,6 +1951,7 @@
     {
       "kind": "core",
       "id": "2027-01-21-then-58-v3",
+      "conceptId": "nostalgia-beoseu-chajang",
       "dateKey": "2027-01-21",
       "lens": "then",
       "topic": "nostalgia",
@@ -1893,6 +1975,7 @@
     {
       "kind": "core",
       "id": "2027-01-21-now-58-v3",
+      "conceptId": "digital-teobineul-dolryeo-sangeopyong-jeongireul-saengsanhaneun-il",
       "dateKey": "2027-01-21",
       "lens": "now",
       "topic": "digital",
@@ -1916,6 +1999,7 @@
     {
       "kind": "core",
       "id": "2027-01-21-life-58-v3",
+      "conceptId": "nature-general-10db",
       "dateKey": "2027-01-21",
       "lens": "life",
       "topic": "nature-general",
@@ -1939,6 +2023,7 @@
     {
       "kind": "core",
       "id": "2027-01-22-then-59-v3",
+      "conceptId": "nostalgia-seoltang-banjukeul-budeureopge-daruryeogo",
       "dateKey": "2027-01-22",
       "lens": "then",
       "topic": "nostalgia",
@@ -1962,6 +2047,7 @@
     {
       "kind": "core",
       "id": "2027-01-22-now-59-v3",
+      "conceptId": "digital-du-palui-gili-byeonhwaga-hapchyeojin-bitmunuireul-bakkunda",
       "dateKey": "2027-01-22",
       "lens": "now",
       "topic": "digital",
@@ -1985,6 +2071,7 @@
     {
       "kind": "core",
       "id": "2027-01-22-life-59-v3",
+      "conceptId": "nature-general-gak-mise-myeoneseo-ipsagakgwa-bansagaki-gatda",
       "dateKey": "2027-01-22",
       "lens": "life",
       "topic": "nature-general",
@@ -2008,6 +2095,7 @@
     {
       "kind": "core",
       "id": "2027-01-23-then-60-v3",
+      "conceptId": "nostalgia-sileul-yeoreo-gyeop-dulreo-gamatda",
       "dateKey": "2027-01-23",
       "lens": "then",
       "topic": "nostalgia",
@@ -2031,6 +2119,7 @@
     {
       "kind": "core",
       "id": "2027-01-23-now-60-v3",
+      "conceptId": "digital-high-speed-hdmi-cable-with-ethernetinji",
       "dateKey": "2027-01-23",
       "lens": "now",
       "topic": "digital",
@@ -2054,6 +2143,7 @@
     {
       "kind": "core",
       "id": "2027-01-23-life-60-v3",
+      "conceptId": "nature-general-apdwi-banghyangi-dwijiphin-sangeul-uriga-jwau-banjeoncheoreom-haeseokhanda",
       "dateKey": "2027-01-23",
       "lens": "life",
       "topic": "nature-general",

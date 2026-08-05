@@ -22,7 +22,7 @@ export type ContentPackValidationCode =
   | "choice-length-outlier"
   | "answer-leak"
   | "negative-stack"
-  | "concept-spacing"
+  | "duplicate-concept"
   | "source-review"
   | "checksum";
 
@@ -571,35 +571,23 @@ function addQuestionQualityIssues(
     }
   }
 
-  const concepts = new Map<string, Array<{ index: number; scope: string }>>();
+  const concepts = new Map<string, string>();
   for (const [index, question] of questions.entries()) {
-    if (
-      typeof question.conceptId !== "string" ||
-      !Number.isInteger(question.setIndex)
-    ) {
+    if (typeof question.conceptId !== "string") {
       continue;
     }
-    const entries = concepts.get(question.conceptId) ?? [];
-    entries.push({
-      index: question.setIndex as number,
-      scope: questionScope(question, index),
-    });
-    concepts.set(question.conceptId, entries);
-  }
-  for (const [conceptId, entries] of concepts) {
-    entries.sort((left, right) => left.index - right.index);
-    for (let index = 1; index < entries.length; index += 1) {
-      const spacing = entries[index].index - entries[index - 1].index;
-      if (spacing < 30) {
-        issue(
-          issues,
-          "concept-spacing",
-          "warning",
-          entries[index].scope,
-          `Concept ${conceptId} repeats fewer than 30 set indexes apart.`,
-          { expected: ">=30", actual: spacing },
-        );
-      }
+    const scope = questionScope(question, index);
+    const firstScope = concepts.get(question.conceptId);
+    if (firstScope !== undefined) {
+      issue(
+        issues,
+        "duplicate-concept",
+        "error",
+        scope,
+        `Concept ${question.conceptId} repeats ${firstScope}.`,
+      );
+    } else {
+      concepts.set(question.conceptId, scope);
     }
   }
 }
@@ -714,48 +702,25 @@ function addCrossPackQualityIssues(
     }
   }
 
-  const concepts = new Map<
-    string,
-    Array<{ path: string; setIndex: number; scope: string }>
-  >();
+  const concepts = new Map<string, { path: string; scope: string }>();
   for (const entry of entries) {
-    if (
-      typeof entry.question.conceptId !== "string" ||
-      !Number.isInteger(entry.question.setIndex)
-    ) {
+    if (typeof entry.question.conceptId !== "string") {
       continue;
     }
-    const conceptEntries = concepts.get(entry.question.conceptId) ?? [];
-    conceptEntries.push({
-      path: entry.path,
-      setIndex: entry.question.setIndex as number,
-      scope: entry.scope,
-    });
-    concepts.set(entry.question.conceptId, conceptEntries);
-  }
-  for (const [conceptId, conceptEntries] of concepts) {
-    conceptEntries.sort((left, right) => left.setIndex - right.setIndex);
-    for (let leftIndex = 0; leftIndex < conceptEntries.length; leftIndex += 1) {
-      for (
-        let rightIndex = leftIndex + 1;
-        rightIndex < conceptEntries.length;
-        rightIndex += 1
-      ) {
-        const left = conceptEntries[leftIndex];
-        const right = conceptEntries[rightIndex];
-        const spacing = right.setIndex - left.setIndex;
-        if (spacing >= 30) break;
-        if (left.path !== right.path) {
-          issue(
-            issues,
-            "concept-spacing",
-            "warning",
-            right.scope,
-            `Concept ${conceptId} repeats fewer than 30 set indexes apart across packs.`,
-            { expected: ">=30", actual: spacing },
-          );
-        }
-      }
+    const first = concepts.get(entry.question.conceptId);
+    if (first !== undefined && first.path !== entry.path) {
+      issue(
+        issues,
+        "duplicate-concept",
+        "error",
+        entry.scope,
+        `Concept ${entry.question.conceptId} repeats ${first.scope} in ${first.path}.`,
+      );
+    } else if (first === undefined) {
+      concepts.set(entry.question.conceptId, {
+        path: entry.path,
+        scope: entry.scope,
+      });
     }
   }
 }

@@ -53,6 +53,7 @@ function v2ProgressWithCompletedIds(
 const question: CoreQuestion = {
   kind: "core",
   id: "then-phone",
+  conceptId: "nostalgia-public-phone-coin-call",
   dateKey: "2026-07-28",
   internalDifficulty: "gentle",
   ...contentMetadata,

@@ -15,6 +15,7 @@ import { ANSWER_EVENT_LIMIT, applyAnswerCommand } from "./progress-commands";
 const question: CoreQuestion = {
   kind: "core",
   id: "then-phone",
+  conceptId: "nostalgia-public-phone-coin-call",
   dateKey: "2026-07-28",
   internalDifficulty: "gentle",
   ...contentMetadata,
