@@ -2,6 +2,7 @@ import {
   createBonusEntitlement,
   type BonusEntitlement,
 } from "../domain/bonus-entitlement";
+import conceptMigrationMap from "../content/concept-map.json";
 import legacyQuestionMap from "../content/legacy-map.json";
 import {
   applyAnswerCommand,
@@ -21,6 +22,7 @@ import type {
   ProgressState,
   ProgressStateV1,
   ProgressStateV2,
+  ProgressStateV3,
 } from "../domain/progress-state";
 import type { BonusQuestion, BonusTopic } from "../domain/question";
 import type { QuizSession } from "../domain/quiz-session";
@@ -50,8 +52,10 @@ export interface LegacyQuestionTarget {
 }
 
 export type LegacyQuestionMap = Record<string, LegacyQuestionTarget>;
+export type ConceptMigrationMap = Record<string, string>;
 
 const bundledLegacyQuestionMap = legacyQuestionMap as LegacyQuestionMap;
+const bundledConceptMigrationMap = conceptMigrationMap as ConceptMigrationMap;
 
 const BONUS_TOPICS = [
   "nostalgia",
@@ -62,7 +66,7 @@ const BONUS_TOPICS = [
   "nature-general",
 ] as const satisfies readonly BonusTopic[];
 
-function createEmptyBonusTopicProgress(): ProgressState["bonusTopicProgress"] {
+function createEmptyBonusTopicProgressV3(): ProgressStateV3["bonusTopicProgress"] {
   return {
     nostalgia: { completedSetIndexes: [] },
     "korean-life": { completedSetIndexes: [] },
@@ -73,10 +77,21 @@ function createEmptyBonusTopicProgress(): ProgressState["bonusTopicProgress"] {
   };
 }
 
+function createEmptyBonusTopicProgress(): ProgressState["bonusTopicProgress"] {
+  return {
+    nostalgia: { completedSetIndexes: [], skippedSetIndexes: [] },
+    "korean-life": { completedSetIndexes: [], skippedSetIndexes: [] },
+    language: { completedSetIndexes: [], skippedSetIndexes: [] },
+    digital: { completedSetIndexes: [], skippedSetIndexes: [] },
+    safety: { completedSetIndexes: [], skippedSetIndexes: [] },
+    "nature-general": { completedSetIndexes: [], skippedSetIndexes: [] },
+  };
+}
+
 export function migrateV2ToV3(
   progress: ProgressStateV2,
   legacyMap: LegacyQuestionMap,
-): ProgressState {
+): ProgressStateV3 {
   const completedIds = new Set(progress.completedBonusIds);
   const mappedSets = new Map<
     string,
@@ -90,7 +105,7 @@ export function migrateV2ToV3(
     mappedSets.set(key, mappedSet);
   }
 
-  const bonusTopicProgress = createEmptyBonusTopicProgress();
+  const bonusTopicProgress = createEmptyBonusTopicProgressV3();
   for (const { target, questionIds } of mappedSets.values()) {
     if (
       questionIds.length === 3 &&
@@ -114,14 +129,63 @@ export function migrateV2ToV3(
   };
 }
 
+export function migrateV3ToV4(
+  progress: ProgressStateV3,
+  conceptMap: ConceptMigrationMap,
+): ProgressState {
+  const seenQuestionIds = [
+    ...new Set([
+      ...Object.keys(progress.answerCheckpoint.byQuestion),
+      ...Object.values(progress.sessions).flatMap((session) =>
+        session.answers.map((answer) => answer.questionId),
+      ),
+      ...progress.answerEvents.map((event) => event.questionId),
+      ...progress.completedBonusIds,
+    ]),
+  ];
+  const seenConceptIds = [
+    ...new Set([
+      ...progress.answerEvents.flatMap((event) =>
+        typeof event.conceptId === "string" && event.conceptId.trim().length > 0
+          ? [event.conceptId]
+          : [],
+      ),
+      ...seenQuestionIds.flatMap((questionId) => {
+        const conceptId = conceptMap[questionId];
+        return typeof conceptId === "string" && conceptId.trim().length > 0
+          ? [conceptId]
+          : [];
+      }),
+    ]),
+  ];
+  const bonusTopicProgress = createEmptyBonusTopicProgress();
+  for (const topic of BONUS_TOPICS) {
+    bonusTopicProgress[topic] = {
+      ...progress.bonusTopicProgress[topic],
+      skippedSetIndexes: [],
+    };
+  }
+
+  return {
+    ...progress,
+    version: 4,
+    seenQuestionIds,
+    seenConceptIds,
+    bonusTopicProgress,
+  };
+}
+
 export const progressStorageKeys = {
   legacy: "geuttae-yojeum:progress",
   v2SlotA: "geuttae-yojeum:progress:v2:a",
   v2SlotB: "geuttae-yojeum:progress:v2:b",
-  slotA: "geuttae-yojeum:progress:v3:a",
-  slotB: "geuttae-yojeum:progress:v3:b",
+  v3SlotA: "geuttae-yojeum:progress:v3:a",
+  v3SlotB: "geuttae-yojeum:progress:v3:b",
+  slotA: "geuttae-yojeum:progress:v4:a",
+  slotB: "geuttae-yojeum:progress:v4:b",
 } as const;
 export const MAX_PROGRESS_ENVELOPE_BYTES = 512 * 1024;
+export const MAX_PROGRESS_DUAL_SLOT_BYTES = MAX_PROGRESS_ENVELOPE_BYTES * 2;
 
 type SlotName = "A" | "B";
 
@@ -143,12 +207,22 @@ interface ProgressEnvelopeV3 {
   revision: number;
   checksum: string;
   writtenAt: string;
+  payload: ProgressStateV3;
+}
+
+interface ProgressEnvelopeV4 {
+  schemaVersion: 4;
+  revision: number;
+  checksum: string;
+  writtenAt: string;
   payload: ProgressState;
 }
 
 export interface PreservedSlots {
   slotA: string | null;
   slotB: string | null;
+  v3SlotA: string | null;
+  v3SlotB: string | null;
   v2SlotA: string | null;
   v2SlotB: string | null;
   legacy: string | null;
@@ -160,7 +234,7 @@ export type ProgressLoadResult =
   | {
       kind: "migrated";
       state: ProgressState;
-      fromVersion: 1 | 2;
+      fromVersion: 1 | 2 | 3;
     }
   | {
       kind: "recovered-slot";
@@ -182,7 +256,7 @@ type SlotRead<TEnvelope> =
 
 export function createEmptyProgress(): ProgressState {
   return {
-    version: 3,
+    version: 4,
     sessions: {},
     bonus: createBonusEntitlement(),
     completedBonusIds: [],
@@ -198,6 +272,8 @@ export function createEmptyProgress(): ProgressState {
     latestBonusStartCommandIds: {},
     timeObservation: createTimeObservation(),
     shadowAudits: [],
+    seenQuestionIds: [],
+    seenConceptIds: [],
     bonusTopicProgress: createEmptyBonusTopicProgress(),
   };
 }
@@ -509,9 +585,9 @@ function normalizeProgressStateV2(value: unknown): ProgressStateV2 | null {
   };
 }
 
-function normalizeBonusTopicProgress(
+function normalizeBonusTopicProgressV3(
   value: unknown,
-): ProgressState["bonusTopicProgress"] | null {
+): ProgressStateV3["bonusTopicProgress"] | null {
   if (
     !isRecord(value) ||
     Object.keys(value).length !== BONUS_TOPICS.length ||
@@ -520,7 +596,7 @@ function normalizeBonusTopicProgress(
     return null;
   }
 
-  const normalized = createEmptyBonusTopicProgress();
+  const normalized = {} as ProgressStateV3["bonusTopicProgress"];
   for (const topic of BONUS_TOPICS) {
     const progress = value[topic];
     if (
@@ -551,8 +627,61 @@ function normalizeBonusTopicProgress(
   return normalized;
 }
 
-function normalizeProgressState(value: unknown): ProgressState | null {
+function normalizeProgressStateV3(value: unknown): ProgressStateV3 | null {
   if (!isRecord(value) || value.version !== 3) {
+    return null;
+  }
+  const v2 = normalizeProgressStateV2({ ...value, version: 2 });
+  const bonusTopicProgress = normalizeBonusTopicProgressV3(
+    value.bonusTopicProgress,
+  );
+  if (v2 == null || bonusTopicProgress == null) {
+    return null;
+  }
+
+  return { ...v2, version: 3, bonusTopicProgress };
+}
+
+function normalizeBonusTopicProgress(
+  value: unknown,
+): ProgressState["bonusTopicProgress"] | null {
+  const v3Progress = normalizeBonusTopicProgressV3(value);
+  if (v3Progress == null || !isRecord(value)) {
+    return null;
+  }
+
+  const normalized = createEmptyBonusTopicProgress();
+  for (const topic of BONUS_TOPICS) {
+    const progress = value[topic];
+    if (
+      !isRecord(progress) ||
+      !Array.isArray(progress.skippedSetIndexes) ||
+      !progress.skippedSetIndexes.every(
+        (setIndex) =>
+          Number.isInteger(setIndex) &&
+          Number(setIndex) >= 0 &&
+          Number(setIndex) < 180,
+      )
+    ) {
+      return null;
+    }
+    normalized[topic] = {
+      ...v3Progress[topic],
+      skippedSetIndexes: [
+        ...new Set(progress.skippedSetIndexes as number[]),
+      ].sort((left, right) => left - right),
+    };
+  }
+  return normalized;
+}
+
+function normalizeProgressState(value: unknown): ProgressState | null {
+  if (
+    !isRecord(value) ||
+    value.version !== 4 ||
+    !isStringArray(value.seenQuestionIds) ||
+    !isStringArray(value.seenConceptIds)
+  ) {
     return null;
   }
   const v2 = normalizeProgressStateV2({ ...value, version: 2 });
@@ -563,7 +692,13 @@ function normalizeProgressState(value: unknown): ProgressState | null {
     return null;
   }
 
-  return { ...v2, version: 3, bonusTopicProgress };
+  return {
+    ...v2,
+    version: 4,
+    seenQuestionIds: [...new Set(value.seenQuestionIds)],
+    seenConceptIds: [...new Set(value.seenConceptIds)],
+    bonusTopicProgress,
+  };
 }
 
 function migrateV1ToV2(progress: ProgressStateV1): ProgressStateV2 {
@@ -588,7 +723,7 @@ function migrateV1ToV2(progress: ProgressStateV1): ProgressStateV2 {
 }
 
 function checksumInput(envelope: {
-  schemaVersion: 2 | 3;
+  schemaVersion: 2 | 3 | 4;
   revision: number;
   writtenAt: string;
   payload: unknown;
@@ -614,12 +749,13 @@ function createEnvelope(
   progress: ProgressState,
   revision: number,
   writtenAt: string,
-): ProgressEnvelopeV3 {
+): ProgressEnvelopeV4 {
+  const persistedProgress = compactProgressForPersistence(progress);
   const unsigned = {
-    schemaVersion: 3 as const,
+    schemaVersion: 4 as const,
     revision,
     writtenAt,
-    payload: progress,
+    payload: persistedProgress,
   };
 
   return {
@@ -628,7 +764,53 @@ function createEnvelope(
   };
 }
 
-function serializeEnvelope(envelope: ProgressEnvelopeV3): string {
+function compactProgressForPersistence(progress: ProgressState): ProgressState {
+  const completedCoreSessionKeys = Object.entries(progress.sessions)
+    .filter(
+      ([sessionKey, session]) =>
+        /^\d{4}-\d{2}-\d{2}$/.test(sessionKey) &&
+        session.dateKey === sessionKey &&
+        session.phase === "completed",
+    )
+    .map(([sessionKey]) => sessionKey)
+    .sort();
+  const latestCompletedCoreSessionKey = completedCoreSessionKeys.at(-1);
+
+  let changed = false;
+  const sessions = Object.fromEntries(
+    Object.entries(progress.sessions).map(([sessionKey, session]) => {
+      const latestStartCommandId =
+        progress.latestBonusStartCommandIds[sessionKey];
+      const bonusStart =
+        latestStartCommandId == null
+          ? undefined
+          : progress.bonusStartCommands[latestStartCommandId];
+      const isRecordedCompletedBonus =
+        bonusStart?.setIndex != null &&
+        progress.bonusTopicProgress[
+          bonusStart.topic
+        ].completedSetIndexes.includes(bonusStart.setIndex);
+      const isHistoricalCompletedCore =
+        /^\d{4}-\d{2}-\d{2}$/.test(sessionKey) &&
+        sessionKey !== latestCompletedCoreSessionKey;
+
+      if (
+        session.phase !== "completed" ||
+        (!isHistoricalCompletedCore && !isRecordedCompletedBonus) ||
+        session.answers.length === 0
+      ) {
+        return [sessionKey, session];
+      }
+
+      changed = true;
+      return [sessionKey, { ...session, answers: [] }];
+    }),
+  );
+
+  return changed ? { ...progress, sessions } : progress;
+}
+
+function serializeEnvelope(envelope: ProgressEnvelopeV4): string {
   const serialized = JSON.stringify(envelope);
   const byteLength = new TextEncoder().encode(serialized).byteLength;
   if (byteLength > MAX_PROGRESS_ENVELOPE_BYTES) {
@@ -637,12 +819,18 @@ function serializeEnvelope(envelope: ProgressEnvelopeV3): string {
   return serialized;
 }
 
-function parseSlot<TProgress, TVersion extends 2 | 3>(
+type ProgressEnvelopeForVersion<TVersion extends 2 | 3 | 4> = TVersion extends 2
+  ? ProgressEnvelopeV2
+  : TVersion extends 3
+    ? ProgressEnvelopeV3
+    : ProgressEnvelopeV4;
+
+function parseSlot<TProgress, TVersion extends 2 | 3 | 4>(
   name: SlotName,
   raw: string | null,
   schemaVersion: TVersion,
   normalize: (value: unknown) => TProgress | null,
-): SlotRead<TVersion extends 2 ? ProgressEnvelopeV2 : ProgressEnvelopeV3> {
+): SlotRead<ProgressEnvelopeForVersion<TVersion>> {
   if (raw == null) {
     return { kind: "missing", name, raw };
   }
@@ -682,9 +870,7 @@ function parseSlot<TProgress, TVersion extends 2 | 3>(
       checksum: parsed.checksum,
       writtenAt: parsed.writtenAt,
       payload,
-    } as unknown as TVersion extends 2
-      ? ProgressEnvelopeV2
-      : ProgressEnvelopeV3;
+    } as unknown as ProgressEnvelopeForVersion<TVersion>;
 
     return { kind: "valid", name, raw, envelope };
   } catch {
@@ -710,16 +896,28 @@ function keyForSlot(name: SlotName): string {
 }
 
 function normalizeProgressInput(
-  progress: ProgressState | ProgressStateV1 | ProgressStateV2,
+  progress: ProgressState | ProgressStateV1 | ProgressStateV2 | ProgressStateV3,
 ): ProgressState | null {
   if (progress.version === 1) {
-    return migrateV2ToV3(migrateV1ToV2(progress), bundledLegacyQuestionMap);
+    return migrateV3ToV4(
+      migrateV2ToV3(migrateV1ToV2(progress), bundledLegacyQuestionMap),
+      bundledConceptMigrationMap,
+    );
   }
   if (progress.version === 2) {
     const normalized = normalizeProgressStateV2(progress);
     return normalized == null
       ? null
-      : migrateV2ToV3(normalized, bundledLegacyQuestionMap);
+      : migrateV3ToV4(
+          migrateV2ToV3(normalized, bundledLegacyQuestionMap),
+          bundledConceptMigrationMap,
+        );
+  }
+  if (progress.version === 3) {
+    const normalized = normalizeProgressStateV3(progress);
+    return normalized == null
+      ? null
+      : migrateV3ToV4(normalized, bundledConceptMigrationMap);
   }
   return normalizeProgressState(progress);
 }
@@ -733,14 +931,17 @@ export class ProgressRepository {
   ) {}
 
   private async readRaw(): Promise<PreservedSlots> {
-    const [slotA, slotB, v2SlotA, v2SlotB, legacy] = await Promise.all([
-      this.storage.getItem(progressStorageKeys.slotA),
-      this.storage.getItem(progressStorageKeys.slotB),
-      this.storage.getItem(progressStorageKeys.v2SlotA),
-      this.storage.getItem(progressStorageKeys.v2SlotB),
-      this.storage.getItem(progressStorageKeys.legacy),
-    ]);
-    return { slotA, slotB, v2SlotA, v2SlotB, legacy };
+    const [slotA, slotB, v3SlotA, v3SlotB, v2SlotA, v2SlotB, legacy] =
+      await Promise.all([
+        this.storage.getItem(progressStorageKeys.slotA),
+        this.storage.getItem(progressStorageKeys.slotB),
+        this.storage.getItem(progressStorageKeys.v3SlotA),
+        this.storage.getItem(progressStorageKeys.v3SlotB),
+        this.storage.getItem(progressStorageKeys.v2SlotA),
+        this.storage.getItem(progressStorageKeys.v2SlotB),
+        this.storage.getItem(progressStorageKeys.legacy),
+      ]);
+    return { slotA, slotB, v3SlotA, v3SlotB, v2SlotA, v2SlotB, legacy };
   }
 
   private async initializeSlots(progress: ProgressState): Promise<void> {
@@ -754,14 +955,14 @@ export class ProgressRepository {
   async load(): Promise<ProgressLoadResult> {
     const preservedRaw = await this.readRaw();
     const slots = [
-      parseSlot("A", preservedRaw.slotA, 3, normalizeProgressState),
-      parseSlot("B", preservedRaw.slotB, 3, normalizeProgressState),
+      parseSlot("A", preservedRaw.slotA, 4, normalizeProgressState),
+      parseSlot("B", preservedRaw.slotB, 4, normalizeProgressState),
     ];
     const validSlots = slots
       .filter(
         (
           slot,
-        ): slot is Extract<SlotRead<ProgressEnvelopeV3>, { kind: "valid" }> =>
+        ): slot is Extract<SlotRead<ProgressEnvelopeV4>, { kind: "valid" }> =>
           slot.kind === "valid",
       )
       .sort((left, right) => right.envelope.revision - left.envelope.revision);
@@ -786,6 +987,33 @@ export class ProgressRepository {
       };
     }
 
+    const v3Slots = [
+      parseSlot("A", preservedRaw.v3SlotA, 3, normalizeProgressStateV3),
+      parseSlot("B", preservedRaw.v3SlotB, 3, normalizeProgressStateV3),
+    ];
+    const validV3Slots = v3Slots
+      .filter(
+        (
+          slot,
+        ): slot is Extract<SlotRead<ProgressEnvelopeV3>, { kind: "valid" }> =>
+          slot.kind === "valid",
+      )
+      .sort((left, right) => right.envelope.revision - left.envelope.revision);
+    if (validV3Slots.length > 0) {
+      const migrated = migrateV3ToV4(
+        validV3Slots[0].envelope.payload,
+        bundledConceptMigrationMap,
+      );
+      if (preservedRaw.slotA == null && preservedRaw.slotB == null) {
+        try {
+          await this.initializeSlots(migrated);
+        } catch {
+          // Untouched v3 slots remain authoritative and migration is retried.
+        }
+      }
+      return { kind: "migrated", state: migrated, fromVersion: 3 };
+    }
+
     const v2Slots = [
       parseSlot("A", preservedRaw.v2SlotA, 2, normalizeProgressStateV2),
       parseSlot("B", preservedRaw.v2SlotB, 2, normalizeProgressStateV2),
@@ -799,9 +1027,12 @@ export class ProgressRepository {
       )
       .sort((left, right) => right.envelope.revision - left.envelope.revision);
     if (validV2Slots.length > 0) {
-      const migrated = migrateV2ToV3(
-        validV2Slots[0].envelope.payload,
-        bundledLegacyQuestionMap,
+      const migrated = migrateV3ToV4(
+        migrateV2ToV3(
+          validV2Slots[0].envelope.payload,
+          bundledLegacyQuestionMap,
+        ),
+        bundledConceptMigrationMap,
       );
       if (preservedRaw.slotA == null && preservedRaw.slotB == null) {
         try {
@@ -815,9 +1046,9 @@ export class ProgressRepository {
 
     const legacy = decodeV1(preservedRaw.legacy);
     if (legacy != null) {
-      const migrated = migrateV2ToV3(
-        migrateV1ToV2(legacy),
-        bundledLegacyQuestionMap,
+      const migrated = migrateV3ToV4(
+        migrateV2ToV3(migrateV1ToV2(legacy), bundledLegacyQuestionMap),
+        bundledConceptMigrationMap,
       );
       if (preservedRaw.slotA == null && preservedRaw.slotB == null) {
         try {
@@ -836,6 +1067,8 @@ export class ProgressRepository {
     if (
       preservedRaw.slotA == null &&
       preservedRaw.slotB == null &&
+      preservedRaw.v3SlotA == null &&
+      preservedRaw.v3SlotB == null &&
       preservedRaw.v2SlotA == null &&
       preservedRaw.v2SlotB == null &&
       preservedRaw.legacy == null
@@ -856,7 +1089,8 @@ export class ProgressRepository {
   }
 
   private async saveImmediately(
-    progress: ProgressState | ProgressStateV1 | ProgressStateV2,
+    progress:
+      ProgressState | ProgressStateV1 | ProgressStateV2 | ProgressStateV3,
   ): Promise<void> {
     const nextProgress = normalizeProgressInput(progress);
     if (nextProgress == null) {
@@ -864,12 +1098,12 @@ export class ProgressRepository {
     }
 
     const raw = await this.readRaw();
-    const slotA = parseSlot("A", raw.slotA, 3, normalizeProgressState);
-    const slotB = parseSlot("B", raw.slotB, 3, normalizeProgressState);
+    const slotA = parseSlot("A", raw.slotA, 4, normalizeProgressState);
+    const slotB = parseSlot("B", raw.slotB, 4, normalizeProgressState);
     const validSlots = [slotA, slotB].filter(
       (
         slot,
-      ): slot is Extract<SlotRead<ProgressEnvelopeV3>, { kind: "valid" }> =>
+      ): slot is Extract<SlotRead<ProgressEnvelopeV4>, { kind: "valid" }> =>
         slot.kind === "valid",
     );
 
@@ -901,7 +1135,8 @@ export class ProgressRepository {
   }
 
   save(
-    progress: ProgressState | ProgressStateV1 | ProgressStateV2,
+    progress:
+      ProgressState | ProgressStateV1 | ProgressStateV2 | ProgressStateV3,
     observedAt?: Date,
   ): Promise<void> {
     if (observedAt == null) {
@@ -984,23 +1219,8 @@ export class ProgressRepository {
     dateKey: string,
     topic: BonusTopic,
     setIndex: number,
+    releasedSetCount: number,
     bonusQuestions: BonusQuestion[],
-    observedAt?: Date,
-  ): Promise<StartBonusSessionResult>;
-  /** @deprecated The eager-content app path is removed by the catalog wiring task. */
-  startBonusSession(
-    commandId: string,
-    dateKey: string,
-    topic: BonusTopic,
-    bonusQuestions: BonusQuestion[],
-    observedAt?: Date,
-  ): Promise<StartBonusSessionResult>;
-  startBonusSession(
-    commandId: string,
-    dateKey: string,
-    topic: BonusTopic,
-    setIndexOrQuestions: number | BonusQuestion[],
-    questionsOrObservedAt?: BonusQuestion[] | Date,
     observedAt?: Date,
   ): Promise<StartBonusSessionResult> {
     return this.enqueue(async () => {
@@ -1009,42 +1229,16 @@ export class ProgressRepository {
         throw new ProgressWriteBlockedError();
       }
 
-      const legacyQuestions = Array.isArray(setIndexOrQuestions);
-      const explicitSetIndex = legacyQuestions
-        ? undefined
-        : setIndexOrQuestions;
-      const bonusQuestions: BonusQuestion[] = legacyQuestions
-        ? setIndexOrQuestions
-        : Array.isArray(questionsOrObservedAt)
-          ? questionsOrObservedAt
-          : [];
-      const effectiveObservedAt =
-        explicitSetIndex == null
-          ? questionsOrObservedAt instanceof Date
-            ? questionsOrObservedAt
-            : undefined
-          : observedAt;
-      const observed = observeProgressTime(
-        loaded.state,
-        effectiveObservedAt,
+      const observed = observeProgressTime(loaded.state, observedAt);
+      const result = startBonusSessionCommand(
+        observed.state,
+        commandId,
+        dateKey,
+        topic,
+        setIndex,
+        releasedSetCount,
+        bonusQuestions,
       );
-      const result =
-        explicitSetIndex == null
-          ? startBonusSessionCommand(
-              observed.state,
-              commandId,
-              dateKey,
-              topic,
-              bonusQuestions,
-            )
-          : startBonusSessionCommand(
-              observed.state,
-              commandId,
-              dateKey,
-              topic,
-              explicitSetIndex,
-              bonusQuestions,
-            );
       if (result.applied || observed.changed) {
         await this.saveImmediately(result.state);
       }

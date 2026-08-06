@@ -22,7 +22,7 @@ export type ContentPackValidationCode =
   | "choice-length-outlier"
   | "answer-leak"
   | "negative-stack"
-  | "concept-spacing"
+  | "duplicate-concept"
   | "source-review"
   | "checksum";
 
@@ -107,20 +107,43 @@ const BONUS_TOPICS = [
 ] as const satisfies readonly BonusTopic[];
 const SHA256_PATTERN = /^[a-f0-9]{64}$/;
 const ISO_DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/;
+const STDICT_SEARCH_HOST = "stdict.korean.go.kr";
+const STDICT_SEARCH_PATH = "/search/searchResult.do";
 const RELEASE_START_UTC = Date.UTC(2026, 6, 28);
 const DAY_MS = 24 * 60 * 60 * 1000;
 const RELEASE_DATE_KEYS = Array.from({ length: 180 }, (_, index) =>
   new Date(RELEASE_START_UTC + index * DAY_MS).toISOString().slice(0, 10),
 );
+const LEGACY_BONUS_TOPIC_LABELS: Record<BonusTopic, string> = {
+  nostalgia: "추억·대중문화",
+  "korean-life": "한국 생활사",
+  language: "말·속담·맞춤법",
+  digital: "디지털 생활",
+  safety: "생활안전",
+  "nature-general": "자연·일반상식",
+};
 const LEGACY_RELEASE_CONTRACT: ContentReleaseContract = {
   core: { packCount: 6, questionCount: 540 },
-  bonusTopics: BONUS_TOPICS.map((topic) => ({
+  bonusTopics: BONUS_TOPICS.map((topic, order) => ({
     topic,
+    label: LEGACY_BONUS_TOPIC_LABELS[topic],
+    order,
     packCount: 6,
     setCount: 180,
     questionCount: 540,
   })),
 };
+
+function isStdictSearchListing(value: string): boolean {
+  try {
+    const url = new URL(value);
+    return (
+      url.hostname === STDICT_SEARCH_HOST && url.pathname === STDICT_SEARCH_PATH
+    );
+  } catch {
+    return false;
+  }
+}
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -277,14 +300,15 @@ function addPackSchemaIssues(
       typeof value.source.name !== "string" ||
       value.source.name.trim().length === 0 ||
       typeof value.source.url !== "string" ||
-      !value.source.url.startsWith("https://")
+      !value.source.url.startsWith("https://") ||
+      isStdictSearchListing(value.source.url)
     ) {
       issue(
         issues,
         "source-review",
         "error",
         questionScope(value, index),
-        "Question requires reviewed metadata and an HTTPS source.",
+        "Question requires reviewed metadata and a direct, supported HTTPS source.",
       );
     }
     const expectedQuestionVersion =
@@ -571,35 +595,24 @@ function addQuestionQualityIssues(
     }
   }
 
-  const concepts = new Map<string, Array<{ index: number; scope: string }>>();
+  const concepts = new Map<string, string>();
   for (const [index, question] of questions.entries()) {
-    if (
-      typeof question.conceptId !== "string" ||
-      !Number.isInteger(question.setIndex)
-    ) {
+    if (typeof question.conceptId !== "string") {
       continue;
     }
-    const entries = concepts.get(question.conceptId) ?? [];
-    entries.push({
-      index: question.setIndex as number,
-      scope: questionScope(question, index),
-    });
-    concepts.set(question.conceptId, entries);
-  }
-  for (const [conceptId, entries] of concepts) {
-    entries.sort((left, right) => left.index - right.index);
-    for (let index = 1; index < entries.length; index += 1) {
-      const spacing = entries[index].index - entries[index - 1].index;
-      if (spacing < 30) {
-        issue(
-          issues,
-          "concept-spacing",
-          "warning",
-          entries[index].scope,
-          `Concept ${conceptId} repeats fewer than 30 set indexes apart.`,
-          { expected: ">=30", actual: spacing },
-        );
-      }
+    const normalizedConceptId = question.conceptId.trim().toLowerCase();
+    const scope = questionScope(question, index);
+    const firstScope = concepts.get(normalizedConceptId);
+    if (firstScope !== undefined) {
+      issue(
+        issues,
+        "duplicate-concept",
+        "error",
+        scope,
+        `Concept ${question.conceptId} repeats ${firstScope}.`,
+      );
+    } else {
+      concepts.set(normalizedConceptId, scope);
     }
   }
 }
@@ -714,48 +727,26 @@ function addCrossPackQualityIssues(
     }
   }
 
-  const concepts = new Map<
-    string,
-    Array<{ path: string; setIndex: number; scope: string }>
-  >();
+  const concepts = new Map<string, { path: string; scope: string }>();
   for (const entry of entries) {
-    if (
-      typeof entry.question.conceptId !== "string" ||
-      !Number.isInteger(entry.question.setIndex)
-    ) {
+    if (typeof entry.question.conceptId !== "string") {
       continue;
     }
-    const conceptEntries = concepts.get(entry.question.conceptId) ?? [];
-    conceptEntries.push({
-      path: entry.path,
-      setIndex: entry.question.setIndex as number,
-      scope: entry.scope,
-    });
-    concepts.set(entry.question.conceptId, conceptEntries);
-  }
-  for (const [conceptId, conceptEntries] of concepts) {
-    conceptEntries.sort((left, right) => left.setIndex - right.setIndex);
-    for (let leftIndex = 0; leftIndex < conceptEntries.length; leftIndex += 1) {
-      for (
-        let rightIndex = leftIndex + 1;
-        rightIndex < conceptEntries.length;
-        rightIndex += 1
-      ) {
-        const left = conceptEntries[leftIndex];
-        const right = conceptEntries[rightIndex];
-        const spacing = right.setIndex - left.setIndex;
-        if (spacing >= 30) break;
-        if (left.path !== right.path) {
-          issue(
-            issues,
-            "concept-spacing",
-            "warning",
-            right.scope,
-            `Concept ${conceptId} repeats fewer than 30 set indexes apart across packs.`,
-            { expected: ">=30", actual: spacing },
-          );
-        }
-      }
+    const normalizedConceptId = entry.question.conceptId.trim().toLowerCase();
+    const first = concepts.get(normalizedConceptId);
+    if (first !== undefined && first.path !== entry.path) {
+      issue(
+        issues,
+        "duplicate-concept",
+        "error",
+        entry.scope,
+        `Concept ${entry.question.conceptId} repeats ${first.scope} in ${first.path}.`,
+      );
+    } else if (first === undefined) {
+      concepts.set(normalizedConceptId, {
+        path: entry.path,
+        scope: entry.scope,
+      });
     }
   }
 }
@@ -1048,6 +1039,150 @@ function addSegmentCountIssues(
   }
 }
 
+function addReleaseContractIssues(
+  manifest: ContentManifest,
+  issues: ContentPackValidationIssue[],
+): void {
+  const contract = manifest.releaseContract;
+  if (contract == null) return;
+
+  const countFields = ["packCount", "questionCount"] as const;
+  for (const field of countFields) {
+    const count = contract.core[field];
+    if (!Number.isInteger(count) || count < 0) {
+      issue(
+        issues,
+        "count",
+        "error",
+        `release-contract:core:${field}`,
+        "Release counts must be non-negative integers.",
+        { expected: "non-negative integer", actual: count },
+      );
+    }
+  }
+  const coreDescriptorQuestionCount = manifest.corePacks.reduce(
+    (sum, descriptor) => sum + descriptor.questionCount,
+    0,
+  );
+  if (manifest.corePacks.length !== contract.core.packCount) {
+    issue(
+      issues,
+      "count",
+      "error",
+      "release-contract:core:descriptors",
+      "Core descriptor count must match the release contract.",
+      { expected: contract.core.packCount, actual: manifest.corePacks.length },
+    );
+  }
+  if (coreDescriptorQuestionCount !== contract.core.questionCount) {
+    issue(
+      issues,
+      "count",
+      "error",
+      "release-contract:core:descriptor-questions",
+      "Core descriptor question count must match the release contract.",
+      { expected: contract.core.questionCount, actual: coreDescriptorQuestionCount },
+    );
+  }
+
+  const orders = new Map<number, BonusTopic>();
+  for (const topicContract of contract.bonusTopics) {
+    const { topic, label, order } = topicContract;
+    const scope = `release-contract:bonus:${topic}`;
+    if (label.trim().length === 0) {
+      issue(
+        issues,
+        "schema",
+        "error",
+        `${scope}:label`,
+        "Bonus topic labels must be non-empty strings.",
+        { expected: "non-empty string", actual: label },
+      );
+    }
+    if (!Number.isInteger(order) || order < 0) {
+      issue(
+        issues,
+        "schema",
+        "error",
+        `${scope}:order`,
+        "Bonus topic order must be a non-negative integer.",
+        { expected: "non-negative integer", actual: order },
+      );
+    } else {
+      const priorTopic = orders.get(order);
+      if (priorTopic != null) {
+        issue(
+          issues,
+          "schema",
+          "error",
+          `${scope}:order`,
+          `Bonus topic order duplicates ${priorTopic}.`,
+          { expected: "unique order", actual: order },
+        );
+      } else {
+        orders.set(order, topic);
+      }
+    }
+
+    for (const field of ["packCount", "setCount", "questionCount"] as const) {
+      const count = topicContract[field];
+      if (!Number.isInteger(count) || count < 0) {
+        issue(
+          issues,
+          "count",
+          "error",
+          `${scope}:${field}`,
+          "Release counts must be non-negative integers.",
+          { expected: "non-negative integer", actual: count },
+        );
+      }
+    }
+
+    const descriptors = manifest.bonusPacks.filter(
+      (descriptor) => descriptor.topic === topic,
+    );
+    const descriptorQuestionCount = descriptors.reduce(
+      (sum, descriptor) => sum + descriptor.questionCount,
+      0,
+    );
+    const descriptorSetCount = descriptors.reduce(
+      (sum, descriptor) =>
+        sum + (descriptor.setCount ?? descriptor.setEnd - descriptor.setStart + 1),
+      0,
+    );
+    if (descriptors.length !== topicContract.packCount) {
+      issue(
+        issues,
+        "count",
+        "error",
+        `${scope}:descriptors`,
+        "Bonus descriptor count must match the release contract.",
+        { expected: topicContract.packCount, actual: descriptors.length },
+      );
+    }
+    if (descriptorSetCount !== topicContract.setCount) {
+      issue(
+        issues,
+        "count",
+        "error",
+        `${scope}:descriptor-sets`,
+        "Bonus descriptor set count must match the release contract.",
+        { expected: topicContract.setCount, actual: descriptorSetCount },
+      );
+    }
+    if (descriptorQuestionCount !== topicContract.questionCount) {
+      issue(
+        issues,
+        "count",
+        "error",
+        `${scope}:descriptor-questions`,
+        "Bonus descriptor question count must match the release contract.",
+        { expected: topicContract.questionCount, actual: descriptorQuestionCount },
+      );
+    }
+  }
+}
+
 export function validateContentLibrary(
   manifest: ContentManifest,
   packs: readonly ContentLibraryPack[],
@@ -1058,6 +1193,7 @@ export function validateContentLibrary(
     manifest.contentVersion,
   );
   issues.push(...manifestVersionIssues);
+  addReleaseContractIssues(manifest, issues);
   const manifestContentVersion =
     manifestVersionIssues.length === 0 ? manifest.contentVersion : undefined;
   const descriptors = descriptorsForScope(manifest, scope);

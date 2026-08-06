@@ -19,6 +19,7 @@ export interface QuestionSource {
 
 interface QuestionBase {
   id: string;
+  conceptId: string;
   lens: CoreLens;
   topic: BonusTopic;
   prompt: string;
@@ -40,7 +41,6 @@ export interface CoreQuestion extends QuestionBase {
 
 export interface BonusQuestion extends QuestionBase {
   kind: "bonus";
-  conceptId: string;
   variant: string;
   internalDifficulty: InternalDifficulty;
   setIndex: number;
@@ -50,9 +50,9 @@ export type Question = CoreQuestion | BonusQuestion;
 
 export type CoreQuestionInput = Omit<
   CoreQuestion,
-  "kind" | "internalDifficulty"
+  "kind" | "conceptId" | "internalDifficulty"
 > &
-  Partial<Pick<CoreQuestion, "internalDifficulty">>;
+  Partial<Pick<CoreQuestion, "conceptId" | "internalDifficulty">>;
 
 export type BonusQuestionInput = Omit<
   BonusQuestion,
@@ -69,6 +69,7 @@ export function createCoreQuestion(input: CoreQuestionInput): CoreQuestion {
   return {
     ...input,
     kind: "core",
+    conceptId: input.conceptId ?? input.id,
     internalDifficulty: input.internalDifficulty ?? "steady",
   };
 }
@@ -90,6 +91,13 @@ function isRecord(value: unknown): value is Record<string, unknown> {
 
 function isNonEmptyString(value: unknown): value is string {
   return typeof value === "string" && value.trim().length > 0;
+}
+
+function isCanonicalConceptId(value: unknown): value is string {
+  return (
+    typeof value === "string" &&
+    /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value)
+  );
 }
 
 function isIsoCalendarDate(value: unknown): value is string {
@@ -142,6 +150,9 @@ export function validateQuestion(value: unknown): string[] {
   }
   if (!isNonEmptyString(value.id)) {
     errors.push("question.id");
+  }
+  if (!isCanonicalConceptId(value.conceptId)) {
+    errors.push("question.conceptId");
   }
   if (!["then", "now", "life"].includes(String(value.lens))) {
     errors.push("question.lens");
@@ -214,9 +225,6 @@ export function validateQuestion(value: unknown): string[] {
   }
 
   if (value.kind === "bonus") {
-    if (!isNonEmptyString(value.conceptId)) {
-      errors.push("bonus.conceptId");
-    }
     if (!isNonEmptyString(value.variant)) {
       errors.push("bonus.variant");
     }

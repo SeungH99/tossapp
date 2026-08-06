@@ -7,6 +7,7 @@
     {
       "kind": "core",
       "id": "2026-08-14-then-18-v1",
+      "conceptId": "korean-life-kimjang-community-winter-preparation",
       "dateKey": "2026-08-14",
       "lens": "then",
       "topic": "korean-life",
@@ -30,6 +31,7 @@
     {
       "kind": "core",
       "id": "2026-08-19-now-23-v1",
+      "conceptId": "digital-incognito-network-visibility",
       "dateKey": "2026-08-19",
       "lens": "now",
       "topic": "digital",
@@ -53,6 +55,7 @@
     {
       "kind": "core",
       "id": "2026-08-19-life-23-v1",
+      "conceptId": "safety-earthquake-drop-cover-hold",
       "dateKey": "2026-08-19",
       "lens": "life",
       "topic": "safety",
@@ -76,6 +79,7 @@
     {
       "kind": "core",
       "id": "2026-08-11-then-15-v1",
+      "conceptId": "nostalgia-ssireum-satba-wrestling",
       "dateKey": "2026-08-11",
       "lens": "then",
       "topic": "nostalgia",
@@ -99,6 +103,7 @@
     {
       "kind": "core",
       "id": "2026-08-04-now-8-v1",
+      "conceptId": "digital-incognito-downloads-bookmarks-persist",
       "dateKey": "2026-08-04",
       "lens": "now",
       "topic": "digital",
@@ -122,6 +127,7 @@
     {
       "kind": "core",
       "id": "2026-08-04-life-8-v1",
+      "conceptId": "safety-earthquake-outdoor-open-area",
       "dateKey": "2026-08-04",
       "lens": "life",
       "topic": "safety",
@@ -145,6 +151,7 @@
     {
       "kind": "core",
       "id": "2026-08-25-then-29-v1",
+      "conceptId": "korean-life-nongak-music-dance-performance",
       "dateKey": "2026-08-25",
       "lens": "then",
       "topic": "korean-life",
@@ -168,6 +175,7 @@
     {
       "kind": "core",
       "id": "2026-08-09-now-13-v1",
+      "conceptId": "digital-browser-cookie-site-memory",
       "dateKey": "2026-08-09",
       "lens": "now",
       "topic": "digital",
@@ -191,6 +199,7 @@
     {
       "kind": "core",
       "id": "2026-08-12-life-16-v1",
+      "conceptId": "safety-tsunami-inland-high-ground",
       "dateKey": "2026-08-12",
       "lens": "life",
       "topic": "safety",
@@ -214,6 +223,7 @@
     {
       "kind": "core",
       "id": "2026-07-31-then-4-v1",
+      "conceptId": "nostalgia-talchum-social-satire",
       "dateKey": "2026-07-31",
       "lens": "then",
       "topic": "nostalgia",
@@ -237,6 +247,7 @@
     {
       "kind": "core",
       "id": "2026-08-24-now-28-v1",
+      "conceptId": "digital-cookie-deletion-sign-out-reset",
       "dateKey": "2026-08-24",
       "lens": "now",
       "topic": "digital",
@@ -260,6 +271,7 @@
     {
       "kind": "core",
       "id": "2026-08-23-life-27-v1",
+      "conceptId": "safety-flood-road-barrier-turn-around",
       "dateKey": "2026-08-23",
       "lens": "life",
       "topic": "safety",
@@ -283,6 +295,7 @@
     {
       "kind": "core",
       "id": "2026-08-03-then-7-v1",
+      "conceptId": "language-arirang-regional-variation",
       "dateKey": "2026-08-03",
       "lens": "then",
       "topic": "language",
@@ -306,6 +319,7 @@
     {
       "kind": "core",
       "id": "2026-08-22-now-26-v1",
+      "conceptId": "digital-password-manager-unique-passwords",
       "dateKey": "2026-08-22",
       "lens": "now",
       "topic": "digital",
@@ -329,6 +343,7 @@
     {
       "kind": "core",
       "id": "2026-08-08-life-12-v1",
+      "conceptId": "safety-flood-avoid-bridges-seek-high-ground",
       "dateKey": "2026-08-08",
       "lens": "life",
       "topic": "safety",
@@ -352,6 +367,7 @@
     {
       "kind": "core",
       "id": "2026-08-02-then-6-v1",
+      "conceptId": "nostalgia-pansori-singer-drummer-storytelling",
       "dateKey": "2026-08-02",
       "lens": "then",
       "topic": "nostalgia",
@@ -375,6 +391,7 @@
     {
       "kind": "core",
       "id": "2026-08-07-now-11-v1",
+      "conceptId": "digital-breached-password-unique-replacement",
       "dateKey": "2026-08-07",
       "lens": "now",
       "topic": "digital",
@@ -398,6 +415,7 @@
     {
       "kind": "core",
       "id": "2026-08-05-life-9-v1",
+      "conceptId": "safety-lightning-hardtop-vehicle-shelter",
       "dateKey": "2026-08-05",
       "lens": "life",
       "topic": "safety",
@@ -421,6 +439,7 @@
     {
       "kind": "core",
       "id": "2026-08-23-then-27-v1",
+      "conceptId": "korean-life-jongmyo-royal-ancestral-rite-music",
       "dateKey": "2026-08-23",
       "lens": "then",
       "topic": "korean-life",
@@ -444,6 +463,7 @@
     {
       "kind": "core",
       "id": "2026-08-20-now-24-v1",
+      "conceptId": "digital-two-step-verification-second-factor",
       "dateKey": "2026-08-20",
       "lens": "now",
       "topic": "digital",
@@ -467,6 +487,7 @@
     {
       "kind": "core",
       "id": "2026-08-20-life-24-v1",
+      "conceptId": "safety-lightning-avoid-water-plugged-devices",
       "dateKey": "2026-08-20",
       "lens": "life",
       "topic": "safety",
@@ -490,6 +511,7 @@
     {
       "kind": "core",
       "id": "2026-07-30-then-3-v1",
+      "conceptId": "korean-life-hansan-mosi-summer-fabric",
       "dateKey": "2026-07-30",
       "lens": "then",
       "topic": "korean-life",
@@ -513,6 +535,7 @@
     {
       "kind": "core",
       "id": "2026-08-11-now-15-v1",
+      "conceptId": "digital-multifactor-password-security-key",
       "dateKey": "2026-08-11",
       "lens": "now",
       "topic": "digital",
@@ -536,6 +559,7 @@
     {
       "kind": "core",
       "id": "2026-07-29-life-2-v1",
+      "conceptId": "safety-extreme-heat-cooling-center-hydration",
       "dateKey": "2026-07-29",
       "lens": "life",
       "topic": "safety",
@@ -559,6 +583,7 @@
     {
       "kind": "core",
       "id": "2026-08-20-then-24-v1",
+      "conceptId": "nostalgia-ganggangsullae-circle-song-dance",
       "dateKey": "2026-08-20",
       "lens": "then",
       "topic": "nostalgia",
@@ -582,6 +607,7 @@
     {
       "kind": "core",
       "id": "2026-08-02-now-6-v1",
+      "conceptId": "digital-passkey-device-unlock-approval",
       "dateKey": "2026-08-02",
       "lens": "now",
       "topic": "digital",
@@ -605,6 +631,7 @@
     {
       "kind": "core",
       "id": "2026-08-13-life-17-v1",
+      "conceptId": "safety-hot-car-never-leave-occupants",
       "dateKey": "2026-08-13",
       "lens": "life",
       "topic": "safety",
@@ -628,6 +655,7 @@
     {
       "kind": "core",
       "id": "2026-08-15-then-19-v1",
+      "conceptId": "nostalgia-namsadang-six-performance-acts",
       "dateKey": "2026-08-15",
       "lens": "then",
       "topic": "nostalgia",
@@ -651,6 +679,7 @@
     {
       "kind": "core",
       "id": "2026-08-17-now-21-v1",
+      "conceptId": "digital-passkey-domain-binding-phishing-resistance",
       "dateKey": "2026-08-17",
       "lens": "now",
       "topic": "digital",
@@ -674,6 +703,7 @@
     {
       "kind": "core",
       "id": "2026-08-14-life-18-v1",
+      "conceptId": "nature-general-wildfire-official-order-evacuation",
       "dateKey": "2026-08-14",
       "lens": "life",
       "topic": "nature-general",
@@ -697,6 +727,7 @@
     {
       "kind": "core",
       "id": "2026-08-07-then-11-v1",
+      "conceptId": "language-gagok-orchestral-song-cycle",
       "dateKey": "2026-08-07",
       "lens": "then",
       "topic": "language",
@@ -720,6 +751,7 @@
     {
       "kind": "core",
       "id": "2026-08-15-now-19-v1",
+      "conceptId": "digital-software-update-vulnerability-patch",
       "dateKey": "2026-08-15",
       "lens": "now",
       "topic": "digital",
@@ -743,6 +775,7 @@
     {
       "kind": "core",
       "id": "2026-08-11-life-15-v1",
+      "conceptId": "safety-power-outage-keep-refrigerator-closed",
       "dateKey": "2026-08-11",
       "lens": "life",
       "topic": "safety",
@@ -766,6 +799,7 @@
     {
       "kind": "core",
       "id": "2026-08-04-then-8-v1",
+      "conceptId": "nostalgia-taekkyeon-fluid-martial-movements",
       "dateKey": "2026-08-04",
       "lens": "then",
       "topic": "nostalgia",
@@ -789,6 +823,7 @@
     {
       "kind": "core",
       "id": "2026-08-25-now-29-v1",
+      "conceptId": "digital-phishing-use-official-app-address",
       "dateKey": "2026-08-25",
       "lens": "now",
       "topic": "digital",
@@ -812,6 +847,7 @@
     {
       "kind": "core",
       "id": "2026-08-26-life-30-v1",
+      "conceptId": "safety-power-outage-unplug-electronics",
       "dateKey": "2026-08-26",
       "lens": "life",
       "topic": "safety",
@@ -835,6 +871,7 @@
     {
       "kind": "core",
       "id": "2026-08-05-then-9-v1",
+      "conceptId": "nostalgia-jultagi-acrobatics-music-humor",
       "dateKey": "2026-08-05",
       "lens": "then",
       "topic": "nostalgia",
@@ -858,6 +895,7 @@
     {
       "kind": "core",
       "id": "2026-08-10-now-14-v1",
+      "conceptId": "digital-phishing-unexpected-attachment-urgency",
       "dateKey": "2026-08-10",
       "lens": "now",
       "topic": "digital",
@@ -881,6 +919,7 @@
     {
       "kind": "core",
       "id": "2026-08-10-life-14-v1",
+      "conceptId": "safety-fire-blocked-door-second-exit",
       "dateKey": "2026-08-10",
       "lens": "life",
       "topic": "safety",
@@ -904,6 +943,7 @@
     {
       "kind": "core",
       "id": "2026-08-06-then-10-v1",
+      "conceptId": "korean-life-jeju-haenyeo-diving-knowledge",
       "dateKey": "2026-08-06",
       "lens": "then",
       "topic": "korean-life",
@@ -927,6 +967,7 @@
     {
       "kind": "core",
       "id": "2026-08-21-now-25-v1",
+      "conceptId": "digital-spam-text-block-report-verify",
       "dateKey": "2026-08-21",
       "lens": "now",
       "topic": "digital",
@@ -950,6 +991,7 @@
     {
       "kind": "core",
       "id": "2026-08-25-life-29-v1",
+      "conceptId": "safety-fire-crawl-low-stay-out",
       "dateKey": "2026-08-25",
       "lens": "life",
       "topic": "safety",
@@ -973,6 +1015,7 @@
     {
       "kind": "core",
       "id": "2026-08-13-then-17-v1",
+      "conceptId": "korean-life-yeondeunghoe-wisdom-enlightenment",
       "dateKey": "2026-08-13",
       "lens": "then",
       "topic": "korean-life",
@@ -996,6 +1039,7 @@
     {
       "kind": "core",
       "id": "2026-08-14-now-18-v1",
+      "conceptId": "digital-qr-link-check-official-domain",
       "dateKey": "2026-08-14",
       "lens": "now",
       "topic": "digital",
@@ -1019,6 +1063,7 @@
     {
       "kind": "core",
       "id": "2026-07-31-life-4-v1",
+      "conceptId": "safety-smoke-alarm-bedroom-every-floor-placement",
       "dateKey": "2026-07-31",
       "lens": "life",
       "topic": "safety",
@@ -1042,6 +1087,7 @@
     {
       "kind": "core",
       "id": "2026-08-21-then-25-v1",
+      "conceptId": "korean-life-tugging-ritual-cooperation-fortune",
       "dateKey": "2026-08-21",
       "lens": "then",
       "topic": "korean-life",
@@ -1065,6 +1111,7 @@
     {
       "kind": "core",
       "id": "2026-08-08-now-12-v1",
+      "conceptId": "digital-caller-id-spoofing-risk",
       "dateKey": "2026-08-08",
       "lens": "now",
       "topic": "digital",
@@ -1088,6 +1135,7 @@
     {
       "kind": "core",
       "id": "2026-08-15-life-19-v1",
+      "conceptId": "safety-smoke-alarm-monthly-test-ten-year-replacement",
       "dateKey": "2026-08-15",
       "lens": "life",
       "topic": "safety",
@@ -1111,6 +1159,7 @@
     {
       "kind": "core",
       "id": "2026-08-08-then-12-v1",
+      "conceptId": "korean-life-gangneung-danoje-faith-games-festival",
       "dateKey": "2026-08-08",
       "lens": "then",
       "topic": "korean-life",
@@ -1134,6 +1183,7 @@
     {
       "kind": "core",
       "id": "2026-07-31-now-4-v1",
+      "conceptId": "digital-https-encrypts-browser-site-traffic",
       "dateKey": "2026-07-31",
       "lens": "now",
       "topic": "digital",
@@ -1157,6 +1207,7 @@
     {
       "kind": "core",
       "id": "2026-08-01-life-5-v1",
+      "conceptId": "safety-grease-fire-cover-pan-turn-off-heat",
       "dateKey": "2026-08-01",
       "lens": "life",
       "topic": "safety",
@@ -1180,6 +1231,7 @@
     {
       "kind": "core",
       "id": "2026-07-28-then-1-v1",
+      "conceptId": "korean-life-daemokjang-wood-joinery-leadership",
       "dateKey": "2026-07-28",
       "lens": "then",
       "topic": "korean-life",
@@ -1203,6 +1255,7 @@
     {
       "kind": "core",
       "id": "2026-08-16-now-20-v1",
+      "conceptId": "digital-android-backup-new-device-restore",
       "dateKey": "2026-08-16",
       "lens": "now",
       "topic": "digital",
@@ -1226,6 +1279,7 @@
     {
       "kind": "core",
       "id": "2026-08-03-life-7-v1",
+      "conceptId": "safety-cooking-turn-off-burner-before-leaving",
       "dateKey": "2026-08-03",
       "lens": "life",
       "topic": "safety",
@@ -1249,6 +1303,7 @@
     {
       "kind": "core",
       "id": "2026-08-01-then-5-v1",
+      "conceptId": "nostalgia-cheoyongmu-five-colors-tranquility",
       "dateKey": "2026-08-01",
       "lens": "then",
       "topic": "nostalgia",
@@ -1272,6 +1327,7 @@
     {
       "kind": "core",
       "id": "2026-08-01-now-5-v1",
+      "conceptId": "digital-android-backup-device-lock-credential",
       "dateKey": "2026-08-01",
       "lens": "now",
       "topic": "digital",
@@ -1295,6 +1351,7 @@
     {
       "kind": "core",
       "id": "2026-08-02-life-6-v1",
+      "conceptId": "safety-refrigerator-direct-wall-outlet",
       "dateKey": "2026-08-02",
       "lens": "life",
       "topic": "safety",
@@ -1318,6 +1375,7 @@
     {
       "kind": "core",
       "id": "2026-08-16-then-20-v1",
+      "conceptId": "korean-life-yeongsanjae-buddhist-sermon-ritual",
       "dateKey": "2026-08-16",
       "lens": "then",
       "topic": "korean-life",
@@ -1341,6 +1399,7 @@
     {
       "kind": "core",
       "id": "2026-08-26-now-30-v1",
+      "conceptId": "digital-bluetooth-device-pairing",
       "dateKey": "2026-08-26",
       "lens": "now",
       "topic": "digital",
@@ -1364,6 +1423,7 @@
     {
       "kind": "core",
       "id": "2026-08-17-life-21-v1",
+      "conceptId": "safety-electrical-cord-replace-and-uncover",
       "dateKey": "2026-08-17",
       "lens": "life",
       "topic": "safety",
@@ -1387,6 +1447,7 @@
     {
       "kind": "core",
       "id": "2026-08-17-then-21-v1",
+      "conceptId": "korean-life-jang-fermentation-storage-tradition",
       "dateKey": "2026-08-17",
       "lens": "then",
       "topic": "korean-life",
@@ -1410,6 +1471,7 @@
     {
       "kind": "core",
       "id": "2026-07-29-now-2-v1",
+      "conceptId": "digital-bluetooth-compare-matching-pin",
       "dateKey": "2026-07-29",
       "lens": "now",
       "topic": "digital",
@@ -1433,6 +1495,7 @@
     {
       "kind": "core",
       "id": "2026-08-06-life-10-v1",
+      "conceptId": "safety-household-chemicals-original-container",
       "dateKey": "2026-08-06",
       "lens": "life",
       "topic": "safety",
@@ -1456,6 +1519,7 @@
     {
       "kind": "core",
       "id": "2026-07-29-then-2-v1",
+      "conceptId": "language-jikji-oldest-surviving-metal-type-book",
       "dateKey": "2026-07-29",
       "lens": "then",
       "topic": "language",
@@ -1479,6 +1543,7 @@
     {
       "kind": "core",
       "id": "2026-08-03-now-7-v1",
+      "conceptId": "digital-android-approximate-location-permission",
       "dateKey": "2026-08-03",
       "lens": "now",
       "topic": "digital",
@@ -1502,6 +1567,7 @@
     {
       "kind": "core",
       "id": "2026-08-18-life-22-v1",
+      "conceptId": "safety-generator-six-meter-outdoor-distance",
       "dateKey": "2026-08-18",
       "lens": "life",
       "topic": "safety",
@@ -1525,6 +1591,7 @@
     {
       "kind": "core",
       "id": "2026-08-26-then-30-v1",
+      "conceptId": "korean-life-haeinsa-tripitaka-koreana-depository",
       "dateKey": "2026-08-26",
       "lens": "then",
       "topic": "korean-life",
@@ -1548,6 +1615,7 @@
     {
       "kind": "core",
       "id": "2026-08-18-now-22-v1",
+      "conceptId": "digital-android-location-sources-gps-network-sensors",
       "dateKey": "2026-08-18",
       "lens": "now",
       "topic": "digital",
@@ -1571,6 +1639,7 @@
     {
       "kind": "core",
       "id": "2026-08-21-life-25-v1",
+      "conceptId": "safety-carbon-monoxide-alarm-every-floor-sleeping-area",
       "dateKey": "2026-08-21",
       "lens": "life",
       "topic": "safety",
@@ -1594,6 +1663,7 @@
     {
       "kind": "core",
       "id": "2026-08-24-then-28-v1",
+      "conceptId": "nostalgia-bulguksa-seokguram-joint-listing",
       "dateKey": "2026-08-24",
       "lens": "then",
       "topic": "nostalgia",
@@ -1617,6 +1687,7 @@
     {
       "kind": "core",
       "id": "2026-08-23-now-27-v1",
+      "conceptId": "digital-android-privacy-dashboard-permission-history",
       "dateKey": "2026-08-23",
       "lens": "now",
       "topic": "digital",
@@ -1640,6 +1711,7 @@
     {
       "kind": "core",
       "id": "2026-08-24-life-28-v1",
+      "conceptId": "safety-food-safe-thawing-methods",
       "dateKey": "2026-08-24",
       "lens": "life",
       "topic": "safety",
@@ -1663,6 +1735,7 @@
     {
       "kind": "core",
       "id": "2026-08-10-then-14-v1",
+      "conceptId": "korean-life-changdeokgung-terrain-adapted-layout",
       "dateKey": "2026-08-10",
       "lens": "then",
       "topic": "korean-life",
@@ -1686,6 +1759,7 @@
     {
       "kind": "core",
       "id": "2026-07-30-now-3-v1",
+      "conceptId": "digital-unknown-app-source-permission-review",
       "dateKey": "2026-07-30",
       "lens": "now",
       "topic": "digital",
@@ -1709,6 +1783,7 @@
     {
       "kind": "core",
       "id": "2026-08-09-life-13-v1",
+      "conceptId": "safety-microwave-thaw-cook-immediately",
       "dateKey": "2026-08-09",
       "lens": "life",
       "topic": "safety",
@@ -1732,6 +1807,7 @@
     {
       "kind": "core",
       "id": "2026-08-12-then-16-v1",
+      "conceptId": "korean-life-suwon-hwaseong-city-fortress",
       "dateKey": "2026-08-12",
       "lens": "then",
       "topic": "korean-life",
@@ -1755,6 +1831,7 @@
     {
       "kind": "core",
       "id": "2026-08-13-now-17-v1",
+      "conceptId": "digital-iphone-microphone-use-indicator",
       "dateKey": "2026-08-13",
       "lens": "now",
       "topic": "digital",
@@ -1778,6 +1855,7 @@
     {
       "kind": "core",
       "id": "2026-08-16-life-20-v1",
+      "conceptId": "safety-raw-meat-tools-hot-soapy-water-cleaning",
       "dateKey": "2026-08-16",
       "lens": "life",
       "topic": "safety",
@@ -1801,6 +1879,7 @@
     {
       "kind": "core",
       "id": "2026-08-22-then-26-v1",
+      "conceptId": "korean-life-seowon-learning-ancestor-rites",
       "dateKey": "2026-08-22",
       "lens": "then",
       "topic": "korean-life",
@@ -1824,6 +1903,7 @@
     {
       "kind": "core",
       "id": "2026-08-06-now-10-v1",
+      "conceptId": "digital-ios-app-tracking-permission",
       "dateKey": "2026-08-06",
       "lens": "now",
       "topic": "digital",
@@ -1847,6 +1927,7 @@
     {
       "kind": "core",
       "id": "2026-07-30-life-3-v1",
+      "conceptId": "safety-swollen-can-discard-without-tasting",
       "dateKey": "2026-07-30",
       "lens": "life",
       "topic": "safety",
@@ -1870,6 +1951,7 @@
     {
       "kind": "core",
       "id": "2026-08-09-then-13-v1",
+      "conceptId": "nostalgia-korean-dolmen-bronze-age-burial",
       "dateKey": "2026-08-09",
       "lens": "then",
       "topic": "nostalgia",
@@ -1893,6 +1975,7 @@
     {
       "kind": "core",
       "id": "2026-07-28-now-1-v1",
+      "conceptId": "digital-ios-display-zoom-controls-icons",
       "dateKey": "2026-07-28",
       "lens": "now",
       "topic": "digital",
@@ -1916,6 +1999,7 @@
     {
       "kind": "core",
       "id": "2026-08-22-life-26-v1",
+      "conceptId": "safety-leftovers-refrigerate-three-four-days",
       "dateKey": "2026-08-22",
       "lens": "life",
       "topic": "safety",
@@ -1939,6 +2023,7 @@
     {
       "kind": "core",
       "id": "2026-08-18-then-22-v1",
+      "conceptId": "korean-life-namhansanseong-mountain-terrain-defense",
       "dateKey": "2026-08-18",
       "lens": "then",
       "topic": "korean-life",
@@ -1962,6 +2047,7 @@
     {
       "kind": "core",
       "id": "2026-08-12-now-16-v1",
+      "conceptId": "digital-airplane-mode-wifi-bluetooth-exception",
       "dateKey": "2026-08-12",
       "lens": "now",
       "topic": "digital",
@@ -1985,6 +2071,7 @@
     {
       "kind": "core",
       "id": "2026-08-07-life-11-v1",
+      "conceptId": "safety-leftovers-reheat-to-74-celsius",
       "dateKey": "2026-08-07",
       "lens": "life",
       "topic": "safety",
@@ -2008,6 +2095,7 @@
     {
       "kind": "core",
       "id": "2026-08-19-then-23-v1",
+      "conceptId": "korean-life-jongmyo-royal-legitimacy-symbol",
       "dateKey": "2026-08-19",
       "lens": "then",
       "topic": "korean-life",
@@ -2031,6 +2119,7 @@
     {
       "kind": "core",
       "id": "2026-08-05-now-9-v1",
+      "conceptId": "digital-ios-disable-wifi-in-settings",
       "dateKey": "2026-08-05",
       "lens": "now",
       "topic": "digital",
@@ -2054,16 +2143,13 @@
     {
       "kind": "core",
       "id": "2026-07-28-life-1-v1",
+      "conceptId": "safety-refrigerator-four-celsius-or-below",
       "dateKey": "2026-07-28",
       "lens": "life",
       "topic": "safety",
       "internalDifficulty": "stretch",
       "prompt": "냉장실 온도계를 확인해 식품 보관 온도를 맞추려 합니다. 미국 농무부 지침상 어느 값 아래로 유지해야 할까요?",
-      "choices": [
-        "섭씨 약 4도 이하",
-        "섭씨 약 14도 이하",
-        "섭씨 약 24도 이하"
-      ],
+      "choices": ["섭씨 약 4도 이하", "섭씨 약 14도 이하", "섭씨 약 24도 이하"],
       "answerIndex": 0,
       "explanation": "냉장실은 화씨 40도 이하, 섭씨로 약 4.4도 이하를 유지하는 것이 기준입니다. 문을 오래 열지 말고 온도계를 두어 실제 보관 온도를 확인합니다.",
       "source": {

@@ -1,0 +1,2258 @@
+{
+  "id": "bonus-language-001",
+  "kind": "bonus",
+  "contentVersion": "2026.08.180d",
+  "reviewStatus": "reviewed",
+  "questions": [
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s00-gentle-gumse",
+      "conceptId": "language-spelling-gumse-contracted-form",
+      "variant": "immediate-time-form",
+      "setIndex": 0,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "gentle",
+      "prompt": "보고서를 보낸 뒤 바로 답장이 왔다는 문장에 들어갈 바른 표기는 무엇일까요?",
+      "choices": [
+        "금세",
+        "금새",
+        "금시"
+      ],
+      "answerIndex": 0,
+      "explanation": "‘금세’는 ‘금시에’가 줄어든 말로, 지금 바로라는 뜻입니다. ‘금새’로 적지 않습니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「금세」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=37206"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s00-steady-myeochil",
+      "conceptId": "language-spelling-myeochil-single-word",
+      "variant": "calendar-day-form",
+      "setIndex": 0,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "steady",
+      "prompt": "휴가가 며칠 남았는지 묻는 문장을 바르게 완성한 것은 어느 것일까요?",
+      "choices": [
+        "휴가가 몇일 남았나요?",
+        "휴가가 며칠 남았나요?",
+        "휴가가 몇칠 남았나요?"
+      ],
+      "answerIndex": 1,
+      "explanation": "날의 수를 나타내는 말은 한 단어인 ‘며칠’로 적습니다. ‘몇일’이나 ‘몇 일’은 이 뜻의 표준 표기가 아닙니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「며칠」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=36676"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s00-stretch-wenil",
+      "conceptId": "language-spelling-wenil-unexpected-event",
+      "variant": "unexpected-event-form",
+      "setIndex": 0,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "평소 일찍 일어나지 않던 친구가 새벽에 먼저 연락했습니다. 놀라움을 나타낼 때 알맞은 말은?",
+      "choices": [
+        "왠일이야?",
+        "왠 일이지?",
+        "웬일이야?"
+      ],
+      "answerIndex": 2,
+      "explanation": "어찌 된 일을 뜻하는 말은 ‘웬일’입니다. ‘왠’은 ‘왜인지’가 줄어든 ‘왠지’에서 쓰입니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「웬일」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=69528"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s01-gentle-yeokhal",
+      "conceptId": "language-spelling-yeokhal-standard-form",
+      "variant": "duty-role-form",
+      "setIndex": 1,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "gentle",
+      "prompt": "‘역할’과 ‘역활’의 표준 표기를 설명한 말로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "‘역활’은 본말이고 ‘역할’은 준말이다.",
+        "‘역할’만 표준 표기이고 ‘역활’은 잘못이다.",
+        "두 표기는 맡은 일의 종류에 따라 나누어 쓴다."
+      ],
+      "answerIndex": 1,
+      "explanation": "맡은 소임을 뜻하는 표준어는 ‘역할’입니다. ‘역활’로 적지 않습니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「역할」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=62396"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s01-steady-eoieopda",
+      "conceptId": "language-spelling-eoieopda-standard-form",
+      "variant": "absurdity-form",
+      "setIndex": 1,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "steady",
+      "prompt": "너무 황당해 말이 나오지 않는 상황을 나타내는 바른 표기는 어느 것일까요?",
+      "choices": [
+        "어의없다",
+        "어이 업다",
+        "어이없다"
+      ],
+      "answerIndex": 2,
+      "explanation": "뜻밖이어서 기가 막히다는 뜻의 말은 ‘어이없다’입니다. ‘어의없다’는 표준 표기가 아닙니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「어이없다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=67108"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s01-stretch-huihanhada",
+      "conceptId": "language-spelling-huihanhada-standard-form",
+      "variant": "rarity-form",
+      "setIndex": 1,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "좀처럼 보기 어려울 만큼 신기한 일을 묘사할 때 쓸 표준어는 무엇일까요?",
+      "choices": [
+        "희한하다",
+        "희안하다",
+        "히한하다"
+      ],
+      "answerIndex": 0,
+      "explanation": "매우 드물거나 신기하다는 뜻의 표준어는 ‘희한하다’입니다. 둘째 음절을 ‘안’으로 적지 않습니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「희한하다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=90679"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s02-gentle-seolgeoji",
+      "conceptId": "language-spelling-seolgeoji-standard-form",
+      "variant": "dishwashing-form",
+      "setIndex": 2,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "gentle",
+      "prompt": "식사를 마친 뒤 그릇을 씻는 일을 문장에 바르게 적은 것은 무엇일까요?",
+      "choices": [
+        "저녁 설겆이를 마쳤다.",
+        "저녁 설거치를 마쳤다.",
+        "저녁 설거지를 마쳤다."
+      ],
+      "answerIndex": 2,
+      "explanation": "먹고 난 그릇을 씻어 정리하는 일은 ‘설거지’로 적습니다. ‘설겆이’는 표준어가 아닙니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「설거지」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=62246"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s02-steady-oraenman",
+      "conceptId": "language-spelling-oraenman-contracted-form",
+      "variant": "long-interval-form",
+      "setIndex": 2,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "steady",
+      "prompt": "여러 해 만에 친구를 만났을 때 쓸 인사의 표기가 바른 것은 어느 것일까요?",
+      "choices": [
+        "오랜만이야.",
+        "오랫만이야.",
+        "오래만이야."
+      ],
+      "answerIndex": 0,
+      "explanation": "‘오랜만’은 ‘오래간만’의 준말입니다. 사이에 사이시옷을 넣은 ‘오랫만’으로 적지 않습니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「오랜만」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=68090"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s02-stretch-kkaekkeusi",
+      "conceptId": "language-spelling-kkaekkeusi-adverb",
+      "variant": "adverb-suffix-form",
+      "setIndex": 2,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "방을 말끔하게 치웠다는 뜻으로 문장을 완성할 때 바른 말은 무엇일까요?",
+      "choices": [
+        "깨끗히 치웠다.",
+        "깨끗이 치웠다.",
+        "깨끄시 치웠다."
+      ],
+      "answerIndex": 1,
+      "explanation": "형용사 ‘깨끗하다’의 부사는 ‘깨끗이’입니다. 이 경우 부사형을 ‘-히’로 적지 않습니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「깨끗이」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=61076"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s03-gentle-gomgomi",
+      "conceptId": "language-spelling-gomgomi-adverb",
+      "variant": "deliberation-adverb-form",
+      "setIndex": 3,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "gentle",
+      "prompt": "서두르지 않고 여러 번 깊이 생각했다는 뜻에 알맞은 표기는 무엇일까요?",
+      "choices": [
+        "곰곰이 생각했다.",
+        "곰곰히 생각했다.",
+        "곰곰하게 생각했다."
+      ],
+      "answerIndex": 0,
+      "explanation": "여러모로 깊이 생각하는 모양을 나타내는 부사는 ‘곰곰이’입니다. ‘곰곰히’로 적지 않습니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「곰곰이」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=27887"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s03-steady-iriri",
+      "conceptId": "language-spelling-iriri-adverb",
+      "variant": "one-by-one-adverb-form",
+      "setIndex": 3,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "steady",
+      "prompt": "담당자가 절차를 하나씩 자세히 설명했다는 문장에 알맞은 표기는?",
+      "choices": [
+        "일일히 설명했다.",
+        "일일이 설명했다.",
+        "일이리 설명했다."
+      ],
+      "answerIndex": 1,
+      "explanation": "하나씩 하나씩 빠짐없이 한다는 뜻의 부사는 ‘일일이’입니다. 끝을 ‘-히’로 적지 않습니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「일일이」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=24564"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s03-stretch-tongjjaero",
+      "conceptId": "language-spelling-tongjjaero-whole-object",
+      "variant": "whole-object-adverb-form",
+      "setIndex": 3,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "상자 속 물건을 나누거나 덜어 내지 않고 그대로 옮겼다는 뜻에 알맞은 표기는?",
+      "choices": [
+        "통채로",
+        "통체로",
+        "통째로"
+      ],
+      "answerIndex": 2,
+      "explanation": "나누거나 덜지 않은 온전한 덩어리 그대로라는 뜻의 부사는 ‘통째로’입니다. ‘통채로’나 ‘통체로’로 적지 않습니다.",
+      "source": {
+        "name": "국립국어원 온라인가나다 「통째/통째로」",
+        "url": "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=216&pageIndex=1&qna_seq=306498"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s04-gentle-matchida",
+      "conceptId": "language-spelling-matchida-correct-answer",
+      "variant": "quiz-answer-verb",
+      "setIndex": 4,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "gentle",
+      "prompt": "퀴즈에서 정답을 알아내어 맞게 답했다는 뜻의 문장은 어느 것일까요?",
+      "choices": [
+        "정답을 맞췄다.",
+        "정답을 맞혔다.",
+        "정답을 맞쳤다."
+      ],
+      "answerIndex": 1,
+      "explanation": "문제의 답을 알아내어 맞게 답하는 것은 ‘맞히다’입니다. ‘맞추다’는 서로 맞게 대거나 비교하는 뜻으로 구별해 씁니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「맞히다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=57236"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s04-steady-garikida",
+      "conceptId": "language-spelling-garikida-pointing",
+      "variant": "direction-pointing-verb",
+      "setIndex": 4,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "steady",
+      "prompt": "안내원이 손가락으로 출구 방향을 보였습니다. 이 행동을 정확히 나타낸 문장은?",
+      "choices": [
+        "출구를 가르쳤다.",
+        "출구를 가리쳤다.",
+        "출구를 가리켰다."
+      ],
+      "answerIndex": 2,
+      "explanation": "손가락 등으로 방향이나 대상을 보이는 것은 ‘가리키다’입니다. 지식이나 기능을 익히게 하는 ‘가르치다’와 구별합니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「가리키다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=17882"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s04-stretch-gyeoljae",
+      "conceptId": "language-spelling-gyeoljae-approval",
+      "variant": "document-approval-form",
+      "setIndex": 4,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "부장이 지출 품의서를 검토해 승인했습니다. 빈칸에 들어갈 말은? ‘부장의 ___를 받았다.’",
+      "choices": [
+        "결재",
+        "결제",
+        "결채"
+      ],
+      "answerIndex": 0,
+      "explanation": "문서나 안건을 검토해 승인하는 일은 ‘결재’입니다. 돈을 주고받아 거래를 끝내는 ‘결제’와 구별합니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「결재」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=32127"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s05-gentle-dwaeyo",
+      "conceptId": "language-spelling-dwaeyo-contraction",
+      "variant": "doeeoyo-contraction",
+      "setIndex": 5,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "gentle",
+      "prompt": "‘되어요’를 자연스럽게 줄여 쓴 문장으로 바른 것은 어느 것일까요?",
+      "choices": [
+        "이제 가도 되요.",
+        "이제 가도 됬요.",
+        "이제 가도 돼요."
+      ],
+      "answerIndex": 2,
+      "explanation": "‘돼요’는 ‘되어요’가 줄어든 형태입니다. ‘되요’로 적지 않습니다.",
+      "source": {
+        "name": "국립국어원 온라인가나다 「되다와 돼다의」 답변",
+        "url": "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=216&pageIndex=1&qna_seq=306151"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s05-steady-bwaeyo",
+      "conceptId": "language-spelling-bwaeyo-contraction",
+      "variant": "boeeoyo-contraction",
+      "setIndex": 5,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "steady",
+      "prompt": "윗사람을 내일 만나겠다는 뜻으로 높여 말할 때 바른 문장은 무엇일까요?",
+      "choices": [
+        "내일 봬요.",
+        "내일 뵈요.",
+        "내일 뵙어요."
+      ],
+      "answerIndex": 0,
+      "explanation": "‘봬요’는 ‘뵈어요’가 줄어든 말입니다. 종결 표현으로 ‘뵈요’라고 적지 않습니다.",
+      "source": {
+        "name": "국립국어원 온라인가나다 「되다와 돼다의」 답변",
+        "url": "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=216&pageIndex=1&qna_seq=306151"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s05-stretch-natda",
+      "conceptId": "language-spelling-natda-recovery",
+      "variant": "recovery-verb-form",
+      "setIndex": 5,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "감기가 전보다 좋아졌다는 뜻으로 빈칸을 바르게 채운 것은? ‘약을 먹고 감기가 ___.’",
+      "choices": [
+        "낳았다",
+        "나았다",
+        "낫았다"
+      ],
+      "answerIndex": 1,
+      "explanation": "병이나 상처가 좋아지는 동사 ‘낫다’는 과거형으로 ‘나았다’가 됩니다. 아이를 ‘낳았다’, 높이가 ‘낮았다’와 뜻이 다릅니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「낫다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=62354"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s06-gentle-hal-su-itda",
+      "conceptId": "language-spacing-dependent-noun-su",
+      "variant": "ability-dependent-noun",
+      "setIndex": 6,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "gentle",
+      "prompt": "가능함을 나타내는 의존 명사 ‘수’를 쓴 문장 가운데 띄어쓰기가 바른 것은?",
+      "choices": [
+        "오늘 끝낼 수 있다.",
+        "오늘 마칠수 있다.",
+        "오늘 해낼 수있다."
+      ],
+      "answerIndex": 0,
+      "explanation": "의존 명사 ‘수’는 앞말과 띄어 쓰고, 뒤의 ‘있다’도 별개의 단어이므로 ‘할 수 있다’처럼 씁니다.",
+      "source": {
+        "name": "국립국어원 한국어 어문 규범 「한글 맞춤법」 띄어쓰기",
+        "url": "https://www.korean.go.kr/kornorms/regltn/regltnView.do?regltn_code=0001&regltn_no=182"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s06-steady-ppun-contrast",
+      "conceptId": "language-spacing-ppun-particle-dependent-noun",
+      "variant": "noun-versus-verb-ppun",
+      "setIndex": 6,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "steady",
+      "prompt": "조사와 의존 명사로 쓰인 ‘뿐’의 띄어쓰기를 모두 바르게 한 문장은?",
+      "choices": [
+        "아이 뿐이고 웃을뿐이다.",
+        "학생뿐이고 웃을 뿐이다.",
+        "학생뿐 이고 미소 지을 뿐이다."
+      ],
+      "answerIndex": 1,
+      "explanation": "체언 뒤의 ‘뿐’은 조사라 붙여 쓰고, 관형사형 뒤의 ‘뿐’은 의존 명사라 띄어 씁니다.",
+      "source": {
+        "name": "국립국어원 한국어 어문 규범 「한글 맞춤법」 띄어쓰기",
+        "url": "https://www.korean.go.kr/kornorms/regltn/regltnView.do?regltn_code=0001&regltn_no=182"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s06-stretch-daero-contrast",
+      "conceptId": "language-spacing-daero-particle-dependent-noun",
+      "variant": "noun-versus-verb-daero",
+      "setIndex": 6,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "‘대로’의 품사 차이를 반영해 띄어쓰기를 바르게 한 문장을 고르세요.",
+      "choices": [
+        "규칙 대로 하고 본대로 말했다.",
+        "약속 대로 하고 들은 대로 말했다.",
+        "약속대로 하고 본 대로 말했다."
+      ],
+      "answerIndex": 2,
+      "explanation": "체언 ‘약속’ 뒤의 ‘대로’는 조사라 붙이고, 관형사형 ‘본’ 뒤의 ‘대로’는 의존 명사라 띄어 씁니다.",
+      "source": {
+        "name": "국립국어원 한국어 어문 규범 「한글 맞춤법」 띄어쓰기",
+        "url": "https://www.korean.go.kr/kornorms/regltn/regltnView.do?regltn_code=0001&regltn_no=182"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s07-gentle-mankeum-particle",
+      "conceptId": "language-spacing-mankeum-particle",
+      "variant": "comparison-particle-mankeum",
+      "setIndex": 7,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "gentle",
+      "prompt": "친구와 같은 정도로 잘했다는 뜻을 바르게 띄어 쓴 문장은 어느 것일까요?",
+      "choices": [
+        "친구 만큼 열심히 했다.",
+        "친구만큼 잘했다.",
+        "동료 만큼이나 잘했다."
+      ],
+      "answerIndex": 1,
+      "explanation": "체언 뒤에서 비교의 뜻을 나타내는 조사 ‘만큼’은 앞말에 붙여 ‘친구만큼’으로 씁니다.",
+      "source": {
+        "name": "국립국어원 한국어 어문 규범 「한글 맞춤법」 띄어쓰기",
+        "url": "https://www.korean.go.kr/kornorms/regltn/regltnView.do?regltn_code=0001&regltn_no=182"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s07-steady-ji-elapsed",
+      "conceptId": "language-spacing-ji-elapsed-time",
+      "variant": "elapsed-time-dependent-noun",
+      "setIndex": 7,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "steady",
+      "prompt": "만난 뒤 흐른 시간을 나타내는 문장의 띄어쓰기가 바른 것은?",
+      "choices": [
+        "그를 만난 지한 달이 흘렀다.",
+        "친구를 만난지 한 달 됐다.",
+        "그를 만난 지 한 달 됐다."
+      ],
+      "answerIndex": 2,
+      "explanation": "시간의 경과를 나타내는 ‘지’는 의존 명사이므로 앞말과 띄어 ‘만난 지’로 씁니다.",
+      "source": {
+        "name": "국립국어원 한국어 어문 규범 「한글 맞춤법」 띄어쓰기",
+        "url": "https://www.korean.go.kr/kornorms/regltn/regltnView.do?regltn_code=0001&regltn_no=182"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s07-stretch-man-particle-dependent-noun",
+      "conceptId": "language-spacing-man-particle-dependent-noun",
+      "variant": "exclusive-versus-elapsed-man",
+      "setIndex": 7,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "조사 ‘만’과 의존 명사 ‘만’을 모두 바르게 띄어 쓴 문장은 어느 것일까요?",
+      "choices": [
+        "나만 남았고 세 번 만에 성공했다.",
+        "우리 만 남았고 네 번 만에 성공했다.",
+        "나만 남았고 두 번만에 합격했다."
+      ],
+      "answerIndex": 0,
+      "explanation": "한정을 나타내는 조사 ‘만’은 ‘나만’처럼 붙이고, 횟수를 거쳤다는 뜻의 의존 명사 ‘만’은 ‘세 번 만에’처럼 띄어 씁니다.",
+      "source": {
+        "name": "국립국어원 한국어 어문 규범 「한글 맞춤법」 띄어쓰기",
+        "url": "https://www.korean.go.kr/kornorms/regltn/regltnView.do?regltn_code=0001&regltn_no=182"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s08-gentle-bakke-particle",
+      "conceptId": "language-spacing-bakke-particle",
+      "variant": "exclusive-particle",
+      "setIndex": 8,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "gentle",
+      "prompt": "남은 것이 물 하나뿐이라는 뜻을 바르게 띄어 쓴 문장은?",
+      "choices": [
+        "물 밖에 남지 않았다.",
+        "음료밖 에 없다.",
+        "물밖에 없다."
+      ],
+      "answerIndex": 2,
+      "explanation": "한정의 뜻을 나타내는 조사 ‘밖에’는 앞말에 붙여 ‘물밖에’로 씁니다.",
+      "source": {
+        "name": "국립국어원 한국어 어문 규범 「한글 맞춤법」 띄어쓰기",
+        "url": "https://www.korean.go.kr/kornorms/regltn/regltnView.do?regltn_code=0001&regltn_no=182"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s08-steady-mot-hada-external",
+      "conceptId": "language-spacing-mot-hada-external-inability",
+      "variant": "external-inability-form",
+      "setIndex": 8,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "steady",
+      "prompt": "폭설 때문에 외부 활동을 하지 못했다는 뜻이 분명한 표기는 어느 것일까요?",
+      "choices": [
+        "폭설로 운동을 못 했다.",
+        "폭설로 출근을 못했다.",
+        "폭설로 외출을못 했다."
+      ],
+      "answerIndex": 0,
+      "explanation": "부정 부사 ‘못’이 외부 사정 때문에 하지 못함을 나타내면 뒤의 동사와 띄어 ‘못 했다’로 씁니다.",
+      "source": {
+        "name": "국립국어원 온라인가나다 「‘못하다’ 띄어쓰기」 답변",
+        "url": "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=216&pageIndex=1&qna_seq=310807"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s08-stretch-an-doeda-prohibition",
+      "conceptId": "language-spacing-an-doeda-prohibition",
+      "variant": "prohibition-negation-form",
+      "setIndex": 8,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "출입을 금지하는 뜻의 문장을 바르게 띄어 쓴 것은 무엇일까요?",
+      "choices": [
+        "이곳에 들어 가면 안 된다.",
+        "여기에 들어가면 안 된다.",
+        "여기에 입장하면 안된다."
+      ],
+      "answerIndex": 1,
+      "explanation": "금지를 나타내는 구성은 부사 ‘안’과 동사 ‘되다’를 띄어 ‘안 된다’로 씁니다.",
+      "source": {
+        "name": "국립국어원 상담 사례 모음 「‘되다’의 ‘안’ 부정 표현의 띄어쓰기」",
+        "url": "https://www.korean.go.kr/front/mcfaq/mcfaqView.do?mcfaq_seq=8427&mn_id=217&pageIndex=4"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s09-gentle-de-purpose",
+      "conceptId": "language-spacing-de-purpose-dependent-noun",
+      "variant": "purpose-dependent-noun",
+      "setIndex": 9,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "gentle",
+      "prompt": "문제를 푸는 일에 걸린 시간을 말할 때 띄어쓰기가 바른 문장은?",
+      "choices": [
+        "문제를 푸는 데 두 시간이 걸렸다.",
+        "문제를 푸는데 세 시간이 걸렸다.",
+        "과제를 푸는 데두 시간이 걸렸다."
+      ],
+      "answerIndex": 0,
+      "explanation": "일이나 경우를 뜻하는 의존 명사 ‘데’는 관형사형 뒤에서 띄어 ‘푸는 데’로 씁니다.",
+      "source": {
+        "name": "국립국어원 한국어 어문 규범 「한글 맞춤법」 띄어쓰기",
+        "url": "https://www.korean.go.kr/kornorms/regltn/regltnView.do?regltn_code=0001&regltn_no=182"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s09-steady-ba-known",
+      "conceptId": "language-spacing-ba-dependent-noun",
+      "variant": "known-fact-dependent-noun",
+      "setIndex": 9,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "steady",
+      "prompt": "알고 있는 사실이 없다는 뜻을 바르게 적은 문장은 어느 것일까요?",
+      "choices": [
+        "그 일은 아는바가 전혀 없다.",
+        "그 일은 아는 바가 없다.",
+        "그 소식은 아는 바 가 없다."
+      ],
+      "answerIndex": 1,
+      "explanation": "앞에서 말한 내용이나 사실을 뜻하는 의존 명사 ‘바’는 ‘아는 바’처럼 띄어 씁니다.",
+      "source": {
+        "name": "국립국어원 한국어 어문 규범 「한글 맞춤법」 띄어쓰기",
+        "url": "https://www.korean.go.kr/kornorms/regltn/regltnView.do?regltn_code=0001&regltn_no=182"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s09-stretch-keonyeong-particle",
+      "conceptId": "language-spacing-keonyeong-particle",
+      "variant": "contrast-particle-form",
+      "setIndex": 9,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "기대했던 것은 전혀 없고 더 기본적인 것도 없다는 문장의 띄어쓰기가 바른 것은?",
+      "choices": [
+        "답장은 커녕 연락도 없었다.",
+        "회신 은커녕 확인도 없었다.",
+        "답장은커녕 확인도 없었다."
+      ],
+      "answerIndex": 2,
+      "explanation": "앞말은 고사하고라는 뜻의 조사 ‘커녕’은 체언 뒤에 붙여 ‘답장은커녕’으로 씁니다.",
+      "source": {
+        "name": "국립국어원 한국어 어문 규범 「한글 맞춤법」 띄어쓰기",
+        "url": "https://www.korean.go.kr/kornorms/regltn/regltnView.do?regltn_code=0001&regltn_no=182"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s10-gentle-market-day",
+      "conceptId": "language-proverb-going-day-market-day",
+      "variant": "unexpected-event-application",
+      "setIndex": 10,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "gentle",
+      "prompt": "휴관일을 모르고 먼 도서관까지 갔더니 그날부터 공사 중이었습니다. 이 상황에 가장 어울리는 속담은?",
+      "choices": [
+        "우물 안 개구리",
+        "가는 날이 장날",
+        "티끌 모아 태산"
+      ],
+      "answerIndex": 1,
+      "explanation": "무언가 하려는 때에 공교롭게 뜻밖의 일이 생긴 상황이므로 ‘가는 날이 장날’이 어울립니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「가는 날이 장날」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=27500"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s10-steady-lamp-dark",
+      "conceptId": "language-proverb-dark-under-lamp",
+      "variant": "nearby-blind-spot-application",
+      "setIndex": 10,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "steady",
+      "prompt": "온 집안을 뒤졌던 열쇠가 늘 앉던 의자 바로 밑에서 나왔습니다. 알맞은 속담은 무엇일까요?",
+      "choices": [
+        "빈 수레가 요란하다",
+        "원숭이도 나무에서 떨어진다",
+        "등잔 밑이 어둡다"
+      ],
+      "answerIndex": 2,
+      "explanation": "가까이에 있는 것을 오히려 알아보지 못한다는 뜻의 ‘등잔 밑이 어둡다’가 맞습니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「등잔 밑이 어둡다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=49114"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s10-stretch-beads-treasure",
+      "conceptId": "language-proverb-beads-must-be-strung",
+      "variant": "useful-organization-application",
+      "setIndex": 10,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "뛰어난 사진·통계·인터뷰를 모두 갖췄지만, 이를 엮어 결과물로 완성하지 않았습니다. 이 상황에 가장 정확한 속담은?",
+      "choices": [
+        "구슬이 서 말이라도 꿰어야 보배",
+        "부뚜막의 소금도 집어넣어야 짜다",
+        "백지장도 맞들면 낫다"
+      ],
+      "answerIndex": 0,
+      "explanation": "좋은 재료를 갖추는 데서 그치지 않고 엮어 쓸모 있는 결과물로 만들어야 한다는 뜻입니다. ‘부뚜막의 소금도 집어넣어야 짜다’는 실행 일반을, ‘백지장도 맞들면 낫다’는 협력을 강조합니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「구슬이 서 말이라도 꿰어야 보배」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=36375"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s11-gentle-whale-fight",
+      "conceptId": "language-proverb-whale-fight-shrimp-hurt",
+      "variant": "powerful-conflict-bystander",
+      "setIndex": 11,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "gentle",
+      "prompt": "두 대기업의 가격 경쟁 때문에 작은 납품업체가 손해를 떠안았습니다. 이 상황을 나타내는 속담은?",
+      "choices": [
+        "믿는 도끼에 발등 찍힌다",
+        "소 잃고 외양간 고친다",
+        "고래 싸움에 새우 등 터진다"
+      ],
+      "answerIndex": 2,
+      "explanation": "강한 이들끼리 싸우는 사이에 약한 이가 피해를 본다는 뜻의 속담입니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「고래 싸움에 새우 등 터진다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=23423"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s11-steady-trusted-axe",
+      "conceptId": "language-proverb-trusted-axe-hurts",
+      "variant": "trusted-person-betrayal",
+      "setIndex": 11,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "steady",
+      "prompt": "가장 믿었던 동료가 약속을 어겨 큰 손실이 났습니다. 심정에 가장 가까운 속담은?",
+      "choices": [
+        "믿는 도끼에 발등 찍힌다",
+        "원숭이도 나무에서 떨어진다",
+        "바늘 도둑이 소도둑 된다"
+      ],
+      "answerIndex": 0,
+      "explanation": "믿고 있던 사람에게 배신이나 해를 당했을 때 ‘믿는 도끼에 발등 찍힌다’고 합니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「믿는 도끼에 발등 찍힌다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=69478"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s11-stretch-empty-cart",
+      "conceptId": "language-proverb-empty-cart-noisy",
+      "variant": "shallow-knowledge-boasting",
+      "setIndex": 11,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "그럴듯한 전문 용어로 주장을 크게 내세우지만, 구체적인 질문에는 답하지 못하고 실제 성과도 없는 사람입니다. 가장 정확한 속담은?",
+      "choices": [
+        "벼는 익을수록 고개를 숙인다",
+        "빈 수레가 요란하다",
+        "아는 길도 물어 가라"
+      ],
+      "answerIndex": 1,
+      "explanation": "실속이나 지식이 부족한 사람이 오히려 더 떠들어 댄다는 뜻입니다. 다른 두 속담은 각각 성숙한 겸손과 신중한 확인을 강조합니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「빈 수레가 더 요란하다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=15680"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s12-gentle-lost-cow",
+      "conceptId": "language-proverb-lost-cow-fix-barn",
+      "variant": "late-remedy-application",
+      "setIndex": 12,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "gentle",
+      "prompt": "자료를 백업하지 않다가 모두 잃고 나서야 저장 규칙을 만들었습니다. 어울리는 속담은?",
+      "choices": [
+        "소 잃고 외양간 고친다",
+        "우물 안 개구리",
+        "티끌 모아 태산"
+      ],
+      "answerIndex": 0,
+      "explanation": "이미 손해를 본 뒤에야 뒤늦게 대비한다는 뜻의 ‘소 잃고 외양간 고친다’가 맞습니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「소 잃고 외양간 고친다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=64289"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s12-steady-monkey-falls",
+      "conceptId": "language-proverb-monkey-falls-from-tree",
+      "variant": "expert-can-fail",
+      "setIndex": 12,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "steady",
+      "prompt": "숙련된 요리사가 익숙한 메뉴의 간을 잘못 맞췄습니다. 이 일을 설명하기 좋은 속담은?",
+      "choices": [
+        "바늘 도둑이 소도둑 된다",
+        "원숭이도 나무에서 떨어진다",
+        "믿는 도끼에 발등 찍힌다"
+      ],
+      "answerIndex": 1,
+      "explanation": "아무리 익숙하고 능숙한 사람도 때로 실수할 수 있다는 뜻입니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「원숭이도 나무에서 떨어진다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=69959"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s12-stretch-well-frog",
+      "conceptId": "language-proverb-frog-in-well",
+      "variant": "narrow-worldview",
+      "setIndex": 12,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "자료의 한 부분을 잘못 본 상황은 아닙니다. 평생 좁은 환경 안에서만 지내 더 넓은 세상이 있다는 사실조차 모르면서 자기 경험이 전부라고 뽐냅니다. 가장 정확한 속담은?",
+      "choices": [
+        "장님 코끼리 만지는 격",
+        "아는 것이 병이다",
+        "우물 안 개구리"
+      ],
+      "answerIndex": 2,
+      "explanation": "좁은 범위의 경험만으로 넓은 세상을 모르는 사람을 ‘우물 안 개구리’에 빗댑니다. ‘장님 코끼리 만지는 격’은 일부만 보고 전체를 판단하는 데, ‘아는 것이 병이다’는 어설픈 지식이 도리어 해가 되는 데 초점이 있습니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「우물 안 개구리」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=70763"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s13-gentle-dust-mountain",
+      "conceptId": "language-proverb-dust-makes-mountain",
+      "variant": "small-savings-accumulate",
+      "setIndex": 13,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "gentle",
+      "prompt": "매일 천 원씩 모아 마침내 필요한 책을 샀습니다. 이 경험과 가장 잘 맞는 속담은?",
+      "choices": [
+        "빈 수레가 요란하다",
+        "티끌 모아 태산",
+        "고래 싸움에 새우 등 터진다"
+      ],
+      "answerIndex": 1,
+      "explanation": "아주 작은 것도 꾸준히 모으면 큰 것이 된다는 뜻의 ‘티끌 모아 태산’입니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「티끌 모아 태산」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=82672"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s13-steady-one-word-debt",
+      "conceptId": "language-proverb-one-word-repays-debt",
+      "variant": "kind-speech-power",
+      "setIndex": 13,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "steady",
+      "prompt": "정중한 사과와 따뜻한 설명으로 오래된 갈등이 풀렸습니다. 가장 알맞은 속담은?",
+      "choices": [
+        "구슬이 서 말이라도 꿰어야 보배",
+        "낮말은 새가 듣고 밤말은 쥐가 듣는다",
+        "말 한마디에 천 냥 빚도 갚는다"
+      ],
+      "answerIndex": 2,
+      "explanation": "말을 잘하면 큰 어려움이나 빚진 관계도 풀 수 있다는 뜻입니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「말 한마디에 천 냥 빚도 갚는다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=27260"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s13-stretch-birds-and-mice-hear",
+      "conceptId": "language-proverb-day-bird-night-mouse-hear",
+      "variant": "speech-secrecy-caution",
+      "setIndex": 13,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "회의실 문을 닫고 작은 소리로 한 이야기라 아무도 모를 줄 알았지만, 문밖 사람이 우연히 듣고 비밀이 샜습니다. 말하기 전에 떠올려야 할 속담은?",
+      "choices": [
+        "낮말은 새가 듣고 밤말은 쥐가 듣는다",
+        "발 없는 말이 천 리 간다",
+        "말이 씨가 된다"
+      ],
+      "answerIndex": 0,
+      "explanation": "듣는 이가 없다고 여겨도 말은 새어 나갈 수 있으니 늘 조심하라는 뜻입니다. ‘발 없는 말이 천 리 간다’는 말이 퍼지는 속도를, ‘말이 씨가 된다’는 말이 현실이 될 수 있음을 강조합니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「낮말은 새가 듣고 밤말은 쥐가 듣는다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=41281"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s14-gentle-needle-thief",
+      "conceptId": "language-proverb-needle-thief-becomes-cow-thief",
+      "variant": "small-wrong-grows",
+      "setIndex": 14,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "gentle",
+      "prompt": "사소한 물건을 훔치는 일을 그냥 두면 더 큰 범죄로 이어질 수 있다고 타이르려 합니다. 알맞은 속담은?",
+      "choices": [
+        "등잔 밑이 어둡다",
+        "소 잃고 외양간 고친다",
+        "바늘 도둑이 소도둑 된다"
+      ],
+      "answerIndex": 2,
+      "explanation": "작은 나쁜 버릇을 고치지 않으면 큰 잘못으로 커진다는 경계의 속담입니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「바늘 도둑이 소도둑 된다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=56388"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s14-steady-tadpole-days",
+      "conceptId": "language-proverb-frog-forgets-tadpole-days",
+      "variant": "forgets-humble-past",
+      "setIndex": 14,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "steady",
+      "prompt": "성공한 뒤 어려웠던 시절을 잊고 이제 막 시작한 사람을 업신여깁니다. 어울리는 속담은?",
+      "choices": [
+        "개구리 올챙이 적 생각 못 한다",
+        "빈 수레가 요란하다",
+        "우물 안 개구리"
+      ],
+      "answerIndex": 0,
+      "explanation": "형편이 나아진 뒤 과거의 어렵고 미숙했던 때를 잊는 모습을 이르는 속담입니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「개구리 올챙이 적 생각 못 한다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=64364"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s14-stretch-tiger-mentioned",
+      "conceptId": "language-proverb-tiger-appears-when-mentioned",
+      "variant": "mentioned-person-arrives",
+      "setIndex": 14,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "오랫동안 소식 없던 동료의 근황을 묻는 순간, 바로 그 동료에게 전화가 왔습니다. 이 공교로운 등장을 나타내는 속담은?",
+      "choices": [
+        "낮말은 새가 듣고 밤말은 쥐가 듣는다",
+        "호랑이도 제 말 하면 온다",
+        "발 없는 말이 천 리 간다"
+      ],
+      "answerIndex": 1,
+      "explanation": "어떤 사람을 이야기하는 바로 그때 공교롭게 그 사람이 나타나거나 연락해 왔을 때 쓰는 속담입니다. 다른 두 속담은 말의 누설이나 확산을 경계합니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「호랑이도 제 말 하면 온다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=74128"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s15-gentle-thin-ears",
+      "conceptId": "language-idiom-thin-ears",
+      "variant": "easily-influenced",
+      "setIndex": 15,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "gentle",
+      "prompt": "광고나 주변 사람의 말만 들으면 금방 마음을 바꾸는 사람을 나타내는 관용구는?",
+      "choices": [
+        "귀가 얇다",
+        "입이 무겁다",
+        "코가 높다"
+      ],
+      "answerIndex": 0,
+      "explanation": "남의 말을 쉽게 받아들이고 영향을 잘 받는 성향을 ‘귀가 얇다’고 합니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「귀가 얇다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=60201"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s15-steady-wide-feet",
+      "conceptId": "language-idiom-wide-feet",
+      "variant": "many-connections",
+      "setIndex": 15,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "steady",
+      "prompt": "여러 분야에 아는 사람이 많아 필요한 전문가를 곧 소개해 주는 사람을 이르는 말은?",
+      "choices": [
+        "손이 크다",
+        "발이 넓다",
+        "간이 크다"
+      ],
+      "answerIndex": 1,
+      "explanation": "사귀어 아는 사람이 많고 활동 범위가 넓은 사람을 ‘발이 넓다’고 합니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「발이 넓다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=67886"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s15-stretch-heavy-mouth",
+      "conceptId": "language-idiom-heavy-mouth",
+      "variant": "keeps-secrets",
+      "setIndex": 15,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "평소에는 수다스럽지만 상담 중 들은 남의 사적인 이야기는 누구에게도 옮기지 않는 사람입니다. 이 성품을 가장 정확히 이르는 관용구는?",
+      "choices": [
+        "말을 아끼다",
+        "입을 다물다",
+        "입이 무겁다"
+      ],
+      "answerIndex": 2,
+      "explanation": "평소 말수와 관계없이 남의 비밀을 함부로 옮기지 않는 성품을 ‘입이 무겁다’고 합니다. ‘말을 아끼다’는 말을 삼가는 태도, ‘입을 다물다’는 말하지 않는 행동에 가깝습니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「입이 무겁다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=62276"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s16-gentle-big-hands",
+      "conceptId": "language-idiom-big-hands",
+      "variant": "generous-large-portions",
+      "setIndex": 16,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "gentle",
+      "prompt": "손님 세 명을 초대하고도 열 명이 먹을 만큼 음식을 넉넉히 준비했습니다. 알맞은 표현은?",
+      "choices": [
+        "발 벗고 나서다",
+        "손이 크다",
+        "어깨가 무겁다"
+      ],
+      "answerIndex": 1,
+      "explanation": "씀씀이가 크거나 음식을 넉넉하게 많이 마련하는 사람을 ‘손이 크다’고 합니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「손이 크다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=17608"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s16-steady-trodden-in-eyes",
+      "conceptId": "language-idiom-trodden-in-eyes",
+      "variant": "lingering-concern",
+      "setIndex": 16,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "steady",
+      "prompt": "홀로 남은 반려견이 자꾸 생각나 여행지에서도 마음이 놓이지 않았습니다. 이 느낌을 나타내는 말은?",
+      "choices": [
+        "손에 땀을 쥐다",
+        "눈코 뜰 새 없다",
+        "눈에 밟히다"
+      ],
+      "answerIndex": 2,
+      "explanation": "걱정되거나 안쓰러운 대상이 자꾸 떠올라 잊히지 않는 것을 ‘눈에 밟히다’라고 합니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「눈에 밟히다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=72704"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s16-stretch-sweep-chest",
+      "conceptId": "language-idiom-sweep-down-chest",
+      "variant": "relief-after-scare",
+      "setIndex": 16,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "아이가 차도로 뛰어들 뻔하다 멈추자, 크게 놀란 보호자가 비로소 안도했습니다. 순간적인 놀람 뒤의 안도를 가장 생생하게 나타내는 관용구는?",
+      "choices": [
+        "가슴을 쓸어내리다",
+        "한시름 놓다",
+        "마음을 놓다"
+      ],
+      "answerIndex": 0,
+      "explanation": "갑작스러운 위험에 크게 놀랐다가 무사함을 확인하고 안도하는 모습을 ‘가슴을 쓸어내리다’라고 합니다. 다른 두 표현은 걱정이나 부담이 풀리는 일반적인 안도에 더 가깝습니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「가슴을 쓸어내리다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=62908"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s17-gentle-barefoot-step-up",
+      "conceptId": "language-idiom-step-up-barefoot",
+      "variant": "active-help",
+      "setIndex": 17,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "gentle",
+      "prompt": "마을 수해 복구에 주민들이 자기 일처럼 적극적으로 나섰습니다. 어울리는 표현은?",
+      "choices": [
+        "코가 높다",
+        "발이 넓다",
+        "발 벗고 나서다"
+      ],
+      "answerIndex": 2,
+      "explanation": "어떤 일을 돕기 위해 적극적으로 나서는 것을 ‘발 벗고 나서다’라고 합니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「발 벗고 나서다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=67886"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s17-steady-heavy-shoulders",
+      "conceptId": "language-idiom-heavy-shoulders",
+      "variant": "weighty-responsibility",
+      "setIndex": 17,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "steady",
+      "prompt": "팀 대표가 되어 모두의 결과를 책임져야 하니 부담이 커졌습니다. 알맞은 표현은?",
+      "choices": [
+        "어깨가 무겁다",
+        "입이 무겁다",
+        "손이 크다"
+      ],
+      "answerIndex": 0,
+      "explanation": "맡은 책임이나 부담이 크다는 뜻으로 ‘어깨가 무겁다’고 합니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「어깨가 무겁다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=29970"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s17-stretch-aching-head",
+      "conceptId": "language-idiom-ache-over-problem",
+      "variant": "hard-problem-worry",
+      "setIndex": 17,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "여러 사람이 해결책을 의논하고 아이디어도 냈지만, 원인조차 잡히지 않는 오류로 몇 달째 몹시 고민하고 있습니다. 이 상태를 가장 정확히 나타내는 말은?",
+      "choices": [
+        "머리를 맞대다",
+        "골머리를 앓다",
+        "머리를 굴리다"
+      ],
+      "answerIndex": 1,
+      "explanation": "해결하기 어려운 문제 때문에 오래 몹시 애쓰며 고민하는 상태를 ‘골머리를 앓다’라고 합니다. ‘머리를 맞대다’는 함께 의논하는 행동, ‘머리를 굴리다’는 해결책을 생각해 내는 행동에 초점이 있습니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「골머리를 앓다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=18337"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s18-gentle-no-time-open-eyes",
+      "conceptId": "language-idiom-no-time-open-eyes-nose",
+      "variant": "extremely-busy",
+      "setIndex": 18,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "gentle",
+      "prompt": "주문이 한꺼번에 몰려 물 한 잔 마실 틈도 없이 바빴습니다. 가장 알맞은 표현은?",
+      "choices": [
+        "눈코 뜰 새 없다",
+        "손에 땀을 쥐다",
+        "귀가 얇다"
+      ],
+      "answerIndex": 0,
+      "explanation": "몹시 바빠 잠시도 쉴 겨를이 없는 상태를 ‘눈코 뜰 새 없다’고 합니다.",
+      "source": {
+        "name": "국립국어원 자주 묻는 질문 「눈코 뜰 새 없다」",
+        "url": "https://www.korean.go.kr/front/mcfaq/mcfaqView.do?mcfaq_seq=8774"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s18-steady-sweaty-palms",
+      "conceptId": "language-idiom-hold-sweat-in-hands",
+      "variant": "tense-suspense",
+      "setIndex": 18,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "steady",
+      "prompt": "결승전 마지막 한 점을 지켜보며 모두 숨도 크게 쉬지 못했습니다. 어울리는 말은?",
+      "choices": [
+        "간이 크다",
+        "손에 땀을 쥐다",
+        "발이 넓다"
+      ],
+      "answerIndex": 1,
+      "explanation": "매우 긴장되어 조마조마한 상황을 ‘손에 땀을 쥐다’라고 합니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「손에 땀을 쥐다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=17608"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s18-stretch-nail-in-ear",
+      "conceptId": "language-idiom-nail-in-ear",
+      "variant": "repeatedly-heard",
+      "setIndex": 18,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "같은 이야기를 셀 수 없이 되풀이해 들어 단순히 익숙한 정도를 넘어 이제는 그 말을 또 듣는 것 자체가 지겹습니다. 가장 정확한 관용구는?",
+      "choices": [
+        "귀에 익다",
+        "귀가 솔깃하다",
+        "귀에 못이 박히다"
+      ],
+      "answerIndex": 2,
+      "explanation": "같은 말을 지나치게 여러 번 들어 싫증이 날 정도임을 ‘귀에 못이 박히다’라고 합니다. ‘귀에 익다’는 단순한 익숙함, ‘귀가 솔깃하다’는 관심이 생겨 귀를 기울이는 상태입니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「귀에 못이 박히다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=60201"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s19-gentle-big-liver",
+      "conceptId": "language-idiom-big-liver",
+      "variant": "bold-fearless",
+      "setIndex": 19,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "gentle",
+      "prompt": "겁이 날 만한 높은 다리에서도 태연하게 앞장서는 사람을 가리키는 말은?",
+      "choices": [
+        "귀가 얇다",
+        "간이 크다",
+        "눈에 밟히다"
+      ],
+      "answerIndex": 1,
+      "explanation": "겁이 없고 매우 대담한 사람을 두고 ‘간이 크다’고 합니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「간이 크다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=16269"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s19-steady-high-nose",
+      "conceptId": "language-idiom-high-nose",
+      "variant": "proud-arrogant",
+      "setIndex": 19,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "steady",
+      "prompt": "자신이 가장 뛰어나다며 다른 사람을 얕보는 태도를 나타내는 관용구는?",
+      "choices": [
+        "입이 무겁다",
+        "손이 크다",
+        "코가 높다"
+      ],
+      "answerIndex": 2,
+      "explanation": "잘난 체하며 뽐내거나 거만한 태도를 ‘코가 높다’고 합니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「코가 높다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=46814"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s19-stretch-eat-seaweed-soup",
+      "conceptId": "language-idiom-eat-seaweed-soup",
+      "variant": "exam-failure",
+      "setIndex": 19,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "경기 패배나 사업 실패가 아니라, 준비한 자격시험에서 낙방했다는 일을 가장 구체적으로 빗대는 관용구는?",
+      "choices": [
+        "미역국을 먹다",
+        "고배를 마시다",
+        "쓴맛을 보다"
+      ],
+      "answerIndex": 0,
+      "explanation": "시험이나 선발에서 떨어지는 일을 구체적으로 ‘미역국을 먹다’라고 합니다. ‘고배를 마시다’와 ‘쓴맛을 보다’는 패배나 실패를 더 넓게 이르는 표현입니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「미역국을 먹다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=56271"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s20-gentle-gachi",
+      "conceptId": "language-pronunciation-gachi-palatalization",
+      "variant": "palatalization-form",
+      "setIndex": 20,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "gentle",
+      "prompt": "말 ‘같이’의 표준 발음은 무엇일까요?",
+      "choices": [
+        "[가티]",
+        "[갇이]",
+        "[가치]"
+      ],
+      "answerIndex": 2,
+      "explanation": "‘같이’에서 받침 ‘ㅌ’이 접미사 ‘-이’ 앞에서 구개음화되어 [가치]로 발음합니다.",
+      "source": {
+        "name": "국립국어원 한국어 어문 규범 「표준 발음법」",
+        "url": "https://www.korean.go.kr/kornorms/regltn/regltnView.do?regltn_code=0002&regltn_no=346"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s20-steady-kkonnip",
+      "conceptId": "language-pronunciation-kkonnip-n-insertion",
+      "variant": "compound-n-insertion",
+      "setIndex": 20,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "steady",
+      "prompt": "‘꽃잎’의 표준 발음을 고르세요.",
+      "choices": [
+        "[꼰닙]",
+        "[꼬칩]",
+        "[꼬딥]"
+      ],
+      "answerIndex": 0,
+      "explanation": "‘꽃잎’은 ‘ㄴ’이 첨가된 뒤 앞 받침이 동화되어 [꼰닙]으로 발음합니다.",
+      "source": {
+        "name": "국립국어원 한국어 어문 규범 「표준 발음법」",
+        "url": "https://www.korean.go.kr/kornorms/regltn/regltnView.do?regltn_code=0002&regltn_no=346"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s20-stretch-neoltta",
+      "conceptId": "language-pronunciation-neoltta-double-final",
+      "variant": "double-final-neolp",
+      "setIndex": 20,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "형용사 ‘넓다’의 표준 발음을 고르세요.",
+      "choices": [
+        "[널브다]",
+        "[널따]",
+        "[넙따]"
+      ],
+      "answerIndex": 1,
+      "explanation": "겹받침 ‘ㄼ’은 이 말에서 [ㄹ]로 실현되어 ‘넓다’는 [널따]로 발음합니다.",
+      "source": {
+        "name": "국립국어원 한국어 어문 규범 「표준 발음법」",
+        "url": "https://www.korean.go.kr/kornorms/regltn/regltnView.do?regltn_code=0002&regltn_no=346"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s21-gentle-ilkko",
+      "conceptId": "language-pronunciation-ilkko-double-final",
+      "variant": "double-final-before-g",
+      "setIndex": 21,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "gentle",
+      "prompt": "‘책을 읽고’에서 ‘읽고’의 표준 발음은 무엇일까요?",
+      "choices": [
+        "[일꼬]",
+        "[익꼬]",
+        "[일고]"
+      ],
+      "answerIndex": 0,
+      "explanation": "용언 어간의 겹받침 ‘ㄺ’은 ‘ㄱ’ 앞에서 [ㄹ]로 나고 뒤의 ‘ㄱ’이 된소리가 되어 [일꼬]입니다.",
+      "source": {
+        "name": "국립국어원 한국어 어문 규범 「표준 발음법」",
+        "url": "https://www.korean.go.kr/kornorms/regltn/regltnView.do?regltn_code=0002&regltn_no=346"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s21-steady-baptta",
+      "conceptId": "language-pronunciation-baptta-exception",
+      "variant": "balp-exception-form",
+      "setIndex": 21,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "steady",
+      "prompt": "동사 ‘밟다’의 표준 발음은 어느 것일까요?",
+      "choices": [
+        "[발따]",
+        "[밥따]",
+        "[발브다]"
+      ],
+      "answerIndex": 1,
+      "explanation": "‘밟-’은 자음 앞에서 [밥]으로 발음하는 예외이므로 ‘밟다’는 [밥따]입니다.",
+      "source": {
+        "name": "국립국어원 한국어 어문 규범 「표준 발음법」",
+        "url": "https://www.korean.go.kr/kornorms/regltn/regltnView.do?regltn_code=0002&regltn_no=346"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s21-stretch-masitda",
+      "conceptId": "language-pronunciation-masitta-two-standards",
+      "variant": "two-standard-pronunciations",
+      "setIndex": 21,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "‘맛있다’에 대해 표준 발음으로 인정되는 두 가지를 모두 묶은 것은?",
+      "choices": [
+        "[마딛다]와 [마싣다]",
+        "[마딛따]와 [마싯따]",
+        "[마딛따]와 [마싣따]"
+      ],
+      "answerIndex": 2,
+      "explanation": "‘맛있다’는 원칙 발음 [마딛따]와 현실 발음을 반영한 [마싣따]가 모두 표준 발음입니다.",
+      "source": {
+        "name": "국립국어원 한국어 어문 규범 「표준 발음법」",
+        "url": "https://www.korean.go.kr/kornorms/regltn/regltnView.do?regltn_code=0002&regltn_no=346"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s22-gentle-keikeu",
+      "conceptId": "language-loanword-keikeu",
+      "variant": "cake-notation",
+      "setIndex": 22,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "gentle",
+      "prompt": "생일에 먹는 서양식 구운 과자를 적는 표준 표기는 무엇일까요?",
+      "choices": [
+        "케익",
+        "케이크",
+        "케잌"
+      ],
+      "answerIndex": 1,
+      "explanation": "영어 cake를 우리말로 적은 표준 표제어는 ‘케이크’입니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「케이크」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=83235"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s22-steady-rideosip",
+      "conceptId": "language-loanword-rideosip",
+      "variant": "leadership-notation",
+      "setIndex": 22,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "steady",
+      "prompt": "외래어의 표준 표기와 뜻을 모두 바르게 연결한 문장은 어느 것일까요?",
+      "choices": [
+        "팀을 이끄는 능력을 ‘리더쉽’이라고 적는다.",
+        "팀을 이끄는 사람 자체를 ‘리더십’이라고 한다.",
+        "조직을 이끄는 능력을 ‘리더십’이라고 한다."
+      ],
+      "answerIndex": 2,
+      "explanation": "영어 leadership을 적은 표준 표기는 ‘리더십’이며 조직을 이끄는 능력을 뜻합니다. 사람 자체는 ‘리더’라고 합니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「리더십」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=50088"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s22-stretch-peullaekadeu",
+      "conceptId": "language-loanword-peullaekadeu",
+      "variant": "placard-notation",
+      "setIndex": 22,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "행사 문구를 적어 들거나 내거는 판을 가리키는 표준 표기는 무엇일까요?",
+      "choices": [
+        "플래카드",
+        "플랭카드",
+        "프래카드"
+      ],
+      "answerIndex": 0,
+      "explanation": "영어 placard를 적은 표준 표기는 ‘플래카드’입니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「플래카드」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=84513"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s23-gentle-kontencheu",
+      "conceptId": "language-loanword-kontencheu",
+      "variant": "contents-notation",
+      "setIndex": 23,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "gentle",
+      "prompt": "영상·글 같은 내용물을 통틀어 부르는 외래어의 표준 표기는?",
+      "choices": [
+        "컨텐츠",
+        "콘덴츠",
+        "콘텐츠"
+      ],
+      "answerIndex": 2,
+      "explanation": "영어 contents를 적은 표준 표제어는 ‘콘텐츠’입니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「콘텐츠」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=600228"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s23-steady-chokollit",
+      "conceptId": "language-loanword-chokollit",
+      "variant": "chocolate-notation",
+      "setIndex": 23,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "steady",
+      "prompt": "카카오로 만든 단맛 나는 식품의 표준 표기는 어느 것일까요?",
+      "choices": [
+        "초콜릿",
+        "초코렛",
+        "쵸콜렛"
+      ],
+      "answerIndex": 0,
+      "explanation": "영어 chocolate를 적은 표준 표기는 ‘초콜릿’입니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「초콜릿」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=72128"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s23-stretch-aekseseori",
+      "conceptId": "language-loanword-aekseseori",
+      "variant": "accessory-notation",
+      "setIndex": 23,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "옷차림에 더하는 장신구를 뜻하는 외래어의 표준 표기는 무엇일까요?",
+      "choices": [
+        "액세사리",
+        "액세서리",
+        "악세사리"
+      ],
+      "answerIndex": 1,
+      "explanation": "영어 accessory를 적은 표준 표제어는 ‘액세서리’입니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「액세서리」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=71510"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s24-gentle-kkeseo",
+      "conceptId": "language-honorific-subject-particle-kkeseo",
+      "variant": "honored-subject-marker",
+      "setIndex": 24,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "gentle",
+      "prompt": "할머니가 주어인 문장에서 높임을 나타내는 조사를 바르게 쓴 것은?",
+      "choices": [
+        "할머니께서 오셨다.",
+        "할머니께 오셨다.",
+        "할머니에게서 오셨다."
+      ],
+      "answerIndex": 0,
+      "explanation": "높여야 할 사람을 문장의 주어로 나타낼 때 주격 조사 ‘께서’를 씁니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「께서」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=73012"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s24-steady-clothing-counter-beol",
+      "conceptId": "language-counter-clothing-beol",
+      "variant": "clothing-counter-selection",
+      "setIndex": 24,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "steady",
+      "prompt": "정장 한 세트를 세는 말로 알맞은 표현은 무엇일까요?",
+      "choices": [
+        "정장 한 채",
+        "정장 한 벌",
+        "정장 한 자루"
+      ],
+      "answerIndex": 1,
+      "explanation": "옷을 세는 단위 명사는 ‘벌’이므로 ‘정장 한 벌’이라고 합니다.",
+      "source": {
+        "name": "국립국어원 한국어 어문 규범 「한글 맞춤법」 띄어쓰기",
+        "url": "https://www.korean.go.kr/kornorms/regltn/regltnView.do?regltn_code=0001&regltn_no=182"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s24-stretch-roseo",
+      "conceptId": "language-usage-roseo-status",
+      "variant": "status-qualification-particle",
+      "setIndex": 24,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "‘로서’와 ‘로써’를 구별해 바르게 쓴 문장은 어느 것일까요?",
+      "choices": [
+        "이 열쇠로서 잠긴 문을 열었다.",
+        "그는 반장으로써 회의에 참석했다.",
+        "그는 반장으로서 회의에 참석했다."
+      ],
+      "answerIndex": 2,
+      "explanation": "지위나 자격을 나타낼 때는 ‘반장으로서’처럼 ‘로서’를 씁니다. 열쇠 같은 수단이나 도구를 나타낼 때는 ‘로써’를 씁니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「로서」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=70301"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s25-gentle-kke",
+      "conceptId": "language-honorific-dative-particle-kke",
+      "variant": "honored-recipient-marker",
+      "setIndex": 25,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "gentle",
+      "prompt": "선생님을 편지를 받는 분으로 높여 나타낸 문장은 어느 것일까요?",
+      "choices": [
+        "선생님께서 편지를 드렸다.",
+        "선생님께 편지를 드렸다.",
+        "선생님으로 편지를 드렸다."
+      ],
+      "answerIndex": 1,
+      "explanation": "높여야 할 사람에게 어떤 행동이 미침을 나타낼 때 조사 ‘께’를 씁니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「께」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=69701"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s25-steady-pencil-counter-jaru",
+      "conceptId": "language-counter-pencil-jaru",
+      "variant": "long-object-counter-selection",
+      "setIndex": 25,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "steady",
+      "prompt": "연필의 개수를 세는 단위가 알맞게 쓰인 표현은 무엇일까요?",
+      "choices": [
+        "연필 세 켤레",
+        "연필 세 권",
+        "연필 세 자루"
+      ],
+      "answerIndex": 2,
+      "explanation": "연필처럼 길쭉한 물건을 세는 단위 명사로 ‘자루’를 씁니다.",
+      "source": {
+        "name": "국립국어원 한국어 어문 규범 「한글 맞춤법」 띄어쓰기",
+        "url": "https://www.korean.go.kr/kornorms/regltn/regltnView.do?regltn_code=0001&regltn_no=182"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s25-stretch-deunji",
+      "conceptId": "language-usage-deunji-choice",
+      "variant": "free-choice-ending",
+      "setIndex": 25,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "두 선택 가운데 어느 쪽도 괜찮다는 뜻을 바르게 나타낸 문장은?",
+      "choices": [
+        "걷든지 뛰든지 마음대로 해.",
+        "걷던지 달리던지 마음대로 해.",
+        "쉬든 지 뛰든 지 마음대로 해."
+      ],
+      "answerIndex": 0,
+      "explanation": "여러 선택 가운데 어느 것이든 가능함을 나타내는 연결 어미는 ‘-든지’입니다. 과거를 떠올리는 ‘-던지’와 구별합니다.",
+      "source": {
+        "name": "국립국어원 자주 묻는 질문 「-든지/-던지」",
+        "url": "https://www.korean.go.kr/front/mcfaq/mcfaqView.do?mcfaq_seq=9075&mn_id=217&pageIndex=5"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s26-gentle-deurida",
+      "conceptId": "language-honorific-deurida-give",
+      "variant": "humble-giving-verb",
+      "setIndex": 26,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "gentle",
+      "prompt": "손자가 할아버지에게 선물을 주었다는 뜻을 높여 말한 문장은?",
+      "choices": [
+        "할아버지께 선물을 주셨다.",
+        "할아버지께서 선물을 드렸다.",
+        "할아버지께 선물을 드렸다."
+      ],
+      "answerIndex": 2,
+      "explanation": "아랫사람이 윗사람에게 무엇을 주는 행위는 ‘주다’의 높임말 ‘드리다’로 표현합니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「드리다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=61168"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s26-steady-shoe-counter-kyeolle",
+      "conceptId": "language-counter-shoes-kyeolle",
+      "variant": "paired-footwear-counter",
+      "setIndex": 26,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "steady",
+      "prompt": "신발 두 쌍을 세는 표현으로 알맞은 것은 무엇일까요?",
+      "choices": [
+        "신 두 켤레",
+        "신 두 짝",
+        "신 두 벌"
+      ],
+      "answerIndex": 0,
+      "explanation": "신 두 쌍을 세는 단위 명사로는 ‘켤레’를 써서 ‘신 두 켤레’라고 합니다. ‘짝’은 짝을 이룬 물건의 한쪽을 셀 때, ‘벌’은 옷이나 그릇 따위의 한 세트를 셀 때 주로 씁니다.",
+      "source": {
+        "name": "국립국어원 한국어 어문 규범 「한글 맞춤법」 띄어쓰기",
+        "url": "https://www.korean.go.kr/kornorms/regltn/regltnView.do?regltn_code=0001&regltn_no=182"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s26-stretch-dae-de",
+      "conceptId": "language-usage-dae-de-report-experience",
+      "variant": "hearsay-versus-experience",
+      "setIndex": 26,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "다른 사람에게서 들은 내일 날씨를 전하는 문장으로 바른 것은?",
+      "choices": [
+        "내일 눈이 온 데.",
+        "내일 비가 온대.",
+        "모레 비가 온데."
+      ],
+      "answerIndex": 1,
+      "explanation": "‘-대’는 ‘-다고 해’가 줄어든 말로 남에게 들은 내용을 전합니다. ‘-데’는 화자가 직접 겪은 일을 떠올려 말할 때 쓰입니다.",
+      "source": {
+        "name": "국립국어원 자주 묻는 질문 「-대/-데」",
+        "url": "https://www.korean.go.kr/front/mcfaq/mcfaqView.do?mcfaq_seq=5845&mn_id=217&pageIndex=225"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s27-gentle-mosida",
+      "conceptId": "language-honorific-mosida-accompany",
+      "variant": "honored-accompaniment-verb",
+      "setIndex": 27,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "gentle",
+      "prompt": "부모님과 함께 병원에 갔다는 뜻을 높여 표현한 문장은?",
+      "choices": [
+        "부모님을 모시고 병원에 갔다.",
+        "부모님을 데리시고 병원에 갔다.",
+        "부모님께서 모시고 병원에 갔다."
+      ],
+      "answerIndex": 0,
+      "explanation": "높여야 할 사람을 받들어 함께 가거나 데려가는 것은 ‘모시다’로 표현합니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「모시다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=64703"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s27-steady-fish-counter-son",
+      "conceptId": "language-counter-fish-son",
+      "variant": "fish-pair-counter",
+      "setIndex": 27,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "steady",
+      "prompt": "조기처럼 생선을 일정한 수로 묶어 세는 단위가 쓰인 표현은 무엇일까요?",
+      "choices": [
+        "조기 한 채",
+        "조기 한 손",
+        "조기 한 켤레"
+      ],
+      "answerIndex": 1,
+      "explanation": "조기와 같은 생선을 세는 단위 명사로 ‘손’을 써서 ‘조기 한 손’이라고 합니다.",
+      "source": {
+        "name": "국립국어원 한국어 어문 규범 「한글 맞춤법」 띄어쓰기",
+        "url": "https://www.korean.go.kr/kornorms/regltn/regltnView.do?regltn_code=0001&regltn_no=182"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s27-stretch-dareuda-teullida",
+      "conceptId": "language-usage-dareuda-not-teullida",
+      "variant": "difference-versus-error",
+      "setIndex": 27,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "비교 대상의 차이와 계산 답의 오류를 구별해 바르게 쓴 문장은 어느 것일까요?",
+      "choices": [
+        "두 디자인은 서로 틀리고, 계산 답은 다르다.",
+        "두 디자인은 서로 틀렸고, 계산 답도 달랐다.",
+        "두 디자인은 서로 다르고, 계산 답은 틀렸다."
+      ],
+      "answerIndex": 2,
+      "explanation": "서로 같지 않은 비교 대상에는 ‘다르다’를 쓰고, 계산이나 판단이 맞지 않을 때는 ‘틀리다’를 씁니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「다르다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=26824"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s28-gentle-japsusida",
+      "conceptId": "language-honorific-japsusida-eat",
+      "variant": "honored-eating-verb",
+      "setIndex": 28,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "gentle",
+      "prompt": "‘밥’과 ‘먹다’를 모두 높임말로 바꾸어 쓴 문장은 무엇일까요?",
+      "choices": [
+        "할아버지께서 밥을 잡수신다.",
+        "할아버지께서 진지를 잡수신다.",
+        "할아버지께서 진지를 먹으신다."
+      ],
+      "answerIndex": 1,
+      "explanation": "‘잡수시다’는 ‘먹다’의 높임말이고 ‘진지’는 ‘밥’을 높여 이르는 말이므로 두 낱말을 모두 바꾼 문장이 알맞습니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「잡수시다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=71205"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s28-steady-dried-pollock-counter-kwae",
+      "conceptId": "language-counter-dried-pollock-kwae",
+      "variant": "dried-fish-bundle-counter",
+      "setIndex": 28,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "steady",
+      "prompt": "북어를 묶음 단위로 세는 전통적인 표현은 어느 것일까요?",
+      "choices": [
+        "북어 한 자루",
+        "북어 한 손",
+        "북어 한 쾌"
+      ],
+      "answerIndex": 2,
+      "explanation": "북어를 묶어 세는 단위 명사로 ‘쾌’를 써서 ‘북어 한 쾌’라고 합니다.",
+      "source": {
+        "name": "국립국어원 한국어 어문 규범 「한글 맞춤법」 띄어쓰기",
+        "url": "https://www.korean.go.kr/kornorms/regltn/regltnView.do?regltn_code=0001&regltn_no=182"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s28-stretch-neurida-neullida",
+      "conceptId": "language-usage-neurida-neullida",
+      "variant": "length-versus-quantity",
+      "setIndex": 28,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "‘늘이다’와 ‘늘리다’를 구별해 바르게 쓴 문장은 어느 것일까요?",
+      "choices": [
+        "고무줄을 늘이고 인원을 늘렸다.",
+        "고무줄을 늘리고 인원을 늘였다.",
+        "고무줄과 인원을 모두 늘였다."
+      ],
+      "answerIndex": 0,
+      "explanation": "고무줄처럼 길이를 길게 만드는 것은 ‘늘이다’, 인원처럼 수량이나 규모를 많게 하는 것은 ‘늘리다’를 씁니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「늘이다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=63259"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s29-gentle-yeonse",
+      "conceptId": "language-honorific-yeonse-age",
+      "variant": "honored-age-noun",
+      "setIndex": 29,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "gentle",
+      "prompt": "할머니의 나이를 높여 여쭙는 말로 가장 알맞은 것은?",
+      "choices": [
+        "할머니 나잇값이 어떻게 되세요?",
+        "할머니 연도가 어떻게 되세요?",
+        "할머니 연세가 어떻게 되세요?"
+      ],
+      "answerIndex": 2,
+      "explanation": "‘연세’는 사람의 나이를 높여 이르는 말입니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「연세」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=14018"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s29-steady-house-counter-chae",
+      "conceptId": "language-counter-house-chae",
+      "variant": "building-counter-selection",
+      "setIndex": 29,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "steady",
+      "prompt": "집 세 동의 수를 일상적인 단위 명사로 나타낸 표현은 무엇일까요?",
+      "choices": [
+        "집 세 채",
+        "집 세 자루",
+        "집 세 권"
+      ],
+      "answerIndex": 0,
+      "explanation": "건물이나 집을 세는 단위 명사로 ‘채’를 써서 ‘집 세 채’라고 합니다.",
+      "source": {
+        "name": "국립국어원 한국어 어문 규범 「한글 맞춤법」 띄어쓰기",
+        "url": "https://www.korean.go.kr/kornorms/regltn/regltnView.do?regltn_code=0001&regltn_no=182"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-language-001-s29-stretch-buchida-butida",
+      "conceptId": "language-usage-buchida-butida",
+      "variant": "mail-versus-attach",
+      "setIndex": 29,
+      "lens": "life",
+      "topic": "language",
+      "internalDifficulty": "stretch",
+      "prompt": "편지를 우체국을 통해 보냈다는 뜻에 알맞은 문장은 무엇일까요?",
+      "choices": [
+        "편지를 우편으로 붙혔다.",
+        "편지를 우편으로 부쳤다.",
+        "편지를 우편으로 붙였다."
+      ],
+      "answerIndex": 1,
+      "explanation": "편지나 물건을 일정한 수단으로 보내는 것은 ‘부치다’입니다. 서로 맞닿게 하는 ‘붙이다’와 구별합니다.",
+      "source": {
+        "name": "국립국어원 한국어기초사전 「부치다」",
+        "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=62365"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    }
+  ]
+}

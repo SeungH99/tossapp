@@ -10,9 +10,27 @@
     "bonusTopics": [
       {
         "topic": "nostalgia",
+        "label": "추억·대중문화",
+        "order": 0,
         "packCount": 4,
         "setCount": 120,
         "questionCount": 360
+      },
+      {
+        "topic": "korean-life",
+        "label": "한국 생활사",
+        "order": 1,
+        "packCount": 1,
+        "setCount": 30,
+        "questionCount": 90
+      },
+      {
+        "topic": "language",
+        "label": "말·속담·맞춤법",
+        "order": 2,
+        "packCount": 1,
+        "setCount": 30,
+        "questionCount": 90
       }
     ]
   },
@@ -20,7 +38,7 @@
     {
       "id": "core-001",
       "path": "src/content/core/pack-001.json",
-      "sha256": "2da2c170e1a1b9cadf23443229e05e7210e6f129f0aef43b0631301b38485087",
+      "sha256": "c89e4f3121e03afe938e25867ff443027c3f958aac69cecf9990dab98dd5e7f8",
       "questionCount": 90,
       "setCount": 30,
       "reviewStatus": "reviewed",
@@ -31,7 +49,7 @@
     {
       "id": "core-002",
       "path": "src/content/core/pack-002.json",
-      "sha256": "8561e838c71bccf3ea3f0b979e44e863fce0f711759af0224d9bdba0c54706b4",
+      "sha256": "dab3938a615d1569117adf1dea0c6a86aa2fbd381a92dfd4d3dd47907542ead9",
       "questionCount": 90,
       "setCount": 30,
       "reviewStatus": "reviewed",
@@ -42,7 +60,7 @@
     {
       "id": "core-003",
       "path": "src/content/core/pack-003.json",
-      "sha256": "ba6d2d266e937b440626b14779e855d4a91b26396a6f6a50db4c5353346cc32f",
+      "sha256": "a2a03565c51757c6be62b1fa0a168006c4b06c3b3fb203e9b36ab705e2671f5c",
       "questionCount": 90,
       "setCount": 30,
       "reviewStatus": "reviewed",
@@ -53,7 +71,7 @@
     {
       "id": "core-004",
       "path": "src/content/core/pack-004.json",
-      "sha256": "e59bb37d2dfd363d52762007e6f741cf19a50dab21bc3b6418b636effee6f95e",
+      "sha256": "cd049ebfb053a557a27f713f94c818855dd81dd49dda14c7567817694ad8f863",
       "questionCount": 90,
       "setCount": 30,
       "reviewStatus": "reviewed",
@@ -64,7 +82,7 @@
     {
       "id": "core-005",
       "path": "src/content/core/pack-005.json",
-      "sha256": "941020f19bb9e9e7d81834e79700fc6703b8a6b0222ccf1a9d54bf0f1080c08e",
+      "sha256": "358b4d854bd835a1d2d29634074f2906adc6d0071ccc2a0cff5f50e2da82db88",
       "questionCount": 90,
       "setCount": 30,
       "reviewStatus": "reviewed",
@@ -75,7 +93,7 @@
     {
       "id": "core-006",
       "path": "src/content/core/pack-006.json",
-      "sha256": "e5d6fa49c1e7a068a33485902231144f3877757e1ef9833fffa74d85babf0aae",
+      "sha256": "2afdb0a7ccfa1e996ec71bdd88e5a7eb0b10bf55b476906dcde4dce05f4a9809",
       "questionCount": 90,
       "setCount": 30,
       "reviewStatus": "reviewed",
@@ -132,6 +150,30 @@
       "topic": "nostalgia",
       "setStart": 90,
       "setEnd": 119
+    },
+    {
+      "id": "bonus-korean-life-001",
+      "path": "src/content/bonus/korean-life/pack-001.json",
+      "sha256": "26842e3a756be0d4b034c01bb50b36a15185e11ce23e2875e8f76a89b40e4790",
+      "questionCount": 90,
+      "setCount": 30,
+      "reviewStatus": "reviewed",
+      "kind": "bonus",
+      "topic": "korean-life",
+      "setStart": 0,
+      "setEnd": 29
+    },
+    {
+      "id": "bonus-language-001",
+      "path": "src/content/bonus/language/pack-001.json",
+      "sha256": "0b6c6d0d5abd3c23655974400fdf9ffc8cb55023ace5cce12e71f9ee83de74f0",
+      "questionCount": 90,
+      "setCount": 30,
+      "reviewStatus": "reviewed",
+      "kind": "bonus",
+      "topic": "language",
+      "setStart": 0,
+      "setEnd": 29
     }
   ]
 }

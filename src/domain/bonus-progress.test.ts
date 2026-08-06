@@ -13,6 +13,7 @@ function completedTopicProgress(
   const progress = createEmptyProgress();
   progress.bonusTopicProgress[topic] = {
     completedSetIndexes: [setIndex],
+    skippedSetIndexes: [],
     lastCompletedDateKey: dateKey,
   };
   return progress;
@@ -23,23 +24,29 @@ function progressWithCompletedSets(
   completedSetIndexes: number[],
 ) {
   const progress = createEmptyProgress();
-  progress.bonusTopicProgress[topic] = { completedSetIndexes };
+  progress.bonusTopicProgress[topic] = {
+    completedSetIndexes,
+    skippedSetIndexes: [],
+  };
   return progress;
 }
 
 describe("resolveBonusSetAvailability", () => {
   it("같은 주제는 완료한 날 다시 열지 않고 다른 주제는 연다", () => {
     const progress = completedTopicProgress("digital", "2026-08-04", 0);
-    expect(resolveBonusSetAvailability(progress, "digital", "2026-08-04"))
-      .toEqual({ kind: "daily-limit" });
-    expect(resolveBonusSetAvailability(progress, "language", "2026-08-04"))
-      .toEqual({ kind: "available", setIndex: 0 });
+    expect(
+      resolveBonusSetAvailability(progress, "digital", "2026-08-04", 180),
+    ).toEqual({ kind: "daily-limit" });
+    expect(
+      resolveBonusSetAvailability(progress, "language", "2026-08-04", 180),
+    ).toEqual({ kind: "available", setIndex: 0 });
   });
 
   it("완료되지 않은 세트 중 가장 작은 번호를 선택한다", () => {
     const progress = progressWithCompletedSets("digital", [0, 2]);
-    expect(resolveBonusSetAvailability(progress, "digital", "2026-08-05"))
-      .toEqual({ kind: "available", setIndex: 1 });
+    expect(
+      resolveBonusSetAvailability(progress, "digital", "2026-08-05", 180),
+    ).toEqual({ kind: "available", setIndex: 1 });
   });
 
   it("진행 중인 보너스 세션을 복원하도록 새 주제 생성을 막는다", () => {
@@ -47,8 +54,9 @@ describe("resolveBonusSetAvailability", () => {
     const sessionKey = "2026-08-03:bonus:digital";
     progress.sessions[sessionKey] = createQuizSession(sessionKey);
 
-    expect(resolveBonusSetAvailability(progress, "language", "2026-08-04"))
-      .toEqual({ kind: "active-session", sessionKey });
+    expect(
+      resolveBonusSetAvailability(progress, "language", "2026-08-04", 180),
+    ).toEqual({ kind: "active-session", sessionKey });
   });
 
   it("180개 세트를 모두 완료한 주제는 소진 상태다", () => {
@@ -57,8 +65,21 @@ describe("resolveBonusSetAvailability", () => {
       Array.from({ length: 180 }, (_, setIndex) => setIndex),
     );
 
-    expect(resolveBonusSetAvailability(progress, "digital", "2026-08-05"))
-      .toEqual({ kind: "exhausted" });
+    expect(
+      resolveBonusSetAvailability(progress, "digital", "2026-08-05", 180),
+    ).toEqual({ kind: "exhausted" });
+  });
+
+  it("returns exhausted after all released sets are completed or skipped", () => {
+    const progress = createEmptyProgress();
+    progress.bonusTopicProgress.language = {
+      completedSetIndexes: [0],
+      skippedSetIndexes: [1],
+    };
+
+    expect(
+      resolveBonusSetAvailability(progress, "language", "2026-08-05", 2),
+    ).toEqual({ kind: "exhausted" });
   });
 
   it("legacy 완료 세션은 같은 날 같은 주제를 다시 열지 않는다", () => {
@@ -77,14 +98,11 @@ describe("resolveBonusSetAvailability", () => {
       questionIds: ["digital-0-g", "digital-0-s", "digital-0-x"],
       source: "first_free",
     };
-    progress.completedBonusIds = [
-      "digital-0-g",
-      "digital-0-s",
-      "digital-0-x",
-    ];
+    progress.completedBonusIds = ["digital-0-g", "digital-0-s", "digital-0-x"];
 
-    expect(resolveBonusSetAvailability(progress, "digital", "2026-08-04"))
-      .toEqual({ kind: "daily-limit" });
+    expect(
+      resolveBonusSetAvailability(progress, "digital", "2026-08-04", 180),
+    ).toEqual({ kind: "daily-limit" });
   });
 
   it("legacy 완료 세트도 다음 날 가장 작은 미완료 번호에서 이어 간다", () => {
@@ -103,13 +121,10 @@ describe("resolveBonusSetAvailability", () => {
       questionIds: ["digital-0-g", "digital-0-s", "digital-0-x"],
       source: "first_free",
     };
-    progress.completedBonusIds = [
-      "digital-0-g",
-      "digital-0-s",
-      "digital-0-x",
-    ];
+    progress.completedBonusIds = ["digital-0-g", "digital-0-s", "digital-0-x"];
 
-    expect(resolveBonusSetAvailability(progress, "digital", "2026-08-05"))
-      .toEqual({ kind: "available", setIndex: 1 });
+    expect(
+      resolveBonusSetAvailability(progress, "digital", "2026-08-05", 180),
+    ).toEqual({ kind: "available", setIndex: 1 });
   });
 });

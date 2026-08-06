@@ -22,6 +22,7 @@ const corePack001: CoreContentPack = {
       ...metadata,
       kind: "core",
       id: "2026-07-28-phone",
+      conceptId: "nostalgia-public-phone-coin-call",
       dateKey: "2026-07-28",
       lens: "then",
       topic: "nostalgia",
@@ -37,7 +38,12 @@ const corePack001: CoreContentPack = {
 const corePack002: CoreContentPack = {
   ...corePack001,
   id: "core-002",
-  questions: [{ ...corePack001.questions[0], id: "2026-07-29-phone", dateKey: "2026-07-29" }],
+  questions: [{
+    ...corePack001.questions[0],
+    id: "2026-07-29-phone",
+    conceptId: "nostalgia-public-phone-extra-coin",
+    dateKey: "2026-07-29",
+  }],
 };
 
 const bonusPack001: BonusContentPack = {
@@ -86,7 +92,66 @@ const manifest: ContentManifest = {
   ],
 };
 
+const manifestWithThreeTopics = {
+  ...manifest,
+  releaseContract: {
+    core: { packCount: 2, questionCount: 2 },
+    bonusTopics: [
+      {
+        topic: "nostalgia",
+        label: "추억·대중문화",
+        order: 0,
+        packCount: 4,
+        setCount: 120,
+        questionCount: 360,
+      },
+      {
+        topic: "korean-life",
+        label: "한국 생활사",
+        order: 1,
+        packCount: 1,
+        setCount: 30,
+        questionCount: 90,
+      },
+      {
+        topic: "language",
+        label: "말·속담·맞춤법",
+        order: 2,
+        packCount: 1,
+        setCount: 30,
+        questionCount: 90,
+      },
+    ],
+  },
+} as unknown as ContentManifest;
+
 describe("content catalog", () => {
+  it("exposes ordered public topic labels and released set counts", () => {
+    const catalog = createPackedContentCatalog(manifestWithThreeTopics, {});
+
+    expect(catalog.bonusTopics).toEqual([
+      { id: "nostalgia", label: "추억·대중문화", order: 0, setCount: 120 },
+      { id: "korean-life", label: "한국 생활사", order: 1, setCount: 30 },
+      { id: "language", label: "말·속담·맞춤법", order: 2, setCount: 30 },
+    ]);
+  });
+
+  it("keeps the descriptor topic projection for manifests without a release contract", () => {
+    const catalog = createPackedContentCatalog(manifest, {});
+
+    expect(catalog.availableBonusTopics).toEqual(["digital"]);
+  });
+
+  it("keeps the legacy in-memory topic projection when metadata is omitted", () => {
+    const catalog = createInMemoryContentCatalog(
+      {},
+      { digital: { 0: bonusPack001.questions } },
+    );
+
+    expect(catalog.availableBonusTopics).toEqual(["digital"]);
+    expect(catalog.bonusTopics).toEqual([]);
+  });
+
   it("imports only the requested core pack", async () => {
     const calls: string[] = [];
     const catalog = createPackedContentCatalog(manifest, {
@@ -124,6 +189,7 @@ describe("content catalog", () => {
     const catalog = createInMemoryContentCatalog(
       { "2026-07-28": corePack001.questions },
       { digital: { 0: bonusPack001.questions } },
+      [{ id: "digital", label: "디지털 생활", order: 0, setCount: 1 }],
     );
 
     await expect(catalog.loadBonusSet("digital", 0)).resolves.toEqual({ ok: true, value: bonusPack001.questions, packId: "in-memory:bonus:digital:0" });
@@ -133,6 +199,7 @@ describe("content catalog", () => {
     const catalog = createInMemoryContentCatalog(
       { "2026-07-28": [] },
       {},
+      [],
     );
 
     await expect(catalog.loadCoreSet("2026-07-28")).resolves.toEqual({
@@ -145,6 +212,7 @@ describe("content catalog", () => {
     const catalog = createInMemoryContentCatalog(
       {},
       { digital: { 0: [] } },
+      [{ id: "digital", label: "디지털 생활", order: 0, setCount: 1 }],
     );
 
     await expect(catalog.loadBonusSet("digital", 0)).resolves.toEqual({

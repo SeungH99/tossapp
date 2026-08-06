@@ -4,11 +4,13 @@ import {
   useMemo,
   useRef,
   useState,
+  type KeyboardEvent as ReactKeyboardEvent,
   type ReactNode,
 } from "react";
 
 import "./App.css";
 import type { ContentCatalog } from "./content/content-catalog";
+import type { BonusTopicMetadata } from "./content/types";
 import {
   createBonusEntitlement,
   grantStreakTicket,
@@ -20,7 +22,9 @@ import { observeTime } from "./domain/time-confidence";
 import {
   applyAnswerCommand,
   completeBonusSetCommand,
+  findSeenQuestion,
   grantBonusTicketCommand,
+  skipBonusSetCommand,
   startBonusSessionCommand,
   type AnswerCommand,
   type StartBonusSessionResult,
@@ -78,18 +82,90 @@ interface QuizAppProps {
   analytics?: AnalyticsGateway;
 }
 
+const unicodeMarkPattern = /\p{Mark}/u;
+
+function countGraphemesFallback(value: string): number {
+  let count = 0;
+  let joinNext = false;
+  let regionalIndicatorPending = false;
+  let previousWasCarriageReturn = false;
+
+  // Deterministic fallback for engines without Intl.Segmenter. It keeps
+  // combining marks, emoji modifiers/variation selectors, regional-indicator
+  // pairs, CRLF, and ZWJ emoji sequences in the same visible cluster.
+  for (const symbol of value) {
+    const codePoint = symbol.codePointAt(0) ?? 0;
+    const isJoiner = codePoint === 0x200d;
+    const isVariationSelector =
+      (codePoint >= 0xfe00 && codePoint <= 0xfe0f) ||
+      (codePoint >= 0xe0100 && codePoint <= 0xe01ef);
+    const isEmojiModifier = codePoint >= 0x1f3fb && codePoint <= 0x1f3ff;
+    const isRegionalIndicator = codePoint >= 0x1f1e6 && codePoint <= 0x1f1ff;
+
+    if (isJoiner) {
+      joinNext = true;
+      previousWasCarriageReturn = false;
+      regionalIndicatorPending = false;
+      continue;
+    }
+    if (
+      unicodeMarkPattern.test(symbol) ||
+      isVariationSelector ||
+      isEmojiModifier
+    ) {
+      if (count === 0) {
+        count = 1;
+      }
+      continue;
+    }
+    if (joinNext) {
+      joinNext = false;
+      previousWasCarriageReturn = false;
+      regionalIndicatorPending = false;
+      continue;
+    }
+    if (codePoint === 0x0a && previousWasCarriageReturn) {
+      previousWasCarriageReturn = false;
+      regionalIndicatorPending = false;
+      continue;
+    }
+    if (isRegionalIndicator) {
+      if (!regionalIndicatorPending) {
+        count += 1;
+      }
+      regionalIndicatorPending = !regionalIndicatorPending;
+    } else {
+      count += 1;
+      regionalIndicatorPending = false;
+    }
+    previousWasCarriageReturn = codePoint === 0x0d;
+  }
+
+  return count;
+}
+
+function countGraphemes(value: string): number {
+  const Segmenter = globalThis.Intl?.Segmenter;
+  if (typeof Segmenter === "function") {
+    return Array.from(
+      new Segmenter("ko", { granularity: "grapheme" }).segment(value),
+    ).length;
+  }
+  return countGraphemesFallback(value);
+}
+
+function isLongQuestion(prompt: string): boolean {
+  return countGraphemes(prompt.trim()) >= 42;
+}
+
 const emptyCoreQuestions: CoreQuestion[] = [];
 const emptyBonusQuestions: BonusQuestion[] = [];
 
 type AdState = "loading" | "ready" | "unavailable";
 type AnswerSaveStatus = "idle" | "saving" | "saved" | "error";
 type BonusStartStatus =
-  | "idle"
-  | "loading-content"
-  | "showing-ad"
-  | "saving"
-  | "error";
-type CoreContentStatus = "idle" | "loading" | "error";
+  "idle" | "loading-content" | "showing-ad" | "saving" | "error";
+type CoreContentStatus = "idle" | "loading" | "error" | "blocked-seen";
 
 interface PendingBonusStart {
   commandId: string;
@@ -126,14 +202,63 @@ const lensLabels: Record<CoreLens, string> = {
   life: "생활",
 };
 
-const bonusTopics: Array<{ id: BonusTopic; label: string }> = [
-  { id: "nostalgia", label: "추억·대중문화" },
-  { id: "korean-life", label: "한국 생활사" },
-  { id: "language", label: "말·속담·맞춤법" },
-  { id: "digital", label: "디지털 생활" },
-  { id: "safety", label: "생활안전" },
-  { id: "nature-general", label: "자연·일반상식" },
-];
+const bonusTopicPresentation: Record<
+  BonusTopic,
+  { icon: string; className: string; fallbackLabel: string }
+> = {
+  nostalgia: {
+    icon: "📻",
+    className: "nostalgia",
+    fallbackLabel: "추억·대중문화",
+  },
+  "korean-life": {
+    icon: "🏡",
+    className: "korean-life",
+    fallbackLabel: "한국 생활사",
+  },
+  language: {
+    icon: "가",
+    className: "language",
+    fallbackLabel: "말·속담·맞춤법",
+  },
+  digital: {
+    icon: "📱",
+    className: "digital",
+    fallbackLabel: "디지털 생활",
+  },
+  safety: {
+    icon: "🛟",
+    className: "safety",
+    fallbackLabel: "생활안전",
+  },
+  "nature-general": {
+    icon: "🌿",
+    className: "nature-general",
+    fallbackLabel: "자연·일반상식",
+  },
+};
+
+function createBundledBonusTopicMetadata(
+  questions: readonly BonusQuestion[],
+): BonusTopicMetadata[] {
+  const releasedSetCounts = new Map<BonusTopic, number>();
+  for (const question of questions) {
+    releasedSetCounts.set(
+      question.topic,
+      Math.max(
+        releasedSetCounts.get(question.topic) ?? 0,
+        question.setIndex + 1,
+      ),
+    );
+  }
+
+  return [...releasedSetCounts].map(([id, setCount], order) => ({
+    id,
+    label: bonusTopicPresentation[id].fallbackLabel,
+    order,
+    setCount,
+  }));
+}
 
 function formatKoreanDate(date: Date): string {
   return new Intl.DateTimeFormat("ko-KR", {
@@ -254,7 +379,11 @@ function QuizScreen({
       </div>
 
       <section className="question-section">
-        <h1>{question.prompt}</h1>
+        <h1
+          className={`question-title${isLongQuestion(question.prompt) ? " long" : ""}`}
+        >
+          {question.prompt}
+        </h1>
         <div className="answer-list">
           {question.choices.map((choice, index) => {
             const isSelected = answer?.selectedIndex === index;
@@ -276,10 +405,12 @@ function QuizScreen({
                 onClick={() => onAnswer(index)}
                 type="button"
               >
-                <span>{choice}</span>
+                <span className="answer-text">{choice}</span>
                 {isSelected ? (
                   <span className="answer-mark" aria-hidden="true">
-                    ✓
+                    <svg viewBox="0 0 24 24" focusable="false">
+                      <path d="m6.5 12.5 3.4 3.4 7.6-8" />
+                    </svg>
                   </span>
                 ) : null}
               </button>
@@ -411,9 +542,7 @@ function ResultScreen({
         </strong>
       </div>
 
-      {bannerAd == null ? null : (
-        <ResultBannerAd gateway={bannerAd} />
-      )}
+      {bannerAd == null ? null : <ResultBannerAd gateway={bannerAd} />}
     </main>
   );
 }
@@ -460,7 +589,7 @@ function BonusTopicScreen({
   onStart,
   persistenceNotice,
 }: {
-  topics: Array<{ id: BonusTopic; label: string }>;
+  topics: ReadonlyArray<BonusTopicMetadata & { exhausted: boolean }>;
   entitlement: ReturnType<typeof createBonusEntitlement>;
   adState: AdState;
   startStatus: BonusStartStatus;
@@ -472,10 +601,43 @@ function BonusTopicScreen({
 }) {
   const needsRewardAd =
     entitlement.firstFreeUsed && entitlement.ticketCount === 0;
+  const selectedTopicIsExhausted = topics.some(
+    (topic) => topic.id === selectedTopic && topic.exhausted,
+  );
   const isStarting =
     startStatus === "loading-content" ||
     startStatus === "showing-ad" ||
     startStatus === "saving";
+  const topicButtonRefs = useRef(new Map<BonusTopic, HTMLButtonElement>());
+  const handleTopicKeyDown = (
+    event: ReactKeyboardEvent<HTMLButtonElement>,
+    currentTopic: BonusTopic,
+  ) => {
+    const direction =
+      event.key === "ArrowRight" || event.key === "ArrowDown"
+        ? 1
+        : event.key === "ArrowLeft" || event.key === "ArrowUp"
+          ? -1
+          : 0;
+    if (direction === 0) {
+      return;
+    }
+
+    event.preventDefault();
+    const enabledTopics = topics.filter((topic) => !topic.exhausted);
+    const currentIndex = enabledTopics.findIndex(
+      (topic) => topic.id === currentTopic,
+    );
+    if (currentIndex < 0 || enabledTopics.length === 0) {
+      return;
+    }
+
+    const nextIndex =
+      (currentIndex + direction + enabledTopics.length) % enabledTopics.length;
+    const nextTopic = enabledTopics[nextIndex];
+    onSelectTopic(nextTopic.id);
+    topicButtonRefs.current.get(nextTopic.id)?.focus();
+  };
   const startLabel = !entitlement.firstFreeUsed
     ? "첫 보너스 무료로 시작"
     : entitlement.ticketCount > 0
@@ -504,20 +666,47 @@ function BonusTopicScreen({
         <p>좋아하는 주제로 3문제를 더 풀어요</p>
       </header>
 
-      <div className="topic-grid" role="group" aria-label="보너스 주제">
+      <div className="topic-grid" role="radiogroup" aria-label="보너스 주제">
         {topics.map((topic) => {
           const isSelected = topic.id === selectedTopic;
+          const presentation = bonusTopicPresentation[topic.id];
           return (
             <button
-              aria-pressed={isSelected}
-              className={isSelected ? "topic-button selected" : "topic-button"}
-              disabled={isStarting}
+              aria-checked={isSelected}
+              aria-label={
+                topic.exhausted
+                  ? `${topic.label}, 새 문제 준비 중`
+                  : topic.label
+              }
+              className={`topic-button ${presentation.className}${
+                isSelected ? " selected" : ""
+              }${topic.exhausted ? " exhausted" : ""}`}
+              disabled={isStarting || topic.exhausted}
               key={topic.id}
               onClick={() => onSelectTopic(topic.id)}
+              onKeyDown={(event) => handleTopicKeyDown(event, topic.id)}
+              ref={(element) => {
+                if (element == null) {
+                  topicButtonRefs.current.delete(topic.id);
+                } else {
+                  topicButtonRefs.current.set(topic.id, element);
+                }
+              }}
+              role="radio"
+              tabIndex={isSelected && !topic.exhausted ? 0 : -1}
               type="button"
             >
-              <span>{topic.label}</span>
-              {isSelected ? <span aria-hidden="true">✓</span> : null}
+              <span className="topic-icon" aria-hidden="true">
+                {presentation.icon}
+              </span>
+              <span className="topic-label">{topic.label}</span>
+              {topic.exhausted ? (
+                <span className="topic-status">새 문제 준비 중</span>
+              ) : isSelected ? (
+                <span className="topic-selected-mark" aria-hidden="true">
+                  ✓
+                </span>
+              ) : null}
             </button>
           );
         })}
@@ -527,6 +716,7 @@ function BonusTopicScreen({
         className="primary-button"
         disabled={
           selectedTopic == null ||
+          selectedTopicIsExhausted ||
           isStarting ||
           (needsRewardAd && adState !== "ready")
         }
@@ -570,12 +760,13 @@ export default function QuizApp({
   const [currentNow, setCurrentNow] = useState(initialNow);
   const currentNowRef = useRef(initialNow);
   const dateKey = toKstDateKey(currentNow);
-  const displayedBonusTopics =
-    contentCatalog?.availableBonusTopics == null
-      ? bonusTopics
-      : bonusTopics.filter((topic) =>
-          contentCatalog.availableBonusTopics?.includes(topic.id),
-        );
+  const bonusTopicMetadata = useMemo(
+    () =>
+      contentCatalog == null
+        ? createBundledBonusTopicMetadata(bonusQuestions)
+        : [...(contentCatalog.bonusTopics ?? [])],
+    [bonusQuestions, contentCatalog],
+  );
   const initialDateKeyRef = useRef(dateKey);
   const initialDateKey = initialDateKeyRef.current;
   const [screen, setScreen] = useState<AppScreen>("home");
@@ -617,6 +808,16 @@ export default function QuizApp({
   >("idle");
   const trackedAppOpen = useRef(false);
   const progressRef = useRef<ProgressState>(createEmptyProgress());
+  const displayedBonusTopics = bonusTopicMetadata.map((topic) => ({
+    ...topic,
+    exhausted:
+      resolveBonusSetAvailability(
+        progressRef.current,
+        topic.id,
+        dateKey,
+        topic.setCount,
+      ).kind === "exhausted",
+  }));
   const pendingAnswerRef = useRef<{
     command: AnswerCommand;
     target: "core" | "bonus";
@@ -810,28 +1011,47 @@ export default function QuizApp({
           })
           .catch(() => undefined);
 
-        const activeBonusEntry = Object.entries(progress.sessions).find(
-          ([key, storedSession]) =>
-            key.startsWith(`${initialDateKey}:bonus:`) &&
-            storedSession.phase !== "completed",
-        );
-        const restoredSession = progress.sessions[initialDateKey];
+        const activeBonusEntry = Object.entries(progress.sessions)
+          .filter(
+            ([key, storedSession]) =>
+              key.includes(":bonus:") && storedSession.phase !== "completed",
+          )
+          .sort(([leftKey], [rightKey]) =>
+            leftKey < rightKey ? 1 : leftKey > rightKey ? -1 : 0,
+          )[0];
+        const activeCoreSession = Object.entries(progress.sessions)
+          .filter(
+            ([key, storedSession]) =>
+              !key.includes(":bonus:") &&
+              storedSession.dateKey === key &&
+              storedSession.phase !== "completed",
+          )
+          .sort(([leftKey], [rightKey]) =>
+            leftKey < rightKey ? 1 : leftKey > rightKey ? -1 : 0,
+          )[0]?.[1];
+        const restoredSession =
+          activeCoreSession ?? progress.sessions[initialDateKey];
 
         if (activeBonusEntry != null) {
           const [bonusKey, restoredBonusSession] = activeBonusEntry;
-          const topic = bonusKey.slice(
-            `${initialDateKey}:bonus:`.length,
-          ) as BonusTopic;
-          const isKnownTopic = bonusTopics.some(
+          const storedStartId = progress.latestBonusStartCommandIds[bonusKey];
+          const candidateStoredStart =
+            storedStartId == null
+              ? undefined
+              : progress.bonusStartCommands[storedStartId];
+          const storedStart =
+            candidateStoredStart?.sessionKey === bonusKey
+              ? candidateStoredStart
+              : undefined;
+          const topic = (storedStart?.topic ??
+            bonusKey.slice(
+              bonusKey.indexOf(":bonus:") + ":bonus:".length,
+            )) as BonusTopic;
+          const isKnownTopic = bonusTopicMetadata.some(
             (candidate) => candidate.id === topic,
           );
 
           if (isKnownTopic) {
-            const storedStartId = progress.latestBonusStartCommandIds[bonusKey];
-            const storedStart =
-              storedStartId == null
-                ? undefined
-                : progress.bonusStartCommands[storedStartId];
             let availableBonusQuestions = bonusQuestions;
             if (contentCatalog != null) {
               if (storedStart?.setIndex == null) {
@@ -910,6 +1130,7 @@ export default function QuizApp({
     };
   }, [
     bonusQuestions,
+    bonusTopicMetadata,
     contentCatalog,
     initialDateKey,
     initialNow,
@@ -982,6 +1203,7 @@ export default function QuizApp({
     const startedAt = observeCurrentTime();
     const startedDateKey =
       pendingCoreDateRef.current ?? toKstDateKey(startedAt);
+    let availableCoreQuestions = coreQuestions;
     if (contentCatalog != null) {
       pendingCoreDateRef.current = startedDateKey;
       setCoreContentStatus("loading");
@@ -995,9 +1217,21 @@ export default function QuizApp({
         setCoreContentStatus("error");
         return;
       }
-      setCoreQuestions(loaded.value);
-      pendingCoreDateRef.current = null;
+      availableCoreQuestions = loaded.value;
     }
+
+    const candidateQuestions = selectDailyCoreSet(
+      startedDateKey,
+      availableCoreQuestions,
+    );
+    if (findSeenQuestion(progressRef.current, candidateQuestions) != null) {
+      track("core_set_blocked_seen_concept");
+      setCoreContentStatus("blocked-seen");
+      return;
+    }
+
+    setCoreQuestions(availableCoreQuestions);
+    pendingCoreDateRef.current = null;
     setSession(createQuizSession(startedDateKey));
     setAnswerSaveStatus("idle");
     pendingAnswerRef.current = null;
@@ -1101,9 +1335,11 @@ export default function QuizApp({
   ) => {
     if (!result.applied && result.reason !== "duplicate") {
       failBonusStart(
-        result.reason === "no-questions"
-          ? "준비된 보너스 문제가 없어요"
-          : "광고 보상을 확인하지 못했어요",
+        result.reason === "seen-question" || result.reason === "seen-concept"
+          ? "새 문제 준비 중"
+          : result.reason === "no-questions"
+            ? "준비된 보너스 문제가 없어요"
+            : "광고 보상을 확인하지 못했어요",
       );
       return;
     }
@@ -1147,15 +1383,36 @@ export default function QuizApp({
     const startedAt = observeCurrentTime();
     const startedDateKey = toKstDateKey(startedAt);
     const topic = selectedTopic;
+    const topicMetadata = bonusTopicMetadata.find(
+      (candidate) => candidate.id === topic,
+    );
+    if (topicMetadata == null) {
+      failBonusStart("준비된 보너스 문제가 없어요");
+      return;
+    }
+
     let pending =
       pendingBonusStartRef.current?.topic === topic
         ? pendingBonusStartRef.current
         : null;
-    if (pending == null && contentCatalog != null) {
+    if (
+      pending == null &&
+      contentCatalog == null &&
+      selectBonusQuestions(
+        topic,
+        bonusQuestions,
+        new Set(progressRef.current.completedBonusIds),
+      ).questions.length === 0
+    ) {
+      failBonusStart("준비된 보너스 문제가 없어요");
+      return;
+    }
+    if (pending == null) {
       const availability = resolveBonusSetAvailability(
         progressRef.current,
         topic,
         startedDateKey,
+        topicMetadata.setCount,
       );
       if (availability.kind !== "available") {
         track("bonus_topic_daily_locked", {
@@ -1166,7 +1423,7 @@ export default function QuizApp({
           availability.kind === "daily-limit"
             ? "오늘은 이 주제를 이미 풀었어요"
             : availability.kind === "exhausted"
-              ? "이 주제 문제를 모두 풀었어요"
+              ? "새 문제 준비 중"
               : "진행 중인 보너스 퀴즈가 있어요",
         );
         return;
@@ -1178,59 +1435,144 @@ export default function QuizApp({
         setIndex: availability.setIndex,
       };
     }
-    if (pending == null) {
-      if (
-        selectBonusQuestions(
-          topic,
-          bonusQuestions,
-          new Set(progressRef.current.completedBonusIds),
-        ).questions.length === 0
-      ) {
-        failBonusStart("준비된 보너스 문제가 없어요");
-        return;
-      }
-      pending = {
-        commandId: createBonusStartCommandId(startedDateKey, topic),
-        dateKey: startedDateKey,
-        topic,
-      };
-    }
     pendingBonusStartRef.current = pending;
     bonusStartInFlightRef.current = true;
     setBonusStartError(null);
 
-    const requiresRewardAd =
-      progressRef.current.bonus.firstFreeUsed &&
-      progressRef.current.bonus.ticketCount === 0;
     const useRepository =
       repository != null && persistenceWritable && !noSaveMode;
+    const activePending = pending;
+    const selectFirstRemainingTopic = () => {
+      const fallbackTopic = bonusTopicMetadata.find(
+        (candidate) =>
+          candidate.id !== topic &&
+          resolveBonusSetAvailability(
+            progressRef.current,
+            candidate.id,
+            activePending.dateKey,
+            candidate.setCount,
+          ).kind !== "exhausted",
+      );
+      if (fallbackTopic != null) {
+        setSelectedTopic(fallbackTopic.id);
+      }
+    };
 
     void (async () => {
       let shouldReloadRewardAd = false;
 
       try {
-        let availableQuestions = bonusQuestions;
-        if (contentCatalog != null && pending.setIndex != null) {
+        let availableQuestions: BonusQuestion[];
+        if (contentCatalog != null) {
           setBonusStartStatus("loading-content");
-          const loaded = await contentCatalog.loadBonusSet(
-            topic,
-            pending.setIndex,
-          );
-          if (!loaded.ok) {
-            track("content_pack_load_failed", {
-              packType: "bonus",
-              packId: loaded.packId ?? "unknown",
-              reasonCode: loaded.reason,
+          let acceptedQuestions: BonusQuestion[] | null = null;
+          let candidateSetIndex = activePending.setIndex;
+
+          for (
+            let attempt = 0;
+            attempt < topicMetadata.setCount;
+            attempt += 1
+          ) {
+            if (candidateSetIndex == null) {
+              const availability = resolveBonusSetAvailability(
+                progressRef.current,
+                topic,
+                activePending.dateKey,
+                topicMetadata.setCount,
+              );
+              if (availability.kind !== "available") {
+                track("bonus_topic_daily_locked", {
+                  topic,
+                  reason: availability.kind,
+                });
+                pendingBonusStartRef.current = null;
+                if (availability.kind === "exhausted") {
+                  selectFirstRemainingTopic();
+                }
+                failBonusStart(
+                  availability.kind === "daily-limit"
+                    ? "오늘은 이 주제를 이미 풀었어요"
+                    : availability.kind === "exhausted"
+                      ? "새 문제 준비 중"
+                      : "진행 중인 보너스 퀴즈가 있어요",
+                );
+                return;
+              }
+              candidateSetIndex = availability.setIndex;
+              activePending.setIndex = candidateSetIndex;
+            }
+
+            const loaded = await contentCatalog.loadBonusSet(
+              topic,
+              candidateSetIndex,
+            );
+            if (!loaded.ok) {
+              track("content_pack_load_failed", {
+                packType: "bonus",
+                packId: loaded.packId ?? "unknown",
+                reasonCode: loaded.reason,
+              });
+              failBonusStart("준비된 보너스 문제를 불러오지 못했어요");
+              return;
+            }
+
+            const seenQuestion = findSeenQuestion(
+              progressRef.current,
+              loaded.value,
+            );
+            if (seenQuestion == null) {
+              acceptedQuestions = loaded.value;
+              break;
+            }
+
+            const skipObservedAt = observeCurrentTime(false);
+            const skippedState = skipBonusSetCommand(
+              progressRef.current,
+              topic,
+              candidateSetIndex,
+            );
+            if (skippedState !== progressRef.current) {
+              if (useRepository) {
+                await repository.save(skippedState, skipObservedAt);
+              }
+              progressRef.current = skippedState;
+              analytics?.track("bonus_set_skipped_seen_concept", {
+                topic,
+                setIndex: candidateSetIndex,
+              });
+            }
+            candidateSetIndex = undefined;
+            activePending.setIndex = undefined;
+          }
+
+          if (acceptedQuestions == null) {
+            track("bonus_topic_daily_locked", {
+              topic,
+              reason: "exhausted",
             });
-            failBonusStart("준비된 보너스 문제를 불러오지 못했어요");
+            pendingBonusStartRef.current = null;
+            selectFirstRemainingTopic();
+            failBonusStart("새 문제 준비 중");
             return;
           }
-          availableQuestions = loaded.value;
+          availableQuestions = acceptedQuestions;
+        } else {
+          availableQuestions = bonusQuestions.filter(
+            (question) =>
+              question.topic === topic &&
+              question.setIndex === activePending.setIndex,
+          );
+          if (availableQuestions.length !== 3) {
+            failBonusStart("준비된 보너스 문제가 없어요");
+            return;
+          }
         }
 
         let state = progressRef.current;
+        const requiresRewardAd =
+          state.bonus.firstFreeUsed && state.bonus.ticketCount === 0;
         if (requiresRewardAd) {
-          if (pending.rewardGrantId == null) {
+          if (activePending.rewardGrantId == null) {
             if (rewardAd == null || adState !== "ready") {
               failBonusStart("광고를 준비하지 못했어요");
               return;
@@ -1244,7 +1586,7 @@ export default function QuizApp({
               failBonusStart("광고 보상을 확인하지 못했어요");
               return;
             }
-            pending.rewardGrantId = reward.rewardGrantId;
+            activePending.rewardGrantId = reward.rewardGrantId;
           }
 
           setBonusStartStatus("saving");
@@ -1252,10 +1594,10 @@ export default function QuizApp({
           state = progressRef.current;
           const grant = useRepository
             ? await repository.grantBonusTicket(
-                pending.rewardGrantId,
+                activePending.rewardGrantId,
                 grantObservedAt,
               )
-            : grantBonusTicketCommand(state, pending.rewardGrantId);
+            : grantBonusTicketCommand(state, activePending.rewardGrantId);
           state = grant.state;
           progressRef.current = grant.state;
         }
@@ -1263,39 +1605,30 @@ export default function QuizApp({
         setBonusStartStatus("saving");
         const startObservedAt = observeCurrentTime(false);
         state = progressRef.current;
+        const selectedSetIndex = activePending.setIndex;
+        if (selectedSetIndex == null) {
+          failBonusStart("준비된 보너스 문제가 없어요");
+          return;
+        }
         const result = useRepository
-          ? pending.setIndex == null
-            ? await repository.startBonusSession(
-                pending.commandId,
-                pending.dateKey,
-                topic,
-                availableQuestions,
-                startObservedAt,
-              )
-            : await repository.startBonusSession(
-                pending.commandId,
-                pending.dateKey,
-                topic,
-                pending.setIndex,
-                availableQuestions,
-                startObservedAt,
-              )
-          : pending.setIndex == null
-            ? startBonusSessionCommand(
-                state,
-                pending.commandId,
-                pending.dateKey,
-                topic,
-                availableQuestions,
-              )
-            : startBonusSessionCommand(
-                state,
-                pending.commandId,
-                pending.dateKey,
-                topic,
-                pending.setIndex,
-                availableQuestions,
-              );
+          ? await repository.startBonusSession(
+              activePending.commandId,
+              activePending.dateKey,
+              topic,
+              selectedSetIndex,
+              topicMetadata.setCount,
+              availableQuestions,
+              startObservedAt,
+            )
+          : startBonusSessionCommand(
+              state,
+              activePending.commandId,
+              activePending.dateKey,
+              topic,
+              selectedSetIndex,
+              topicMetadata.setCount,
+              availableQuestions,
+            );
         applyStartedBonus(topic, result, availableQuestions);
       } catch {
         failBonusStart("보너스를 시작하지 못했어요");
@@ -1455,8 +1788,28 @@ export default function QuizApp({
     return (
       <main className="app-shell storage-error-screen">
         <p role="alert">오늘 문제를 불러오지 못했어요.</p>
-        <button className="primary-button" type="button" onClick={handleStartCore}>
+        <button
+          className="primary-button"
+          type="button"
+          onClick={handleStartCore}
+        >
           다시 불러오기
+        </button>
+      </main>
+    );
+  }
+
+  if (coreContentStatus === "blocked-seen") {
+    return (
+      <main className="app-shell storage-error-screen">
+        <p role="alert">오늘 문제를 준비하지 못했어요</p>
+        <p>새 문제를 확인한 뒤 다시 안내할게요.</p>
+        <button
+          className="primary-button"
+          type="button"
+          onClick={handleStartCore}
+        >
+          다시 확인하기
         </button>
       </main>
     );
@@ -1537,6 +1890,9 @@ export default function QuizApp({
         onBonus={() => {
           setBonusStartStatus("idle");
           setBonusStartError(null);
+          setSelectedTopic(
+            displayedBonusTopics.find((topic) => !topic.exhausted)?.id ?? null,
+          );
           setScreen("bonus-topic");
         }}
         onShare={handleShare}

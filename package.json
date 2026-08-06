@@ -10,6 +10,8 @@
     "build": "vite build && ait build",
     "prebuild:web": "node scripts/clean-build.mjs",
     "build:web": "vite build --configLoader runner",
+    "build:concept-map": "tsx scripts/build-concept-map.ts",
+    "check:concept-map": "tsx scripts/build-concept-map.ts --check",
     "typecheck": "tsc -b --pretty false",
     "test": "vitest --configLoader runner",
     "test:run": "vitest run --configLoader runner",
@@ -21,7 +23,7 @@
     "test:e2e:chromium": "playwright test --project=chromium-360 --project=chromium-390",
     "test:e2e:webkit": "playwright test --project=webkit-360 --project=webkit-390",
     "test:e2e:update": "playwright test tests/e2e/visual-regression.spec.ts --update-snapshots",
-    "verify:quality": "npm run lint && npm run typecheck && npm run validate:content && npm run test:run",
+    "verify:quality": "npm run lint && npm run typecheck && npm run validate:content && npm run check:concept-map && npm run test:run",
     "verify:release": "npm run verify:quality && npm run test:e2e:install && npm run test:e2e && npm run build",
     "lint": "eslint .",
     "format": "prettier --write ."

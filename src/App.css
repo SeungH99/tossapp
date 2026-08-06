@@ -170,11 +170,17 @@ a:focus-visible {
   margin-top: 58px;
 }
 
-.question-section h1 {
+.question-title {
   margin: 0;
-  font-size: clamp(27px, 7.4vw, 34px);
-  line-height: 1.45;
-  letter-spacing: -0.045em;
+  font-size: clamp(24px, 6.4vw, 28px);
+  line-height: 1.38;
+  letter-spacing: -0.025em;
+}
+
+.question-title.long {
+  font-size: clamp(21px, 5.7vw, 24px);
+  line-height: 1.42;
+  letter-spacing: -0.018em;
 }
 
 .answer-list {
@@ -184,16 +190,19 @@ a:focus-visible {
 }
 
 .answer-button {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 28px;
+  gap: 14px;
   min-height: 70px;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 24px;
-  border: 1px solid #d9dee5;
+  align-items: start;
+  padding: 18px 20px;
+  border: 2px solid #d9dee5;
   border-radius: 14px;
   color: #10233f;
   background: #fff;
-  font-size: 20px;
+  text-align: left;
+  font-size: 18px;
+  line-height: 1.45;
   font-weight: 700;
   cursor: pointer;
 }
@@ -212,12 +221,24 @@ a:focus-visible {
 
 .answer-mark {
   display: grid;
-  width: 34px;
-  height: 34px;
+  width: 28px;
+  min-width: 28px;
+  height: 28px;
+  min-height: 28px;
+  aspect-ratio: 1;
   place-items: center;
   border-radius: 50%;
-  color: #fff;
   background: #0064ff;
+}
+
+.answer-mark svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: #fff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.5;
 }
 
 .explanation-card {
@@ -351,9 +372,16 @@ a:focus-visible {
 
 .topic-button {
   position: relative;
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  grid-template-areas:
+    "icon label"
+    "icon status";
+  align-items: center;
+  column-gap: 10px;
   min-height: 116px;
   padding: 18px 14px;
-  border: 1px solid #d9dee5;
+  border: 2px solid #d9dee5;
   border-radius: 14px;
   color: #10233f;
   background: #fff;
@@ -363,13 +391,46 @@ a:focus-visible {
   cursor: pointer;
 }
 
+.topic-button:disabled {
+  cursor: not-allowed;
+}
+
 .topic-button.selected {
   border: 2px solid #0064ff;
   color: #0064ff;
   background: #f5f9ff;
 }
 
-.topic-button > span:last-child:not(:first-child) {
+.topic-button.exhausted {
+  border-color: #d9dee5;
+  color: #4e5968;
+  background: #f7f8fa;
+}
+
+.topic-icon {
+  grid-area: icon;
+  font-size: 30px;
+  line-height: 1;
+  text-align: center;
+}
+
+.topic-label {
+  grid-area: label;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  text-align: left;
+}
+
+.topic-status {
+  grid-area: status;
+  margin-top: 4px;
+  color: #6b7684;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.topic-selected-mark {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -521,6 +582,12 @@ a:focus-visible {
 
 .storage-error-screen .outline-button {
   margin-top: 12px;
+}
+
+@media (max-width: 420px) {
+  .topic-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 @media (max-width: 360px) {

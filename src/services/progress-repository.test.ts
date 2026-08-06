@@ -10,10 +10,12 @@ const contentMetadata = {
 };
 import { createQuizSession } from "../domain/quiz-session";
 import { createShadowAudit } from "../domain/shadow-audit";
+import type { ProgressStateV3 } from "../domain/progress-state";
 import {
   BrowserKeyValueStorage,
   createEmptyProgress,
   migrateV2ToV3,
+  migrateV3ToV4,
   ProgressRepository,
   ProgressEnvelopeTooLargeError,
   progressStorageKeys,
@@ -43,7 +45,12 @@ function v2ProgressWithCompletedIds(
   const current = createEmptyProgress();
   return {
     ...Object.fromEntries(
-      Object.entries(current).filter(([key]) => key !== "bonusTopicProgress"),
+      Object.entries(current).filter(
+        ([key]) =>
+          !["bonusTopicProgress", "seenConceptIds", "seenQuestionIds"].includes(
+            key,
+          ),
+      ),
     ),
     version: 2,
     completedBonusIds,
@@ -53,6 +60,7 @@ function v2ProgressWithCompletedIds(
 const question: CoreQuestion = {
   kind: "core",
   id: "then-phone",
+  conceptId: "nostalgia-public-phone-coin-call",
   dateKey: "2026-07-28",
   internalDifficulty: "gentle",
   ...contentMetadata,
@@ -116,7 +124,7 @@ const bonusQuestions: BonusQuestion[] = [
   },
 ];
 
-function progressEnvelope(schemaVersion: 2 | 3, payload: unknown): string {
+function progressEnvelope(schemaVersion: 2 | 3 | 4, payload: unknown): string {
   const unsigned = {
     schemaVersion,
     revision: 1,
@@ -143,9 +151,125 @@ function v3Envelope(payload: unknown): string {
   return progressEnvelope(3, payload);
 }
 
+function v4Envelope(payload: unknown): string {
+  return progressEnvelope(4, payload);
+}
+
+function v3ProgressWithAnswers(): ProgressStateV3 {
+  return {
+    ...v2ProgressWithCompletedIds([]),
+    version: 3,
+    answerEvents: [
+      {
+        attemptId: "old-core-attempt",
+        sessionKey: "2026-07-28",
+        questionId: "old-core-id",
+        questionKind: "core",
+        topic: "korean-life",
+        lens: "then",
+        selectedIndex: 0,
+        isCorrect: true,
+        answeredAt: "2026-07-28T12:00:00.000Z",
+      },
+    ],
+    rewardGrantIds: ["preserved-reward-grant"],
+    bonusTopicProgress: {
+      nostalgia: { completedSetIndexes: [] },
+      "korean-life": { completedSetIndexes: [2] },
+      language: { completedSetIndexes: [] },
+      digital: { completedSetIndexes: [] },
+      safety: { completedSetIndexes: [] },
+      "nature-general": { completedSetIndexes: [] },
+    },
+  };
+}
+
 describe("ProgressRepository", () => {
   beforeEach(() => {
     window.localStorage.clear();
+  });
+
+  it("migrates answered IDs and mapped concepts from V3", () => {
+    const migrated = migrateV3ToV4(v3ProgressWithAnswers(), {
+      "old-core-id": "korean-life-kimjang-community-winter-preparation",
+    });
+
+    expect(migrated.version).toBe(4);
+    expect(migrated.seenQuestionIds).toContain("old-core-id");
+    expect(migrated.seenConceptIds).toContain(
+      "korean-life-kimjang-community-winter-preparation",
+    );
+    expect(migrated.bonusTopicProgress["korean-life"]).toEqual({
+      completedSetIndexes: [2],
+      skippedSetIndexes: [],
+    });
+    expect(migrated.answerEvents).toEqual(v3ProgressWithAnswers().answerEvents);
+    expect(migrated.rewardGrantIds).toEqual(["preserved-reward-grant"]);
+  });
+
+  it("uses V4 active keys and preserves V3 source slots during migration", async () => {
+    const keys = progressStorageKeys as typeof progressStorageKeys & {
+      v3SlotA?: string;
+      v3SlotB?: string;
+    };
+    expect(keys).toMatchObject({
+      slotA: "geuttae-yojeum:progress:v4:a",
+      slotB: "geuttae-yojeum:progress:v4:b",
+      v3SlotA: "geuttae-yojeum:progress:v3:a",
+      v3SlotB: "geuttae-yojeum:progress:v3:b",
+    });
+    const raw = v3Envelope(v3ProgressWithAnswers());
+    window.localStorage.setItem(keys.v3SlotA as string, raw);
+    window.localStorage.setItem(keys.v3SlotB as string, raw);
+    const repository = new ProgressRepository(
+      new BrowserKeyValueStorage(window.localStorage),
+      () => new Date("2026-07-28T12:00:00.000Z"),
+    );
+
+    const restored = await repository.load();
+
+    expect(restored).toMatchObject({ kind: "migrated", fromVersion: 3 });
+    expect(expectState(restored).version).toBe(4);
+    expect(expectState(restored).rewardGrantIds).toEqual([
+      "preserved-reward-grant",
+    ]);
+    expect(window.localStorage.getItem(keys.v3SlotA as string)).toBe(raw);
+    expect(window.localStorage.getItem(keys.v3SlotB as string)).toBe(raw);
+    const activeA = window.localStorage.getItem(progressStorageKeys.slotA);
+    const activeB = window.localStorage.getItem(progressStorageKeys.slotB);
+    expect(activeA).not.toBeNull();
+    expect(activeB).not.toBeNull();
+    expect(JSON.parse(activeA ?? "{}")).toMatchObject({ schemaVersion: 4 });
+    expect(JSON.parse(activeB ?? "{}")).toMatchObject({ schemaVersion: 4 });
+  });
+
+  it("does not overwrite unreadable V4 slots when falling back to V3", async () => {
+    const keys = progressStorageKeys as typeof progressStorageKeys & {
+      v3SlotA?: string;
+      v3SlotB?: string;
+    };
+    const corruptV4A = "{corrupt-v4-a";
+    const corruptV4B = "{corrupt-v4-b";
+    const v3Raw = v3Envelope(v3ProgressWithAnswers());
+    window.localStorage.setItem(progressStorageKeys.slotA, corruptV4A);
+    window.localStorage.setItem(progressStorageKeys.slotB, corruptV4B);
+    window.localStorage.setItem(keys.v3SlotA as string, v3Raw);
+    window.localStorage.setItem(keys.v3SlotB as string, v3Raw);
+    const repository = new ProgressRepository(
+      new BrowserKeyValueStorage(window.localStorage),
+    );
+
+    const restored = await repository.load();
+
+    expect(restored).toMatchObject({ kind: "migrated", fromVersion: 3 });
+    expect(window.localStorage.getItem(progressStorageKeys.slotA)).toBe(
+      corruptV4A,
+    );
+    expect(window.localStorage.getItem(progressStorageKeys.slotB)).toBe(
+      corruptV4B,
+    );
+    expect(window.localStorage.getItem(keys.v3SlotA as string)).toBe(v3Raw);
+    expect(window.localStorage.getItem(keys.v3SlotB as string)).toBe(v3Raw);
   });
 
   it("완료된 기존 세 문제 전부가 매핑될 때만 새 세트를 완료 처리한다", () => {
@@ -222,15 +346,20 @@ describe("ProgressRepository", () => {
 
     expect(restored).toMatchObject({ kind: "migrated", fromVersion: 2 });
     expect(expectState(restored)).toMatchObject({
-      version: 3,
+      version: 4,
       completedBonusIds: ["legacy-unmapped"],
+      seenQuestionIds: ["legacy-unmapped"],
+      seenConceptIds: [],
       bonusTopicProgress: {
-        nostalgia: { completedSetIndexes: [] },
-        "korean-life": { completedSetIndexes: [] },
-        language: { completedSetIndexes: [] },
-        digital: { completedSetIndexes: [] },
-        safety: { completedSetIndexes: [] },
-        "nature-general": { completedSetIndexes: [] },
+        nostalgia: { completedSetIndexes: [], skippedSetIndexes: [] },
+        "korean-life": { completedSetIndexes: [], skippedSetIndexes: [] },
+        language: { completedSetIndexes: [], skippedSetIndexes: [] },
+        digital: { completedSetIndexes: [], skippedSetIndexes: [] },
+        safety: { completedSetIndexes: [], skippedSetIndexes: [] },
+        "nature-general": {
+          completedSetIndexes: [],
+          skippedSetIndexes: [],
+        },
       },
     });
     expect(window.localStorage.getItem(progressStorageKeys.v2SlotA)).toBe(raw);
@@ -308,10 +437,11 @@ describe("ProgressRepository", () => {
   });
 
   it("v3 세트 인덱스를 정렬하고 중복과 nextSetIndex를 저장하지 않는다", async () => {
+    const v3 = v3ProgressWithAnswers();
     const payload = {
-      ...createEmptyProgress(),
+      ...v3,
       bonusTopicProgress: {
-        ...createEmptyProgress().bonusTopicProgress,
+        ...v3.bonusTopicProgress,
         digital: {
           completedSetIndexes: [4, 2, 4],
           nextSetIndex: 0,
@@ -319,8 +449,8 @@ describe("ProgressRepository", () => {
       },
     };
     const raw = v3Envelope(payload);
-    window.localStorage.setItem(progressStorageKeys.slotA, raw);
-    window.localStorage.setItem(progressStorageKeys.slotB, raw);
+    window.localStorage.setItem(progressStorageKeys.v3SlotA, raw);
+    window.localStorage.setItem(progressStorageKeys.v3SlotB, raw);
     const repository = new ProgressRepository(
       new BrowserKeyValueStorage(window.localStorage),
     );
@@ -461,7 +591,7 @@ describe("ProgressRepository", () => {
     const restored = await repository.load();
 
     expect(restored).toMatchObject({ kind: "migrated", fromVersion: 1 });
-    expect(expectState(restored).version).toBe(3);
+    expect(expectState(restored).version).toBe(4);
     expect(expectState(restored).rewardGrantIds).toEqual([]);
     expect(expectState(restored).bonusStartCommands).toEqual({});
     expect(expectState(restored)).toMatchObject({
@@ -473,12 +603,15 @@ describe("ProgressRepository", () => {
         confidence: "normal",
       },
       bonusTopicProgress: {
-        nostalgia: { completedSetIndexes: [] },
-        "korean-life": { completedSetIndexes: [] },
-        language: { completedSetIndexes: [] },
-        digital: { completedSetIndexes: [] },
-        safety: { completedSetIndexes: [] },
-        "nature-general": { completedSetIndexes: [] },
+        nostalgia: { completedSetIndexes: [], skippedSetIndexes: [] },
+        "korean-life": { completedSetIndexes: [], skippedSetIndexes: [] },
+        language: { completedSetIndexes: [], skippedSetIndexes: [] },
+        digital: { completedSetIndexes: [], skippedSetIndexes: [] },
+        safety: { completedSetIndexes: [], skippedSetIndexes: [] },
+        "nature-general": {
+          completedSetIndexes: [],
+          skippedSetIndexes: [],
+        },
       },
     });
     expect(window.localStorage.getItem(progressStorageKeys.legacy)).toBe(
@@ -495,12 +628,16 @@ describe("ProgressRepository", () => {
   it("두 슬롯과 v1이 모두 손상되면 원문을 보존하고 쓰지 않는다", async () => {
     window.localStorage.setItem(progressStorageKeys.slotA, "{slot-a");
     window.localStorage.setItem(progressStorageKeys.slotB, "{slot-b");
+    window.localStorage.setItem(progressStorageKeys.v3SlotA, "{v3-slot-a");
+    window.localStorage.setItem(progressStorageKeys.v3SlotB, "{v3-slot-b");
     window.localStorage.setItem(progressStorageKeys.v2SlotA, "{v2-slot-a");
     window.localStorage.setItem(progressStorageKeys.v2SlotB, "{v2-slot-b");
     window.localStorage.setItem(progressStorageKeys.legacy, "{legacy");
     const before = {
       slotA: window.localStorage.getItem(progressStorageKeys.slotA),
       slotB: window.localStorage.getItem(progressStorageKeys.slotB),
+      v3SlotA: window.localStorage.getItem(progressStorageKeys.v3SlotA),
+      v3SlotB: window.localStorage.getItem(progressStorageKeys.v3SlotB),
       v2SlotA: window.localStorage.getItem(progressStorageKeys.v2SlotA),
       v2SlotB: window.localStorage.getItem(progressStorageKeys.v2SlotB),
       legacy: window.localStorage.getItem(progressStorageKeys.legacy),
@@ -518,6 +655,8 @@ describe("ProgressRepository", () => {
     expect({
       slotA: window.localStorage.getItem(progressStorageKeys.slotA),
       slotB: window.localStorage.getItem(progressStorageKeys.slotB),
+      v3SlotA: window.localStorage.getItem(progressStorageKeys.v3SlotA),
+      v3SlotB: window.localStorage.getItem(progressStorageKeys.v3SlotB),
       v2SlotA: window.localStorage.getItem(progressStorageKeys.v2SlotA),
       v2SlotB: window.localStorage.getItem(progressStorageKeys.v2SlotB),
       legacy: window.localStorage.getItem(progressStorageKeys.legacy),
@@ -566,6 +705,28 @@ describe("ProgressRepository", () => {
     expect(restored.shadowAudits).toEqual(shadowAudits);
   });
 
+  it("loads a valid V4 shadow audit payload from active slots", async () => {
+    const shadowAudits = [
+      createShadowAudit({
+        legacyQuestionIds: ["legacy-1"],
+        shadowQuestionIds: ["shadow-1"],
+        policyVersion: "personalization-v1",
+        reasonCode: "high-accuracy",
+      }),
+    ];
+    const envelope = v4Envelope({ ...createEmptyProgress(), shadowAudits });
+    window.localStorage.setItem(progressStorageKeys.slotA, envelope);
+    window.localStorage.setItem(progressStorageKeys.slotB, envelope);
+    const repository = new ProgressRepository(
+      new BrowserKeyValueStorage(window.localStorage),
+    );
+
+    await expect(repository.load()).resolves.toMatchObject({
+      kind: "loaded",
+      state: { shadowAudits },
+    });
+  });
+
   it("rejects noncanonical and over-limit persisted shadow audits", async () => {
     const noncanonicalReasonPayload: Record<string, unknown> = {
       ...createEmptyProgress(),
@@ -589,11 +750,11 @@ describe("ProgressRepository", () => {
     };
     window.localStorage.setItem(
       progressStorageKeys.slotA,
-      v3Envelope(noncanonicalReasonPayload),
+      v4Envelope(noncanonicalReasonPayload),
     );
     window.localStorage.setItem(
       progressStorageKeys.slotB,
-      v3Envelope(overLimitPayload),
+      v4Envelope(overLimitPayload),
     );
     const repository = new ProgressRepository(
       new BrowserKeyValueStorage(window.localStorage),
@@ -617,7 +778,7 @@ describe("ProgressRepository", () => {
         },
       ],
     };
-    const envelope = v3Envelope(payload);
+    const envelope = v4Envelope(payload);
     window.localStorage.setItem(progressStorageKeys.slotA, envelope);
     window.localStorage.setItem(progressStorageKeys.slotB, envelope);
     const repository = new ProgressRepository(
@@ -721,6 +882,7 @@ describe("ProgressRepository", () => {
       "2026-07-28",
       "digital",
       0,
+      180,
       bonusQuestions,
     );
     const restored = await repository.load();
@@ -770,6 +932,7 @@ describe("ProgressRepository", () => {
       "2026-07-28",
       "digital",
       0,
+      180,
       bonusQuestions,
     );
     const restored = expectState(await repository.load());
@@ -812,6 +975,8 @@ describe("ProgressRepository", () => {
       "legacy-valid",
       "2026-08-04",
       "digital",
+      0,
+      180,
       bonusQuestions,
     );
     const restored = expectState(await repository.load());
@@ -821,11 +986,7 @@ describe("ProgressRepository", () => {
     expect(restored.bonusStartCommands["legacy-valid"]).toMatchObject({
       topic: "digital",
       setIndex: 0,
-      questionIds: [
-        "bonus-digital-1",
-        "bonus-digital-2",
-        "bonus-digital-3",
-      ],
+      questionIds: ["bonus-digital-1", "bonus-digital-2", "bonus-digital-3"],
     });
   });
 
@@ -836,6 +997,7 @@ describe("ProgressRepository", () => {
         const state = createEmptyProgress();
         state.bonusTopicProgress.digital = {
           completedSetIndexes: [0],
+          skippedSetIndexes: [],
           lastCompletedDateKey: "2026-08-04",
         };
         return state;
@@ -852,6 +1014,7 @@ describe("ProgressRepository", () => {
             { length: 180 },
             (_, setIndex) => setIndex,
           ),
+          skippedSetIndexes: [],
         };
         return state;
       },
@@ -875,35 +1038,36 @@ describe("ProgressRepository", () => {
       questions: bonusQuestions.slice(0, 2),
       reason: "no-questions",
     },
-  ])("legacy repository $name은 저장된 이용권을 보존한다", async ({
-    prepare,
-    questions,
-    reason,
-  }) => {
-    const repository = new ProgressRepository(
-      new BrowserKeyValueStorage(window.localStorage),
-    );
-    const state = prepare();
-    state.bonus = {
-      ...state.bonus,
-      firstFreeUsed: true,
-      ticketCount: 1,
-    };
-    await repository.save(state);
+  ])(
+    "legacy repository $name은 저장된 이용권을 보존한다",
+    async ({ prepare, questions, reason }) => {
+      const repository = new ProgressRepository(
+        new BrowserKeyValueStorage(window.localStorage),
+      );
+      const state = prepare();
+      state.bonus = {
+        ...state.bonus,
+        firstFreeUsed: true,
+        ticketCount: 1,
+      };
+      await repository.save(state);
 
-    const result = await repository.startBonusSession(
-      `legacy-blocked-${reason}`,
-      "2026-08-04",
-      "digital",
-      questions,
-    );
-    const restored = await repository.load();
+      const result = await repository.startBonusSession(
+        `legacy-blocked-${reason}`,
+        "2026-08-04",
+        "digital",
+        0,
+        180,
+        questions,
+      );
+      const restored = await repository.load();
 
-    expect(result).toMatchObject({ applied: false, reason });
-    expect(restored).toMatchObject({ kind: "loaded", revision: 1 });
-    expect(expectState(restored).bonus.ticketCount).toBe(1);
-    expect(expectState(restored).bonusStartCommands).toEqual({});
-  });
+      expect(result).toMatchObject({ applied: false, reason });
+      expect(restored).toMatchObject({ kind: "loaded", revision: 1 });
+      expect(expectState(restored).bonus.ticketCount).toBe(1);
+      expect(expectState(restored).bonusStartCommands).toEqual({});
+    },
+  );
 
   it("같은 보너스 commandId 재시도는 revision과 세션을 늘리지 않는다", async () => {
     const repository = new ProgressRepository(
@@ -915,6 +1079,7 @@ describe("ProgressRepository", () => {
       "2026-07-28",
       "digital",
       0,
+      180,
       bonusQuestions,
     );
     const duplicate = await repository.startBonusSession(
@@ -922,6 +1087,7 @@ describe("ProgressRepository", () => {
       "2026-07-28",
       "digital",
       0,
+      180,
       bonusQuestions,
     );
     const restored = await repository.load();
@@ -952,6 +1118,7 @@ describe("ProgressRepository", () => {
       "2026-07-27",
       "digital",
       0,
+      180,
       bonusQuestions,
       new Date("2026-07-27T12:00:00.000Z"),
     );
@@ -973,6 +1140,7 @@ describe("ProgressRepository", () => {
       "2026-07-28",
       "digital",
       0,
+      180,
       [],
     );
     const restored = await repository.load();
@@ -1005,6 +1173,7 @@ describe("ProgressRepository", () => {
         "2026-07-28",
         "digital",
         0,
+        180,
         bonusQuestions,
       ),
     ).rejects.toThrow("storage unavailable");
@@ -1024,6 +1193,7 @@ describe("ProgressRepository", () => {
       "2026-08-04",
       "digital",
       0,
+      180,
       bonusQuestions,
     );
     expect(started.applied).toBe(true);
@@ -1071,6 +1241,7 @@ describe("ProgressRepository", () => {
     expect(restored).toMatchObject({ kind: "loaded", revision: 3 });
     expect(expectState(restored).bonusTopicProgress.digital).toEqual({
       completedSetIndexes: [0],
+      skippedSetIndexes: [],
       lastCompletedDateKey: "2026-08-04",
     });
     expect(expectState(restored).completedBonusIds).toEqual([
@@ -1099,6 +1270,7 @@ describe("ProgressRepository", () => {
         "2026-08-04",
         "digital",
         0,
+        180,
         bonusQuestions,
       ),
       repository.startBonusSession(
@@ -1106,6 +1278,7 @@ describe("ProgressRepository", () => {
         "2026-08-04",
         "digital",
         0,
+        180,
         bonusQuestions,
       ),
     ]);

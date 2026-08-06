@@ -19,6 +19,7 @@ const questions: CoreQuestion[] = [
   {
     kind: "core",
     id: "life-1",
+    conceptId: "safety-scam-direct-verification",
     dateKey: "2026-07-28",
     internalDifficulty: "gentle",
     ...contentMetadata,
@@ -33,6 +34,7 @@ const questions: CoreQuestion[] = [
   {
     kind: "core",
     id: "then-1",
+    conceptId: "nostalgia-public-phone-extra-coin",
     dateKey: "2026-07-28",
     internalDifficulty: "steady",
     ...contentMetadata,
@@ -47,6 +49,7 @@ const questions: CoreQuestion[] = [
   {
     kind: "core",
     id: "now-1",
+    conceptId: "digital-qr-camera-scan",
     dateKey: "2026-07-28",
     internalDifficulty: "stretch",
     ...contentMetadata,
@@ -61,6 +64,7 @@ const questions: CoreQuestion[] = [
   {
     kind: "core",
     id: "other-day",
+    conceptId: "nostalgia-public-phone-coin-call",
     dateKey: "2026-07-29",
     internalDifficulty: "gentle",
     ...contentMetadata,

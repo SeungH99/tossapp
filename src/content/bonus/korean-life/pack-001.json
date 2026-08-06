@@ -1,0 +1,2258 @@
+{
+  "id": "bonus-korean-life-001",
+  "kind": "bonus",
+  "contentVersion": "2026.08.180d",
+  "reviewStatus": "reviewed",
+  "questions": [
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s00-gentle-osinban-spring-herbs",
+      "conceptId": "korean-life-osinban-five-pungent-spring-herbs",
+      "variant": "dish-identification",
+      "setIndex": 0,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "입춘 무렵 눈 밑에서 갓 돋은 산채 여러 가지를 겨자·식초·소금에 무쳐 봄기운을 돋우던 음식은 무엇일까요?",
+      "choices": [
+        "오신반",
+        "탕평채",
+        "구절판"
+      ],
+      "answerIndex": 0,
+      "explanation": "오신반은 입춘 무렵 새로 돋은 신검초·멧갓·움파·부추 같은 매운 산채를 무친 절식입니다. 겨우내 귀했던 신선한 채소로 봄을 맞는 뜻을 살렸습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「절식」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0049806"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s00-steady-bureom-purpose",
+      "conceptId": "korean-life-daeboreum-bureom-health-wish",
+      "variant": "custom-purpose",
+      "setIndex": 0,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "정월 대보름 새벽에 밤이나 호두를 껍데기째 깨물고 밖으로 던졌습니다. 이 행동에 담긴 바람은 무엇이었을까요?",
+      "choices": [
+        "농사일을 시작하기 전 씨앗의 싹을 깨우려는 바람",
+        "한 해 동안 부스럼을 막고 이를 튼튼하게 하려는 바람",
+        "철새가 돌아올 길을 소리로 알려 주려는 바람"
+      ],
+      "answerIndex": 1,
+      "explanation": "대보름 아침의 부럼 깨기는 한 해 동안 부스럼이 나지 않고 이가 단단하기를 비는 풍습이었습니다. 밤·호두·잣·은행 같은 견과를 껍데기째 깨물었습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「절식」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0049806"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s00-stretch-bokssam-wrapping",
+      "conceptId": "korean-life-daeboreum-bokssam-wrapped-rice",
+      "variant": "serving-method",
+      "setIndex": 0,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "stretch",
+      "prompt": "정월 대보름 상원절식 가운데 오곡밥을 중심으로 한 음식 한 가지를 재현하려 합니다. 재료와 마무리 방법이 기록과 맞는 것은 무엇일까요?",
+      "choices": [
+        "오곡밥에 봄나물을 겨자·식초로 무쳐 곁들인다",
+        "오곡밥을 수리취와 함께 쳐 수레바퀴 무늬로 찍는다",
+        "오곡밥을 구운 김이나 넓게 볶은 취 잎에 싸 먹는다"
+      ],
+      "answerIndex": 2,
+      "explanation": "대보름에는 오곡밥을 지어 구운 김이나 넓은 잎 모양으로 볶은 취에 싸 먹었고, 이를 복쌈이라 했습니다. 봄나물을 겨자·식초로 무치는 오신반은 입춘, 수리취를 쳐 무늬를 찍는 떡은 단오 절식입니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「절식」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0049806"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s01-gentle-gwibalgisul-morning",
+      "conceptId": "korean-life-daeboreum-gwibalgisul-morning-drink",
+      "variant": "custom-identification",
+      "setIndex": 1,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "보름날 아침 찬 청주 한 잔을 마시며 한 해 동안 좋은 소식을 잘 듣기를 빌던 풍습은 무엇일까요?",
+      "choices": [
+        "도소주",
+        "귀밝이술",
+        "국화주"
+      ],
+      "answerIndex": 1,
+      "explanation": "귀밝이술은 정월 대보름 아침에 차게 마시는 청주입니다. 귀가 밝아져 한 해 동안 좋은 소식을 듣기를 바라는 뜻을 담았습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「절식」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0049806"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s01-steady-junghwajeol-worker-songpyeon",
+      "conceptId": "korean-life-junghwajeol-songpyeon-workers-encouragement",
+      "variant": "social-meaning",
+      "setIndex": 1,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "음력 2월 초하루, 농사철을 앞두고 큰 떡을 만들어 일꾼들에게 나이 수대로 나누어 주었습니다. 가장 가까운 뜻은 무엇일까요?",
+      "choices": [
+        "지난 추수의 세금을 곡식으로 다시 계산하려는 뜻",
+        "마을 밖 여행을 앞둔 사람의 무사 귀환을 비는 뜻",
+        "앞으로 농사를 맡을 일꾼을 위로하고 격려하는 뜻"
+      ],
+      "answerIndex": 2,
+      "explanation": "중화절은 농사일이 시작되는 때라 노비일 또는 머슴의 날이라고도 했습니다. 큰 송편을 만들어 일꾼에게 나누며 수고를 위로하고 새 농사철을 격려했습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「절식」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0049806"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s01-stretch-samjinnal-hwajeon",
+      "conceptId": "korean-life-samjinnal-azalea-hwajeon-preparation",
+      "variant": "recipe-recognition",
+      "setIndex": 1,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "stretch",
+      "prompt": "삼짇날 들놀이에서 봄꽃의 빛과 향을 살린 전을 부치려 합니다. 전통적인 재료와 방법을 고르세요.",
+      "choices": [
+        "찹쌀 반죽에 진달래꽃을 얹어 기름에 지진다",
+        "메밀 반죽에 국화잎을 섞어 시루에 찐다",
+        "멥쌀 반죽에 수리취를 넣어 물에 삶는다"
+      ],
+      "answerIndex": 0,
+      "explanation": "삼짇날에는 진달래꽃을 따서 찹쌀가루 반죽에 얹고 기름에 지져 화전을 만들었습니다. 산과 들에서 직접 부쳐 먹는 화전놀이와도 이어졌습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「세시풍속」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0029819"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s02-gentle-dano-surichwitteok-wheel",
+      "conceptId": "korean-life-dano-surichwitteok-wheel-stamp",
+      "variant": "shape-recognition",
+      "setIndex": 2,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "단옷날 멥쌀가루에 향초 잎을 섞어 오래 친 뒤, 떡살로 수레바퀴 무늬를 찍은 절편은 무엇일까요?",
+      "choices": [
+        "오메기떡",
+        "두텁떡",
+        "수리취떡"
+      ],
+      "answerIndex": 2,
+      "explanation": "수리취떡은 멥쌀가루와 데친 수리취를 섞어 친 뒤 둥글게 만들고 수레바퀴 무늬 떡살로 찍는 단오 절식입니다. 차륜병이라고도 불렀습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「절식」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0049806"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s02-steady-jehotang-royal-drink",
+      "conceptId": "korean-life-dano-jehotang-royal-cooling-drink",
+      "variant": "ingredient-process",
+      "setIndex": 2,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "궁중 내의원이 단오에 올리던 여름 음료를 재현하려 합니다. 자료에 맞는 조리법은 어느 것일까요?",
+      "choices": [
+        "오매·축사·백단·사향을 달여 꿀과 두었다가 찬물에 탄다",
+        "볶은 보리와 생강을 달여 소금을 넣고 따뜻하게 마신다",
+        "솔잎과 찹쌀을 삭인 뒤 술지게미를 걸러 얼음에 붓는다"
+      ],
+      "answerIndex": 0,
+      "explanation": "제호탕은 오매·축사·백단·사향을 달여 꿀과 함께 자기 그릇에 두었다가 찬물에 타 마신 궁중의 단오 음료였습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「절식」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0049806"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s02-stretch-yudu-seasonal-foods",
+      "conceptId": "korean-life-yudu-sudan-geondan-ritual-foods",
+      "variant": "food-set-recognition",
+      "setIndex": 2,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "stretch",
+      "prompt": "음력 유월의 절일에 마련해 제사나 액막이에도 쓰던 음식 묶음을 고르세요.",
+      "choices": [
+        "국화전·국화주·국화화채",
+        "수단·건단·연병·상화떡",
+        "오곡밥·묵은나물·약밥"
+      ],
+      "answerIndex": 1,
+      "explanation": "유두날에는 수단·건단·연병·상화떡 등을 시식했습니다. 이 음식들은 계절 음식일 뿐 아니라 제사에 쓰이거나 액막이의 뜻을 띠기도 했습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「세시풍속」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0029819"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s03-gentle-chuseok-new-harvest-songpyeon",
+      "conceptId": "korean-life-chuseok-new-harvest-songpyeon-fillings",
+      "variant": "harvest-ingredient",
+      "setIndex": 3,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "한가위에 그해 수확의 의미를 가장 또렷이 살린 송편 재료 조합은 무엇일까요?",
+      "choices": [
+        "햅쌀에 햇콩·햇녹두·햇깨·햇밤 같은 새 곡식을 넣는다",
+        "묵은 메밀에 말린 무청과 겨울밤을 넣는다",
+        "보릿가루에 소금에 절인 생선과 마늘을 넣는다"
+      ],
+      "answerIndex": 0,
+      "explanation": "추석 송편은 새로 거둔 햅쌀로 빚고 속에도 햇콩·햇녹두·햇깨·햇밤·햇대추 같은 새 수확물을 넣는 데 뜻이 있습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「절식」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0049806"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s03-steady-chuseok-torantang-spread",
+      "conceptId": "korean-life-chuseok-torantang-seasonal-regional-spread",
+      "variant": "regional-context",
+      "setIndex": 3,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "추석 무렵에만 많이 나는 뿌리채소로 맑은 장국을 끓인 음식은 처음부터 전국 공통 절식은 아니었습니다. 어떤 설명이 맞을까요?",
+      "choices": [
+        "제주 해안에서만 재배되어 뭍으로는 전해지지 않았다",
+        "중부 지방 중심 음식이었으나 상품 유통이 늘며 다른 지방으로 퍼졌다",
+        "북부 산간의 군량 음식이었고 가을 명절과는 관계가 없었다"
+      ],
+      "answerIndex": 1,
+      "explanation": "토란탕은 추석 전후에 나는 토란으로 끓였습니다. 토란이 서울을 비롯한 중부 지방에서 주로 재배되어 처음에는 전국 공통 음식이 아니었지만 유통이 늘며 퍼졌습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「절식」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0049806"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s03-stretch-junggu-chrysanthemum-foods",
+      "conceptId": "korean-life-junggu-chrysanthemum-cuisine",
+      "variant": "seasonal-pairing",
+      "setIndex": 3,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "stretch",
+      "prompt": "절식 기록에서 중구일의 날짜·계절 의미·음식 차림을 모두 맞게 연결한 것은?",
+      "choices": [
+        "음력 3월 3일 — 국화전과 국화주로 가을 향취를 즐긴다",
+        "음력 9월 9일 — 두견화전과 두견주로 봄 들놀이를 즐긴다",
+        "음력 9월 9일 — 국화전과 때맞춰 빚은 국화주로 가을 향취를 즐긴다"
+      ],
+      "answerIndex": 2,
+      "explanation": "중구일은 음력 9월 9일이며 국화전과 국화주가 대표적인 절식이었습니다. 작은 황국을 음식에 넣고 중구일에 맞추어 국화주를 빚어 계절의 향취를 즐겼습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「절식」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0049806"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s04-gentle-dongji-small-new-year",
+      "conceptId": "korean-life-dongji-small-new-year-red-bean-porridge",
+      "variant": "holiday-meaning",
+      "setIndex": 4,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "밤이 가장 긴 절기를 ‘작은 설’로 여기고 붉은 콩죽을 먹으면 나이 한 살을 더한다고도 했습니다. 어느 날일까요?",
+      "choices": [
+        "한식",
+        "동지",
+        "유두"
+      ],
+      "answerIndex": 1,
+      "explanation": "동지는 조선시대에 작은 설이라는 뜻의 아세라고도 불렀습니다. 팥죽을 먹으며 액을 물리치고 새해와 비슷하게 나이를 더한다는 인식도 있었습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「동지」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0016784"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s04-steady-hansik-cold-food-fire-renewal",
+      "conceptId": "korean-life-hansik-cold-food-old-fire-ban",
+      "variant": "custom-origin-interpretation",
+      "setIndex": 4,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "봄철 어느 절일의 이름을 ‘차게 먹는 음식’과 연결하고, 옛 불을 금한 뒤 새 불을 마련하던 관습으로 해석하기도 합니다. 알맞은 것은?",
+      "choices": [
+        "입춘에는 묵은 불로 매운 나물을 익혔다",
+        "백중에는 마을의 모든 화로를 강물에 씻었다",
+        "한식에는 불을 멀리하고 찬밥을 먹는 풍속이 전해졌다"
+      ],
+      "answerIndex": 2,
+      "explanation": "한식에는 불을 쓰지 않고 찬 음식을 먹는다는 풍속이 전해집니다. 최남선은 이를 봄에 새 불을 만들며 전에 쓰던 불을 금하던 예속과 연결해 설명했습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「세시풍속」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0029819"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s04-stretch-seollal-dosoju",
+      "conceptId": "korean-life-seollal-dosoju-medicinal-wine",
+      "variant": "drink-identification",
+      "setIndex": 4,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "stretch",
+      "prompt": "설날 차림에서 흰떡국과 찬 세주 외에 약초를 넣어 마시던 특별한 술은 무엇일까요?",
+      "choices": [
+        "도소주",
+        "이강고",
+        "문배주"
+      ],
+      "answerIndex": 0,
+      "explanation": "설날에는 떡국과 찬 세주를 차리고, 약초를 넣은 도소주를 마시는 특별한 풍습도 있었습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「절식」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0049806"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s05-gentle-sikhye-saccharification-temperature",
+      "conceptId": "korean-life-sikhye-malt-water-saccharification-temperature",
+      "variant": "process-control",
+      "setIndex": 5,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "밥알이 달게 삭아 떠오르는 전통 음료를 만들 때, 엿기름 웃물을 부은 뒤 가장 알맞은 온도 관리는 무엇일까요?",
+      "choices": [
+        "얼음물에서 0∼5℃로 밤새 식힌다",
+        "팔팔 끓는 100℃에서 계속 휘젓는다",
+        "60∼70℃를 몇 시간 유지해 밥을 삭힌다"
+      ],
+      "answerIndex": 2,
+      "explanation": "식혜는 된밥에 엿기름 웃물을 붓고 약 60∼70℃를 4∼5시간 유지해 삭힙니다. 너무 낮으면 시어지고 너무 높아도 당화가 잘되지 않습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「식혜」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0032592"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s05-steady-tofu-coagulation",
+      "conceptId": "korean-life-tofu-soymilk-mineral-coagulation",
+      "variant": "coagulation-step",
+      "setIndex": 5,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "불린 콩을 갈아 끓이고 자루로 짜낸 콩물에서 단백질 덩어리를 만들려면 다음에 무엇을 해야 할까요?",
+      "choices": [
+        "따뜻한 콩물에 칼슘·마그네슘 계열 응고제를 넣는다",
+        "찬 콩물에 엿기름을 넣고 밥알이 뜰 때까지 삭힌다",
+        "콩물을 햇볕에 말린 뒤 떡메로 오래 친다"
+      ],
+      "answerIndex": 0,
+      "explanation": "두부는 두유를 약 70∼80℃로 유지하면서 염화칼슘·염화마그네슘·황산칼슘 같은 응고제를 넣어 단백질을 굳힌 뒤 눌러 물을 뺍니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「두부」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0017005"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s05-stretch-yeot-grain-malt",
+      "conceptId": "korean-life-yeot-grain-starch-malt-reduction",
+      "variant": "ingredient-principle",
+      "setIndex": 5,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "stretch",
+      "prompt": "익힌 곡식과 싹틔운 보리를 이용해 단맛을 끌어낸 뒤, 졸이는 정도에 따라 묽은 조청이나 굳는 엿을 만들려 합니다. 알맞은 공정은 무엇일까요?",
+      "choices": [
+        "찐 곡식에 누룩을 섞어 발효시킨 뒤 맑은 술만 떠낸다",
+        "찐 곡식에 엿기름물을 섞어 따뜻하게 삭힌 뒤 단물을 걸러 오래 곤다",
+        "볶은 곡물을 메줏가루와 소금물에 섞어 항아리에서 숙성한다"
+      ],
+      "answerIndex": 1,
+      "explanation": "엿은 익힌 곡식의 전분을 엿기름으로 삭혀 당분으로 바꾸고, 찌꺼기를 거른 단물을 오래 고아 만듭니다. 덜 졸이면 조청, 더 졸여 굳히면 갱엿이 됩니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「엿」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0037160"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s06-gentle-sikhae-fish-rice-fermentation",
+      "conceptId": "korean-life-sikhae-fish-salt-rice-fermentation",
+      "variant": "food-definition",
+      "setIndex": 6,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "토막 낸 생선을 저장 음식으로 만들 때 소금뿐 아니라 익힌 곡식을 함께 넣어 발효하는 방식은 무엇일까요?",
+      "choices": [
+        "생선에 소금과 밥을 섞어 삭힌 식해",
+        "생선을 간장에 조린 뒤 바싹 말린 자반",
+        "생선을 엿기름물에 담가 단맛을 낸 식혜"
+      ],
+      "answerIndex": 0,
+      "explanation": "식해는 토막 낸 생선에 소금과 밥을 섞어 발효한 음식입니다. 음료인 식혜와 이름이 비슷하지만 재료와 만드는 법이 다릅니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「식해」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0032591"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s06-steady-jaban-salt-dry",
+      "conceptId": "korean-life-jaban-ten-percent-salt-drying",
+      "variant": "preservation-threshold",
+      "setIndex": 6,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "생선을 젓갈보다 덜 짜게 절인 뒤 판판하게 손질해 말려 저장하려 합니다. 전통 자반 설명과 가까운 소금 사용은?",
+      "choices": [
+        "생선 무게의 1％ 안팎만 뿌린다",
+        "생선 무게의 약 10％를 뿌린다",
+        "생선 무게의 절반 이상을 덮는다"
+      ],
+      "answerIndex": 1,
+      "explanation": "자료는 생선 무게의 약 10％ 소금을 뿌리면 자반이 되고, 15∼35％를 쓰면 젓갈이 된다고 설명합니다. 자반은 소금물이 고이면 건져 말려 저장했습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「자반」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0047921"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s06-stretch-salt-microbial-preservation",
+      "conceptId": "korean-life-salt-microbial-growth-preservation",
+      "variant": "preservation-mechanism",
+      "setIndex": 6,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "stretch",
+      "prompt": "가열이나 산 첨가 없이 소금만으로 생선을 저장하는 공정에서, 미생물 생육 억제가 제대로 확보됐는지 완제품에서 가장 직접 확인할 측정값은 무엇일까요?",
+      "choices": [
+        "완제품의 중심온도",
+        "완제품의 pH",
+        "완제품의 수분활성(aw)"
+      ],
+      "answerIndex": 2,
+      "explanation": "정답은 완제품의 수분활성(aw)입니다. FDA 자료는 염장 생선을 수분활성 관리 식품의 예로 들고, 소금 농도로 대신 관리하려면 해당 제품에서 소금 농도와 수분활성의 일관된 관계 자료가 있어야 하며 완제품 수분활성을 주기적으로 확인하는 것이 적절하다고 설명합니다. 중심온도는 가열 공정, pH는 산성화 공정의 관리값이므로 소금만 쓰는 조건의 직접 지표가 아닙니다.",
+      "source": {
+        "name": "미국 식품의약국 「Water Activity (aw) in Foods」",
+        "url": "https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/inspection-technical-guides/water-activity-aw-foods"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s07-gentle-traditional-nuruk-grain-cake",
+      "conceptId": "korean-life-traditional-nuruk-grain-cake-microbes",
+      "variant": "starter-identification",
+      "setIndex": 7,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "곡식 낟알을 부수어 반죽하고 떡처럼 빚은 뒤 곰팡이와 효모가 자라게 해 술밑에 넣던 발효 재료는 무엇일까요?",
+      "choices": [
+        "엿기름",
+        "누룩",
+        "간수"
+      ],
+      "answerIndex": 1,
+      "explanation": "전통 누룩은 낟알을 부수어 반죽해 떡처럼 만든 뒤 곰팡이와 효모가 자라게 한 발효제입니다. 술의 당화와 발효에 쓰였습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「누룩」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0013237"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s07-steady-yakpo-season-dry",
+      "conceptId": "korean-life-yakpo-thin-slice-season-dry",
+      "variant": "preservation-process",
+      "setIndex": 7,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "쇠고기를 오래 두고 먹을 포로 만들면서 간장 맛도 배게 하려 합니다. 약포의 전통적인 손질과 가장 가까운 것은?",
+      "choices": [
+        "덩어리째 삶아 소금물에 담근다",
+        "잘게 다져 항아리에서 삭힌다",
+        "얇게 저며 양념간장에 재운 뒤 말린다"
+      ],
+      "answerIndex": 2,
+      "explanation": "약포는 쇠고기를 얇게 저며 양념간장에 재운 뒤 채반에 펴 말리는 포입니다. 수분을 줄여 저장성을 높이면서 양념 맛을 더했습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「포」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0060123"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s07-stretch-eoriguljeot-ganwoldo-process",
+      "conceptId": "korean-life-eoriguljeot-ganwoldo-salt-first-red-pepper-later",
+      "variant": "regional-process-order",
+      "setIndex": 7,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "stretch",
+      "prompt": "간월도식 어리굴젓의 기록을 재현한 조리 일지 가운데 재료와 숙성 순서를 모두 맞게 적은 것은?",
+      "choices": [
+        "바닷물로 씻은 생굴을 소금에 먼저 삭힌 뒤 고춧가루 풀을 버무려 덮어 두고 약 열흘 더 삭힌다",
+        "바닷물로 씻은 생굴에 고춧가루 풀을 먼저 넣고 마지막 날 소금을 섞어 열흘 삭힌다",
+        "소금에 삭힌 생굴에 고춧가루 대신 된장 푼물을 넣고 하루만 익혀 바로 먹는다"
+      ],
+      "answerIndex": 0,
+      "explanation": "간월도식 제법은 생굴을 바닷물에 씻어 소금과 먼저 버무려 삭힙니다. 이어 밀가루 풀이나 식힌 쌀뜨물에 햇볕에 말린 고춧가루를 풀어 섞고, 덮어 두었다가 약 열흘 뒤 먹습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「어리굴젓」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0035933"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s08-gentle-onggi-air-pores",
+      "conceptId": "korean-life-onggi-fired-wall-air-pores",
+      "variant": "material-property",
+      "setIndex": 8,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "황갈색 유약을 입힌 질그릇을 ‘숨 쉬는 그릇’이라 부른 근거로 가장 알맞은 것은 무엇일까요?",
+      "choices": [
+        "뚜껑에 바람개비를 달아 공기를 밀어 넣어서",
+        "그릇 안쪽에 대나무 관을 여러 개 꽂아서",
+        "구울 때 벽에 미세한 기공이 생겨 안팎으로 공기가 통해서"
+      ],
+      "answerIndex": 2,
+      "explanation": "옹기는 높은 온도로 구울 때 기벽의 결정수가 빠져나가며 미세한 기공이 생깁니다. 이 기공으로 공기가 통하는 성질 때문에 숨 쉬는 그릇으로 인식됐습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「옹기」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0038898"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s08-steady-chotbyeong-vinegar",
+      "conceptId": "korean-life-chotbyeong-wine-lees-vinegar-fermentation",
+      "variant": "vessel-function",
+      "setIndex": 8,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "어깨에 따르는 주둥이가 달린 옹기병에 술지게미나 맛이 변한 술을 넣고 부뚜막 곁에 두었습니다. 무엇을 만들려는 용기였을까요?",
+      "choices": [
+        "발효시켜 식초를 만드는 촛병",
+        "콩물을 굳혀 두부를 만드는 자루",
+        "곡물을 쪄 떡을 만드는 시루"
+      ],
+      "answerIndex": 0,
+      "explanation": "촛병은 식초를 담고 따르기 쉽게 어깨에 주둥이를 단 옹기입니다. 술지게미나 변한 술을 넣고 막아 부뚜막 곁에서 발효시켜 식초를 만들었습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「옹기」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0038898"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s08-stretch-siru-shape-by-use",
+      "conceptId": "korean-life-siru-shape-steaming-versus-sprouting",
+      "variant": "form-function-comparison",
+      "setIndex": 8,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "stretch",
+      "prompt": "같은 이름의 옹기라도 떡을 찔 때와 콩나물을 기를 때 알맞은 비례가 달랐습니다. 용도별 형태를 바르게 짝지은 것은?",
+      "choices": [
+        "떡용은 키가 매우 크고 좁으며, 콩나물용은 낮고 넓다",
+        "떡용은 키에 비해 넓으며, 콩나물용은 키가 크고 좁다",
+        "두 용도 모두 바닥이 막힌 납작한 접시 모양이다"
+      ],
+      "answerIndex": 1,
+      "explanation": "떡시루는 떡이 고르게 익도록 키에 비해 폭이 넓고, 콩나물시루는 키가 크고 폭이 좁았습니다. 같은 도구도 용도에 맞춰 비례가 달랐습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「옹기」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0038898"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s09-gentle-hwakdok-ridged-interior",
+      "conceptId": "korean-life-hwakdok-unglazed-ridged-grinding-bowl",
+      "variant": "tool-identification",
+      "setIndex": 9,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "그릇 안쪽에 유약을 바르지 않고 일부러 울퉁불퉁하게 만들어 곡식이나 고추를 갈던 옹기 도구는 무엇일까요?",
+      "choices": [
+        "확독",
+        "물항",
+        "자라병"
+      ],
+      "answerIndex": 0,
+      "explanation": "확독은 곡식이나 고추를 갈기 위해 안쪽에 유약을 바르지 않고 굴곡을 둔 옹기 그릇입니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「옹기」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0038898"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s09-steady-dasik-mold-pattern",
+      "conceptId": "korean-life-dasik-grain-honey-pattern-mold",
+      "variant": "preparation-method",
+      "setIndex": 9,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "쌀·밤·콩 같은 재료를 곱게 갈아 꿀이나 조청으로 반죽했습니다. 글자와 꽃무늬가 도드라진 과자를 만들 다음 단계는?",
+      "choices": [
+        "반죽을 국자로 떠서 끓는 물에 삶는다",
+        "반죽을 무늬가 파인 판에 넣고 눌러 찍는다",
+        "반죽을 항아리에 넣어 여러 달 발효한다"
+      ],
+      "answerIndex": 1,
+      "explanation": "다식은 곡물이나 견과 가루를 꿀·조청으로 반죽한 뒤 다식판에 넣고 눌러 찍습니다. 판에 새긴 수·복 같은 글자나 꽃무늬가 표면에 나타납니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「다식」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0013478"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s09-stretch-starch-settling-drying",
+      "conceptId": "korean-life-starch-settling-paper-tray-drying",
+      "variant": "extraction-sequence",
+      "setIndex": 9,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "stretch",
+      "prompt": "도토리나 녹두에서 빛이 깨끗하고 오래 둘 수 있는 고운 녹말가루를 만들려 합니다. 남길 분획과 작업 순서를 바르게 기록한 것은 무엇일까요?",
+      "choices": [
+        "갈기 → 체 아래 액체 보관 → 곧바로 끓여 호화 → 굳은 덩어리를 말려 분쇄",
+        "갈기 → 체 위 섬유질 보관 → 여러 번 씻기 → 섬유질을 말려 분쇄",
+        "갈기 → 체 아래 액체 보관 → 앙금 침전·윗물 교체 → 앙금을 탈수·건조·분쇄"
+      ],
+      "answerIndex": 2,
+      "explanation": "녹말은 재료를 갈아 체와 주머니로 짠 액체를 남기고 섬유질을 거릅니다. 액체에서 앙금을 가라앉히며 윗물을 갈아 빛을 맑게 한 뒤, 앙금의 물기를 빼 한지 깐 채반에 말리고 부수어 고운 가루로 만들었습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「녹말」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0012973"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s10-gentle-gudeul-heat-route",
+      "conceptId": "korean-life-gudeul-hearth-flue-chimney-route",
+      "variant": "structure-sequence",
+      "setIndex": 10,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "부엌에서 불을 때 방바닥을 덥힌 뒤 연기를 집 밖으로 내보내는 전통 난방 구조의 흐름으로 맞는 것은?",
+      "choices": [
+        "굴뚝에서 불을 피워 마루 밑을 지나 아궁이로 보낸다",
+        "아궁이의 열과 연기가 방바닥 밑 고래를 지나 굴뚝으로 나간다",
+        "대청 아래 찬 공기를 장독대로 보내 온도를 높인다"
+      ],
+      "answerIndex": 1,
+      "explanation": "구들은 아궁이에서 난 열과 연기가 방바닥 밑의 고래를 지나며 바닥을 덥히고 굴뚝으로 빠져나가는 구조입니다. 취사와 난방을 한 불로 이어 쓸 수 있었습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「구들」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0005703"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s10-steady-daecheong-summer-airflow",
+      "conceptId": "korean-life-daecheong-raised-floor-summer-airflow",
+      "variant": "climate-function",
+      "setIndex": 10,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "한옥의 여름 생활공간을 고를 때 바닥 아래로도 공기가 통하고 앞뒤 벽을 열 수 있는 곳이 유리했습니다. 어느 공간일까요?",
+      "choices": [
+        "불을 때 바닥 전체를 데우는 온돌방",
+        "곡식독을 땅에 묻어 둔 뒤주간",
+        "지면에서 높여 널을 깔고 문을 활짝 여는 대청"
+      ],
+      "answerIndex": 2,
+      "explanation": "대청은 지면에서 띄운 나무 바닥 아래로 공기가 흐르고 앞뒤 벽도 열 수 있어 여름에 시원했습니다. 온돌방과 대비되는 한옥의 대표적인 여름 공간입니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「대청」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0014835"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s10-stretch-madang-multipurpose-yard",
+      "conceptId": "korean-life-madang-work-ritual-airflow-space",
+      "variant": "space-function",
+      "setIndex": 10,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "stretch",
+      "prompt": "전통 살림집에서 단단히 다진 빈터에 타작 흔적과 잔치 때 쓴 자리의 흔적이 함께 남고, 둘러선 건물 사이로 햇빛과 바람도 들었습니다. 이 공간과 기능을 가장 온전히 짝지은 것은?",
+      "choices": [
+        "마당 — 곡식 건조와 집안일, 잔치·의례를 함께 치르며 채광과 통풍도 돕는 열린 공간",
+        "대청 — 지면에서 띄운 널바닥에서 손님을 맞고 제사를 지내며 여름을 나는 실내 공간",
+        "사랑채 — 집 바깥일과 남성 손님의 접대를 맡고 서재와 침실을 둔 독립 건물"
+      ],
+      "answerIndex": 0,
+      "explanation": "마당은 타작과 건조 같은 생산 활동, 혼례와 굿 같은 의례, 놀이와 휴식이 함께 이루어진 다목적 공간이었습니다. 건물 사이를 열어 두어 채광과 통풍에도 보탬이 됐습니다. 대청과 사랑채도 중요한 생활공간이지만 모든 단서를 함께 만족하지는 않습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「마당」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0017306"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s11-gentle-soban-portable-table",
+      "conceptId": "korean-life-soban-portable-individual-floor-table",
+      "variant": "furniture-function",
+      "setIndex": 11,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "바닥에 앉아 식사하고 부엌과 방 사이로 상을 옮기던 살림에 가장 알맞게 발달한 가구는 무엇일까요?",
+      "choices": [
+        "여럿이 의자에 앉는 길고 무거운 식탁",
+        "벽에 붙박이로 짜 넣은 찬장",
+        "한 사람 몫의 음식을 담아 나르기 쉬운 작은 상"
+      ],
+      "answerIndex": 2,
+      "explanation": "소반은 한두 사람이 쓸 음식을 차려 방으로 옮기기 쉬운 작은 상입니다. 바닥에 앉는 생활과 부엌에서 방으로 상을 들이는 상차림에 잘 맞았습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「소반」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0030068"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s11-steady-mulhang-water-storage",
+      "conceptId": "korean-life-mulhang-wide-mouth-kitchen-water-storage",
+      "variant": "vessel-use",
+      "setIndex": 11,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "상수도가 없던 집에서 부엌이나 부뚜막 곁에 두고 물을 자주 떠 쓰려면 어떤 옹기가 알맞았을까요?",
+      "choices": [
+        "입이 넓어 바가지로 물을 뜨기 쉬운 물항",
+        "주둥이가 가늘고 납작해 술을 휴대하는 자라병",
+        "밑에 구멍이 나 있어 콩나물을 기르는 시루"
+      ],
+      "answerIndex": 0,
+      "explanation": "물항은 입이 넓어 바가지로 물을 뜨기 쉬운 큰 옹기였습니다. 부엌에 두거나 부뚜막 가까이에 일부를 묻어 생활용수를 저장했습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「옹기」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0038898"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s11-stretch-dongi-water-carrying",
+      "conceptId": "korean-life-dongi-gourd-float-head-ring-carrying",
+      "variant": "transport-technique",
+      "setIndex": 11,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "stretch",
+      "prompt": "우물에서 물을 길어 머리에 이고 올 때 물결과 무게 때문에 그릇이 흔들렸습니다. 기록에 맞는 생활 지혜는?",
+      "choices": [
+        "그릇 바닥에 구멍을 내 물이 조금씩 빠지게 했다",
+        "물 위에 바가지를 띄워 출렁임을 줄이고 머리에는 똬리를 받쳤다",
+        "그릇을 불에 달군 뒤 맨손으로 머리 위에 올렸다"
+      ],
+      "answerIndex": 1,
+      "explanation": "동이로 물을 나를 때 물 위에 바가지를 띄우면 출렁이며 넘치는 것을 줄일 수 있었습니다. 머리에는 짚으로 만든 똬리를 받쳐 동이를 안정시키고 충격을 덜었습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「옹기」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0038898"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s12-gentle-soraegi-large-basin",
+      "conceptId": "korean-life-soraegi-large-onggi-basin",
+      "variant": "tool-identification",
+      "setIndex": 12,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "많은 채소를 씻거나 절이고 때로는 독의 뚜껑으로도 쓰던 넓고 큰 옹기 대야는 무엇일까요?",
+      "choices": [
+        "소래기",
+        "옴박지",
+        "촛병"
+      ],
+      "answerIndex": 0,
+      "explanation": "소래기는 자배기처럼 넓고 큰 옹기 대야로 채소를 씻고 절이는 데 썼습니다. 크기에 따라 목욕통이나 큰 독의 뚜껑으로도 활용했습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「옹기」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0038898"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s12-steady-jilhwar-o-embers",
+      "conceptId": "korean-life-jilhwar-o-carrying-kitchen-embers",
+      "variant": "hearth-tool-function",
+      "setIndex": 12,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "부엌 아궁이의 잉걸불을 방으로 옮겨 인두질을 하거나 손 가까이에서 열을 쓰려 할 때 알맞은 도구는?",
+      "choices": [
+        "곡식을 한 줌씩 모으는 좀도리",
+        "불씨를 담아 나르는 질화로",
+        "물을 머리에 이는 동이"
+      ],
+      "answerIndex": 1,
+      "explanation": "질화로는 질그릇으로 만든 작은 화로로, 부엌의 불씨나 잉걸불을 담아 방으로 옮겼습니다. 그 곁에서 인두나 부손을 달구기도 했습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「옹기」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0038898"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s12-stretch-jomdori-rice-saving",
+      "conceptId": "korean-life-jomdori-one-handful-rice-saving",
+      "variant": "saving-practice",
+      "setIndex": 12,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "stretch",
+      "prompt": "매 끼니 밥을 지을 때 쌀 한 줌씩을 따로 모아 비상 곡식이나 살림 밑천을 마련하려 했습니다. 이에 쓰인 작은 항아리는?",
+      "choices": [
+        "장군",
+        "확독",
+        "좀도리"
+      ],
+      "answerIndex": 2,
+      "explanation": "좀도리는 밥을 지을 때마다 쌀을 한 줌씩 덜어 모으던 작은 항아리입니다. 조금씩 아낀 곡식은 궁할 때 쓰거나 집안의 별도 살림 밑천이 됐습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「옹기」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0038898"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s13-gentle-maetdol-rotating-stone",
+      "conceptId": "korean-life-maetdol-upper-stone-feed-hole-rotation",
+      "variant": "mechanism-recognition",
+      "setIndex": 13,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "콩이나 곡식을 두 돌 사이에서 으깨려면 전통 손맷돌을 어떻게 움직여야 할까요?",
+      "choices": [
+        "아랫돌을 들어 올려 윗돌을 반복해 내려친다",
+        "윗돌 구멍에 재료를 넣고 손잡이로 윗돌을 돌린다",
+        "두 돌을 세워 놓고 그 사이로 재료를 굴린다"
+      ],
+      "answerIndex": 1,
+      "explanation": "맷돌은 고정된 아랫돌 위에서 윗돌을 회전시키는 도구입니다. 윗돌의 구멍으로 재료를 넣으면 맞닿은 면의 홈을 따라 갈린 것이 밖으로 나옵니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「맷돌」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0018054"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s13-steady-byeongpung-ondol-feet",
+      "conceptId": "korean-life-byeongpung-short-feet-ondol-protection",
+      "variant": "design-reason",
+      "setIndex": 13,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "접었다 펴서 바람을 막고 자리를 가르는 가구의 아래에 짧은 발을 단 까닭으로 가장 알맞은 것은?",
+      "choices": [
+        "마당 흙에 깊이 박아 움직이지 않게 하려고",
+        "천장에 매달 때 줄을 감는 실패로 쓰려고",
+        "뜨거운 온돌 바닥에 화면이 바로 닿아 뒤틀리는 것을 줄이려고"
+      ],
+      "answerIndex": 2,
+      "explanation": "병풍은 공간을 나누고 외풍을 막는 동시에 그림과 글씨로 방을 꾸몄습니다. 아래의 짧은 발은 종이나 비단 화면이 뜨거운 온돌 바닥에 직접 닿아 손상되는 것을 줄였습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「병풍」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0023170"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s13-stretch-toenmaru-passage-work",
+      "conceptId": "korean-life-toenmaru-passage-light-housework",
+      "variant": "architectural-function",
+      "setIndex": 13,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "stretch",
+      "prompt": "살림집의 마루 공간을 고정 위치와 쓰임으로 구분할 때 바르게 설명한 것은?",
+      "choices": [
+        "툇마루 — 고주와 평주 사이 툇간에 고정되어 통로와 간단한 가사 공간이 된다",
+        "들마루 — 대청이 툇간까지 구조적으로 연장된 고정 마루를 이른다",
+        "대청 — 평상처럼 옮겨 여름에는 마당, 겨울에는 툇간에 놓는 마루이다"
+      ],
+      "answerIndex": 0,
+      "explanation": "툇마루는 고주와 평주 사이의 툇간에 놓인 고정 마루로 통로와 간단한 가사 공간이 됐습니다. 평상처럼 만들어 계절에 따라 옮겨 놓던 들마루와 다르며, 대청이 툇간까지 연장된 경우도 툇마루에서 제외됩니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「툇마루」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0059475"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s14-gentle-bojagi-flexible-wrapping",
+      "conceptId": "korean-life-bojagi-flexible-irregular-object-wrapping",
+      "variant": "material-advantage",
+      "setIndex": 14,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "상자와 달리 크기와 모양이 제각각인 물건을 감싸 묶고, 쓰지 않을 때 작게 접어 둘 수 있는 살림 도구는?",
+      "choices": [
+        "나무판을 접합한 반닫이",
+        "대나무 살을 세운 죽부인",
+        "천 한 폭으로 만든 보자기"
+      ],
+      "answerIndex": 2,
+      "explanation": "보자기는 유연한 천으로 물건의 모양에 맞춰 감싸고 묶을 수 있습니다. 운반과 보관에 쓰고, 빈 상태에서는 작게 접을 수 있어 공간을 적게 차지했습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「보자기」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0023523"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s14-steady-janggun-liquid-carrier",
+      "conceptId": "korean-life-janggun-horizontal-liquid-jige-carrier",
+      "variant": "vessel-identification",
+      "setIndex": 14,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "물을 긷거나 술·거름 같은 액체를 먼 곳으로 나를 때 지게에 얹기 좋도록 몸통을 길쭉하게 만든 옹기는?",
+      "choices": [
+        "장군",
+        "소래기",
+        "좀도리"
+      ],
+      "answerIndex": 0,
+      "explanation": "장군은 액체를 운반하는 데 쓰던 길쭉한 옹기입니다. 물이나 술뿐 아니라 농사에 쓸 거름도 담았으며, 지게에 얹어 나르기 알맞은 형태였습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「옹기」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0038898"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s14-stretch-araetmok-heat-status-order",
+      "conceptId": "korean-life-araetmok-winter-heat-status-order",
+      "variant": "thermal-spatial-inference",
+      "setIndex": 14,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "stretch",
+      "prompt": "겨울 온돌방에서 아랫목의 바닥 열을 보존하는 살림법과 서열에 따른 자리 질서를 함께 연결해 추론한 것은?",
+      "choices": [
+        "요와 포대기로 열을 지킨 아랫목이 하좌이고 윗목으로 갈수록 상좌가 된다",
+        "요와 포대기로 아랫목의 열을 지키고, 아랫목 쪽을 상좌로 삼아 윗목으로 갈수록 하좌가 된다",
+        "아랫목의 열은 보존했지만 자리 서열은 온돌 위치와 무관해 방 한가운데만 상좌가 된다"
+      ],
+      "answerIndex": 1,
+      "explanation": "겨울에는 아랫목에 요나 포대기를 깔아 바닥구들이 식지 않게 했습니다. 방 안의 자리도 아랫목 쪽이 상좌였고 윗목으로 갈수록 하좌가 되어, 온돌의 열 관리와 공간 질서가 함께 드러납니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「방」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0021652"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s15-gentle-daenim-trouser-tie",
+      "conceptId": "korean-life-daenim-trouser-ankle-mobility-warmth",
+      "variant": "clothing-function",
+      "setIndex": 15,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "통이 넓은 남자 한복 바지를 입고 걷거나 말을 탈 때 바짓부리가 펄럭이지 않게 하려면 무엇을 매었을까요?",
+      "choices": [
+        "발목 둘레의 바짓부리를 오므리는 대님",
+        "저고리 깃을 덮는 흰 동정",
+        "허리 아래에 늘이는 노리개"
+      ],
+      "answerIndex": 0,
+      "explanation": "대님은 남자 바짓부리를 발목에 맞게 오므려 매는 끈입니다. 넓은 바지로도 활동하기 편하게 하고 찬바람이 들어오는 것을 줄이는 구실도 했습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「대님」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0014175"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s15-steady-gat-crown-brim",
+      "conceptId": "korean-life-gat-moja-yangtae-construction",
+      "variant": "garment-structure",
+      "setIndex": 15,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "조선시대 성인 남자의 검은 관모를 복원할 때 머리를 덮는 부분과 얼굴에 그늘을 만드는 부분을 어떻게 짝지어야 할까요?",
+      "choices": [
+        "머리를 덮는 양태와 차양인 동정",
+        "머리를 덮는 모자와 차양인 양태",
+        "머리를 덮는 버선과 차양인 편자"
+      ],
+      "answerIndex": 1,
+      "explanation": "갓은 머리를 덮는 모자 부분과 둘레에 펼쳐진 차양인 양태로 이루어집니다. 여기에 머리에 고정하는 갓끈이 더해졌습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「갓」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0000945"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s15-stretch-manggeon-hair-band",
+      "conceptId": "korean-life-manggeon-horsehair-topknot-band",
+      "variant": "wearing-purpose",
+      "setIndex": 15,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "stretch",
+      "prompt": "조선 남성의 머리 차림을 복원하려 합니다. 상투를 튼 뒤 잔머리를 거두고 갓을 안정시키기 전에 먼저 머리 둘레에 두른 물건을 기능까지 맞게 고르세요.",
+      "choices": [
+        "탕건 — 상투를 덮어 쓰는 작은 관모",
+        "풍잠 — 망건 앞에 달아 갓이 내려오지 않게 받치는 꾸미개",
+        "망건 — 이마와 머리 둘레의 잔머리를 거두는 말총 띠"
+      ],
+      "answerIndex": 2,
+      "explanation": "망건은 상투를 튼 뒤 머리 둘레에 둘러 잔머리를 정돈하는 그물 모양의 머리띠입니다. 우리나라에서는 주로 말총으로 엮어 만들었습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「망건」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0017844"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s16-gentle-jogakbo-scraps",
+      "conceptId": "korean-life-jogakbo-sewn-fabric-scraps",
+      "variant": "material-reuse",
+      "setIndex": 16,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "옷을 짓고 남은 명주·모시·무명 조각을 버리지 않고 이어 붙여 밥상이나 책을 덮는 아름다운 생활품으로 만들었습니다. 무엇일까요?",
+      "choices": [
+        "통나무를 파 만든 함지박",
+        "자투리 천을 잇대어 만든 조각보",
+        "말총으로 엮은 갓모자"
+      ],
+      "answerIndex": 1,
+      "explanation": "조각보는 옷을 만들고 남은 여러 자투리 천을 이어 만든 보자기입니다. 밥상보·책보·옷감보 등 실용성과 색면의 장식성을 함께 살렸습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「규방공예」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0079777"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s16-steady-pocketless-hanbok-pouch",
+      "conceptId": "korean-life-hanbok-no-pocket-external-pouch",
+      "variant": "garment-accessory-reason",
+      "setIndex": 16,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "전통옷에는 오늘날 옷처럼 물건을 넣는 붙박이 공간이 없었습니다. 돈·부싯돌·향 같은 소지품은 주로 어디에 넣었을까요?",
+      "choices": [
+        "갓의 양태 안쪽",
+        "버선의 발바닥 사이",
+        "끈을 꿰어 몸에 차는 주머니"
+      ],
+      "answerIndex": 2,
+      "explanation": "한복에는 붙박이 호주머니가 없어 별도의 주머니를 차고 다녔습니다. 염낭·귀주머니뿐 아니라 향낭, 약주머니, 부시쌈지처럼 쓰임에 따른 종류도 많았습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「규방공예」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0079777"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s16-stretch-golmu-finger-protector",
+      "conceptId": "korean-life-golmu-index-finger-needle-protector",
+      "variant": "sewing-tool-function",
+      "setIndex": 16,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "stretch",
+      "prompt": "누비옷을 지으며 바늘귀를 힘주어 밀어야 합니다. 바느질 도구와 기능을 바르게 연결한 것은?",
+      "choices": [
+        "골무 — 둘째손가락 끝에 끼워 바늘을 밀고 손끝을 보호한다",
+        "인두 — 속을 채워 바늘을 꽂아 잃어버리지 않게 보관한다",
+        "실패 — 불에 달궈 솔기와 천의 주름을 눌러 편다"
+      ],
+      "answerIndex": 0,
+      "explanation": "골무는 바느질할 때 둘째손가락 끝에 끼워 바늘을 밀고 손끝을 보호하는 도구입니다. 헝겊이나 비단에 심을 넣고 촘촘히 감쳐 만들기도 했습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「골무」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0004187"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s17-gentle-namaksin-rain-footwear",
+      "conceptId": "korean-life-namaksin-carved-wood-rain-footwear",
+      "variant": "material-weather-match",
+      "setIndex": 17,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "비가 내려 진 땅을 걸을 때 볏짚 신보다 물에 덜 젖도록 나무를 파서 만든 신을 골랐습니다. 어느 것일까요?",
+      "choices": [
+        "미투리",
+        "당혜",
+        "나막신"
+      ],
+      "answerIndex": 2,
+      "explanation": "나막신은 나무를 파서 만든 신으로 굽이 있어 주로 비 오는 날 신었습니다. 나무 바닥이 젖은 흙과 발 사이를 띄워 주었습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「신」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0032595"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s17-steady-jipsin-rice-straw",
+      "conceptId": "korean-life-jipsin-rice-straw-woven-footwear",
+      "variant": "material-identification",
+      "setIndex": 17,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "농가에서 쉽게 구한 볏짚을 삼아 만들고 닳으면 새로 마련하기 쉬웠던 서민의 일상 신발은?",
+      "choices": [
+        "짚신",
+        "유혜",
+        "목화"
+      ],
+      "answerIndex": 0,
+      "explanation": "짚신은 볏짚 같은 풀 재료를 삼아 만든 신입니다. 주변에서 재료를 구하기 쉬워 오래도록 서민의 실용적인 일상 신발로 쓰였습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「신」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0032595"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s17-stretch-seolpi-snowshoe",
+      "conceptId": "korean-life-seolpi-wide-frame-snowshoe",
+      "variant": "terrain-adaptation",
+      "setIndex": 17,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "stretch",
+      "prompt": "눈 깊은 산길의 발차림을 고를 때 재료와 기능을 바르게 연결한 것은?",
+      "choices": [
+        "나막신 — 넓은 나무테와 새끼를 엮어 눈 위 접촉 면적을 넓힌다",
+        "설피 — 나무테와 새끼를 엮어 신발 밑에 대고 눈에 빠짐을 줄인다",
+        "짚신 — 통나무를 파서 빗물과 진흙이 발에 닿지 않게 한다"
+      ],
+      "answerIndex": 1,
+      "explanation": "설피는 나무테와 새끼 등을 넓게 엮어 짚신 아래에 덧신던 눈길 도구입니다. 몸무게가 닿는 면적을 넓혀 깊은 눈에 덜 빠지게 했습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「설피」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0029106"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s18-gentle-durumagi-outer-coat",
+      "conceptId": "korean-life-durumagi-closed-side-outer-coat",
+      "variant": "garment-identification",
+      "setIndex": 18,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "조선 말 의복 간소화 뒤 남녀가 예를 갖추거나 외출할 때 한복 위에 입는 대표적인 긴 겉옷은 무엇일까요?",
+      "choices": [
+        "두루마기",
+        "저고리",
+        "배자"
+      ],
+      "answerIndex": 0,
+      "explanation": "두루마기는 한복 위에 입는 긴 겉옷입니다. 옆이 막히고 소매가 비교적 좁아 간편했으며 조선 말 의복 개혁을 거치며 통상 예복과 외출복으로 널리 쓰였습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「두루마기」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0016977"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s18-steady-nubi-layered-stitching",
+      "conceptId": "korean-life-nubi-layered-row-stitching",
+      "variant": "craft-technique",
+      "setIndex": 18,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "겉감과 안감을 포개거나 그 사이에 솜을 두고 일정한 줄을 따라 촘촘히 바느질하는 기법은 무엇일까요?",
+      "choices": [
+        "천 가장자리를 풀어 술을 만드는 기법",
+        "겹친 옷감을 줄지어 꿰매는 누비",
+        "옷감을 쪽물에 반복해 담그는 염색"
+      ],
+      "answerIndex": 1,
+      "explanation": "누비는 겉감과 안감을 겹치거나 사이에 솜을 넣고 줄지어 바느질하는 기법입니다. 옷감을 보강하고 보온성을 높이며 줄무늬의 장식 효과도 냈습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「누비」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0013241"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s18-stretch-norigae-components",
+      "conceptId": "korean-life-norigae-ttidon-jewel-knot-tassel",
+      "variant": "accessory-components",
+      "setIndex": 18,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "stretch",
+      "prompt": "여자 한복의 고름이나 치마에 차던 패물을 온전하게 복원한 구성은 어느 것일까요?",
+      "choices": [
+        "관자·망건·탕건·갓집",
+        "동정·깃·섶·대님",
+        "띠돈·끈목·패물·매듭·술"
+      ],
+      "answerIndex": 2,
+      "explanation": "노리개는 옷에 거는 띠돈, 이를 잇는 끈목, 중심 패물, 장식 매듭과 아래로 늘이는 술로 구성됩니다. 한 개를 단작, 세 개 한 벌을 삼작이라고 했습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「노리개」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0012731"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s19-gentle-spindle-whorl",
+      "conceptId": "korean-life-spindle-whorl-rotational-fiber-twist",
+      "variant": "tool-mechanism",
+      "setIndex": 19,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "가운데 구멍에 막대를 끼우고 회전시켜 섬유에 꼬임을 주며 실을 뽑던 선사시대 방적 도구는?",
+      "choices": [
+        "베틀의 북",
+        "가락바퀴",
+        "다식판"
+      ],
+      "answerIndex": 1,
+      "explanation": "가락바퀴는 축이 되는 막대에 끼워 돌리며 섬유를 길게 잇고 꼬아 실을 만드는 도구입니다. 신석기시대 유적에서도 확인되는 이른 방적구입니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「가락바퀴」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0000090"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s19-steady-hyungbae-embroidery-rank",
+      "conceptId": "korean-life-hyungbae-embroidery-official-rank-symbol",
+      "variant": "decorative-social-function",
+      "setIndex": 19,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "조선 관리의 관복 가슴과 등에 동물 무늬를 수놓은 네모 장식을 붙인 핵심 이유는 무엇이었을까요?",
+      "choices": [
+        "옷 속의 땀을 밖으로 빼기 위해",
+        "화살을 막는 갑옷판으로 쓰기 위해",
+        "문무관과 품계를 눈에 보이게 나타내기 위해"
+      ],
+      "answerIndex": 2,
+      "explanation": "흉배는 관복의 가슴과 등에 붙인 자수 표장으로 문관과 무관, 품계를 나타냈습니다. 자수가 단순 장식을 넘어 사회적 지위를 표시한 사례입니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「자수」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0047963"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s19-stretch-dahoe-cord",
+      "conceptId": "korean-life-dahoe-braided-cord-accessories",
+      "variant": "craft-material-use",
+      "setIndex": 19,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "stretch",
+      "prompt": "색실을 여러 가닥으로 짜거나 꼬아 허리띠, 호패끈, 주머니와 장식품의 매듭끈으로 쓰던 공예품은?",
+      "choices": [
+        "다회",
+        "동정",
+        "양태"
+      ],
+      "answerIndex": 0,
+      "explanation": "다회는 여러 가닥의 실로 짠 끈목입니다. 광다회·세조대 같은 허리띠와 호패끈, 주머니, 노리개와 유소의 매듭끈 등에 폭넓게 쓰였습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「다회」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0013500"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s20-gentle-baegil-survival-milestone",
+      "conceptId": "korean-life-baegil-infant-survival-milestone",
+      "variant": "life-rite-meaning",
+      "setIndex": 20,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "아기를 무사히 키우기 어려웠던 때, 태어난 지 100일을 넘겨 큰 고비를 지났다고 자축하며 떡을 돌린 행사는?",
+      "choices": [
+        "관례",
+        "회갑연",
+        "백일잔치"
+      ],
+      "answerIndex": 2,
+      "explanation": "백일잔치는 아기가 생후 100일의 위험한 고비를 무사히 넘긴 것을 기뻐하는 의례였습니다. 백설기와 수수팥떡 등을 마련해 손님과 이웃에게 나눴습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「백일」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0022291"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s20-steady-doljabi-future-symbols",
+      "conceptId": "korean-life-doljabi-object-future-symbols",
+      "variant": "rite-interpretation",
+      "setIndex": 20,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "첫 생일을 맞은 아이 앞에 쌀·돈·책·붓·실 같은 물건을 놓고 하나를 고르게 한 행위의 뜻은 무엇이었을까요?",
+      "choices": [
+        "잡은 물건으로 아이의 재복·재능·수명과 장래를 점쳐 보는 돌잡이",
+        "가족 재산을 아이 이름으로 공식 상속하는 분재",
+        "마을 공동노동에 참여할 차례를 정하는 두레 추첨"
+      ],
+      "answerIndex": 0,
+      "explanation": "돌잡이는 아이가 먼저 잡은 물건으로 성품과 재능, 재복, 수명, 장래를 점쳐 보는 첫돌 의례입니다. 책과 붓은 학문, 쌀과 돈은 재복, 실과 국수는 장수를 뜻한다고 여겼습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「돌」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0016110"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s20-stretch-gwanrye-adult-name",
+      "conceptId": "korean-life-gwanrye-cap-courtesy-name-adulthood",
+      "variant": "rite-sequence-meaning",
+      "setIndex": 20,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "stretch",
+      "prompt": "관례에서 관을 씌우는 데 그치지 않고 새 호칭인 자까지 지어 준 뜻을 절차와 함께 가장 정확히 해석한 것은?",
+      "choices": [
+        "머리를 풀고 아명을 되풀이해 아직 보호받는 아이임을 확인했다",
+        "상투와 관으로 외형을 바꾸고 자를 주어 성인 남자의 사회적 지위를 표시했다",
+        "상복과 시호를 함께 내려 집안의 상주가 되었음을 공표했다"
+      ],
+      "answerIndex": 1,
+      "explanation": "관례에서는 머리를 빗어 상투를 틀고 관을 씌웠으며, 의식 뒤에는 성인으로 부를 자를 지어 주었습니다. 이때부터 사회적으로 한 사람의 성인으로 대우했습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「관례」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0004809"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s21-gentle-gyerye-hairpin",
+      "conceptId": "korean-life-gyerye-hairpin-female-adulthood",
+      "variant": "rite-identification",
+      "setIndex": 21,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "전통사회에서 여자의 머리를 쪽 찌고 비녀를 꽂아 성인이 되었음을 나타내던 의례는 무엇일까요?",
+      "choices": [
+        "계례",
+        "초례",
+        "성복"
+      ],
+      "answerIndex": 0,
+      "explanation": "계례는 여자가 성인이 되었음을 나타내는 의례로, 머리를 올려 쪽을 찌고 비녀를 꽂는 절차가 중심이었습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「관례」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0004809"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s21-steady-hwangap-cycle-return",
+      "conceptId": "korean-life-hwangap-sexagenary-cycle-return",
+      "variant": "age-meaning",
+      "setIndex": 21,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "태어난 해의 천간과 지지 조합이 60년 만에 다시 돌아온 것을 기념해 자손이 잔치를 베풀던 생일은?",
+      "choices": [
+        "돌",
+        "환갑",
+        "백일"
+      ],
+      "answerIndex": 1,
+      "explanation": "환갑은 육십갑자의 조합이 한 바퀴 돌아 태어난 해의 간지로 되돌아온 때를 뜻합니다. 전통 나이로 예순한 살 생일에 자손이 큰 잔치를 열었습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「환갑」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0064949"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s21-stretch-chohon-three-calls",
+      "conceptId": "korean-life-chohon-roof-three-name-calls",
+      "variant": "funeral-rite-action",
+      "setIndex": 21,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "stretch",
+      "prompt": "사람이 숨진 직후 생전에 입던 옷을 들고 이름을 세 번 불렀습니다. 상례의 이 절차와 목적을 바르게 짝지은 것은?",
+      "choices": [
+        "염습 — 시신을 씻기고 수의를 입혀 입관을 준비한다",
+        "발인 — 상여가 빈소를 떠나 장지로 향함을 알린다",
+        "초혼 — 떠난 혼이 몸으로 돌아오기를 마지막으로 부른다"
+      ],
+      "answerIndex": 2,
+      "explanation": "초혼 또는 고복은 죽은 이의 옷을 들고 높은 곳에서 이름을 세 번 불러 혼이 돌아오기를 기원하는 상례의 첫 절차였습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「상례」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0027059"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s22-gentle-sangyeo-bier",
+      "conceptId": "korean-life-sangyeo-shouldered-funeral-bier",
+      "variant": "ritual-object-function",
+      "setIndex": 22,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "발인 날 여러 사람이 어깨에 메고 망자의 관을 집에서 장지까지 옮기던 장례 도구는 무엇일까요?",
+      "choices": [
+        "가마",
+        "상여",
+        "달구지"
+      ],
+      "answerIndex": 1,
+      "explanation": "상여는 발인 때 상여꾼들이 어깨에 메어 관과 망자를 장지까지 운구하는 장례 도구입니다. 마을이 공동으로 마련해 보관하는 경우도 많았습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「상여」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0027207"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s22-steady-sangdugye-funeral-aid",
+      "conceptId": "korean-life-sangdugye-communal-funeral-support",
+      "variant": "mutual-aid-organization",
+      "setIndex": 22,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "한 집에서 초상이 나면 마을 사람들이 운구 인력과 장례 도구, 매장 일을 함께 마련하도록 평소 조직한 모임은?",
+      "choices": [
+        "곡물을 빌려 주는 사창",
+        "논매기 순번을 정하는 두레",
+        "상례의 인적·물적 도움을 맡은 상두계"
+      ],
+      "answerIndex": 2,
+      "explanation": "상두계는 마을 주민이 장례에 필요한 상호부조를 준비한 계였습니다. 상여를 조달하고 상두꾼과 매장 인력을 내는 등 상례 전반을 함께 감당했습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「상례」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0027059"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s22-stretch-dure-village-labor",
+      "conceptId": "korean-life-dure-organized-village-labor",
+      "variant": "labor-system-comparison",
+      "setIndex": 22,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "stretch",
+      "prompt": "모내기처럼 짧은 때 많은 일손이 필요한 상황입니다. 두레·품앗이·계를 조직 규모와 운영 방식으로 바르게 구분한 것은?",
+      "choices": [
+        "두레 — 임원과 규율을 둔 마을 단위 노동 조직이 집단 작업을 맡는다",
+        "품앗이 — 마을 성년 전원이 의무 가입해 임원의 지휘로 공동 재산을 운용한다",
+        "계 — 농번기마다 마을 전체가 같은 논에서 공동 노동만 수행한다"
+      ],
+      "answerIndex": 0,
+      "explanation": "두레는 임원과 규율을 둔 마을 단위의 조직적인 공동노동 집단입니다. 개인 사이에서 일을 주고받는 품앗이나 특정 목적을 위해 재산을 모으는 계와 달리 큰 농사일에 집단으로 참여했습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「두레」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0016972"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s23-gentle-pumasi-reciprocal-labor",
+      "conceptId": "korean-life-pumasi-reciprocal-labor-repayment",
+      "variant": "labor-exchange-principle",
+      "setIndex": 23,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "이웃이 오늘 우리 집 일을 거들어 주면 나중에 그 집 일을 노동으로 갚는 소규모 교환 방식은?",
+      "choices": [
+        "품삯을 미리 정해 고용하는 고지",
+        "마을 전원이 규율 아래 일하는 두레",
+        "도움을 같은 도움으로 갚는 품앗이"
+      ],
+      "answerIndex": 2,
+      "explanation": "품앗이는 일을 서로 거들고 받은 품을 뒤에 노동으로 갚는 호혜적 교환입니다. 마을 전체 조직인 두레와 달리 친지나 소집단 사이에서 자발적으로 맺는 경우가 많았습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「품앗이」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0060329"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s23-steady-hyangyak-four-principles",
+      "conceptId": "korean-life-hyangyak-four-mutual-principles",
+      "variant": "community-rule-content",
+      "setIndex": 23,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "좋은 일을 권하고 잘못을 서로 바로잡으며 예로 사귀고 어려움에 서로 돕자는 네 강목을 둔 향촌 규약은?",
+      "choices": [
+        "향약",
+        "경국대전",
+        "호적대장"
+      ],
+      "answerIndex": 0,
+      "explanation": "향약의 대표 네 강목은 덕업상권·과실상규·예속상교·환난상휼입니다. 마을의 도덕 질서와 예절, 재난 때의 상호부조를 함께 규정했습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「향약」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0062948"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s23-stretch-gye-functional-association",
+      "conceptId": "korean-life-gye-rule-based-functional-association",
+      "variant": "organization-definition",
+      "setIndex": 23,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "stretch",
+      "prompt": "전통 마을의 협동 조직을 목적과 운영 원리로 구분할 때 바르게 설명한 것은?",
+      "choices": [
+        "두레 — 공동구매·혼상·교육·친목 등 목적별로 규약과 공동 재산을 둔다",
+        "계 — 구성원의 공동 이해와 특정 목적에 따라 규약과 공동 재산을 마련한다",
+        "향약 — 오직 상인의 공동 자본만 운용하며 마을 교화와는 무관하다"
+      ],
+      "answerIndex": 1,
+      "explanation": "계는 구성원이 특정한 공동 목적과 이익을 위해 규약을 만들고 운영한 협동단체입니다. 농계·혼상계·서당계·동갑계처럼 경제·복지·교육·친목 등 종류가 매우 다양했습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「계」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0003046"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s24-gentle-dongje-village-rite",
+      "conceptId": "korean-life-dongje-village-peace-harvest-rite",
+      "variant": "communal-rite-purpose",
+      "setIndex": 24,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "마을이 제관을 뽑아 당이나 신목에서 공동으로 안녕과 풍년·풍어를 빌던 정기 제의는?",
+      "choices": [
+        "동제",
+        "기제",
+        "관례"
+      ],
+      "answerIndex": 0,
+      "explanation": "동제는 마을 사람들이 공동으로 마을신에게 안녕과 생업의 풍요를 비는 제의입니다. 내륙에서는 풍농, 어촌에서는 풍어의 바람이 두드러졌습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「동제」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0016765"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s24-steady-sachang-grain-loans",
+      "conceptId": "korean-life-sachang-village-grain-loan-relief",
+      "variant": "relief-institution",
+      "setIndex": 24,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "흉년과 춘궁기에 가난한 주민에게 곡식을 빌려 주고 수확 뒤 돌려받도록 촌락에 둔 구휼 기관은?",
+      "choices": [
+        "책을 빌려 주고 삯을 받는 세책점",
+        "주민이 곡물을 비축하고 대여한 사창",
+        "관복을 판매하던 육의전"
+      ],
+      "answerIndex": 1,
+      "explanation": "사창은 촌락에 곡식을 쌓아 두고 어려운 주민에게 빌려 주던 구휼 기관입니다. 향촌이 스스로 운영해 기근에 대비하려는 자치적 진대 기능을 지녔습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「사창」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0025991"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s24-stretch-bujo-life-event-aid",
+      "conceptId": "korean-life-bujo-life-event-mutual-aid",
+      "variant": "reciprocal-support-custom",
+      "setIndex": 24,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "stretch",
+      "prompt": "한 집의 혼례나 상례가 생기자 친척과 이웃이 돈·쌀·일손을 보탰고, 집주인은 누가 무엇을 냈는지 적어 두었다가 그 집 큰일에 보답했습니다. 이 관행과 성격을 바르게 짝지은 것은?",
+      "choices": [
+        "품앗이 — 농번기 같은 때 일손을 품 단위로 주고받는 노동 교환",
+        "계 — 구성원이 규약에 따라 정기적으로 갹출해 목돈이나 공동 목적에 쓰는 조직",
+        "부조 — 경조사에 돈·물품·노동을 보태고 훗날 서로 갚으며 큰일의 부담을 나누는 관행"
+      ],
+      "answerIndex": 2,
+      "explanation": "부조는 관혼상제 같은 큰일에 친척과 이웃이 돈이나 물품, 노동을 보태고 상호적으로 갚는 관행입니다. 품앗이는 주로 노동력의 교환이고, 계는 규약과 구성원을 두고 정기적으로 갹출하는 조직이라는 점이 다릅니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「상호부조」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0027420"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s25-gentle-bongsu-day-night-signals",
+      "conceptId": "korean-life-bongsu-day-smoke-night-fire",
+      "variant": "communication-method",
+      "setIndex": 25,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "먼 산봉우리끼리 급한 군사 소식을 눈에 보이는 신호로 이어 보낼 때 낮과 밤의 방법을 바르게 짝지은 것은?",
+      "choices": [
+        "낮에는 파발마, 밤에는 나룻배를 교대로 이용한다",
+        "낮에는 연기, 밤에는 불빛을 올린다",
+        "낮에는 북소리, 밤에는 봉인한 문서를 보낸다"
+      ],
+      "answerIndex": 1,
+      "explanation": "봉수는 높은 곳에서 낮에는 연기, 밤에는 불빛을 올려 급한 소식을 전달한 국가 통신 제도입니다. 정해진 신호를 인접 봉수대로 이어 보냈습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「봉수」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0023945"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s25-steady-pabal-detailed-documents",
+      "conceptId": "korean-life-pabal-sealed-document-relay",
+      "variant": "system-comparison",
+      "setIndex": 25,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "횃불과 연기만으로 전하기 어려운 자세한 관문서를 보내려 합니다. 조선의 파발이 봉수의 한계를 보완한 체송 방식은?",
+      "choices": [
+        "문서 내용을 횃불 수로 바꾸어 한 봉수대에서만 알린다",
+        "관인을 찍지 않은 문서를 한 사람이 종착지까지 들고 간다",
+        "관인을 찍어 봉인한 문서를 발참의 보행자나 말을 통해 이어 보낸다"
+      ],
+      "answerIndex": 2,
+      "explanation": "파발은 봉수의 한계를 보완해 관문서를 체송한 통신 제도입니다. 기밀문서를 봉투에 넣어 봉인하고 관인을 찍은 뒤, 발참을 따라 보발이나 기발로 이어 보냈습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「파발」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0059563"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s25-stretch-naru-transport-node",
+      "conceptId": "korean-life-naru-river-crossing-transport-node",
+      "variant": "infrastructure-function",
+      "setIndex": 25,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "stretch",
+      "prompt": "두 육로가 큰 강의 양쪽에서 끊기고, 일정한 삯을 받는 배와 주막·장시가 모여 취락이 커졌습니다. 사람과 짐의 이동을 이어 준 이 교통 시설을 기능까지 바르게 설명한 것은?",
+      "choices": [
+        "나루 — 사람과 짐을 배로 건네 육로를 잇고 교통·교역의 결절점이 되었다",
+        "역참 — 육로에서 말을 갈고 숙박하며 관문서의 다음 구간 운송을 맡았다",
+        "조창 — 여러 고을의 세곡을 모아 보관하고 수로로 서울에 운송했다"
+      ],
+      "answerIndex": 0,
+      "explanation": "나루는 강이나 좁은 바닷목에서 배가 건너다니던 일정한 장소입니다. 물길에 끊긴 육로를 이어 사람과 짐을 건넸고, 물산이 모이면서 교통과 교역의 결절점으로 발달했습니다. 역참은 육로의 말·숙박·문서 운송, 조창은 세곡의 집산과 수운이 중심이었습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「나루」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0011329"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s26-gentle-joun-tax-grain-water-transport",
+      "conceptId": "korean-life-joun-tax-grain-waterway-to-capital",
+      "variant": "transport-system-identification",
+      "setIndex": 26,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "고려·조선에서 지방 조창에 거둔 세곡을 배에 싣고 강과 바닷길로 수도의 경창까지 옮긴 국가 운송 제도는?",
+      "choices": [
+        "발참마다 문서를 넘기는 파발",
+        "상인이 물품 매매를 중개하는 객주",
+        "물길로 세곡을 운송하는 조운"
+      ],
+      "answerIndex": 2,
+      "explanation": "조운은 지방 조창에 수납한 조세 곡물을 선박에 실어 중앙의 경창으로 운송한 제도입니다. 산지가 많은 환경에서 해운과 강운이 중요한 운송로였습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「조운」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0052436"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s26-steady-bobusang-bundle-load-distinction",
+      "conceptId": "korean-life-bobusang-bosang-busang-carrying-distinction",
+      "variant": "merchant-type-comparison",
+      "setIndex": 26,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "장시를 돌던 보부상을 보상과 부상으로 나눌 때 운반법과 주된 물품을 바르게 연결한 것은?",
+      "choices": [
+        "보상은 보자기에 값비싼 작은 물품을 싸고, 부상은 지게에 일용품을 졌다",
+        "보상은 지게에 어물·소금을 지고, 부상은 보자기에 비단·종이를 쌌다",
+        "둘 다 도성의 고정 점포에서 관수 물품만 팔아 이동하지 않았다"
+      ],
+      "answerIndex": 0,
+      "explanation": "보상은 보자기에 물품을 싸거나 질빵에 걸머지고 값비싼 잡화를 주로 다뤘습니다. 부상은 일용품을 지게에 얹어 등에 지고 다녔기에 각각 봇짐장수와 등짐장수로도 불렸습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「보부상」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0023368"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s26-stretch-gaekju-broker-lodging-finance",
+      "conceptId": "korean-life-gaekju-consignment-broker-ancillary-services",
+      "variant": "merchant-role-diagnosis",
+      "setIndex": 26,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "stretch",
+      "prompt": "포구에 도착한 외지 상인이 화물 판매를 맡기고 숙박·금융 주선도 받으려 합니다. 단순 거래 알선보다 넓은 책임을 맡은 중간 상인은?",
+      "choices": [
+        "거래만 알선하고 구문을 받는 거간",
+        "위탁 매매와 부수 업무를 함께 주선하는 객주",
+        "봇짐이나 등짐으로 장시를 순회하는 보부상"
+      ],
+      "answerIndex": 1,
+      "explanation": "객주는 위탁받은 물품의 매매를 주선하고 금융·숙박 같은 부수 업무도 연결했습니다. 거래 상대가 의무를 이행하지 않을 때 위탁자를 보호하는 책임을 지는 상관습도 있었습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「객주」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0001769"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s27-gentle-geogan-transaction-commission",
+      "conceptId": "korean-life-geogan-transaction-broker-commission",
+      "variant": "merchant-function",
+      "setIndex": 27,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "생산자와 상인, 상인과 소비자 사이에서 거래를 알선하고 그 대가로 구문이라는 수수료를 받은 보조 상인은?",
+      "choices": [
+        "거간",
+        "객주",
+        "난전"
+      ],
+      "answerIndex": 0,
+      "explanation": "거간은 여러 거래 당사자 사이에서 매매를 중개하고 보수로 구문 또는 구전을 받았습니다. 취급 상품과 활동 방식에 따라 여러 유형이 있었습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「거간」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0001786"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s27-steady-sijeon-state-obligation-shop",
+      "conceptId": "korean-life-sijeon-permanent-shop-state-obligations",
+      "variant": "market-institution-comparison",
+      "setIndex": 27,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "도성에서 상설 점포를 쓰며 관청 물자를 조달하고 세금·노역을 부담하는 대신 담당 물종의 독점권을 누린 상업 기구는?",
+      "choices": [
+        "포구에서 위탁 화물을 처리하던 객주",
+        "관에 등록된 상설 점포인 시전",
+        "허가 없이 물품을 팔던 난전"
+      ],
+      "answerIndex": 1,
+      "explanation": "시전은 도성 등에 설치된 상설 점포이자 동업 조직이었습니다. 관수 물자 조달과 세금·노역 같은 국역을 부담하는 대신 담당 상품을 독점 판매하는 권한을 얻었습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「시전」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0032450"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s27-stretch-nanjeon-unlisted-goods",
+      "conceptId": "korean-life-nanjeon-unregistered-merchant-or-goods",
+      "variant": "legal-classification",
+      "setIndex": 27,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "stretch",
+      "prompt": "조선의 시안에 등록된 상인이더라도 시안에 적히지 않은 물종을 몰래 팔았습니다. 당시 상업 질서에서는 이 행위를 어떻게 분류했을까요?",
+      "choices": [
+        "국역을 정상 부담한 시전 거래",
+        "행상 조직의 허가를 받은 보부상 거래",
+        "등록 범위를 벗어난 난전 행위"
+      ],
+      "answerIndex": 2,
+      "explanation": "난전은 시안에 등록되지 않은 상인의 거래뿐 아니라 등록된 시전이 허가받지 않은 물종을 파는 행위도 가리켰습니다. 시전 중심 질서를 어지럽힌다고 보아 단속했습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「난전」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0011712"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s28-gentle-geumnanjeongwon-enforcement-right",
+      "conceptId": "korean-life-geumnanjeongwon-sijeon-enforcement-right",
+      "variant": "commercial-right-identification",
+      "setIndex": 28,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "조선 후기 정부가 시전 상인에게 허가받지 않은 상인을 직접 단속할 수 있도록 준 배타적 권리는?",
+      "choices": [
+        "비시전 상인의 판매를 허용한 통공발매정책",
+        "난전을 금지·단속하는 금난전권",
+        "공설 점포 사용료로 내던 공랑세"
+      ],
+      "answerIndex": 1,
+      "explanation": "금난전권은 시전 상인들이 난전을 금지하고 단속할 수 있도록 인정받은 권리입니다. 시전의 국역 부담에 대한 보상 성격을 띠었지만 상업 독점을 강화했습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「금난전권」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0007634"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s28-steady-sinhaetonggong-policy-effect",
+      "conceptId": "korean-life-sinhaetonggong-non-yuguijeon-rights-abolished",
+      "variant": "policy-effect",
+      "setIndex": 28,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "1791년 정조 때 시행한 신해통공의 조치와 직접적인 시장 변화를 바르게 설명한 것은?",
+      "choices": [
+        "모든 일반 시전에 새 금난전권을 주어 독점을 넓혔다",
+        "육의전까지 포함해 모든 시전과 상설 점포를 없앴다",
+        "육의전을 뺀 시전의 금난전권을 폐지해 비시전 상거래를 허용했다"
+      ],
+      "answerIndex": 2,
+      "explanation": "신해통공은 1791년 육의전을 제외한 일반 시전의 금난전권을 폐지한 정책입니다. 이에 따라 비시전계 상인들의 도성 안 상거래가 허용되어 시전의 독점력이 약해졌습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「신해통공」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0033551"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s28-stretch-yukjubijeon-reform-exception",
+      "conceptId": "korean-life-yukjubijeon-highest-state-duty-six-shops",
+      "variant": "institutional-exception",
+      "setIndex": 28,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "stretch",
+      "prompt": "신해통공 뒤에도 금난전권 폐지의 예외로 남은 상업 조직을 그 지위까지 포함해 정확히 설명한 것은?",
+      "choices": [
+        "국역 부담이 가장 컸던 도성의 여섯 시전인 육주비전",
+        "최근 새로 생겨 국역 부담이 없던 일반 시전 전체",
+        "시안 밖에서 허가 없이 거래하던 난전 상인 조직"
+      ],
+      "answerIndex": 0,
+      "explanation": "육주비전은 도성 시전 가운데 국역 부담이 가장 큰 여섯 시전을 통칭합니다. 신해통공은 일반 시전의 금난전권을 없앴지만 육의전이라고도 불린 이 조직은 예외로 두었습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「육주비전」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0042165"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s29-gentle-sechaek-commercial-lending",
+      "conceptId": "korean-life-sechaek-commercial-book-rental",
+      "variant": "distribution-model",
+      "setIndex": 29,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "gentle",
+      "prompt": "책값이 비싸던 조선 후기, 업자가 여러 책을 갖추고 독자에게 대여료를 받아 일정 기간 빌려준 서적 유통 방식은?",
+      "choices": [
+        "관청이 책판을 보관하고 필요할 때 찍는 교서관 인쇄",
+        "민간 업자가 목판을 새겨 책을 판매하는 방각본 간행",
+        "돈을 받고 책을 빌려준 세책"
+      ],
+      "answerIndex": 2,
+      "explanation": "세책은 업자가 다수의 책을 갖추고 대여료를 받아 일정 기간 빌려준 상업적 서적 유통 방식입니다. 책을 사기 어려운 독자층의 소설 향유를 넓혔습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「세책」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0080114"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s29-steady-banggakbon-private-profit-printing",
+      "conceptId": "korean-life-banggakbon-private-commercial-printing",
+      "variant": "publication-model-comparison",
+      "setIndex": 29,
+      "lens": "then",
+      "topic": "korean-life",
+      "internalDifficulty": "steady",
+      "prompt": "세책이 이미 만든 책을 빌려주는 유통 방식이라면, 방각본을 구별하는 제작·판매 방식은 무엇일까요?",
+      "choices": [
+        "민간 업자가 이윤을 목적으로 판각해 책을 간행한다",
+        "독자가 빌린 책을 손으로 베껴 원본과 함께 돌려준다",
+        "관청이 행정에 필요한 책만 찍어 민간 판매를 금한다"
+      ],
+      "answerIndex": 0,
+      "explanation": "방각본은 영리를 목적으로 민간에서 판각하여 간행한 책입니다. 대여가 중심인 세책과 달리 민간 상업 출판의 생산과 판매에 초점이 있습니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「방각본」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0021655"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    },
+    {
+      "kind": "bonus",
+      "id": "bonus-korean-life-001-s29-stretch-jeongisu-cliffhanger-performance",
+      "conceptId": "korean-life-jeongisu-public-novel-recitation-payment",
+      "variant": "oral-media-business-model",
+      "setIndex": 29,
+      "lens": "life",
+      "topic": "korean-life",
+      "internalDifficulty": "stretch",
+      "prompt": "사람이 붐비는 곳에서 소설을 읽다가 긴요한 대목에 멈추자 청중이 다음 내용을 들으려고 돈을 던졌습니다. 이 직업의 소통 방식은?",
+      "choices": [
+        "세책점 주인이 책을 기간제로 빌려주고 반납을 기다리는 방식",
+        "전기수가 공개 낭독의 긴장감을 활용해 청중에게 보수를 받는 방식",
+        "방각업자가 목판본을 찍어 서점에 도매로 넘기는 방식"
+      ],
+      "answerIndex": 1,
+      "explanation": "전기수는 조선 후기 사람들이 많이 오가는 곳에서 소설을 전문적으로 읽어 주던 직업적 낭독가입니다. 중요한 대목에서 멈춰 다음 이야기를 궁금하게 만들면 청중이 돈을 던졌다는 기록이 전합니다.",
+      "source": {
+        "name": "한국민족문화대백과사전 「전기수」",
+        "url": "https://encykorea.aks.ac.kr/Article/E0049311"
+      },
+      "contentVersion": "2026.08.180d",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-08-05"
+    }
+  ]
+}

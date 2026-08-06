@@ -30,6 +30,7 @@ const corePack: CoreContentPack = {
       ...metadata,
       kind: "core",
       id: "core-gentle",
+      conceptId: "nostalgia-public-phone-coin-call",
       dateKey: "2026-07-28",
       lens: "then",
       topic: "nostalgia",
@@ -43,6 +44,7 @@ const corePack: CoreContentPack = {
       ...metadata,
       kind: "core",
       id: "core-steady",
+      conceptId: "digital-mobile-text-size-setting",
       dateKey: "2026-07-28",
       lens: "now",
       topic: "digital",
@@ -56,6 +58,7 @@ const corePack: CoreContentPack = {
       ...metadata,
       kind: "core",
       id: "core-stretch",
+      conceptId: "safety-suspicious-transfer-direct-verification",
       dateKey: "2026-07-28",
       lens: "life",
       topic: "safety",
@@ -155,6 +158,7 @@ function buildCoreLibrary(startOffset = 0) {
         ...metadata,
         kind: "core" as const,
         id: `core-${packIndex}-${dayIndex}-${difficultyIndex}`,
+        conceptId: `core-concept-${packIndex}-${dayIndex}-${difficultyIndex}`,
         dateKey: releaseDate(firstOffset + dayIndex),
         lens: LENSES[difficultyIndex],
         topic: "nostalgia" as const,
@@ -350,6 +354,25 @@ describe("validateContentPack", () => {
     );
   });
 
+  it("rejects every standard-dictionary search listing, including arbitrary single-token queries", () => {
+    const unsupportedKeywords = [
+      "가는 날이 장날",
+      "-든지",
+      "통째로",
+      "codexzerohit20260805",
+    ];
+
+    for (const searchKeyword of unsupportedKeywords) {
+      const invalid = structuredClone(corePack);
+      invalid.questions[0].source = {
+        name: "국립국어원 표준국어대사전",
+        url: `https://stdict.korean.go.kr/search/searchResult.do?pageSize=10&searchKeyword=${encodeURIComponent(searchKeyword)}`,
+      };
+
+      expect(issueCodes(invalid, coreDescriptor)).toContain("source-review");
+    }
+  });
+
   it("detects duplicate IDs, prompts, choices, answer leaks, and stacked negatives", () => {
     const invalid = structuredClone(corePack);
     invalid.questions[1].id = invalid.questions[0].id;
@@ -369,7 +392,7 @@ describe("validateContentPack", () => {
     );
   });
 
-  it("flags bonus set range and concepts repeated less than 30 sets apart", () => {
+  it("flags bonus set range and duplicate concepts", () => {
     const invalid = bonusPack();
     invalid.questions.push(
       ...invalid.questions.map((question) => ({
@@ -381,12 +404,49 @@ describe("validateContentPack", () => {
     );
 
     expect(issueCodes(invalid, { ...bonusDescriptor, setEnd: 30 })).toEqual(
-      expect.arrayContaining(["set-range", "concept-spacing"]),
+      expect.arrayContaining(["set-range", "duplicate-concept"]),
     );
   });
 });
 
 describe("validateContentLibrary", () => {
+  it("rejects a concept repeated anywhere in the released library", () => {
+    const core = buildCoreLibrary();
+    const nostalgia = buildBonusTopicLibrary("nostalgia");
+    core.packs[0].pack.questions[0].conceptId = "shared-kimjang";
+    nostalgia.packs[0].pack.questions[0].conceptId = "shared-kimjang";
+
+    const report = validateContentLibrary(
+      manifestWith(core.descriptors, nostalgia.descriptors),
+      [...core.packs, ...nostalgia.packs],
+    );
+
+    expect(report.issues).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ code: "duplicate-concept" }),
+      ]),
+    );
+  });
+
+  it("rejects case and whitespace variants of a repeated concept", () => {
+    const core = buildCoreLibrary();
+    const nostalgia = buildBonusTopicLibrary("nostalgia");
+    core.packs[0].pack.questions[0].conceptId = " shared-kimjang ";
+    nostalgia.packs[0].pack.questions[0].conceptId = "SHARED-KIMJANG";
+
+    const report = validateContentLibrary(
+      manifestWith(core.descriptors, nostalgia.descriptors),
+      [...core.packs, ...nostalgia.packs],
+    );
+
+    expect(report.issues).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ code: "schema" }),
+        expect.objectContaining({ code: "duplicate-concept" }),
+      ]),
+    );
+  });
+
   it.each([
     { label: "missing full", value: undefined, scope: "full" as const },
     { label: "empty core", value: "", scope: "core" as const },
@@ -510,6 +570,8 @@ describe("validateContentLibrary", () => {
         bonusTopics: [
           {
             topic: "nostalgia",
+            label: "추억·대중문화",
+            order: 0,
             packCount: 4,
             setCount: 120,
             questionCount: 360,
@@ -526,6 +588,104 @@ describe("validateContentLibrary", () => {
       setCount: 300,
       issues: [],
     });
+  });
+
+  it.each([
+    {
+      label: "empty labels",
+      change: (topics: Array<Record<string, unknown>>) => {
+        topics[0].label = " ";
+      },
+      code: "schema",
+      scope: "release-contract:bonus:nostalgia:label",
+    },
+    {
+      label: "duplicate display orders",
+      change: (topics: Array<Record<string, unknown>>) => {
+        topics[1].order = 0;
+      },
+      code: "schema",
+      scope: "release-contract:bonus:korean-life:order",
+    },
+    {
+      label: "negative released counts",
+      change: (topics: Array<Record<string, unknown>>) => {
+        topics[0].setCount = -1;
+      },
+      code: "count",
+      scope: "release-contract:bonus:nostalgia:setCount",
+    },
+    {
+      label: "descriptor count disagreements",
+      change: (topics: Array<Record<string, unknown>>) => {
+        topics[0].packCount = 3;
+      },
+      code: "count",
+      scope: "release-contract:bonus:nostalgia:descriptors",
+    },
+  ])("rejects release contracts with $label", ({ change, code, scope }) => {
+    const core = buildCoreLibrary();
+    const nostalgia = buildBonusTopicLibrary("nostalgia");
+    const koreanLife = buildBonusTopicLibrary("korean-life");
+    const language = buildBonusTopicLibrary("language");
+    const manifest = {
+      ...manifestWith(
+        core.descriptors,
+        [
+          ...nostalgia.descriptors.slice(0, 4),
+          koreanLife.descriptors[0],
+          language.descriptors[0],
+        ],
+      ),
+      releaseContract: {
+        core: { packCount: 6, questionCount: 540 },
+        bonusTopics: [
+          {
+            topic: "nostalgia",
+            label: "추억·대중문화",
+            order: 0,
+            packCount: 4,
+            setCount: 120,
+            questionCount: 360,
+          },
+          {
+            topic: "korean-life",
+            label: "한국 생활사",
+            order: 1,
+            packCount: 1,
+            setCount: 30,
+            questionCount: 90,
+          },
+          {
+            topic: "language",
+            label: "말·속담·맞춤법",
+            order: 2,
+            packCount: 1,
+            setCount: 30,
+            questionCount: 90,
+          },
+        ],
+      },
+    } as unknown as ContentManifest;
+    change(
+      (manifest as unknown as {
+        releaseContract: { bonusTopics: Array<Record<string, unknown>> };
+      }).releaseContract.bonusTopics,
+    );
+
+    const report = validateContentLibrary(
+      manifest,
+      [
+        ...core.packs,
+        ...nostalgia.packs.slice(0, 4),
+        koreanLife.packs[0],
+        language.packs[0],
+      ],
+    );
+
+    expect(report.issues).toContainEqual(
+      expect.objectContaining({ code, scope }),
+    );
   });
 
   it("rejects a 41-pack partial default library deterministically", () => {
@@ -695,7 +855,7 @@ describe("validateContentLibrary", () => {
     );
   });
 
-  it("detects similar prompts and concept spacing across pack boundaries", () => {
+  it("detects similar prompts and duplicate concepts across pack boundaries", () => {
     const first = bonusPack();
     const second = bonusPack();
     second.id = "bonus-digital-002";
@@ -738,7 +898,7 @@ describe("validateContentLibrary", () => {
     ]);
 
     expect(report.issues.map(({ code }) => code)).toEqual(
-      expect.arrayContaining(["similar-prompt", "concept-spacing"]),
+      expect.arrayContaining(["similar-prompt", "duplicate-concept"]),
     );
   });
 });

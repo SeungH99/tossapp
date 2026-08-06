@@ -27,6 +27,7 @@ const coreQuestions: CoreQuestion[] = [
   {
     kind: "core",
     id: "then-phone",
+    conceptId: "nostalgia-public-phone-extra-coin",
     dateKey: "2026-07-28",
     lens: "then",
     topic: "nostalgia",
@@ -46,6 +47,7 @@ const coreQuestions: CoreQuestion[] = [
   {
     kind: "core",
     id: "now-qr",
+    conceptId: "digital-qr-camera-scan",
     dateKey: "2026-07-28",
     lens: "now",
     topic: "digital",
@@ -65,6 +67,7 @@ const coreQuestions: CoreQuestion[] = [
   {
     kind: "core",
     id: "life-safety",
+    conceptId: "safety-gas-smell-ventilation",
     dateKey: "2026-07-28",
     lens: "life",
     topic: "safety",
@@ -160,7 +163,165 @@ function requiredButton(selector: string): HTMLButtonElement {
   return element;
 }
 
+const threeBonusTopics = [
+  { id: "nostalgia", label: "추억·대중문화", order: 0, setCount: 2 },
+  { id: "korean-life", label: "한국 생활사", order: 1, setCount: 1 },
+  { id: "language", label: "말·속담·맞춤법", order: 2, setCount: 1 },
+] as const;
+
+function bundledBonusSet(topic: "nostalgia", setIndex: number) {
+  const questions = bundledBonusQuestions.filter(
+    (question) => question.topic === topic && question.setIndex === setIndex,
+  );
+  if (questions.length !== 3) {
+    throw new Error(`Expected three ${topic} questions for set ${setIndex}`);
+  }
+  return questions;
+}
+
+async function openCatalogBonusChooserWithExhaustedMiddle() {
+  const storage = new ControlledStorage();
+  const repository = new ProgressRepository(storage);
+  const progress = createEmptyProgress();
+  progress.sessions["2026-07-28"] = createCompletedSession("2026-07-28");
+  progress.bonusTopicProgress["korean-life"].skippedSetIndexes = [0];
+  await repository.save(progress);
+  const contentCatalog: ContentCatalog = {
+    bonusTopics: threeBonusTopics,
+    async loadCoreSet() {
+      return { ok: true, value: coreQuestions, packId: "core-001" };
+    },
+    async loadBonusSet() {
+      return { ok: false, reason: "missing-set" };
+    },
+  };
+  const user = userEvent.setup();
+
+  render(
+    <QuizApp
+      now={new Date("2026-07-28T03:00:00.000Z")}
+      contentCatalog={contentCatalog}
+      repository={repository}
+    />,
+  );
+
+  await waitFor(() => {
+    expect(document.querySelector(".result-screen")).not.toBeNull();
+  });
+  await user.click(requiredButton(".result-screen .outline-button"));
+
+  return { radios: screen.getAllByRole("radio"), user };
+}
+
 describe("QuizApp", () => {
+  it("renders a fixed SVG answer mark", async () => {
+    const question = {
+      ...coreQuestions[0],
+      choices: ["First option", "Correct option", "Third option"],
+      answerIndex: 1,
+    } satisfies CoreQuestion;
+    const user = userEvent.setup();
+
+    render(
+      <QuizApp
+        now={new Date("2026-07-28T03:00:00.000Z")}
+        coreQuestions={[question, coreQuestions[1], coreQuestions[2]]}
+        bonusQuestions={[]}
+      />,
+    );
+
+    await user.click(screen.getByRole("button", { name: "오늘의 3문제 시작" }));
+    await user.click(screen.getByRole("button", { name: question.choices[1] }));
+    const mark = document.querySelector(".answer-mark");
+    expect(mark?.querySelector("svg")).not.toBeNull();
+  });
+
+  it.each([
+    ["41 ASCII graphemes", "a".repeat(41), false],
+    ["42 ASCII graphemes", "a".repeat(42), true],
+    ["41 decomposed graphemes", "e\u0301".repeat(41), false],
+    ["42 decomposed graphemes", "e\u0301".repeat(42), true],
+    ["41 ZWJ emoji graphemes", "👨‍👩‍👧‍👦".repeat(41), false],
+    ["42 ZWJ emoji graphemes", "👨‍👩‍👧‍👦".repeat(42), true],
+  ])(
+    "classifies %s at the visible title boundary",
+    async (_case, prompt, isLong) => {
+      const question = { ...coreQuestions[0], prompt } satisfies CoreQuestion;
+      const user = userEvent.setup();
+
+      render(
+        <QuizApp
+          now={new Date("2026-07-28T03:00:00.000Z")}
+          coreQuestions={[question, coreQuestions[1], coreQuestions[2]]}
+          bonusQuestions={[]}
+        />,
+      );
+
+      await user.click(
+        screen.getByRole("button", { name: "오늘의 3문제 시작" }),
+      );
+
+      const title = screen.getByRole("heading", { name: prompt });
+      expect(title).toHaveClass("question-title");
+      if (isLong) {
+        expect(title).toHaveClass("long");
+      } else {
+        expect(title).not.toHaveClass("long");
+      }
+    },
+  );
+
+  it("uses the same grapheme boundaries when Intl.Segmenter is unavailable", async () => {
+    const segmenterDescriptor = Object.getOwnPropertyDescriptor(
+      Intl,
+      "Segmenter",
+    );
+    Object.defineProperty(Intl, "Segmenter", {
+      configurable: true,
+      value: undefined,
+    });
+
+    try {
+      const cases = [
+        ["a".repeat(41), false],
+        ["a".repeat(42), true],
+        ["e\u0301".repeat(41), false],
+        ["e\u0301".repeat(42), true],
+        ["👨‍👩‍👧‍👦".repeat(41), false],
+        ["👨‍👩‍👧‍👦".repeat(42), true],
+      ] as const;
+
+      for (const [prompt, isLong] of cases) {
+        const question = { ...coreQuestions[0], prompt } satisfies CoreQuestion;
+        const user = userEvent.setup();
+        const view = render(
+          <QuizApp
+            now={new Date("2026-07-28T03:00:00.000Z")}
+            coreQuestions={[question, coreQuestions[1], coreQuestions[2]]}
+            bonusQuestions={[]}
+          />,
+        );
+
+        await user.click(
+          screen.getByRole("button", { name: "오늘의 3문제 시작" }),
+        );
+        const title = screen.getByRole("heading", { name: prompt });
+        if (isLong) {
+          expect(title).toHaveClass("long");
+        } else {
+          expect(title).not.toHaveClass("long");
+        }
+        view.unmount();
+      }
+    } finally {
+      if (segmenterDescriptor == null) {
+        delete (Intl as { Segmenter?: unknown }).Segmenter;
+      } else {
+        Object.defineProperty(Intl, "Segmenter", segmenterDescriptor);
+      }
+    }
+  });
+
   it("loads today's core set before opening the quiz", async () => {
     const user = userEvent.setup();
     let requestedDateKey: string | null = null;
@@ -188,9 +349,7 @@ describe("QuizApp", () => {
       />,
     );
 
-    await user.click(
-      screen.getByRole("button", { name: "오늘의 3문제 시작" }),
-    );
+    await user.click(screen.getByRole("button", { name: "오늘의 3문제 시작" }));
 
     expect(requestedDateKey).toBe("2026-07-28");
     expect(screen.getByRole("status")).toHaveTextContent(
@@ -238,9 +397,7 @@ describe("QuizApp", () => {
       />,
     );
 
-    await user.click(
-      screen.getByRole("button", { name: "오늘의 3문제 시작" }),
-    );
+    await user.click(screen.getByRole("button", { name: "오늘의 3문제 시작" }));
     expect(await screen.findByRole("alert")).toHaveTextContent(
       "오늘 문제를 불러오지 못했어요",
     );
@@ -271,6 +428,7 @@ describe("QuizApp", () => {
       packId: string;
     }) => void;
     const contentCatalog: ContentCatalog = {
+      bonusTopics: [threeBonusTopics[0]],
       async loadCoreSet() {
         return { ok: true, value: coreQuestions, packId: "core-001" };
       },
@@ -376,12 +534,14 @@ describe("QuizApp", () => {
       "2026-07-28",
       "nostalgia",
       0,
+      threeBonusTopics[0].setCount,
       bonusSet,
       new Date("2026-07-28T03:00:00.000Z"),
     );
     expect(started.applied).toBe(true);
     const requestedBonusSets: Array<{ topic: string; setIndex: number }> = [];
     const contentCatalog: ContentCatalog = {
+      bonusTopics: [threeBonusTopics[0]],
       async loadCoreSet() {
         return { ok: false, reason: "missing-set" };
       },
@@ -409,7 +569,7 @@ describe("QuizApp", () => {
     expect(requestedBonusSets).toEqual([{ topic: "nostalgia", setIndex: 0 }]);
   });
 
-  it("records the completed catalog bonus set in V3 topic progress", async () => {
+  it("records the completed catalog bonus set in V4 topic progress", async () => {
     const storage = new ControlledStorage();
     const repository = new ProgressRepository(storage);
     const analyticsEvents: Array<{
@@ -420,6 +580,7 @@ describe("QuizApp", () => {
       (question) => question.topic === "nostalgia" && question.setIndex === 0,
     );
     const contentCatalog: ContentCatalog = {
+      bonusTopics: [threeBonusTopics[0]],
       async loadCoreSet() {
         return { ok: true, value: coreQuestions, packId: "core-001" };
       },
@@ -490,6 +651,7 @@ describe("QuizApp", () => {
       if (loaded.kind !== "unrecoverable") {
         expect(loaded.state.bonusTopicProgress.nostalgia).toEqual({
           completedSetIndexes: [0],
+          skippedSetIndexes: [],
           lastCompletedDateKey: "2026-07-28",
         });
       }
@@ -504,9 +666,15 @@ describe("QuizApp", () => {
     });
   });
 
-  it("shows only bonus topics declared available by the catalog", async () => {
+  it("shows the three catalog topics in order and disables exhausted inventory", async () => {
+    const storage = new ControlledStorage();
+    const repository = new ProgressRepository(storage);
+    const progress = createEmptyProgress();
+    progress.sessions["2026-07-28"] = createCompletedSession("2026-07-28");
+    progress.bonusTopicProgress.language.skippedSetIndexes = [0];
+    await repository.save(progress);
     const contentCatalog: ContentCatalog = {
-      availableBonusTopics: ["nostalgia"],
+      bonusTopics: threeBonusTopics,
       async loadCoreSet() {
         return { ok: true, value: coreQuestions, packId: "core-001" };
       },
@@ -520,28 +688,335 @@ describe("QuizApp", () => {
       <QuizApp
         now={new Date("2026-07-28T03:00:00.000Z")}
         contentCatalog={contentCatalog}
+        repository={repository}
       />,
     );
 
-    await user.click(screen.getByRole("button", { name: "오늘의 3문제 시작" }));
-    await user.click(screen.getByRole("button", { name: "동전" }));
-    await user.click(screen.getByRole("button", { name: "다음 문제" }));
-    await user.click(screen.getByRole("button", { name: "QR 코드" }));
-    await user.click(screen.getByRole("button", { name: "다음 문제" }));
-    await user.click(screen.getByRole("button", { name: "창문 열기" }));
-    await user.click(screen.getByRole("button", { name: "결과 보기" }));
+    await waitFor(() => {
+      expect(document.querySelector(".result-screen")).not.toBeNull();
+    });
     await user.click(
       screen.getByRole("button", { name: "원하는 주제로 보너스 3문제" }),
     );
 
-    expect(document.querySelectorAll(".topic-button")).toHaveLength(1);
     expect(
-      screen.getByRole("button", { name: "추억·대중문화" }),
-    ).toBeInTheDocument();
+      screen.getAllByRole("radio").map((node) => node.textContent),
+    ).toEqual([
+      expect.stringContaining("추억·대중문화"),
+      expect.stringContaining("한국 생활사"),
+      expect.stringContaining("말·속담·맞춤법"),
+    ]);
     expect(
-      screen.queryByRole("button", { name: "디지털 생활" }),
-    ).not.toBeInTheDocument();
+      screen.getByRole("radio", { name: /말·속담·맞춤법/ }),
+    ).toBeDisabled();
+    expect(screen.getByText("새 문제 준비 중")).toBeInTheDocument();
+    expect(screen.queryByText("디지털 생활")).not.toBeInTheDocument();
   });
+
+  it("keeps only the selected enabled topic in the radio tab order", async () => {
+    const { radios } = await openCatalogBonusChooserWithExhaustedMiddle();
+
+    expect(radios[0]).toHaveAttribute("aria-checked", "true");
+    expect(radios[0]).toHaveAttribute("tabindex", "0");
+    expect(radios[1]).toBeDisabled();
+    expect(radios[1]).toHaveAttribute("tabindex", "-1");
+    expect(radios[2]).toHaveAttribute("aria-checked", "false");
+    expect(radios[2]).toHaveAttribute("tabindex", "-1");
+  });
+
+  it("moves radio selection with every arrow direction and skips disabled topics", async () => {
+    const { radios, user } = await openCatalogBonusChooserWithExhaustedMiddle();
+
+    radios[0].focus();
+    await user.keyboard("{ArrowRight}");
+    expect(radios[2]).toHaveFocus();
+    expect(radios[2]).toHaveAttribute("aria-checked", "true");
+
+    await user.keyboard("{ArrowDown}");
+    expect(radios[0]).toHaveFocus();
+    expect(radios[0]).toHaveAttribute("aria-checked", "true");
+
+    await user.keyboard("{ArrowLeft}");
+    expect(radios[2]).toHaveFocus();
+    expect(radios[2]).toHaveAttribute("aria-checked", "true");
+
+    await user.keyboard("{ArrowUp}");
+    expect(radios[0]).toHaveFocus();
+    expect(radios[0]).toHaveAttribute("aria-checked", "true");
+    expect(radios[1]).toHaveAttribute("aria-checked", "false");
+  });
+
+  it("look-ahead skips a seen concept before showing a reward ad", async () => {
+    const storage = new ControlledStorage();
+    const repository = new ProgressRepository(storage);
+    const duplicateSet = bundledBonusSet("nostalgia", 0);
+    const unseenSet = bundledBonusSet("nostalgia", 1);
+    const progress = createEmptyProgress();
+    progress.sessions["2026-07-28"] = createCompletedSession("2026-07-28");
+    progress.bonus = {
+      ...progress.bonus,
+      firstFreeUsed: true,
+    };
+    progress.seenConceptIds = [duplicateSet[0].conceptId];
+    await repository.save(progress);
+
+    const requestedSetIndexes: number[] = [];
+    const analyticsEvents: Array<{
+      name: string;
+      params?: Record<string, string | number | boolean>;
+    }> = [];
+    let resolveUnseenSet!: (result: {
+      ok: true;
+      value: typeof unseenSet;
+      packId: string;
+    }) => void;
+    let showCount = 0;
+    const contentCatalog: ContentCatalog = {
+      bonusTopics: [threeBonusTopics[0]],
+      async loadCoreSet() {
+        return { ok: true, value: coreQuestions, packId: "core-001" };
+      },
+      loadBonusSet(_topic, setIndex) {
+        requestedSetIndexes.push(setIndex);
+        if (setIndex === 0) {
+          return Promise.resolve({
+            ok: true as const,
+            value: duplicateSet,
+            packId: "bonus-nostalgia-001",
+          });
+        }
+        return new Promise((resolve) => {
+          resolveUnseenSet = resolve;
+        });
+      },
+    };
+    const rewardAd: RewardAdGateway = {
+      load: async () => true,
+      show: async () => {
+        showCount += 1;
+        return { rewardGrantId: "look-ahead-reward" };
+      },
+    };
+    const user = userEvent.setup();
+
+    render(
+      <QuizApp
+        now={new Date("2026-07-28T03:00:00.000Z")}
+        analytics={{
+          track: (name, params) => analyticsEvents.push({ name, params }),
+        }}
+        contentCatalog={contentCatalog}
+        repository={repository}
+        rewardAd={rewardAd}
+      />,
+    );
+
+    await user.click(
+      await screen.findByRole("button", {
+        name: "원하는 주제로 보너스 3문제",
+      }),
+    );
+    await user.click(screen.getByRole("radio", { name: "추억·대중문화" }));
+    await user.click(
+      await screen.findByRole("button", { name: "광고 보고 보너스 3문제" }),
+    );
+
+    await waitFor(() => {
+      expect(requestedSetIndexes).toEqual([0, 1]);
+    });
+    expect(showCount).toBe(0);
+    expect(analyticsEvents).toContainEqual({
+      name: "bonus_set_skipped_seen_concept",
+      params: { topic: "nostalgia", setIndex: 0 },
+    });
+    expect(JSON.stringify(analyticsEvents)).not.toContain(
+      duplicateSet[0].conceptId,
+    );
+    expect(JSON.stringify(analyticsEvents)).not.toContain(duplicateSet[0].id);
+    await waitFor(async () => {
+      const loaded = await repository.load();
+      expect(loaded.kind).not.toBe("unrecoverable");
+      if (loaded.kind !== "unrecoverable") {
+        expect(
+          loaded.state.bonusTopicProgress.nostalgia.skippedSetIndexes,
+        ).toEqual([0]);
+        expect(loaded.state.bonus.firstFreeUsed).toBe(true);
+        expect(loaded.state.rewardGrantIds).toEqual([]);
+      }
+    });
+
+    resolveUnseenSet({
+      ok: true,
+      value: unseenSet,
+      packId: "bonus-nostalgia-001",
+    });
+
+    expect(
+      await screen.findByRole("heading", { name: unseenSet[0].prompt }),
+    ).toBeInTheDocument();
+    expect(showCount).toBe(1);
+  });
+
+  it("moves the radio tab stop when look-ahead exhausts the selected topic", async () => {
+    const storage = new ControlledStorage();
+    const repository = new ProgressRepository(storage);
+    const duplicateSet = bundledBonusSet("nostalgia", 0);
+    const progress = createEmptyProgress();
+    progress.sessions["2026-07-28"] = createCompletedSession("2026-07-28");
+    progress.bonus = {
+      ...progress.bonus,
+      firstFreeUsed: true,
+    };
+    progress.seenConceptIds = [duplicateSet[0].conceptId];
+    await repository.save(progress);
+
+    const requestedSets: Array<{ topic: string; setIndex: number }> = [];
+    let showCount = 0;
+    const contentCatalog: ContentCatalog = {
+      bonusTopics: [
+        { ...threeBonusTopics[0], setCount: 1 },
+        threeBonusTopics[1],
+      ],
+      async loadCoreSet() {
+        return { ok: true, value: coreQuestions, packId: "core-001" };
+      },
+      async loadBonusSet(topic, setIndex) {
+        requestedSets.push({ topic, setIndex });
+        return {
+          ok: true,
+          value: duplicateSet,
+          packId: "bonus-nostalgia-001",
+        };
+      },
+    };
+    const rewardAd: RewardAdGateway = {
+      load: async () => true,
+      show: async () => {
+        showCount += 1;
+        return { rewardGrantId: "must-not-be-granted" };
+      },
+    };
+    const user = userEvent.setup();
+
+    render(
+      <QuizApp
+        now={new Date("2026-07-28T03:00:00.000Z")}
+        contentCatalog={contentCatalog}
+        repository={repository}
+        rewardAd={rewardAd}
+      />,
+    );
+
+    await user.click(
+      await screen.findByRole("button", {
+        name: "원하는 주제로 보너스 3문제",
+      }),
+    );
+    await user.click(
+      await screen.findByRole("button", { name: "광고 보고 보너스 3문제" }),
+    );
+
+    expect(await screen.findByRole("alert")).toHaveTextContent(
+      "새 문제 준비 중",
+    );
+    const nostalgia = screen.getByRole("radio", {
+      name: /추억·대중문화/,
+    });
+    const koreanLife = screen.getByRole("radio", { name: "한국 생활사" });
+    expect(nostalgia).toBeDisabled();
+    expect(nostalgia).toHaveAttribute("aria-checked", "false");
+    expect(nostalgia).toHaveAttribute("tabindex", "-1");
+    expect(koreanLife).toBeEnabled();
+    expect(koreanLife).toHaveAttribute("aria-checked", "true");
+    expect(koreanLife).toHaveAttribute("tabindex", "0");
+    expect(
+      screen
+        .getAllByRole("radio")
+        .filter(
+          (radio) =>
+            !(radio as HTMLButtonElement).disabled && radio.tabIndex === 0,
+        ),
+    ).toEqual([koreanLife]);
+    expect(requestedSets).toEqual([{ topic: "nostalgia", setIndex: 0 }]);
+    expect(showCount).toBe(0);
+
+    const loaded = await repository.load();
+    expect(loaded.kind).not.toBe("unrecoverable");
+    if (loaded.kind !== "unrecoverable") {
+      expect(loaded.state.bonus.firstFreeUsed).toBe(true);
+      expect(loaded.state.rewardGrantIds).toEqual([]);
+      expect(
+        loaded.state.bonusTopicProgress.nostalgia.skippedSetIndexes,
+      ).toEqual([0]);
+    }
+  });
+
+  it.each([
+    {
+      ledgerName: "question ID",
+      seenQuestionIds: [coreQuestions[0].id],
+      seenConceptIds: [] as string[],
+    },
+    {
+      ledgerName: "concept ID",
+      seenQuestionIds: [] as string[],
+      seenConceptIds: [coreQuestions[0].conceptId],
+    },
+  ])(
+    "blocks a new core set containing a seen $ledgerName",
+    async ({ seenQuestionIds, seenConceptIds }) => {
+      const storage = new ControlledStorage();
+      const repository = new ProgressRepository(storage);
+      await repository.save({
+        ...createEmptyProgress(),
+        seenQuestionIds,
+        seenConceptIds,
+      });
+      const analyticsEvents: Array<{
+        name: string;
+        params?: Record<string, string | number | boolean>;
+      }> = [];
+      const contentCatalog: ContentCatalog = {
+        bonusTopics: threeBonusTopics,
+        async loadCoreSet() {
+          return { ok: true, value: coreQuestions, packId: "core-001" };
+        },
+        async loadBonusSet() {
+          return { ok: false, reason: "missing-set" };
+        },
+      };
+      const user = userEvent.setup();
+
+      render(
+        <QuizApp
+          now={new Date("2026-07-28T03:00:00.000Z")}
+          analytics={{
+            track: (name, params) => analyticsEvents.push({ name, params }),
+          }}
+          contentCatalog={contentCatalog}
+          repository={repository}
+        />,
+      );
+
+      await user.click(
+        await screen.findByRole("button", { name: "오늘의 3문제 시작" }),
+      );
+
+      expect(await screen.findByRole("alert")).toHaveTextContent(
+        "오늘 문제를 준비하지 못했어요",
+      );
+      expect(
+        screen.queryByRole("heading", { name: coreQuestions[0].prompt }),
+      ).not.toBeInTheDocument();
+      expect(analyticsEvents).toContainEqual({
+        name: "core_set_blocked_seen_concept",
+        params: {
+          dateKey: "2026-07-28",
+          mode: "current",
+        },
+      });
+    },
+  );
 
   it("blocks a second daily topic attempt before loading content", async () => {
     const storage = new ControlledStorage();
@@ -550,12 +1025,13 @@ describe("QuizApp", () => {
     progress.sessions["2026-07-28"] = createCompletedSession("2026-07-28");
     progress.bonusTopicProgress.nostalgia = {
       completedSetIndexes: [0],
+      skippedSetIndexes: [],
       lastCompletedDateKey: "2026-07-28",
     };
     await repository.save(progress);
     let bonusLoadCount = 0;
     const contentCatalog: ContentCatalog = {
-      availableBonusTopics: ["nostalgia"],
+      bonusTopics: [threeBonusTopics[0]],
       async loadCoreSet() {
         return { ok: true, value: coreQuestions, packId: "core-001" };
       },
@@ -585,7 +1061,7 @@ describe("QuizApp", () => {
       expect(document.querySelector(".result-screen")).not.toBeNull();
     });
     await user.click(requiredButton(".result-actions .outline-button"));
-    await user.click(screen.getByRole("button", { name: "추억·대중문화" }));
+    await user.click(screen.getByRole("radio", { name: "추억·대중문화" }));
     await user.click(requiredButton(".bonus-topic-screen .primary-button"));
 
     expect(await screen.findByRole("alert")).toHaveTextContent(
@@ -608,7 +1084,7 @@ describe("QuizApp", () => {
     progress.sessions["2026-07-28"] = createCompletedSession("2026-07-28");
     await repository.save(progress);
     const contentCatalog: ContentCatalog = {
-      availableBonusTopics: ["nostalgia"],
+      bonusTopics: [threeBonusTopics[0]],
       async loadCoreSet() {
         return { ok: true, value: coreQuestions, packId: "core-001" };
       },
@@ -641,7 +1117,7 @@ describe("QuizApp", () => {
       expect(document.querySelector(".result-screen")).not.toBeNull();
     });
     await user.click(requiredButton(".result-actions .outline-button"));
-    await user.click(screen.getByRole("button", { name: "추억·대중문화" }));
+    await user.click(screen.getByRole("radio", { name: "추억·대중문화" }));
     await user.click(requiredButton(".bonus-topic-screen .primary-button"));
 
     expect(await screen.findByRole("alert")).toHaveTextContent(
@@ -1214,7 +1690,7 @@ describe("QuizApp", () => {
       <QuizApp
         now={new Date("2026-07-28T03:00:00.000Z")}
         coreQuestions={coreQuestions}
-        bonusQuestions={[]}
+        bonusQuestions={bundledBonusQuestions}
       />,
     );
 
@@ -1241,13 +1717,18 @@ describe("QuizApp", () => {
       screen.getByRole("heading", { name: "보너스 주제 선택" }),
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("button", { name: "디지털 생활" }),
+      screen.getByRole("radio", { name: "디지털 생활" }),
     ).toBeInTheDocument();
     expect(
       screen.getByRole("button", { name: "첫 보너스 무료로 시작" }),
-    ).toBeDisabled();
+    ).toBeEnabled();
+    expect(screen.getAllByRole("radio")[0]).toHaveAttribute(
+      "aria-checked",
+      "true",
+    );
+    expect(screen.getAllByRole("radio")[0]).toHaveAttribute("tabindex", "0");
 
-    await user.click(screen.getByRole("button", { name: "디지털 생활" }));
+    await user.click(screen.getByRole("radio", { name: "디지털 생활" }));
 
     expect(
       screen.getByRole("button", { name: "첫 보너스 무료로 시작" }),
@@ -1361,7 +1842,7 @@ describe("QuizApp", () => {
     await user.click(
       screen.getByRole("button", { name: "원하는 주제로 보너스 3문제" }),
     );
-    await user.click(screen.getByRole("button", { name: "디지털 생활" }));
+    await user.click(screen.getByRole("radio", { name: "디지털 생활" }));
     await user.click(
       screen.getByRole("button", { name: "첫 보너스 무료로 시작" }),
     );
@@ -1415,6 +1896,83 @@ describe("QuizApp", () => {
       }),
     ).toBeInTheDocument();
     expect(screen.getByText("2 / 3")).toBeInTheDocument();
+  });
+
+  it("KST 날짜가 바뀌어도 미완료 핵심 세션을 원래 날짜로 복원해 마친다", async () => {
+    const storage = new ControlledStorage();
+    const repository = new ProgressRepository(storage);
+    const firstUser = userEvent.setup();
+    const firstMount = render(
+      <QuizApp
+        now={new Date("2026-07-28T03:00:00.000Z")}
+        coreQuestions={coreQuestions}
+        bonusQuestions={[]}
+        repository={repository}
+      />,
+    );
+
+    await firstUser.click(
+      await screen.findByRole("button", { name: "오늘의 3문제 시작" }),
+    );
+    await firstUser.click(screen.getByRole("button", { name: "동전" }));
+    await firstUser.click(
+      await screen.findByRole("button", { name: "다음 문제" }),
+    );
+    await waitFor(async () => {
+      const loaded = await repository.load();
+      expect(loaded.kind).not.toBe("unrecoverable");
+      if (loaded.kind !== "unrecoverable") {
+        expect(loaded.state.sessions["2026-07-28"]).toMatchObject({
+          currentIndex: 1,
+          phase: "question",
+        });
+      }
+    });
+    firstMount.unmount();
+
+    const secondUser = userEvent.setup();
+    render(
+      <QuizApp
+        now={new Date("2026-07-29T03:00:00.000Z")}
+        coreQuestions={coreQuestions}
+        bonusQuestions={[]}
+        repository={repository}
+      />,
+    );
+
+    expect(
+      await screen.findByRole("heading", {
+        name: coreQuestions[1].prompt,
+      }),
+    ).toBeInTheDocument();
+    expect(screen.getByText("2 / 3")).toBeInTheDocument();
+
+    await secondUser.click(
+      screen.getByRole("button", {
+        name: coreQuestions[1].choices[coreQuestions[1].answerIndex],
+      }),
+    );
+    await secondUser.click(
+      await screen.findByRole("button", { name: "다음 문제" }),
+    );
+    await secondUser.click(
+      screen.getByRole("button", {
+        name: coreQuestions[2].choices[coreQuestions[2].answerIndex],
+      }),
+    );
+    await secondUser.click(
+      await screen.findByRole("button", { name: "결과 보기" }),
+    );
+
+    expect(screen.getByLabelText("오늘 점수 3 / 3")).toBeInTheDocument();
+    await waitFor(async () => {
+      const loaded = await repository.load();
+      expect(loaded.kind).not.toBe("unrecoverable");
+      if (loaded.kind !== "unrecoverable") {
+        expect(loaded.state.sessions["2026-07-28"].phase).toBe("completed");
+        expect(loaded.state.sessions["2026-07-29"]).toBeUndefined();
+      }
+    });
   });
 
   it("이전 유효 슬롯으로 복구하면 현재 화면 상단에 한 번 안내한다", async () => {
@@ -1527,7 +2085,7 @@ describe("QuizApp", () => {
         name: "원하는 주제로 보너스 3문제",
       }),
     );
-    await user.click(screen.getByRole("button", { name: "디지털 생활" }));
+    await user.click(screen.getByRole("radio", { name: "디지털 생활" }));
     await user.click(
       screen.getByRole("button", { name: "첫 보너스 무료로 시작" }),
     );
@@ -1654,7 +2212,7 @@ describe("QuizApp", () => {
         name: "원하는 주제로 보너스 3문제",
       }),
     );
-    await user.click(screen.getByRole("button", { name: "디지털 생활" }));
+    await user.click(screen.getByRole("radio", { name: "디지털 생활" }));
     await user.click(
       await screen.findByRole("button", {
         name: "광고 보고 보너스 3문제",
@@ -1724,7 +2282,7 @@ describe("QuizApp", () => {
         name: "원하는 주제로 보너스 3문제",
       }),
     );
-    await userEvent.click(screen.getByRole("button", { name: "디지털 생활" }));
+    await userEvent.click(screen.getByRole("radio", { name: "디지털 생활" }));
     const start = screen.getByRole("button", {
       name: "첫 보너스 무료로 시작",
     });
@@ -1807,7 +2365,7 @@ describe("QuizApp", () => {
         name: "원하는 주제로 보너스 3문제",
       }),
     );
-    await user.click(screen.getByRole("button", { name: "디지털 생활" }));
+    await user.click(screen.getByRole("radio", { name: "디지털 생활" }));
     await user.click(
       await screen.findByRole("button", { name: "광고 보고 보너스 3문제" }),
     );
@@ -1871,7 +2429,7 @@ describe("QuizApp", () => {
         name: "원하는 주제로 보너스 3문제",
       }),
     );
-    await user.click(screen.getByRole("button", { name: "디지털 생활" }));
+    await user.click(screen.getByRole("radio", { name: "디지털 생활" }));
     await user.click(
       await screen.findByRole("button", { name: "광고 보고 보너스 3문제" }),
     );
@@ -1881,7 +2439,7 @@ describe("QuizApp", () => {
     ).toHaveAttribute("role", "alert");
     expect(screen.queryByText("보너스권 1장이 있어요")).not.toBeInTheDocument();
 
-    await user.click(screen.getByRole("button", { name: "생활안전" }));
+    await user.click(screen.getByRole("radio", { name: "생활안전" }));
     await user.click(
       screen.getByRole("button", { name: "광고 보고 보너스 3문제" }),
     );
@@ -1898,6 +2456,9 @@ describe("QuizApp", () => {
     const repository = new ProgressRepository(
       new BrowserKeyValueStorage(window.localStorage),
     );
+    const completedDigitalSet = bundledBonusQuestions.filter(
+      (question) => question.topic === "digital" && question.setIndex === 0,
+    );
     window.localStorage.clear();
     await repository.save({
       version: 1,
@@ -1906,7 +2467,7 @@ describe("QuizApp", () => {
         ...createBonusEntitlement(),
         firstFreeUsed: true,
       },
-      completedBonusIds: [],
+      completedBonusIds: completedDigitalSet.map((question) => question.id),
     });
     let showCount = 0;
     const rewardAd: RewardAdGateway = {
@@ -1922,7 +2483,7 @@ describe("QuizApp", () => {
       <QuizApp
         now={new Date("2026-07-28T03:00:00.000Z")}
         coreQuestions={coreQuestions}
-        bonusQuestions={[]}
+        bonusQuestions={completedDigitalSet}
         repository={repository}
         rewardAd={rewardAd}
       />,
@@ -1933,7 +2494,7 @@ describe("QuizApp", () => {
         name: "원하는 주제로 보너스 3문제",
       }),
     );
-    await user.click(screen.getByRole("button", { name: "디지털 생활" }));
+    await user.click(screen.getByRole("radio", { name: "디지털 생활" }));
     await user.click(
       await screen.findByRole("button", { name: "광고 보고 보너스 3문제" }),
     );
@@ -1960,11 +2521,16 @@ describe("QuizApp", () => {
       new BrowserKeyValueStorage(window.localStorage),
     );
     window.localStorage.clear();
+    const digitalSet = bundledBonusQuestions.filter(
+      (question) => question.topic === "digital" && question.setIndex === 0,
+    );
     await repository.startBonusSession(
       "bonus-start-for-reload",
       "2026-07-28",
       "digital",
-      bundledBonusQuestions,
+      0,
+      5,
+      digitalSet,
     );
 
     render(
@@ -1984,16 +2550,177 @@ describe("QuizApp", () => {
     expect(screen.getByText("1 / 3")).toBeInTheDocument();
   });
 
+  it("KST 다음 날에도 보너스 결제 없이 저장된 문제 순서와 진행을 복원해 마친다", async () => {
+    const storage = new ControlledStorage();
+    const repository = new ProgressRepository(storage);
+    const restoredQuestions = bundledBonusQuestions.filter(
+      (question) => question.topic === "digital" && question.setIndex === 0,
+    );
+    await repository.save({
+      version: 1,
+      sessions: { "2026-07-28": createCompletedSession("2026-07-28") },
+      bonus: {
+        ...createBonusEntitlement(),
+        firstFreeUsed: true,
+        ticketCount: 1,
+      },
+      completedBonusIds: [],
+    });
+    let showCount = 0;
+    const rewardAd: RewardAdGateway = {
+      load: async () => true,
+      show: async () => {
+        showCount += 1;
+        return { rewardGrantId: "must-not-run-during-restore" };
+      },
+    };
+    const analyticsEvents: Array<{
+      name: string;
+      params?: Record<string, string | number | boolean>;
+    }> = [];
+    const analytics = {
+      track: (
+        name: string,
+        params?: Record<string, string | number | boolean>,
+      ) => analyticsEvents.push({ name, params }),
+    };
+    const firstUser = userEvent.setup();
+    const firstMount = render(
+      <QuizApp
+        now={new Date("2026-07-28T03:00:00.000Z")}
+        analytics={analytics}
+        coreQuestions={coreQuestions}
+        bonusQuestions={bundledBonusQuestions}
+        repository={repository}
+        rewardAd={rewardAd}
+      />,
+    );
+
+    await firstUser.click(
+      await screen.findByRole("button", {
+        name: "원하는 주제로 보너스 3문제",
+      }),
+    );
+    await firstUser.click(screen.getByRole("radio", { name: "디지털 생활" }));
+    await firstUser.click(
+      screen.getByRole("button", { name: "보너스권으로 시작" }),
+    );
+
+    const firstQuestion = await screen.findByRole("heading", {
+      name: restoredQuestions[0].prompt,
+    });
+    expect(firstQuestion).toBeInTheDocument();
+    await firstUser.click(
+      screen.getByRole("button", {
+        name: restoredQuestions[0].choices[restoredQuestions[0].answerIndex],
+      }),
+    );
+    await firstUser.click(
+      await screen.findByRole("button", { name: "다음 문제" }),
+    );
+
+    await waitFor(async () => {
+      const loaded = await repository.load();
+      expect(loaded.kind).not.toBe("unrecoverable");
+      if (loaded.kind !== "unrecoverable") {
+        expect(loaded.state.sessions["2026-07-28:bonus:digital"]).toMatchObject(
+          { currentIndex: 1, phase: "question" },
+        );
+      }
+    });
+    const beforeRemount = await repository.load();
+    if (beforeRemount.kind === "unrecoverable") {
+      throw new Error("Expected persisted bonus progress before remount");
+    }
+    firstMount.unmount();
+
+    const secondUser = userEvent.setup();
+    render(
+      <QuizApp
+        now={new Date("2026-07-29T03:00:00.000Z")}
+        analytics={analytics}
+        coreQuestions={coreQuestions}
+        bonusQuestions={[...bundledBonusQuestions].reverse()}
+        repository={repository}
+        rewardAd={rewardAd}
+      />,
+    );
+
+    expect(
+      await screen.findByRole("heading", {
+        name: "문자 속 주소를 눌러 개인정보를 빼내는 사기는 무엇일까요?",
+      }),
+    ).toBeInTheDocument();
+    expect(screen.getByText("2 / 3")).toBeInTheDocument();
+    expect(showCount).toBe(0);
+    expect(
+      analyticsEvents.filter((event) => event.name === "bonus_start"),
+    ).toHaveLength(1);
+
+    const afterRemount = await repository.load();
+    if (afterRemount.kind === "unrecoverable") {
+      throw new Error("Expected persisted bonus progress after remount");
+    }
+    expect(afterRemount.state.bonus).toEqual(beforeRemount.state.bonus);
+    expect(afterRemount.state.rewardGrantIds).toEqual(
+      beforeRemount.state.rewardGrantIds,
+    );
+    expect(afterRemount.state.rewardAdTicketCount).toBe(
+      beforeRemount.state.rewardAdTicketCount,
+    );
+    expect(afterRemount.state.bonusStartCommands).toEqual(
+      beforeRemount.state.bonusStartCommands,
+    );
+    expect(afterRemount.state.latestBonusStartCommandIds).toEqual(
+      beforeRemount.state.latestBonusStartCommandIds,
+    );
+
+    for (const [index, question] of restoredQuestions.slice(1).entries()) {
+      await secondUser.click(
+        screen.getByRole("button", {
+          name: question.choices[question.answerIndex],
+        }),
+      );
+      await secondUser.click(
+        await screen.findByRole("button", {
+          name: index === 0 ? "다음 문제" : "결과 보기",
+        }),
+      );
+    }
+
+    expect(screen.getByLabelText("오늘 점수 3 / 3")).toBeInTheDocument();
+    await waitFor(async () => {
+      const loaded = await repository.load();
+      expect(loaded.kind).not.toBe("unrecoverable");
+      if (loaded.kind !== "unrecoverable") {
+        expect(loaded.state.sessions["2026-07-28:bonus:digital"].phase).toBe(
+          "completed",
+        );
+        expect(
+          loaded.state.sessions["2026-07-29:bonus:digital"],
+        ).toBeUndefined();
+      }
+    });
+  });
+
   it("같은 날짜와 주제로 완료한 legacy 보너스는 다시 시작하지 않는다", async () => {
     window.localStorage.clear();
     const repository = new ProgressRepository(
       new BrowserKeyValueStorage(window.localStorage),
     );
+    const firstDigitalSet = bundledBonusQuestions.filter(
+      (question) => question.topic === "digital" && question.setIndex === 0,
+    );
+    const secondDigitalSet = bundledBonusQuestions.filter(
+      (question) => question.topic === "digital" && question.setIndex === 1,
+    );
     const firstStart = await repository.startBonusSession(
       "10",
       "2026-07-28",
       "digital",
-      bundledBonusQuestions,
+      0,
+      5,
+      firstDigitalSet,
     );
     expect(firstStart.applied).toBe(true);
     if (!firstStart.applied) {
@@ -2025,7 +2752,9 @@ describe("QuizApp", () => {
       "2",
       "2026-07-28",
       "digital",
-      bundledBonusQuestions,
+      1,
+      5,
+      secondDigitalSet,
     );
     const restored = await repository.load();
 

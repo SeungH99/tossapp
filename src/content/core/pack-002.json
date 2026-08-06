@@ -7,6 +7,7 @@
     {
       "kind": "core",
       "id": "2026-09-17-then-52-v1",
+      "conceptId": "nostalgia-telephone-diaphragm-current-transduction",
       "dateKey": "2026-09-17",
       "lens": "then",
       "topic": "nostalgia",
@@ -30,6 +31,7 @@
     {
       "kind": "core",
       "id": "2026-09-10-now-45-v1",
+      "conceptId": "digital-gmail-archive-message",
       "dateKey": "2026-09-10",
       "lens": "now",
       "topic": "digital",
@@ -53,6 +55,7 @@
     {
       "kind": "core",
       "id": "2026-08-30-life-34-v1",
+      "conceptId": "nature-general-waxing-moon-visible-sunlit-fraction",
       "dateKey": "2026-08-30",
       "lens": "life",
       "topic": "nature-general",
@@ -76,6 +79,7 @@
     {
       "kind": "core",
       "id": "2026-09-02-then-37-v1",
+      "conceptId": "nostalgia-telephone-iron-diaphragm",
       "dateKey": "2026-09-02",
       "lens": "then",
       "topic": "nostalgia",
@@ -99,6 +103,7 @@
     {
       "kind": "core",
       "id": "2026-09-25-now-60-v1",
+      "conceptId": "digital-gmail-archived-reply-returns-inbox",
       "dateKey": "2026-09-25",
       "lens": "now",
       "topic": "digital",
@@ -122,6 +127,7 @@
     {
       "kind": "core",
       "id": "2026-09-14-life-49-v1",
+      "conceptId": "nature-general-waxing-moon-western-setting-time",
       "dateKey": "2026-09-14",
       "lens": "life",
       "topic": "nature-general",
@@ -145,6 +151,7 @@
     {
       "kind": "core",
       "id": "2026-09-19-then-54-v1",
+      "conceptId": "nostalgia-index-typewriter-pointer-print-lever",
       "dateKey": "2026-09-19",
       "lens": "then",
       "topic": "nostalgia",
@@ -168,6 +175,7 @@
     {
       "kind": "core",
       "id": "2026-09-17-now-52-v1",
+      "conceptId": "digital-drive-editor-cannot-change-sharing",
       "dateKey": "2026-09-17",
       "lens": "now",
       "topic": "digital",
@@ -191,6 +199,7 @@
     {
       "kind": "core",
       "id": "2026-09-16-life-51-v1",
+      "conceptId": "nature-general-eclipse-orbital-plane-tilt",
       "dateKey": "2026-09-16",
       "lens": "life",
       "topic": "nature-general",
@@ -214,6 +223,7 @@
     {
       "kind": "core",
       "id": "2026-09-04-then-39-v1",
+      "conceptId": "nostalgia-typewriter-spacebar-paper-advance",
       "dateKey": "2026-09-04",
       "lens": "then",
       "topic": "nostalgia",
@@ -237,6 +247,7 @@
     {
       "kind": "core",
       "id": "2026-09-02-now-37-v1",
+      "conceptId": "digital-drive-access-direct-group-folder-sharing",
       "dateKey": "2026-09-02",
       "lens": "now",
       "topic": "digital",
@@ -260,6 +271,7 @@
     {
       "kind": "core",
       "id": "2026-09-01-life-36-v1",
+      "conceptId": "nature-general-lunar-eclipse-sun-earth-moon-alignment",
       "dateKey": "2026-09-01",
       "lens": "life",
       "topic": "nature-general",
@@ -283,6 +295,7 @@
     {
       "kind": "core",
       "id": "2026-09-10-then-45-v1",
+      "conceptId": "nostalgia-zip-code-faster-mail-sorting",
       "dateKey": "2026-09-10",
       "lens": "then",
       "topic": "nostalgia",
@@ -306,6 +319,7 @@
     {
       "kind": "core",
       "id": "2026-08-31-now-35-v1",
+      "conceptId": "digital-docs-version-history",
       "dateKey": "2026-08-31",
       "lens": "now",
       "topic": "digital",
@@ -329,6 +343,7 @@
     {
       "kind": "core",
       "id": "2026-09-18-life-53-v1",
+      "conceptId": "nature-general-seasons-axial-tilt-opposite-hemispheres",
       "dateKey": "2026-09-18",
       "lens": "life",
       "topic": "nature-general",
@@ -352,6 +367,7 @@
     {
       "kind": "core",
       "id": "2026-09-25-then-60-v1",
+      "conceptId": "nostalgia-mr-zip-promoted-zip-code-use",
       "dateKey": "2026-09-25",
       "lens": "then",
       "topic": "nostalgia",
@@ -375,6 +391,7 @@
     {
       "kind": "core",
       "id": "2026-09-15-now-50-v1",
+      "conceptId": "digital-docs-restore-prior-version",
       "dateKey": "2026-09-15",
       "lens": "now",
       "topic": "digital",
@@ -398,6 +415,7 @@
     {
       "kind": "core",
       "id": "2026-09-03-life-38-v1",
+      "conceptId": "nature-general-seasons-sun-angle-not-distance",
       "dateKey": "2026-09-03",
       "lens": "life",
       "topic": "nature-general",
@@ -421,6 +439,7 @@
     {
       "kind": "core",
       "id": "2026-08-31-then-35-v1",
+      "conceptId": "nostalgia-apollo-11-buzz-aldrin-moonwalker",
       "dateKey": "2026-08-31",
       "lens": "then",
       "topic": "nostalgia",
@@ -444,6 +463,7 @@
     {
       "kind": "core",
       "id": "2026-09-21-now-56-v1",
+      "conceptId": "digital-maps-offline-driving-directions",
       "dateKey": "2026-09-21",
       "lens": "now",
       "topic": "digital",
@@ -467,6 +487,7 @@
     {
       "kind": "core",
       "id": "2026-09-21-life-56-v1",
+      "conceptId": "nature-general-aurora-solar-particles-atmosphere-collision",
       "dateKey": "2026-09-21",
       "lens": "life",
       "topic": "nature-general",
@@ -490,6 +511,7 @@
     {
       "kind": "core",
       "id": "2026-09-15-then-50-v1",
+      "conceptId": "nostalgia-apollo-11-command-module-lunar-orbit",
       "dateKey": "2026-09-15",
       "lens": "then",
       "topic": "nostalgia",
@@ -513,6 +535,7 @@
     {
       "kind": "core",
       "id": "2026-09-06-now-41-v1",
+      "conceptId": "digital-maps-offline-map-update-requires-internet",
       "dateKey": "2026-09-06",
       "lens": "now",
       "topic": "digital",
@@ -536,6 +559,7 @@
     {
       "kind": "core",
       "id": "2026-09-06-life-41-v1",
+      "conceptId": "nature-general-aurora-color-oxygen-nitrogen-altitude",
       "dateKey": "2026-09-06",
       "lens": "life",
       "topic": "nature-general",
@@ -559,6 +583,7 @@
     {
       "kind": "core",
       "id": "2026-09-21-then-56-v1",
+      "conceptId": "nostalgia-voyager-record-earth-life-culture-message",
       "dateKey": "2026-09-21",
       "lens": "then",
       "topic": "nostalgia",
@@ -582,6 +607,7 @@
     {
       "kind": "core",
       "id": "2026-09-16-now-51-v1",
+      "conceptId": "digital-maps-save-parking-location",
       "dateKey": "2026-09-16",
       "lens": "now",
       "topic": "digital",
@@ -605,6 +631,7 @@
     {
       "kind": "core",
       "id": "2026-09-22-life-57-v1",
+      "conceptId": "nature-general-spring-tide-new-full-moon-alignment",
       "dateKey": "2026-09-22",
       "lens": "life",
       "topic": "nature-general",
@@ -628,6 +655,7 @@
     {
       "kind": "core",
       "id": "2026-09-06-then-41-v1",
+      "conceptId": "nostalgia-voyager-record-playback-earth-location-instructions",
       "dateKey": "2026-09-06",
       "lens": "then",
       "topic": "nostalgia",
@@ -651,6 +679,7 @@
     {
       "kind": "core",
       "id": "2026-09-01-now-36-v1",
+      "conceptId": "digital-maps-parking-note-timer-edit",
       "dateKey": "2026-09-01",
       "lens": "now",
       "topic": "digital",
@@ -674,6 +703,7 @@
     {
       "kind": "core",
       "id": "2026-09-07-life-42-v1",
+      "conceptId": "nature-general-neap-tide-solar-lunar-force-offset",
       "dateKey": "2026-09-07",
       "lens": "life",
       "topic": "nature-general",
@@ -697,6 +727,7 @@
     {
       "kind": "core",
       "id": "2026-09-18-then-53-v1",
+      "conceptId": "nostalgia-instant-camera-1947-demo-1948-sale",
       "dateKey": "2026-09-18",
       "lens": "then",
       "topic": "nostalgia",
@@ -720,6 +751,7 @@
     {
       "kind": "core",
       "id": "2026-09-23-now-58-v1",
+      "conceptId": "digital-photos-archive-photo",
       "dateKey": "2026-09-23",
       "lens": "now",
       "topic": "digital",
@@ -743,6 +775,7 @@
     {
       "kind": "core",
       "id": "2026-09-20-life-55-v1",
+      "conceptId": "nature-general-cirrostratus-high-sheet-cloud",
       "dateKey": "2026-09-20",
       "lens": "life",
       "topic": "nature-general",
@@ -766,6 +799,7 @@
     {
       "kind": "core",
       "id": "2026-09-03-then-38-v1",
+      "conceptId": "nostalgia-instant-camera-one-minute-development",
       "dateKey": "2026-09-03",
       "lens": "then",
       "topic": "nostalgia",
@@ -789,6 +823,7 @@
     {
       "kind": "core",
       "id": "2026-09-08-now-43-v1",
+      "conceptId": "digital-photos-unarchive-photo",
       "dateKey": "2026-09-08",
       "lens": "now",
       "topic": "digital",
@@ -812,6 +847,7 @@
     {
       "kind": "core",
       "id": "2026-09-05-life-40-v1",
+      "conceptId": "nature-general-nimbostratus-dark-precipitation-cloud",
       "dateKey": "2026-09-05",
       "lens": "life",
       "topic": "nature-general",
@@ -835,6 +871,7 @@
     {
       "kind": "core",
       "id": "2026-09-16-then-51-v1",
+      "conceptId": "nostalgia-eniac-artillery-ballistics-calculation",
       "dateKey": "2026-09-16",
       "lens": "then",
       "topic": "nostalgia",
@@ -858,6 +895,7 @@
     {
       "kind": "core",
       "id": "2026-09-18-now-53-v1",
+      "conceptId": "digital-meet-live-captions",
       "dateKey": "2026-09-18",
       "lens": "now",
       "topic": "digital",
@@ -881,6 +919,7 @@
     {
       "kind": "core",
       "id": "2026-09-19-life-54-v1",
+      "conceptId": "nature-general-ocean-salinity-rock-weathering-river-ions",
       "dateKey": "2026-09-19",
       "lens": "life",
       "topic": "nature-general",
@@ -904,6 +943,7 @@
     {
       "kind": "core",
       "id": "2026-09-01-then-36-v1",
+      "conceptId": "nostalgia-eniac-room-size-weight-vacuum-tubes",
       "dateKey": "2026-09-01",
       "lens": "then",
       "topic": "nostalgia",
@@ -927,6 +967,7 @@
     {
       "kind": "core",
       "id": "2026-09-24-now-59-v1",
+      "conceptId": "digital-meet-translated-captions",
       "dateKey": "2026-09-24",
       "lens": "now",
       "topic": "digital",
@@ -950,6 +991,7 @@
     {
       "kind": "core",
       "id": "2026-09-04-life-39-v1",
+      "conceptId": "nature-general-ocean-salinity-hydrothermal-metal-ions",
       "dateKey": "2026-09-04",
       "lens": "life",
       "topic": "nature-general",
@@ -973,6 +1015,7 @@
     {
       "kind": "core",
       "id": "2026-09-20-then-55-v1",
+      "conceptId": "nostalgia-portable-cassette-recorder-built-in-microphone",
       "dateKey": "2026-09-20",
       "lens": "then",
       "topic": "nostalgia",
@@ -996,6 +1039,7 @@
     {
       "kind": "core",
       "id": "2026-09-03-now-38-v1",
+      "conceptId": "digital-iphone-document-scan-page-boundary",
       "dateKey": "2026-09-03",
       "lens": "now",
       "topic": "digital",
@@ -1019,6 +1063,7 @@
     {
       "kind": "core",
       "id": "2026-09-17-life-52-v1",
+      "conceptId": "nature-general-estuary-freshwater-seawater-mix",
       "dateKey": "2026-09-17",
       "lens": "life",
       "topic": "nature-general",
@@ -1042,6 +1087,7 @@
     {
       "kind": "core",
       "id": "2026-09-05-then-40-v1",
+      "conceptId": "nostalgia-portable-cassette-recorder-aa-battery-power",
       "dateKey": "2026-09-05",
       "lens": "then",
       "topic": "nostalgia",
@@ -1065,6 +1111,7 @@
     {
       "kind": "core",
       "id": "2026-09-09-now-44-v1",
+      "conceptId": "digital-iphone-markup-signature",
       "dateKey": "2026-09-09",
       "lens": "now",
       "topic": "digital",
@@ -1088,6 +1135,7 @@
     {
       "kind": "core",
       "id": "2026-09-02-life-37-v1",
+      "conceptId": "nature-general-estuary-filter-nursery-habitat",
       "dateKey": "2026-09-02",
       "lens": "life",
       "topic": "nature-general",
@@ -1111,6 +1159,7 @@
     {
       "kind": "core",
       "id": "2026-08-29-then-33-v1",
+      "conceptId": "nostalgia-microwave-magnetron-generator",
       "dateKey": "2026-08-29",
       "lens": "then",
       "topic": "nostalgia",
@@ -1134,6 +1183,7 @@
     {
       "kind": "core",
       "id": "2026-09-11-now-46-v1",
+      "conceptId": "digital-iphone-live-text-image-recognition",
       "dateKey": "2026-09-11",
       "lens": "now",
       "topic": "digital",
@@ -1157,6 +1207,7 @@
     {
       "kind": "core",
       "id": "2026-09-24-life-59-v1",
+      "conceptId": "nature-general-plant-transpiration-leaf-stomata",
       "dateKey": "2026-09-24",
       "lens": "life",
       "topic": "nature-general",
@@ -1180,6 +1231,7 @@
     {
       "kind": "core",
       "id": "2026-09-13-then-48-v1",
+      "conceptId": "nostalgia-microwave-molecular-vibration-heating",
       "dateKey": "2026-09-13",
       "lens": "then",
       "topic": "nostalgia",
@@ -1203,6 +1255,7 @@
     {
       "kind": "core",
       "id": "2026-08-27-now-31-v1",
+      "conceptId": "digital-iphone-live-text-translation",
       "dateKey": "2026-08-27",
       "lens": "now",
       "topic": "digital",
@@ -1226,6 +1279,7 @@
     {
       "kind": "core",
       "id": "2026-09-09-life-44-v1",
+      "conceptId": "nature-general-evapotranspiration-evaporation-and-transpiration",
       "dateKey": "2026-09-09",
       "lens": "life",
       "topic": "nature-general",
@@ -1249,6 +1303,7 @@
     {
       "kind": "core",
       "id": "2026-09-12-then-47-v1",
+      "conceptId": "nostalgia-phonograph-tinfoil-recording-medium",
       "dateKey": "2026-09-12",
       "lens": "then",
       "topic": "nostalgia",
@@ -1272,6 +1327,7 @@
     {
       "kind": "core",
       "id": "2026-09-19-now-54-v1",
+      "conceptId": "digital-word-track-changes",
       "dateKey": "2026-09-19",
       "lens": "now",
       "topic": "digital",
@@ -1295,6 +1351,7 @@
     {
       "kind": "core",
       "id": "2026-08-28-life-32-v1",
+      "conceptId": "nature-general-aquifer-connected-permeable-pores",
       "dateKey": "2026-08-28",
       "lens": "life",
       "topic": "nature-general",
@@ -1318,6 +1375,7 @@
     {
       "kind": "core",
       "id": "2026-08-28-then-32-v1",
+      "conceptId": "nostalgia-phonograph-diaphragm-needle-vibration",
       "dateKey": "2026-08-28",
       "lens": "then",
       "topic": "nostalgia",
@@ -1341,6 +1399,7 @@
     {
       "kind": "core",
       "id": "2026-09-04-now-39-v1",
+      "conceptId": "digital-word-track-changes-simple-markup",
       "dateKey": "2026-09-04",
       "lens": "now",
       "topic": "digital",
@@ -1364,6 +1423,7 @@
     {
       "kind": "core",
       "id": "2026-09-12-life-47-v1",
+      "conceptId": "nature-general-well-pumping-cone-of-depression",
       "dateKey": "2026-09-12",
       "lens": "life",
       "topic": "nature-general",
@@ -1387,6 +1447,7 @@
     {
       "kind": "core",
       "id": "2026-09-23-then-58-v1",
+      "conceptId": "nostalgia-telegraph-short-long-signal-code",
       "dateKey": "2026-09-23",
       "lens": "then",
       "topic": "nostalgia",
@@ -1410,6 +1471,7 @@
     {
       "kind": "core",
       "id": "2026-08-29-now-33-v1",
+      "conceptId": "digital-excel-freeze-top-row",
       "dateKey": "2026-08-29",
       "lens": "now",
       "topic": "digital",
@@ -1433,6 +1495,7 @@
     {
       "kind": "core",
       "id": "2026-09-25-life-60-v1",
+      "conceptId": "nature-general-transform-fault-parallel-plate-motion",
       "dateKey": "2026-09-25",
       "lens": "life",
       "topic": "nature-general",
@@ -1456,6 +1519,7 @@
     {
       "kind": "core",
       "id": "2026-09-08-then-43-v1",
+      "conceptId": "nostalgia-first-telegraph-washington-baltimore-route",
       "dateKey": "2026-09-08",
       "lens": "then",
       "topic": "nostalgia",
@@ -1479,6 +1543,7 @@
     {
       "kind": "core",
       "id": "2026-09-13-now-48-v1",
+      "conceptId": "digital-excel-freeze-panes-anchor-cell",
       "dateKey": "2026-09-13",
       "lens": "now",
       "topic": "digital",
@@ -1502,6 +1567,7 @@
     {
       "kind": "core",
       "id": "2026-09-10-life-45-v1",
+      "conceptId": "nature-general-subduction-one-plate-beneath-another",
       "dateKey": "2026-09-10",
       "lens": "life",
       "topic": "nature-general",
@@ -1525,6 +1591,7 @@
     {
       "kind": "core",
       "id": "2026-08-27-then-31-v1",
+      "conceptId": "korean-life-uigwe-recorded-and-governed-royal-rituals",
       "dateKey": "2026-08-27",
       "lens": "then",
       "topic": "korean-life",
@@ -1548,6 +1615,7 @@
     {
       "kind": "core",
       "id": "2026-09-12-now-47-v1",
+      "conceptId": "digital-excel-filter-hides-rows-keeps-data",
       "dateKey": "2026-09-12",
       "lens": "now",
       "topic": "digital",
@@ -1571,6 +1639,7 @@
     {
       "kind": "core",
       "id": "2026-09-08-life-43-v1",
+      "conceptId": "nature-general-shield-volcano-broad-gentle-slope",
       "dateKey": "2026-09-08",
       "lens": "life",
       "topic": "nature-general",
@@ -1594,6 +1663,7 @@
     {
       "kind": "core",
       "id": "2026-09-11-then-46-v1",
+      "conceptId": "korean-life-uigwe-joseon-royal-ritual-five-centuries",
       "dateKey": "2026-09-11",
       "lens": "then",
       "topic": "korean-life",
@@ -1617,6 +1687,7 @@
     {
       "kind": "core",
       "id": "2026-08-28-now-32-v1",
+      "conceptId": "digital-excel-number-filter-and-bounds",
       "dateKey": "2026-08-28",
       "lens": "now",
       "topic": "digital",
@@ -1640,6 +1711,7 @@
     {
       "kind": "core",
       "id": "2026-09-23-life-58-v1",
+      "conceptId": "nature-general-cinder-cone-summit-crater",
       "dateKey": "2026-09-23",
       "lens": "life",
       "topic": "nature-general",
@@ -1663,6 +1735,7 @@
     {
       "kind": "core",
       "id": "2026-08-30-then-34-v1",
+      "conceptId": "korean-life-kbs-reunion-broadcast-archive-materials",
       "dateKey": "2026-08-30",
       "lens": "then",
       "topic": "korean-life",
@@ -1686,6 +1759,7 @@
     {
       "kind": "core",
       "id": "2026-09-14-now-49-v1",
+      "conceptId": "digital-onedrive-online-only-files",
       "dateKey": "2026-09-14",
       "lens": "now",
       "topic": "digital",
@@ -1709,6 +1783,7 @@
     {
       "kind": "core",
       "id": "2026-08-29-life-33-v1",
+      "conceptId": "nature-general-tree-rings-growth-and-fire-scar",
       "dateKey": "2026-08-29",
       "lens": "life",
       "topic": "nature-general",
@@ -1732,6 +1807,7 @@
     {
       "kind": "core",
       "id": "2026-09-14-then-49-v1",
+      "conceptId": "korean-life-kbs-reunion-broadcast-cold-war-human-impact",
       "dateKey": "2026-09-14",
       "lens": "then",
       "topic": "korean-life",
@@ -1755,6 +1831,7 @@
     {
       "kind": "core",
       "id": "2026-08-30-now-34-v1",
+      "conceptId": "digital-onedrive-always-keep-on-device",
       "dateKey": "2026-08-30",
       "lens": "now",
       "topic": "digital",
@@ -1778,6 +1855,7 @@
     {
       "kind": "core",
       "id": "2026-09-13-life-48-v1",
+      "conceptId": "nature-general-tree-ring-crossdating-long-chronology",
       "dateKey": "2026-09-13",
       "lens": "life",
       "topic": "nature-general",
@@ -1801,6 +1879,7 @@
     {
       "kind": "core",
       "id": "2026-09-24-then-59-v1",
+      "conceptId": "nostalgia-space-shuttle-orbiter-runway-return",
       "dateKey": "2026-09-24",
       "lens": "then",
       "topic": "nostalgia",
@@ -1824,6 +1903,7 @@
     {
       "kind": "core",
       "id": "2026-09-20-now-55-v1",
+      "conceptId": "digital-windows-snap-layout",
       "dateKey": "2026-09-20",
       "lens": "now",
       "topic": "digital",
@@ -1847,6 +1927,7 @@
     {
       "kind": "core",
       "id": "2026-08-31-life-35-v1",
+      "conceptId": "nature-general-pollen-transfer-anther-to-stigma",
       "dateKey": "2026-08-31",
       "lens": "life",
       "topic": "nature-general",
@@ -1870,6 +1951,7 @@
     {
       "kind": "core",
       "id": "2026-09-09-then-44-v1",
+      "conceptId": "nostalgia-space-shuttle-external-tank-hydrogen-oxygen",
       "dateKey": "2026-09-09",
       "lens": "then",
       "topic": "nostalgia",
@@ -1893,6 +1975,7 @@
     {
       "kind": "core",
       "id": "2026-09-05-now-40-v1",
+      "conceptId": "digital-windows-snap-maximize-hover",
       "dateKey": "2026-09-05",
       "lens": "now",
       "topic": "digital",
@@ -1916,6 +1999,7 @@
     {
       "kind": "core",
       "id": "2026-09-15-life-50-v1",
+      "conceptId": "nature-general-pollinator-diversity-flowering-plant-reproduction",
       "dateKey": "2026-09-15",
       "lens": "life",
       "topic": "nature-general",
@@ -1939,6 +2023,7 @@
     {
       "kind": "core",
       "id": "2026-09-22-then-57-v1",
+      "conceptId": "nostalgia-transistor-radio-small-efficient-durable",
       "dateKey": "2026-09-22",
       "lens": "then",
       "topic": "nostalgia",
@@ -1962,6 +2047,7 @@
     {
       "kind": "core",
       "id": "2026-09-22-now-57-v1",
+      "conceptId": "digital-powerpoint-presenter-view-notes",
       "dateKey": "2026-09-22",
       "lens": "now",
       "topic": "digital",
@@ -1985,6 +2071,7 @@
     {
       "kind": "core",
       "id": "2026-09-11-life-46-v1",
+      "conceptId": "nature-general-meteoroid-meteor-meteorite-terms",
       "dateKey": "2026-09-11",
       "lens": "life",
       "topic": "nature-general",
@@ -2008,6 +2095,7 @@
     {
       "kind": "core",
       "id": "2026-09-07-then-42-v1",
+      "conceptId": "nostalgia-transistor-radio-four-transistors-am",
       "dateKey": "2026-09-07",
       "lens": "then",
       "topic": "nostalgia",
@@ -2031,6 +2119,7 @@
     {
       "kind": "core",
       "id": "2026-09-07-now-42-v1",
+      "conceptId": "digital-powerpoint-swap-presenter-displays",
       "dateKey": "2026-09-07",
       "lens": "now",
       "topic": "digital",
@@ -2054,6 +2143,7 @@
     {
       "kind": "core",
       "id": "2026-08-27-life-31-v1",
+      "conceptId": "nature-general-meteor-shower-earth-crosses-comet-debris",
       "dateKey": "2026-08-27",
       "lens": "life",
       "topic": "nature-general",

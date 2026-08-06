@@ -3,6 +3,7 @@ import { parseBonusPack, parseCorePack } from "./parse-content";
 import type {
   BonusContentPack,
   BonusContentPackDescriptor,
+  BonusTopicMetadata,
   ContentManifest,
   CoreContentPack,
   CoreContentPackDescriptor,
@@ -18,6 +19,7 @@ export type ContentLoadResult<T> =
   | { ok: false; reason: ContentLoadFailure; packId?: string };
 
 export interface ContentCatalog {
+  readonly bonusTopics?: readonly BonusTopicMetadata[];
   readonly availableBonusTopics?: readonly BonusTopic[];
   loadCoreSet(dateKey: string): Promise<ContentLoadResult<CoreQuestion[]>>;
   loadBonusSet(
@@ -100,10 +102,21 @@ export function createPackedContentCatalog(
   manifest: ContentManifest,
   importers: PackModuleRegistry,
 ): ContentCatalog {
+  const bonusTopics = [...(manifest.releaseContract?.bonusTopics ?? [])]
+    .sort((left, right) => left.order - right.order)
+    .map(({ topic, label, order, setCount }) => ({
+      id: topic,
+      label,
+      order,
+      setCount,
+    }));
+  const availableBonusTopics = manifest.releaseContract == null
+    ? [...new Set(manifest.bonusPacks.map((pack) => pack.topic))]
+    : bonusTopics.map(({ id }) => id);
+
   return {
-    availableBonusTopics: [
-      ...new Set(manifest.bonusPacks.map((pack) => pack.topic)),
-    ],
+    bonusTopics,
+    availableBonusTopics,
     async loadCoreSet(dateKey) {
       const descriptor = selectCoreDescriptor(manifest, dateKey);
       if (!descriptor) {

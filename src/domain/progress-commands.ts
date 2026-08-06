@@ -53,7 +53,9 @@ export type StartBonusSessionResult =
         | "daily-limit"
         | "exhausted"
         | "active-session"
-        | "set-mismatch";
+        | "set-mismatch"
+        | "seen-question"
+        | "seen-concept";
       state: ProgressState;
       source?: BonusUnlockSource;
       session?: QuizSession;
@@ -85,8 +87,7 @@ function foldEvent(
 
   return {
     totalAnswers: checkpoint.totalAnswers + 1,
-    correctAnswers:
-      checkpoint.correctAnswers + (event.isCorrect ? 1 : 0),
+    correctAnswers: checkpoint.correctAnswers + (event.isCorrect ? 1 : 0),
     byQuestion: {
       ...checkpoint.byQuestion,
       [event.questionId]: {
@@ -170,6 +171,12 @@ export function applyAnswerCommand(
     },
     answerEvents: events,
     answerCheckpoint,
+    seenQuestionIds: [
+      ...new Set([...state.seenQuestionIds, command.question.id]),
+    ],
+    seenConceptIds: [
+      ...new Set([...state.seenConceptIds, command.question.conceptId]),
+    ],
   };
 
   return {
@@ -205,29 +212,59 @@ export function grantBonusTicketCommand(
   };
 }
 
+export function findSeenQuestion(
+  state: ProgressState,
+  questions: readonly Question[],
+): { kind: "question-id" | "concept-id"; value: string } | undefined {
+  const seenQuestionIds = new Set(state.seenQuestionIds);
+  const seenQuestion = questions.find((question) =>
+    seenQuestionIds.has(question.id),
+  );
+  if (seenQuestion != null) {
+    return { kind: "question-id", value: seenQuestion.id };
+  }
+
+  const seenConceptIds = new Set(state.seenConceptIds);
+  const seenConcept = questions.find((question) =>
+    seenConceptIds.has(question.conceptId),
+  );
+  return seenConcept == null
+    ? undefined
+    : { kind: "concept-id", value: seenConcept.conceptId };
+}
+
+export function skipBonusSetCommand(
+  state: ProgressState,
+  topic: BonusTopic,
+  setIndex: number,
+): ProgressState {
+  const topicProgress = state.bonusTopicProgress[topic];
+  if (topicProgress.skippedSetIndexes.includes(setIndex)) {
+    return state;
+  }
+
+  return {
+    ...state,
+    bonusTopicProgress: {
+      ...state.bonusTopicProgress,
+      [topic]: {
+        ...topicProgress,
+        skippedSetIndexes: [...topicProgress.skippedSetIndexes, setIndex].sort(
+          (left, right) => left - right,
+        ),
+      },
+    },
+  };
+}
+
 export function startBonusSessionCommand(
   state: ProgressState,
   commandId: string,
   dateKey: string,
   topic: BonusTopic,
   setIndex: number,
+  releasedSetCount: number,
   bonusQuestions: BonusQuestion[],
-): StartBonusSessionResult;
-/** @deprecated The eager-content app path is removed by the catalog wiring task. */
-export function startBonusSessionCommand(
-  state: ProgressState,
-  commandId: string,
-  dateKey: string,
-  topic: BonusTopic,
-  bonusQuestions: BonusQuestion[],
-): StartBonusSessionResult;
-export function startBonusSessionCommand(
-  state: ProgressState,
-  commandId: string,
-  dateKey: string,
-  topic: BonusTopic,
-  setIndexOrQuestions: number | BonusQuestion[],
-  providedQuestions?: BonusQuestion[],
 ): StartBonusSessionResult {
   if (commandId.trim().length === 0) {
     throw new TypeError("commandId must not be empty");
@@ -247,8 +284,12 @@ export function startBonusSessionCommand(
     };
   }
 
-  const legacyQuestions = Array.isArray(setIndexOrQuestions);
-  const availability = resolveBonusSetAvailability(state, topic, dateKey);
+  const availability = resolveBonusSetAvailability(
+    state,
+    topic,
+    dateKey,
+    releasedSetCount,
+  );
   if (availability.kind !== "available") {
     return {
       applied: false,
@@ -260,26 +301,17 @@ export function startBonusSessionCommand(
     };
   }
 
-  const setIndex = legacyQuestions
-    ? availability.setIndex
-    : setIndexOrQuestions;
   if (availability.setIndex !== setIndex) {
     return { applied: false, reason: "set-mismatch", state };
   }
 
-  const candidateQuestions: BonusQuestion[] = legacyQuestions
-    ? setIndexOrQuestions.filter(
-        (question) =>
-          question.topic === topic && question.setIndex === setIndex,
-      )
-    : providedQuestions ?? [];
+  const candidateQuestions = bonusQuestions;
   if (candidateQuestions.length !== 3) {
     return { applied: false, reason: "no-questions", state };
   }
   if (
     candidateQuestions.some(
-      (question) =>
-        question.topic !== topic || question.setIndex !== setIndex,
+      (question) => question.topic !== topic || question.setIndex !== setIndex,
     )
   ) {
     return { applied: false, reason: "set-mismatch", state };
@@ -290,6 +322,16 @@ export function startBonusSessionCommand(
       .size !== 3
   ) {
     return { applied: false, reason: "no-questions", state };
+  }
+
+  const seenQuestion = findSeenQuestion(state, candidateQuestions);
+  if (seenQuestion != null) {
+    return {
+      applied: false,
+      reason:
+        seenQuestion.kind === "question-id" ? "seen-question" : "seen-concept",
+      state,
+    };
   }
 
   const decision = selectShadowBonusQuestions({
@@ -383,6 +425,11 @@ export function completeBonusSetCommand(
     return { applied: false, reason: "set-mismatch", state };
   }
 
+  const topicProgress = state.bonusTopicProgress[topic];
+  if (topicProgress.completedSetIndexes.includes(setIndex)) {
+    return { applied: false, reason: "duplicate", state };
+  }
+
   const session = state.sessions[sessionKey];
   if (session == null) {
     return { applied: false, reason: "missing-session", state };
@@ -407,11 +454,6 @@ export function completeBonusSetCommand(
     return { applied: false, reason: "answer-mismatch", state };
   }
 
-  const topicProgress = state.bonusTopicProgress[topic];
-  if (topicProgress.completedSetIndexes.includes(setIndex)) {
-    return { applied: false, reason: "duplicate", state };
-  }
-
   return {
     applied: true,
     state: {
@@ -422,6 +464,7 @@ export function completeBonusSetCommand(
       bonusTopicProgress: {
         ...state.bonusTopicProgress,
         [topic]: {
+          ...topicProgress,
           completedSetIndexes: [
             ...topicProgress.completedSetIndexes,
             setIndex,

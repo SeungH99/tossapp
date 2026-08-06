@@ -22,6 +22,7 @@ describe("content pack parsers", () => {
             ...metadata,
             kind: "core",
             id: "2026-07-28-then-public-phone",
+            conceptId: "nostalgia-public-phone-coin-call",
             dateKey: "2026-07-28",
             lens: "then",
             topic: "nostalgia",

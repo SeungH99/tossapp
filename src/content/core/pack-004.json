@@ -7,6 +7,7 @@
     {
       "kind": "core",
       "id": "2026-10-26-then-31-v3",
+      "conceptId": "nostalgia-geelong-homemade-interhouse-telephone",
       "dateKey": "2026-10-26",
       "lens": "then",
       "topic": "nostalgia",
@@ -30,6 +31,7 @@
     {
       "kind": "core",
       "id": "2026-10-26-now-31-v3",
+      "conceptId": "digital-zoom-guest-join-without-account",
       "dateKey": "2026-10-26",
       "lens": "now",
       "topic": "digital",
@@ -53,6 +55,7 @@
     {
       "kind": "core",
       "id": "2026-10-26-life-31-v3",
+      "conceptId": "nature-general-robin-nest-grass-mud-construction",
       "dateKey": "2026-10-26",
       "lens": "life",
       "topic": "nature-general",
@@ -76,6 +79,7 @@
     {
       "kind": "core",
       "id": "2026-10-27-then-32-v3",
+      "conceptId": "nostalgia-icebox-ice-cooling",
       "dateKey": "2026-10-27",
       "lens": "then",
       "topic": "nostalgia",
@@ -99,6 +103,7 @@
     {
       "kind": "core",
       "id": "2026-10-27-now-32-v3",
+      "conceptId": "digital-zoom-qa-text-or-live-answer",
       "dateKey": "2026-10-27",
       "lens": "now",
       "topic": "digital",
@@ -122,6 +127,7 @@
     {
       "kind": "core",
       "id": "2026-10-27-life-32-v3",
+      "conceptId": "nature-general-barn-swallow-mud-grass-pellet-nest",
       "dateKey": "2026-10-27",
       "lens": "life",
       "topic": "nature-general",
@@ -145,6 +151,7 @@
     {
       "kind": "core",
       "id": "2026-10-28-then-33-v3",
+      "conceptId": "nostalgia-early-refrigerator-door-shelves",
       "dateKey": "2026-10-28",
       "lens": "then",
       "topic": "nostalgia",
@@ -168,6 +175,7 @@
     {
       "kind": "core",
       "id": "2026-10-28-now-33-v3",
+      "conceptId": "digital-zoom-vtt-timed-captions",
       "dateKey": "2026-10-28",
       "lens": "now",
       "topic": "digital",
@@ -191,6 +199,7 @@
     {
       "kind": "core",
       "id": "2026-10-28-life-33-v3",
+      "conceptId": "nature-general-mallard-northern-hemisphere-wetland-habitat",
       "dateKey": "2026-10-28",
       "lens": "life",
       "topic": "nature-general",
@@ -214,6 +223,7 @@
     {
       "kind": "core",
       "id": "2026-10-29-then-34-v3",
+      "conceptId": "nostalgia-electric-washer-time-reduction",
       "dateKey": "2026-10-29",
       "lens": "then",
       "topic": "nostalgia",
@@ -237,6 +247,7 @@
     {
       "kind": "core",
       "id": "2026-10-29-now-34-v3",
+      "conceptId": "digital-dropbox-file-request-no-account-upload",
       "dateKey": "2026-10-29",
       "lens": "now",
       "topic": "digital",
@@ -260,6 +271,7 @@
     {
       "kind": "core",
       "id": "2026-10-29-life-34-v3",
+      "conceptId": "nature-general-downy-woodpecker-soft-deadwood-foraging",
       "dateKey": "2026-10-29",
       "lens": "life",
       "topic": "nature-general",
@@ -283,6 +295,7 @@
     {
       "kind": "core",
       "id": "2026-10-30-then-35-v3",
+      "conceptId": "nostalgia-radio-sensitivity-and-selectivity",
       "dateKey": "2026-10-30",
       "lens": "then",
       "topic": "nostalgia",
@@ -306,6 +319,7 @@
     {
       "kind": "core",
       "id": "2026-10-30-now-35-v3",
+      "conceptId": "digital-dropbox-tags-search",
       "dateKey": "2026-10-30",
       "lens": "now",
       "topic": "digital",
@@ -329,6 +343,7 @@
     {
       "kind": "core",
       "id": "2026-10-30-life-35-v3",
+      "conceptId": "nature-general-frog-metamorphosis-limbs-lungs-tail",
       "dateKey": "2026-10-30",
       "lens": "life",
       "topic": "nature-general",
@@ -352,6 +367,7 @@
     {
       "kind": "core",
       "id": "2026-10-31-then-36-v3",
+      "conceptId": "nostalgia-first-fort-wayne-television-1948",
       "dateKey": "2026-10-31",
       "lens": "then",
       "topic": "nostalgia",
@@ -375,6 +391,7 @@
     {
       "kind": "core",
       "id": "2026-10-31-now-36-v3",
+      "conceptId": "digital-dropbox-recover-within-thirty-days",
       "dateKey": "2026-10-31",
       "lens": "now",
       "topic": "digital",
@@ -398,6 +415,7 @@
     {
       "kind": "core",
       "id": "2026-10-31-life-36-v3",
+      "conceptId": "nature-general-orb-web-sticky-spiral-dry-radials",
       "dateKey": "2026-10-31",
       "lens": "life",
       "topic": "nature-general",
@@ -421,6 +439,7 @@
     {
       "kind": "core",
       "id": "2026-11-01-then-37-v3",
+      "conceptId": "nostalgia-camera-darlot-lens-french-made",
       "dateKey": "2026-11-01",
       "lens": "then",
       "topic": "nostalgia",
@@ -444,6 +463,7 @@
     {
       "kind": "core",
       "id": "2026-11-01-now-37-v3",
+      "conceptId": "digital-signal-pinned-message-oldest-replaced",
       "dateKey": "2026-11-01",
       "lens": "now",
       "topic": "digital",
@@ -467,6 +487,7 @@
     {
       "kind": "core",
       "id": "2026-11-01-life-37-v3",
+      "conceptId": "nature-general-cicada-male-courtship-song",
       "dateKey": "2026-11-01",
       "lens": "life",
       "topic": "nature-general",
@@ -490,6 +511,7 @@
     {
       "kind": "core",
       "id": "2026-11-02-then-38-v3",
+      "conceptId": "nostalgia-australian-television-melbourne-olympics",
       "dateKey": "2026-11-02",
       "lens": "then",
       "topic": "nostalgia",
@@ -513,6 +535,7 @@
     {
       "kind": "core",
       "id": "2026-11-02-now-38-v3",
+      "conceptId": "digital-signal-disappearing-message-setting-sync",
       "dateKey": "2026-11-02",
       "lens": "now",
       "topic": "digital",
@@ -536,6 +559,7 @@
     {
       "kind": "core",
       "id": "2026-11-02-life-38-v3",
+      "conceptId": "nature-general-spider-cephalothorax-abdomen-pedicel",
       "dateKey": "2026-11-02",
       "lens": "life",
       "topic": "nature-general",
@@ -559,6 +583,7 @@
     {
       "kind": "core",
       "id": "2026-11-03-then-39-v3",
+      "conceptId": "nostalgia-farm-steam-engine-seasonal-power",
       "dateKey": "2026-11-03",
       "lens": "then",
       "topic": "nostalgia",
@@ -582,6 +607,7 @@
     {
       "kind": "core",
       "id": "2026-11-03-now-39-v3",
+      "conceptId": "digital-signal-view-once-not-saved-or-replayable",
       "dateKey": "2026-11-03",
       "lens": "now",
       "topic": "digital",
@@ -605,6 +631,7 @@
     {
       "kind": "core",
       "id": "2026-11-03-life-39-v3",
+      "conceptId": "nature-general-monarch-egg-larva-pupa-timing",
       "dateKey": "2026-11-03",
       "lens": "life",
       "topic": "nature-general",
@@ -628,6 +655,7 @@
     {
       "kind": "core",
       "id": "2026-11-04-then-40-v3",
+      "conceptId": "nostalgia-autograph-quilt-paid-name-squares",
       "dateKey": "2026-11-04",
       "lens": "then",
       "topic": "nostalgia",
@@ -651,6 +679,7 @@
     {
       "kind": "core",
       "id": "2026-11-04-now-40-v3",
+      "conceptId": "digital-line-keep-note-owner-only",
       "dateKey": "2026-11-04",
       "lens": "now",
       "topic": "digital",
@@ -674,6 +703,7 @@
     {
       "kind": "core",
       "id": "2026-11-04-life-40-v3",
+      "conceptId": "nature-general-dragonfly-aquatic-nymph-hunter",
       "dateKey": "2026-11-04",
       "lens": "life",
       "topic": "nature-general",
@@ -697,6 +727,7 @@
     {
       "kind": "core",
       "id": "2026-11-05-then-41-v3",
+      "conceptId": "nostalgia-postal-concentrator-twenty-four-calls",
       "dateKey": "2026-11-05",
       "lens": "then",
       "topic": "nostalgia",
@@ -720,6 +751,7 @@
     {
       "kind": "core",
       "id": "2026-11-05-now-41-v3",
+      "conceptId": "digital-line-zip-files-before-transfer",
       "dateKey": "2026-11-05",
       "lens": "now",
       "topic": "digital",
@@ -743,6 +775,7 @@
     {
       "kind": "core",
       "id": "2026-11-05-life-41-v3",
+      "conceptId": "nature-general-fireflies-beetles-not-all-luminous",
       "dateKey": "2026-11-05",
       "lens": "life",
       "topic": "nature-general",
@@ -766,6 +799,7 @@
     {
       "kind": "core",
       "id": "2026-11-06-then-42-v3",
+      "conceptId": "nostalgia-post-office-tower-height",
       "dateKey": "2026-11-06",
       "lens": "then",
       "topic": "nostalgia",
@@ -789,6 +823,7 @@
     {
       "kind": "core",
       "id": "2026-11-06-now-42-v3",
+      "conceptId": "digital-line-album-multi-select-month-view",
       "dateKey": "2026-11-06",
       "lens": "now",
       "topic": "digital",
@@ -812,6 +847,7 @@
     {
       "kind": "core",
       "id": "2026-11-06-life-42-v3",
+      "conceptId": "nature-general-cut-produce-enzymatic-browning-oxygen",
       "dateKey": "2026-11-06",
       "lens": "life",
       "topic": "nature-general",
@@ -835,6 +871,7 @@
     {
       "kind": "core",
       "id": "2026-11-07-then-43-v3",
+      "conceptId": "nostalgia-farm-life-quilt-correspondence-education",
       "dateKey": "2026-11-07",
       "lens": "then",
       "topic": "nostalgia",
@@ -858,6 +895,7 @@
     {
       "kind": "core",
       "id": "2026-11-07-now-43-v3",
+      "conceptId": "digital-proton-undo-send-delay-draft-return",
       "dateKey": "2026-11-07",
       "lens": "now",
       "topic": "digital",
@@ -881,6 +919,7 @@
     {
       "kind": "core",
       "id": "2026-11-07-life-43-v3",
+      "conceptId": "nature-general-popcorn-steam-pressure-pop",
       "dateKey": "2026-11-07",
       "lens": "life",
       "topic": "nature-general",
@@ -904,6 +943,7 @@
     {
       "kind": "core",
       "id": "2026-11-08-then-44-v3",
+      "conceptId": "nostalgia-teletypewriter-real-time-text-over-phone",
       "dateKey": "2026-11-08",
       "lens": "then",
       "topic": "nostalgia",
@@ -927,6 +967,7 @@
     {
       "kind": "core",
       "id": "2026-11-08-now-44-v3",
+      "conceptId": "digital-proton-scheduled-send-platform-features",
       "dateKey": "2026-11-08",
       "lens": "now",
       "topic": "digital",
@@ -950,6 +991,7 @@
     {
       "kind": "core",
       "id": "2026-11-08-life-44-v3",
+      "conceptId": "nature-general-variegated-monstera-less-chlorophyll-energy",
       "dateKey": "2026-11-08",
       "lens": "life",
       "topic": "nature-general",
@@ -973,6 +1015,7 @@
     {
       "kind": "core",
       "id": "2026-11-09-then-45-v3",
+      "conceptId": "nostalgia-pottery-manual-jigger-soft-clay",
       "dateKey": "2026-11-09",
       "lens": "then",
       "topic": "nostalgia",
@@ -996,6 +1039,7 @@
     {
       "kind": "core",
       "id": "2026-11-09-now-45-v3",
+      "conceptId": "digital-proton-calendar-default-event-notifications",
       "dateKey": "2026-11-09",
       "lens": "now",
       "topic": "digital",
@@ -1019,6 +1063,7 @@
     {
       "kind": "core",
       "id": "2026-11-09-life-45-v3",
+      "conceptId": "nature-general-egg-aging-enlarged-air-cell",
       "dateKey": "2026-11-09",
       "lens": "life",
       "topic": "nature-general",
@@ -1042,6 +1087,7 @@
     {
       "kind": "core",
       "id": "2026-11-10-then-46-v3",
+      "conceptId": "nostalgia-geelong-telephone-network-forty-four-services",
       "dateKey": "2026-11-10",
       "lens": "then",
       "topic": "nostalgia",
@@ -1065,6 +1111,7 @@
     {
       "kind": "core",
       "id": "2026-11-10-now-46-v3",
+      "conceptId": "digital-zoom-browser-join-host-permission",
       "dateKey": "2026-11-10",
       "lens": "now",
       "topic": "digital",
@@ -1088,6 +1135,7 @@
     {
       "kind": "core",
       "id": "2026-11-10-life-46-v3",
+      "conceptId": "nature-general-robin-seasonal-diet-insects-fruit",
       "dateKey": "2026-11-10",
       "lens": "life",
       "topic": "nature-general",
@@ -1111,6 +1159,7 @@
     {
       "kind": "core",
       "id": "2026-11-11-then-47-v3",
+      "conceptId": "nostalgia-icebox-mechanical-ether-refrigeration",
       "dateKey": "2026-11-11",
       "lens": "then",
       "topic": "nostalgia",
@@ -1134,6 +1183,7 @@
     {
       "kind": "core",
       "id": "2026-11-11-now-47-v3",
+      "conceptId": "digital-zoom-raise-hand-host-speaking-permission",
       "dateKey": "2026-11-11",
       "lens": "now",
       "topic": "digital",
@@ -1157,6 +1207,7 @@
     {
       "kind": "core",
       "id": "2026-11-11-life-47-v3",
+      "conceptId": "nature-general-barn-swallow-drinking-bathing-flight",
       "dateKey": "2026-11-11",
       "lens": "life",
       "topic": "nature-general",
@@ -1180,6 +1231,7 @@
     {
       "kind": "core",
       "id": "2026-11-12-then-48-v3",
+      "conceptId": "nostalgia-australian-refrigerator-1931-design-1932-sale",
       "dateKey": "2026-11-12",
       "lens": "then",
       "topic": "nostalgia",
@@ -1203,6 +1255,7 @@
     {
       "kind": "core",
       "id": "2026-11-12-now-48-v3",
+      "conceptId": "digital-zoom-caption-text-speaker-edit",
       "dateKey": "2026-11-12",
       "lens": "now",
       "topic": "digital",
@@ -1226,6 +1279,7 @@
     {
       "kind": "core",
       "id": "2026-11-12-life-48-v3",
+      "conceptId": "nature-general-mallard-muscovy-not-mallard",
       "dateKey": "2026-11-12",
       "lens": "life",
       "topic": "nature-general",
@@ -1249,6 +1303,7 @@
     {
       "kind": "core",
       "id": "2026-11-13-then-49-v3",
+      "conceptId": "nostalgia-washer-installment-sales-women-export-markets",
       "dateKey": "2026-11-13",
       "lens": "then",
       "topic": "nostalgia",
@@ -1272,6 +1327,7 @@
     {
       "kind": "core",
       "id": "2026-11-13-now-49-v3",
+      "conceptId": "digital-dropbox-file-request-private-folder-close-link",
       "dateKey": "2026-11-13",
       "lens": "now",
       "topic": "digital",
@@ -1295,6 +1351,7 @@
     {
       "kind": "core",
       "id": "2026-11-13-life-49-v3",
+      "conceptId": "nature-general-downy-woodpecker-tail-brace-mobility",
       "dateKey": "2026-11-13",
       "lens": "life",
       "topic": "nature-general",
@@ -1318,6 +1375,7 @@
     {
       "kind": "core",
       "id": "2026-11-14-then-50-v3",
+      "conceptId": "nostalgia-radio-honeymoon-gift-provenance",
       "dateKey": "2026-11-14",
       "lens": "then",
       "topic": "nostalgia",
@@ -1341,6 +1399,7 @@
     {
       "kind": "core",
       "id": "2026-11-14-now-50-v3",
+      "conceptId": "digital-dropbox-tag-viewer-editor-permissions",
       "dateKey": "2026-11-14",
       "lens": "now",
       "topic": "digital",
@@ -1364,6 +1423,7 @@
     {
       "kind": "core",
       "id": "2026-11-14-life-50-v3",
+      "conceptId": "nature-general-frog-skin-water-absorption-respiration",
       "dateKey": "2026-11-14",
       "lens": "life",
       "topic": "nature-general",
@@ -1387,6 +1447,7 @@
     {
       "kind": "core",
       "id": "2026-11-15-then-51-v3",
+      "conceptId": "nostalgia-compact-single-purpose-table-radio",
       "dateKey": "2026-11-15",
       "lens": "then",
       "topic": "nostalgia",
@@ -1410,6 +1471,7 @@
     {
       "kind": "core",
       "id": "2026-11-15-now-51-v3",
+      "conceptId": "digital-dropbox-editor-can-restore-shared-files",
       "dateKey": "2026-11-15",
       "lens": "now",
       "topic": "digital",
@@ -1433,6 +1495,7 @@
     {
       "kind": "core",
       "id": "2026-11-15-life-51-v3",
+      "conceptId": "nature-general-spider-web-contact-reduction-claws-bristles",
       "dateKey": "2026-11-15",
       "lens": "life",
       "topic": "nature-general",
@@ -1456,6 +1519,7 @@
     {
       "kind": "core",
       "id": "2026-11-16-then-52-v3",
+      "conceptId": "nostalgia-camera-short-exposure-development-time",
       "dateKey": "2026-11-16",
       "lens": "then",
       "topic": "nostalgia",
@@ -1479,6 +1543,7 @@
     {
       "kind": "core",
       "id": "2026-11-16-now-52-v3",
+      "conceptId": "digital-signal-new-members-see-new-pins-only",
       "dateKey": "2026-11-16",
       "lens": "now",
       "topic": "digital",
@@ -1502,6 +1567,7 @@
     {
       "kind": "core",
       "id": "2026-11-16-life-52-v3",
+      "conceptId": "nature-general-cicada-nymph-years-adult-weeks",
       "dateKey": "2026-11-16",
       "lens": "life",
       "topic": "nature-general",
@@ -1525,6 +1591,7 @@
     {
       "kind": "core",
       "id": "2026-11-17-then-53-v3",
+      "conceptId": "nostalgia-australian-tv-first-broadcast-date-station",
       "dateKey": "2026-11-17",
       "lens": "then",
       "topic": "nostalgia",
@@ -1548,6 +1615,7 @@
     {
       "kind": "core",
       "id": "2026-11-17-now-53-v3",
+      "conceptId": "digital-signal-disappearing-timer-send-read-start",
       "dateKey": "2026-11-17",
       "lens": "now",
       "topic": "digital",
@@ -1571,6 +1639,7 @@
     {
       "kind": "core",
       "id": "2026-11-17-life-53-v3",
+      "conceptId": "nature-general-spider-abdomen-body-region",
       "dateKey": "2026-11-17",
       "lens": "life",
       "topic": "nature-general",
@@ -1594,6 +1663,7 @@
     {
       "kind": "core",
       "id": "2026-11-18-then-54-v3",
+      "conceptId": "nostalgia-steam-engine-shearing-capacity-fuel-water",
       "dateKey": "2026-11-18",
       "lens": "then",
       "topic": "nostalgia",
@@ -1617,6 +1687,7 @@
     {
       "kind": "core",
       "id": "2026-11-18-now-54-v3",
+      "conceptId": "digital-signal-view-once-earliest-expiration",
       "dateKey": "2026-11-18",
       "lens": "now",
       "topic": "digital",
@@ -1640,6 +1711,7 @@
     {
       "kind": "core",
       "id": "2026-11-18-life-54-v3",
+      "conceptId": "nature-general-monarch-breeding-vs-overwinter-lifespan",
       "dateKey": "2026-11-18",
       "lens": "life",
       "topic": "nature-general",
@@ -1663,6 +1735,7 @@
     {
       "kind": "core",
       "id": "2026-11-19-then-55-v3",
+      "conceptId": "nostalgia-autograph-quilt-machine-assembly-hand-embroidery",
       "dateKey": "2026-11-19",
       "lens": "then",
       "topic": "nostalgia",
@@ -1686,6 +1759,7 @@
     {
       "kind": "core",
       "id": "2026-11-19-now-55-v3",
+      "conceptId": "digital-line-keep-server-retention-undisclosed",
       "dateKey": "2026-11-19",
       "lens": "now",
       "topic": "digital",
@@ -1709,6 +1783,7 @@
     {
       "kind": "core",
       "id": "2026-11-19-life-55-v3",
+      "conceptId": "nature-general-dragonfly-damselfly-eye-wing-differences",
       "dateKey": "2026-11-19",
       "lens": "life",
       "topic": "nature-general",
@@ -1732,6 +1807,7 @@
     {
       "kind": "core",
       "id": "2026-11-20-then-56-v3",
+      "conceptId": "nostalgia-postal-concentrator-fluorescent-envelope-marks",
       "dateKey": "2026-11-20",
       "lens": "then",
       "topic": "nostalgia",
@@ -1755,6 +1831,7 @@
     {
       "kind": "core",
       "id": "2026-11-20-now-56-v3",
+      "conceptId": "digital-line-hide-profile-before-sharing",
       "dateKey": "2026-11-20",
       "lens": "now",
       "topic": "digital",
@@ -1778,6 +1855,7 @@
     {
       "kind": "core",
       "id": "2026-11-20-life-56-v3",
+      "conceptId": "nature-general-firefly-species-specific-flash-patterns",
       "dateKey": "2026-11-20",
       "lens": "life",
       "topic": "nature-general",
@@ -1801,6 +1879,7 @@
     {
       "kind": "core",
       "id": "2026-11-21-then-57-v3",
+      "conceptId": "nostalgia-post-office-tower-relay-observation-restaurant",
       "dateKey": "2026-11-21",
       "lens": "then",
       "topic": "nostalgia",
@@ -1824,6 +1903,7 @@
     {
       "kind": "core",
       "id": "2026-11-21-now-57-v3",
+      "conceptId": "digital-line-album-jump-to-message",
       "dateKey": "2026-11-21",
       "lens": "now",
       "topic": "digital",
@@ -1847,6 +1927,7 @@
     {
       "kind": "core",
       "id": "2026-11-21-life-57-v3",
+      "conceptId": "nature-general-food-browning-ascorbic-acid-heat-control",
       "dateKey": "2026-11-21",
       "lens": "life",
       "topic": "nature-general",
@@ -1870,6 +1951,7 @@
     {
       "kind": "core",
       "id": "2026-11-22-then-58-v3",
+      "conceptId": "nostalgia-farm-life-quilt-youth-prize",
       "dateKey": "2026-11-22",
       "lens": "then",
       "topic": "nostalgia",
@@ -1893,6 +1975,7 @@
     {
       "kind": "core",
       "id": "2026-11-22-now-58-v3",
+      "conceptId": "digital-proton-undo-send-zero-to-twenty-seconds",
       "dateKey": "2026-11-22",
       "lens": "now",
       "topic": "digital",
@@ -1916,6 +1999,7 @@
     {
       "kind": "core",
       "id": "2026-11-22-life-58-v3",
+      "conceptId": "nature-general-popcorn-starch-foam-cooling",
       "dateKey": "2026-11-22",
       "lens": "life",
       "topic": "nature-general",
@@ -1939,6 +2023,7 @@
     {
       "kind": "core",
       "id": "2026-11-23-then-59-v3",
+      "conceptId": "nostalgia-australian-teletypewriter-voltage-conversion",
       "dateKey": "2026-11-23",
       "lens": "then",
       "topic": "nostalgia",
@@ -1962,6 +2047,7 @@
     {
       "kind": "core",
       "id": "2026-11-23-now-59-v3",
+      "conceptId": "digital-proton-reschedule-by-editing-returned-draft",
       "dateKey": "2026-11-23",
       "lens": "now",
       "topic": "digital",
@@ -1985,6 +2071,7 @@
     {
       "kind": "core",
       "id": "2026-11-23-life-59-v3",
+      "conceptId": "nature-general-variegated-monstera-cutting-node-propagation",
       "dateKey": "2026-11-23",
       "lens": "life",
       "topic": "nature-general",
@@ -2008,6 +2095,7 @@
     {
       "kind": "core",
       "id": "2026-11-24-then-60-v3",
+      "conceptId": "nostalgia-crown-lynn-pottery-production-volume",
       "dateKey": "2026-11-24",
       "lens": "then",
       "topic": "nostalgia",
@@ -2031,6 +2119,7 @@
     {
       "kind": "core",
       "id": "2026-11-24-now-60-v3",
+      "conceptId": "digital-proton-calendar-personal-notification-visibility",
       "dateKey": "2026-11-24",
       "lens": "now",
       "topic": "digital",
@@ -2054,6 +2143,7 @@
     {
       "kind": "core",
       "id": "2026-11-24-life-60-v3",
+      "conceptId": "nature-general-fat-oxidation-rancidity-cold-storage",
       "dateKey": "2026-11-24",
       "lens": "life",
       "topic": "nature-general",
