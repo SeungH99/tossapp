@@ -100,8 +100,8 @@ jobs:
   release-build:
     runs-on: ubuntu-latest
     env:
-      VITE_REWARDED_AD_GROUP_ID: ait-ad-test-rewarded-id
-      VITE_BANNER_AD_GROUP_ID: ait-ad-test-banner-id
+      VITE_REWARDED_AD_GROUP_ID: ${{ secrets.VITE_REWARDED_AD_GROUP_ID }}
+      VITE_BANNER_AD_GROUP_ID: ${{ secrets.VITE_BANNER_AD_GROUP_ID }}
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v7
